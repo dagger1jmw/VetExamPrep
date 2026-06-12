@@ -839,12 +839,26 @@ function renderQuestion() {
   `;
 
   if (q.type === 'tf') {
-    html += `<div class="tf-btns">
-      <button class="tf-btn" onclick="answerTF(true)">✓ True</button>
-      <button class="tf-btn" onclick="answerTF(false)">✗ False</button>
-    </div>`;
+    html += '<div class="tf-btns">';
+    html += '<button class="tf-btn" onclick="answerTF(true)">&#10003; True</button>';
+    html += '<button class="tf-btn" onclick="answerTF(false)">&#10007; False</button>';
+    html += '</div>';
   } else {
-    html += '<div class="options">' + q.opts.map((o,i)=>'<button class="option-btn" onclick="answerMCQ('+i+')">'+'<span class="opt-letter">'+String.fromCharCode(65+i)+'</span>'+o+'</button>').join('') + '</div>';
+    // Shuffle options so correct answer lands in a random position
+    const indices = q.opts.map(function(_,i){return i;});
+    for (var si = indices.length-1; si > 0; si--) {
+      var sj = Math.floor(Math.random()*(si+1));
+      var tmp = indices[si]; indices[si]=indices[sj]; indices[sj]=tmp;
+    }
+    quiz.shuffledCorrect = indices.indexOf(q.ans);
+    var optHtml = '<div class="options">';
+    for (var oi=0; oi<indices.length; oi++) {
+      optHtml += '<button class="option-btn" onclick="answerMCQ('+oi+')">';
+      optHtml += '<span class="opt-letter">'+String.fromCharCode(65+oi)+'</span>';
+      optHtml += q.opts[indices[oi]]+'</button>';
+    }
+    optHtml += '</div>';
+    html += optHtml;
   }
 
   html += `<div id="q-feedback" style="display:none"></div>
@@ -859,11 +873,11 @@ function answerMCQ(idx) {
   if (quiz.answered) return;
   quiz.answered = true;
   const q = quiz.questions[quiz.idx];
-  const correct = idx === q.ans;
+  const correct = idx === quiz.shuffledCorrect;
   recordAnswer(q, correct);
   document.querySelectorAll('.option-btn').forEach((btn,i) => {
     btn.disabled = true;
-    if (i === q.ans) btn.classList.add('correct');
+    if (i === quiz.shuffledCorrect) btn.classList.add('correct');
     else if (i === idx && !correct) btn.classList.add('wrong');
   });
   showFeedback(q, correct);
