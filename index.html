@@ -168,22 +168,43 @@
 </div>
 
 <div id="page-practical" class="page">
-  <div class="flex-row" style="margin-bottom:18px">
-    <div class="section-title" style="margin:0">🔬 Practical Skills</div>
-    <div class="spacer"></div>
-    <select class="styled" id="practical-topic-filter" onchange="renderPractical()">
-      <option value="all">All Topics</option>
-    </select>
+  <div id="practical-lobby" style="display:none">
+    <div class="flex-row" style="margin-bottom:18px">
+      <div class="section-title" style="margin:0">🔬 Practical Skills</div>
+      <div class="spacer"></div>
+      <button class="btn btn-primary btn-sm" onclick="startPracticalSession()">+ New Session</button>
+    </div>
+    <div id="practical-history"></div>
   </div>
-  <div id="practical-list"></div>
+  <div id="practical-session" style="display:none">
+    <div class="flex-row" style="margin-bottom:14px">
+      <button class="btn btn-ghost btn-sm" onclick="exitPracticalSession()">← Back</button>
+      <div class="spacer"></div>
+      <span id="practical-counter" style="font-size:0.87rem;color:var(--text-muted);font-weight:600"></span>
+    </div>
+    <div id="practical-question-area"></div>
+    <div class="flex-row" style="margin-top:12px;gap:8px" id="practical-nav"></div>
+  </div>
 </div>
 
 <div id="page-pastqs" class="page">
-  <div class="section-title">📋 Past Exam Questions</div>
-  <div class="card" style="margin-bottom:18px;background:linear-gradient(135deg,#fdf0f5,#f0eaff)">
-    <p style="font-size:0.88rem;color:var(--text-muted)">Real questions from previous written exams. Click to reveal the model answer, then mark whether you knew it.</p>
+  <div id="pastqs-lobby" style="display:none">
+    <div class="flex-row" style="margin-bottom:18px">
+      <div class="section-title" style="margin:0">📋 Past Exam Questions</div>
+      <div class="spacer"></div>
+      <button class="btn btn-primary btn-sm" onclick="startPastQsSession()">+ New Session</button>
+    </div>
+    <div id="pastqs-history"></div>
   </div>
-  <div id="pastqs-list"></div>
+  <div id="pastqs-session" style="display:none">
+    <div class="flex-row" style="margin-bottom:14px">
+      <button class="btn btn-ghost btn-sm" onclick="exitPastQsSession()">← Back</button>
+      <div class="spacer"></div>
+      <span id="pastqs-counter" style="font-size:0.87rem;color:var(--text-muted);font-weight:600"></span>
+    </div>
+    <div id="pastqs-question-area"></div>
+    <div class="flex-row" style="margin-top:12px;gap:8px" id="pastqs-nav"></div>
+  </div>
 </div>
 
 <div id="page-stats" class="page">
@@ -719,6 +740,8 @@ let appState = {
   currentSession: null,
   sessions: JSON.parse(localStorage.getItem('vpSessions') || '[]'),
   allStats: JSON.parse(localStorage.getItem('vpStats') || '{}'),
+  practicalSessions: JSON.parse(localStorage.getItem('vpPracticalSessions') || '[]'),
+  pastqsSessions: JSON.parse(localStorage.getItem('vpPastqsSessions') || '[]'),
 };
 
 // =====================================================================
@@ -733,8 +756,8 @@ function showPage(id) {
   });
   if (id === 'home') renderHome();
   if (id === 'topics') renderTopics();
-  if (id === 'practical') renderPractical();
-  if (id === 'pastqs') renderPastQs();
+  if (id === 'practical') renderPracticalLobby();
+  if (id === 'pastqs') renderPastQsLobby();
   if (id === 'stats') renderStats();
 }
 
@@ -948,52 +971,338 @@ function closeResultModal() {
 // =====================================================================
 // PRACTICAL
 // =====================================================================
-function renderPractical() {
-  document.getElementById('practical-list').innerHTML = PRACTICAL_QUESTIONS.map(p => `
-    <div class="card" id="pcard-${p.id}">
-      <div style="font-weight:600;margin-bottom:8px">🏥 ${p.title}</div>
-      <div style="margin-bottom:12px">${p.q}</div>
-      <textarea id="ptext-${p.id}" class="practical-textarea" placeholder="Write your answer here, then reveal the model answer..."></textarea>
-      <div class="flex-row" style="gap:8px;margin-top:8px">
-        <button class="btn btn-primary btn-sm" onclick="revealPractical('${p.id}')">👁 Reveal Answer</button>
-      </div>
-      <div id="panswer-${p.id}" style="display:none" class="feedback correct" style="margin-top:10px"></div>
-      <div id="pgrade-${p.id}" style="display:none" class="flex-row" style="gap:8px;margin-top:8px">
-        <button class="btn btn-sm" style="background:var(--correct-bg);color:var(--correct-dark)" onclick="gradePractical('${p.id}',true)">✓ Got it right</button>
-        <button class="btn btn-sm" style="background:var(--wrong-bg);color:var(--wrong-dark)" onclick="gradePractical('${p.id}',false)">✗ Need more study</button>
-      </div>
-    </div>
-  `).join('');
+// =====================================================================
+// PRACTICAL — SESSION SYSTEM
+// =====================================================================
+
+let practicalSession = null; // {idx, grades:{id: true/false}, revealed:Set}
+
+function renderPracticalLobby() {
+  document.getElementById('practical-lobby').style.display = 'block';
+  document.getElementById('practical-session').style.display = 'none';
+  const sessions = appState.practicalSessions;
+  const el = document.getElementById('practical-history');
+  if (sessions.length === 0) {
+    el.innerHTML = '<div class="card" style="text-align:center;padding:28px 16px">'
+      + '<div style="font-size:2.5rem;margin-bottom:10px">🔬</div>'
+      + '<div style="font-weight:600;margin-bottom:6px">No sessions yet</div>'
+      + '<div style="color:var(--text-muted);font-size:0.9rem;margin-bottom:16px">Work through each procedure, reveal the model answer, then self-grade. Your results are saved.</div>'
+      + '<button class="btn btn-primary" onclick="startPracticalSession()">Start First Session</button>'
+      + '</div>';
+    return;
+  }
+  // Overall mastery summary
+  const mastery = {};
+  sessions.forEach(s => {
+    Object.entries(s.grades).forEach(([id, correct]) => {
+      if (!mastery[id]) mastery[id] = {correct:0,total:0};
+      mastery[id].total++;
+      if (correct) mastery[id].correct++;
+    });
+  });
+  const needWork = PRACTICAL_QUESTIONS.filter(p => {
+    const m = mastery[p.id];
+    return !m || (m.correct / m.total) < 0.6;
+  });
+  let html = '';
+  if (needWork.length > 0) {
+    html += '<div class="card" style="background:linear-gradient(135deg,#fff3cd,#ffeaa7);border:1.5px solid #ffc107;margin-bottom:16px">'
+      + '<div style="font-weight:700;color:#856404;margin-bottom:8px">⚠️ Needs More Study (' + needWork.length + '/' + PRACTICAL_QUESTIONS.length + ')</div>'
+      + needWork.map(p => '<div style="font-size:0.85rem;color:#856404;padding:2px 0">• ' + p.title + '</div>').join('')
+      + '</div>';
+  } else {
+    html += '<div class="card" style="background:linear-gradient(135deg,#d4edda,#c3e6cb);border:1.5px solid #28a745;margin-bottom:16px">'
+      + '<div style="font-weight:700;color:#155724">✅ All procedures well-practiced!</div></div>';
+  }
+  html += '<div class="section-title" style="margin-top:4px">Session History</div>';
+  html += sessions.slice(0, 20).map((s, idx) => {
+    const total = Object.keys(s.grades).length;
+    const correct = Object.values(s.grades).filter(Boolean).length;
+    const pct = total > 0 ? Math.round(correct/total*100) : 0;
+    const col = pct >= 70 ? 'var(--correct-dark)' : pct >= 50 ? '#856404' : 'var(--wrong-dark)';
+    const bg = pct >= 70 ? 'var(--correct-bg)' : pct >= 50 ? '#fff3cd' : 'var(--wrong-bg)';
+    return '<div class="card" style="margin-bottom:10px">'
+      + '<div class="flex-row"><span style="font-weight:600;font-size:0.9rem">' + s.date + '</span>'
+      + '<span class="badge" style="background:' + bg + ';color:' + col + '">' + pct + '%</span></div>'
+      + '<div style="color:var(--text-muted);font-size:0.83rem;margin-top:4px">' + correct + '/' + total + ' procedures correct</div>'
+      + '</div>';
+  }).join('');
+  el.innerHTML = html;
 }
 
-function revealPractical(id) {
-  const p = PRACTICAL_QUESTIONS.find(x=>x.id===id);
-  const ansDiv = document.getElementById('panswer-'+id);
-  ansDiv.style.display = 'block';
-  ansDiv.innerHTML = '<strong>Model Answer:</strong><br>' + p.answer.replace(/\n/g,'<br>');
-  document.getElementById('pgrade-'+id).style.display = 'flex';
+function startPracticalSession() {
+  practicalSession = { idx: 0, grades: {}, revealed: {} };
+  document.getElementById('practical-lobby').style.display = 'none';
+  document.getElementById('practical-session').style.display = 'block';
+  renderPracticalQuestion();
 }
 
-function gradePractical(id, correct) {
-  const gradeDiv = document.getElementById('pgrade-'+id);
-  gradeDiv.innerHTML = correct ? '<span style="color:var(--correct-dark)">✓ Marked as correct!</span>' : '<span style="color:var(--wrong-dark)">✗ Marked for further study</span>';
+function exitPracticalSession() {
+  // Save partial session if anything graded
+  if (Object.keys(practicalSession.grades).length > 0) {
+    savePracticalSession();
+  }
+  practicalSession = null;
+  renderPracticalLobby();
+}
+
+function savePracticalSession() {
+  const s = {
+    date: new Date().toLocaleString(),
+    grades: practicalSession.grades,
+  };
+  appState.practicalSessions.unshift(s);
+  localStorage.setItem('vpPracticalSessions', JSON.stringify(appState.practicalSessions));
+}
+
+function renderPracticalQuestion() {
+  const p = PRACTICAL_QUESTIONS[practicalSession.idx];
+  const total = PRACTICAL_QUESTIONS.length;
+  const current = practicalSession.idx + 1;
+  document.getElementById('practical-counter').textContent = current + ' / ' + total;
+  const graded = practicalSession.grades[p.id];
+  const wasRevealed = practicalSession.revealed[p.id];
+  let html = '<div class="card">'
+    + '<div style="font-weight:700;font-size:1rem;margin-bottom:10px">🏥 ' + p.title + '</div>'
+    + '<div style="margin-bottom:14px;line-height:1.6">' + p.q + '</div>'
+    + '<textarea id="pa-text" class="practical-textarea" placeholder="Write your answer here, then reveal the model answer...">'
+    + '</textarea>'
+    + '<div class="flex-row" style="gap:8px;margin-top:10px">';
+
+  if (!wasRevealed) {
+    html += '<button class="btn btn-primary btn-sm" onclick="revealPracticalQ()">👁 Reveal Answer</button>';
+  }
+  html += '</div>';
+
+  if (wasRevealed) {
+    html += '<div class="feedback correct" style="margin-top:12px"><strong>Model Answer:</strong><br>' + p.answer.replace(/\n/g,'<br>') + '</div>';
+    if (graded === undefined) {
+      html += '<div style="margin-top:12px;font-weight:600;font-size:0.9rem">How did you do?</div>'
+        + '<div class="flex-row" style="gap:8px;margin-top:8px">'
+        + '<button class="btn btn-sm" style="background:var(--correct-bg);color:var(--correct-dark);flex:1" onclick="gradePracticalQ(true)">✓ Got it right</button>'
+        + '<button class="btn btn-sm" style="background:var(--wrong-bg);color:var(--wrong-dark);flex:1" onclick="gradePracticalQ(false)">✗ Need more study</button>'
+        + '</div>';
+    } else {
+      html += '<div style="margin-top:10px;font-weight:600;color:' + (graded ? 'var(--correct-dark)' : 'var(--wrong-dark)') + '">'
+        + (graded ? '✓ Marked as correct' : '✗ Marked for further study') + '</div>';
+    }
+  }
+  html += '</div>';
+  document.getElementById('practical-question-area').innerHTML = html;
+  renderPracticalNav();
+}
+
+function revealPracticalQ() {
+  const p = PRACTICAL_QUESTIONS[practicalSession.idx];
+  practicalSession.revealed[p.id] = true;
+  renderPracticalQuestion();
+}
+
+function gradePracticalQ(correct) {
+  const p = PRACTICAL_QUESTIONS[practicalSession.idx];
+  practicalSession.grades[p.id] = correct;
+  renderPracticalQuestion();
+  renderPracticalNav();
+}
+
+function renderPracticalNav() {
+  const total = PRACTICAL_QUESTIONS.length;
+  const idx = practicalSession.idx;
+  const graded = Object.keys(practicalSession.grades).length;
+  let nav = '';
+  if (idx > 0) {
+    nav += '<button class="btn btn-ghost btn-sm" onclick="movePractical(-1)">← Prev</button>';
+  }
+  nav += '<div class="spacer"></div>';
+  if (idx < total - 1) {
+    nav += '<button class="btn btn-primary btn-sm" onclick="movePractical(1)">Next →</button>';
+  } else if (graded > 0) {
+    nav += '<button class="btn btn-primary btn-sm" onclick="finishPracticalSession()">Finish & Save ✓</button>';
+  }
+  document.getElementById('practical-nav').innerHTML = nav;
+}
+
+function movePractical(dir) {
+  practicalSession.idx = Math.max(0, Math.min(PRACTICAL_QUESTIONS.length - 1, practicalSession.idx + dir));
+  renderPracticalQuestion();
+}
+
+function finishPracticalSession() {
+  savePracticalSession();
+  const total = Object.keys(practicalSession.grades).length;
+  const correct = Object.values(practicalSession.grades).filter(Boolean).length;
+  const pct = total > 0 ? Math.round(correct/total*100) : 0;
+  practicalSession = null;
+  document.getElementById('result-score-circle').textContent = pct + '%';
+  document.getElementById('result-title').textContent = pct >= 80 ? '🎉 Excellent!' : pct >= 60 ? '👍 Good Job!' : '📚 Keep Studying!';
+  document.getElementById('result-subtitle').textContent = correct + ' / ' + total + ' procedures correct';
+  document.getElementById('result-modal').classList.add('open');
+  renderPracticalLobby();
 }
 
 // =====================================================================
-// PAST QUESTIONS
+// PAST QUESTIONS — SESSION SYSTEM
 // =====================================================================
-function renderPastQs() {
-  document.getElementById('pastqs-list').innerHTML = PAST_QUESTIONS.map(p => `
-    <div class="card">
-      <div style="font-weight:600;margin-bottom:8px">📝 ${p.id.replace('pq','Q')}</div>
-      <div style="margin-bottom:12px">${p.q}</div>
-      <button class="btn btn-ghost btn-sm" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">👁 Show Answer</button>
-      <div class="feedback correct" style="display:none">${p.answer.replace(/\n/g,'<br>')}</div>
-    </div>
-  `).join('');
+
+let pastqsSession = null;
+
+function renderPastQsLobby() {
+  document.getElementById('pastqs-lobby').style.display = 'block';
+  document.getElementById('pastqs-session').style.display = 'none';
+  const sessions = appState.pastqsSessions;
+  const el = document.getElementById('pastqs-history');
+  if (sessions.length === 0) {
+    el.innerHTML = '<div class="card" style="text-align:center;padding:28px 16px">'
+      + '<div style="font-size:2.5rem;margin-bottom:10px">📋</div>'
+      + '<div style="font-weight:600;margin-bottom:6px">No sessions yet</div>'
+      + '<div style="color:var(--text-muted);font-size:0.9rem;margin-bottom:16px">Work through real exam questions, reveal model answers, and self-grade. Track what you need to review.</div>'
+      + '<button class="btn btn-primary" onclick="startPastQsSession()">Start First Session</button>'
+      + '</div>';
+    return;
+  }
+  const mastery = {};
+  sessions.forEach(s => {
+    Object.entries(s.grades).forEach(([id, correct]) => {
+      if (!mastery[id]) mastery[id] = {correct:0,total:0};
+      mastery[id].total++;
+      if (correct) mastery[id].correct++;
+    });
+  });
+  const needWork = PAST_QUESTIONS.filter(p => {
+    const m = mastery[p.id];
+    return !m || (m.correct / m.total) < 0.6;
+  });
+  let html = '';
+  if (needWork.length > 0) {
+    html += '<div class="card" style="background:linear-gradient(135deg,#fff3cd,#ffeaa7);border:1.5px solid #ffc107;margin-bottom:16px">'
+      + '<div style="font-weight:700;color:#856404;margin-bottom:8px">⚠️ Needs More Study (' + needWork.length + '/' + PAST_QUESTIONS.length + ')</div>'
+      + needWork.map(p => '<div style="font-size:0.85rem;color:#856404;padding:2px 0">• ' + p.q.substring(0, 70) + (p.q.length > 70 ? '…' : '') + '</div>').join('')
+      + '</div>';
+  } else {
+    html += '<div class="card" style="background:linear-gradient(135deg,#d4edda,#c3e6cb);border:1.5px solid #28a745;margin-bottom:16px">'
+      + '<div style="font-weight:700;color:#155724">✅ All past questions well-practiced!</div></div>';
+  }
+  html += '<div class="section-title" style="margin-top:4px">Session History</div>';
+  html += sessions.slice(0, 20).map((s) => {
+    const total = Object.keys(s.grades).length;
+    const correct = Object.values(s.grades).filter(Boolean).length;
+    const pct = total > 0 ? Math.round(correct/total*100) : 0;
+    const col = pct >= 70 ? 'var(--correct-dark)' : pct >= 50 ? '#856404' : 'var(--wrong-dark)';
+    const bg = pct >= 70 ? 'var(--correct-bg)' : pct >= 50 ? '#fff3cd' : 'var(--wrong-bg)';
+    return '<div class="card" style="margin-bottom:10px">'
+      + '<div class="flex-row"><span style="font-weight:600;font-size:0.9rem">' + s.date + '</span>'
+      + '<span class="badge" style="background:' + bg + ';color:' + col + '">' + pct + '%</span></div>'
+      + '<div style="color:var(--text-muted);font-size:0.83rem;margin-top:4px">' + correct + '/' + total + ' questions correct</div>'
+      + '</div>';
+  }).join('');
+  el.innerHTML = html;
 }
 
-// =====================================================================
+function startPastQsSession() {
+  pastqsSession = { idx: 0, grades: {}, revealed: {} };
+  document.getElementById('pastqs-lobby').style.display = 'none';
+  document.getElementById('pastqs-session').style.display = 'block';
+  renderPastQsQuestion();
+}
+
+function exitPastQsSession() {
+  if (Object.keys(pastqsSession.grades).length > 0) {
+    savePastQsSession();
+  }
+  pastqsSession = null;
+  renderPastQsLobby();
+}
+
+function savePastQsSession() {
+  const s = {
+    date: new Date().toLocaleString(),
+    grades: pastqsSession.grades,
+  };
+  appState.pastqsSessions.unshift(s);
+  localStorage.setItem('vpPastqsSessions', JSON.stringify(appState.pastqsSessions));
+}
+
+function renderPastQsQuestion() {
+  const p = PAST_QUESTIONS[pastqsSession.idx];
+  const total = PAST_QUESTIONS.length;
+  document.getElementById('pastqs-counter').textContent = (pastqsSession.idx + 1) + ' / ' + total;
+  const graded = pastqsSession.grades[p.id];
+  const wasRevealed = pastqsSession.revealed[p.id];
+  let html = '<div class="card">'
+    + '<div style="font-weight:700;font-size:1rem;margin-bottom:10px">📝 ' + p.id.replace('pq','Q') + '</div>'
+    + '<div style="margin-bottom:14px;line-height:1.6">' + p.q + '</div>'
+    + '<div class="flex-row" style="gap:8px;margin-bottom:4px">';
+  if (!wasRevealed) {
+    html += '<button class="btn btn-primary btn-sm" onclick="revealPastQsQ()">👁 Show Answer</button>';
+  }
+  html += '</div>';
+  if (wasRevealed) {
+    html += '<div class="feedback correct" style="margin-top:10px">' + p.answer.replace(/\n/g,'<br>') + '</div>';
+    if (graded === undefined) {
+      html += '<div style="margin-top:12px;font-weight:600;font-size:0.9rem">Did you know this?</div>'
+        + '<div class="flex-row" style="gap:8px;margin-top:8px">'
+        + '<button class="btn btn-sm" style="background:var(--correct-bg);color:var(--correct-dark);flex:1" onclick="gradePastQsQ(true)">✓ Yes, I knew it</button>'
+        + '<button class="btn btn-sm" style="background:var(--wrong-bg);color:var(--wrong-dark);flex:1" onclick="gradePastQsQ(false)">✗ Need to review</button>'
+        + '</div>';
+    } else {
+      html += '<div style="margin-top:10px;font-weight:600;color:' + (graded ? 'var(--correct-dark)' : 'var(--wrong-dark)') + '">'
+        + (graded ? '✓ Marked as known' : '✗ Marked for review') + '</div>';
+    }
+  }
+  html += '</div>';
+  document.getElementById('pastqs-question-area').innerHTML = html;
+  renderPastQsNav();
+}
+
+function revealPastQsQ() {
+  const p = PAST_QUESTIONS[pastqsSession.idx];
+  pastqsSession.revealed[p.id] = true;
+  renderPastQsQuestion();
+}
+
+function gradePastQsQ(correct) {
+  const p = PAST_QUESTIONS[pastqsSession.idx];
+  pastqsSession.grades[p.id] = correct;
+  renderPastQsQuestion();
+  renderPastQsNav();
+}
+
+function renderPastQsNav() {
+  const total = PAST_QUESTIONS.length;
+  const idx = pastqsSession.idx;
+  const graded = Object.keys(pastqsSession.grades).length;
+  let nav = '';
+  if (idx > 0) {
+    nav += '<button class="btn btn-ghost btn-sm" onclick="movePastQs(-1)">← Prev</button>';
+  }
+  nav += '<div class="spacer"></div>';
+  if (idx < total - 1) {
+    nav += '<button class="btn btn-primary btn-sm" onclick="movePastQs(1)">Next →</button>';
+  } else if (graded > 0) {
+    nav += '<button class="btn btn-primary btn-sm" onclick="finishPastQsSession()">Finish & Save ✓</button>';
+  }
+  document.getElementById('pastqs-nav').innerHTML = nav;
+}
+
+function movePastQs(dir) {
+  pastqsSession.idx = Math.max(0, Math.min(PAST_QUESTIONS.length - 1, pastqsSession.idx + dir));
+  renderPastQsQuestion();
+}
+
+function finishPastQsSession() {
+  savePastQsSession();
+  const total = Object.keys(pastqsSession.grades).length;
+  const correct = Object.values(pastqsSession.grades).filter(Boolean).length;
+  const pct = total > 0 ? Math.round(correct/total*100) : 0;
+  pastqsSession = null;
+  document.getElementById('result-score-circle').textContent = pct + '%';
+  document.getElementById('result-title').textContent = pct >= 80 ? '🎉 Excellent!' : pct >= 60 ? '👍 Good Job!' : '📚 Keep Studying!';
+  document.getElementById('result-subtitle').textContent = correct + ' / ' + total + ' questions correct';
+  document.getElementById('result-modal').classList.add('open');
+  renderPastQsLobby();
+}
+
+
 // STATS
 // =====================================================================
 function renderStats() {
@@ -1046,8 +1355,12 @@ function resetAllStats() {
   if (!confirm('Reset ALL progress? This cannot be undone.')) return;
   appState.allStats = {};
   appState.sessions = [];
+  appState.practicalSessions = [];
+  appState.pastqsSessions = [];
   localStorage.removeItem('vpStats');
   localStorage.removeItem('vpSessions');
+  localStorage.removeItem('vpPracticalSessions');
+  localStorage.removeItem('vpPastqsSessions');
   renderStats();
   renderHome();
 }
