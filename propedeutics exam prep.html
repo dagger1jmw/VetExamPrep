@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Veterinary Propedeutics — Exam Prep</title>
+<style>
+  :root {
+    --bg: #f5f0fb; --surface: #fdfaff; --surface2: #f0eaf8;
+    --primary: #b388e8; --primary-dark: #8a5ccf;
+    --accent: #f9c5d1; --accent2: #b5ead7; --accent3: #ffdac1; --accent4: #c7e4f9;
+    --text: #2d2040; --text-muted: #7a6a99; --border: #ddd0f5;
+    --correct: #a8e6c1; --correct-dark: #3a9e6a;
+    --wrong: #f9bfbf; --wrong-dark: #c0392b;
+    --warn: #ffe4a0; --warn-dark: #b07d00;
+    --radius: 14px; --shadow: 0 2px 16px rgba(120,80,200,0.10);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+  nav { background: var(--surface); border-bottom: 2px solid var(--border); padding: 0 20px; display: flex; align-items: center; gap: 4px; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; box-shadow: var(--shadow); }
+  nav .logo { font-size: 1.1rem; font-weight: 800; color: var(--primary-dark); padding: 12px 0; margin-right: 12px; }
+  nav .logo span { color: var(--accent); }
+  nav button.nav-btn { background: none; border: none; padding: 12px 10px; color: var(--text-muted); font-size: 0.85rem; font-weight: 600; cursor: pointer; border-bottom: 3px solid transparent; transition: all 0.2s; white-space: nowrap; }
+  nav button.nav-btn:hover, nav button.nav-btn.active { color: var(--primary-dark); border-bottom-color: var(--primary); }
+  .page { display: none; padding: 20px; max-width: 1100px; margin: 0 auto; }
+  .page.active { display: block; }
+  .card { background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 18px; margin-bottom: 14px; box-shadow: var(--shadow); }
+  .hero { background: linear-gradient(135deg, var(--primary) 0%, var(--accent4) 100%); border-radius: 18px; padding: 36px 28px; color: white; margin-bottom: 24px; }
+  .hero h1 { font-size: 1.8rem; font-weight: 900; margin-bottom: 8px; }
+  .hero p { font-size: 1rem; opacity: 0.92; margin-bottom: 18px; }
+  .hero-stats { display: flex; gap: 14px; flex-wrap: wrap; }
+  .hero-stat { background: rgba(255,255,255,0.22); border-radius: 10px; padding: 10px 16px; text-align: center; }
+  .hero-stat .num { font-size: 1.5rem; font-weight: 800; }
+  .hero-stat .lbl { font-size: 0.75rem; opacity: 0.85; }
+  .mode-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; margin-bottom: 24px; }
+  .mode-card { background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 20px; cursor: pointer; transition: all 0.2s; text-align: center; }
+  .mode-card:hover { border-color: var(--primary); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(120,80,200,0.15); }
+  .mode-card .icon { font-size: 2rem; margin-bottom: 8px; }
+  .mode-card h3 { color: var(--primary-dark); margin-bottom: 6px; font-size: 0.95rem; }
+  .mode-card p { font-size: 0.82rem; color: var(--text-muted); }
+  .btn { display: inline-flex; align-items: center; gap: 6px; padding: 9px 18px; border-radius: 10px; font-size: 0.88rem; font-weight: 700; border: none; cursor: pointer; transition: all 0.2s; }
+  .btn-primary { background: var(--primary); color: white; }
+  .btn-primary:hover { background: var(--primary-dark); }
+  .btn-ghost { background: var(--surface2); color: var(--text); border: 1.5px solid var(--border); }
+  .btn-ghost:hover { border-color: var(--primary); color: var(--primary-dark); }
+  .btn-success { background: var(--correct); color: var(--correct-dark); }
+  .btn-danger { background: var(--wrong); color: var(--wrong-dark); }
+  .btn-sm { padding: 6px 12px; font-size: 0.8rem; }
+  .topic-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 11px; margin-bottom: 18px; }
+  .topic-chip { background: var(--surface); border: 1.5px solid var(--border); border-radius: 10px; padding: 12px 14px; cursor: pointer; transition: all 0.2s; }
+  .topic-chip:hover { border-color: var(--primary); background: var(--surface2); }
+  .topic-chip .tname { font-weight: 700; font-size: 0.88rem; color: var(--primary-dark); }
+  .topic-chip .tcount { font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; }
+  .topic-chip .tscore { margin-top: 4px; font-size: 0.75rem; }
+  .quiz-header { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+  .quiz-header h2 { flex: 1; font-size: 1.05rem; color: var(--primary-dark); }
+  .progress-bar { height: 7px; background: var(--border); border-radius: 4px; overflow: hidden; margin-bottom: 14px; }
+  .progress-fill { height: 100%; background: linear-gradient(90deg, var(--primary), var(--accent4)); border-radius: 4px; transition: width 0.4s; }
+  .question-card { background: var(--surface); border: 2px solid var(--border); border-radius: 16px; padding: 24px; margin-bottom: 14px; }
+  .q-meta { display: flex; gap: 7px; margin-bottom: 12px; flex-wrap: wrap; }
+  .tag { display: inline-block; padding: 3px 9px; border-radius: 20px; font-size: 0.73rem; font-weight: 700; }
+  .tag-topic { background: var(--accent4); color: #1a5a8a; }
+  .tag-easy { background: var(--accent2); color: #1a6a4a; }
+  .tag-medium { background: var(--warn); color: var(--warn-dark); }
+  .tag-hard { background: var(--wrong); color: var(--wrong-dark); }
+  .tag-practical { background: var(--accent3); color: #7a4000; }
+  .tag-past { background: var(--accent); color: #8a2040; }
+  .q-text { font-size: 1rem; font-weight: 600; margin-bottom: 16px; line-height: 1.5; }
+  .options { display: flex; flex-direction: column; gap: 9px; }
+  .option-btn { background: var(--surface2); border: 1.5px solid var(--border); border-radius: 10px; padding: 11px 14px; text-align: left; cursor: pointer; font-size: 0.9rem; transition: all 0.2s; display: flex; align-items: center; gap: 9px; }
+  .option-btn:hover:not(:disabled) { border-color: var(--primary); background: #f0e6ff; }
+  .option-btn.correct { background: var(--correct); border-color: var(--correct-dark); }
+  .option-btn.wrong { background: var(--wrong); border-color: var(--wrong-dark); }
+  .option-btn:disabled { cursor: default; }
+  .opt-letter { width: 24px; height: 24px; border-radius: 50%; background: var(--border); color: var(--text-muted); font-size: 0.78rem; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .option-btn.correct .opt-letter { background: var(--correct-dark); color: white; }
+  .option-btn.wrong .opt-letter { background: var(--wrong-dark); color: white; }
+  .tf-btns { display: flex; gap: 12px; }
+  .tf-btn { flex: 1; padding: 14px; font-size: 0.95rem; font-weight: 700; border-radius: 12px; border: 2px solid var(--border); background: var(--surface2); cursor: pointer; transition: all 0.2s; }
+  .tf-btn:hover:not(:disabled) { border-color: var(--primary); }
+  .tf-btn.correct { background: var(--correct); border-color: var(--correct-dark); color: var(--correct-dark); }
+  .tf-btn.wrong { background: var(--wrong); border-color: var(--wrong-dark); color: var(--wrong-dark); }
+  .feedback { margin-top: 12px; padding: 11px 14px; border-radius: 10px; font-size: 0.88rem; line-height: 1.5; }
+  .feedback.correct { background: var(--correct); color: var(--correct-dark); }
+  .feedback.wrong { background: var(--wrong); color: var(--wrong-dark); }
+  .feedback .exp { margin-top: 5px; font-weight: 400; }
+  .practical-textarea { width: 100%; min-height: 110px; border-radius: 10px; border: 1.5px solid var(--border); padding: 11px; font-size: 0.9rem; font-family: inherit; resize: vertical; transition: border-color 0.2s; background: var(--surface2); }
+  .practical-textarea:focus { outline: none; border-color: var(--primary); }
+  .answer-reveal { background: var(--surface2); border: 1.5px solid var(--border); border-radius: 10px; padding: 14px; margin-top: 10px; font-size: 0.87rem; line-height: 1.7; }
+  .answer-reveal h4 { color: var(--primary-dark); margin-bottom: 7px; }
+  .self-grade { display: flex; gap: 9px; margin-top: 10px; align-items: center; flex-wrap: wrap; }
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 22px; }
+  .stat-card { background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 16px; text-align: center; }
+  .stat-card .big { font-size: 2rem; font-weight: 900; color: var(--primary-dark); }
+  .stat-card .lbl { font-size: 0.78rem; color: var(--text-muted); margin-top: 3px; }
+  .topic-stat-row { display: flex; align-items: center; gap: 9px; padding: 9px 0; border-bottom: 1px solid var(--border); }
+  .topic-stat-row:last-child { border-bottom: none; }
+  .topic-stat-name { flex: 1; font-size: 0.87rem; font-weight: 600; }
+  .mini-bar { flex: 2; height: 9px; background: var(--border); border-radius: 5px; overflow: hidden; }
+  .mini-bar-fill { height: 100%; border-radius: 5px; transition: width 0.4s; }
+  .topic-stat-pct { width: 40px; text-align: right; font-size: 0.82rem; font-weight: 700; }
+  .badge-needs-work { background: var(--wrong); color: var(--wrong-dark); padding: 2px 8px; border-radius: 8px; font-size: 0.72rem; font-weight: 700; }
+  .badge-good { background: var(--correct); color: var(--correct-dark); padding: 2px 8px; border-radius: 8px; font-size: 0.72rem; font-weight: 700; }
+  .session-card { background: var(--surface); border: 1.5px solid var(--border); border-radius: 11px; padding: 14px; margin-bottom: 10px; display: flex; align-items: center; gap: 12px; }
+  .session-card .s-date { font-size: 0.78rem; color: var(--text-muted); }
+  .session-card .s-score { font-size: 1.1rem; font-weight: 800; color: var(--primary-dark); }
+  .session-card .s-mode { font-size: 0.77rem; background: var(--accent4); color: #1a5a8a; padding: 3px 9px; border-radius: 8px; font-weight: 700; }
+  .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(40,20,80,0.4); z-index: 200; align-items: center; justify-content: center; }
+  .modal-overlay.open { display: flex; }
+  .modal { background: var(--surface); border-radius: 18px; padding: 28px; max-width: 480px; width: 90%; box-shadow: 0 20px 60px rgba(100,60,200,0.25); }
+  .modal h2 { color: var(--primary-dark); margin-bottom: 14px; }
+  .modal-btns { display: flex; gap: 9px; margin-top: 18px; flex-wrap: wrap; justify-content: center; }
+  .result-big { text-align: center; padding: 24px; }
+  .result-big .score-circle { width: 110px; height: 110px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--accent4)); display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; font-size: 1.8rem; font-weight: 900; color: white; }
+  .section-title { font-size: 1.1rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 14px; display: flex; align-items: center; gap: 7px; }
+  .divider { height: 1px; background: var(--border); margin: 18px 0; }
+  .flex-row { display: flex; gap: 9px; align-items: center; flex-wrap: wrap; }
+  .spacer { flex: 1; }
+  .empty-state { text-align: center; padding: 40px 20px; color: var(--text-muted); }
+  .empty-state .icon { font-size: 2.5rem; margin-bottom: 10px; }
+  select.styled { background: var(--surface2); border: 1.5px solid var(--border); border-radius: 8px; padding: 7px 12px; font-size: 0.87rem; color: var(--text); cursor: pointer; }
+  @media (max-width: 600px) { .hero h1 { font-size: 1.3rem; } .page { padding: 12px; } nav .logo { font-size: 0.95rem; } }
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">🩺 Vet<span>Prep</span></div>
+  <button class="nav-btn active" onclick="showPage('home')">🏠 Home</button>
+  <button class="nav-btn" onclick="showPage('topics')">📚 Topics</button>
+  <button class="nav-btn" onclick="showPage('practical')">🔬 Practical</button>
+  <button class="nav-btn" onclick="showPage('pastqs')">📋 Past Exams</button>
+  <button class="nav-btn" onclick="showPage('stats')">📊 Progress</button>
+</nav>
+
+<div id="page-home" class="page active">
+  <div class="hero">
+    <h1>🩺 Veterinary Propedeutics</h1>
+    <p>Master clinical examination & diagnostics for your upcoming exam</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num" id="stat-total-q">0</div><div class="lbl">Questions</div></div>
+      <div class="hero-stat"><div class="num">31</div><div class="lbl">Topics</div></div>
+      <div class="hero-stat"><div class="num" id="stat-practical-q">0</div><div class="lbl">Practical</div></div>
+      <div class="hero-stat"><div class="num" id="stat-sessions">0</div><div class="lbl">Sessions</div></div>
+    </div>
+  </div>
+  <div class="section-title">🚀 Start Studying</div>
+  <div class="mode-grid">
+    <div class="mode-card" onclick="showPage('topics')"><div class="icon">📖</div><h3>Topic Study</h3><p>Study all questions within one topic. Deep dives.</p></div>
+    <div class="mode-card" onclick="startExamMode()"><div class="icon">🎯</div><h3>Exam Prep Mode</h3><p>3–4 random questions per topic. Simulate your exam.</p></div>
+    <div class="mode-card" onclick="showPage('practical')"><div class="icon">🔬</div><h3>Practical Skills</h3><p>Describe clinical procedures. Self-grade after revealing model answers.</p></div>
+    <div class="mode-card" onclick="showPage('pastqs')"><div class="icon">📋</div><h3>Past Exam Questions</h3><p>Practice with real questions from previous written exams.</p></div>
+  </div>
+  <div class="section-title">📊 Recent Sessions</div>
+  <div id="home-stats"></div>
+</div>
+
+<div id="page-topics" class="page">
+  <div class="flex-row" style="margin-bottom:18px">
+    <div class="section-title" style="margin:0">📚 Topics</div>
+    <div class="spacer"></div>
+    <button class="btn btn-primary btn-sm" onclick="startExamMode()">🎯 Exam Prep Mode</button>
+  </div>
+  <div id="topics-grid" class="topic-grid"></div>
+</div>
+
+<div id="page-quiz" class="page">
+  <div id="quiz-area"></div>
+</div>
+
+<div id="page-practical" class="page">
+  <div class="flex-row" style="margin-bottom:18px">
+    <div class="section-title" style="margin:0">🔬 Practical Skills</div>
+    <div class="spacer"></div>
+    <select class="styled" id="practical-topic-filter" onchange="renderPractical()">
+      <option value="all">All Topics</option>
+    </select>
+  </div>
+  <div id="practical-list"></div>
+</div>
+
+<div id="page-pastqs" class="page">
+  <div class="section-title">📋 Past Exam Questions</div>
+  <div class="card" style="margin-bottom:18px;background:linear-gradient(135deg,#fdf0f5,#f0eaff)">
+    <p style="font-size:0.88rem;color:var(--text-muted)">Real questions from previous written exams. Click to reveal the model answer, then mark whether you knew it.</p>
+  </div>
+  <div id="pastqs-list"></div>
+</div>
+
+<div id="page-stats" class="page">
+  <div class="flex-row" style="margin-bottom:18px">
+    <div class="section-title" style="margin:0">📊 My Progress</div>
+    <div class="spacer"></div>
+    <button class="btn btn-ghost btn-sm" onclick="resetAllStats()" style="color:var(--wrong-dark)">🗑 Reset All</button>
+  </div>
+  <div class="stats-grid" id="overall-stats"></div>
+  <div class="section-title">📈 By Topic (worst first)</div>
+  <div class="card" id="topic-stats-list"></div>
+  <div class="divider"></div>
+  <div class="section-title">🕐 Session History</div>
+  <div id="session-history-list"></div>
+</div>
+
+<div class="modal-overlay" id="result-modal">
+  <div class="modal">
+    <div class="result-big">
+      <div class="score-circle" id="result-score-circle">0%</div>
+      <h2 id="result-title">Done!</h2>
+      <p id="result-subtitle" style="color:var(--text-muted);margin-top:7px"></p>
+    </div>
+    <div class="modal-btns">
+      <button class="btn btn-primary" onclick="closeResultModal();showPage('stats')">📊 View Stats</button>
+      <button class="btn btn-ghost" onclick="closeResultModal();showPage('home')">🏠 Home</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// =====================================================================
+// TOPICS
+// =====================================================================
+const TOPICS = [
+  {id:'t01',name:'Handling & Restraint',color:'#e8d5f5'},
+  {id:'t02',name:'Physical Exam (IPPA)',color:'#d5e8f5'},
+  {id:'t03',name:'Order of Clinical Exam',color:'#d5f5e3'},
+  {id:'t04',name:'Habitus & Body Condition',color:'#f5e8d5'},
+  {id:'t05',name:'Vital Signs: Temperature',color:'#f5d5d5'},
+  {id:'t06',name:'Vital Signs: Pulse & HR',color:'#d5f5f5'},
+  {id:'t07',name:'Vital Signs: Respiration',color:'#f5f5d5'},
+  {id:'t08',name:'Rumen & Rumination',color:'#e8f5d5'},
+  {id:'t09',name:'Chemistry Profile & Biochem',color:'#f5d5e8'},
+  {id:'t10',name:'CBC & Haematology',color:'#d5d5f5'},
+  {id:'t11',name:'Mucous Membranes & Lymph Nodes',color:'#f5e8d5'},
+  {id:'t12',name:'Peripheral Circulation',color:'#d5f5e8'},
+  {id:'t13',name:'Blood Pressure Measurement',color:'#e8d5d5'},
+  {id:'t14',name:'Weight Changes & Exercise Testing',color:'#d5e8d5'},
+  {id:'t15',name:'Drug Administration',color:'#e8e8d5'},
+  {id:'t16',name:'Heart Examination & ECG',color:'#d5e8e8'},
+  {id:'t17',name:'GI Tract Clinical Signs',color:'#e8d5f5'},
+  {id:'t18',name:'Oral Cavity & Oesophagus',color:'#d5f5d5'},
+  {id:'t19',name:'Abdominal Exam: Small Animals',color:'#f5d5f5'},
+  {id:'t20',name:'Abdominal Exam: Horses',color:'#d5e8f5'},
+  {id:'t21',name:'Abdominal Exam: Ruminants',color:'#f5ead5'},
+  {id:'t22',name:'Rectal Examination',color:'#e8f5e8'},
+  {id:'t23',name:'Respiratory System Exam',color:'#f5d5d5'},
+  {id:'t24',name:'Urinary System',color:'#d5d5e8'},
+  {id:'t25',name:'Catheterisation & Urinalysis',color:'#f5e8e8'},
+  {id:'t26',name:'Neurological Examination',color:'#e8d5e8'},
+  {id:'t27',name:'Dermatology',color:'#d5f5f5'},
+  {id:'t28',name:'Small Mammals',color:'#f5f5d5'},
+  {id:'t29',name:'Liver Examination',color:'#d5e8d5'},
+  {id:'t30',name:'Skin Lesions',color:'#e8e8f5'},
+  {id:'t31',name:'Abdominocentesis & Thoracocentesis',color:'#f5d5e8'},
+];
+
+const ALL_QUESTIONS = [
+// t01
+{topic:'t01',type:'mcq',diff:'easy',q:'What is the safest place to stand when handling a horse?',opts:['Near the front left leg','Directly behind the horse','To the right hindquarters','In front at a distance'],ans:0,exp:'Stand close to the front left leg to minimise kick risk.'},
+{topic:'t01',type:'tf',diff:'easy',q:'A twitch can be applied to the upper lip or ear of a horse for restraint.',ans:true,exp:'Twitch on upper lip or ear is a standard horse restraint technique.'},
+{topic:'t01',type:'mcq',diff:'easy',q:'How many degrees of vision do cattle have?',opts:['180°','240°','300°','360°'],ans:2,exp:'Cattle have approximately 300° vision.'},
+{topic:'t01',type:'tf',diff:'easy',q:'Piglets should never be grasped by the tail or ears.',ans:true,exp:'Piglets should be caught by the hindlegs and supported.'},
+{topic:'t01',type:'mcq',diff:'easy',q:'What portable device is used to examine pigs in the smallest possible space?',opts:['Stock','Hog board','Breeding hobble','Twitch'],ans:1,exp:'A hog board confines pigs in a small area for examination.'},
+{topic:'t01',type:'mcq',diff:'medium',q:'What is the technique for repositioning sheep/goats to check mouth, eyes, and feet?',opts:['Casting','Tipping','Snubbing','Hobbling'],ans:1,exp:'Tipping places sheep or goats in a specific position to check mouth, eyes, and feet.'},
+{topic:'t01',type:'mcq',diff:'easy',q:'What is the minimum gap to leave when applying a cattle nasal ring to avoid necrosis?',opts:['1 mm','2 mm','3.5 mm','5 mm'],ans:2,exp:'Leave 3.5 mm to avoid pressure necrosis.'},
+{topic:'t01',type:'tf',diff:'medium',q:'Slings can be used for horses that cannot bear any body weight.',ans:false,exp:'Slings should only be used if the horse CAN bear its full body weight.'},
+{topic:'t01',type:'mcq',diff:'medium',q:'Which chemical agent is NOT typically used for restraint in horses?',opts:['Xylazine','Detomidine','Acepromazine','Propofol'],ans:3,exp:'Propofol is an induction agent, not a routine horse restraint drug.'},
+{topic:'t01',type:'mcq',diff:'easy',q:'IV access in dogs and cats is typically achieved via which vein?',opts:['Jugular vein','Cephalic or saphenous vein','Ear vein','Coccygeal vein'],ans:1,exp:'Cephalic or saphenous vein for IV access in dogs and cats.'},
+{topic:'t01',type:'mcq',diff:'medium',q:'How are foals restrained?',opts:['Twitch on the lip','One hand on tail, one on neck, with the mother present','In a stock','Nose snare'],ans:1,exp:'Foals: one hand on tail, one on neck, always with the mother present.'},
+{topic:'t01',type:'tf',diff:'medium',q:'A blindfold can help load a shy horse into a vehicle.',ans:true,exp:'Blindfolds are indicated for loading shy horses into vehicles.'},
+{topic:'t01',type:'mcq',diff:'medium',q:'For older pigs, what is placed around the upper jaw behind the canine teeth?',opts:['Hog board','Breeding hobble','Nose snare or snubbing rope','Metal hobble'],ans:2,exp:'A nose snare or snubbing rope around the upper jaw behind canines restrains older pigs.'},
+{topic:'t01',type:'mcq',diff:'easy',q:'Which restraint collar prevents a horse from licking wounds?',opts:['Breeding hobble','Blindfold','Cradle or cross-tie','Stock'],ans:2,exp:'Cradles or cross-ties prevent the horse from reaching wounds with its mouth.'},
+{topic:'t01',type:'mcq',diff:'medium',q:'In cattle, what prevents kicking during milking?',opts:['Hip lifters','Hind limbs tied with a metal hobble','Tail tie','Nose tongs'],ans:1,exp:'A metal (rope) hobble tied around the hind limbs prevents kicking during milking.'},
+// t02
+{topic:'t02',type:'mcq',diff:'easy',q:'What does IPPA stand for?',opts:['Inspection, Palpation, Percussion, Auscultation','Inspection, Pressure, Pulse, Auscultation','Identification, Palpation, Percussion, Assessment','Inspection, Palpation, Posture, Auscultation'],ans:0,exp:'IPPA: Inspection, Palpation, Percussion, Auscultation.'},
+{topic:'t02',type:'mcq',diff:'easy',q:'The main percussion sounds are:',opts:['Tympanic and resonant only','Resonance and dullness','Fremitus and fluctuation','Crackles and wheezes'],ans:1,exp:'Main percussion sounds: resonance (air) and dullness (fluid/solid tissue).'},
+{topic:'t02',type:'mcq',diff:'medium',q:'What type of percussion is used for nasal and paranasal sinuses?',opts:['Indirect digito-digital','Direct percussion','Ballottement','Auscultatory percussion'],ans:1,exp:'Direct percussion is used for nasal and paranasal sinuses.'},
+{topic:'t02',type:'mcq',diff:'medium',q:'A phonendoscope differs from a stethoscope in that it:',opts:['Has no membrane','Has a membrane','Is only used in horses','Cannot detect heart sounds'],ans:1,exp:'A phonendoscope HAS a membrane; a stethoscope does not.'},
+{topic:'t02',type:'tf',diff:'easy',q:'A tympanic percussion sound indicates gas in a single compartment.',ans:true,exp:'Tympanic = gas in one compartment; atympanic = gas in many pockets (lungs).'},
+{topic:'t02',type:'mcq',diff:'medium',q:'A "wave under the surface" felt under pressure during palpation is called:',opts:['Fremitus','Fluctuation','Emphysema-like','Edema-like'],ans:1,exp:'Fluctuation: pressure reveals a wave under the surface — indicates fluid in a cyst, abscess, or haematoma.'},
+{topic:'t02',type:'mcq',diff:'medium',q:'What consistency has decreased ability to straighten under pressure?',opts:['Elastic','Hard','Edema-like (doughy)','Emphysema-like'],ans:2,exp:'Edema-like (doughy): decreased ability to straighten under pressure.'},
+{topic:'t02',type:'mcq',diff:'medium',q:'The tap movement in percussion should be:',opts:['Long, slow and heavy','Vertical, short, fast and light','Horizontal and firm','In a circular pattern'],ans:1,exp:'Percussion tap: vertical, short, fast, light, with a short pause between knocks.'},
+{topic:'t02',type:'mcq',diff:'easy',q:'What do we auscultate during physical exam?',opts:['Respiratory sounds only','Heart tones only','Respiratory sounds, heart tones, peristaltic sounds, and ruminal contractions','Blood pressure and nerve conduction'],ans:2,exp:'Auscultation covers: respiratory sounds, heart tones, peristaltic sounds, and ruminal contractions.'},
+{topic:'t02',type:'tf',diff:'medium',q:'Do not tap more than 2-3 times on the same location during percussion.',ans:true,exp:'Do not tap more than 2-3 times on the same spot; move 2-3 cm each time.'},
+{topic:'t02',type:'mcq',diff:'medium',q:'What phenomenon is felt when membranes slip over each other during palpation?',opts:['Fluctuation','Fremitus','Emphysema-like','Edema-like'],ans:1,exp:'Fremitus = shivering/friction felt when membranes slip over each other.'},
+{topic:'t02',type:'tf',diff:'medium',q:'X-rays and ultrasound are special forms of indirect inspection.',ans:true,exp:'X-rays, ultrasound, CT, and MRI are special forms of indirect inspection.'},
+{topic:'t02',type:'mcq',diff:'hard',q:'An atympanic percussion sound (lungs) differs from tympanic because:',opts:['It is louder','Gas is split in many pockets giving a less clear sound','No gas is present','It indicates fluid only'],ans:1,exp:'Atympanic: gas in many pockets (lungs) = less clear sound than tympanic (single compartment).'},
+{topic:'t02',type:'mcq',diff:'medium',q:'Auscultation should proceed systematically from:',opts:['Caudal to cranial, ventral to dorsal','Cranial to caudal, dorsal to ventral','Left to right only','Only dorsal to ventral'],ans:1,exp:'Auscultation: cranial to caudal, dorsal to ventral.'},
+// t03
+{topic:'t03',type:'mcq',diff:'easy',q:'What is the first and most important step in clinical examination?',opts:['Physical exam','Signalment','History (anamnestic data)','Laboratory tests'],ans:2,exp:'History (anamnestic data) is the first and most important step.'},
+{topic:'t03',type:'tf',diff:'easy',q:'Owner data is part of the clinical examination.',ans:false,exp:'Owner data is NOT part of the clinical examination.'},
+{topic:'t03',type:'mcq',diff:'easy',q:'How many items are in the signalment?',opts:['4','6','8','10'],ans:2,exp:'Signalment has 8 items: species, breed, colour+markings, weight, sex, age, microchip, intended use.'},
+{topic:'t03',type:'mcq',diff:'medium',q:'Vital signs are taken in which order?',opts:['Pulse, Temperature, Respiration','Temperature, Pulse, Respiration (TPR)','Respiration, Temperature, Pulse','Lymph nodes, Temperature, Pulse'],ans:1,exp:'TPR: Temperature, Pulse, Respiration (plus ruminal contractions in ruminants).'},
+{topic:'t03',type:'mcq',diff:'medium',q:'HABITUS assessment includes:',opts:['Only nutritional condition and BCS','Consciousness, behaviour, posture, locomotion, nutritional condition, coat, abnormal sounds, abnormalities','History, age, breed, use, temperament, species','Temperature, pulse, respiration rate'],ans:1,exp:'HABITUS: consciousness, behaviour, posture, locomotion, nutritional condition, coat, abnormal sounds, abnormalities.'},
+{topic:'t03',type:'tf',diff:'medium',q:'The close physical exam uses IPPA: inspection, palpation, percussion, and auscultation.',ans:true,exp:'Step C (Close physical exam) employs IPPA.'},
+{topic:'t03',type:'mcq',diff:'easy',q:'Normal CRT (capillary refill time) is:',opts:['<1 second','1-2 seconds','3-4 seconds','>4 seconds'],ans:1,exp:'Normal CRT is 1-2 seconds.'},
+{topic:'t03',type:'mcq',diff:'medium',q:'Peripheral circulation assessment includes checking:',opts:['Only jugular veins','MM colour/moisture/CRT, skin turgor, skin temperature, arterial pulse, peripheral veins, and heart auscultation','Only CRT and MM colour','Blood pressure and CBC'],ans:1,exp:'Peripheral circulation: MM, skin turgor, skin/extremity temperature, arterial pulse, peripheral veins, heart auscultation.'},
+{topic:'t03',type:'mcq',diff:'hard',q:'In the close exam, what is assessed THIRD after vital signs and peripheral circulation?',opts:['Organ systems','Habitus','Lymph nodes','ECG'],ans:2,exp:'Order: 1. Vital signs, 2. Peripheral circulation, 3. Lymph nodes, 4. Organ systems.'},
+{topic:'t03',type:'tf',diff:'easy',q:'History taking should include the primary complaint and the chronology of abnormalities.',ans:true,exp:'History: primary complaint, chronology of abnormalities, and treatment/management history.'},
+{topic:'t03',type:'mcq',diff:'medium',q:'The distant/general exam (Step A) primarily assesses:',opts:['Lymph nodes','Organ systems','HABITUS','Vital signs only'],ans:2,exp:'Step A = distant/general exam = HABITUS assessment.'},
+{topic:'t03',type:'mcq',diff:'medium',q:'Which is NOT included in the signalment?',opts:['Species','Owner name','Microchip number','Intended use'],ans:1,exp:'Owner name is NOT in the signalment (8 items: species, breed, colour+markings, weight, sex, age, microchip, intended use).'},
+{topic:'t03',type:'tf',diff:'medium',q:'Head pressing is an abnormal behaviour noted during habitus assessment.',ans:true,exp:'Head pressing is an abnormal behaviour observed during the distant (habitus) exam.'},
+{topic:'t03',type:'mcq',diff:'medium',q:'Farm animals should have which environmental factors examined?',opts:['Feed and water only','Soil type, population density, feed/water, waste disposal, housing/ventilation, hygiene','Housing and ventilation only','Population density only'],ans:1,exp:'Farm animals: soil type, population density, feed/water, waste disposal, housing/ventilation, and hygiene.'},
+{topic:'t03',type:'tf',diff:'easy',q:'Sardonic grin (risus sardonicus) and opisthotonus suggest tetanus.',ans:true,exp:'Sardonic grin and opisthotonus observed during the distant head exam suggest tetanus.'},
+// t04
+{topic:'t04',type:'mcq',diff:'easy',q:'Habitus is defined as:',opts:['Species and breed of an animal','A set of external features including conformation, age, body condition, and behaviour','Temperature and pulse rate','Results of blood tests'],ans:1,exp:'Habitus = a set of external features: conformation, age, body condition, and behaviour.'},
+{topic:'t04',type:'mcq',diff:'easy',q:'The BCS scale in small animals ranges from:',opts:['1-5','1-7','1-9','1-10'],ans:2,exp:'BCS: 1-9 in small animals; 1-5 in large animals.'},
+{topic:'t04',type:'mcq',diff:'easy',q:'An animal is overweight when it exceeds ideal body weight by:',opts:['>5%','>10%','>15%','>20%'],ans:1,exp:'Overweight = >10% above ideal body weight.'},
+{topic:'t04',type:'mcq',diff:'easy',q:'An animal is obese when it exceeds ideal body weight by:',opts:['>10%','>15%','>20%','>30%'],ans:2,exp:'Obese = >20% above ideal body weight.'},
+{topic:'t04',type:'tf',diff:'easy',q:'Overweight animals have their lifespan decreased by approximately 2 years.',ans:true,exp:'Overweight decreases lifespan by ~2 years and predisposes to multiple diseases.'},
+{topic:'t04',type:'mcq',diff:'medium',q:'What is cachexia?',opts:['Exhaustion from starvation','Weight loss caused by disease','Overweight due to overfeeding','Normal BCS reduction with exercise'],ans:1,exp:'Cachexia = weight loss caused by disease (cardiac, renal, oncology patients).'},
+{topic:'t04',type:'mcq',diff:'medium',q:'What is inanitio?',opts:['Weight loss from disease','Exhaustion from lack of nourishment/starvation','Cachexia due to neoplasia','Overhydration'],ans:1,exp:'Inanitio = exhaustion from lack of nourishment/starvation.'},
+{topic:'t04',type:'mcq',diff:'medium',q:'BCS evaluates which 3 aspects?',opts:['Height, weight, coat condition','Volume/contours of body, muscle development, and subcutaneous fat','Temperature, hydration, and pulse','Breed, age, and nutrition'],ans:1,exp:'BCS evaluates: (1) volume/contours, (2) muscle development, (3) subcutaneous fat.'},
+{topic:'t04',type:'mcq',diff:'medium',q:'Conformation depends on which factors?',opts:['Species, breed, age, and purpose of use','Only species and breed','Body weight and muscle mass only','Nutrition and exercise alone'],ans:0,exp:'Conformation depends on species/breed, age, and purpose of use.'},
+{topic:'t04',type:'mcq',diff:'medium',q:'Which diseases is obesity predisposed to?',opts:['Musculoskeletal, cardiovascular, DM, UTI, and hepatic lipidosis','Only musculoskeletal diseases','Only diabetes mellitus','Respiratory diseases only'],ans:0,exp:'Obesity predisposes to: musculoskeletal diseases, lameness, cardiovascular disease, DM, UTI, and hepatic lipidosis.'},
+{topic:'t04',type:'mcq',diff:'medium',q:'The BCS scale in large animals ranges from:',opts:['1-9','1-7','1-5','1-10'],ans:2,exp:'Large animals use a 1-5 BCS scale.'},
+{topic:'t04',type:'tf',diff:'easy',q:'Abnormal coat findings include dull, dry coat, alopecia, and pigmentation changes.',ans:true,exp:'Coat abnormalities: dull, dry, alopecia, pigmentation changes.'},
+// t05
+{topic:'t05',type:'mcq',diff:'easy',q:'Normal rectal temperature for large breed dogs is:',opts:['36.5-37.5°C','37.5-39.2°C','38.5-40°C','36-38°C'],ans:1,exp:'Large breed dogs: 37.5-39.2°C.'},
+{topic:'t05',type:'mcq',diff:'easy',q:'Normal body temperature for horses is:',opts:['37.0-38.0°C','37.5-38.5°C','38.5-39.5°C','36.5-37.5°C'],ans:1,exp:'Horses: 37.5-38.5°C.'},
+{topic:'t05',type:'mcq',diff:'easy',q:'Normal body temperature for cattle is:',opts:['37.0-38.0°C','37.5-38.5°C','38.0-39.5°C','39.5-41°C'],ans:2,exp:'Cattle: 38.0-39.5°C.'},
+{topic:'t05',type:'mcq',diff:'easy',q:'Normal cat temperature is:',opts:['36.5-38°C','37.2-38.2°C','38.0-39.3°C','39.5-40.5°C'],ans:2,exp:'Cats: 38.0-39.3°C.'},
+{topic:'t05',type:'mcq',diff:'medium',q:'Lethal hypothermia in dogs occurs at approximately:',opts:['30°C','28°C','25°C','20°C'],ans:2,exp:'Lethal hypothermia in dogs occurs at 25°C.'},
+{topic:'t05',type:'tf',diff:'easy',q:'Fever is an inflammatory elevation of body temperature.',ans:true,exp:'Fever = inflammatory; hyperthermia = non-inflammatory elevation.'},
+{topic:'t05',type:'mcq',diff:'medium',q:'Hyperthermia is:',opts:['Inflammatory increase in temperature','Non-inflammatory increase in temperature','Any increase above 39°C','Temperature below normal'],ans:1,exp:'Hyperthermia = non-inflammatory increase (e.g., heat, exercise, dehydration).'},
+{topic:'t05',type:'mcq',diff:'medium',q:'Severe fever is a temperature rise of:',opts:['0.5-1°C','1-1.5°C','1.7-2.2°C','2.8-3.3°C'],ans:3,exp:'Severe fever = 2.8-3.3°C above normal. Mild = 1°C; moderate = 1.7-2.2°C.'},
+{topic:'t05',type:'mcq',diff:'easy',q:'Correct rectal temperature technique:',opts:['Insert, hold centrally, read immediately','Lubricate, touch rectal wall (not centre), wait 2 min until beep, wipe','Insert without lubrication for 30 sec','Touch skin surface only'],ans:1,exp:'Lubricate, touch the rectal wall (not centre), wait 2 min until beep, then wipe.'},
+{topic:'t05',type:'tf',diff:'medium',q:'Vital signs should be taken early in the exam to avoid stress-induced changes.',ans:true,exp:'Take vital signs early — stress causes hyperthermia; rectal exam itself can decrease temperature.'},
+{topic:'t05',type:'mcq',diff:'medium',q:'Aseptic fever is caused by:',opts:['Bacteria','Viruses','Non-infectious immune-mediated mechanisms','Parasites'],ans:2,exp:'Aseptic fever = caused by non-infectious immune-mediated mechanisms.'},
+{topic:'t05',type:'mcq',diff:'medium',q:'At 41-42°C in hyperthermia, which signs occur?',opts:['Mild panting only','Salivation, restlessness, lateral recumbency, convulsions, coma','Only tachycardia','Only tachypnoea'],ans:1,exp:'At 41-42°C: salivation, restlessness, lateral recumbency, convulsions, and coma.'},
+{topic:'t05',type:'tf',diff:'medium',q:'Neonates are particularly susceptible to hypothermia.',ans:true,exp:'Neonates are especially susceptible to hypothermia.'},
+{topic:'t05',type:'mcq',diff:'medium',q:'A cause of hypothermia is:',opts:['High room temperature','Infection','Hypocalcaemia or vasodilators','Excessive exercise'],ans:2,exp:'Hypothermia causes: cold environment, starvation, GA, hypocalcaemia, anaemia, dehydration, vasodilators.'},
+{topic:'t05',type:'mcq',diff:'easy',q:'Normal goat temperature is closest to:',opts:['37.0-38.0°C','38.5-40.0°C','39.0-40.5°C','36.5-37.5°C'],ans:2,exp:'Normal goat temperature: approximately 39.0-40.5°C.'},
+// t06
+{topic:'t06',type:'mcq',diff:'easy',q:'Normal heart rate in large breed dogs:',opts:['40-60 bpm','60-140 bpm','150-200 bpm','24-36 bpm'],ans:1,exp:'Large breed dogs: 60-140 bpm. Small/toy: 70-180 bpm.'},
+{topic:'t06',type:'mcq',diff:'easy',q:'Normal heart rate in horses:',opts:['60-80 bpm','45-60 bpm','28-46 bpm','80-100 bpm'],ans:2,exp:'Horses: 28-46 bpm.'},
+{topic:'t06',type:'mcq',diff:'easy',q:'Normal heart rate in cats:',opts:['60-120 bpm','80-160 bpm','120-240 bpm','240-280 bpm'],ans:2,exp:'Cats: 120-240 bpm.'},
+{topic:'t06',type:'mcq',diff:'easy',q:'Normal heart rate in cattle:',opts:['28-46 bpm','45-55 bpm','60-72 bpm','80-100 bpm'],ans:2,exp:'Cattle: 60-72 bpm.'},
+{topic:'t06',type:'mcq',diff:'medium',q:'Arterial pulse in dogs and cats is palpated at the:',opts:['Facial artery','Femoral artery','Coccygeal artery','Jugular vein'],ans:1,exp:'Femoral artery for dogs and cats.'},
+{topic:'t06',type:'mcq',diff:'medium',q:'Pulsus paradoxus is the first clinical sign of:',opts:['Atrial fibrillation','Dilated cardiomyopathy','Cardiac tamponade','Complete AV block'],ans:2,exp:'Pulsus paradoxus = first sign of cardiac tamponade.'},
+{topic:'t06',type:'mcq',diff:'medium',q:'Pulsus alternans is associated with:',opts:['Sinus arrhythmia','Dilated cardiomyopathy','Cardiac tamponade','PVCs'],ans:1,exp:'Pulsus alternans = dilated cardiomyopathy.'},
+{topic:'t06',type:'tf',diff:'easy',q:'The larger the difference between systolic and diastolic pressure, the stronger the pulse.',ans:true,exp:'Larger systolic-diastolic difference = stronger pulse.'},
+{topic:'t06',type:'mcq',diff:'medium',q:'Pulsus bigeminus is associated with:',opts:['Cardiac tamponade','Premature ventricular contractions (PVCs)','Dilated cardiomyopathy','Atrial fibrillation'],ans:1,exp:'Pulsus bigeminus = PVCs.'},
+{topic:'t06',type:'tf',diff:'medium',q:'Sinus respiratory arrhythmia (HR increases on inspiration) is normal in dogs.',ans:true,exp:'Sinus respiratory arrhythmia is normal in dogs.'},
+{topic:'t06',type:'mcq',diff:'hard',q:'A pulse deficit occurs when:',opts:['HR is too slow','Heartbeat is heard but pulse cannot be felt (due to PVCs)','Pulse is very strong','Pulse is irregular but strong'],ans:1,exp:'Pulse deficit: heartbeat audible but no corresponding pulse wave felt.'},
+{topic:'t06',type:'mcq',diff:'medium',q:'The facial artery is used for pulse palpation in:',opts:['Dogs','Cats','Horses','Cattle'],ans:2,exp:'Facial (external maxillary) artery is used in horses.'},
+{topic:'t06',type:'mcq',diff:'medium',q:'The pulse should be palpated for at least:',opts:['15 seconds','30 seconds','1 minute','2 minutes'],ans:2,exp:'Palpate for at least 1 minute, bilaterally, gentle pressure, 1-3 fingers.'},
+{topic:'t06',type:'mcq',diff:'hard',q:'Atrial fibrillation produces which pulse rhythm?',opts:['Regularly regular','Irregularly regular','Irregularly irregular','Regularly irregular'],ans:2,exp:'AF = irregularly irregular pulse rhythm.'},
+// t07
+{topic:'t07',type:'mcq',diff:'easy',q:'Normal respiratory rate in large breed dogs:',opts:['8-16/min','18-30/min','30-40/min','40-50/min'],ans:1,exp:'Large breed dogs: 18-30/min. Small breeds: 24-36/min.'},
+{topic:'t07',type:'mcq',diff:'easy',q:'Normal respiratory rate in horses:',opts:['4-8/min','8-16/min','20-30/min','30-40/min'],ans:1,exp:'Horses: 8-16/min.'},
+{topic:'t07',type:'mcq',diff:'easy',q:'Normal respiratory rate in cattle:',opts:['8-16/min','14-18/min','20-30/min','35-45/min'],ans:2,exp:'Cattle: 20-30/min.'},
+{topic:'t07',type:'mcq',diff:'easy',q:'Normal respiratory rate in cats:',opts:['8-14/min','20-30/min','32-42/min','40-50/min'],ans:1,exp:'Cats: 20-30/min.'},
+{topic:'t07',type:'mcq',diff:'medium',q:'A heave line in horses indicates:',opts:['Pneumothorax','Chronic COPD with expiratory dyspnoea','Pleural effusion','Diaphragmatic hernia'],ans:1,exp:'Heave line (ventral to external oblique muscles) = chronic COPD with expiratory dyspnoea.'},
+{topic:'t07',type:'mcq',diff:'medium',q:'Normal breathing is characterised by:',opts:['Active expiration, passive inspiration','Active inspiration, passive expiration, then a pause','Both phases active','No pause between phases'],ans:1,exp:'Normal: active inspiration → passive expiration → pause.'},
+{topic:'t07',type:'mcq',diff:'medium',q:'Abdominal breathing type (more abdominal wall movement) indicates:',opts:['Peritonitis','Pleuritis or intercostal muscle paralysis','Pneumothorax','Normal breathing'],ans:1,exp:'Abdominal breathing = pleuritis or intercostal muscle paralysis.'},
+{topic:'t07',type:'mcq',diff:'medium',q:'Thoracic breathing type (more thoracic wall movement) indicates:',opts:['Pleuritis','Peritonitis','Pneumothorax','COPD'],ans:1,exp:'Thoracic breathing = peritonitis.'},
+{topic:'t07',type:'tf',diff:'easy',q:'Panting in dogs can be normal; calm the dog and close the mouth before counting RR.',ans:true,exp:'Panting can be normal in dogs — calm them before counting RR.'},
+{topic:'t07',type:'mcq',diff:'hard',q:'5 parameters evaluated when assessing respiration:',opts:['Rate, depth, type, symmetry, smell','Rate, rhythm, depth, type, symmetry','Rate, colour, depth, type, symmetry','Rate, rhythm, depth, sound, symmetry'],ans:1,exp:'5 parameters: rate, rhythm, depth, type, and symmetry.'},
+{topic:'t07',type:'mcq',diff:'medium',q:'Cheyne-Stokes respiration is:',opts:['Normal 3-phase breathing','Alternating hyperpnoea and apnoea — abnormal rhythm','Active inspiration with passive expiration','Brief apnoea between breaths — normal'],ans:1,exp:'Cheyne-Stokes = abnormal rhythm with alternating hyperpnoea and apnoea.'},
+{topic:'t07',type:'tf',diff:'medium',q:'Inspiratory dyspnoea can produce audible stridor.',ans:true,exp:'Inspiratory dyspnoea: difficult prolonged inspiration with exaggerated movements, often with stridor.'},
+{topic:'t07',type:'mcq',diff:'medium',q:'Asymmetry of thoracic movement is caused by:',opts:['Peritonitis only','Pneumothorax or painful thorax disease','COPD only','Normal in old animals'],ans:1,exp:'Asymmetric hemithorax: pneumothorax or painful thorax disease.'},
+{topic:'t07',type:'mcq',diff:'easy',q:'Tachypnoea/polypnoea refers to:',opts:['Decreased RR','Increased RR','Absent respiration','Normal RR'],ans:1,exp:'Tachypnoea/polypnoea = increased respiratory rate.'},
+{topic:'t07',type:'mcq',diff:'hard',q:'Paradoxical breathing indicates disease in:',opts:['Upper airways','Lower airways','Lung parenchyma','Pleural space'],ans:3,exp:'Paradoxical breathing (asynchronous movements + muffled sounds) = pleural space disease.'},
+// t08
+{topic:'t08',type:'mcq',diff:'easy',q:'The four stages of rumination in order:',opts:['Resalivation, remastication, regurgitation, reswallowing','Regurgitation, remastication, resalivation, reswallowing','Remastication, regurgitation, reswallowing, resalivation','Reswallowing, resalivation, remastication, regurgitation'],ans:1,exp:'Rumination: 1) Regurgitation, 2) Remastication, 3) Resalivation, 4) Reswallowing.'},
+{topic:'t08',type:'mcq',diff:'easy',q:'Normal rumen contraction rate:',opts:['1-3/min','3-5/min','5-7/min','<1/min'],ans:0,exp:'Normal reticulorumen contractions: 1-3/min.'},
+{topic:'t08',type:'mcq',diff:'easy',q:'Normal rumen pH is:',opts:['3.5-5.0','5.5-7.2','7.5-8.5','4.0-6.0'],ans:1,exp:'Rumen pH: 5.5-7.2 (lower with grain-based diets).'},
+{topic:'t08',type:'mcq',diff:'medium',q:'Rumen chloride >30 mEq/L indicates:',opts:['Normal rumen function','Low protein diet','Abomasal reflux','Rumen acidosis'],ans:2,exp:'Chloride <30 mEq/L = normal. >30 mEq/L = abomasal reflux (or excess salt in diet).'},
+{topic:'t08',type:'mcq',diff:'easy',q:'Normal rumen capacity:',opts:['50-80 L','100-130 L','150-200 L','250-300 L'],ans:2,exp:'Rumen capacity: 150-200 litres.'},
+{topic:'t08',type:'mcq',diff:'medium',q:'Normal contractions in 2 minutes during rumen examination:',opts:['1','2','3 (of which 1 should be eructation)','5'],ans:2,exp:'Normal: 3 contractions in 2 min, 1 of which is an eructation.'},
+{topic:'t08',type:'mcq',diff:'medium',q:'Normal rumen sound is described as:',opts:['Fluid-tinkling','Rolling thunder (crackling/grating)','High-pitched pings','Silent'],ans:1,exp:'Normal rumen sounds = "rolling thunder" (crackling/grating/exploding).'},
+{topic:'t08',type:'tf',diff:'medium',q:'Rumen contractions are controlled via the vagus nerve and the ruminoreticular motor centre in the medulla.',ans:true,exp:'Correct — vagus nerve and ruminoreticular motor centre in the medulla oblongata.'},
+{topic:'t08',type:'mcq',diff:'medium',q:'Normal rumen sedimentation/flotation time:',opts:['<2 min','2-4 min','4-8 min','>10 min'],ans:2,exp:'Normal sedimentation/flotation: 4-8 min. <2 min = acidosis; >8 min = starvation.'},
+{topic:'t08',type:'tf',diff:'easy',q:'Fluid-tinkling sound combined with a static rumen indicates excessive fluid.',ans:true,exp:'Fluid-tinkling/splashing + static rumen = excessive fluid.'},
+{topic:'t08',type:'mcq',diff:'medium',q:'Normal rumen fluid colour is:',opts:['Yellow or pale','Olive green or green-brownish','Dark brown or black','Bright red'],ans:1,exp:'Normal rumen fluid: olive green or green-brownish.'},
+{topic:'t08',type:'mcq',diff:'hard',q:'Percentage of the day cows spend ruminating:',opts:['15-20%','25-30%','35-45%','50-60%'],ans:2,exp:'Cows spend 35-45% of the day ruminating.'},
+{topic:'t08',type:'mcq',diff:'medium',q:'Where is the stethoscope placed for rumen auscultation?',opts:['Right paralumbar fossa','Left paralumbar fossa extending cranially from dorsal 1/3 of 10th-13th rib','Ventral abdomen','Right dorsal quadrant'],ans:1,exp:'L paralumbar fossa extending cranially from dorsal 1/3 of 10th-13th rib.'},
+// t09
+{topic:'t09',type:'mcq',diff:'easy',q:'Which tube is used for biochemistry testing?',opts:['Purple EDTA','Blue coagulation','Yellow (gel) or red (no gel)','Green'],ans:2,exp:'Yellow (gel) or red (no gel) tubes for biochemistry.'},
+{topic:'t09',type:'mcq',diff:'easy',q:'ALT is specific for hepatocyte damage in which species?',opts:['All species','Horses and cattle only','Dogs and cats only','Horses only'],ans:2,exp:'ALT is specific to dogs and cats only.'},
+{topic:'t09',type:'mcq',diff:'medium',q:'The primary liver biochemistry panel is:',opts:['ALT, AST, creatinine, urea, TP','ALT, ALP, GGT, bilirubin, TP, albumin, globulin','ALT, amylase, lipase, glucose','Urea, creatinine, electrolytes, CBC'],ans:1,exp:'Primary liver panel: ALT, ALP, GGT, bilirubin, TP, albumin, globulin.'},
+{topic:'t09',type:'mcq',diff:'medium',q:'Creatinine becomes elevated when what percentage of nephrons are lost?',opts:['25%','50%','75%','90%'],ans:2,exp:'Creatinine elevated when 75% of nephrons are lost.'},
+{topic:'t09',type:'mcq',diff:'medium',q:'Urea is synthesised in:',opts:['Kidneys','Liver','Pancreas','Intestines'],ans:1,exp:'Urea is synthesised in the liver (NH3 → urea).'},
+{topic:'t09',type:'tf',diff:'easy',q:'Creatinine production is constant and not affected by diet.',ans:true,exp:'Creatinine from muscle catabolism — constant production, not diet-dependent.'},
+{topic:'t09',type:'mcq',diff:'medium',q:'In horses, elevated bilirubin most commonly indicates:',opts:['Liver disease','Fasting — NOT liver disease','Haemolysis','Biliary obstruction'],ans:1,exp:'In horses, elevated bilirubin = fasting, not liver disease.'},
+{topic:'t09',type:'mcq',diff:'hard',q:'Which enzyme is NOT a cholestasis marker?',opts:['GGT','ALP','Bilirubin','AST'],ans:3,exp:'AST is NOT a cholestasis marker. GGT, ALP, and bilirubin are.'},
+{topic:'t09',type:'mcq',diff:'medium',q:'ALT indicates hepatocyte damage (NOT function) because:',opts:['It is not produced in the liver','It increases with the number of cells injured, not the degree of injury','It is excreted by kidneys','It only reflects pancreatic damage'],ans:1,exp:'ALT reflects number of damaged cells, not degree of liver function loss.'},
+{topic:'t09',type:'tf',diff:'medium',q:'In cows, urea can be used to estimate metabolic digestion of food.',ans:true,exp:'In cattle, urea estimates metabolic digestion.'},
+{topic:'t09',type:'mcq',diff:'hard',q:'Primary panel for exocrine pancreas:',opts:['ALT and ALP','Amylase and lipase','Urea and creatinine','GGT and bilirubin'],ans:1,exp:'Exocrine pancreas: amylase and lipase.'},
+{topic:'t09',type:'mcq',diff:'medium',q:'Subclinical ketosis in dairy cattle is detected by:',opts:['ALT and ALP','NEFA and beta-hydroxybutyrate','Bilirubin and bile acids','Urea and creatinine'],ans:1,exp:'NEFA and beta-hydroxybutyrate detect subclinical ketosis in dairy cows.'},
+{topic:'t09',type:'mcq',diff:'medium',q:'How long can serum be stored at -20°C?',opts:['1-2 days','3-7 days','Several months','1-2 years'],ans:2,exp:'Serum at -20°C: several months. At +4°C: 3-7 days. At -80°C: 1-2 years.'},
+// t10
+{topic:'t10',type:'mcq',diff:'easy',q:'Which tube is used for CBC/haematology?',opts:['Yellow gel','Red','Purple EDTA','Blue coagulation'],ans:2,exp:'Purple (EDTA) tube = haematology/CBC.'},
+{topic:'t10',type:'mcq',diff:'easy',q:'Left shift means:',opts:['Increased hypersegmented neutrophils','Increased immature neutrophils','Increased eosinophils','Decreased WBC count'],ans:1,exp:'Left shift = increased immature neutrophils (serious infection/sepsis).'},
+{topic:'t10',type:'mcq',diff:'medium',q:'Degenerative left shift is worse because:',opts:['It has more immature cells','It occurs WITHOUT neutrophilia (bone marrow not responding)','It only occurs in viral infections','It always includes eosinophilia'],ans:1,exp:'Degenerative left shift = immature neutrophils WITHOUT neutrophilia = worse prognosis.'},
+{topic:'t10',type:'mcq',diff:'easy',q:'Eosinophilia is associated with:',opts:['Bacterial infection only','Allergic reactions, parasitic infections, and neoplasia','Viral infections only','Dehydration'],ans:1,exp:'Eosinophilia = allergy, parasites, and neoplasia.'},
+{topic:'t10',type:'mcq',diff:'medium',q:'In horses and ruminants, blood is collected from the:',opts:['Cephalic vein','Saphenous vein','Jugular vein','Femoral vein'],ans:2,exp:'Horses and ruminants: jugular vein.'},
+{topic:'t10',type:'tf',diff:'easy',q:'Right shift (hypersegmented neutrophils) is less clinically serious than left shift.',ans:true,exp:'Right shift is less serious than left shift.'},
+{topic:'t10',type:'mcq',diff:'hard',q:'Lymphocytosis is associated with:',opts:['Parasitic infections','Viral infections and haematopoietic neoplasia (leukaemia/lymphoma)','Allergic reactions','Bacterial sepsis'],ans:1,exp:'Lymphocytosis = viral infections and haematopoietic neoplasia.'},
+{topic:'t10',type:'mcq',diff:'medium',q:'Blue coagulation tubes are used for:',opts:['Routine biochemistry','Coagulation tests — before surgery and in anaemic animals','Haematology only','Electrolyte testing'],ans:1,exp:'Blue tubes = coagulation tests; used before surgery and in anaemic animals.'},
+{topic:'t10',type:'mcq',diff:'medium',q:'Thrombocytopenia occurs in:',opts:['Dehydration','DIC (Disseminated Intravascular Coagulation)','Normal animals','Bacterial pneumonia'],ans:1,exp:'Thrombocytopenia = low platelet count, seen in DIC.'},
+{topic:'t10',type:'mcq',diff:'medium',q:'Relative polycythaemia is caused by:',opts:['Chronic myeloproliferative disease','Dehydration (haemoconcentration)','Heart disease','Kidney disease'],ans:1,exp:'Relative polycythaemia = dehydration (haemoconcentration).'},
+{topic:'t10',type:'mcq',diff:'medium',q:'Monocytosis indicates:',opts:['Parasitic infection','Viral infection','Inflammation','Allergic reaction'],ans:2,exp:'Monocytosis = inflammation.'},
+{topic:'t10',type:'tf',diff:'medium',q:'In swine and rabbits, blood is collected from the ear vein.',ans:true,exp:'Swine and rabbits: ear vein for blood collection.'},
+// t11
+{topic:'t11',type:'mcq',diff:'easy',q:'Normal mucous membrane colour is:',opts:['White','Pink','Brick-red','Yellow'],ans:1,exp:'Normal MM = pink.'},
+{topic:'t11',type:'mcq',diff:'easy',q:'4 aspects checked in MM examination:',opts:['Colour, moisture, CRT, discharge','Colour, temperature, swelling, discharge','Size, shape, texture, colour','Colour, moisture, smell, texture'],ans:0,exp:'MM exam: colour, moisture, CRT (1-2 sec normal), and discharge.'},
+{topic:'t11',type:'mcq',diff:'medium',q:'Icteric MM are caused by:',opts:['Anaemia or poor cardiac output','Haemolysis, hepatobiliary disease, or biliary obstruction','Pulmonary disease or shock','Polycythaemia'],ans:1,exp:'Icteric (yellow) MM = haemolysis, hepatobiliary disease, or biliary obstruction.'},
+{topic:'t11',type:'mcq',diff:'medium',q:'Pale MM indicate:',opts:['Polycythaemia or good perfusion','Poor cardiac output, anaemia, or sepsis','Dehydration only','Normal in cold weather'],ans:1,exp:'Pale MM = poor cardiac output, anaemia, or sepsis.'},
+{topic:'t11',type:'mcq',diff:'easy',q:'Palpable lymph nodes in healthy dogs and cats include:',opts:['Submandibular and popliteal only','Submandibular, prescapular, popliteal, axillary, and superficial inguinal','Mesenteric and sublumbar','Parotid and retropharyngeal only'],ans:1,exp:'Dogs/cats: submandibular, prescapular, popliteal, axillary, superficial inguinal.'},
+{topic:'t11',type:'mcq',diff:'medium',q:'Palpable LNs in a HEALTHY horse:',opts:['Prescapular and popliteal','Submandibular and subiliac','All superficial LNs','Mesenteric nodes only'],ans:1,exp:'Healthy horses: only submandibular and subiliac LNs are palpable.'},
+{topic:'t11',type:'mcq',diff:'medium',q:'Normal subiliac lymph nodes in cattle are:',opts:['0.5×2 cm, round','1-2×9 cm, elongated chain','3×5 cm, lobulated','2.5 cm, spherical'],ans:1,exp:'Cattle subiliac LNs: 1-2×9 cm, elongated chain, cranial to stifle.'},
+{topic:'t11',type:'tf',diff:'medium',q:'In sheep, predilection sites for caseous lymphadenitis are the parotid, submandibular, and cervical chains.',ans:true,exp:'Sheep caseous lymphadenitis: parotid, submandibular, and cervical chains.'},
+{topic:'t11',type:'mcq',diff:'hard',q:'7 characteristics assessed when examining a lymph node:',opts:['Size, shape, colour, discharge, warmth, smell, symmetry','Size, shape, temperature, consistency, pain, mobility, symmetry','Size, age, location, colour, pain, smell, texture','Size, consistency, and pain only'],ans:1,exp:'LN exam: size, shape, temperature, consistency, pain, movability, symmetry.'},
+{topic:'t11',type:'mcq',diff:'easy',q:'CRT >2 seconds indicates:',opts:['Normal perfusion','Dehydration, low cardiac output, or vasoconstriction','Polycythaemia','Normal stress response'],ans:1,exp:'CRT >2 sec = dehydration, low cardiac output, or vasoconstriction.'},
+{topic:'t11',type:'mcq',diff:'medium',q:'FNA of a lymph node provides confirmation but NOT exclusion because:',opts:['Sample is too large','Sample is too small, risking false negatives','It only detects bacteria','Not sensitive enough for neoplasia'],ans:1,exp:'FNA: confirmation only — sample too small for false negative exclusion.'},
+{topic:'t11',type:'mcq',diff:'medium',q:'Cyanotic MM can be caused by all EXCEPT:',opts:['Pulmonary parenchymal disease','Right-to-left shunting cardiac defect','Anaemia','Cold exposure'],ans:2,exp:'Cyanosis = low O2 saturation. Anaemia = pale MM. Cyanosis causes: pulmonary disease, R-to-L shunts, cold.'},
+{topic:'t11',type:'mcq',diff:'easy',q:'Brick-red (injected) MM indicate:',opts:['Anaemia or poor cardiac output','Polycythaemia, sepsis, excitement, or peripheral vasodilation','Dehydration alone','Normal after exercise'],ans:1,exp:'Brick-red MM = polycythaemia, sepsis, excitement, or peripheral vasodilation.'},
+{topic:'t11',type:'mcq',diff:'hard',q:'In cattle, which LN is only palpable if mastitis is present?',opts:['Prescapular','Subiliac','Supramammary','Retropharyngeal'],ans:2,exp:'Supramammary LN in ruminants: only palpable when mastitis is present.'},
+// t12
+{topic:'t12',type:'mcq',diff:'easy',q:'Palpation of the dorsal pedal artery indicates SAP of:',opts:['<60 mmHg','60-90 mmHg','>90 mmHg','>120 mmHg'],ans:2,exp:'Pedal pulse present = SAP >90 mmHg.'},
+{topic:'t12',type:'mcq',diff:'medium',q:'Femoral pulse present but no pedal pulse indicates SAP of:',opts:['<40 mmHg','40-60 mmHg','60-90 mmHg','>90 mmHg'],ans:2,exp:'Femoral present, no pedal = SAP 60-90 mmHg.'},
+{topic:'t12',type:'mcq',diff:'medium',q:'Absence of femoral pulse indicates SAP of:',opts:['<60 mmHg','60-90 mmHg','>90 mmHg','>120 mmHg'],ans:0,exp:'No femoral pulse = SAP <60 mmHg (critical hypotension).'},
+{topic:'t12',type:'mcq',diff:'medium',q:'In a standing animal with head raised, normal jugular veins should be:',opts:['Full and engorged','Empty','Mildly pulsating','Visibly distended'],ans:1,exp:'Jugular veins above the heart should be empty in a standing animal with head raised.'},
+{topic:'t12',type:'tf',diff:'medium',q:'Positive abdominojugular reflex is a normal finding.',ans:false,exp:'Positive abdominojugular reflex is ABNORMAL — seen in cardiac tamponade, constrictive pericarditis, heart failure.'},
+{topic:'t12',type:'mcq',diff:'hard',q:'During each heart cycle, how many venous pressure waves occur in the jugular?',opts:['1','2','3','5'],ans:2,exp:'Three venous pressure waves: a (atrial contraction), c (tricuspid valve closure), v (ventricular ejection).'},
+{topic:'t12',type:'mcq',diff:'easy',q:'Decompensated shock produces which MM colour?',opts:['Brick-red','Pale/white','Yellow','Blue'],ans:1,exp:'Decompensated shock = pale/white MM.'},
+{topic:'t12',type:'tf',diff:'medium',q:'Jugular vein pulsation is normal in healthy animals.',ans:false,exp:'Veins do NOT normally pulsate. Jugular pulsation indicates tricuspid regurgitation/right heart failure.'},
+{topic:'t12',type:'mcq',diff:'medium',q:'Positive venous stasis means:',opts:['Jugular vein empties rapidly','Portion below compression point does not empty and remains full','Jugular vein is never visible','Normal venous pressure'],ans:1,exp:'Positive stasis: portion below compression point stays full in advanced cases.'},
+{topic:'t12',type:'mcq',diff:'medium',q:'4 components of peripheral circulation assessment:',opts:['CBC, ECG, BP, CRT','CRT+MM, arterial pulse, systemic arterial BP, surface vein assessment','Temperature, HR, RR, BP','Urea, creatinine, electrolytes, BP'],ans:1,exp:'Peripheral circulation: 1) CRT+MM, 2) Arterial pulse, 3) Systemic BP, 4) Surface veins.'},
+{topic:'t12',type:'mcq',diff:'hard',q:'The coccygeal artery is used for pulse palpation in:',opts:['Dogs','Cats','Horses','Cattle'],ans:3,exp:'Cattle: coccygeal (ventral coccygeal) artery.'},
+// t13
+{topic:'t13',type:'mcq',diff:'easy',q:'Cuff size for BP measurement in dogs:',opts:['20% of limb circumference','30%','40%','50%'],ans:2,exp:'Dogs: cuff = 40% of limb circumference.'},
+{topic:'t13',type:'mcq',diff:'easy',q:'Cuff size for BP measurement in cats:',opts:['20%','30%','40%','50%'],ans:1,exp:'Cats: cuff = 30% of limb circumference.'},
+{topic:'t13',type:'mcq',diff:'medium',q:'In oscillometry, mean arterial pressure is recorded at:',opts:['Maximum cuff inflation','Point of maximal vessel wall oscillations','When Doppler sound first appears','Full cuff deflation'],ans:1,exp:'MAP = pressure at maximal oscillations.'},
+{topic:'t13',type:'mcq',diff:'medium',q:'With Doppler, systolic pressure is recorded as:',opts:['Pressure at maximal oscillations','When Doppler signal is again audible during deflation','When sound abruptly changes','At full inflation'],ans:1,exp:'Doppler SAP = pressure when signal becomes audible again during cuff deflation.'},
+{topic:'t13',type:'tf',diff:'easy',q:'Oscillometry is more accurate in dogs than cats.',ans:true,exp:'High definition oscillometry is more accurate in dogs than cats.'},
+{topic:'t13',type:'mcq',diff:'hard',q:'With Doppler, diastolic pressure is recorded as:',opts:['When signal first appears','When sound abruptly changes character','Average pressure during cardiac cycle','When cuff is fully deflated'],ans:1,exp:'Doppler DAP = pressure when sound abruptly changes.'},
+{topic:'t13',type:'mcq',diff:'medium',q:'Invasive BP measurement (arterial cannulation) is used:',opts:['Routine exam','During anaesthesia/surgery to monitor or exclude acute hypertension','Emergency triage only','Blood sampling only'],ans:1,exp:'Arterial cannulation: used during anaesthesia/surgery.'},
+{topic:'t13',type:'tf',diff:'medium',q:'The cuff should be at the same level as the heart for BP measurement.',ans:true,exp:'Cuff must be at heart level for accurate BP.'},
+{topic:'t13',type:'mcq',diff:'hard',q:'How many readings are advised in oscillometry for accuracy?',opts:['1','3','5','10'],ans:2,exp:'Series of 5 readings recommended.'},
+{topic:'t13',type:'mcq',diff:'medium',q:'Local anaesthesia for arterial cannulation should be applied how long before puncture?',opts:['Immediately before','1 minute','5 minutes','30 minutes'],ans:2,exp:'Lidocaine applied 5 minutes before arterial puncture.'},
+{topic:'t13',type:'mcq',diff:'medium',q:'After arterial cannulation, firm pressure should be applied for:',opts:['1 minute','2 minutes','5 minutes','10 minutes'],ans:2,exp:'Apply firm pressure for 5 minutes after arterial puncture.'},
+// t14
+{topic:'t14',type:'mcq',diff:'easy',q:'The 6-minute walk test is performed in:',opts:['Horses only','Cats','Dogs (not clinical patients or brachycephalic breeds)','All species'],ans:2,exp:'6-minute walk test for dogs — not clinical patients or brachycephalic breeds.'},
+{topic:'t14',type:'mcq',diff:'medium',q:'Bioelectrical impedance (BIA) measures:',opts:['Bone density only','Impedance to estimate fat vs water content','Heart function','Muscle contraction speed'],ans:1,exp:'BIA: current through body, voltage measured → impedance. Less H2O (more fat) = higher impedance.'},
+{topic:'t14',type:'tf',diff:'easy',q:'BMI is an effective measure in animals.',ans:false,exp:'BMI is NOT effective in animals — BCS (1-9 or 1-5) is used instead.'},
+{topic:'t14',type:'mcq',diff:'medium',q:'DEXA scans measure:',opts:['Blood flow','Bone density using low-level ionising X-ray radiation','Muscle composition only','Fat distribution only'],ans:1,exp:'DEXA = dual-energy X-ray absorptiometry for bone density.'},
+{topic:'t14',type:'mcq',diff:'medium',q:'Species that cannot vomit:',opts:['Dogs and cats','Horses, rabbits, rats, and guinea pigs','Ruminants only','All prey animals'],ans:1,exp:'Cannot vomit: horse, rabbit, rat, and guinea pig.'},
+{topic:'t14',type:'mcq',diff:'easy',q:'Vomiting differs from regurgitation in that vomiting is:',opts:['Passive, no prodromal signs','Active and forceful with prodromal signs (nausea, retching)','Only from oesophagus','Without visible effort'],ans:1,exp:'Vomiting: active, forceful, with prodromal signs. Regurgitation: passive, no prodromal signs.'},
+{topic:'t14',type:'mcq',diff:'medium',q:'Causes of underweight include:',opts:['Hypothyroidism and hyperadrenocorticism','IBD, DKA, EPI, vomiting, or diarrhoea','Overfeeding and low exercise','Glucocorticoid therapy'],ans:1,exp:'Underweight: IBD, DKA, EPI, vomiting, diarrhoea (PLE, SIBO).'},
+{topic:'t14',type:'mcq',diff:'easy',q:'Overweight is caused by:',opts:['IBD and malabsorption','Overfeeding, low activity, hypothyroidism, hyperadrenocorticism, or glucocorticoids','Starvation only','High exercise'],ans:1,exp:'Overweight: overfeeding, low activity, hypothyroidism, hyperadrenocorticism, glucocorticoids.'},
+{topic:'t14',type:'mcq',diff:'medium',q:'In the 6-minute exercise test for dogs, what is measured?',opts:['BP and SpO2 only','T, HR, and RR before and after, plus distance walked','Only HR','ECG only'],ans:1,exp:'Measure T, HR, RR before; walk dog 6 min measuring distance; measure vitals again and compare.'},
+{topic:'t14',type:'tf',diff:'medium',q:'Hyporexia and anorexia mean reduced and absent appetite respectively.',ans:true,exp:'Hyporexia = reduced appetite; anorexia = absent appetite.'},
+{topic:'t14',type:'mcq',diff:'medium',q:'Exercise intolerance is ultimately what type of phenomenon?',opts:['Purely cardiovascular','Neuromuscular — from metabolic stress at the muscle fibre level','Only pulmonary','Only cardiac'],ans:1,exp:'Exercise intolerance = neuromuscular phenomenon from extreme metabolic stress at muscle fibre level.'},
+// t15
+{topic:'t15',type:'mcq',diff:'easy',q:'The two main routes of drug administration are:',opts:['Oral and topical only','Enteral (per os, per rectum) and parenteral (SC, IV, IM, or localised)','IV only','Inhalation and oral'],ans:1,exp:'Enteral (per os, per rectum) or parenteral (SC, IV, IM, localised).'},
+{topic:'t15',type:'mcq',diff:'medium',q:'Oral medication is NOT appropriate when:',opts:['Patient is stable','Treating enteral disease','Patient has acute vomiting or is too sick to eat','Managing chronic disease'],ans:2,exp:'Do NOT give oral meds with acute vomiting or when patient is too sick/not eating.'},
+{topic:'t15',type:'mcq',diff:'easy',q:'In cattle/ruminants, SC and IM injections are given in:',opts:['Gluteal muscles','Neck region only','Femoral muscles','Lateral chest wall'],ans:1,exp:'Cows/ruminants: SC and IM in the neck region only.'},
+{topic:'t15',type:'mcq',diff:'medium',q:'Where can dogs and cats receive SC injections?',opts:['Gluteal muscles only','Neck region only','Lateral chest area','Femoral muscles only'],ans:2,exp:'Dogs/cats: SC in lateral chest area (note: post-vaccination sarcoma risk in cats at dorsal interscapular).'},
+{topic:'t15',type:'mcq',diff:'medium',q:'IM injections in the gluteal muscles are NOT recommended in:',opts:['Dogs','Cattle','Horses','Pigs'],ans:2,exp:'Horses: SC and IM in neck region; gluteal muscles NOT recommended.'},
+{topic:'t15',type:'mcq',diff:'hard',q:'Only which pigs can receive IM in the gluteal muscles?',opts:['All pigs','Adult sows','Boars','Piglets only'],ans:3,exp:'Pigs: SC and IM in neck region. Only PIGLETS can receive IM in gluteal muscles.'},
+{topic:'t15',type:'mcq',diff:'medium',q:'For perfusionally unstable patients, drugs should be given exclusively by:',opts:['Subcutaneous','Intramuscular','Intravenous (IV)','Oral'],ans:2,exp:'Perfusionally unstable patients: IV route only.'},
+{topic:'t15',type:'mcq',diff:'easy',q:'IV catheters are placed at approximately what angle?',opts:['15°','30°','45°','90°'],ans:2,exp:'IV catheters placed at 45° then fixed with tape.'},
+{topic:'t15',type:'mcq',diff:'hard',q:'IM injections in dogs and cats can be given in which muscles?',opts:['Neck region only','Femoral or prescapular muscles','Gluteal muscles only','Any accessible muscle'],ans:1,exp:'Dogs/cats: IM in femoral or prescapular muscles.'},
+{topic:'t15',type:'tf',diff:'medium',q:'When placing IV catheters in horses, the jugular vein is used.',ans:true,exp:'Horses: jugular vein for IV catheter placement.'},
+{topic:'t15',type:'mcq',diff:'medium',q:'SC injection technique requires:',opts:['No special preparation','Disinfect site, shave hair if needed, inject correctly into subcutaneous tissue','Only correct depth','Only correct volume'],ans:1,exp:'SC injection: disinfect, shave if needed, inject correctly into subcutaneous tissue.'},
+// t16
+{topic:'t16',type:'mcq',diff:'easy',q:'S1 ("Lub") is caused by:',opts:['Closure of aortic and pulmonary valves','Closure of mitral and tricuspid valves','Passive ventricular filling','Atrial systole'],ans:1,exp:'S1 = closure of mitral and tricuspid valves. End of diastole, start of systole.'},
+{topic:'t16',type:'mcq',diff:'easy',q:'S2 ("Dub") is caused by:',opts:['Closure of mitral and tricuspid valves','Passive ventricular filling','Closure of aortic and pulmonary valves','Atrial systole'],ans:2,exp:'S2 = closure of aortic and pulmonary valves. End of systole, start of diastole.'},
+{topic:'t16',type:'mcq',diff:'medium',q:'A gallop rhythm (S3 or S4) in small animals is:',opts:['Normal in all species','ABNORMAL in small animals only','Normal only in horses','Normal in all large animals'],ans:1,exp:'Gallop rhythm is ABNORMAL in small animals.'},
+{topic:'t16',type:'mcq',diff:'medium',q:'In healthy horses, which heart sounds are heard?',opts:['S1 and S2 only','S1, S2, S3 (30%), and S4 (almost all)','S1, S2, S3, S4 equally','Only S1'],ans:1,exp:'Healthy horses: S1, S2, S3 (~30%), S4 (almost all) — all NORMAL in horses.'},
+{topic:'t16',type:'mcq',diff:'easy',q:'The P wave on ECG represents:',opts:['Ventricular depolarisation','Atrial depolarisation','Ventricular repolarisation','Septal depolarisation'],ans:1,exp:'P wave = atrial depolarisation.'},
+{topic:'t16',type:'mcq',diff:'easy',q:'The QRS complex represents:',opts:['Atrial depolarisation','Atrial repolarisation','Ventricular depolarisation','Ventricular repolarisation'],ans:2,exp:'QRS = ventricular depolarisation.'},
+{topic:'t16',type:'mcq',diff:'easy',q:'The T wave represents:',opts:['Atrial depolarisation','Atrial repolarisation','Ventricular depolarisation','Ventricular repolarisation'],ans:3,exp:'T wave = ventricular repolarisation.'},
+{topic:'t16',type:'mcq',diff:'medium',q:'Which ECG lead is used to interpret the ECG?',opts:['Lead I','Lead II','Lead III','Lead aVR'],ans:1,exp:'ECG is read/interpreted using Lead II.'},
+{topic:'t16',type:'mcq',diff:'hard',q:'Complete AV block appears as:',opts:['QRS without P waves','P waves without associated QRS complexes','Absent T waves','Widened QRS only'],ans:1,exp:'Complete AV block: P waves present WITHOUT associated QRS complexes.'},
+{topic:'t16',type:'tf',diff:'hard',q:'A QRS complex without a T wave is compatible with life.',ans:false,exp:'No QRS without T wave = DEATH. Every QRS must be followed by a T wave.'},
+{topic:'t16',type:'mcq',diff:'medium',q:'Endocardial murmurs are caused by:',opts:['Pericardial friction','Turbulent blood flow (stenosis, dilatation, or regurgitation)','Normal valve function','Increased cardiac output only'],ans:1,exp:'Endocardial murmurs = always turbulent blood flow.'},
+{topic:'t16',type:'mcq',diff:'hard',q:'Sinus arrhythmia (HR increases on inspiration) is:',opts:['Abnormal in all species','Normal in dogs — vagal effect on SA node','Abnormal in dogs only','Normal in horses only'],ans:1,exp:'Sinus respiratory arrhythmia = normal in dogs (vagal tone on SA node).'},
+{topic:'t16',type:'mcq',diff:'medium',q:'The cardiac conduction system begins at:',opts:['AV node','SA node in the right atrium','Bundle of His','Left bundle branch'],ans:1,exp:'Conduction starts at the SA node in the right atrium.'},
+{topic:'t16',type:'mcq',diff:'easy',q:'Heart murmurs are classified by:',opts:['Intensity and location only','Intensity, location, timing, and shape','Timing and shape only','Location and timing only'],ans:1,exp:'Murmur classification: intensity (6 grades), location, timing, and shape.'},
+// t17
+{topic:'t17',type:'mcq',diff:'easy',q:'Most important clinical sign of oropharyngeal disease:',opts:['Regurgitation','Dysphagia','Vomiting','Tenesmus'],ans:1,exp:'Dysphagia = most important sign of oropharyngeal disease.'},
+{topic:'t17',type:'mcq',diff:'easy',q:'Most important clinical sign of oesophageal disease:',opts:['Vomiting','Dysphagia','Regurgitation','Haematemesis'],ans:2,exp:'Regurgitation = most important sign of oesophageal disease.'},
+{topic:'t17',type:'mcq',diff:'medium',q:'Melena is:',opts:['Fresh red blood in faeces','Black stool from digested blood (upper GI bleeding)','Mucus in faeces','Painful urge to defecate'],ans:1,exp:'Melena = black stool from digested blood = upper GI haemorrhage.'},
+{topic:'t17',type:'mcq',diff:'medium',q:'Haematochezia is:',opts:['Digested blood from small intestine','Fresh blood from lower intestine or anal sac disease','Bilirubin in stool','Normal in large animals'],ans:1,exp:'Haematochezia = fresh blood in faeces = lower GI or anal sac disease.'},
+{topic:'t17',type:'mcq',diff:'medium',q:'Small intestine diarrhoea is characterised by:',opts:['Small volume, mucus, tenesmus','Large volume, watery, NO tenesmus','Black tarry appearance','Bright red blood'],ans:1,exp:'SI diarrhoea: large volume, watery, no tenesmus.'},
+{topic:'t17',type:'mcq',diff:'easy',q:'Tenesmus is defined as:',opts:['Painful urination','Feeling of needing to defecate with empty bowels','Vomiting without prodromal signs','Loss of appetite'],ans:1,exp:'Tenesmus = feeling of needing to defecate though bowels are empty.'},
+{topic:'t17',type:'mcq',diff:'easy',q:'The three stages of vomiting in order:',opts:['Retching, nausea, vomiting','Nausea, retching, vomiting','Vomiting, retching, nausea','Nausea, vomiting, retching'],ans:1,exp:'Vomiting stages: nausea → retching → vomiting.'},
+{topic:'t17',type:'tf',diff:'easy',q:'Horses and rabbits cannot vomit.',ans:true,exp:'Cannot vomit: horse, rabbit, rat, and guinea pig.'},
+{topic:'t17',type:'mcq',diff:'medium',q:'Regurgitation differs from vomiting in that it is:',opts:['Active with prodromal signs','Passive, without prodromal signs, from mouth/oesophagus','Always preceded by nausea','A forceful process'],ans:1,exp:'Regurgitation = passive expulsion from mouth/oesophagus, no prodromal signs.'},
+{topic:'t17',type:'mcq',diff:'easy',q:'Diarrhoea is chronic if lasting more than:',opts:['3 days','7 days','14 days','30 days'],ans:2,exp:'Chronic diarrhoea: persists >14 days.'},
+{topic:'t17',type:'mcq',diff:'medium',q:'Borborygmus refers to:',opts:['Oral gas expulsion','Sound of gas propagating through the GI tract','Painful abdominal distension','Vomiting of digested material'],ans:1,exp:'Borborygmus = sound of gas propagating through the GI tract.'},
+{topic:'t17',type:'mcq',diff:'medium',q:'Dysphagia is clinically seen by:',opts:['Vomiting and tenesmus','Gagging, drooling, nasal discharge, coughing, and painful swallowing','Only loss of appetite','Black stool and weight loss'],ans:1,exp:'Dysphagia: gagging, drooling, nasal discharge, coughing, painful swallowing.'},
+{topic:'t17',type:'mcq',diff:'medium',q:'Acute abdomen "prayer posture" in small animals is:',opts:['Lateral recumbency and vocalisation','Thorax down and hindquarters up','Wide-based stance with lowered head','Running in circles'],ans:1,exp:'Acute abdomen: thorax down, hindquarters raised — prayer posture.'},
+// t18
+{topic:'t18',type:'mcq',diff:'easy',q:'Stomach tube in horses is passed through the:',opts:['Mouth','Nose','Either equally','Only left nostril'],ans:1,exp:'Horses and cats: stomach tube through the nose. Cattle, pigs, dogs: through the mouth.'},
+{topic:'t18',type:'mcq',diff:'medium',q:'In cats, where should foreign bodies be specifically checked?',opts:['Hard palate','Under the tongue around the frenulum','Tonsils','Pharynx only'],ans:1,exp:'Cats: always check under the tongue for foreign bodies around the frenulum.'},
+{topic:'t18',type:'mcq',diff:'easy',q:'In healthy dogs, the tonsils are:',opts:['Never visible','Partially visible','Always fully visible','Enlarged and painful'],ans:1,exp:'Healthy dogs: tonsils partially visible. Healthy cats: tonsils NEVER seen.'},
+{topic:'t18',type:'mcq',diff:'hard',q:'Which stomach tube extracts rumen content?',opts:['Thygesen tube','Neumann tube','Sorensen tube','Foley catheter'],ans:2,exp:'Sorensen tube for rumen content extraction; Thygesen for foreign body removal.'},
+{topic:'t18',type:'mcq',diff:'medium',q:'In a horse, the tube is confirmed in oesophagus (not trachea) when:',opts:['Animal coughs','You smell stomach contents','You see swallowing, feel resistance, and can visualise tube in cervical oesophagus','Tube passes without resistance'],ans:2,exp:'Oesophagus: visible swallowing, resistance felt, tube visible in cervical oesophagus. Trachea: no resistance, can feel breathing.'},
+{topic:'t18',type:'tf',diff:'medium',q:'Always put saline into a stomach tube before any medications.',ans:true,exp:'Always saline first — if tube is misplaced in trachea, saline is least harmful.'},
+{topic:'t18',type:'mcq',diff:'medium',q:'Gingival index (0-3) assesses:',opts:['Dental calculus','Gingivitis severity','Periodontitis','Tongue inflammation'],ans:1,exp:'Gingival index (0-3) checks gingiva for gingivitis.'},
+{topic:'t18',type:'mcq',diff:'medium',q:'Internal pharyngeal examination in horses requires:',opts:['Just a spatula and light','Nasopharyngeal endoscopy (inspection) or GA with mouth gags (palpation)','Simple oral speculum','Only external palpation'],ans:1,exp:'Horse pharynx: endoscopy for inspection; GA with mouth gags for palpation.'},
+{topic:'t18',type:'mcq',diff:'medium',q:'In healthy cattle, the tongue is:',opts:['Soft and smooth','Solid with rough surface and very mobile','Atrophied and firm','Flaccid and oedematous'],ans:1,exp:'Healthy cattle tongue: solid, rough surface, very mobile.'},
+{topic:'t18',type:'tf',diff:'easy',q:'In dogs, the stomach tube is passed through the mouth.',ans:true,exp:'Dogs: tube through the mouth. Horses and cats: through the nose.'},
+{topic:'t18',type:'mcq',diff:'hard',q:'Healthy cattle external pharyngeal examination: applying pressure with both hands in the pharyngeal area in a healthy cow means you can:',opts:['Never join your fingers — too much tissue','Join your fingers through the pharyngeal area','Only palpate one side at a time','Feel the epiglottis directly'],ans:1,exp:'Healthy cows: external pharyngeal pressure from both hands allows you to join your fingers. Disease = cannot join them.'},
+// t19
+{topic:'t19',type:'mcq',diff:'easy',q:'Organs in the epigastrium (cranial abdomen) of small animals:',opts:['Urinary bladder, prostate','Liver, spleen, stomach, pancreas, and kidneys (R cranial)','Small intestine, ureters, ovaries','Descending colon and rectum'],ans:1,exp:'Epigastrium: liver, spleen, stomach, pancreas, kidneys (R kidney is cranial).'},
+{topic:'t19',type:'mcq',diff:'medium',q:'In healthy dogs, which kidney is palpable?',opts:['Both','Right only','Left only','Neither'],ans:2,exp:'Dogs: only LEFT kidney palpable. Cats: both kidneys palpable.'},
+{topic:'t19',type:'tf',diff:'easy',q:'The spleen is not palpable in healthy dogs.',ans:true,exp:'Spleen NOT palpable in healthy dogs; splenomegaly causes it to sink ventrally/caudally.'},
+{topic:'t19',type:'mcq',diff:'medium',q:'The fluid wave test detects:',opts:['Hernias and masses','Abdominal effusions','Organ size and shape','Peristaltic activity'],ans:1,exp:'Fluid wave test: positive = abdominal effusion.'},
+{topic:'t19',type:'mcq',diff:'medium',q:'Ballottement detects:',opts:['Fluid waves only','Floating viscera or masses in the presence of free fluid','Hernia reducibility','Muscle tone'],ans:1,exp:'Ballottement: firm push lets floating viscera/masses rebound onto fingertips.'},
+{topic:'t19',type:'mcq',diff:'easy',q:'How many hernia sites are checked?',opts:['3','4','5','6'],ans:2,exp:'5 hernia sites: diaphragmatic, umbilical, inguinal, scrotal, paracostal.'},
+{topic:'t19',type:'mcq',diff:'medium',q:'Deep palpation proceeds from:',opts:['Caudally to cranially','Cranially to caudally','Left to right','Right to left only'],ans:1,exp:'Deep palpation: cranial to caudal.'},
+{topic:'t19',type:'mcq',diff:'hard',q:'Organs in the mesogastrium (mid abdomen):',opts:['Liver and spleen','Small intestine, ureters, and ovaries','Urinary bladder and prostate','Stomach and pancreas'],ans:1,exp:'Mesogastrium: small intestine, ureters, and ovaries.'},
+{topic:'t19',type:'tf',diff:'medium',q:'The gall bladder is only palpable if diseased.',ans:true,exp:'Gall bladder: palpable only if diseased.'},
+{topic:'t19',type:'mcq',diff:'medium',q:'Positive fluid wave test → next step:',opts:['Deep palpation only','Abdominocentesis to confirm and sample','Auscultation for fluid sounds','X-ray only'],ans:1,exp:'Positive fluid wave → abdominocentesis to confirm and sample.'},
+{topic:'t19',type:'mcq',diff:'medium',q:'Hypogastrium (caudal abdomen) contains:',opts:['Liver and spleen','Small intestine','Urinary bladder, prostate, urethra, descending colon, rectum','Only ovaries'],ans:2,exp:'Hypogastrium: urinary bladder, prostate, urethra, descending colon, rectum.'},
+{topic:'t19',type:'mcq',diff:'medium',q:'The liver typically is NOT palpable in:',opts:['Small breeds','Deep-chested dogs','Young dogs','Obese dogs'],ans:1,exp:'Liver not palpable in deep-chested dogs (lies within the costal arch).'},
+// t20
+{topic:'t20',type:'mcq',diff:'easy',q:'Clinical signs of colic in horses include:',opts:['Increased milk production','Flank watching, pawing, stretching, lying down, rolling','Decreased HR only','Standing still with lowered head only'],ans:1,exp:'Colic: flank watching, pawing with forelimb, stretching, lying down, rolling.'},
+{topic:'t20',type:'mcq',diff:'medium',q:'How many auscultation sites for horse abdominal exam?',opts:['1','2','At least 4 (2 paralumbar fossae + 2 sides lower abdomen)','6'],ans:2,exp:'At least 4 sites: 2 paralumbar fossae and 2 sides of lower abdomen.'},
+{topic:'t20',type:'mcq',diff:'medium',q:'In horse abdominal auscultation, a sound score of 0 means:',opts:['Normal sounds','Reduced sounds','Absent sounds','Increased sounds'],ans:2,exp:'Score 0 = absent; +/- = reduced; + = normal; ++ = increased.'},
+{topic:'t20',type:'mcq',diff:'medium',q:'High-pitched ping in the right paralumbar fossa of a horse indicates:',opts:['Distension of large colon (abnormal)','Normal caecal gas distension','Pneumoperitoneum','LDA'],ans:1,exp:'Right PL fossa ping = normal caecal gas. Left PL fossa ping = large colon distension (abnormal).'},
+{topic:'t20',type:'mcq',diff:'hard',q:'In horse rectal exam, how many structures can be felt?',opts:['5','7','9','12'],ans:2,exp:'9 structures: spleen, L kidney, nephrosplenic lig., large ventral colon, caecum (caudal+medial taenia), root of mesentery, pelvic flexure, rectum, inguinal canal (M) or ovaries (F).'},
+{topic:'t20',type:'mcq',diff:'medium',q:'Nephrosplenic entrapment involves:',opts:['Right kidney and liver','Left kidney, spleen, and nephrosplenic ligament','Duodenum and caecum','Right colon and caecum'],ans:1,exp:'Nephrosplenic entrapment: left kidney, spleen, and nephrosplenic ligament.'},
+{topic:'t20',type:'tf',diff:'medium',q:'If a peristaltic wave is felt during horse rectal exam, the hand should be removed.',ans:true,exp:'Feel a peristaltic wave = immediately remove the hand to prevent rectal trauma.'},
+{topic:'t20',type:'mcq',diff:'hard',q:'During horse rectal exam, you should NOT palpate with:',opts:['Fingers and thumb in a cone','Gentle circular movements','Widespread fingers and thumb','The palm'],ans:2,exp:'Do NOT palpate with widespread fingers and thumb — causes rectal trauma.'},
+{topic:'t20',type:'mcq',diff:'medium',q:'Normal horse bowel sounds consist of:',opts:['Pings and pungs','Weak mixing sounds + louder borborygmi (peristalsis)','Rolling thunder only','Only borborygmi'],ans:1,exp:'2 components: weak localised mixing sounds + louder borborygmi from peristalsis. 1-2 per minute.'},
+// t21
+{topic:'t21',type:'mcq',diff:'easy',q:'The rumen is located on which side?',opts:['Right side','Left side','Both equally','Ventral midline'],ans:1,exp:'Rumen is on the LEFT side of the abdomen.'},
+{topic:'t21',type:'mcq',diff:'medium',q:'A ping in the LEFT paralumbar fossa of a cow most likely indicates:',opts:['Normal caecal gas','Left Displaced Abomasum (LDA)','Intestinal obstruction','Pneumoperitoneum'],ans:1,exp:'Left PL fossa ping = LDA. Right PL fossa = caecal dilatation or RDA.'},
+{topic:'t21',type:'mcq',diff:'medium',q:'LDA is differentiated from rumen collapse syndrome by:',opts:['Ping pitch only','Abomasocentesis (pH 2-4 = LDA) + movement differences','Blood tests only','External palpation only'],ans:1,exp:'Abomasocentesis: pH 2-4 = LDA. LDA = reduced rumen movements; rumen collapse = normal/reduced + lower-pitched pung.'},
+{topic:'t21',type:'mcq',diff:'medium',q:'The withers pinch test reliability in cattle:',opts:['40-60%','70-80%','85%','96%'],ans:3,exp:'Withers pinch test = 96% reliable — most reliable pain test in cattle.'},
+{topic:'t21',type:'mcq',diff:'hard',q:'The bar test involves:',opts:['Tapping intercostal spaces','Bar under abdomen behind sternum, slowly raised then quickly lowered','Knee pressure to sternum','Grasping skin at withers'],ans:1,exp:'Bar test: metal/wood bar under abdomen behind sternum, raised slowly then lowered quickly by two people.'},
+{topic:'t21',type:'mcq',diff:'easy',q:'Kalchschmidt\'s test (Test 1) reliability:',opts:['40-60%','70-80%','85%','96%'],ans:0,exp:'Kalchschmidt\'s (touching skin/hair at withers) = 40-60% reliability.'},
+{topic:'t21',type:'mcq',diff:'medium',q:'LDA causes which electrolyte abnormalities?',opts:['Hyperchloraemia and hyperkalaemia','Hypochloraemia and hypokalaemia','Hypernatraemia and hypocalcaemia','Hyponatraemia and hypermagnesaemia'],ans:1,exp:'LDA: hypochloraemia and hypokalaemia (metabolic alkalosis).'},
+{topic:'t21',type:'mcq',diff:'medium',q:'The reticulum has which structural feature?',opts:['Smooth inner surface','Leaf-like structure','Honeycomb inner surface','Glandular with HCl secretion'],ans:2,exp:'Reticulum: honeycomb inner surface.'},
+{topic:'t21',type:'mcq',diff:'medium',q:'LDA percussion sound vs rumen collapse syndrome:',opts:['LDA = pung; rumen collapse = ping','LDA = ping (high-pitched); rumen collapse = pung (low-pitched)','Both same sound','Neither produces percussible sounds'],ans:1,exp:'LDA = ping (like basketball over concrete); rumen collapse = pung (lower pitch, larger rectangular area).'},
+{topic:'t21',type:'mcq',diff:'hard',q:'Fluid wave test is positive when fluid occupies at least:',opts:['1/4 of abdomen','1/3 of abdomen','1/2 of abdomen','Entire abdomen'],ans:1,exp:'Fluid wave positive when ≥1/3 of abdomen has fluid.'},
+// t22
+{topic:'t22',type:'mcq',diff:'medium',q:'Indications for rectal exam in dogs include:',opts:['Only constipation','Tenesmus, dyschezia, constipation, haematochezia, diarrhoea, dysuria, stranguria','Only diarrhoea','Only prostate assessment'],ans:1,exp:'Dog rectal exam indications: tenesmus, dyschezia, constipation, haematochezia, diarrhoea, dysuria, stranguria.'},
+{topic:'t22',type:'mcq',diff:'medium',q:'During rectal exam in dogs, which structures are examined?',opts:['Only the rectum','Urethra, prostate (males), L and R anal sacs, check for masses','Only anal sacs','Only colon'],ans:1,exp:'Dog rectal: urethra, prostate, L+R anal sacs, masses.'},
+{topic:'t22',type:'mcq',diff:'medium',q:'Which breeds are predisposed to anal sac problems?',opts:['Large breeds and retrievers','German shepherds and small breeds','Only Bulldogs','Only working breeds'],ans:1,exp:'German shepherds and small breeds predisposed to anal sac issues.'},
+{topic:'t22',type:'mcq',diff:'easy',q:'Horse rectal exam restraint options:',opts:['Sedation only','Twitch, raising a forelimb, sedation, or stock','Breeding hobbles only','Hog board'],ans:1,exp:'Horse rectal restraint: twitch, raised forelimb, sedation, or stock.'},
+{topic:'t22',type:'tf',diff:'medium',q:'During horse rectal exam, fingers and thumb should be spread wide.',ans:false,exp:'Do NOT spread fingers wide — causes rectal trauma. Use a cone position.'},
+{topic:'t22',type:'mcq',diff:'hard',q:'During horse rectal exam, which structure is palpable only in males?',opts:['Pelvic flexure','Root of mesentery','Inguinal canal','Nephrosplenic ligament'],ans:2,exp:'Inguinal canal = males only. Ovaries = females only.'},
+{topic:'t22',type:'mcq',diff:'medium',q:'Caecal dilatation/torsion in ruminants produces:',opts:['Single ping on left','Most pings on right side with consistent large pings palpable rectally','Absent sounds','Pung on left side'],ans:1,exp:'Caecal dilatation/torsion: most pings on right side, consistent large pings palpable per rectum.'},
+{topic:'t22',type:'mcq',diff:'hard',q:'The nephrosplenic ligament links:',opts:['Right kidney to right lobe of liver','Left kidney to spleen','Spleen to diaphragm','Left kidney to left colon'],ans:1,exp:'Nephrosplenic ligament links left kidney to spleen.'},
+// t23
+{topic:'t23',type:'mcq',diff:'medium',q:'The first step managing respiratory distress is:',opts:['Perform thoracocentesis immediately','Stabilise: give O2 at 25% and cool the animal','Take blood samples first','Full physical exam'],ans:1,exp:'Step 1: STABILISE — O2 at 25%, reduce stress, cool the animal.'},
+{topic:'t23',type:'mcq',diff:'easy',q:'Stridor is:',opts:['Only heard with stethoscope','High-pitched sound audible without stethoscope — upper airway obstruction','Only in lower airway disease','Only during expiration'],ans:1,exp:'Stridor = high-pitched, heard without stethoscope, upper airway obstruction.'},
+{topic:'t23',type:'mcq',diff:'medium',q:'Signs specific to upper airway disease:',opts:['Cyanosis and crackles','Stridor, stertor, increased RR, voice change, gasping, panting','Paradoxical breathing','Muffled sounds'],ans:1,exp:'Upper airway: stridor, stertor, increased RR/labour, voice change, gasping, panting.'},
+{topic:'t23',type:'mcq',diff:'medium',q:'Muffled sounds with paradoxical breathing indicate disease in:',opts:['Upper airways','Lower airways','Lung parenchyma','Pleural space'],ans:3,exp:'Pleural space disease: muffled sounds + paradoxical breathing.'},
+{topic:'t23',type:'mcq',diff:'medium',q:'Lower airway disease is characterised by:',opts:['Stridor audible without stethoscope','Paradoxical breathing','Prolonged expiration and wheezes (sometimes audible without stethoscope)','Cyanosis only'],ans:2,exp:'Lower airway: prolonged expiration, enhanced auscultatory findings, wheezes.'},
+{topic:'t23',type:'mcq',diff:'medium',q:'Lung parenchymal disease produces:',opts:['Stridor','Muffled sounds + paradoxical breathing','Cyanosis, increased RR/labour, harsh/loud sounds, crackles, productive cough','Normal sounds'],ans:2,exp:'Lung parenchyma: cyanosis, increased RR/labour, harsh sounds, crackles, productive cough.'},
+{topic:'t23',type:'mcq',diff:'easy',q:'Respiratory distress diagnostic plan:',opts:['Stabilise → locate → treat','Treat first → stabilise → diagnose','X-ray first','Lab tests before stabilisation'],ans:0,exp:'1. STABILISE, 2. LOCATE (upper/lower/parenchyma/pleural), 3. TREAT.'},
+{topic:'t23',type:'tf',diff:'easy',q:'Thoracocentesis removes air or fluid from the pleural space.',ans:true,exp:'Thoracocentesis: removes air (pneumothorax) or fluid (effusion) from the pleural space.'},
+{topic:'t23',type:'mcq',diff:'hard',q:'Stertor differs from stridor in that stertor is:',opts:['High-pitched whistle','Low-pitched snoring sound — pharyngeal/nasal obstruction','Only heard on auscultation','Only in lower airway disease'],ans:1,exp:'Stertor = low-pitched snoring; stridor = high-pitched. Both audible without stethoscope.'},
+{topic:'t23',type:'mcq',diff:'medium',q:'Respiratory distress posture is:',opts:['Hunched with tucked abdomen','Extended neck and abducted elbows (orthopnoea)','Wide-based stance with lowered head','Lateral recumbency'],ans:1,exp:'Respiratory distress: extended neck, abducted elbows (orthopnoea position).'},
+// t24
+{topic:'t24',type:'mcq',diff:'easy',q:'Polyuria is urine output exceeding:',opts:['20 ml/kg/day','35 ml/kg/day','50 ml/kg/day','100 ml/kg/day'],ans:2,exp:'Polyuria = >50 ml/kg/day.'},
+{topic:'t24',type:'mcq',diff:'easy',q:'Pollakiuria is:',opts:['Increased urine volume','Painful urination','Increased frequency of urination','Absent urine production'],ans:2,exp:'Pollakiuria = increased frequency of urination.'},
+{topic:'t24',type:'mcq',diff:'medium',q:'Stranguria is:',opts:['Increased frequency','Absent urine production','Painful and slow urination','Blood in urine'],ans:2,exp:'Stranguria = painful and slow urination.'},
+{topic:'t24',type:'mcq',diff:'medium',q:'Upper urinary tract bleeding is characterised by:',opts:['Dysuria and blood at start of urination','No pain and blood throughout/at end of urination','Slow urination with blood clots','Frequent small volumes with blood'],ans:1,exp:'UUT bleeding: no pain + blood throughout and at end of urination.'},
+{topic:'t24',type:'mcq',diff:'medium',q:'Which urinary sign is LEAST frequent in dogs and cats?',opts:['Polyuria','Polydipsia','Pollakiuria','Incontinence'],ans:3,exp:'Incontinence = LEAST frequent of the four main urinary signs.'},
+{topic:'t24',type:'mcq',diff:'easy',q:'In dogs, which kidney is palpable?',opts:['Both','Right only','Left only','Neither'],ans:2,exp:'Dogs: only LEFT kidney palpable. Cats: both.'},
+{topic:'t24',type:'mcq',diff:'hard',q:'Azotaemia is:',opts:['Protein in urine','Elevated creatinine and urea in blood','Glucose in urine','Blood in urine'],ans:1,exp:'Azotaemia = elevated [CREA + UREA] in blood.'},
+{topic:'t24',type:'mcq',diff:'easy',q:'Kidneys in small ruminants are:',opts:['Lobulated like cattle','Spherical','Bean-shaped','Elongated and flat'],ans:2,exp:'Small ruminants: bean-shaped kidneys. Cattle: lobulated.'},
+{topic:'t24',type:'mcq',diff:'medium',q:'To differentiate haematuria from haemoglobinuria:',opts:['Dipstick alone','Centrifuge: RBCs sediment in haematuria; supernatant stays red in haemoglobinuria','Colour observation only','pH testing'],ans:1,exp:'Centrifugation differentiates haematuria (RBCs sediment) from haemoglobinuria (supernatant stays red).'},
+{topic:'t24',type:'mcq',diff:'medium',q:'Complete urinary physical exam components:',opts:['Only palpation and auscultation','Inspection + abdominal palpation + rectal exam + urinalysis','CBC, biochemistry, urinalysis, BP','Urinalysis only'],ans:1,exp:'4 components: inspection, abdominal palpation, rectal exam, urinalysis.'},
+// t25
+{topic:'t25',type:'mcq',diff:'easy',q:'Three methods of urine sampling:',opts:['Dipstick, culture, microscopy','Cystocentesis, catheterisation, mid-stream free-flow','Only catheterisation and free-flow','Only cystocentesis and free-flow'],ans:1,exp:'3 methods: cystocentesis, catheterisation, mid-stream free-flow.'},
+{topic:'t25',type:'mcq',diff:'medium',q:'Contraindications for cystocentesis include:',opts:['Patient too active','Insufficient volume, pyometra, trauma/recent surgery, and coagulopathy','Only coagulopathy','Only insufficient volume'],ans:1,exp:'Cystocentesis contraindications: insufficient volume, pyometra, trauma/recent abdominal surgery, coagulopathy.'},
+{topic:'t25',type:'mcq',diff:'medium',q:'The three parts of urinalysis:',opts:['Colour, odour, culture','Appearance/physical, chemical composition, sedimentation','Dipstick, culture, microscopy','Volume, SG, protein'],ans:1,exp:'3 parts: appearance/physical characteristics, chemical composition, sedimentation (microscopy).'},
+{topic:'t25',type:'mcq',diff:'easy',q:'Isosthenuria is USG of:',opts:['<1.001','1.007-1.012','1.015-1.040','>1.050'],ans:1,exp:'Isosthenuria: USG 1.007-1.012 (neither concentrating nor diluting).'},
+{topic:'t25',type:'tf',diff:'medium',q:'Bacteria found in cystocentesis samples are always abnormal.',ans:true,exp:'Bacteria in cystocentesis urine = always abnormal.'},
+{topic:'t25',type:'mcq',diff:'medium',q:'Crystalluria indicates:',opts:['Always urolithiasis','Does NOT correlate with urolithiasis (incidental finding)','Always infection','Renal failure'],ans:1,exp:'Crystalluria does NOT correlate with urolithiasis — can be incidental.'},
+{topic:'t25',type:'mcq',diff:'hard',q:'Urine casts are classified as:',opts:['RBC, WBC, bacterial','Cellular, granular, waxy, hyaline','Struvite, calcium oxalate, urate','Protein, glucose, ketone'],ans:1,exp:'Urine casts: cellular, granular, waxy, and hyaline.'},
+{topic:'t25',type:'mcq',diff:'medium',q:'In male cats, the penis is exteriorised by:',opts:['Grasping from the side','Placing a finger on either side of prepuce and extending caudally','Using a speculum','Manual abdominal pressure'],ans:1,exp:'Male cat: finger on either side of prepuce, extend penis caudally, then catheterise.'},
+{topic:'t25',type:'mcq',diff:'hard',q:'Male ruminants and boars are difficult to catheterise because of:',opts:['Small urethral diameter','The sigmoid flexure of the penis','Thick preputial tissue','Retraction of the penis'],ans:1,exp:'Male ruminants/boars: difficult catheterisation due to sigmoid flexure of penis.'},
+{topic:'t25',type:'mcq',diff:'medium',q:'Significance of proteinuria is determined by:',opts:['Dipstick alone','Protein-creatinine ratio','Creatinine clearance','BUN'],ans:1,exp:'Significance of proteinuria: protein-creatinine ratio (second-level test).'},
+{topic:'t25',type:'mcq',diff:'medium',q:'Glucosuria most commonly indicates:',opts:['Renal failure','Diabetes mellitus','UTI','Liver disease'],ans:1,exp:'Glucosuria = primarily DM (also stress-induced hyperglycaemia in cats).'},
+{topic:'t25',type:'tf',diff:'easy',q:'Urine pH is typically acidic in dogs and cats.',ans:true,exp:'Dogs and cats: acidic urine. Horses and ruminants: alkaline urine.'},
+// t26
+{topic:'t26',type:'mcq',diff:'easy',q:'Decerebrate rigidity is characterised by:',opts:['Forelimb extension + hip flexion + normal mentation','Extension of all 4 limbs + opisthotonus + stupor to coma','Forelimb extension + hindlimb paralysis','Hindlimb extension only + normal consciousness'],ans:1,exp:'Decerebrate rigidity (rostral brainstem): all 4 limbs extended + opisthotonus + stupor/coma.'},
+{topic:'t26',type:'mcq',diff:'medium',q:'Decerebellate rigidity is characterised by:',opts:['All 4 limbs extended + stupor','Forelimb extension + hip flexion + NORMAL mental status','Forelimb extension + hindlimb paralysis','Coma with opisthotonus'],ans:1,exp:'Decerebellate rigidity (cerebellum): forelimb extension + hip flexion + NORMAL mental status.'},
+{topic:'t26',type:'mcq',diff:'medium',q:'Schiff-Sherrington posture results from a lesion in:',opts:['Rostral brainstem','Cerebellum','Thoracic or lumbar spinal cord','Forebrain'],ans:2,exp:'Schiff-Sherrington: thoracic/lumbar spinal cord = forelimb extension + hindlimb paralysis.'},
+{topic:'t26',type:'mcq',diff:'easy',q:'Dysmetria is:',opts:['Absence of movement','Inability to control the speed or strength of movements','Sudden loss of muscle tone','Rhythmical oscillatory movements'],ans:1,exp:'Dysmetria (cerebellar sign) = inability to control speed or strength of movements.'},
+{topic:'t26',type:'mcq',diff:'medium',q:'How many cranial nerve tests in the neurological exam?',opts:['6','9','11','12'],ans:2,exp:'11 cranial nerve tests are evaluated.'},
+{topic:'t26',type:'mcq',diff:'medium',q:'How many postural reaction tests?',opts:['4','5','6','8'],ans:2,exp:'6 postural reaction tests.'},
+{topic:'t26',type:'mcq',diff:'hard',q:'Consciousness is controlled by:',opts:['Cortex only','ARAS (ascending reticular activating system) in the brainstem','Cerebellum','Spinal cord'],ans:1,exp:'Consciousness = ARAS in the brainstem.'},
+{topic:'t26',type:'mcq',diff:'medium',q:'Sensory ataxia worsens when:',opts:['Animal moves faster','Sight is removed (e.g., blindfolded)','Animal is fed','Exam area is quiet'],ans:1,exp:'Sensory ataxia worsens when visual compensation is removed (blindfolded).'},
+{topic:'t26',type:'mcq',diff:'medium',q:'Cataplexy is:',opts:['Rhythmical oscillations','Brief shock-like muscle contractions','Sudden loss of muscle tone while conscious — seconds to minutes','Delayed relaxation after contraction'],ans:2,exp:'Cataplexy: sudden loss of muscle tone (flaccid) while conscious, lasting seconds to minutes.'},
+{topic:'t26',type:'mcq',diff:'hard',q:'Head pressing indicates:',opts:['Spinal cord lesion','Cerebellar lesion','Forebrain/cortical or thalamic lesion','Peripheral nerve lesion'],ans:2,exp:'Head pressing = forebrain (cortical/thalamic) or rostral brainstem lesion.'},
+{topic:'t26',type:'mcq',diff:'easy',q:'Ataxia is defined as:',opts:['Paralysis of all four limbs','Uncoordinated gait','Absence of voluntary movement','Rhythmical involuntary movements'],ans:1,exp:'Ataxia = uncoordinated gait.'},
+{topic:'t26',type:'tf',diff:'medium',q:'Vestibular ataxia is asymmetrical and may be accompanied by nystagmus.',ans:true,exp:'Vestibular ataxia: asymmetrical, with nystagmus and vocalisation.'},
+{topic:'t26',type:'mcq',diff:'hard',q:'Myotonia is characterised by:',opts:['Sudden loss of consciousness','Delayed relaxation of muscle after voluntary contraction (e.g., fainting goats)','Brief shock-like contractions','Rhythmical oscillations'],ans:1,exp:'Myotonia = delayed relaxation after voluntary contraction (fainting goats = congenital myotonia).'},
+// t27
+{topic:'t27',type:'mcq',diff:'easy',q:'Dermatologic examination starts with:',opts:['Skin biopsy','Full body inspection, then focus on lesion areas','Trichogram','IDT'],ans:1,exp:'Derm exam: full body inspection first, then focus on individual lesions.'},
+{topic:'t27',type:'mcq',diff:'medium',q:'Ear examination covers:',opts:['Only pinna','Pinna (outer/inner/entrance/edges), external canal, and tympanic membrane','Only tympanic membrane','External canal only'],ans:1,exp:'Complete ear exam: pinna, external canal (appearance + contents), and tympanic membrane.'},
+{topic:'t27',type:'mcq',diff:'medium',q:'Trichogram examines:',opts:['Skin biopsy material','Hair shaft morphology (root, shaft, tip)','Fungal cultures','Skin surface bacteria'],ans:1,exp:'Trichogram = hair shaft morphology under microscopy.'},
+{topic:'t27',type:'mcq',diff:'medium',q:'Skin scraping primarily identifies:',opts:['Allergic conditions','Fungal infections only','Ectoparasites (mites) and surface organisms','Bacterial infections only'],ans:2,exp:'Skin scraping: ectoparasites (especially mites) and surface organisms.'},
+{topic:'t27',type:'mcq',diff:'easy',q:'IDT (intradermal testing) is used for:',opts:['Fungal cultures','Allergy testing — identifying environmental and food allergens','Bacterial sensitivity','Hormonal assessment'],ans:1,exp:'IDT = allergy testing.'},
+{topic:'t27',type:'mcq',diff:'hard',q:'In-house dermatology tests include:',opts:['Skin scraping only','Skin scraping, impression smear, trichogram, Wood\'s lamp, and IDT','Wood\'s lamp only','Culture only'],ans:1,exp:'In-house tests: skin scraping, impression smear, trichogram, Wood\'s lamp, IDT.'},
+{topic:'t27',type:'mcq',diff:'easy',q:'Wood\'s lamp detects:',opts:['Mites','Certain dermatophytes that fluoresce under UV light','Bacteria','Allergies'],ans:1,exp:'Wood\'s lamp: detects certain dermatophytes (e.g., Microsporum canis) by UV fluorescence.'},
+{topic:'t27',type:'mcq',diff:'medium',q:'Additional laboratory dermatology methods:',opts:['Culture only','Culture, PCR, serology, and biopsy/histopathology','Biopsy only','Allergy panel only'],ans:1,exp:'Lab methods: culture, PCR, serology, and biopsy/histopathology.'},
+// t28
+{topic:'t28',type:'mcq',diff:'easy',q:'Which small mammal cannot synthesise vitamin C?',opts:['Rabbits and hamsters','Guinea pigs','Ferrets and chinchillas','All rodents'],ans:1,exp:'Guinea pigs (and humans) cannot synthesise vitamin C — require dietary supplementation.'},
+{topic:'t28',type:'mcq',diff:'easy',q:'When restraining a chinchilla, what must ALWAYS be fixed?',opts:['The tail','The hindlimbs','The head','The thorax'],ans:2,exp:'Chinchilla: ALWAYS fix the head during restraint.'},
+{topic:'t28',type:'mcq',diff:'medium',q:'Rabbits have an open inguinal canal, which means:',opts:['Easy catheterisation','Abdominal organs can herniate into scrotum; avoid lifting by abdomen','Cannot be examined rectally','Testes cannot be palpated'],ans:1,exp:'Open inguinal canal: abdominal contents can herniate. Handle carefully.'},
+{topic:'t28',type:'mcq',diff:'medium',q:'Mice and gerbils are handled by:',opts:['Scruff only','Grasping tail base and transferring to the hand','Cupping in both hands','By the ears'],ans:1,exp:'Mice and gerbils: grasp at tail base, transfer to the hand.'},
+{topic:'t28',type:'mcq',diff:'medium',q:'Which species can be handled by the scruff?',opts:['All rodents','Guinea pigs only','Rabbits, hamsters, and ferrets','Only cats'],ans:2,exp:'Rabbits, hamsters, and ferrets can be scruffed. Guinea pigs cannot (skin too tightly attached).'},
+{topic:'t28',type:'tf',diff:'medium',q:'Rabbits cannot vomit.',ans:true,exp:'Rabbits cannot vomit (along with horses, rats, and guinea pigs).'},
+{topic:'t28',type:'mcq',diff:'hard',q:'What is special about ferret examination?',opts:['Must be sedated for all exams','Scruffing typically makes ferrets relax, allowing examination to proceed','Require blood glucose monitoring always','Open inguinal canal like rabbits'],ans:1,exp:'Ferrets: scruffing typically causes them to relax, facilitating examination.'},
+{topic:'t28',type:'mcq',diff:'easy',q:'Chinchilla\'s fur slip is a defence mechanism triggered by:',opts:['Being picked up by the head','Being grasped roughly by the body fur','Handling by the ears','Lateral recumbency'],ans:1,exp:'Chinchillas release patches of fur (fur slip) when grasped roughly.'},
+{topic:'t28',type:'mcq',diff:'hard',q:'Correct way to handle a rabbit:',opts:['Hold by ears only','Support hindquarters and thorax; never hang by ears; beware of hindlimb kicks causing spinal fracture','Dorsal recumbency without support','Scruff like a cat'],ans:1,exp:'Rabbits: support hindquarters + thorax; never hang by ears; powerful kicks can fracture spine.'},
+// t29
+{topic:'t29',type:'mcq',diff:'medium',q:'In ruminants, the liver is on which side?',opts:['Left, externally palpable','Right, normally covered by ribs; enlarged liver palpable at middle 1/3 of right costal arch','Both sides equally','Ventral midline'],ans:1,exp:'Ruminant liver: right side, covered by ribs. Enlarged = palpable at middle 1/3 of right costal arch.'},
+{topic:'t29',type:'mcq',diff:'medium',q:'Normal ruminant liver location:',opts:['3rd to 8th rib','6th to 12th-13th rib','10th to 13th rib','1st to 5th rib'],ans:1,exp:'Normal ruminant liver: 6th to 12th-13th ribs.'},
+{topic:'t29',type:'mcq',diff:'medium',q:'Causes of enlarged ruminant liver include:',opts:['Renal failure only','Chronic liver fluke, advanced CHF, multiple liver abscess, diffuse hepatitis','Rumen acidosis only','Pancreatic disease'],ans:1,exp:'Enlarged ruminant liver: liver fluke, CHF, liver abscess, diffuse hepatitis.'},
+{topic:'t29',type:'mcq',diff:'hard',q:'Liver cell aspiration in ruminants is performed at the:',opts:['6th rib','8th rib','11th ICS','13th rib'],ans:2,exp:'Liver aspiration in ruminants: 11th intercostal space.'},
+{topic:'t29',type:'mcq',diff:'medium',q:'In small animals, the liver is in the:',opts:['Mesogastrium','Hypogastrium','Epigastrium (within costal arch)','Left lateral abdomen'],ans:2,exp:'Liver in epigastrium, within costal arch.'},
+{topic:'t29',type:'mcq',diff:'medium',q:'Hepatomegaly in small animals is more palpable on which side?',opts:['Left','Right (due to right caudate process cupping right kidney)','Both equally','Ventral midline only'],ans:1,exp:'Hepatomegaly: right side more palpable (right caudate process cups right kidney).'},
+{topic:'t29',type:'mcq',diff:'medium',q:'In complete liver failure, which test replaces standard liver enzymes?',opts:['CBC','Bile acids','Creatinine','Glucose'],ans:1,exp:'Complete liver failure: bile acids become the primary test.'},
+{topic:'t29',type:'mcq',diff:'medium',q:'In horses, which enzyme is useful for acute liver problems?',opts:['ALT','GGT','Creatinine','Amylase'],ans:1,exp:'Horses: GGT for acute liver problems (ALT has no value in horses).'},
+// t30
+{topic:'t30',type:'mcq',diff:'easy',q:'A macule is:',opts:['A raised area','A flat discoloured area with colour change only (<1 cm)','A vesicle filled with fluid','A raised scaly lesion'],ans:1,exp:'Macule = flat, distinct, discoloured area — colour change only, no elevation, <1 cm.'},
+{topic:'t30',type:'mcq',diff:'easy',q:'A papule is:',opts:['Large blister >1 cm','Circumscribed elevation, superficial epidermal damage, no visible fluid, reaches BM, <1 cm','A flat colour change','A deep painful nodule'],ans:1,exp:'Papule = circumscribed elevation, superficial epidermal damage, no fluid visible, reaches BM, <1 cm.'},
+{topic:'t30',type:'mcq',diff:'medium',q:'A pustule is:',opts:['Clear fluid-filled blister','Circumscribed elevation, deeper epidermal damage, filled with pus, reaches BM','Large blister >1 cm','Scaly plaque'],ans:1,exp:'Pustule = circumscribed elevation, deeper damage, pus-filled, reaches BM (e.g., acne).'},
+{topic:'t30',type:'mcq',diff:'easy',q:'A vesicle differs from a bulla: a vesicle is:',opts:['Larger (>1 cm)','Filled with pus','Small blister (<1 cm) filled with clear fluid','A flat colour change'],ans:2,exp:'Vesicle = small blister <1 cm. Bulla = large blister >1 cm. Both clear fluid.'},
+{topic:'t30',type:'mcq',diff:'medium',q:'A wheal is:',opts:['A firm nodule','A pruritic transient elevation — swelling with exudate in superficial dermis (hive/urticaria)','A flat macule','A deep cyst'],ans:1,exp:'Wheal = pruritic, transient elevation (superficial dermis exudate). Example: hives/urticaria.'},
+{topic:'t30',type:'mcq',diff:'medium',q:'A plaque is:',opts:['Circumscribed elevation <1 cm','Plateau-like lesion >1 cm','Deep cyst','Colour change only'],ans:1,exp:'Plaque = plateau-like >1 cm (e.g., psoriasis).'},
+{topic:'t30',type:'mcq',diff:'easy',q:'A cyst is:',opts:['A solid mass','A round encapsulated lesion filled with fluid','A flat discoloured area','A pustule reaching the dermis'],ans:1,exp:'Cyst = round encapsulated lesion filled with fluid.'},
+{topic:'t30',type:'mcq',diff:'medium',q:'An ulcer:',opts:['Superficial epidermal damage only','Superficial circumscribed epidermal damage','Reaches and breaks through the basement membrane into the dermis','Only a colour change'],ans:2,exp:'Ulcer = breaks through the basement membrane into dermis.'},
+{topic:'t30',type:'mcq',diff:'medium',q:'An erosion differs from an ulcer in that erosion:',opts:['Is deeper, reaches dermis','Is superficial — does NOT reach the basement membrane','Is always fluid-filled','Is always >1 cm'],ans:1,exp:'Erosion = superficial damage NOT reaching the BM. Ulcer DOES break through the BM.'},
+{topic:'t30',type:'mcq',diff:'easy',q:'A scar is:',opts:['Fresh bleeding lesion','Area of fibrous tissue with smooth surface after skin injury','Raised pruritic lesion','A fluid-filled cyst'],ans:1,exp:'Scar = fibrous tissue with smooth surface, formed after healing.'},
+{topic:'t30',type:'mcq',diff:'medium',q:'Petechiae are:',opts:['Large bruise areas','Small areas of haemorrhage in the skin (<3 mm)','Yellow discolouration','Raised plaques'],ans:1,exp:'Petechiae = small (<3 mm) pinpoint haemorrhages in the skin.'},
+{topic:'t30',type:'mcq',diff:'medium',q:'A scale is:',opts:['A flat colour change','Lesion with rim of keratin, change in thickness/texture with peeling edge','A smooth raised lesion','A broken vesicle'],ans:1,exp:'Scale = rim of keratin, change in thickness/texture, peeling edge.'},
+// t31
+{topic:'t31',type:'mcq',diff:'easy',q:'Thoracocentesis is performed between which intercostal spaces?',opts:['3rd-5th ICS','5th-7th ICS','7th-9th ICS','10th-12th ICS'],ans:2,exp:'Thoracocentesis: 7th-9th intercostal space.'},
+{topic:'t31',type:'mcq',diff:'medium',q:'The needle is placed on the cranial border of the caudal rib to avoid:',opts:['The lung parenchyma','The intercostal artery and nerve','The pleural surface','The lymph vessels'],ans:1,exp:'Cranial border of caudal rib avoids the intercostal artery and nerve.'},
+{topic:'t31',type:'mcq',diff:'medium',q:'For fluid removal by thoracocentesis, the needle is inserted at the:',opts:['Upper third (for fluid)','Lower third (fluid); upper third for air removal','Middle of the chest','Dorsal third only'],ans:1,exp:'Lower third = fluid. Upper third = air (pneumothorax).'},
+{topic:'t31',type:'mcq',diff:'easy',q:'The most important complication risk during thoracocentesis:',opts:['Haematoma','Haemothorax','Iatrogenic pneumothorax (prevent with 3-way stopcock)','Nerve damage only'],ans:2,exp:'Most important risk: iatrogenic pneumothorax — use 3-way stopcock to prevent air entry.'},
+{topic:'t31',type:'mcq',diff:'medium',q:'Contraindications for thoracocentesis:',opts:['Patient too stressed','Severe coagulopathies, thrombocytopenia, and very small volume of fluid/air','Anaemia and hypoproteinaemia','Fever and tachycardia'],ans:1,exp:'3 contraindications: severe coagulopathies, thrombocytopenia, and only small volume present.'},
+{topic:'t31',type:'mcq',diff:'easy',q:'In dogs and cats, abdominocentesis is performed with the patient in:',opts:['Standing','Sternal recumbency','Left lateral recumbency, caudal to umbilicus, 1-2 cm lateral left of midline','Right lateral recumbency'],ans:2,exp:'Dogs/cats: left lateral recumbency, caudal to umbilicus, 1-2 cm lateral to the left of midline.'},
+{topic:'t31',type:'mcq',diff:'medium',q:'In horses, abdominocentesis is on which side of midline?',opts:['Left (to avoid spleen)','Right (to avoid spleen)','At umbilicus','At the flank'],ans:1,exp:'Horses: RIGHT side of midline to avoid the spleen.'},
+{topic:'t31',type:'mcq',diff:'medium',q:'In cows, abdominocentesis is performed:',opts:['Left abdomen','Right abdomen','8-10 cm caudal from xyphoid and 8-10 cm lateral from midline','At umbilicus'],ans:2,exp:'Cows: 8-10 cm caudal from xyphoid process and 8-10 cm lateral from midline.'},
+{topic:'t31',type:'mcq',diff:'medium',q:'Sample volume for abdominocentesis:',opts:['1-2 mL','3-5 mL','10-20 mL','50 mL'],ans:1,exp:'Peritoneal fluid: collect 3-5 mL for cytology.'},
+{topic:'t31',type:'mcq',diff:'hard',q:'Tubes used for thoracocentesis samples:',opts:['Purple EDTA only','Yellow/red only','Purple (EDTA), biochemistry (yellow/red), and sterile glass tube','Blue coagulation only'],ans:2,exp:'Thoracocentesis samples: purple (EDTA), biochemistry (yellow/red), and sterile glass tube.'},
+{topic:'t31',type:'mcq',diff:'medium',q:'Indications for abdominocentesis:',opts:['Routine screening','Fever of unknown origin, non-responsive diarrhoea, melena, bowel obstruction, ulcers, chronic weight loss','Any abdominal discomfort','Post-op check only'],ans:1,exp:'Abdominocentesis indications: fever of unknown origin, non-responsive diarrhoea, melena, bowel obstruction, ulcers, chronic weight loss.'},
+{topic:'t31',type:'mcq',diff:'hard',q:'Thoracocentesis risks include:',opts:['Only pneumothorax','Iatrogenic pneumothorax, haemothorax, intercostal artery/nerve damage, and lung laceration','Only nerve damage','Only infection'],ans:1,exp:'Risks: iatrogenic pneumothorax, haemothorax, intercostal artery/nerve damage, lung laceration.'},
+{topic:'t31',type:'mcq',diff:'medium',q:'Sedation is usually:',opts:['Always required','NOT needed for thoracocentesis','Required in cats only','Required in large animals only'],ans:1,exp:'Sedation NOT usually needed for thoracocentesis.'},
+];
+
+// =====================================================================
+// PRACTICAL QUESTIONS
+// =====================================================================
+const PRACTICAL_QUESTIONS = [
+{id:'p01',title:'Thoracocentesis — Procedure',q:'Describe the step-by-step technique for performing thoracocentesis to remove pleural fluid in a dog.',answer:'1. Confirm pleural effusion (clinical signs + imaging). 2. Restrain patient in sternal or standing position. 3. Clip and aseptically prepare the site (7th-9th ICS, lower third of thorax). 4. Local anaesthesia (lidocaine SC). 5. Insert needle/catheter on the CRANIAL border of the CAUDAL rib (avoids intercostal artery). 6. Use 3-way stopcock to prevent air entry (iatrogenic pneumothorax risk). 7. Aspirate fluid slowly. 8. Collect samples in EDTA + biochem + sterile glass tube. 9. Monitor for dyspnoea during procedure. 10. Post-procedure: check for iatrogenic pneumothorax.'},
+{id:'p02',title:'Rectal Examination — Horse',q:'Describe the correct technique for performing a rectal examination in a horse, including restraint, safety, and what structures you can palpate.',answer:'Restraint: twitch, raise a forelimb, sedation (xylazine/detomidine), or use a stock. Preparation: lubricate gloved arm generously; ensure horse is not straining. Technique: introduce hand in a cone (fingers + thumb together — NOT spread wide); advance slowly with circular movements; wait during peristaltic waves — remove hand if wave occurs. Structures palpable (9): spleen, caudal pole of L kidney, nephrosplenic ligament, large ventral colon, caecum (caudal + medial taenia), root of mesentery, pelvic flexure, rectum, inguinal canal (males)/ovaries (females). Safety: rectal tears are life-threatening; never force; use adequate lubrication.'},
+{id:'p03',title:'IV Catheter Placement — Dog/Cat',q:'Describe how to place an intravenous catheter in a dog or cat.',answer:'Site: cephalic antebrachii or saphenous vein. Preparation: clip and disinfect skin. Technique: 1. Occlude vein proximal to the site. 2. Insert needle at 45° angle with bevel up. 3. Advance into vein — confirm blood flashback. 4. Advance catheter over needle into vein. 5. Remove needle/stylet. 6. Flush with saline to confirm patency. 7. Fix catheter with tape/bandage. Notes: use IV route exclusively in perfusionally unstable patients; check regularly for phlebitis.'},
+{id:'p04',title:'Rumen Examination — Technique',q:'Describe the complete examination of the rumen in a cow, including visual, percussion, palpation, and auscultation.',answer:'1. Visual inspection: left paralumbar fossa distension (physiological = mild; pathological = marked). 2. Palpation: left paralumbar fossa — assess firmness (normal = slightly firm in dorsal, fluid in ventral); can feel contractions. 3. Auscultation: stethoscope on L paralumbar fossa extending cranially from dorsal 1/3 of 10th-13th rib; count for 2 min (normal = 3 contractions, 1 = eructation); describe sounds (rolling thunder = normal; fluid-tinkling = excessive fluid). 4. Simultaneous auscultation-percussion: tap the paralumbar fossa while auscultating — ping = gas in a displaced abomasum or caecal dilatation; pung = rumen collapse. 5. Rumen content sampling: check pH (5.5-7.2), sedimentation (4-8 min), chloride (<30 mEq/L = normal), colour (olive green = normal), smell.'},
+{id:'p05',title:'Temperature Taking — Technique',q:'Describe the correct technique for taking rectal temperature and give normal values for common species.',answer:'Technique: 1. Lubricate the thermometer (digital or mercury). 2. Insert thermometer while touching the rectal wall (NOT the centre of the rectum). 3. Wait until beep (digital) or 2 min (mercury). 4. Remove and wipe clean. 5. Read and record. Notes: take early in exam (stress = hyperthermia; rectal exam = decreases temperature). Normal values: Dog (large breed): 37.5-39.2°C; Cat: 38.0-39.3°C; Horse: 37.5-38.5°C; Cow: 38.0-39.5°C; Sheep/Goat: 38.5-40.0°C; Pig: 38.0-40.0°C.'},
+{id:'p06',title:'Abdominal Palpation — Small Animal',q:'Describe the technique for systematic abdominal palpation in a dog or cat.',answer:'1. Positioning: dog/cat in standing position or lateral recumbency; relax abdomen. 2. Superficial palpation first: check skin, subcutaneous tissue, symmetry, hernias (5 sites: diaphragmatic, umbilical, inguinal, scrotal, paracostal). 3. Deep palpation: start cranially, progress caudally; use fingertips bilaterally. 4. Epigastrium (cranial): liver (not palpable in deep-chested dogs), spleen (not palpable healthy), stomach, pancreas, R kidney (cranial). 5. Mesogastrium (mid): small intestine (mild discomfort = normal), left kidney (dogs), both kidneys (cats), ovaries. 6. Hypogastrium (caudal): urinary bladder (firm, smooth, ~golf ball when full), colon (faeces palpable). 7. Special tests: fluid wave test (effusion), ballottement (floating masses in fluid). 8. Gall bladder palpable only if diseased.'},
+{id:'p07',title:'ECG — Lead Placement and Interpretation',q:'Describe ECG lead placement in small animals and explain how to interpret a basic ECG.',answer:'Lead placement (4-limb leads): Right forelimb (RA) = red; Left forelimb (LA) = yellow; Left hindlimb (LL) = green; Right hindlimb (RL) = black (earth). Animal in right lateral recumbency, relaxed. Interpretation (Lead II): 1. Rate: count complexes per minute. 2. Rhythm: regular or irregular. 3. P wave: present? (atrial depolarisation — should precede every QRS). 4. QRS: present? (ventricular depolarisation — must be followed by T wave). 5. T wave: present? (ventricular repolarisation — NO QRS without T = death). 6. PR interval: constant? (AV conduction). Key abnormalities: P without QRS = complete AV block; QRS without P = junctional/ventricular escape; irregularly irregular = atrial fibrillation.'},
+{id:'p08',title:'Blood Pressure — Doppler Technique',q:'Describe the Doppler technique for blood pressure measurement in a cat.',answer:'1. Preparation: restrain calmly; allow acclimatisation; cuff at heart level. 2. Cuff placement: apply cuff (30% of limb circumference) on forelimb above the carpus or hindlimb above tarsus. 3. Clip hair over the palmar arterial arch (forelimb) or dorsal pedal artery (hindlimb). 4. Apply ultrasound gel. 5. Place Doppler transducer over the artery. 6. Inflate cuff until Doppler signal disappears. 7. Slowly deflate cuff — pressure when signal returns = SYSTOLIC pressure. 8. Continue deflating — pressure when sound abruptly changes = DIASTOLIC pressure. 9. Record multiple readings; discard first. Advantages over oscillometry: more accurate in cats.'},
+{id:'p09',title:'Urinalysis — Three Parts',q:'Describe how to perform a complete urinalysis, including all three components.',answer:'PART 1 — Appearance/Physical: colour (pale yellow to amber = normal); turbidity (clear = normal; cloudy = cells, crystals, bacteria); specific gravity (USG) by refractometry (dog: 1.001-1.070; cat: 1.001-1.080; isosthenuria: 1.007-1.012); pH (dogs/cats = acidic; horses/ruminants = alkaline); volume (>50 mL/kg/day = polyuria). PART 2 — Chemical (dipstick): protein (usually negative; significance determined by protein-creatinine ratio); glucose (DM); ketones (DKA, starvation); bilirubin; blood/haemoglobin; pH. PART 3 — Sedimentation/Microscopy: centrifuge, resuspend pellet, examine under microscope. Look for: RBCs (>5/hpf abnormal), WBCs (>5/hpf abnormal), casts (cellular, granular, waxy, hyaline), bacteria (always abnormal in cystocentesis sample), crystals (clinically significant varies), epithelial cells.'},
+{id:'p10',title:'Percussion of Abdomen — Ruminant Pain Tests',q:'Name and describe the 7 pain tests used in ruminants to detect abdominal pain, in order from least to most reliable.',answer:'Test 1 — Kalchschmidt\'s test (40-60%): gently touch skin/hair at the withers. Test 2 — Skin fold on thorax (40-60%): pinch a fold of skin on the thorax. Test 3 — Thumb intercostal pressure (80%): apply thumb pressure between the ribs at the region of the reticulum. Test 4 — Deep percussion on thorax (85%): hard fist percussion on the thorax over the reticulum area. Test 5 — Fist or knee to the xyphoid/sternum (85%): hard pressure with fist or knee to the sternal region. Test 6 — Bar test (85%): metal/wood bar placed under abdomen behind sternum, slowly raised then quickly lowered by two people. Test 7 — Withers pinch test (96%, MOST RELIABLE): grasp skin at the withers firmly. NORMAL response: animal dips its spine. POSITIVE test (pain): animal blocks its spine and does not respond (guarding).'},
+{id:'p11',title:'Neurological Examination — Posture Syndromes',q:'Describe and differentiate decerebrate rigidity, decerebellate rigidity, and Schiff-Sherrington posture.',answer:'DECEREBRATE RIGIDITY: Lesion location: rostral brainstem. Signs: extension of all 4 limbs + opisthotonus + stupor to coma. Mental status: severely depressed (stupor/coma). Prognosis: grave. DECEREBELLATE RIGIDITY: Lesion location: cerebellum. Signs: extension of forelimbs + flexion of hips (iliopsoas contraction) + NORMAL mental status. Key distinguishing feature: consciousness is NORMAL. SCHIFF-SHERRINGTON POSTURE: Lesion location: thoracic or lumbar spinal cord. Signs: extension of forelimbs + paralysis of hindlimbs. Mental status: normal. The forelimb hyperextension is due to loss of inhibitory signals from lumbar "border cells."'},
+{id:'p12',title:'Drug Administration Routes',q:'For each species (dog/cat, horse, cattle, pig), describe which routes and sites are used for SC and IM injection.',answer:'DOGS/CATS: SC: lateral chest area (avoid dorsal interscapular in cats due to post-vaccination sarcoma risk). Multiple sites needed for repeated injections. IM: femoral or prescapular muscles. HORSES: SC and IM: neck region. Gluteal muscles NOT recommended. IV: jugular vein. CATTLE/RUMINANTS: SC and IM: neck region ONLY. IV: jugular vein (or v. coccygealis as alternative). PIGS: SC and IM: neck region. Exception: piglets only can have IM in gluteal muscles. GENERAL RULE: In perfusionally unstable patients → IV route EXCLUSIVELY. For oral meds: do NOT give if patient is vomiting acutely or too sick to eat.'},
+{id:'p13',title:'Lymph Node Examination',q:'Describe the systematic examination of lymph nodes including which nodes to examine and what characteristics to assess.',answer:'WHICH NODES TO EXAMINE: Dogs/cats: submandibular, prescapular (superficial cervical), popliteal, axillary, superficial inguinal. Horses: submandibular (V-shaped) and subiliac (only normally palpable ones). Cattle: subiliac (1-2×9 cm elongated chain, cranial to stifle), prescapular, supramammary (only if mastitis). Sheep: parotid, submandibular, cervical chains (predilection for caseous lymphadenitis). 7 CHARACTERISTICS FOR EACH NODE: 1. Size (enlarged?), 2. Shape (round/irregular), 3. Temperature (warm = inflammation), 4. Consistency (firm/soft/fluctuant), 5. Pain (palpation response), 6. Movability (mobile = usually reactive; fixed = potentially neoplastic), 7. Symmetry (unilateral vs bilateral). FNA: provides confirmation but NOT exclusion (small sample = false negative risk).'},
+{id:'p14',title:'Mucous Membrane and CRT Examination',q:'Describe how to perform mucous membrane and capillary refill time examination, and interpret abnormal findings.',answer:'TECHNIQUE: 1. Observe colour before touching (eyes, nose, gingiva, vulva/prepuce, anus). 2. Assess moisture (wet/moist = normal; dry = dehydration). 3. CRT: apply firm pressure to gum with finger for 2 seconds, release; count time for colour to return. Normal = 1-2 seconds. 4. Check for discharge (nasal, ocular — note if unilateral or bilateral). COLOUR INTERPRETATION: Pink = normal. Pale/white = poor cardiac output (shock, anaemia, sepsis). Brick-red/injected = polycythaemia, sepsis, excitement, peripheral vasodilation. Icteric/yellow = haemolysis, hepatobiliary disease, biliary obstruction. Cyanotic/blue = low O2 saturation (pulmonary disease, R-to-L cardiac shunt, cold). CRT INTERPRETATION: <1 sec = hyperdynamic, early sepsis. 1-2 sec = normal. >2 sec = dehydration, low cardiac output, vasoconstriction. >4 sec = critical hypoperfusion.'},
+{id:'p15',title:'Cystocentesis — Technique',q:'Describe the technique for cystocentesis in a dog or cat.',answer:'INDICATIONS: Urine culture, uncontaminated sample when infection is suspected. CONTRAINDICATIONS (5): Insufficient urine volume, pyometra, trauma/recent abdominal surgery, coagulopathy. TECHNIQUE: 1. Confirm adequate bladder volume (palpation or ultrasound). 2. Position: dorsal or lateral recumbency (lateral may be easier). 3. Clip and disinfect the caudoventral abdomen. 4. Stabilise bladder with one hand through the abdominal wall. 5. Insert 22G needle at 45° angle into the bladder. 6. Aspirate urine (3-5 mL sufficient). 7. Remove needle smoothly; apply gentle pressure. SAMPLE HANDLING: Perform urinalysis immediately or store at 4°C (culture within 24 hours). Note: bacteria in cystocentesis sample = always significant.'},
+];
+
+// =====================================================================
+// PAST EXAM QUESTIONS
+// =====================================================================
+const PAST_QUESTIONS = [
+{id:'pq01',q:'What does "left shift" mean in haematology, and what is the difference between regenerative and degenerative left shift?',answer:'Left shift = increased number of immature (band) neutrophils in the blood. Regenerative left shift = occurs WITH neutrophilia — the bone marrow is responding to demand (better prognosis). Degenerative left shift = immature neutrophils WITHOUT neutrophilia — bone marrow cannot meet demand (worse prognosis, suggests severe sepsis or overwhelming infection).'},
+{id:'pq02',q:'Define "habitus" and list its components.',answer:'Habitus = a set of external features including conformation, age, body condition, and behaviour. Components assessed during the distant (general) exam: level of consciousness, behaviour, posture and locomotion, nutritional condition (BCS), coat/skin condition, abnormal sounds, and specific abnormalities (e.g., abdominal distension, limb oedema).'},
+{id:'pq03',q:'What are the two main percussion sounds and what do they indicate?',answer:'Resonance = sound produced by air-filled tissue (lungs, air-filled GI tract). Dullness = sound produced by fluid-filled or solid tissue (effusion, consolidation, masses). Additional: tympanic = gas in a single enclosed cavity (displaced abomasum); atympanic = gas in many small pockets (normal lung).'},
+{id:'pq04',q:'Define polyuria and give the threshold value.',answer:'Polyuria = increased urine production exceeding 50 mL/kg/day (normal is approximately 20-25 mL/kg/day).'},
+{id:'pq05',q:'Which urinary clinical sign is the least frequent in dogs and cats?',answer:'Incontinence (involuntary urine leakage) is the least frequent of the four main urinary signs (polyuria, pollakiuria, dysuria/stranguria, incontinence).'},
+{id:'pq06',q:'When should the IV route be used exclusively for drug administration?',answer:'In perfusionally unstable patients, drugs must be administered exclusively by the IV route. SC and IM routes are unreliable when perfusion is compromised (absorption is unpredictable due to poor peripheral blood flow).'},
+{id:'pq07',q:'What is the primary liver biochemistry panel?',answer:'ALT, ALP, GGT, bilirubin, total protein, albumin, and globulin. Note: ALT is specific to dogs and cats only. In horses and ruminants, GGT and SDH/GLDH are used instead of ALT.'},
+{id:'pq08',q:'What causes a cardiac murmur?',answer:'Cardiac murmurs are caused by turbulent blood flow. This occurs due to: changes in vessel/chamber diameter (stenosis = narrowing, dilatation = widening), regurgitation through incompetent valves, or abnormal communications (e.g., VSD). Murmurs are classified by intensity (grade 1-6), location, timing (systolic/diastolic/continuous), and shape.'},
+{id:'pq09',q:'Describe the technique for thoracocentesis: where and how is the needle inserted?',answer:'Location: 7th-9th intercostal space, left side. Position of needle: cranial border of the caudal rib (avoids intercostal artery and nerve). Level: lower third of thorax for fluid, upper third for air. Key safety measures: use a 3-way stopcock to prevent iatrogenic pneumothorax; use local anaesthesia (lidocaine); sedation usually not required.'},
+{id:'pq10',q:'When is a gallop rhythm (S3 or S4) considered abnormal?',answer:'A gallop rhythm is ABNORMAL in small animals (dogs and cats). In horses, S3 is heard in ~30% of normal horses and S4 in almost all normal horses — these are NORMAL findings. Gallop rhythm in small animals indicates cardiac disease (S3 = dilated cardiomyopathy; S4 = hypertrophic cardiomyopathy).'},
+{id:'pq11',q:'Which species requires vitamin C supplementation and why?',answer:'Guinea pigs (and humans) cannot synthesise their own vitamin C and must receive it through the diet. Deficiency causes scurvy (poor wound healing, haemorrhage, dental problems).'},
+{id:'pq12',q:'Why must the head always be fixed when restraining a chinchilla?',answer:'Chinchillas have a defence mechanism called "fur slip" — they can release large patches of fur when grabbed. The head must be secured to control the animal safely and prevent injury, and because without head control the animal can twist and injure itself.'},
+{id:'pq13',q:'What is the approximate field of vision of cattle?',answer:'Cattle have approximately 300° of vision (panoramic, as prey animals). They have a blind spot directly behind them.'},
+{id:'pq14',q:'Describe the subiliac lymph node in cattle: size, shape, and location.',answer:'The subiliac lymph node in cattle is 1-2 cm × 9 cm, forming an elongated chain. It is located cranially to the stifle joint (on the lateral surface of the thigh). It is one of the few lymph nodes palpable in healthy cattle.'},
+{id:'pq15',q:'Which lymph nodes are normally palpable in a healthy horse?',answer:'In healthy horses, only two lymph nodes are normally palpable: the submandibular lymph node (V-shaped arrangement under the jaw) and the subiliac lymph node (lateral thigh). The prescapular lymph node is NOT normally palpable in healthy horses (unlike dogs and cats).'},
+{id:'pq16',q:'Define dysmetria.',answer:'Dysmetria = inability to control the speed or strength of movements. It is a cerebellar sign. Hypometria = undershooting (movements too small). Hypermetria = overshooting (movements too large/exaggerated).'},
+{id:'pq17',q:'Describe the characteristics of diarrhoea originating from the small intestine.',answer:'Small intestinal diarrhoea: large volume, watery consistency, NO tenesmus (no straining), no mucus, no fresh blood (but may have melena if there is haemorrhage). Compared to large intestinal diarrhoea: small volume, mucus, tenesmus, possible fresh blood (haematochezia).'},
+{id:'pq18',q:'In which abdominal region are the kidneys in dogs vs cats, and which can be palpated?',answer:'In dogs: right kidney is located in the epigastrium (cranial abdomen, more cranial), left kidney in the mesogastrium (more caudal). Only the LEFT kidney is normally palpable in dogs. In cats: both kidneys are palpable (both are located in the mesogastrium/cranial abdomen and are easily palpated due to less body fat and more mobile kidneys).'},
+{id:'pq19',q:'What is the normal rumen sedimentation/flotation time and what do abnormal values indicate?',answer:'Normal: 4-8 minutes. <2 minutes (fast sedimentation): acidosis (grain engorgement — rumen contents are more fluid and poorly digested). >8 minutes (slow sedimentation): starvation or severely disturbed rumen function (reduced microbial activity).'},
+{id:'pq20',q:'How many pain tests are used in ruminants for abdominal pain detection, and which is the most reliable?',answer:'Seven pain tests are used, in order from least to most reliable. The most reliable is Test 7: the withers pinch test (96% reliability). Normal response = animal dips its spine. Positive test (pain) = animal blocks and does not move the spine.'},
+{id:'pq21',q:'What rumen chloride value indicates abomasal reflux?',answer:'Chloride >30 mEq/L in rumen fluid indicates abomasal reflux (abomasal contents leaking backwards into the rumen). Normal rumen chloride is <30 mEq/L.'},
+{id:'pq22',q:'What does serum lactate measure and what does elevated lactate indicate?',answer:'Serum lactate measures tissue perfusion. Elevated lactate (lactic acidosis) indicates inadequate oxygen delivery to tissues — the tissues switch to anaerobic metabolism. Causes: shock, severe anaemia, sepsis, cardiac failure.'},
+{id:'pq23',q:'What controls consciousness?',answer:'Consciousness is controlled by the ARAS (Ascending Reticular Activating System) located in the brainstem. The ARAS sends activating signals to the cerebral cortex, maintaining wakefulness. Brainstem lesions (e.g., decerebrate rigidity) cause loss of consciousness.'},
+{id:'pq24',q:'Describe the mucous membrane colour in decompensated shock.',answer:'Decompensated shock: pale to white mucous membranes (due to severe peripheral vasoconstriction and low cardiac output). CRT is prolonged (>2 seconds, may be >4 seconds in severe shock). Contrast with compensated/early septic shock: mucous membranes may be brick-red/injected with rapid CRT.'},
+{id:'pq25',q:'What is the shape of kidneys in small ruminants?',answer:'Small ruminants (sheep and goats) have bean-shaped kidneys. This contrasts with cattle, which have lobulated kidneys; horses have heart-shaped (right) and crescent-shaped (left) kidneys.'},
+{id:'pq26',q:'Which enzyme is NOT a cholestasis marker and why?',answer:'AST (aspartate aminotransferase) is NOT a cholestasis marker. It indicates cellular damage (muscle or liver), not bile flow obstruction. The cholestasis markers are: GGT (gamma-glutamyl transferase), ALP (alkaline phosphatase), and bilirubin.'},
+{id:'pq27',q:'What is paradoxical breathing and what does it indicate?',answer:'Paradoxical breathing = asynchronous movements of the thoracic and abdominal walls — when one expands, the other contracts (opposite of normal). This pattern, combined with muffled respiratory sounds, indicates pleural space disease (e.g., pneumothorax, large pleural effusion). The loss of normal negative intrapleural pressure disrupts normal breathing mechanics.'},
+{id:'pq28',q:'What is the normal body temperature range for dogs and what do hyperthermia and fever mean?',answer:'Normal dog temperature: 37.5-39.2°C (large breeds); small breeds slightly higher. Fever = inflammatory elevation of body temperature (caused by infection, immune-mediated disease, neoplasia). Hyperthermia = non-inflammatory elevation (caused by exercise, heat stroke, high ambient temperature, dehydration). KEY DISTINCTION: fever has an elevated "set point" in the hypothalamus; hyperthermia does not.'},
+{id:'pq29',q:'Describe the technique for passing a nasogastric tube in a horse and how to confirm correct placement.',answer:'1. Sedate the horse if necessary (xylazine). 2. Lubricate the tube generously. 3. Pass the tube through the ventral meatus of the nostril. 4. Advance to the pharynx; encourage swallowing. Confirmation of oesophagus (NOT trachea): visible swallowing action, resistance felt as tube passes into oesophagus, tube visible as a bump in the cervical oesophagus, resistance during passage. Trachea signs: no resistance, can feel "breathing" air coming from the tube, animal coughs. 5. ALWAYS flush with saline FIRST before any medication. 6. If in trachea: saline is the least harmful substance to the lungs.'},
+{id:'pq30',q:'What is the significance of finding bacteria in a urine sample obtained by cystocentesis vs free-catch?',answer:'Cystocentesis: bacteria found = ALWAYS significant (pathological bacteriuria/UTI). The bladder is sterile in health; any bacteria found are genuine. Free-catch: bacteria may represent urethral or environmental contamination — significance requires quantitative culture and clinical interpretation. This is why cystocentesis is the gold-standard method for diagnosing UTI.'},
+];
+
+
+// =====================================================================
+// APP STATE
+// =====================================================================
+let appState = {
+  currentSession: null,
+  sessions: JSON.parse(localStorage.getItem('vpSessions') || '[]'),
+  allStats: JSON.parse(localStorage.getItem('vpStats') || '{}'),
+};
+
+// =====================================================================
+// NAVIGATION
+// =====================================================================
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const page = document.getElementById('page-' + id);
+  if (page) page.classList.add('active');
+  document.querySelectorAll('.nav-btn').forEach(b => {
+    b.classList.toggle('active', b.getAttribute('onclick') === `showPage('${id}')`);
+  });
+  if (id === 'home') renderHome();
+  if (id === 'topics') renderTopics();
+  if (id === 'practical') renderPractical();
+  if (id === 'pastqs') renderPastQs();
+  if (id === 'stats') renderStats();
+}
+
+// =====================================================================
+// HOME
+// =====================================================================
+function renderHome() {
+  const total = Object.values(appState.allStats).reduce((a,s) => a + (s.total||0), 0);
+  const correct = Object.values(appState.allStats).reduce((a,s) => a + (s.correct||0), 0);
+  const pct = total > 0 ? Math.round(correct/total*100) : 0;
+  const tq = document.getElementById('stat-total-q');
+  if (tq) tq.textContent = ALL_QUESTIONS.length;
+  const pq = document.getElementById('stat-practical-q');
+  if (pq) pq.textContent = PRACTICAL_QUESTIONS.length;
+  const ss = document.getElementById('stat-sessions');
+  if (ss) ss.textContent = appState.sessions.length;
+  const el = document.getElementById('home-stats');
+  if (!el) return;
+  if (appState.sessions.length === 0) {
+    el.innerHTML = '<div style="color:var(--text-muted);font-size:0.9rem;padding:8px 0">No sessions yet — start studying!</div>';
+  } else {
+    el.innerHTML = '<div class="stats-grid" style="margin-bottom:0">'
+      + '<div class="stat-card"><div class="big">'+total+'</div><div class="lbl">Answered</div></div>'
+      + '<div class="stat-card"><div class="big">'+pct+'%</div><div class="lbl">Score</div></div>'
+      + '<div class="stat-card"><div class="big">'+appState.sessions.length+'</div><div class="lbl">Sessions</div></div>'
+      + '</div>';
+  }
+}
+
+
+// =====================================================================
+// TOPICS PAGE
+// =====================================================================
+function renderTopics() {
+  const grid = document.getElementById('topics-grid');
+  grid.innerHTML = TOPICS.map(t => {
+    const st = appState.allStats[t.id] || {correct:0,total:0};
+    const pct = st.total > 0 ? Math.round(st.correct/st.total*100) : null;
+    const badge = pct !== null ? `<span class="badge" style="background:${pct>=70?'var(--correct-bg)':pct>=50?'#fff3cd':'var(--wrong-bg)'};color:${pct>=70?'var(--correct-dark)':pct>=50?'#856404':'var(--wrong-dark)'}">${pct}%</span>` : `<span class="badge" style="background:#e9ecef;color:#6c757d">New</span>`;
+    return `<div class="topic-card" style="border-left:4px solid ${t.color}" onclick="startTopicStudy('${t.id}')">
+      <div class="flex-row"><span style="font-weight:600;font-size:0.95rem">${t.name}</span>${badge}</div>
+      <div style="font-size:0.8rem;color:var(--text-muted);margin-top:4px">${ALL_QUESTIONS.filter(q=>q.topic===t.id).length} questions</div>
+    </div>`;
+  }).join('');
+}
+
+// =====================================================================
+// QUIZ ENGINE
+// =====================================================================
+let quiz = { questions:[], idx:0, session:null };
+
+function shuffle(arr) { return [...arr].sort(()=>Math.random()-0.5); }
+
+function startTopicStudy(topicId) {
+  const qs = shuffle(ALL_QUESTIONS.filter(q => q.topic === topicId));
+  beginQuiz(qs, 'topic', topicId);
+}
+
+function startExamMode() {
+  let qs = [];
+  TOPICS.forEach(t => {
+    const tqs = shuffle(ALL_QUESTIONS.filter(q => q.topic === t.id));
+    qs = qs.concat(tqs.slice(0, 4));
+  });
+  qs = shuffle(qs);
+  beginQuiz(qs, 'exam', null);
+}
+
+function beginQuiz(questions, mode, topicId) {
+  quiz = {
+    questions,
+    idx: 0,
+    mode,
+    topicId,
+    session: { date: new Date().toLocaleString(), mode, correct:0, total:0, byTopic:{} },
+    answered: false,
+  };
+  showPage('quiz');
+  renderQuestion();
+}
+
+function renderQuestion() {
+  const q = quiz.questions[quiz.idx];
+  if (!q) { finishQuiz(); return; }
+  quiz.answered = false;
+
+  const topicName = TOPICS.find(t=>t.id===q.topic)?.name || q.topic;
+  const diffColor = {easy:'var(--correct-dark)',medium:'#b8860b',hard:'var(--wrong-dark)'}[q.diff];
+  const diffBg = {easy:'var(--correct-bg)',medium:'#fff3cd',hard:'var(--wrong-bg)'}[q.diff];
+
+  let html = `
+    <div class="question-header">
+      <div class="flex-row" style="flex-wrap:wrap;gap:6px">
+        <span class="badge" style="background:var(--primary-light);color:var(--primary-dark)">${topicName}</span>
+        <span class="badge" style="background:${diffBg};color:${diffColor}">${q.diff}</span>
+        <span class="badge" style="background:#e9ecef;color:#495057">${q.type==='tf'?'True/False':'MCQ'}</span>
+      </div>
+      <div class="progress-text">${quiz.idx+1} / ${quiz.questions.length}</div>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" style="width:${(quiz.idx/quiz.questions.length)*100}%"></div></div>
+    <div class="question-text">${q.q}</div>
+  `;
+
+  if (q.type === 'tf') {
+    html += `<div class="tf-btns">
+      <button class="tf-btn" onclick="answerTF(true)">✓ True</button>
+      <button class="tf-btn" onclick="answerTF(false)">✗ False</button>
+    </div>`;
+  } else {
+    html += '<div class="options">' + q.opts.map((o,i)=>'<button class="option-btn" onclick="answerMCQ('+i+')">'+'<span class="opt-letter">'+String.fromCharCode(65+i)+'</span>'+o+'</button>').join('') + '</div>';
+  }
+
+  html += `<div id="q-feedback" style="display:none"></div>
+    <div class="quiz-actions" id="quiz-actions">
+      <button class="btn btn-ghost btn-sm" onclick="skipQuestion()">Skip</button>
+    </div>`;
+
+  document.getElementById('quiz-area').innerHTML = html;
+}
+
+function answerMCQ(idx) {
+  if (quiz.answered) return;
+  quiz.answered = true;
+  const q = quiz.questions[quiz.idx];
+  const correct = idx === q.ans;
+  recordAnswer(q, correct);
+  document.querySelectorAll('.option-btn').forEach((btn,i) => {
+    btn.disabled = true;
+    if (i === q.ans) btn.classList.add('correct');
+    else if (i === idx && !correct) btn.classList.add('wrong');
+  });
+  showFeedback(q, correct);
+}
+
+function answerTF(given) {
+  if (quiz.answered) return;
+  quiz.answered = true;
+  const q = quiz.questions[quiz.idx];
+  const correct = given === q.ans;
+  recordAnswer(q, correct);
+  document.querySelectorAll('.tf-btn').forEach(btn => {
+    btn.disabled = true;
+    const isTrueBtn = btn.textContent.trim().startsWith('✓');
+    if (isTrueBtn && q.ans === true) btn.classList.add('correct');
+    else if (!isTrueBtn && q.ans === false) btn.classList.add('correct');
+    else if (isTrueBtn && given === true && !correct) btn.classList.add('wrong');
+    else if (!isTrueBtn && given === false && !correct) btn.classList.add('wrong');
+  });
+  showFeedback(q, correct);
+}
+
+function showFeedback(q, correct) {
+  const fb = document.getElementById('q-feedback');
+  fb.style.display = 'block';
+  fb.className = 'feedback ' + (correct ? 'correct' : 'wrong');
+  fb.innerHTML = `<strong>${correct ? '✓ Correct!' : '✗ Incorrect'}</strong><br>${q.exp}`;
+  document.getElementById('quiz-actions').innerHTML = `<button class="btn btn-primary" onclick="nextQuestion()">Next →</button>`;
+}
+
+function skipQuestion() {
+  quiz.idx++;
+  renderQuestion();
+}
+
+function nextQuestion() {
+  quiz.idx++;
+  renderQuestion();
+}
+
+function recordAnswer(q, correct) {
+  quiz.session.total++;
+  if (correct) quiz.session.correct++;
+  if (!quiz.session.byTopic[q.topic]) quiz.session.byTopic[q.topic] = {correct:0,total:0};
+  quiz.session.byTopic[q.topic].total++;
+  if (correct) quiz.session.byTopic[q.topic].correct++;
+
+  if (!appState.allStats[q.topic]) appState.allStats[q.topic] = {correct:0,total:0};
+  appState.allStats[q.topic].total++;
+  if (correct) appState.allStats[q.topic].correct++;
+  localStorage.setItem('vpStats', JSON.stringify(appState.allStats));
+}
+
+function finishQuiz() {
+  appState.sessions.unshift(quiz.session);
+  localStorage.setItem('vpSessions', JSON.stringify(appState.sessions));
+  const pct = quiz.session.total > 0 ? Math.round(quiz.session.correct/quiz.session.total*100) : 0;
+  document.getElementById('result-score-circle').textContent = pct + '%';
+  document.getElementById('result-title').textContent = pct >= 80 ? '🎉 Excellent!' : pct >= 60 ? '👍 Good Job!' : '📚 Keep Studying!';
+  document.getElementById('result-subtitle').textContent = `${quiz.session.correct} / ${quiz.session.total} correct`;
+  document.getElementById('result-modal').classList.add('open');
+}
+
+function closeResultModal() {
+  document.getElementById('result-modal').classList.remove('open');
+}
+
+// =====================================================================
+// PRACTICAL
+// =====================================================================
+function renderPractical() {
+  document.getElementById('practical-list').innerHTML = PRACTICAL_QUESTIONS.map(p => `
+    <div class="card" id="pcard-${p.id}">
+      <div style="font-weight:600;margin-bottom:8px">🏥 ${p.title}</div>
+      <div style="margin-bottom:12px">${p.q}</div>
+      <textarea id="ptext-${p.id}" class="practical-textarea" placeholder="Write your answer here, then reveal the model answer..."></textarea>
+      <div class="flex-row" style="gap:8px;margin-top:8px">
+        <button class="btn btn-primary btn-sm" onclick="revealPractical('${p.id}')">👁 Reveal Answer</button>
+      </div>
+      <div id="panswer-${p.id}" style="display:none" class="feedback correct" style="margin-top:10px"></div>
+      <div id="pgrade-${p.id}" style="display:none" class="flex-row" style="gap:8px;margin-top:8px">
+        <button class="btn btn-sm" style="background:var(--correct-bg);color:var(--correct-dark)" onclick="gradePractical('${p.id}',true)">✓ Got it right</button>
+        <button class="btn btn-sm" style="background:var(--wrong-bg);color:var(--wrong-dark)" onclick="gradePractical('${p.id}',false)">✗ Need more study</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function revealPractical(id) {
+  const p = PRACTICAL_QUESTIONS.find(x=>x.id===id);
+  const ansDiv = document.getElementById('panswer-'+id);
+  ansDiv.style.display = 'block';
+  ansDiv.innerHTML = '<strong>Model Answer:</strong><br>' + p.answer.replace(/\n/g,'<br>');
+  document.getElementById('pgrade-'+id).style.display = 'flex';
+}
+
+function gradePractical(id, correct) {
+  const gradeDiv = document.getElementById('pgrade-'+id);
+  gradeDiv.innerHTML = correct ? '<span style="color:var(--correct-dark)">✓ Marked as correct!</span>' : '<span style="color:var(--wrong-dark)">✗ Marked for further study</span>';
+}
+
+// =====================================================================
+// PAST QUESTIONS
+// =====================================================================
+function renderPastQs() {
+  document.getElementById('pastqs-list').innerHTML = PAST_QUESTIONS.map(p => `
+    <div class="card">
+      <div style="font-weight:600;margin-bottom:8px">📝 ${p.id.replace('pq','Q')}</div>
+      <div style="margin-bottom:12px">${p.q}</div>
+      <button class="btn btn-ghost btn-sm" onclick="this.nextElementSibling.style.display='block';this.style.display='none'">👁 Show Answer</button>
+      <div class="feedback correct" style="display:none">${p.answer.replace(/\n/g,'<br>')}</div>
+    </div>
+  `).join('');
+}
+
+// =====================================================================
+// STATS
+// =====================================================================
+function renderStats() {
+  const total = Object.values(appState.allStats).reduce((a,s) => a + (s.total||0), 0);
+  const correct = Object.values(appState.allStats).reduce((a,s) => a + (s.correct||0), 0);
+  const pct = total > 0 ? Math.round(correct/total*100) : 0;
+
+  document.getElementById('overall-stats').innerHTML = `
+    <div class="stat-card"><div class="big">${total}</div><div class="lbl">Total Answered</div></div>
+    <div class="stat-card"><div class="big">${correct}</div><div class="lbl">Correct</div></div>
+    <div class="stat-card"><div class="big">${pct}%</div><div class="lbl">Overall Score</div></div>
+    <div class="stat-card"><div class="big">${appState.sessions.length}</div><div class="lbl">Sessions</div></div>
+  `;
+
+  const topicRows = TOPICS.map(t => {
+    const st = appState.allStats[t.id] || {correct:0,total:0};
+    return { name:t.name, color:t.color, ...st, pct: st.total>0 ? Math.round(st.correct/st.total*100) : null };
+  }).filter(t=>t.total>0).sort((a,b)=>(a.pct||0)-(b.pct||0));
+
+  if (topicRows.length === 0) {
+    document.getElementById('topic-stats-list').innerHTML = '<div style="padding:16px;color:var(--text-muted)">No topics attempted yet. Start studying!</div>';
+  } else {
+    document.getElementById('topic-stats-list').innerHTML = topicRows.map(t=>`
+      <div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--border)">
+        <div style="width:12px;height:12px;border-radius:50%;background:${t.color};flex-shrink:0"></div>
+        <div style="flex:1;min-width:0"><div style="font-weight:500;font-size:0.9rem">${t.name}</div>
+          <div style="background:var(--border);border-radius:4px;height:6px;margin-top:4px"><div style="background:${t.pct>=70?'var(--correct-dark)':t.pct>=50?'#ffc107':'var(--wrong-dark)'};width:${t.pct}%;height:100%;border-radius:4px;transition:width 0.5s"></div></div>
+        </div>
+        <div style="font-weight:700;color:${t.pct>=70?'var(--correct-dark)':t.pct>=50?'#856404':'var(--wrong-dark)'}; min-width:40px;text-align:right">${t.pct}%</div>
+        <div style="font-size:0.8rem;color:var(--text-muted);min-width:55px;text-align:right">${t.correct}/${t.total}</div>
+      </div>
+    `).join('');
+  }
+
+  const histEl = document.getElementById('session-history-list');
+  if (appState.sessions.length === 0) {
+    histEl.innerHTML = '<div style="padding:16px;color:var(--text-muted)">No sessions yet.</div>';
+  } else {
+    histEl.innerHTML = appState.sessions.slice(0,10).map(s => {
+      const pct = s.total>0 ? Math.round(s.correct/s.total*100) : 0;
+      return `<div class="card" style="margin-bottom:10px">
+        <div class="flex-row"><span style="font-weight:600">${s.date}</span><span class="badge" style="background:${pct>=70?'var(--correct-bg)':pct>=50?'#fff3cd':'var(--wrong-bg)'};color:${pct>=70?'var(--correct-dark)':pct>=50?'#856404':'var(--wrong-dark)'}">${pct}%</span></div>
+        <div style="color:var(--text-muted);font-size:0.85rem;margin-top:4px">${s.mode === 'exam' ? '📋 Exam Mode' : '📚 Topic Study'} &nbsp;·&nbsp; ${s.correct}/${s.total} correct</div>
+      </div>`;
+    }).join('');
+  }
+}
+
+function resetAllStats() {
+  if (!confirm('Reset ALL progress? This cannot be undone.')) return;
+  appState.allStats = {};
+  appState.sessions = [];
+  localStorage.removeItem('vpStats');
+  localStorage.removeItem('vpSessions');
+  renderStats();
+  renderHome();
+}
+
+// =====================================================================
+// INIT
+// =====================================================================
+showPage('home');
+</script>
+</body>
+</html>
