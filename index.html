@@ -809,20 +809,53 @@ function renderTopics() {
 // =====================================================================
 let quiz = { questions:[], idx:0, session:null };
 
-function shuffle(arr) { return [...arr].sort(()=>Math.random()-0.5); }
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+// Roll a D4: returns 0,1,2,3 with equal probability
+function d4() { return Math.floor(Math.random() * 4); }
+
+// For each MCQ question, bake in a randomised answer position by
+// rearranging opts so the correct answer lands on a D4-rolled slot.
+// T/F questions are left untouched.
+function randomiseAnswers(questions) {
+  return questions.map(q => {
+    if (q.type !== 'mcq') return q;
+    const roll = d4(); // target slot (0=A, 1=B, 2=C, 3=D)
+    // Build new opts array: put correct answer at [roll], fill rest in original order
+    const correct = q.opts[q.ans];
+    const others = q.opts.filter((_, i) => i !== q.ans);
+    const newOpts = [];
+    let otherIdx = 0;
+    for (let i = 0; i < q.opts.length; i++) {
+      if (i === roll) newOpts.push(correct);
+      else newOpts.push(others[otherIdx++]);
+    }
+    return { ...q, opts: newOpts, ans: roll };
+  });
+}
 
 function startTopicStudy(topicId) {
-  const qs = shuffle(ALL_QUESTIONS.filter(q => q.topic === topicId));
+  const qs = randomiseAnswers(shuffle(ALL_QUESTIONS.filter(q => q.topic === topicId)));
   beginQuiz(qs, 'topic', topicId);
 }
 
 function startExamMode() {
   let qs = [];
   TOPICS.forEach(t => {
-    const tqs = shuffle(ALL_QUESTIONS.filter(q => q.topic === t.id));
-    qs = qs.concat(tqs.slice(0, 4));
+    const pool = shuffle(ALL_QUESTIONS.filter(q => q.topic === t.id));
+    // Coin flip: 3 or 4 questions for this topic
+    const count = Math.random() < 0.5 ? 3 : 4;
+    // Sample without replacement (pool is already shuffled, just slice)
+    qs = qs.concat(pool.slice(0, count));
   });
-  qs = shuffle(qs);
+  qs = randomiseAnswers(shuffle(qs));
   beginQuiz(qs, 'exam', null);
 }
 
@@ -834,6 +867,7 @@ function beginQuiz(questions, mode, topicId) {
     topicId,
     session: { date: new Date().toLocaleString(), mode, correct:0, total:0, byTopic:{} },
     answered: false,
+    shuffledCorrect: null,
   };
   showPage('quiz');
   renderQuestion();
@@ -867,18 +901,12 @@ function renderQuestion() {
     html += '<button class="tf-btn" onclick="answerTF(false)">&#10007; False</button>';
     html += '</div>';
   } else {
-    // Shuffle options so correct answer lands in a random position
-    const indices = q.opts.map(function(_,i){return i;});
-    for (var si = indices.length-1; si > 0; si--) {
-      var sj = Math.floor(Math.random()*(si+1));
-      var tmp = indices[si]; indices[si]=indices[sj]; indices[sj]=tmp;
-    }
-    quiz.shuffledCorrect = indices.indexOf(q.ans);
+    // opts already randomised at session start via d4() in randomiseAnswers()
     var optHtml = '<div class="options">';
-    for (var oi=0; oi<indices.length; oi++) {
+    for (var oi=0; oi<q.opts.length; oi++) {
       optHtml += '<button class="option-btn" onclick="answerMCQ('+oi+')">';
       optHtml += '<span class="opt-letter">'+String.fromCharCode(65+oi)+'</span>';
-      optHtml += q.opts[indices[oi]]+'</button>';
+      optHtml += q.opts[oi]+'</button>';
     }
     optHtml += '</div>';
     html += optHtml;
@@ -896,11 +924,11 @@ function answerMCQ(idx) {
   if (quiz.answered) return;
   quiz.answered = true;
   const q = quiz.questions[quiz.idx];
-  const correct = idx === quiz.shuffledCorrect;
+  const correct = idx === q.ans;  // q.ans is already the D4-rolled slot
   recordAnswer(q, correct);
-  document.querySelectorAll('.option-btn').forEach((btn,i) => {
+  document.querySelectorAll('.option-btn').forEach((btn, i) => {
     btn.disabled = true;
-    if (i === quiz.shuffledCorrect) btn.classList.add('correct');
+    if (i === q.ans) btn.classList.add('correct');
     else if (i === idx && !correct) btn.classList.add('wrong');
   });
   showFeedback(q, correct);
