@@ -312,7 +312,7 @@
 
       <div class="ai-step">
         <div class="ai-step-num">2</div>
-        <div class="ai-step-body"><strong>Click "Create API Key"</strong> — choose <em>Create new project</em> when prompted. Your key will start with <code>AIza...</code> — copy it.</div>
+        <div class="ai-step-body"><strong>Click "Create API Key"</strong> — choose <em>Create new project</em> when prompted. Copy the key that appears (it's a long string of letters and numbers).</div>
       </div>
 
       <div class="ai-step">
@@ -327,7 +327,7 @@
 
       <div style="margin-top:18px">
         <label style="font-weight:700;font-size:0.85rem;color:var(--text-muted);letter-spacing:0.05em">GEMINI API KEY</label>
-        <input type="password" id="ai-key-input" class="ai-key-input" placeholder="AIza..." autocomplete="off" oninput="aiKeyInputChanged()">
+        <input type="password" id="ai-key-input" class="ai-key-input" placeholder="Paste your Gemini API key here..." autocomplete="off" oninput="aiKeyInputChanged()">
         <div id="ai-key-status" style="font-size:0.82rem;color:var(--text-muted);margin-bottom:12px">Enter your key above.</div>
         <button class="btn btn-primary" onclick="confirmApiKey()" id="ai-confirm-btn">✓ Confirm Key</button>
         <button class="btn btn-ghost btn-sm" onclick="clearApiKey()" id="ai-clear-btn" style="display:none;margin-left:8px">Clear Key</button>
@@ -2979,9 +2979,9 @@ function confirmApiKey() {
   const inp = document.getElementById('ai-key-input');
   const key = inp.value.trim();
   const status = document.getElementById('ai-key-status');
-  if (!key.startsWith('AIza') || key.length < 30) {
+  if (!key || key.length < 20) {
     inp.classList.add('invalid');
-    status.textContent = '✗ That doesn\'t look like a valid Gemini key. It should start with AIza and be ~40 characters.';
+    status.textContent = '✗ That key looks too short — Gemini API keys are typically 30+ characters.';
     status.style.color = 'var(--wrong-dark)';
     return;
   }
