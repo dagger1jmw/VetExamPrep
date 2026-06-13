@@ -1,0 +1,141 @@
+================================================================================
+TOPIC: BLOOD PRESSURE MEASUREMENT
+================================================================================
+
+=== FROM: 00_Propedeutics_5 ===
+BLOOD PRESSURE
+BLOOD PRESSURE MEASUREMENT TECHNIQUE
+
+Dogs and cats that are presented with clinical signs of low cardiac output (e.g., weak peripheral pulses, cold extremities), shock, blood loss, or
+obtundation should be evaluated for hypotension.
+In some cases, hypotension is diagnosed clinically based on the constellation of history, presenting signs, and suspected clinical diagnosis.
+Accurate measurement of BP is important in any hypotensive patient to confirm the diagnosis and to provide baseline data for monitoring the
+response to therapy.
+BP evaluation methods differ in their sensitivity to low BP. Automated noninvasive techniques (i.e., oscillometric techniques) may fail to detect a
+pulse when hypotension is present, and operator-reliant techniques for pulse detection (e.g., Doppler sphygmomanometry) can be unreliable if
+the pulse signal is difficult to discern. Of the methods typically used in acute BP measurement, arterial cannulation is the most accurate method of
+documenting and monitoring hypotension.
+
+CHOOSING A BLOOD PRESSURE MEASUREMENT TECHNIQUE
+Acute Diagnostic Blood Pressure Measurement
+Detection of systemic hypertension may prompt additional testing for an underlying disease condition. Therefore, it is often preferable to measure BP
+acutely (i.e., during a clinical examination or diagnostic evaluation), rather than hospitalizing patients and placing indwelling arterial catheters.
+When a technique to measure BP in a particular animal is chosen, specific issues to be considered include the availability of equipment, the availability
+of “normal” values to use for comparison, the skill and experience of the person making the measurement, and specific issues related to the animal
+(e.g., size, obesity, temperament).
+Many studies have been performed in anesthetized and conscious dogs and cats and have rendered conflicting results regarding the accuracy of
+various noninvasive measurement methods to predict BP measured invasively via implanted telemetry devices or arterial catheters in peripheral
+arteries. Published validation studies, often performed on healthy young animals, have indicated that choice of measurement method (e.g.,
+oscillometry, Doppler ultrasound, high definition oscillometry) and the specific technique details (e.g., position of patient during measurement, cuff
+position, anesthetized vs. conscious patient) have a large impact on the precision and accuracy of BP measurement in dogs and cats, but at this time,
+there is no consistent advantage or disadvantage to any of the noninvasive techniques to assess BP outlined below.
+Ultimately, the types of studies that are most helpful to the clinician are those that develop normal ranges of measured BP using specific devices in
+clinical patients (i.e., patients of varying ages, breeds and health status). Alternatively, a well-performed study using normal animals may be used to
+develop normal values for noninvasive methods if they are compared to a valid invasive method. Further, the technique used in a specific study must
+be accurately reproduced in the clinic for the suggested “normal values” to be valid. To date, few studies have addressed the ability of these techniques
+to discern “normal” from “abnormal” in a conscious clinical population. Therefore assessment of BP values obtained may involve comparisons with
+normal values or comparison with values known to be associated with clinical signs.
+Continuous Blood Pressure Monitoring: Conscious Patients
+The monitoring of BP over time requires either continuous measurement (arterial catheterization) or repeated measurements, recorded automatically
+(oscillometric or high definition oscillometric [HDO] methods) or manually (Doppler sphygmomanometric methods). Arterial catheterization has the
+greatest number of advantages in conscious patients. Blood pressure obtained via arterial cannulation is accurate when the technique is used correctly
+and the values obtained are objective and repeatable (no manual pulse detection is required). A particularly important advantage is that the system
+can be secured to continue BP measurement when the animal moves. The major disadvantages are the technical skills and equipment required to
+maintain an arterial catheter and transducer system.
+Noninvasive methods are commonly used to take serial BP measurements in conscious animals. Although noninvasive BP measurements appear to be
+technically simple to obtain, they are subject to marked inaccuracy with animal movement, poor pulse pressure, arrhythmia, or inconsistent
+technique. When repeated BP measurements are obtained using these methods for monitoring, animal posture, limb position, cuff size and cuff position
+should be identical for the repeated recordings.
+Continuous Blood Pressure Monitoring: Anesthetized Patients
+Blood pressure monitoring by most clinical methods is accurate and repeatable in anesthetized animals. The primary confounding problem of patient
+movement is absent in these patients, which renders them ideal subjects for BP measurement. Nonetheless, differences between values obtained by
+invasive methods (arterial catheterization) and noninvasive methods have been documented in numerous studies of dogs and cats. These studies
+indicate that numeric values obtained by means of noninvasive methods often underestimate true BP. In the case of anesthetized animals, this may
+result in an erroneous diagnosis of hypotension, but it seldom leads to the more dangerous error of overestimating BP in these patients. In any case,
+the marked hypotensive effects of many anesthetic agents should be taken intovaccount when assessing BP in an anesthetized patient.
+
+Regardless of the technique chosen to assess BP in clinical patients, written records of the technique and results should be kept on a standard form, including cuff size and site, values obtained, rationale for excluding any values, the final (mean) result, and interpretation of the
+results by a veterinarian. It may be helpful to record assessment of patient demeanor during measurement (e.g., calm, agitated, panting, etc.) to help determine the need for confirmatory measurements.
+
+Arterial Puncture or Arterial Cannulation (“Invasive” or “Direct” Technique)
+Direct BP measurement involves advancing a needle attached to a pressure transducer directly into an artery to measure BP. This procedure may be performed acutely to obtain instantaneous BP
+readings, or BP can be measured over time through the use of an indwelling arterial catheter instead of a needle. Invasive BP measurements are typically used during anesthetic procedures, in critical
+care patients when ongoing BP information is desired, or to document or exclude hypertension acutely as a clinical diagnosis in dogs. Acute arterial puncture is seldom used for clinical diagnosis of
+hypertension in cats.
+Direct BP measurement is usually performed by means of puncture of the femoral artery in dogs. Use of local anesthesia is strongly recommended for this procedure and when used, the procedure is
+well tolerated by most dogs. The patient is gently restrained in lateral recumbency. Approximately 5 minutes prior to arterial puncture, 1 to 2 mL of 2% lidocaine hydrochloride is injected
+subcutaneously over the area in which the femoral pulse is palpated in the dependent hind limb. A 22-gauge, 1-inch needle is attached to a transducer and flushed with heparinized saline, ensuring
+that no bubbles remain in the transducer. The transducer is zeroed at the level of the sternum in the laterally recumbent dog. The femoral pulse is palpated in the femoral triangle, and the needle is
+carefully advanced into the femoral artery (Figure 99-1) until a satisfactory pressure waveform is recorded on the monitor screen.
+A sample of the tracing is recorded, and the needle is withdrawn. Firm pressure is applied to the area of arterial puncture for a minimum of 5 minutes after measurement. The patient should be
+monitored closely for at least 1 hour after the procedure for any complications related to hematoma formation. Systolic, diastolic, and mean BP values from five consecutive cardiac cycles during
+normal sinus rhythm are averaged to obtain a representative value for the patient. When use of an arterial catheter is preferred, the catheter is usually inserted into the dorsal pedal artery. A local
+anesthetic may be used as described previously.
+Oscillometric Technique
+Oscillometric BP measurement involves the use of an automated detection system and a cuff that is wrapped around a
+limb or tail over an artery. The cuff is inflated automatically to a pressure that causes occlusion of the artery and then
+slowly deflated. The machine detects oscillations in the vessel wall as the occlusion is eased, and the pressure at which
+oscillations are maximal is recorded as the mean arterial pressure. The monitor, using algorithms specific to the
+technique, then calculates systolic and diastolic pressures. This technique uses data from many cardiac cycles to render a
+single reading and is therefore unsuitable for use in animals with rapidly changing BP.
+Oscillometric BP measurement methods are more accurate in dogs than in cats. This measurement method may return
+inaccurate results if the patient is not motionless (e.g., trembling or panting), has a weak or irregular pulse, or has a
+small artery (i.e., most cats). Use of a cuff of appropriate size is extremely important to ensure accurate measurements.
+Cuff width should be approximately 40% of the circumference of the limb or tail in dogs and approximately 30% of the
+appendage circumference in cats. When used on the tail, the cuff is wrapped snugly high on the tail head with the dog in
+sternal or lateral recumbency. Although tail cuffs can be used in standing animals, animal movement often interferes
+with accurate measurement. Limb cuffs are wrapped around the forelimb distal to the elbow or around the mid
+metatarsus at the level of the superficial plantar arterial arch (Figure 99-2). In all cases, the center of the inflatable
+bladder on the cuff should be centered over the artery that will be compressed. The center of the inflatable bladder is often
+indicated on the cuff by a small arrow.
+To maximize accuracy, the cuff should be at the level of the heart during readings; therefore lateral or sternal
+recumbency is preferred, and use of limb cuffs in standing patients should be avoided. In cats, tail cuffs return more
+repeatable measurements than limb cuffs. Typically, the cat rests in sternal recumbency during readings (Figure 99-3).
+In all cases, best results are obtained when the patient is minimally restrained and soothed during the procedure. A short
+acclimation period prior to measurement is recommended to allow patients to become calmer. A series of at least five
+readings are obtained at approximately 1-minute intervals. Any readings that are clearly erroneous are discarded. The
+multiple readings are then averaged to obtain a representative result (Video 99-1).
+Oscillometric techniques are valuable in anesthetized dogs and cats to monitor trends in BP. Because the animal is
+immobilized and BP shows less variability over time, repeatable and accurate readings can be obtained over time in both
+dogs and cats.
+Doppler-Ultrasonic Technique (Doppler Sphygmomanometry)
+
+High-Definition Oscillometric Technique
+
+Doppler ultrasonic flow detection through the use of a piezoelectric crystal allows detection of flow in a peripheral artery.
+Hair is clipped just proximal to the palmar metacarpal pad at the level of the superficial palmar arterial arch for forelimb
+measurement; over the dorsal pedal artery for hindlimb measurement; or on the ventral aspect of the tail for tail
+measurement (Videos 99-2 and 99-3). An occluding cuff (sized as outlined for oscillometric techniques) is placed proximal to
+the point of flow detection (midradius in the forelimb, proximal to the hock in the hindlimb, or proximal to transducer
+placement on the tail), and measurements are obtained with the cuff at the level of the heart. Ultrasonic coupling gel is
+placed on the concave surface of the Doppler transducer, and the transducer is held in position during measurements
+(Figure 99-4) or fixed in position using adhesive tape.
+
+High-definition oscillometry is a variation of the conventional oscillometric method of BP
+measurement, but detects oscillations of the blood vessel in real time to measure pulse amplitude
+and is purported to have the ability to assess a wider range of BP values as well as the ability to
+detect arrhythmias. Cuff and limb positions are similar to those of conventional oscillometric
+devices, but cuff sizing is divided into two options based on weight of the dog. Attempts to validate
+and develop data for precision and accuracy of measurements using this technique in anesthetized
+and conscious dogs and cats have rendered variable results. Based on these evaluations, there is no
+consistent advantage to clinical use of this type of device vs. conventional oscillometry or Doppler
+sphygmomanometry. Regardless of device and technique used, body and limb position as well as
+cuff size and position should remain consistent for any individual dog and cat.
+
+An audible pulse signal is obtained, and the cuff is inflated with a bulb attached to a pressure gauge. The cuff is inflated to a
+pressure no less than 40 mm Hg above the audible cut-off point of the signal. The cuff is then slowly deflated, and the
+pressure at which the Doppler signal is again audible is recorded as the systolic pressure. The cuff is deflated further, and the
+pressure at which the audible signal abruptly changes in pitch or becomes muffled is recorded as the diastolic pressure.
+The Doppler flow detection system of BP measurement is considered the most accurate and repeatable of studied
+noninvasive BP measurement techniques in conscious cats. It is frequently used in dogs but may provide spurious high
+readings in some individuals. When abnormal readings are obtained by this method from dogs, care should be taken to
+make sure the abnormal readings are repeatable over multiple measurement periods.
+The advantages of this technique include flexibility with regard to motion, low pressure, small vessels, or the presence of
+arrhythmias, as well as speed of measurement. The rapidity of the measurement techniques allows for prompt assessment of
+changing BP, but meticulous attention must be paid to obtaining strong, audible signals in order to obtain the most accurate
+BP readings. This technique is also the most operator dependent of the techniques discussed.
+Accurate identification of diastolic pressures improves with operator practice, and BP measurement using Doppler
+ultrasonic flow detection techniques is most accurate if a few well-trained individuals in a practice are responsible for this
+diagnostic test and perform the test frequently.
+
+

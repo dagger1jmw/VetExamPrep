@@ -1,0 +1,1129 @@
+================================================================================
+TOPIC: ABDOMINAL EXAMINATION - HORSES AND RUMINANTS (FORESTOMACH, ABOMASUM)
+================================================================================
+
+=== FROM: 00_Propedeutics_5 p.17-18 ===
+EXAMINATION OF FORESTOMACH
+AND ABOMASUM IN RUMINANTS
+
+➢ forestomach (rumen, reticulum, omasum)
+➢ true stomach - abomasum
+
+GENERALITIES
+
+The rumen
+
+E
+
+•
+•
+•
+•
+•
+
+DISTANT EXAMINATION
+
+CLINICAL HISTORY TAKING AND EXAMINATION OF THE ENVIRONMENT
+
+largest stomach compartment and consists of several sacs
+it can hold 150-200 l or more of material depending on the size of the cow
+because of its size, the rumen acts as a storage or holding vat for feed
+aside from storage, the rumen is also a fermentation vat
+the rumen’s environment favors the growth of microbes
+-> these microbes digest or ferment feed within the rumen and make volatile
+fatty acids (vfas). The rumen absorbs most of the vfas from fermentation
+
+•
+•
+•
+•
+•
+•
+•
+
+symptoms ?
+apetit, rumination, quality of excrement, milk production, stage of pregnancy/lactation stage
+speed of onset and duration of illness
+nature of the diet
+changes in attitude and behavior
+signs of pain
+treatment etc.
+
+Habitus (postures, gait, bcs)
+•
+
+behavioral manifestations of abdominal pain in cattle:
+- kicking the abdomen
+- kyphosis
+- stretching the forelegs forward and the hind legs backward while standing
++ spontaneus grunting or groaning suggest abdominal pain
+
+Contour
+•
+•
+
+is inspected from the rear and each lateral region viewed from an oblique angle
+we try to notice a possible abdominal distension
+
+left side
+
+EXAMINATION OF THE LEFT ABDOMEN
+
+The reticulum
+•
+•
+•
+
+the reticulum is a pouch-like structure in the forward area of the body, close to the heart
+the tissues in the reticulum form a network similar to a honeycomb
+rumen and reticulum aren’t separate compartments => they’re called the rumino-reticulum
+
+•
+
+primarily concerned with the assessment of the rumen and reticulum and to check for evidence of a left displaced abomasum
+
+Inspection
+The omasum
+
+right side
+
+g
+&
+
+•
+•
+•
+
+the omasum is a globe-shaped structure containing leaves of tissue (like pages in a book)
+it absorbs water and other substances from digestive contents
+feed material (ingesta) between the leaves will be drier than ingesta found in the other compartments
+
+The abomasum
+•
+•
+•
+
+the abomasum is the only compartment that contains glands
+these glands release hydrochloric acid and digestive enzymes, needed to breakdown feeds
+the abomasum is similar to a nonruminant stomach
+
+Rumination
+= complex process of:
+- regurgitation
+- remastication
+- ensalivation
+- reswallowing
+•
+•
+
+cows may spend 35 to 40 percent of each day ruminating (cud chewing)
+-> the amount of time spent ruminating depends on the diet : little ruminating occurs when cows eat grain or finely ground rations but when eating long hay, cows may ruminate for several hours
+mature cattle spend little time chewing while eating feed. Thus, during rest periods, cows regurgitate (bring up) soft feed wads (cud) to rechew and break into smaller pieces. They also resalivate the feed
+and reswallow it. This process makes the feed easier for the microbes to digest
+
+➢ left displacement of the abomasum (LDA)
+• the greater curvature of the abomasum passes beneath the rumen and is retained between it and the left abdominal wall, sometimes
+reaching beyond the costal arch in the LPF
+• the displaced abomasum contains fluid and gas which results with ping
+• the ping sounds like a basketball being bounced upon a concrete floor or a steel drum being hit
+• the presence of fluid in abomasum can be determined by eliciting fluid-splashing sounds and tinkling sounds (escaping gas bubbles)
+on ballottement and auscultation over a wide area
+• in lda ruminal movements are reduced in frequency and amplitude and if we hear them they seem to be somehow away
+
+➢ rumen atony and collapse
+• diseases of cattle that cause anorexia and rumen stasis may result in the rumen collapse syndrome and a pung over the left abdomen
+in the same area as lda (but area is larger and rectangular in shape)
+• it could therefore be misdiagnosed as lda
+• pung is not associated with abdominal distension
+• rumen pack cannot be palpated in lpf
+• rectal examination reveals collapsed dorsal sac of the rumen
+• rumen movements may be normal or reduced
+=> for further differentiation between lda and rumen collapse we can perform abomasocentesis, ultrasonography, endoscopy
+-> if sample of fluid has ph 2-4 we can diagnose lda
+
+•
+•
+•
+•
+
+contractions of the rumen are visible in the left paralumbal fossa
+observation of rumen movement at the LPF is only possible in good light and in animals that have a short coat
+the moving rumen can be detected indirectly by observing the lateral displacement of the body wall
+the alternate rising and sinking of the lpf is associated with the concurrent contraction and relaxation of dorsal and ventral sacs of the rumen
+
+Palpation
+•
+•
+•
+•
+•
+
+the rumen can be palpated through the abdominal wall at the LPF which is normally slightly concave
+we use extended fingers, the palm of the hand or the clenched fist
+an impression can be obtained of the size and fullness of the rumen
+the mass of rumen contents is commonly known as the rumen pack and have a doughy consistency
+above the rumen pack will reveal the normal gas cap
+
+Grain and yesterday’s hay
+-> if the gas cap is enlarged the lpf may be convex and the rumen pack not readly palpable
+-> it is enlarged in bloat (ruminal tympany) and LPF is distended
+-> left-sided displacement of the abomasum (lda) - we can’t feel the rumen pack
+-> when rumen contains excessive quantities of fluid the left flank will fluctuate on deep palpation
+-> in mature cattle anorexic for several days rumen is smaller and dorsal sac will be collapsed – we can’t feel the rumen pack (sense of emptiness)
+Percussion (following the palpation if needed)
+•
+•
+
+tactile percussion of the abdomen is used – to detect a fluid wave (an undulation of the abdominal wall created by a sharp percussion of the abdominal wall on the opposite side)
+wave is detectable when 1/3 or more of abd. cavity contain fluid (e.g. ruptured bladder-uroperitoneum, ascites, diffuse peritonitis)
+
+Ballottement of left abdomen
+•
+•
+
+the left abdomen can be ballotted with the closed fist over the lower 1/3 of the lpf
+auscultation at the same time may reveal fluid-splashing sounds such as LDA or an atonic rumen
+
+Auscultation
+• the rumen contraction sounds should be evaluated for intensity, duration and frequency
+-> normal : crackling crescendo-decrescendo rolling thunder
+-> rumen contractions are reduced in frequency, duration and amplitude or entirely absent:
+- hypocalcemia
+- endoxemia
+- simple indigestion
+- acute carbohydrate engorgement
+- traumatic reticuloperitonitis
+- LDA …
+-> presence of fluid-tinkling or splashing sounds along with a static rumen suggests excessive quantity of fluid in rumen (e.g. grain overload, prolonged anorexia)
+Percussion + simultaneous auscultation
+•
+•
+•
+•
+•
+•
+
+is used to detect presence of gas filled viscera in the abdomen
+is useful dg. technique to elicit pings or pungs
+both of them are resonant sounds indicating the presence of excessive quantities of gas in the lumen of GI
+the area being examined is percussed with a flick of the finger, palm or a plexor (a percussion hammer)
+the stethoscope is placed immediately adjacent to the area being percussed
+the clinican listens for a tympanitic sounds
+
+-> ping - high pitched resonant musical sound (gas filled viscera: distended abomasum, cecum or intenstines)
+-> pung - low pitched resonant musical sound (gas filled rumen)
+➢ ruminal distension
+• distension of the rumen with foamy contens as in frothy bloat (pung)
+• distension with free gas will result in medium pitched ping or pung
+
+➢ pneumoperitoneum
+• the accumulation of air in the peritoneal cavity of cattle occurs following laparotomy
+• both pf may be slightly enlarged and dull ping may be detectable on percussion and auscultation
+
+Gases
+Today’s hay
+
+It is suggested that clinical evaluation should be
+focused along a line drawn from the left elbow to
+the left tuber coxae although the pings and pungs
+can be found much higher or lower than this
+
+clinician’s checklist :
+- signs of abdominal pain
+- posture
+- systemic signs associated
+- body condition score
+- passage of faeces or faecal staining
+- lateral abdominal silhouette
+- left dorsal quadrant
+- left ventral quadrant
+- right dorsal quadrant
+- right ventral quadrant
+- ventral abdominal silhouette
+
+EXAMINATION OF FORESTOMACH
+AND ABOMASUM IN RUMINANTS
+DETECTION AND LOCALIZATION OF ABDOMINAL PAIN
+
+EXAMINATION OF THE RIGHT ABDOMEN
+Inspection
+•
+•
+
+=> the term cranial abdominal pain refers to abdominal pain associated with:
+- traumatic reticuloperitonitis
+- hepatic abscesses
+- abomasal ulcers
+- intestinal obstruction
+-> d.d. includes: pleuritis, pericarditis, severe pulmonary disease
+
+assessment of contour
+abnormal distention:
+- dilatation and volvulus of the abomasum
+- cecal dilatation and torsion
+- acute intestinal obstruction (spiral colon)
+- abomasal impaction
+- ascites
+- dilatation rumen - vagus indigestion
+
+Manifestations of abdominal pain in cattle
+
+Palpation
+•
+•
+
+performing palpation in non pregnant adult cattle and in calf no organs or viscera can be palpated through the abd. wall
+using the palms of both hands or the closed fist is palpated:
+- for evidence of distension or heavines which may suggest an enlarged viscus or a gravid uterus or a grunt (indication of a pain)
+
+-> distended viscus in the right flank may be due to:
+- abomasal volvulus or impaction
+- omasal impaction
+- cecal dilatation and volvulus
+- enlarged ventral sac of the rumen
+- enlargement of the liver
+•
+•
+
+-> varies widely:
+• streching of the body with depression of the back
+• kicking of abdomen
+• restlessness
+• repetedly lying down and standing up
+• grunting and groaning
+-> grunt : guttural sound caused by a forced expiration against a closed glottis
+-> sometimes grunting and groan are audible near to the cow's head
+➢ we want to detect possible pain in the reticulum area during traumatic reticuloperitonitis diagnosis
+-> the animal may grunt when it moves or breathes due to pain induced by parietal peritoneal irritation
+Pain tests
+•
+
+rectal examination is necessary to identify the distended viscus
+laparotomy
+
+Ballottement
+= variation of palpation for detection of firm or solid masses near the abdominal wall
+• short jab mass moves away from abd. wall and rebounds
+• ballottement of the lower flank in late pregnancy will cause the foetus to impact on rebound on the ballotting hand
+-> fluid–splashing souns audible: fluid filled intestines, abomasum
+-> free fluid in the peritoneal cavity will not usually cause fl.spl. sound
+-> sometimes large lumps of fat present in fat necrosis and impactions of the abomasum may also be detected in this way
+
+•
+•
+•
+•
+
+different interventions (tests, probes) on the basis of viscerocutaneous reflexes (e.g. haed’s areas) determine the increased skin sensitivity to pain (hyperalgesia)
+and stimulate the appearance of abdominal pain
+the tests must be below the threshold of irritability for the surface pain and above the threshold for abdominal pain
+the procedures are performed in a certain order from mild to severe
+a positive reaction is manifested by grunting or groaning of the animal
+during the tests, the clinician is close to the head of the animal or performs aucultation with the stethoscope on the trachea
+
+➢ kalchschmidt’s test (reliability 40-60%)
+= the clinician gently touches the skin or hair lace in the whiter’s or thoracis area
+
+Auscultation
+•
+•
+•
+•
+
+we can normally hear normal intestinal sounds called borborygmi (from small and large intestines)
+can be heard intermittently in the right ventral quadrant every 15-20 sec
+but may be inaudible (ileus)
+frequency and intensity vary among animals and depends on the time of feeding and the type of food
+-> decrease (frequency and intensity) is caused from obstruction of the small and large intestines => we can hear only tinkling sounds
+-> repeated peristaltic sounds may indicate intestinal hypermotility => fluid-rushing sounds enteritis
+
+➢ grasping a fold of the skin in the thorax area (reliability 40-60%)
+
+Percussion + simultaneous auscultation
+•
+•
+
+pings produced by percussion and auscultation represent abnormal accumulations of fluid and gas within abdominal structures
+dorsal and ventral of a line from the elbow to the tuber coxae
+
+-> conditions producing pings include:
+- abomasal dilatation rda (right-side dilatation and volvulus)
+- caecal dilatation or torsion
+- gas in the rectum
+- pneumoperitoneum
+- intestinal tympany in the postparturient cow (postpartum pings)
+- intussusception
+
+➢ pressure with the thumb in intercostal spaces (reliability 80%)
+
+=> pings on the right side can be confusing, and location and repeatability of the ping are probably the most useful indicators as to the organ involved
+-> while most pings on the left side of the cow are lda, most pings on the right side of the cow are from spiral colon and cecum
+-> commonly, cows that are sick, especially with gi disturbances have pings in the right paralumbar fossa
+-> a distended or displaced cecum will produce a consistent, large ping that is always palpable per rectum
+-> rda and rta (right abomasal torsion) pings are usually cranial to the 8th rib
+-> most right-sided abomasal problems have some degree of torsion associated with them, but the overall condition of the cow (heart rate, and degree of dehydration) indicates the severity and degree of torsion of the abomasum
+
+➢ fist pressure test (or knee test) (reliability 85%)
+= this test involves applying a sudden upward force with fist supporting with a knee, or with the knee in the area of the xiphisternum
+
+RETICULUM
+•
+•
+•
+•
+
+➢ deep percussion (reliability 85%)
+= percutaneous percussion intercostal spaces with a heavy percussion hammer from the mid-section of the chest and below to several places on both sides
+
+external palpation and observation of the reticulum is not possible
+auscultation of reticular contractions can sometimes be achieved by stethoscope auscultation over ribs 6 or
+7 ventrally on the left side
+diphasic contraction every 40 to 60 seconds at the start of the a cycle can sometimes be detected
+a rumbling sound followed by a liquid pouring sound may be heard
+
+Metal detectors
+•
+•
+
+metal detectors have been used to rule out the presence of metal in the structures of the anterior abdomen (wires, nailes..)
+however, many normal cattle give positive results due to the presence of harmless metal fragments present in the reticulum
+
+➢ bar test (reliability 85%)
+- in the bar test an operator stands either side of the animal
+- a padded metal or wooden bar is placed beneath the animal and positioned just behind the xiphisternum
+- each operator slowly raises the bar and then lowers it quickly
+- the clinician should place a stethoscope over the trachea in the ventral midline of the neck and auscultate for a grunt
+
+➢ withers pinch test (reliability 96%)
+- is performed by grasping a fold of skin over the withers area
+- this will cause the animal to dip the spine
+
+-e 
+=== FROM: Proped_Notes p.61-63 ===
+CLINICAL EXAMINATION OF THE FORESTOMACH
+& ABOMASUM IN RUMINANTS
+
+⸻
+4. Distant Examination
+
+1. Basic Anatomy
+//Ruminant stomach compartments
+
+Habitus (general appearance)
+Includes:
+• posture
+• gait
+• body condition score (BCS)
+
+The stomach is divided into:
+Forestomach
+• Rumen
+• Reticulum
+• Omasum
+
+//Rumen
+• Located on the left side
+• Largest compartment
+• Capacity: 150–200 L
+Functions:
+• Storage of feed
+• Fermentation chamber
+
+⸻
+5. Abdominal Contour
+
+produce
+
+vet's
+
+⸻
+6. Examination of LEFT ABDOMEN (RUMEN AREA)
+• concerns primarily the rumen and reticulum and look for a
+LDA
+//Inspection
+
+// Abomasum - TRUE STOMACH
+• True glandular stomach
+Produces:
+• Hydrochloric acid
+• Digestive enzymes
+
+Look at left paralumbar fossa (LPF) — only possible in good
+light + animals that have a short coat
+Normal:
+• visible rumen contractions
+• rising/falling movement of ank
+
+Similar to monogastric stomach
+
+Why?
+• Because rumen contracts rhythmically
+
+⸻
+2. Rumination
+
+//Palpation
+
+De nition = Process where feed is:
+• regurgitated
+mature cattle spend little time chewing while eating feed. Thus, during rest
+• rechewed
+periods, cows regurgitate (bring up) soft feed wads (cud) to re-chew and break
+into smaller pieces. They also re-salivate the feed and reswallow it. This
+• resalivated
+process makes the feed easier for the microbes to digest
+• reswallowed
+Key facts
+• Cows spend 35–40% of the day ruminating (cud chewing)
+Important for:
+• breaking feed down
+• aiding microbial digestion
+
+Technique:
+•
+ngers / palm / st
+What you feel:
+—Rumen pack
+• mass of ingesta
+• doughy consistency
+—Gas cap
+• located above rumen contents
+⸻
+Abnormal ndings
+
+⸻
+3. History Taking
+
+fl
+
+fl
+
+fl
+
+fi
+
+Normal rumen sound:
+• “rolling thunder”
+• crescendo-decrescendo pattern
+
+•
+•
+
+This is the typical area for a LDA
+The displaced abomasum contains uid and gas which
+results with ping
+The ping sounds like a basketball being bounced upon
+a concrete oor or a steel drum being hit
+
+⸻
+Reduced rumen motility
+
+•
+
+Seen in:
+• hypocalcemia
+• endotoxemia
+• indigestion
+• grain overload
+• traumatic reticuloperitonitis
+• LDA
+
+•
+
+The presence of uid in abomasum can be determined
+by eliciting uid-splashing sounds and tinkling sounds
+(escaping gas bubbles) on ballottement and
+auscultation over a wide area
+
+•
+
+in LDA ruminal mouvements are reduced in frequency
+and amplitude and if we hear them they seem to be
+some how away
+
+⸻
+Splashing + no movement
+•
+uid accumulation in rumen
+
+⸻
+Important di erentiation
+LDA vs Rumen collapse/ rumen atony
+
+⸻
+7. PERCUSSION + AUSCULTATION (PINGS)
+Ping vs Pung
+Ping (gas- lled viscera)
+• high-pitched resonant musical sound
+gas in:
+• abomasum
+• intestines
+• cecum
+
+👉 Con rm with:
+• abomasocentesis (pH 2–4 = LDA)
+• ultrasound & endoscopy
+
+Pung (gas lled rumen)
+• low-pitched sound
+• gas in rumen, stethoscope put adjacent to area being
+percussed with a ick of the nger, palm, hammer
+• listen for a tympanitic sound
+Clinical meaning
+• Indicates gas + uid interface
+⸻
+8. LEFT DISPLACED ABOMASUM (LDA)
+
+2. Left Displaced Abomasum (LDA)
+• rumen pack not palpable
+
+Abomasum moves:
+• under rumen
+• to left side
+
+4. Rumen collapse (anorexia)
+• empty feeling
+• dorsal sac collapsed
+fl
+
+check list
+
+1. Bloat (ruminal tympany)
+• enlarged gas cap
+• LPF distended
+👉 Tympany = gas accumulation
+
+3. Fluid- lled rumen
+•
+uctuation on palpation
+
+fl
+
+fl
+
+fi
+
+fl
+
+ff
+
+fl
+
+fl
+
+fi
+
+fi
+
+fi
+
+fi
+
+fl
+
+fi
+
+Ask about:
+• appetite
+• rumination
+• feces quality
+• milk production
+• pregnancy/lactation stage
+• diet type
+• onset & duration of disease
+• behavior changes
+• signs of pain
+
+fl
+
+//Auscultation
+
+—signs of abdominal pain
+—posture
+—systemic signs associated with conditions of the abdomen
+—body condition score
+—passage of faeces or faecal staining
+—lateral abdominal silhouette
+—left dorsal quadrant
+—left ventral quadrant
+—right dorsal quadrant
+—right ventral quadrant
+—ventral abdominal silhouette
+
+// Omasum
+• Contains leaf-like folds
+Function:
+• Absorption of water
+• Concentration of ingesta (drier contents)
+
+fi
+
+Seen in:
+• uroperitoneum (urine in abdomen)
+• ascites
+• peritonitis
+
+Look for:
+• asymmetry
+• distension
+
+// Reticulum
+• Located cranially near the heart
+• Has a honeycomb structure
+• Works together with rumen
+rumino-reticulum
+
+fl
+
+uid
+
+Used to detect:
+• Fluid wave
+• requires ≥1/3 abdominal uid
+
+Observe from:
+• rear
+• side (oblique angle)
+
+VFAs
+• Main energy source for ruminants, absorbed through rumen wall
+
+fl
+
+Findings:
+• splashing sounds
+suggests:
+• LDA
+• atonic rumen
+//Percussion
+
+Fermentation
+• Microorganisms (bacteria, protozoa) break down feed
+volatile fatty acids (VFAs)
+
+fi
+
+De nition = Pushing the abdomen to detect:
+•
+uid
+• gas
+
+Signs of abdominal pain in cattle
+• kicking abdomen
+• kyphosis (arched back)
+• stretching stance
+• grunting/groaning
+
+True stomach
+• Abomasum
+
+fi
+
+⸻
+Ballottement (IMPORTANT)
+
+Mechanism
+
+Findings
+• ping on left side
+•
+uid + gas
+• reduced rumen motility
+
+Ruminal distension
+• distension of the rumen with foamy contents as in
+frothy bloat (pung)
+• Distension with free gas will result in medium pitched
+ping or pung
+Pneumoperitoneum
+• the accumulation of air in the peritoneal cavity of cattle
+occurs following laparotomy
+• Both PF may be slightly enlarged and dull ping may be
+detectable on percussion and auscultation
+
+⸻
+9. RIGHT ABDOMEN EXAMINATION
+
+⸻
+12. PAIN TESTS (VERY IMPORTANT FOR EXAM)
+
+// Inspection
+
+Performed from mild
+
+Look for distension caused by:
+• abomasal volvulus and dilatation
+• cecal dilation and torsion
+• Acute intestinal obstruction
+• ascites
+• Abomasal impaction
+• Dilatation rumen - vagus indigestion
+
+Tests:
+1. Kalchschmidt test (touch skin) (40-60% reliable)
+percutaneous percussion intercostal spaces with a
+2. Skin fold pinch (40-60% reliable)
+heavy percussion hammer from the mid-section of the
+3. Intercostal pressure (80% reliable)
+7 chest and below to several places on both sides
+4. Deep percussion. (85% reliable)
+5. Fist/knee test (85% reliable)
+>
+applying a sudden upward force with st supporting with
+a knee, or with the knee in the area of the xiphisternum
+6. Bar test (85% reliable)
+7. Withers pinch (MOST RELIABLE ~96%)
+S
+
+>
+
+//Palpation
+•
+
+Use palms of both hands or the closed st :
+Normally:
+• no organs felt
+
+•
+
+Abnormal:
+• enlarged viscus
+• Gravid uterus
+• pain (grunt)
+Distended viscus in the right ank may be due to :
+• Abomasal volvulus or impaction
+• Omasal impaction
+• Cecal dilation and volvulus
+• Enlarged ventral sac of the rumen
+• Enlargement of the liver
+— rectal examination is necessary to identify the distended viscus
+— Laparotomy
+
+•
+
+a distended or displaced cecum will produce a consistent,
+large ping that is always palpable per rectum
+
+•
+
+RDA and RTA (right abomasal torsion) pings are usually
+cranial to the 8th rib
+most right-sided abomasal problems have some degree of
+torsion associated with them, but the overall condition of the
+cow (heart rate, and degree of dehydration) indicates the
+severity and degree of torsion of the abomasum
+
+Pallottement of the lower ank in late pregnancy
+• will cause foetus to impact on rebound on the balloting hand
+
+Free ui in the peritoneal cavity will not usually cause .spl. Sound
+⸻
+11. CRANIAL ABDOMINAL PAIN
+Causes:
+• traumatic reticuloperitonitis
+• liver abscess
+• abomasal ulcer
+• intestinal obstruction
+
+//Auscultation
+Normal:
+• borborygmi sound (SI & LI) every 15–20 sec in right ventral
+quadrant
+• Can also be inaudible
+• Frequency & intensity vary among animals and depends on
+the time of feeding and type of food
+
+Pain signs
+• stretching of the body w/ depression of the back
+• kicking of the abdomen
+• restlessness
+• repeated lying/standing
+• grunting / groaning
+
+Abnormal:
+•
+sounds
+obstruction of SI and LI
+• tinkling sounds
+uid + gas
+• hypermotility
+irritation / repeated peristaltic sounds
+• Fluid - rushing sounds
+enteritis
+
+Grunting
+• forced expiration against closed glottis
+👉 Indicates pain
+
+5
+2
+
+si
+
+//Macroscopic
+Color:
+• normal: green/brown (when silage or straw = yellow brown)
+• acidosis: milky grey
+• putrefaction: dark green/black
+Consistency:
+• normal: slightly viscous
+• watery contents
+inactive microbes
+• frothy
+bloat
+Odor:
+• normal: aromatic
+• rotten, moldy odor
+protein breakdown
+• sour odor
+lactic acidosis (grain or carbohydrate
+engorgement)
+pH
+Normal:
+rumen uid pH should be measured as soon as possible
+after collection of the sample (within minutes) — delays
+• 6.0–7.2 (roughage)
+in measuring rumen pH may produce inaccurate results
+• 5.5–6.5 (concentrate)
+Abnormal:
+• <5
+acidosis
+• 7.5
+anorexia / alkalosis (constant produc of saliva which
+has an alkaline pH)
+• Higher pH —> cases of urea poisoning
+Sedimentation test
+Normal:
+• 4–8 min
+Abnormal:
+• <2 min
+acidosis
+
+— this test is an indirect measure of the activity of the micro ora
+— it must be performed within a short time following collection
+— the sample of rumen uid is placed in a measuring cylinder
+— the time is measured for complete sedimentation and otation of solid particles
+—the ner particles sink and the coarser particles
+— oat supported by gas bubbles of fermentation
+
+Chloride
+Normal:
+• <30 mEq/L
+High:
+abomasal re ux (“internal vomiting”)
+
+— rumen chloride concentration of above 30mEq/L
+indicates re ux of abomasal content into the rumen
+(abomasal pH is 2.0 to 4.0)
+— another reason for high chloride content can be due to
+supplementation of the diet with salt
+— abomasal re ux (‘internal vomiting’) may occur due to
+functional or anatomical stenosis of the pylorus, abomasitis,
+abomasal ulceration, obstruction of the ow of ingesta (e.g.
+bezoars, send, stones, and abomasal displacement), vagus
+indigestion or ileus
+
+//Microscopy (Protozoa)
+Normal:
+• many active protozoa (ciliated or agellated)
+• diverse population
+Abnormal:
+• low number
+• low activity
+unhealthy rumen
+
+Location
+• right side
+• under ribs (cannot be normally palpated)
+• Exact location can be con rmed by percussion (cranial
+point 6th ISpace & caudal point to the 12th/13th IS)
+When palpable?
+• If enlarged (hepatomegaly) or displaced posteriorly
+—> may be palpated by pushing the ngers behind the
+Right costal arch, usually at the middle third
+• The edges are usually rounded and thickened
+Causes:
+• liver ukes
+• heart failure
+• abscesses
+• hepatitis
+
+FINAL EXAM SUMMARY
+LEFT SIDE = RUMEN
+• inspect LPF
+• palpate rumen pack
+• listen for contractions
+• detect pings
+LDA
+RIGHT SIDE = INTESTINES / ABOMASUM
+• look for distension
+• pings = abnormal gas
+
+7
+
+Diagnosis
+• percussion
+• ultrasound (size, position, consistency of liver can be
+characterized and the presence of abscesses may be
+con rmed)
+• biopsy
+
+KEY DIAGNOSES
+• LDA
+left ping
+• RDA
+right ping
+• bloat
+distended rumen
+• rumen atony
+no contractions
+PAIN TESTS
+• withers pinch = best
+• grunt = positive
+RUMEN FLUID
+• pH, protozoa, sedimentation = CRITICAL
+
+fl
+
+fi
+
+fi
+
+fl
+
+fi
+
+fl
+
+One-line memory
+• Ruminant exam = LEFT side (rumen), RIGHT side (intestine/
+abomasum), listen for motility, detect pings, con rm with
+rumen uid analysis.
+fi
+
+fl
+
+fi
+
+fl
+
+fl
+
+fl
+
+fl
+
+fl
+
+fl
+
+fi
+
+fl
+
+fl
+
+fi
+
+fl
+
+fl
+
+fl
+
+fl
+
+fl
+
+⸻
+Right-sided pings
+• represent abnormal accumulations of uid and gas within
+abdominal structures
+Causes:
+• Abomasal dilatation RDA (right displaced abomasum)
+• cecal dilation or torsion
+• intestinal gas
+• pneumoperitoneum
+• Intestinal tympany in the postparturient cow (postpartum
+pings)
+• Intussusception
+
+fl
+
+1
+
+⸻
+13. LIVER EXAMINATION
+
+Sometimes large lumps of fat are present in
+• fat necrosis and impactions of the abomasum may also be
+detected in this way
+
+fi
+
+4
+
+Normal:
+• Diphasic contraction every 40–60 sec
+• rumbling + liquid sound can be heard
+
+Fluid-splashing sounds audible : uid lled intestines, abomasum
+
+fl
+
+👉 indicates reticular pain (TRP)
+
+⸻
+10. RETICULUM EXAMINATION
+• not directly palpable
+• auscultated over ribs 6–7 ventrally on LEFT side (w/
+stethoscope)
+
+A short jab —> mass moves away from adb wall and rebounds
+
+fi
+
+⸻
+&
+Positive result
+Grasping a fold of skin over the withers area. This will cause the animal to dip the spine
+• grunt
+• groan
+
+while most pings on the left side of the cow are LDA, most
+pings on the right side of the cow are from spiral colon and
+cecum
+commonly, cows that are sick, especially with GI
+disturbances have pings in the right paralumbar fossa
+
+the clinician gently touches the skin or hair lace in the whiter ̍s or thoracis area
+
+— In the bar test an operator stands either side of the animal
+— A padded metal or wooden bar is placed beneath the animal and positioned just behind the xiphisternum
+— each operator slowly raises the bar and then lowers it quickly
+— the clinician should place a stethoscope over the trachea in the ventral midline of the neck and auscultate for a grunt
+
+pings on the right side can be confusing, and location and
+repeatability of the ping are probably the most useful
+indicators as to the organ involved
+
+•
+
+•
+
+⸻
+Ballottement
+variation of palpation for detection of :
+• masses
+• fetus
+•
+uid- lled intestines
+
+fl
+
+strong
+
+⸻
+14. RUMEN FLUID ANALYSIS (VERY IMPORTANT)
+
+

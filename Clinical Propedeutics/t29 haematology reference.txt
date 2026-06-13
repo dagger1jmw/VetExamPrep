@@ -1,0 +1,406 @@
+================================================================================
+TOPIC: HAEMATOLOGY: COMPLETE BLOOD COUNT INTERPRETATION REFERENCE
+================================================================================
+
+=== FROM: Proped_Notes p.28-30 ===
+
+BLOOD COLLECTION AND CBC
+
+BIG IDEA
+
+⸻
+METHODS OF BLOOD COLLECTION
+
+Why is blood collection important?
+
+Options
+
+Because:
+• It directly a ects diagnosis
+• Poor technique = wrong results
+
+1. Vacutainer system
+• vacuum tube pulls blood automatically
+
+“Pre-analytics determines accuracy”
+
+2. Needle + syringe
+
+MEMORY TIP
+• Bad sample = bad diagnosis
+
+3. Needle + open tube
+
+anticoagulant
+
+Used for:
+• coagulation tests (PT, APTT)
+
+When transferring blood:
+• ❌ Don’t push through needle
+causes hemolysis
+• ✔ Remove needle
+• ✔ Let blood ow gently along tube wall
+• ✔ Mix gently (invert tube)
+
+Before taking blood, ALWAYS consider:
+Who is collecting? (experience matters)
+• Animal:
+- species
+- size
+- temperament
+• Medical condition (injury? fragile patient?)
+Type of sample:
+• whole blood
+• serum
+• plasma
+• Amount needed & tests required
+
+⸻
+CHOOSING EQUIPMENT
+
+KEY IDEA
+• You don’t just “take blood” — you plan it
+
+Needles (VERY IMPORTANT)
+• Small animals
+small gauge (23–25G)
+• Larger animals
+bigger needles (20–18G)
+
+KEY IDEA
+• Rough handling = destroyed cells
+
+WHY?
+• Too small
+hemolysis
+• Too big
+trauma
+
+⸻
+PRE-ANALYTICS (VERY IMPORTANT)
+
+Examples
+• wrong tube
+• bad handling
+• contamination
+• hemolysis
+
+⸻
+BLOOD TUBES & ANTICOAGULANTS (VERY HIGH-YIELD)
+
+MEMORY TIP
+• Most lab errors happen before analysis
+
+Used for:
+• 👉 Complete Blood Count
+
+MUST be aseptic
+• clip hair (sometimes)
+• disinfect site
+• wash hands + gloves
+• use sterile needle/syringe
+
+Key rules
+•
+ll to line
+• mix gently
+• stable sample
+WHY EDTA?
+• 👉 Prevents clotting
+
+CRITICAL POINT
+• Sample must be taken without complications
+Otherwise:
+• hemolysis (RBC destruction)
+• clotting
+➡ leads to false results
+After sampling
+• apply compression
+
+Used for:
+• biochemistry
+Procedure
+• do NOT mix
+• let clot (20–60 min)
+• centrifuge
+Tube types
+• Red
+no gel
+• Yellow
+gel separator
+KEY IDEA
+• 👉 Serum = clotted blood
+
+General rule
+• super cial vein
+• minimal discomfort
+Common veins
+Dogs & cats
+• jugular
+• cephalic
+• saphenous
+
+Small animals
+• tail vein (rats)
+• ear vein (rabbit)
+
+keeps cells intact
+
+Used for:
+• biochemistry
+• plasma analysis
+
+prevent bleeding
+Special cases
+• CBC for reptiles & birds
+
+ff
+
+fl
+
+ff
+
+fi
+
+ff
+
+fi
+
+fi
+
+fi
+
+🟡 SERUM (NO ANTICOAGULANT)
+
+Possible problems
+• bleeding
+• infection
+• bruising
+• pain
+• nerve damage
+
+MEMORY TIP
+• 👉 Jugular = large volume
+• 👉 Peripheral = small samples
+
+Stability
+• plasma
+up to 48h
+• blood gases
+only minutes
+fl
+
+⸻
+COMPLICATIONS
+
+WHY?
+• poor technique
+• non-sterile conditions
+• animal movement
+
+⸻
+CBC (COMPLETE BLOOD COUNT)
+WHAT DOES CBC INCLUDE?
+1. Quantitative data
+• number of cells
+• size
+• variability
+2. Qualitative data
+• cell morphology
+• parasites
+• abnormalities
+KEY IDEA
+• 👉 CBC = numbers + appearance
+
+⸻
+WHAT TO ANALYZE FIRST (EXAM GOLD)
+1.
+2.
+3.
+4.
+5.
+6.
+
+RBC / HCT / PCV
+WBC
+Platelets
+RBC indices
+WBC di erential
+PLT indices
+
+⸻
+RBC / HCT / PCV
+
+⸻
+VENEPUNCTURE TECHNIQUE
+
+Hematocrit (HCT)
+• calculated value
+• depends on RBC + MCV
+
+Steps (IMPORTANT)
+• clip hair
+• disinfect
+• apply compression
+• palpate vein
+• insert needle at ~45°
+• follow vein direction
+• collect sample
+
+PCV (packed cell volume)
+
+🔴 LITHIUM HEPARIN
+
+MEMORY TIP
+• Clean + gentle = good sample
+
+MEMORY TIP
+• 👉 Wrong label = useless sample
+
+MEMORY TIP
+• 👉 Citrate = precise volume or results are WRONG
+
+Horses & cattle
+• jugular
+
+🟣 EDTA (CBC)
+
+⸻
+THE PROCEDURE (STEP-BY-STEP)
+
+VERY IMPORTANT RULE
+• 👉 Must ll EXACT volume (1:10 ratio)
+
+⸻
+CHOOSING THE VEIN
+
+Other supplies
+• clippers (cats hate noise!)
+• disinfectant
+• cotton
+
+De nition
+• All processes BEFORE lab analysis that a ect results
+
+Must include
+• owner name
+• animal name
+• ID (ear tag for farm animals)
+
+Stabillity
+• very unstable (15–60 min)
+
+⸻
+IMPORTANT TECHNIQUE (VERY EXAM-IMPORTANT)
+
+⸻
+BLOOD COLLECTION: WHAT TO THINK ABOUT FIRST
+
+⸻
+🏷 LABELLING (VERY IMPORTANT)
+
+🔵 SODIUM CITRATE
+
+KEY IDEA
+• 👉 Angle + direction = success
+
+•
+
+This is a calculated value obtained from
+automated hematology analyzers. It is the
+product of the mean cell volume (MCV)
+and the red blood cell (RBC) count,
+measured by the analyzer. Therefore, if
+there are any inaccuracies in measurement
+of the MCV or RBC count, the HCT will
+re ect those inaccuracies.
+
+measured directly by centrifuge
+
+⸻
+INTERPRETATION
+•
+polycythemia
+•
+anemia
+MEMORY TIP
+• 👉 RBC = oxygen capacity
+
+is a directly measured value
+obtained from centrifuging blood in
+a microhematocrit tube in a
+microhematocrit centrifuge. The
+PCV is measured as the height of
+the red cell column in a
+microhematocrit tube after
+centrifugation
+
+⸻
+🟡 PLATELETS (PLT)
+
+⸻
+WBC (WHITE BLOOD CELLS)
+What you evaluate
+• number
+• morphology
+
+What they show
+• clotting ability
+• platelet number
+• platelet size
+
+Interpretation
+•
+leukocytosis (infection, in ammation)
+•
+leukopenia (immune suppression)
+Di erential count
+• neutrophils
+• lymphocytes
+• monocytes
+
+MEMORY TIP
+• 👉 Platelets = bleeding control
+• Includes information on platelet number and changes in platelets, such as platelet clumping and platelet versus brin clumps.
+• Platelets tend to very in size in all species, with some large platelets being seen in all species.
+• The variation in platelet volume is measured on hematologic analyzers
+• This is analogous to the red blood cell distribution width and is calculated
+similarly (standard deviation of platelet volume ÷ mean platelet volume).
+• Mean platelet volume (MPV) is reported on most hemograms, along with the platelet count and a smear assessment of platelet numbers.
+• Large platelets are often considered immature platelets.
+
+fi
+
+fl
+
+ff
+
+MEMORY TIP
+• 👉 WBC = immune system status
+•
+ff
+
+Important concepts
+• platelet clumping can a ect results
+• large platelets = immature platelets
+• MPV = platelet size indicator
+
+⸻
+FINAL SUMMARY (EXAM GOLD)
+Blood collection
+• aseptic technique
+• correct tube
+• gentle handling
+Pre-analytics
+• 👉 MOST IMPORTANT for
+accuracy
+CBC interpretation
+• RBC
+oxygen / anemia
+• WBC
+infection / immunity
+• PLT
+clotting
+
+

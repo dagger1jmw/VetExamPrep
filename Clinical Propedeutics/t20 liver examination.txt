@@ -1,0 +1,114 @@
+================================================================================
+TOPIC: EXAMINATION OF THE LIVER
+================================================================================
+
+=== FROM: 00_Propedeutics_5 p.19 ===
+EXAMINATION OF THE LIVER (RUM.)
+PALPATION AND PERCUSSION
+ULTRASONOGRAPHY
+•
+•
+•
+
+the liver is situated entirely in the right of abdominal cavity
+it is covered by the right ribcage (cannot normally be palpated)
+the exact location of the liver can be confirmed by percussion (cranial point 6th intercostal space (is), caudodorsal point to the 12th and dorsal 13th is
+
+-> using ultrasonography, the size, position and consistency of the liver can be
+characterised and the presence of abscesses may be confirmed cell aspiration from cow
+liver in 11th right intercostal space approximately 15 to 20 cm below the spinous apophysis
+
+Abnormalities
+-> if it is grossly enlarged or displaced posteriorly it may be palpated by pushing the fingers behind the right costal arch, usually at the middle third
+• the edge of the enlarged liver is usually rounded and thickened
+• the liver may be enlarged:
+- chronic liver fluke infestation
+- advanced right sided congestive heart failure
+- multiple liver abscesses
+- diffuse hepatitis
+
+EXAMINATION OF THE RUMEN CONTENT
+=> examination of the rumen contents is often essential to help determine the state of the ruminal environment
+•
+•
+•
+
+when the tube is in the rumen some rumen juice can be siphoned or pumped out and collected for analysis
+care with sampling is required as saliva contamination increases the ph of the rumen sample
+the sample should be evaluated as soon as possible because cooling and exposure to air alter protozoan and bacterial activity
+
+CLINICAL PATHOLOGY
+=> haematology, biochemistry and acid–base measurements may provide useful additional clinical information
+•
+•
+
+Macroscopic analysis
+
+•
+•
+
+➢ colour
+- normal rumen fluid is usually olive green or greenish brown (when silage or straw is the diet yellow brown)
+- in ruminal acidosis the fluid may appear milky grey
+- in rumen stasis (with putrefaction) greenish - black
+
+•
+•
+•
+
+low pcv may indicate a haemorrhaging abomasal ulcer, and a raised pcv may indicate dehydration
+leukocytosis with a relative neutrophilia may indicate an inflammatory process
++ alternatively a leucopaenia and a neutropaenia may be found in severe cases due to sequestration
+metabolic acidosis may occur in carbohydrate engorgement or endotoxaemias
+metabolic alkalosis can occur in abomasal diplacements due to sequestration of hydrogen ions and in urea poisoning
+-> hand-held biochemical and acid–base analyses are available but are expensive
+electrolyte measurements may indicate hypochloraemia and hypokalaemia, which may be present in left displaced abomasum
+hypoproteinaemia may be a feature of a protein losing enteropathy, such as johne’s disease, or a reduction in hepatic production
+high concentration of fibrinogen is a useful indicator of inflammation
+
+➢ consistency
+- normally slightly viscid
+- watery contents are indicative of inactive protozoa and bacteria
+- excess froth frothy bloat
+➢ odor
+- normally aromatic
+- moldy, rotten odor indicates protein putrefaction
+- intensely sour odor indicates excess of lactic acid (grain or carbohydrate engorgement)
+➢ ph
+- rumen fluid ph should be measured as soon as possible after collection of the sample (within minutes)
+- delays in measuring rumen ph may produce inaccurate results
+- varies according to the type of feed and the time interval between last feed and taking a sample for ph
+- the rumen fluid ph is normally:
+. 6.0 to 7.2 in cattle on a roughage-based diet
+. 5.5 to 6.5 in cattle on a concentrate-based diet
+. a rumen ph of 6.0 to 6.8 is ‘normal’ for cattle on a diet rich in crude fibre
+- in ruminal acidosis (carbohydrate engorgement) the ph will be 5.0 or less
+- in anorexic cattle, because of the constant production of saliva which has an alkaline ph and a lack of substrate for the rumen flora to produce volatile fatty acids, the ph will be alkaline and usually in the range 7.5 to 8.0
+- higher ph values can occur in case of urea poisoning
+➢ Sedimentation/flotation
+- this test is an indirect measure of the activity of the microflora
+- it must be performed within a short time following collection
+- the sample of rumen fluid is placed in a measuring cylinder
+- the time is measured for complete sedimentation and flotation of solid particles
+- the finer particles sink and the coarser particles
+- float supported by gas bubbles of fermentation
+- in healthy cattle the normal time for sedimentation and floatation is 4 to 8 minutes
+- with an abnormal rumen sample (e.g. lactic acidosis), the sedimentation rate is fast (often less than 2 minutes) with a delayed or absent secondary flotation
+- in cattle that have been starved for 24 hours or longer rumen sample may show very rapid sedimentation and secondary flotation
+➢ rumen fluid chloride
+- normal chloride concentration in the rumen fluid is <30meq/l
+- rumen chloride concentration of above 30meq/l indicates reflux of abomasal content into the rumen (abomasal ph is 2.0 to 4.0)
+- another reason for high chloride content can be due to supplementation of the diet with salt
+- abomasal reflux (‘internal vomiting’) may occur due to functional or anatomical stenosis of the pylorus, abomasitis, abomasal ulceration, obstruction of the flow of ingesta (e.g. bezoars, send, stones, and abomasal displacement), vagus indigestion or ileus
+Microscopic examination
+➢ rumen fluid protozoa
+- the presence, diversity and activity of the rumen protozoa (rumen fauna) are indirect indicators of the health of the rumen
+- normal rumen fluid should contain variety of species, sizes and forms of ≥40 protozoa per microscopic visual field
+- the protozoa should be active
+- ‘normal’ rumen fluid should have >10 protozoa entering a single microscopic field over a period of 30 seconds
+- ciliated and flagellated protozoa should be detected
+- rumen protozoa are assessed by viewing a drop of fresh rumen fluid using the low power objective (40x magnification) on a warm microscopic side at about 30°c
+- rumen microbial population can be assessed by counting the number of protozoa present per field and protozoa entering a single microscopic field in 30 seconds
+- low numbers of protozoa (<8 per field), inactive protozoa (<5 entering the field), loss of diversity or any combination of the above are indicative of a ‘non-healthy’ rumen environment (e.g. decreased motility or absence of live protozoa may be detected in cases of lactic acidosis)
+
+

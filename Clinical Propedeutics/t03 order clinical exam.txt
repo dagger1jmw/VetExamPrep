@@ -1,0 +1,1708 @@
+================================================================================
+TOPIC: ORDER OF CLINICAL EXAMINATION
+SOURCE: 00_Propedeutics_5 p.2-3, Proped_Notes p.4-6,12-14
+================================================================================
+
+ORDER OF CLINICAL EXAM PROCEDURES
++
+
+EQUIPMENT NEEDED
+• Stethoscope
+• Watch (which measures seconds)
+• Thermometer
+• Gloves and protective sleeves (oral, rectal and vaginal examinations)
+• Penlight
+• Plexor and pleximeter
+• Hemostat
+• Paper and pen (computer) for recording (every clinical exam is recorded)
+• Ophtalmoscope
+• Otoscope
+• Cotton-tipped swabs (neuro-exam, nasal and ocular discharge sampling)
+• Ruler and the flexible tape
+• Hoof knife
+• Pail, soap, water, paper towels
+• Hypodermic needles and tubes for blood sampling
+• Sample containers and bags (for collection of urine and feces)
+
+ORDER OF CLINICAL EXAMS
+1. Owner data (name, address, telephone, e-mail): still NOT a part of CE
+2. Taking the history (+/- evaluating the environment: farm animals) or anamnesis
+3. Patient data: Signalment: data collected for identification purposes: species, breed, age, sex, reproductive status, haircoat colour, congenital or acquired signs: microchip, ear tag, tattoo...
+4. Physical
+1) distant examination or general inspection
+2) particular distant examination of body regions
+3) close physical examination examination
+
+CLINICAL REASONING
+• Beyond rules, protocols and algorithms?
+• Involves elements of intuition and creativity?
+• Cannot be replaced by mechanistic procedures?
+
+History taking + „people skills”
+• Can be the most important part of clinical examination
+• Listen very carefully to the owner‘s description
+
+2
+
+1. the primary complaint („presenting complaint”)
+2. chronology of abnormalities +/- treatment
+3. Management: transportation, preventive procedures, food...
+⚠ Distinguish: the owner‘s observations from interpretations
+-> My dog has epilepsy vs. My dog has seizures
+-> a recumbent adult cow is more likely to have parturient paresis than a first-calf heifer („milk fever” caused by hypocalcemia)
+-> if both, the dog and the owner are scratching: sarcoptes or seasonal allergy?
+
+Laboratory tests (blood, urine, feces, discharge)
+Special diagnostic methods
+Environmental examination
+
+Examination of the environment
+⚠ Very important in farm animals and shelters
+-> We should record and take photographs
+
+2’
+
+• Topography and soil types (ex: marches: liver flukes, soil: copper deficiency)
+• Population density (ex: excessive feces and urine: infection pressure, hoofs?, hoops?)
+• Feed and water supplies (ex: rat poison bites, lead poisoning in cattle)
+• Waste disposals
+• Housing and ventilation (ex: heat stroke in dogs)
+• Sanitation and hygiene (ex: overcrowding, slippery floors for piglets)
+
+NOOOO!!
+• Problem oriented approach: goal-seeking action
+• We have to use our knowledge and apply it to special circumstances of a patient
+(e.g. Patient is having UTI with multresistant bacteria and Cushing‘s disease at the same time)
+
+4
+
+GENERAL INSPECTION (IMPRESSION)
+
+=> behaviour and general appearance
+How we do it ?
+• we are standing back at a distance: looking and listening what our patient is doing
+• if the animal is fearful (keep the distance even more!!)
+• at first (when we start working) inspection will take some time
+• as you will practice → you should get faster and faster...
+• crucial is to inspect within „reasonable time”
+• we measure body weight (in kg), or estimate it in large animals
+• we record all the abnormalities in appropriate form (here: vef. protocol)
+• if a patient (mostly cats and dogs) has long hair: for BCS determination we will have to palpate the patient
+• small animals (dogs, cats, ferrets etc.): examined on the table, large dogs and large animals: examined on the floor
+What we want to evaluate ?
+a) level of consciousness (loc): normal, stupor, coma, excited
+b) behaviour: normal vs. abnormal (head pressing, circling)
+c) posture: normal or abnormal (tetraplegia, scoliosis, head tilt) +/- body shape: normal or abnormal (hydrocephalus)
+d) locomotion: normal or abnormal (lack of strength, coordination, presence of pain or mechanical limitation)
+e) nutritional condition: normal or abnormal (cachexia, skinny, slim (normal = optimal) overweight to obesity), BCS (body condition score)
+• we measure body weight in kg and record it
+f) coat: normal or abnormal (dull, dry, hair loss: alopecia, pigmentation)
+g) abnormal sounds: normal (nothing) or abnormal (stridor, stertor, voice)
+h) abnormalities that stand out: normal (nothing) or abnormal
+
+5
+
+PARTICULAR DISTANT EXAMINATION OF BODY REGIONS
+
+• Head: sardonic grin (lat. risus sardonicus) and opisthotonos: tetanus
+• Neck: enlargement of the guttural pouch (Streptococcus equi) strangles: equine distemper
+• Thorax and respirations: polypnea/tachypnea: fear, pain, pleural effusion
+• Abdomen (+ mammary glands and external genitalia)
+-> distention (abdominal effusion, neoplasm, fetus)
+-> gaunt (diarrhea, starvation)
+-> ventral edema (infectious equine anemia, congestive heart failure, gangrenous mastitis)
+• Limbs and feet: swollen (mammary carcinoma in bitch, hypoproteinemia..)
+
+6
+
+CLOSE PHYSICAL EXAMINATION
+
+-> We use:
+• Audiovisual inspection
+• Palpation (superfitial, deep, ballotment)
+• Percussion (direct and indirect, percussion and indirect auscultation)
+• Auscultation (direct and indirect)
+-> How we do it ?
+• As gently as possible
+• On standing animal (if possible)
+• Order of the examination procedures depends on:
+• Species
+• History
+• Distant examination findings (eg. owner thought that the dog is limping...)
+1. Vital signs
+-> temperature, pulse, respirations (TPR) - called „TRIAS” (+ in ruminants: ruminal movements)
+• Temperature: in °C
+• Usually rectal temperature
+• We use maximal termometers, old mercury termometers are replaced with digital ones (+ in intensive care units: monitoring devices)
+• Normal temperature: Hyper- or hypothermia are symptoms, not a diagnosis
+• Pulse
+• Respirations
+• Ruminal movements
+2. Peripheral circulation and state of hydration
+-> Inspection of mucous membranes (MM) and skin
+- colour: normal or abnormal (pale, cyanotic, hyperemic, icteric..)
+- moisture: normal or abnormal (dry or sticky MM)
+- CRT: 1-2 sec = normal
+• Skin turgor: inspection and palpation of the skin
+• Usually palpate the warmth of the skin over the body and extremities (shock: cold limbs; heat stroke: increased temperature)
+-> Palpation of:
+- arterial pulse
+a) Pulse rate: normal or tachy- or bradycardia
+b) Pulse rhythm: normal or arrythmia
+c) Pulse amplitude (waterhammer)
+- auscultation of the heart
+a) normal sounds +/- murmurs (some can be normal)
+b) abnormal rhythm
+- state of peripheral veins
+a) jugular veins: normal or engorged (right side heart failure)
+3. Lymph nodes
+
+4.
+
+Condition of individual organs and systems
+
+Head
+-> Inspection, palpation, percussion
+- Eyes: eyelids, ocular discharge (abnormal eye position and movements)
+- Nose: nostrils, nasal discharge, nasal mucosa, odor of breath
+- Mouth: oral mucosa, saliva, teeth, tongue, pharinx
+-> Special examinations
+- RTG, CT, MRI
+- Rhinoscopy, endoscopy
+- Swabs, biopsies
+Neck
+-> Inspection, palpation
+- Jugular vein: pulse
+- Esophagus
+- Trachea
+Thorax
+-> circulatory (heart) and respiratory (lungs) system
+-> Inspection, palpation, percussion, auscultation
+- Auscultation: heart sounds (rate, intensity, rhythm, presence of abnormal sounds)
+- Auscultation: respiratory sounds
+- Percussion of thorax (large animals)
+- Palpation of thoracic wall
+- Thoracocentesis
+-> Special examinations
+- Radiography, CT
+- Ultrasonography (heart)
+- Thoracoscopy
+Abdomen
+-> gastrointestinal, urinary and reproductive tract) + mammary glands (+ prepuce and scrotum, vulva)
+-> Inspection, palpation, percussion, auscultation
+- Visual examination: the contour of the abdomen
+- Palpation of the abdomen (can be done fast and thoroughly in small animals), rectal examination
+- Percussion (+/- auscultation)
+- Auscultation (rumen in ruminants)
+- Passing a tube (orogastric, nasogastric)
+- Abdominocentesis
+-> Special examinations
+- Gastroduodeno-colonoscopy
+- Laparoscopy
+- Radiography
+- Ultrasonography
+Musculoskeletal system
+Skin
+-> hair, skin and skin structures, ear and external auditory canal, general inspection, local inspection and palpation, smell
+Nervous system
+
+ORDER OF CLINICAL EXAM PROCEDURES
+CONCLUSIONS
+• Diagnostic tests are only as good as you are
+• Dogs and cats do not read veterinary textbooks, nor do other animals
+• Exceptions, incongruities, subtle signs, and things that don't make sense are important
+• Therapeutic failure is not failure, but opportunity
+• The basis of clinical work is clinical examination!!!
+• We will talk about it the whole semester, but this lecture was dedicated to the basic overview of clinical examination
+• „The art of veterinary (clinical) medicine is the skilled application of veterinary science.”
+• „An adequate clinical examination is central to the veterinary practitioner‘s diagnostic process”
+
+3
+-> The signalment of an animal is its description for identification purposes and includes:
+• Species
+• Breed
+• Sex
+• Age
+• Intended use
+• Identification number (microchip, tatoo...etc.)
+• Color markings
+
+Always start from the thorough history and physical examination with complicated patients –regardless of which tests have already been performed....
+
+SIGNALEMENT
+Signalment: fun part!!!
+Can help a lot with diagnosis...
+CASE 1: „Della”, 10 y, F, intact, 23 kg
+• History (by owner): 1 wk: drinks every day a little more, yesterday she didn‘t eat, today in the morning she vomited, collapsed 1 hour ago
+• History (our question): she was in heet 1 month ago
+• CE: Tense abdomen, no vaginal discharge, MM: dry
+• Ultrasound:
+• ????
+• „It is always pyometra, unless proven otherwise!”
+
+Breed
+
+• Function
+• Reproductive status
+
+- Animals of highly productive breeds are generally less resistant
+- Breed has a certain significance in the choice and dosage of drugs
+
+Age
+
+Species
+
+-> Neonates: - up to 2 weeks of age
+- Congenital diseases
+- Colostrum intake - passive immunity
+- Intrauterine infections
+
+-> The species is more or less susceptible to certain diseases, especially infectious and parasitic ones
+-> Very specific diseases due to:
+- Anatomical and physiological differences
+- A different way of life
+- Other circumstances
+
+-> Pediatrics: young animals
+- Parasitic infections
+- Infectious diseases
+-> Adult animals: reproductively mature
+- The most common lifestyle-related diseases
+
+=> The age of the animal also affects the prognosis of the disease
+Younger animals generally have a more favorable outcome than older animals
+=> Basic principle:
+• Younger animals get more often infectious and inflammatory diseases, older get metabolic and neoplastic diseases
+• Young cat with diarrhea probably has panleukopenia, old cat can have various diseases including hyperthyroidism
+• Young cat with nasal discharge, dyspnea and loud respiratory sounds usually has nasopharyngeal polyp, old has nasal carcinoma
+
+=> Not all of the animals are easy to examine
+-> Almost all clinical examination methods can be applied to horses and cattle
+-> Small ruminants and especially pigs are more difficult to examine - for these animals we use an abbreviated examination
+-> Sometimes we shorten the clinical examination in: restless or aggressive animals
+
+EMERGENCY CASE
+In everyday practice, the exam sometimes needs to be simplified
+Then we perform a short exam or an urgent intervention
+In emergency patients – we perform a full search only after we have stabilized the animal from life-threatening danger
+
+-> Brachycephalic airway syndrome: multiple anatomic abnormalities
+1. Stenotic nares
+2. Elongated soft palate
+3. Laryngeal collapse
+4. Everted laryngeal saccules
+5. Hypoplastic trachea
+6. Enlarged tonsils
+• Renal dysplasia
+• Standard poodle, Shih Tzu, Lhasa Apso
+• Cystadenocarcinoma & nodular cutaneous
+lesions
+• German shepherd
+• Immune-mediated glomerulonephritis
+• Bernese Mountain Dog
+
+• Dogs: have distemper, parvovirosis
+• Cats: have FeLV, FIV
+• Cattle: have ruminal diseases: bloat, acidosis, traumatic reticuloperitonitis to pericarditis
+• Horses: laryngeal paralysis
+• Pigs: atrophyc rhinitis
+
+-> Geriatric animals: old animals
+- Neoplastic diseases - tumors
+- Difficulty taking food
+
+•
+•
+•
+
+Gender
+
+Color markings
+-> Color
+- Depends on the quality and distribution of pigment in the skin and hair
+- It is often breed-related and hereditary
+-> Signs
+- Natural or acquired pigmentless spots of various shapes
+=> Animals with little pigment in their skin are less resistant than darkly pigmented ones
+
+Intended use
+• Professional disease
+Ex : gastric ulcers
+
++ Grey collie syndrome
++ Exotic shorthair (white coat)
+
+-e 
+
+================================================================================
+FROM: Proped_Notes
+================================================================================
+
+CLINICAL EXAMINATION
+
+Clinical Examination and Signalment
+
+⸻
+General rule for a good diagnosis
+
+Big idea
+
+A good diagnosis requires:
+
+A clinical examination in veterinary medicine is a planned, thorough, and
+systematic assessment of an animal in order to reach a good diagnosis. It is
+not done randomly. The clinician gathers information in a logical order,
+records it, and then examines the animal from the general condition to the
+individual body systems.
+
+•
+
+a planned
+
+•
+
+thorough
+
+•
+
+systematic examination of the sick animal
+
+⸻
+2. History
+
+⸻
+What you need to already know
+
+Important point
+
+De nition
+
+Before performing a full clinical exam, you are expected to know:
+
+The exact order of examination is not the most important thing, but it is best
+to examine:
+
+History means the information about the development and course of
+the disease.
+
+•
+
+how to approach an animal
+
+•
+
+how to use safe handling
+
+•
+
+organs and systems that are anatomically related
+
+•
+
+organs and systems that are functionally related
+
+the main clinical examination methods:
+•
+
+inspection = looking carefully at the animal
+
+•
+
+palpation = feeling with your hands
+
+•
+
+percussion = tapping body areas to judge what lies underneath
+
+•
+
+auscultation = listening, usually with a stethoscope
+
+•
+•
+
+This makes the exam more organized and reduces mistakes.
+⸻
+Main parts of the clinical examination
+The lecture gives this order:
+
+also smell = detecting abnormal odors
+measurement = taking values like temperature, pulse, respiratory rate
+
++
+
+owner statment
+
+What history tells you
+It helps the clinician understand:
+•
+
+when the problem started
+
+•
+
+how it changed over time
+
+•
+
+what signs appeared
+
+•
+
+what may have caused it
+
+•
+
+what treatment or events happened before the examination
+
+1. Signalment – description of the animal
+2. History – anamnesis
+
+These are the basic tools of the physical exam.
+
+3. Status praesens – current condition
+
+⸻
+Equipment
+
+4. General condition – habitus, vitals, mucous membranes, lymph nodes
+
+History is the story of the illness before the animal is examined.
+
+5. Condition of individual organs and systems
+
+A proper clinical exam requires equipment. The slide shows common tools
+like:
+•
+
+stethoscope
+
+•
+
+thermometer
+
+•
+
+watch or timer
+
+•
+
+otoscope / ophthalmoscope
+
+•
+
+writing materials or record sheets
+
+⸻
+1. Signalment
+De nition
+Signalment is the basic description and identi cation of the animal.
+It includes:
+
+Why this matters
+
+•
+
+species
+
+The examination should be objective and recorded properly, not based only
+on memory.
+
+•
+
+sex
+
+•
+
+age
+
+⸻
+Recordings
+
+•
+
+color
+
+•
+
+markings
+
+•
+
+name
+
+•
+
+identi cation chip or tag
+
+One of the key rules is:
+• Every clinical examination is recorded
+• This is time-consuming, but necessary
+Recording allows you to:
+• track the case over time
+• compare ndings later
+• support diagnosis and treatment
+• create a legal and professional record
+
+Why signalment matters = Signalment is not just for identi cation. It also has:
+•
+
+clinical importance
+
+•
+
+diagnostic importance
+
+•
+
+sometimes legal importance
+
+fi
+
+fi
+
+fi
+
+fi
+
+fi
+
+fi
+
+In legal cases or veterinary inspection cases, accurate description of the animal is especially important.
+
+⸻
+3. Status praesens
+De nition = Status praesens means the current condition of the animal.
+
+⸻
+5. Condition of individual organs and systems
+
+It includes:
+
+After the general exam, the clinician examines speci c body systems:
+
+•
+
+habitus
+
+•
+
+skin
+
+•
+
+vitals
+
+•
+
+respiratory system
+
+•
+
+mucous membranes
+
+•
+
+cardiovascular system
+
+•
+
+lymph nodes
+
+•
+
+digestive system
+
+•
+
+urinary and reproductive system
+
+•
+
+locomotor system
+
+•
+
+nervous system
+
+⸻
+4. General condition of the animal
+
+C. Visible mucous membranes
+
+A. Habitus
+
+Visible mucous membranes are examined at:
+
+Habitus includes:
+
+•
+
+eye
+
+•
+
+conformation
+
+•
+
+nose
+
+•
+
+body condition / body condition score
+
+•
+
+mouth
+
+•
+
+hair
+
+•
+
+behavior and posture
+
+•
+
+genitals
+
+•
+
+skin and skin structures
+
+•
+
+ear and external auditory canal
+
+•
+
+general inspection
+
+What to remember :
+• Conformation :This means the animal’s body build and form.
+• Body condition / body condition score : This shows nutritional status, for
+example:
+•
+
+thin
+
+•
+
+normal
+
+•
+
+overweight
+
+•
+
+emaciated
+
+When examining them, we determine:
+color
+
+•
+
+local inspection and palpation
+
+•
+
+moisture
+
+•
+
+smell
+
+•
+
+swelling
+
+•
+
+discharge
+
+•
+
+hydration
+
+•
+
+circulation
+
+•
+
+whether the animal is bright or depressed
+
+•
+
+in ammation
+
+•
+
+whether it is calm, restless, aggressive, or apathetic
+
+•
+
+some systemic diseases
+
+•
+
+whether posture suggests pain, weakness, or neurologic disease
+
+Quick memory point
+• Habitus tells you what the animal looks like as a whole before you focus on
+details.
+
+•
+
+body temperature
+
+•
+
+heart rate
+
+•
+
+respiratory rate
+
+•
+
+rumen contractions
+
+fi
+
+fl
+
+fl
+
+fl
+
+fi
+
+hair quality
+
+•
+
+skin lesions
+
+•
+
+parasites
+
+•
+
+wounds
+
+•
+
+ear condition
+
+•
+
+odor
+
+D. Lymph nodes
+
+⸻
+Respiratory system
+
+•
+
+shape
+
+•
+
+size
+
+•
+
+consistency
+
+•
+
+tenderness
+
+•
+
+mobility
+
+What to remember = Changes in lymph nodes can suggest:
+• infection
+• in ammation
+• tumors
+• systemic disease
+
+Quick memory point = Vitals give the basic physiologic status of the animal
+
+•
+
+Quick memory point : For skin, remember = look, feel, and smell.
+
+What to remember =
+Body temperature : Important for fever or hypothermia.
+Heart rate = Imp for circulation, pain, stress, fever, and heart disease.
+Respiratory rate = Imp for breathing problems, pain, fever, and distress.
+Rumen contractions = Especially important in ruminants because they show
+digestive activity.
+
+What to remember = You are not only looking at the skin surface. You
+are also checking:
+
+Quick memory point = Always ask: what is the color, is it moist, is it
+swollen, and is there discharge?
+
+When examining lymph nodes, assess:
+
+B. Vitals
+
+The skin examination includes:
+
+•
+
+What to remember = Mucous membranes help you judge:
+
+Behavior and posture, you observe :
+
+•
+•
+•
+•
+
+⸻
+Skin
+
+Examination of the respiratory system includes:
+• nose and sinuses
+• larynx and trachea
+• cough
+• thorax
+• inspection, palpation, percussion, and auscultation
+What to remember : You examine:
+• air ow and discharge from the nose
+• pain or swelling in upper airways
+• whether coughing is present
+• chest movement and lung sounds
+Quick memory point : Respiratory exam = upper airways + thorax +
+exam methods.
+
+ORDER OF CLINICAL EXAMINATION PROCEDURES
+
+⸻
+BIG PICTURE
+Clinical work follows a strict logical sequence:
+👉 History
+
+Signalment
+
+Examination
+
+•
+
+Not guessing
+
+•
+
+Not random
+
+•
+
+Always structured + reasoned
+
+Diagnosis
+
+Treatment
+
+⸻
+ORDER OF CLINICAL EXAMINATION
+
+⸻
+Critical skill
+
+Step-by-step
+
+👉 Separate:
+
+1. Owner data
+•
+
+NOT part of clinical exam
+
+2. History (Anamnesis)
+
+•
+
+Patient identi cation
+
+4. Physical examination
+
+Main goals
+•
+
+✔ Reach correct diagnosis (fast + cost-e ective)
+
+•
+
+✔ Choose treatment that does more good than harm
+
+•
+
+✔ Stay updated in veterinary medicine
+
+Observation (correct)
+
+•
+
+Interpretation (may be wrong)
+
+Example:
+
+3. Signalment
+
+⸻
+ROLE OF A CLINICIAN
+
+•
+
+•
+
+❌ “My dog has epilepsy”
+
+•
+
+✅ “My dog has seizures”
+
+⸻
+MEMORY TIP
+👉 Owners give clues, not diagnoses
+
+⸻
+CLINICAL FLOW (VERY IMPORTANT)
+From the diagram :
+
+Clinical reasoning
+Based on:
+•
+
+knowledge
+
+•
+
+experience
+
+•
+
+comparison: normal vs abnormal
+
+problem-oriented
+
+•
+
+adaptable to each patient
+
+rules
+
+•
+
+algorithms
+
+•
+
+protocols
+
+•
+
+Signalment + history + rst impression
+
+•
+
+Problem formulation
+
+⸻
+🌍 ENVIRONMENT EXAMINATION
+Important for:
+
+TREAT immediately
+
+👉 If unclear
+•
+
+General exam
+
+•
+
+Re ne problem
+
+/
+
+⸻
+MEMORY TIP = 👉 “Think like a detective, not a machine
+
+⸻
+HISTORY TAKING (ANAMNESIS)
+MOST IMPORTANT PART
+•
+
+⸻
+EQUIPMENT YOU NEED
+
+Can be more important than examination
+
+What to collect :
+1. Presenting complaint
+
+Essential tools
+
+•
+
+Why is the animal here?
+
+•
+
+Stethoscope
+
+•
+
+Thermometer
+
+•
+
+Watch (seconds!)
+
+•
+
+When did it start?
+
+•
+
+Gloves
+
+•
+
+How did it progress?
+
+•
+
+Penlight
+
+•
+
+Ophthalmoscope / Otoscope
+
+•
+
+Sampling tools (blood, urine, feces)
+
+•
+
+food
+
+•
+
+Measuring tools (ruler, tape)
+
+•
+
+environment
+
+•
+
+Recording tools
+
+•
+
+transport
+
+•
+
+prevention
+
+2. Chronology
+
+3. Management
+
+ff
+
+fi
+
+fi
+
+fl
+
+fi
+
+fi
+
+⸻
+KEY IDEA = Preparation = professional examination
+
+•
+
+Farm animals
+
+•
+
+Shelters
+
+What to assess
+
+Speci c exam
+
+⸻
+KEY IDEA 👉 Always ask:
+“What is the problem and what do I do next?”
+
+NOT just:
+•
+
+Owner’s complaint
+
+👉 If emergency
+
+It is:
+•
+
+•
+
+•
+
+Terrain / soil
+
+•
+
+Population density
+
+•
+
+Feed & water
+
+•
+
+Hygiene
+
+•
+
+Housing & ventilation
+
+Clinical examples
+•
+
+Marsh
+
+liver ukes
+
+•
+
+Overcrowding
+
+•
+
+Poor ventilation
+
+infections
+heat stroke
+
+⸻
+KEY IDEA : 👉 Environment = hidden cause of disease
+
+1. GENERAL INSPECTION (DISTANT) 👀
+
+⸻
+PHYSICAL EXAMINATION
+
+How to do it
+
+3 MAIN PARTS
+
+⸻
+SEQUENCE (VERY HIGH-YIELD)
+1. VITAL SIGNS (TPR)
+
+•
+
+Observe from a distance
+
+1.
+
+Distant (general inspection)
+
+•
+
+Do not disturb animal
+
+2.
+
+•
+
+Look + listen
+
+3.
+
+•
+
+Temperature
+
+De nition : Signalment = basic patient identi cation
+
+Particular distant (body regions)
+
+•
+
+Pulse
+
+Includes:
+
+Close examination
+
+•
+
+Respiration
+
+•
+
+species
+
+•
+
+(+ rumen movements)
+
+•
+
+breed
+
+•
+
+sex
+
+⸻
+What to evaluate
+•
+
+Consciousness : normal / stupor / coma / excited
+
+2. CIRCULATION & HYDRATION
+
+•
+
+Behavior : normal vs abnormal (e.g. circling, head pressing)
+
+Check:
+
+•
+
+Posture & shape : scoliosis, head tilt
+
+•
+
+Nutritional condition
+- cachexia
+obesity
+- BCS (body condition score)
+
+•
+
+Coat condition : dull, alopecia, pigmentation
+
+•
+
+Abnormal sounds : breathing noise, voice
+
+•
+
+Visible abnormalities : swelling, deformities
+
+⸻
+🔍 2. PARTICULAR DISTANT EXAM
+
+color (pale, cyanotic, icteric)
+
+Examples:
+•
+
+Head
+
+tetanus signs
+
+•
+
+Neck
+
+swelling (strangles)/enlargement of the guttural pouch
+
+•
+
+Thorax and respirations
+
+•
+
+Abdomen + mammary glands + genitalia
+
+•
+
+Limbs + feet
+
+tachypnea/polypnea
+
+•
+
+moisture
+
+•
+
+CRT (1–2 sec normal)
+
+•
+
+skin turgor
+
+•
+
+skin temperature
+
+•
+
+pulse rate (tachy/brady)
+
+•
+
+rhythm (arrhythmia)
+
+•
+
+amplitude (water hammer)
+
+•
+
+heart sounds (murmurs)
+
+•
+
+size
+
+•
+
+pain
+
+•
+
+consistency
+
+speci c diseases
+
+auscultation + percussion
+
+•
+
+rectal exam
+
+•
+
+Auscultation (direct and indirect)
+
+Cats
+
+FeLV, FIV
+
+-
+
+Cattle
+
+rumen disease
+
+-
+
+Horses
+
+laryngeal paralysis
+
+Breed
+-
+
+Genetic predispositions
+
+-
+
+Example:
+
+-
+
+brachycephalic airway syndrome
+Sex
+Important for reproductive diseases (e.g. pyometra)
+
+•
+
+Older female dog
+
+•
+
+recent heat
+
+⸻
+MEMORY TIP : 👉 Signalment = “diagnostic shortcut”
+
+FINAL SUMMARY (EXAM GOLD)
+Clinical work ow
+
+Musculoskeletal
+•
+
+joints, bones, muscles
+
+•
+
+coat, lesions
+
+fi
+
+fi
+
+fi
+
+fi
+
+ndings
+
+4.
+
+Differential diagnoses
+
+2.
+
+Signalment
+
+5.
+
+Tests
+
+3.
+
+Physical exam
+
+6.
+
+Diagnosis
+
+•
+
+re exes, coordination
+
+⸻
+MEMORY RULE :👉 TPR
+
+History
+
+⸻
+Final quote (important concept)
+
+Nervous system
+•
+
+1.
+
+7. Treatment
+⸻
+Absolute key idea : 👉 Good diagnosis = good clinical examination
+
+Skin
+
+fi
+
+-
+
+⸻
+Classic exam case
+
+•
+
+Percussion (direct and indirect)
+
+fl
+
+parvo, distemper
+
+-
+
+heart + lungs
+
+•
+
+fl
+
+Dogs
+
+•
+
+•
+
+rumen sounds
+
+adapted to:
+
+fi
+
+-
+
+👉 Diagnosis: pyometra
+
+•
+
+⸻
+How to perform
+
+fi
+
+Species
+
+tense abdomen
+
+Palpation (super cial, deep, ballotment)
+
+•
+
+metabolic / tumors
+
+•
+
+•
+
+history
+
+Old
+
+jugular vein
+
+palpation
+
+•
+
+-
+
+infectious diseases
+
+•
+
+•
+
+species
+
+color
+
+vomiting + collapse
+
+shape
+
+•
+
+•
+
+•
+
+•
+
+preferably standing animal
+
+ID (microchip, tattoo)
+
+eyes, nose, mouth
+
+Inspection
+
+•
+
+•
+
+•
+
+•
+
+gently
+
+use
+
+Abdomen
+
+Methods used
+
+•
+
+Young
+
+•
+
+Thorax
+
+⸻
+✋ 3. CLOSE PHYSICAL EXAMINATION
+
+-
+
+•
+
+Head & neck
+
+swelling
+
+•
+
+Key patterns :
+• Age
+
+5. SYSTEM EXAMINATION
+
+distention, edema
+
+age
+
+= Gives diagnostic clues BEFORE exam
+
+4. LYMPH NODES
+
+Look at body regions
+
+⸻
+KEY IDEA : 👉 Each region
+
+•
+
+3. HEART & PULSE
+
+⸻
+MEMORY TIP :👉 General inspection = rst impression = VERY important
+
+•
+
+⸻
+WHY SIGNALMENT IS IMPORTANT
+
+mucous membranes:
+
+Locomotion : lameness, weakness
+
+•
+
+⸻
+SIGNALMENT
+
+MM
+
+LN
+
+SYSTEMS
+
+“More mistakes are made by not looking than by not knowing.”
+
+⸻
+ONE-LINE MEMORY :👉 Observe
+
+Think
+
+Examine
+
+Con rm
+
+Treat
+
+

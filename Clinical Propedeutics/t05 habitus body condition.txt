@@ -1,0 +1,603 @@
+================================================================================
+TOPIC: HABITUS AND BODY CONDITION SCORE (BCS)
+SOURCE: 00_Propedeutics_5 p.5, Proped_Notes p.17-19
+================================================================================
+
+HABITUS, EX OF MED RECORD
+HABITUS
+
+BODY CONDITION & BODY CONDITION SCORING (BCS)
+
+= a set of external features of the animal
+• conformation
+• body condition / body condition score
+• behavior (and posture)
++ features / characteristics of habitus depend on:
+- body constitution
+- general state of the animal
+
+BCS
+= management tool designed to assess body reserves or fat accumulation of an animal
+• is a hands-on assessment which uses a numerical rating system based on the feel of the animal rather than descriptions based simply on a visual appraisal
+-> Dog
+- 10% above optimal weight (based upon its breed and frame): overweight => 10–40% of dogs is obese!!
+- 15% above optimal weight: obese
+
+CONFORMATION
+= body shape - depending on development of musculoskeletal system
+• species and breed
+• age
+• the purpose for which the animal is used
+-> normal
+-> abnormal
+
+AGE
+
+HENNEKE HORSE BCS
+
+-> Cat
+- 10% above ideal body: overweight
+- 20% above ideal body: obese
+- overweight
+- + underlying disease → premature euthanasia
+- predisposed to:
+• musculoskeletal disease
+• cardiovascular diseases
+• diabetes mellitus
+• urinary tract infections
+- underweight
+• ↓ lifespan for 2 years!!
+• ↑ morbidity and mortality
+⚠ Document body weight at every visit !!!!
+- 7, 8, 9 predisposed to:
+• lameness
+• lower urinary tract diseases
+• hepatic lipidosis
+• diabetes mellitus
+
+SPECIES AND BREED
+
+- 1, 2, 3:
+-> cachexia:
+• cardiac patients
+• renal patients
+• oncology patients
+• ↓ immune response
+• risky to health
+• may hasten death
+-> body condition
+• volume and contours of the body
+• muscle development
+• subcutaneous fat tissue
+-> body condition score/system (bcs)
+=> evaluate through observe and touch!!
+
+THE PURPOSE FOR WHICH THE ANIMAL IS USED
+
+-> body condition of healthy animals depends on:
+• body constitution
+• nutrition
+• the way of exploiting the animal
+=> animals with ‘normal’ body condition have nutrition and exploitation in balance!!
+
+Muscle condition score
+
+* inanitio: exhaustion from lack of nourishment; starvation
+* cachexia: weight loss caused by disease
+-> is the animal eating but still getting thinner?
+
+Conformation : NORMAL/ ABNORMAL???
+
+S
+
+BEHAVIOR
+
+1
+
+9
+
+9
+
+• evaluate posture and behavior
+• important: ask the owner
+- how does the animal normally behave?
+- temper of the animal ?
+-> changed behavior:
+• melancholic
+• excited, nervous unnatural posture of the animal
+-> evaluate:
+• whole body
+• individual parts of the body
+• resting:
+- when standing up
+- when laying down
+• in motion
+
+5
+
+4
+
+-e 
+
+================================================================================
+FROM: Proped_Notes
+================================================================================
+
+HABITUS
+
+BIG IDEA
+• Habitus = the overall external appearance of the animal
+It includes:
+•
+•
+•
+
+conformation (body shape)
+body condition (fat + muscle)
+behavior and posture
+
+3⃣ BEHAVIOR & POSTURE
+
+What is BCS?
+
+⸻
+BEHAVIOR
+
+•
+•
+
+⸻
+What determines habitus?
+•
+•
+
+⸻
+BODY CONDITION SCORING (BCS)
+
+A numerical system to evaluate fat reserves
+Based on palpation, not just visual assessment
+
+Example (dogs)
+•
+•
+•
+
+body constitution
+general health state
+
+⸻
+MEMORY TIP
+
+1–3
+4–5
+6–9
+
+too thin
+ideal
+overweight to obese
+
+Ask the owner
+• “How does your animal normally behave?”
+
+De nitions
+
+👉 Habitus = “What the animal looks like + how it behaves”
+
+•
+•
+
+10% above ideal weight
+15% above ideal weight
+
+De nition
+• Body shape based on musculoskeletal development
+What in uences conformation?
+• Species and breed
+• Age
+• Purpose (use of animal)
+
+•
+•
+
+•
+•
+
+⸻
+KEY IDEA
+
+⸻
+📊 SPECIES-SPECIFIC BCS SYSTEMS
+
+👉 Always compare:
+
+Dogs / cats
+• 1–9 scoring system
+
+to breed standard
+to normal anatomy
+
+Horses
+• Henneke scale (1–9)
+Evaluates:
+• ribs
+• spine
+• fat deposits
+
+2⃣ BODY CONDITION
+What is body condition?
+Evaluation of:
+• body volume and contours
+• muscle development
+• fat (subcutaneous tissue)
+
+Farm animals
+• cattle, sheep
+
+⸻
+MUSCLE CONDITION (IMPORTANT ADDITION)
+
+What a ects body condition?
+• nutrition
+• body constitution
+• level of use (work, production)
+
+Muscle condition score
+
+⸻
+Key concept
+•
+Normal condition = balance between nutrition and energy use
+⸻
+MEMORY TIP
+• Too thin = not enough input
+• Too fat = too much input / too little output
+
+•
+•
+•
+•
+
+fi
+
+ff
+
+fi
+
+fi
+
+fl
+
+ff
+
+Normal
+Mild loss
+Moderate loss
+Severe loss
+
+⸻
+KEY IDEA : Animal can be:
+•
+
+Inanition
+Cachexia
+
+lack of food
+disease-related weight loss
+
+⸻
+KEY QUESTION
+•
+“Is the animal eating but still losing weight?”
+➡ suggests disease (cachexia)
+
+KEY IDEA
+• Behavior change = early sign of disease
+⸻
+POSTURE
+What to evaluate
+• whole body
+• speci c body parts
+at rest:
+• standing
+• lying
+• during movement
+Abnormal posture examples
+• abnormal stance
+• reluctance to move
+• unusual positions (pain, neurological issues)
+MEMORY TIP
+👉 Posture shows:
+•
+•
+•
+
+pain
+weakness
+neurological problems
+
+⸻
+PRACTICAL CLINICAL RULE
+ALWAYS:
+•
+•
+
+assess habitus at rst glance
+document body condition regularly
+👉 “Document body weight at every visit!”
+
+speci c scoring systems
+
+⸻
+MEMORY TIP
+• Di erent species = di erent scoring methods
+
+How to assess
+• Observe + palpate (touch)
+
+morbidity and mortality
+Often due to disease
+
+Cachexia vs starvation
+
+👉 Example from slide: swimming puppy syndrome (abnormal posture)
+
+ff
+
+Overweight animals
+
+Underweight animals
+
+Normal vs abnormal
+• ✔ Normal
+appropriate for species/breed
+• ❌ Abnormal
+deformities, developmental issues
+
+fi
+
+⸻
+⚠ CLINICAL IMPORTANCE OF BODY CONDITION
+
+•
+lifespan (~2 years)
+Risk of:
+• musculoskeletal disease
+• cardiovascular disease
+• diabetes
+• urinary tract infections
+
+1⃣ CONFORMATION (BODY SHAPE)
+
+fi
+
+Abnormal behavior
+• melancholic (depressed)
+• excited / nervous
+
+overweight
+obese
+
+⸻
+KEY IDEA
+• Always feel the animal, don’t just look
+
+⸻
+MAIN COMPONENTS OF HABITUS
+
+•
+•
+
+What to evaluate
+• Normal temperament
+• Changes in behavior
+
+fat BUT muscle wasting
+always check BOTH fat and muscle
+
+⸻
+FINAL SUMMARY (EXAM GOLD)
+Habitus = 3 components
+1. Conformation
+2. Body condition (BCS)
+3. Behavior & posture
+What each tells you
+• Conformation
+structure
+• Body condition
+nutrition & disease
+• Behavior/posture
+function & pain
+⸻
+Final key idea
+•
+Habitus gives instant clinical information before touching the animal
+⸻
+ONE-LINE MEMORY
+• Look
+Assess shape
+
+Assess fat & muscle
+
+Observe behavior
+
+Evaluate posture
+
+⸻
+LN IN RUMINANTS
+•
+•
+•
+•
+
+⸻
+Subiliac lymph nodes
+
+subiliac lymph node
+submandibular lymph node
+prescapular lymph node
+supramammary lymph node
+
+Location
+• Beneath the cutaneous trunci muscle
+• In the caudal ank, just anterior to the sti e joint
+
+⸻
+Submandibular lymph nodes in ruminants
+
+Shape and size
+• Size is very variable
+• Often palpable as an elongated chain running
+dorsoventrally
+• Normal size: about 1–2 cm × 9 cm
+
+Location
+• Found on the medial aspect of the angle of the jaw
+• At the point where the horizontal and vertical parts of the mandible meet
+
+How to nd
+• Advance attened ngers anteriorly from the sti e
+joint
+
+Normal size
+• About 1.5–2 cm maximum diameter
+
+What to remember
+• This is a very important cattle lymph node and is
+often easier to palpate than students expect if they
+start from the sti e and move forward.
+
+These are clinically important because they are relatively accessible and can re ect local
+or systemic disease.
+
+What to remember
+• These are examined the same general way as in small animals, but the expected
+normal size is larger.
+
+⸻
+Supramammary lymph nodes
+
+Location
+• Just anterior to the shoulder joint
+• Often can be palpated directly in front of the shoulder
+
+Location
+• On the caudal aspect of the udder
+• Just above the upper limit of the mammary gland
+tissue
+
+Shape and size
+• Can vary in size
+May be:
+• small and round
+• or elongated dorsoventrally
+• Normal size in adults: about 1–2 cm × 8 cm
+
+Palpation
+• Easier to palpate if the clinician supports some of
+the udder’s weight by hand
+Normal size
+• Maximum diameter about 2.5 cm
+
+Palpation method
+• Push ngers against the node, even if it is small, to identify its position
+• Advance further so ngers move over the node and onto the neck in front of it
+• This helps estimate size
+
+What to remember
+• These are especially important in udder and
+mammary disease.
+
+fl
+
+fl
+
+fl
+
+ff
+
+fi
+
+fi
+
+fl
+
+fl
+
+fl
+
+fl
+
+fi
+
+fi
+
+fl
+
+What to remember
+• The lecture is showing that in cattle this node can be long and not just “round,” so
+palpation technique matters.
+
+fi
+
+•
+•
+•
+
+parotid lymph nodes
+submandibular lymph nodes
+cervical chains in the neck
+
+Why they matter
+• These are common external predilection sites for
+caseous lymphadenitis
+Con rmation
+• Con rm infection by culture of the light green pus from
+abscesses associated with infected nodes
+What to remember
+• For sheep, the lecturer is emphasizing caseous
+lymphadenitis as the major disease connection.
+
+⸻
+LN IN EQUINES
+
+⸻
+Prescapular lymph nodes in ruminants
+
+fi
+
+⸻
+LN IN SHEEP
+
+Lymph nodes in horses
+• The lecture introduces an equine lymph node section
+here, mainly visually.
+• The key idea is that species di erences matter, and
+lymph node assessment in horses should also be
+systematic and linked to location and drainage areas.
+
+⸻
+FINAL SUMMARY (EXAM GOLD)
+Mucous membranes
+• Color
+oxygen & perfusion
+• CRT
+circulation
+• Moisture
+hydration
+Lymph nodes
+• Size
+infection / cancer
+• Pain
+in ammation
+• Consistency
+disease type
+Clinical ow
+• MM
+circulation
+• LN
+immune system
+⸻
+ONE-LINE MEMORY
+• MM = perfusion | LN = immune status
+
+

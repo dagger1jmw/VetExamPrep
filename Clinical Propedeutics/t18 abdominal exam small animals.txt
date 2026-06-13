@@ -1,0 +1,1401 @@
+================================================================================
+TOPIC: ABDOMINAL EXAMINATION - SMALL ANIMALS
+================================================================================
+
+=== FROM: 00_Propedeutics_5 p.16 ===
+EXAMINATION OF THE ABDOMEN
+INSPECTION
+Abdominal silhouette
+
+=> the purpose is to detect and localize pain, determine if there is a palpable fluid wave, and asses for hernias
+
+=> observe the size, shape, and symmetry
+• size: bilaterally symmetrical, diffuse enlargement of the abdomen
+-> physiologic (pregnancy)
+-> pathologic (ascites)
+
+Fluid waves
+•
+•
+
+•
+
+•
+
+Palpate standing animals if possible
+
+the presence of a fluid wave is suggestive of abdominal effusions
+causes :
+- hemorrhagic
+- uroabdomen
+- septic peritonitis
+- leakage of gastrointestinal contents from a bowel perforation
+perform ballottement
+
+=> abdominocentesis, to sample the free-floating fluid
+-> cytology of the free-floating fluid allows the clinician to rule in or out inflammatory processes and septicemia
+-> emergency laparotomy is indicated when degenerate neutrophils and bacteria are identified
+
+Abdominal pain ? (“acute abdomen”)
+•
+
+signs :
+- « prayer posture »
+- pacing, restlessness, and an inability to settle
+- the patient may be reluctant to sit or lie down
+- splint or guard the abdomen upon any form of physical contact
+
+=> start cranially and move caudally = normal way
+This rule depends on the animal / infos - for example if patient suffers from cranial abdominal pain, start caudally if you want to finish
+
+•
+
+in the healthy animal, the following digestive tract structures should be palpable: small intestinal loops & descending colon
++ depending upon the patient, the following digestive tract structures may be palpable: liver & spleen
+
+•
+
+the following digestive tract structures are palpable only in a diseased state, if at all :
+- gallbladder
+- pancreas
+- mesenteric lymph nodes
+- colonic lymph nodes
+
+•
+
+structure :
+- cranial abdomen, epi-gastrium : contains the liver, stomach, pancreas, spleen, and kidneys
+- mid-abdomen, meso gastrium : contains the small intestine, ureters, and ovaries (females only)
+- caudal abdomen, hypo-gastrium : contains the urinary bladder, prostate (males only), urethra, descending colon, and rectum
+
+Both are usually not palpable except in case of hepatomegaly and splenomegaly
+
+Abdominal hernia
+
+causes :
+- can involve digestive, urogenital, musculoskeletal, nervous, cardiovascular, and respiratory systems
+- back pain, for instance, can mirror abdominal pain because in both circumstances, the patient is presented for hunching
+
+•
+•
+•
+
+represents a defect in the abdominal wall
+common sites of herniation are at the umbilicus, paracostally, scrotallly, and inguinally
+analyse :
+- size of hernia
+- consistency of the hernia
+- reducibility
+
+Auscultation of the abdomen
+•
+•
+
+DEEP PALPATION
+
+SUPERFICIAL PALPATION
+
+Liver
+=> lies within the costal arch and is not typically palpable in deep-chested dogs
+
+can provide important information regarding the motility of the digestive tract
+listening for gut sounds (borborygmi)
+-> if borborymi are not heard, then the bowel is either empty or not moving, or both
+
+•
+•
+
+when the liver is enlarged, typically the right side is more easily palpated
+-> bc the liver, although centrally located, is biased slightly to the right of midline as a result of its right-sided caudate process, which cups the right kidney
+hepatomegaly is a non-specific finding
+
+Stomach
+=> caudal to the liver
+
+SPECIFICITIES ABOUT HORSES
+
+•
+•
+
+=> examination of the abdomen :
+- inspection
+- auscultation
+- percussion
+- palpation
+
+➢ liver is enlarged, causing displacement of the stomach caudally
+➢ stomach is significantly distended
+Spleen
+Complementary exams are possible :
+-> radiology
+-> ultrasound
+-> ct
+
+=> triangular or wedge-shaped organ within the cranial-to-mid abdomen
+•
+•
+
+the spleen is not typically palpable in dogs
+when enlarged, it sinks ventrally and caudally relative to its normal anatomical position
+
+•
+
+causes of splenomegaly :
+- pharmacotherapy, such as anesthetic drug protocols: medetomidine, diazepam, and ketamine
+- infectious disease:
+-> parasites
+-> babesiosis / leishmaniasis
+-> hematoma
+-> nodular hyperplasia
+-> immune-mediated disease
+-> splenic torsion
+-> malignant neoplasia:
+-> hemangiosarcoma predominates as a cause of splenic neoplasia in the dog
+-> lymphoma
+
+Abdominal auscultation
+•
+•
+
+the fundus and body of the stomach are predominantly associated with the left side of the abdomen
+the stomach as a whole is typically not palpable
+
+gut sounds reflect gut activity, and the greatest value of abdominal auscultation is in the assessment of colic
+as a routine, at least four sites are auscultated: both paralumbar fossae and both sides of the lower abdomen
+
+=> normal sounds
+- for the most part generated by the caecum and large colon
+- 2 components: weak sounds associated with localized bowel contractions (mixing the ingesta), and louder fluid sounds or borborygmi associated with peristalsis (propelling the ingesta onwards)
+- one or both of these sounds should be audible during a minute’s auscultation at each site
+
+Pancreas
+
+•
+•
+•
+
+=> pancreas consists of two lobes
+- the left lobe of the pancreas tracks caudomedially from the neighboring pylorus
+- the right lobe of the pancreas tracks caudodorsally from the neighboring pylorus and follows the descending duodenum
+
+it is particularly useful to monitor gut sounds in assessing the progress of a colic or the postoperative recovery from a colic
+the re-establishment of a normal frequency and intensity of sound is a good prognostic sign
+we find it useful to record these sounds at each site using a simple scale of intensity: 0; ±; + or ++ equivalent to absent, reduced, normal or increased sounds
+
+•
+
+neither limb of the pancreas is palpable in the normal canine patient
+
+•
+•
+
+even in disease, the pancreas is difficult to palpate
+Never palpable in reality but we can observe a painfull area in case of pancreatitis
+although it is true that cranial abdominal pain is not pathognomonic for pancreatitis, its presence supports it as a potential diagnosis and should encourage the clinician
+to launch a more extensive diagnostic investigation
+
+Small intestine
+•
+•
+•
+
+•
+
+peristaltic waves continue to move ingesta abord to maintain gut transit time and regularity
+the clinician is able to examine only a portion of the small bowel – primarily the jejunum
+palpation :
+- the texture of the intestinal loops
+- the thickness of the intestinal loops
+- the contents of the lumen
+=> whether or not palpation is distressing to the patient
+=> they should blip through the clinician’s fingers with ease, without causing discomfort
+potential problems :
+- inflammatory bowel disease (ibd)
+- foreign body
+- neoplasia: lymphoma, adenocarcinoma, and leiomyosarcoma
+
+Mesenteric lymph nodes
+=> dispersed throughout the root of the mesentery
+• in cats with alimentary lymphoma, for instance, mesenteric lymphadenopathy is evident via ultrasound in 33–50% of cases
+Large intestine
+•
+•
+
+the descending colon is easily palpable especially when it contains fecal matter
+even when the descending colon lacks fecal material it is palpable and distinguishable from the small intestine because the colonic wall is stiffer
+
+Percussion
+
+Upper urinary tract (Kidneys)
+
+•
+•
+•
+
+•
+•
+
+used to identify gas-filled portions of the intestine
+when tapping on the side of the abdomen, the location of high-pitched sounds can be used to determine the relative size and location of the affected intestine
+generally, high-pitched sounds heard on percussion over the right paralumbar fossa are due to gas distention of the cecum, whereas the same findings over the left paralumbar fossa are due to distention of the large colon
+
+it is common for the clinician to feel neither kidney in a normal dog, or only the left kidney’s caudal pole
+as a result, it is very difficult to assess renal size
+
+Lower urinary tract (Urinary bladder)
+•
+•
+•
+•
+
+the typical empty urinary bladder feels like a wad of balled-up tissue
+soft, supple, and non-tender to the touch
+as the urinary bladder fills a small amount, it feels like a very small water balloon
+fluid surrounded by a stable, yet soft and pliable wall
+
+Bladder palpable only if full in reality
+
+-e 
+=== FROM: Proped_Notes p.54-60 ===
+EXAMINATION OF THE ABDOMEN
+
+⸻
+4. Palpation of the Abdomen
+
+Big Idea
+Abdominal examination helps detect problems in the:
+• digestive system
+• urinary system
+• reproductive system
+• spleen, liver, pancreas
+• abdominal wall
+• peritoneal cavity
+
+A. Super cial Palpation
+Purpose
+Super cial palpation is used to:
+• detect pain
+• localize pain
+• detect a uid wave
+• assess for hernias
+
+The main methods are:
+1. Inspection
+2. Auscultation
+3. Percussion
+4. Palpation
+
+How to perform : Start cranially and move caudally.
+• cranial = toward the head
+• caudal = toward the tail
+
+What is a uid wave?
+• is felt when free uid moves through the abdominal cavity during palpation.
+• It suggests abdominal e usion (abnormal free uid in the abdomen)
+
+Abdominal silhouette = First, observe the abdomen from a distance.
+
+Possible causes
+• hemorrhagic e usion
+• uroabdomen
+• septic peritonitis
+• leakage of gastrointestinal contents after bowel perforation
+
+Look at:
+• size
+• shape
+• symmetry
+
+De nitions
+• Hemorrhagic e usion = blood-containing abdominal uid.
+• Uroabdomen = urine in the abdominal cavity, usually from rupture of urinary tract.
+• Septic peritonitis = infected in ammation of the peritoneal cavity.
+• Bowel perforation = hole in the intestinal wall, allowing GI contents to leak.
+
+Di use abdominal enlargement = If the abdomen is enlarged on both
+sides equally, it may be:
+Physiological
+• pregnancy
+
+Ascites = abnormal accumulation of free uid inside the abdominal cavity.
+
+⸻
+Free Fluid and Abdominocentesis
+
+⸻
+2. Abdominal Pain / Acute Abdomen
+
+Abdominocentesis = puncturing the abdomen to collect free abdominal uid. It is also called a
+peritoneal tap.
+
+What is acute abdomen? = sudden or severe abdominal pain. It can
+involve many body systems, not only the digestive tract.
+
+Why perform it?
+To sample free- oating uid and analyze it.
+
+It may involve:
+• digestive system
+• urogenital system
+• musculoskeletal system
+• nervous system
+• cardiovascular system
+• respiratory system
+
+Fluid analysis can help determine whether there is:
+• in ammation
+• infection
+• septicemia
+• internal bleeding
+• urine leakage
+• GI leakage
+
+Signs of abdominal pain
+• prayer posture
+• pacing
+• restlessness
+• inability to settle
+• reluctance to sit or lie down
+• guarding/splinting the abdomen when touched
+
+Cytology = microscopic examination of cells in the uid.
+If cytology shows:
+• degenerate neutrophils
+• bacteria
+then emergency laparotomy may be indicated.
+De nitions
+• Neutrophils = white blood cells that ght bacterial infection.
+• Degenerate neutrophils = damaged neutrophils, often seen in septic in ammation.
+• Laparotomy = surgical opening of the abdominal cavity.
+• Septicemia = bacteria or bacterial toxins in blood causing systemic illness.
+
+Prayer posture
+This is when the animal lowers the front part of the body while keeping the
+hind end elevated.
+It is often associated with cranial abdominal pain, especially possible
+pancreatitis, but it is not speci c.
+
+De nition = a defect in the abdominal wall. Through this defect, abdominal contents may
+protrude.
+
+⸻
+3. Auscultation of the Abdomen
+
+Common sites
+• umbilicus
+• paracostal region
+• scrotal region
+• inguinal region
+
+Purpose = Abdominal auscultation gives information about motility of the
+digestive tract.
+Motility = movement of the gastrointestinal tract.
+
+Structures usually palpable only in disease
+• gall bladder
+• pancreas
+• mesenteric lymph nodes
+• colonic lymph nodes
+
+⸻
+Abdominal Regions
+1. Cranial abdomen / Epigastrium
+Contains:
+• liver
+• stomach
+• pancreas
+• spleen
+• kidneys
+
+Contains:
+• small intestine
+• ureters
+• ovaries in females
+
+Contains:
+• urinary bladder
+• prostate in males
+• urethra
+• descending colon
+• rectum
+
+fl
+
+fl
+
+fl
+
+fl
+
+fl
+
+fi
+
+fl
+
+fl
+
+fl
+
+fi
+
+ff
+
+fl
+
+fl
+
+ff
+
+ff
+
+fl
+
+fl
+
+fl
+
+fi
+
+fl
+
+fi
+
+fl
+
+fi
+
+If no borborygmi are heard, the bowel may be:
+• empty / not moving / or both
+fi
+
+Depending on the patient, you may also palpate:
+• liver
+• spleen
+
+3. Caudal abdomen / Hypogastrium
+
+What to assess
+• size of hernia
+• consistency
+• reducibility
+
+Gut sounds / Borborygmi = are gut sounds caused by movement of gas
+and uid through the intestines.
+
+fi
+
+In a healthy animal, the following digestive structures should be palpable:
+• small intestinal loops
+• descending colon
+
+2. Mid-abdomen / Mesogastrium
+
+⸻
+Abdominal Hernia
+
+Important exam point
+• Back pain can look like abdominal pain because both may cause a
+hunched posture. So, you must consider both possibilities.
+
+fi
+
+Normal Palpable Structures
+
+Ballottement = palpation technique where you gently push or tap the abdomen to feel movement
+of uid or organs. It can help detect free uid.
+
+Pathological
+• ascites
+
+fl
+
+⸻
+B. Deep Abdominal Palpation
+
+⸻
+Fluid Waves
+
+⸻
+1. Inspection of the Abdomen
+
+ff
+
+De nitions
+• Umbilical hernia = hernia at the navel.
+• Inguinal hernia = hernia in the groin area.
+• Scrotal hernia = hernia extending into the scrotum.
+• Reducible = contents can be pushed back into the abdomen.
+• Non-reducible = contents cannot be pushed back, which is more concerning.
+
+⸻
+Organ-by-Organ Palpation
+// Liver
+Location
+• The liver lies within the costal arch and is not usually palpable
+in deep-chested dogs.
+
+// Small Intestine
+
+//Large Animal / Horse Abdomen
+
+Function
+• Peristaltic waves move ingesta aborally to maintain gut transit time and regularity.
+
+Order of examination
+
+What can be examined
+• The clinician mainly palpates part of the small intestine, especially the jejunum.
+During palpation assess
+• texture of intestinal loops
+• thickness of intestinal loops
+• contents of the lumen
+• whether palpation causes distress
+
+If enlarged
+• When the liver is enlarged, the right side is usually easier to
+palpate because the liver is slightly biased to the right.
+Hepatomegaly = enlarged liver.
+
+Normal feel
+• Small intestinal loops should “blip” easily through the ngers without discomfort.
+
+Important: hepatomegaly is non-speci c, meaning it tells you the
+liver is enlarged but not the exact cause.
+
+Di erential diagnoses if abnormal
+• in ammatory bowel disease (IBD = chronic intestinal in ammation.)
+• foreign body
+neoplasia:
+• lymphoma
+• adenocarcinoma
+• leiomyosarcoma
+
+Possible causes include in ammation, congestion, tumors,
+metabolic disease, or in ltration.
+//Stomach
+Location
+• The stomach is caudal to the liver. The fundus and body are
+mainly on the left side of the abdomen.
+
+// Mesenteric Lymph Nodes
+
+Palpation
+• The stomach as a whole is typically not palpable.
+
+Location = Mesenteric lymph nodes are dispersed throughout the root of the mesentery.
+
+Abnormal ndings
+It may become important clinically when:
+• liver enlargement displaces it caudally
+• stomach is signi cantly distended
+
+De nitions
+• Mesentery = tissue fold that suspends intestines and carries blood vessels, nerves, and
+lymphatics.
+• Lymphadenopathy = enlarged lymph nodes.
+
+De nitions
+• Fundus = upper/dorsal part of the stomach.
+• Distension = abnormal enlargement due to gas, uid, or food.
+
+In cats with alimentary lymphoma, mesenteric lymphadenopathy is seen on ultrasound in 33–
+50% of cases.
+
+// Spleen
+
+// Large Intestine
+
+Location = The spleen is triangular or wedge-shaped and lies in the
+cranial-to-mid abdomen, mostly on the left side.
+
+Descending colon = The descending colon is easily palpable, especially when it contains fecal
+material.
+
+Normal palpation = The spleen is usually not palpable in dogs. If
+enlarged, it sinks ventrally and caudally.
+
+Even if it lacks feces, it can still be distinguished from the small intestine because the colonic
+wall is sti er.
+
+Splenomegaly = enlarged spleen.
+Causes include:
+• anesthetic drugs such as medetomidine, diazepam, ketamine
+• infectious disease
+• parasites
+• babesiosis
+• leishmaniasis
+• hematoma
+• nodular hyperplasia
+• immune-mediated disease
+• splenic torsion
+• malignant neoplasia, especially hemangiosarcoma in dogs
+• lymphoma
+
+// Urinary Tract During Abdominal Palpation
+Upper urinary tract
+• In normal dogs, it is common to feel neither kidney, or only the caudal pole of the left
+kidney. So renal size is di cult to assess.
+Important point
+• The right kidney is more cranial, so it is harder to palpate. The left kidney is usually
+easier.
+
+Important concept
+• Not all horses with colic show all signs, and di erent diseases can show similar signs.
+Rolling
+• Rolling is often associated with severe pain. It does not usually twist the intestine by
+itself; rather, horses may roll because a painful intestinal problem already exists.
+⸻
+Horse Abdominal Auscultation
+Purpose
+• Gut sounds re ect gut activity. In horses, auscultation is especially valuable for
+assessing colic.
+Sites
+Auscultate at least four sites:
+• right paralumbar fossa
+• left paralumbar fossa
+• right lower abdomen
+• left lower abdomen
+Normal sounds
+Mostly produced by:
+• cecum
+• large colon
+Two components:
+1. weak sounds from localized bowel contractions
+2. louder uid sounds/borborygmi from peristalsis
+At least one of these should be audible within one minute at each site.
+Recording sounds
+
+As it lls slightly, it feels like a small water balloon: uid with a stable but soft wall.
+
+Re-establishment of normal gut sounds during colic recovery is a good prognostic sign.
+
+Anatomy
+The pancreas has two lobes:
+• left lobe & right lobe
+The left lobe extends from near the pylorus caudomedially.
+The right lobe follows the descending duodenum.
+
+⸻
+Additional Diagnostic Imaging
+Radiology
+• X-rays help assess organ size, gas patterns, foreign bodies, obstruction, and
+abdominal silhouette.
+Ultrasound
+• Useful for soft tissues, uid, organ structure, masses, lymph nodes, bladder, and
+guided sampling.
+CT
+•
+
+fl
+
+fi
+
+fl
+
+ff
+
+fl
+
+fi
+
+fi
+
+fl
+
+fl
+
+ffi
+
+fi
+
+fi
+
+fl
+
+fl
+
+fl
+
+fi
+
+ff
+
+Advanced cross-sectional imaging for detailed anatomy.
+
+MRI
+• Advanced imaging, especially useful for soft tissue detail.
+
+Pathognomonic = a sign that is speci c for one disease. Here,
+cranial abdominal pain is not pathognomonic, so it does not
+prove pancreatitis.
+fl
+
+fi
+
+ffi
+
+Common signs include:
+• pawing with a front foot
+• stretching out
+• looking at the ank
+• lying down
+• rolling
+• restlessness
+
+// Pancreas
+
+•
+
+fi
+
+Colic = abdominal pain in horses.
+
+Lower urinary tract
+• The empty urinary bladder feels like soft balled-up tissue.
+
+Pancreatitis clue
+• Cranial abdominal pain is not pathognomonic for pancreatitis,
+but it supports pancreatitis as a possible diagnosis and should
+lead to further diagnostic testing.
+
+fi
+
+⸻
+Colic in Horses
+
+Use a scale:
+• 0 = absent
+• ± = reduced
+• ● = normal
+• ++ = increased
+
+Palpation
+• The pancreas is not palpable in a normal dog. Even in disease, it
+is di cult to palpate.
+
+ff
+
+In horses:
+1. inspection
+2. auscultation
+3. percussion
+4. palpation
+
+Interpretation
+High-pitched sounds over:
+• right paralumbar fossa
+gas distension of the cecum
+• left paralumbar fossa
+gas distension of the large colon
+
+fl
+
+fi
+
+fl
+
+fi
+
+fl
+
+fl
+
+fl
+
+fi
+
+fi
+
+De nitions
+• Cecum = large fermentation chamber on the horse’s right side.
+• Large colon = major part of equine hindgut where fermentation and water
+absorption occur.
+• Paralumbar fossa = ank depression area behind the last rib and in front of the
+pelvis.
+
+⸻
+Passing a Stomach Tube in Horse Colic
+• The lecture includes this in the horse colic section. Stomach tubing is important because the horse’s stomach
+may become distended with gas or uid. If pressure is not relieved, the stomach can rupture.
+
+⸻
+Abdominal Paracentesis / Peritoneal Tap
+• The lecture also mentions abdominal paracentesis and collection of
+peritoneal uid into EDTA for cytology.
+
+Purpose
+• detect gas/ uid in stomach
+• decompress stomach
+• prevent rupture
+• assess re ux
+
+De nition
+
+Route
+The tube passes:
+• nose
+pharynx
+
+esophagus
+
+•
+
+Abdominal paracentesis = same idea as abdominocentesis: sampling
+uid from the peritoneal cavity.
+
+EDTA = anticoagulant tube used to preserve cells for cytology.
+
+stomach
+
+Con rm position
+• The tube is in the esophagus if it can be palpated moving down the neck. When it reaches the stomach, gas
+with characteristic gastric smell may be released.
+
+fl
+
+Purpose
+• Percussion identi es gas- lled intestinal portions.
+
+fi
+
+fl
+
+⸻
+Horse Abdominal Percussion
+
+Why cytology matters = A large cellular deposit in peritoneal uid may
+suggest peritonitis.
+
+RECTAL EXAM
+
+Big Idea
+Rectal examination is especially important in horses with
+colic. The lecture states it is one of the most important
+parts of the clinical work-up of a horse with colic and
+should be done whenever possible, but always carefully
+because it has risks.
+Why it matters
+Rectal examination helps the clinician assess:
+• abdominal organs
+• intestinal distension
+• displacement of bowel
+• obstruction
+• reproductive tract in large animals
+• prostate and anal sacs in dogs
+
+⸻
+4. Safety Rules
+
+⸻
+7. Inguinal Canals in Stallions
+
+⸻
+Ileal impaction
+
+Avoid wide ngers = You should not palpate with ngers spread widely because
+this increases risk of rectal trauma.
+
+The inguinal canals can be felt on both sides of the pelvic opening
+at the pubic brim.
+
+If there is strong peristalsis
+If a strong peristaltic wave occurs:
+• return hand to cone shape
+• be ready to withdraw
+
+Why important?
+• In stallions, always palpate the inguinal rings because of the
+risk of strangulated inguinal hernia.
+
+Findings:
+•
+rm tubular structure, about 12–16 cm diameter
+• medial to the base of the cecum
+• may have loops of distended small intestine near the
+cecum
+
+Peristalsis = Wave-like contraction of the intestine that moves contents forward.
+
+Inguinal hernia
+• Intestine passes into the inguinal canal/scrotum.
+
+Important rule = Do not grasp structures through the gut wall. Run the hand
+gently along surfaces instead.
+
+Strangulated
+• Blood supply is compromised, making it an emergency
+
+⸻
+5. Rectal Trauma
+
+⸻
+1. Rectal Examination in Horses
+
+If rectal tear is suspected
+
+⸻
+2. Adequate Restraint
+
+You must determine:
+• whether trauma occurred
+• location
+• extent
+If the tear is deeper than the mucosa, rapid referral is needed.
+
+Because rectal exam can be dangerous for both the horse
+and examiner, proper restraint is essential.
+
+Mucosa
+• Inner lining of the rectum.
+
+Methods include:
+• twitch
+• raising a foreleg
+• sedation
+• stocks
+
+Why deep tears are dangerous
+• If trauma extends beyond mucosa into muscle layers, contamination can
+spread into tissues and abdomen, requiring surgery
+
+⸻
+6. Normal Structures Palpable in Horses
+
+Twitch
+• A restraint device applied to the horse’s upper lip to
+help calm/restrain the horse.
+
+// Left dorsal quadrant
+Palpable structures:
+• spleen
+• caudal pole (tail-end portion of an organ) of left kidney
+• nephrosplenic ligament (ligament connecting the left kidney and spleen)
+
+Sedation
+• Use of drugs to calm the animal and reduce
+movement.
+
+// Right / midline area
+You may palpate:
+• root of the mesentery (Tissue fold that suspends intestines and contains
+vessels, nerves, and lymphatics.)
+• caecocolic artery
+• base of the cecum
+
+Stocks
+• A strong frame that safely con nes the horse during
+examination.
+Why restraint matters
+Sudden movement can cause:
+• injury to the examiner
+• rectal tearing in the horse
+
+Cecum = Large fermentation pouch in horses, located mostly on the right side.
+Teniae bands = Longitudinal muscle bands on the cecum/colon. In the normal
+cecum, they are relaxed and may be hooked gently without pain.
+
+⸻
+3. Technique in Horses
+
+// Pelvic brim / ventral area
+
+Position of clinician
+• stand to the side of the tail base
+• stay close to the horse’s quarters
+• raise the tail with the free hand
+• use a well-lubricated rectal sleeve
+
+You may palpate:
+• pelvic exure of large colon
+• left ventral colon
+• left dorsal colon
+• small colon with fecal balls
+• sometimes small intestine if contracting
+
+How to insert the hand
+• The ngers and thumb should be brought together to
+form a cone shape and introduced slowly through the
+anal sphincter.
+
+Pelvic exure = A bend in the large colon near the pelvic inlet. It is important
+because impactions commonly occur here.
+Fecal balls = Formed feces in the small colon.
+
+Why cone shape?
+• It reduces pressure and decreases risk of trauma.
+
+fi
+
+fl
+
+fi
+
+fi
+
+fi
+
+fl
+
+fl
+
+fl
+
+fl
+
+fi
+
+fi
+
+fl
+
+fi
+
+fl
+
+fi
+
+fi
+
+fi
+
+fi
+
+Anal sphincter
+• The circular muscle controlling the opening of the anus.
+
+⸻
+Ileocaecal intussusception
+
+Findings:
+•
+rm enlarged tubular or coiled structure
+• located within the base of the cecum
+• represents a high obstruction
+
+At the end of examination, check your hand/sleeve for:
+• bloodstained feces
+• frank blood
+
+Rectal exam helps detect:
+• intestinal obstruction
+• distended bowel loops
+• large colon displacement
+• cecal problems
+• small intestinal distension
+• inguinal hernia in stallions
+
+Impaction
+• Accumulation of rm material blocking the bowel.
+
+Intussusception = One part of intestine telescopes into
+another
+
+Why it is serious
+• Rectal tears can be life-threatening in horses.
+
+Why perform it?
+In horses, rectal examination is mainly used in colic cases.
+
+Ileum
+• Final part of the small intestine before the cecum.
+
+⸻
+8. Findings That Suggest No Serious Lesion
+Serious lesions are less likely if there is:
+• easy entry
+• normal feces
+• relaxed abdomen
+• enough space for arm movement
+But this does not guarantee there is no disease.
+
+⸻
+9. Abnormal Rectal Findings in Horses
+General principle = Rectal examination does not always give a
+speci c diagnosis. More often it tells you:
+•
+•
+•
+
+which bowel segment is distended
+where the distension is located
+whether obstruction is likely
+
+⸻
+10. Small Intestinal Abnormalities
+Small intestinal obstruction / ileus
+Findings:
+• distended loops containing gas and uid
+• tight distension in strangulating lesions
+• loops may fold like an accordion
+• distended small intestine usually suggests a surgical
+problem
+De nitions
+• Obstruction = blockage of intestinal contents.
+• Ileus = failure of intestinal motility.
+• Strangulating lesion = obstruction with compromised
+blood supply.
+⸻
+Anterior enteritis / proximal duodenojejunitis
+Anterior enteritis = in ammation of the proximal small intestine,
+especially duodenum/jejunum.
+Findings:
+• distended duodenum over the base of the cecum
+• proximal jejunal distension
+• less tight than obstruction
+
+⸻
+11. Cecal Abnormalities
+Cecal tympany = gas distension of the cecum.
+Tympany = Abnormal gas accumulation causing
+distension.
+⸻
+Cecal impaction
+Findings:
+• large oval mass of ingesta
+• may move side to side like a pendulum
+• large colon may feel relatively empty
+Ingesta = Food material inside the gastrointestinal
+tract.
+⸻
+Cecal intussusception
+Types:
+• caecocaecal intussusception
+• caecocolic intussusception
+Meaning = The cecum invaginates into itself or into
+the colon.
+⸻
+Typhlitis
+• typhlitis as associated with cecal wall edema.
+• Typhlitis = In ammation of the cecum.
+
+⸻
+12. Large Colon Abnormalities
+Rectal examination is especially useful for largecolon problems.
+// Primary pelvic exure impaction
+Findings:
+• enlarged, rm, evenly lled viscus
+• often on pelvic oor or right ventral quadrant
+• may be close to anal sphincter in severe cases
+• doughy mass can be indented and stays
+indented for 5–10 seconds
+• wall is usually smooth
+Viscus = An internal hollow organ, such as intestine.
+
+// Primary vs secondary impaction
+Primary impaction = The main problem is impaction itself.
+
+⸻
+14. Rectal Examination in Dogs
+
+Secondary impaction = Occurs because another disease causes
+dehydration/hypovolemia and dry colon contents.
+
+When to perform it
+In any adult dog presenting with:
+• tenesmus : straining to defecate
+• dyschezia : painful or di cult defecation
+• constipation
+• hematochezia : fresh blood in feces
+• diarrhea
+• dysuria : di cult or painful urination
+• stranguria straining/painful urination, often with small amounts
+
+Seen with:
+• grass sickness
+• anterior enteritis
+• ileal impaction
+Important exam point
+• Do not mistake secondary impaction for primary impaction, because
+giving large volumes of mineral oil by nasogastric tube may risk
+rupturing an already distended stomach.
+
+This occurs when the large colon becomes trapped over the
+nephrosplenic ligament.
+
+Prostate
+• In male dogs, the prostate lies along the ventral pelvic oor.
+• The prostate produces some uid found in semen.
+
+Findings:
+• distended large colon lies horizontally in front of pelvic canal
+• caudal to tympanitic cecum
+• mesocolon can be traced to the right
+• mesocolon edema suggests torsion
+
+⸻
+16. Prostate Abnormalities
+
+Mesocolon
+• Mesentery supporting the colon.
+
+The slides show normal prostate, prostatitis, cysts, and enlarged prostate
+images.
+What to assess
+• size
+• symmetry
+• pain
+• consistency
+• position
+
+// Large colon torsion
+Findings:
+• severe distension
+• di cult to explore beyond pelvic inlet
+• thickened colon wall and mesocolon due to edema
+• severe pain and abdominal distension
+Torsion = Twisting of an organ around its axis, which can compromise
+blood supply.
+
+Possible abnormalities
+• prostatitis
+• cysts
+• benign enlargement
+• neoplasia
+
+⸻
+13. Rectal Examination in Cattle
+
+Prostatitis
+• In ammation/infection of the prostate.
+
+Purpose in cattle
+
+⸻
+17. Anal Sacs
+
+Rectal examination is commonly used to assess:
+• uterus
+• ovaries
+• cervix
+• bladder
+• pregnancy status
+• intestinal/abdominal structures
+
+Location = Anal sacs are paired structures on the left and right side of the anus.
+Common problems
+• anal sac impaction
+• anal sacculitis
+• anal sac abscessation
+
+Pregnancy diagnosis
+• The lecture images show rectal examination of a pregnant cow, including
+gravid uterus around 90 days.
+
+Predisposed dogs
+• German Shepherd dogs
+• small-breed dogs may also be overrepresented
+
+Gravid uterus = A uterus containing a pregnancy.
+
+De nitions
+Anal sac impaction
+• Material in the anal sac becomes thick and cannot empty normally.
+Anal sacculitis
+• In ammation of the anal sac.
+
+fl
+
+fl
+
+fl
+
+ffi
+
+fi
+
+ff
+
+ffi
+
+fl
+
+fl
+
+fl
+
+fi
+
+fi
+
+fl
+
+Anal sac abscessation
+• Pus- lled infected anal sac; may rupture through skin.
+
+ffi
+
+Paraneoplastic
+• A disease e ect caused by cancer indirectly, not just by the tumor mass itself.
+
+Pelvic diaphragm
+• Muscles and bones forming the boundary around the rectal canal.
+
+// Right dorsal displacement
+
+ffi
+
+In the anal sac, it is important because it may cause:
+• swelling near anus
+• tenesmus
+• di culty defecating
+• sometimes systemic signs due to paraneoplastic hypercalcemia
+
+During rectal examination in dogs, assess:
+• pelvic diaphragm
+• urethra along ventral pelvic oor
+• left and right anal sacs
+• prostate in male dogs
+
+Findings:
+• left colon draped over nephrosplenic ligament
+• pelvic exure cannot be palpated
+• bands may hang diagonally
+• spleen may be obscured if tympany is present
+• palpating colon over nephrosplenic ligament is pathognomonic
+
+fl
+
+Adenocarcinoma is a malignant tumor arising from glandular tissue.
+
+⸻
+15. Structures Felt in Dogs
+
+// Nephrosplenic entrapment / left dorsal displacement
+
+fi
+
+⸻
+18. Anal Sac Adenocarcinoma
+
+⸻
+Final Exam Summary
+Horse rectal exam
+• Most important for colic.
+Must know:
+• restrain properly
+• lubricate well
+• enter slowly with cone-shaped hand
+• avoid spread ngers
+• palpate gently
+• check sleeve for blood afterward
+Normal structures:
+• spleen
+• left kidney
+• nephrosplenic ligament
+• root of mesentery
+• base of cecum
+• pelvic exure
+• left colon
+• small colon with fecal balls
+Abnormal ndings:
+• distended small intestine
+often surgical
+• ileal impaction
+• cecal tympany/impaction
+• pelvic exure impaction
+• nephrosplenic entrapment
+• right dorsal displacement
+• large colon torsion
+
+

@@ -1,0 +1,863 @@
+================================================================================
+TOPIC: VITAL SIGNS: TEMPERATURE, PULSE, RESPIRATION, RUMINAL CONTRACTIONS
+================================================================================
+
+=== FROM: 00_Propedeutics_5 ===
+🩺
+
+VITAL SIGNS
+
+Vital signs : index of an animal’s essential bodily functions OR first step in determining if the animal is healthy or sick
+-> parameters taken from the animal to assess its health
+CLINICAL TIP
+Timing depends mostly on animal bc if you have an agressive / scared animal it is better to take the
+temperature at the end since it is very unplaisant for the animal to avoid to loose its cooperation
+
+🩺⚠
+
+Sphincter of an animal under
+anesthesia will be a bit closed
+
+BODY TEMPERATURE
+
+CLINICAL TIP
+
+⚠ Pulse is the 1st thing to do in case of colitis to estimate the pain
+
+How it’s done ?
+1.
+
+lubricate the bulb end of the thermometer and gently insert it, with a rotatory action, through the anal sphincter into the
+rectum; ensure a constant depth and contact to the colonic membrane => be careful not being in feces
+2. wait for a beeping sound… and read the maximum temperature recorded
+3. wipe the thermometer clean
+
+• evaluation of the rate, rhythm, amplitude and quality of the arterial pulse is the oldest, cheapest, quickest and easiest way to assess cardiac output
+• pulse is felt by placing the ball of one/three fingers transversly on the skin over the artery and applying gentle pressure until the pulse wave can be felt; palpate bilaterally
+-> external maxillary (facial) artery
+-> femoral artery
+-> ventral coccygeal artery
+60-140
+
+CLINICAL TIP
+For dogs and cats, stand behind the animal and gently place
+2-3 fingers of your left and right hands respectively on each
+femoral artery by passing your arms cranially to the hindlimbs
+and coming caudally inside inguinal region
+
+CLINICAL TIP
+In cows, the pulse can be taken
+on both side on the facial artery
+or the tail can be lifted and the
+pulse can be taken from the
+coccygeal artery near the base of
+the tail.
+In calves and sheep, the pulse is
+taken using the femoral artery.
+
+70-115
+110-170
+
+Interpreting body temperature
+! Be aware that body temperature represents a clinical finding and is not a diagnosis !
+Body temperature must be interpreted along with the results of other examination procedures
+
+The respiratory rates in
+obese cattle can be 2-3x
+those of normal animals
+
+Rate
+
+-> Abnormal variations
+• three general categories of abnormal/pathological deviations from normal:
+➢ hyperthermia
+➢ fever
+➢ hypothermia
+
+-> Bradycardia (= HR too low) : associated with several conditions, such as hypothyroidism, hypothermia, CNS diseases, toxicities, bradyarrhythmias
+-> Tachycardia (= HR too high) : associated with several conditions, such as stress, pain, hyperthyroidism, excitement, tachyarrhythmias
+
+• usually the rate is counted over 15-30 seconds, and the pulse for a longer period during which the features such as rhythm and quality are assesed
+• generally speaking, heart rates are lower in larger animals and in quiet, fit animals; in younger animals and those not used to restraint rates will be faster
+• to reduce the elevation in heart rate associated with stress, the pulse is ideally taken when the animal had a chance to adjust to the new surroundings
+Rate
+• the rate is best observed from behind and to the side of the animal, by watching the movements of the costal archs and the abdominal wall; one
+can also observe the condensed water vapour as it is exhaled from the nostril on cold days (typically in large animals) or by placing the hand
+near the nostrils
+• panting occurs in normal dogs, and sometimes in cats, as a thermoregulatory mechanism
+• many dogs pant when hyper-excitable and being examined, thereby making it difficult to determine the resting respiratory rate
+
+Rhythm
+=> the pulse should be ideally felt for at least a minute as abnormalities in rhythm may not be constant
+
+= systemic state in which the body temperature is increased above the critical for that species
+• underlying mechanism → physical factors (excessive heat absorption/production, deficient heat loss)
+• generally speaking, undesirable because the metabolic rate may be increased up to 50%, with a rapid depletion of glycogen
+storages and an increased metabolism of endogenous protein, as a source of energy
+
+• normal respiration is characterized by quiet, active inspiration followed by passive expiration
+• both phases are smooth and symmetrical
+• respiratory rate is influenced by numerous factors, such as:
+-> exercise
+-> ambient temperature
+-> excitement
+-> digestive tract filling
+-> pregnancy…
+• in order to minimize any changes in the rate and depth of breathing which may occur because of handling of the animal, the audiovisual
+inspection of breathing is performed, without disturbing the animal
+
+Check both right and left bc possible difference ex thrombosis
+
+-> Physiological variations
+• due to age, sex, season of the year, time of the day, enviromental temperature, exercise, eating…
+• diurnal variations
+• ambient temperatures
+• physical activity
+
+Hyperthermia
+
+Temperature
+Pulse
+Breathing
+Rumen contraction
+Capillary refill time
+Arterial blood pressure
+Pain
+
+BREATHING (RESPIRATION)
+
+PULSE
+
+=> rectal temperature measurement is taken early in the course of the physical exam in all species, because of two reasons:
+•
+increased activity may cause spurious increases in rectal temperature
+Also possible in axillary region (+1°) if not possible rectally !
+•
+rectal exam will often cause a decrease in the measured temperature
+
+•
+•
+•
+•
+•
+•
+•
+
+In horses it is possible to take the pulse on :
+•
+A. Uterina : from rectum if the individual is pregnant
+•
+A. Digitale : if lameness
+•
+A. Maxillary superficialis : most common - under jaw
+-> how to proceed ?
+- put your thumb externally on the jaw and the 4 other fingers on artery btw the
+mandible, then look for the artery along the bone and press a bit the artery against the bone
+
+-> regular = equal intervals between successive pulse waves
+-> irregular
+-> regularly
+-> irregularly
+-> pulse deficits
+
+CLINICAL TIP
+In large animals count at least 1
+min (not 15 sec or 30 sec) bc
+respi rate changes frequently
+
+=> HYPERTHERMIA REFERS PRIMARILY TO THE EFFECTS OF NON-INFECTIOUS CIRCUMSTANCES !
+
+(Amplitude) & Quality
+
+-> Common causes :
+- high ambient temperature
+- convulsions
+- exercise
+- dehydration
+- intoxication
+- malignant hyperthermia
+
+• the apparent pulse size and quality are determined by :
+-> stroke volume
+-> rate of ejection
+-> distensibility of the vascular bed
+-> peripheral resistance
+-> systolic and diastolic pressures (amongst many other factors)
+• subjective evaluation of pulse strenght is based on the difference between the systolic and diastolic arterial pressures – the wider the difference, stronger the pulse
+
+-> Clinical signs
+- increase in heart and respiratory rates
+- salivation
+- initial sweating
+- restlessness, then dullness, stumbling gate and lateral recumbency
+
+-> weak pulse - hypokinetic : dilated cardiomyopathy, (sub)aortic stenosis, shock, dehydration
+-> strong pulse : excitement, hypertrophic cardiomyopathy, hyperthyroidism, fever
+-> very strong pulse - hyperkinetic : patent ductus arteriosus, severe aortic regurgitation, fever/sepsis
+
+• normal breathing consists of three phases of equal lenght : inspiration, expiration and pause
+• variation in the lenght of one or all phases constitutes rhythm abnormality
+• prolongation of inspiration is usually due to obstruction of the upper respiratory tract, typically the larynx
+• prolongation of expiration is usually due to disease of the lower respiratory tract
+-> in lung diseases, the rhythm typically consists only of inspiration and expiration
+
++ specific pulse abnormalities :
+
++ specific breathing rythm abnormalities :
+
+Rythm
+
+! In most species, when temperature reaches 41ºC respiratory distress is evident, with collapse, convulsions and coma; death likely
+with termperatures ranging from 41,5-42,5ºC !
+Fever (or febrile state)
+= those hyperthermic states caused by systemic manifestations of toxemia or mediators of inflammation
+-> septic fever
+• most common
+• caused by inflammation due to infections, localized or systemic
+-> aseptic fever
+• due to diseases associated with immune-mediated mechanisms
+• non-infectious
+-> fever of unknown origin
+• cause cannot be determined, often even with extensive laboratory testing
+• infectious vs. non-infectious
+
+HYPOKINETIC PULSES
+= often found in conditions with a small
+stroke volume, increased peripheral
+resistance, and narrow pulse pressure;
+one common cause is LV failure
+in dogs with a moderate to severe SAS
+small/weak pulses with delayed systolic
+peak – pulsus parvus et tardus
+
+NORMAL PULSES
+= consists of three phases:
+(1) ascending limb,
+(2) peak
+(3) descending limb
+
+CHEYNE-STOKES RESPIRATION
+= characteristic of advanced renal and
+cardiac disease, is a gradual increase
+and then a gradual decrease in depth of
+respiration
+
+HYPERKINETIC PULSES
+= pulse is strong and large, contour is
+normal – bounding or „water-hammer“
+pulse; as already said commonly
+encountered in animals with PDA,
+peripheral AV-fistula, or aortic
+regurgitation (Corrigan’s pulse)
+
+KUSSMAUL’S RESPIRATION
+= seen in animals with acidosis (dogs with
+diabetic ketoacidosis) – compensatory
+hyperventilation; persistent acidosis
+may ultimately lead to depression of
+the respiratory center
+
+Depth
+• variations from the normal excursions of the thoracic and abdominal wall – may be shallow or deep
+• the depth of breathing may be reduced in painful conditions of the thorax or diaphragm and increased in any form of hypoxia
+• during relaxed breathing normal horses may show relatively subtle movements of the nostrils, costal arch, and intercostal/abdominal muscles
+-> hyperpnea = defines a moderate increase in depth
+-> dyspnea / respiratory distress = defines labored breathing in which the accessory respiratory movements become more prominent
+-> signs of dyspnea :
+- open mouth / breathing
+- dilation of the nostrils
+- increased movement of the thoracic and abdominal walls
+- extension of the head and neck / abduction of the elbows
+
+=> the recognition of fever should not necessarily prompt the automatic use of antimicrobials !
+-> Clinical signs :
+- shivering (early stages)
+- tachycardia and polypnea
+- varying degrees of depression and anorexia
+- decreased milk production
+- decreased intestinal motiliy
+
+PULSUS ALTERNANS
+= pulse alternates between strong
+and weak, while the patient is in
+sinus rhythm; it is sign of profound
+myocardial depression, and is most
+often detected in dogs with dilated
+cardiomyopathy
+
+-> Severity
+- mild – 1ºC
+- moderate – 1,7 to 2,2ºC
+- severe – 2,8 to 3,3ºC
+
+PULSUS BIGEMINUS
+= pulse strength alternates with
+certain arrhythmias, most commonly
+premature ventricular contractions
+(PVC’s); it is easily identified since
+the weak pulse typically follows a
+shorter interval than the stronger
+pulse
+
+PULSUS PARADOXUS
+= inspiratory fall in systemic arterial
+pressure exceeding 10 mmHg; it is
+detected most commonly in dogs with
+pericardial effusion and cardiac
+tamponade
+
+Types of breathing :
+=> there are all costoabdominal
+(both thoracic and abdominal) but :
+-> Cow : can be a bit more abdominal
+-> Small : can be a bit more thoracic
+
+PULSELESSNESS
+= partial or complete obstruction of the peripheral arteries is usually due to sytemic thromboembolism; in dogs primary causes include endocarditis,
+hyperadrenocorticism, and certain protein-losing nephropathies, and in cats myocardial diseases
+
+Hypothermia
+= reduction of rectal body temperature below the normal range for that species
+
+-> What reduces the protective responses of animals to cold ?
+- shearing, clipping or grooming
+- dehydration
+- inanition
+In severely ill patients an abrupt and dramatic fall in
+- hypoproteinemia
+body temperature may occur immediately before
+- general anesthesia
+death; this is a grave prognostic sign
+- vasodilators
+- hypocalcemia
+- anemia
+
+• in normal animal there are two independent contraction sequences of the reticulorumen:
+Secondary cycle contractions :
+occur approximately at intervals of
+about 2 minutes, and are confined to
+the rumen; consist of a contraction
+of the dorsal, and then ventral sac of
+the rumen; these contractions cause
+undulation of the left paralumbar
+fossa
+
+-> Thoracic : movements are largely confined to the thoracic wall, as in peritonitis, particularly when there is also diaphragmatic involvement
+-> Normal : movement of both the thoracic and abdominal walls
+-> Abdominal : marked increase in the movements of the abdominal wall, typically in painful conditions such as acute pleuritis or paralysis of
+the intercostal muscles
+Symmetry
+
+RUMEN CONTRACTIONS
+• rumination is the complex process of regurgitation, remastication, ensalivation, and reswallowing of reticulorumen contents
+• requires a positive approach, and is easily stopped by fright or the offering of feed → determining the cause of failure to ruminate is a major diagnostic challenge
+• the contractions of the stomach compartments are organized and controled through the vagus nerve and the ruminoreticular motor center in medulla oblongata
+• the cyclical movements, which ensure thorough mixing of the contents of the rumen and reticulum occur at the rate of 1-3 per minute, the greater frequency being related to recent ingestion of feed
+Examination of the rumen (no palpation)
+
+REMINDER
+
+Type
+
+• normally both sides of the thorax move uniformly
+• in painful diseases of the thorax and in pneumothorax, one side of the thorax may not move as much as the other
+• the movements of the hemithoraxes are evaluated by looking down on the animal from above
+
+• exposure to enviromental conditions that promote heat loss (cold, wet and windy)
+• effects of hypothermia: shivering, hypotension, increased blood viscosity, cardiac arrhythmias, hypoxemia and acidosis
+• lethal low body temperature in both dogs and humans is approximately 25ºC
+• neonates are especially susceptible to hypothermia, particularly if ingestion of colostrum/milk is delayed
+
+Primary cycle contractions :
+occur approximately every minute
+and consists of biphasic contraction
+of the reticulum followed by
+monophasic contraction of the
+dorsal sac, and then the ventral sac
+of the rumen
+
+BIOT’S RESPIRATION
+= occurs in meningitis affecting the
+medulla oblongata, is characterized by
+alternating periods of hyperpnea and
+apnea, usually of unequal lenght
+
+-> Inspection
+• contractions of the rumen are visible by inspection of the left paralumbar fossa and the left lateral abdominal wall
+• alternate rising and sinking of the left paralumbar fossa is associated with the concurrent contraction and relaxation of the dorsal and ventral sacs
+• more frequent during the eating and rumination
+• in normal animal, three contractions should occur over a 2-minute period; one of the contractions should be associated with eructation of the gas
+-> Auscultation
+• auscultation is the most sensitive of the three methods
+• allows evaluation of ruminal functions, and to a varying degree that of the other stomach compartments
+• stethoscope is placed in the left paralumbar fossa and extending cranially over an area from the dorsal third of the 10th to 13th ribs
+=> rumen contractions are evaluated for: intensity, duration, and frequency
+• they are influenced by:
+➢ time after feeding
+➢ recent excitement
+➢ composition of the diet
+➢ access to water supply
+
+Sounds
+-> normal sounds
+• the sounds of rumen contractions in a normal animal consuming roughage are similar to a series of exploding/crackling/
+grating sounds
+• when the rumen contains less coarse roughage or primarily grain, the sounds may be less distinct but still possess a
+crackling/grating characteristic
+-> abnormal sounds
+• a decrease in the intensity or the absence of ruminal sounds over the left paralumbar fossa and the area cranial to it
+suggests presence of a viscus or mass between the rumen and the abdominal wall à most common cause is left-sided
+displacement of the abomasum
+-> common causes of reduction in rumen contractions : hypocalcemia, endotoxemia, simple indigestion, acute
+carbohydrate engorgement, traumatic reticuloperitonitis
+• presence of fluid-tinkling or splashing sounds, along with a static rumen, suggests that the rumen contains and excessive
+quantity of fluid
+-> this findings suggests diseases, such as grain overload, or an atonic rumen
+-> sounds are similar to those present in left-sided displacement of the abomasum
+-> in vagus indigestion the contractions are obvious and frequent, visible (and palpable), and usually not audible
+-> complete atony may also occur in vagus indigestion
+
+-e 
+=== FROM: Proped_Notes ===
+VITAL SIGNS
+
+BIG IDEA
+What are vital signs?
+👉 Indicators of essential body functions
+•
+•
+•
+
+First step in determining if an animal is:
+healthy
+or sick
+
+⸻
+MEMORY TIP
+• Vital signs = “Is this animal stable or not?”
+
+⸻
+1. BODY TEMPERATURE
+
+⸻
+PULSE RATE
+
+⸻
+1 . Hyperthermia (non-infectious)
+
+Abnormalities
+
+Caused by:
+• heat
+• exercise
+• dehydration
+• NOT in ammatory
+Clinical signs
+•
+HR,
+RR
+• salivation
+• collapse (severe)
+
+W
+HEAT STROKE
+
+👉 >41°C = life-threatening
+
+⸻
+Types of temperature
+
+Surface temperature
+• Skin temperature
+• Varies with environment
+• Assessed by touch
+⸻
+KEY IDEA
+• Core temp = clinically important
+Normal values (examples)
+
+MEMORY TIP
+• Take temperature early
+
+•
+
+Tachycardia (high HR)
+- stress
+- pain
+- fever
+
+MEMORY TIP
+• Slow = metabolic
+• Fast = stress/pain
+
+normal
+abnormal
+
+Normal breathing
+• Inspiration = active
+• Expiration = passive
+• Smooth and symmetrical
+Normal respiratory rates
+• Dog: 18–36
+• Cat: 20–30
+• Horse: 8–16
+⸻
+RESPIRATORY RATE
+Terms
+• Apnea
+no breathing
+• Oligopnea
+slow
+• Eupnea
+normal
+• Tachypnea
+fast
+MEMORY TIP
+• Tachy = fast
+• Oligo = slow
+
+Important concept
+• Must check for at least 1 minute
+• Abnormalities may be intermittent
+
+Severity
+• Mild: +1°C
+• Moderate: +1.7–2.2°C
+• Severe: +2.8–3.3°C
+
+⸻
+PULSE QUALITY
+
+⸻
+RESPIRATORY RHYTHM
+
+Depends on
+• stroke volume
+• Rate of ejection
+• vascular resistance
+• Systolic and diastolic blood pressure
+
+Normal
+3 phases:
+• inspiration
+• expiration
+• pause
+
+Types
+• Weak (hypokinetic)
+- shock
+- dehydration
+- (sub)aortic stenosis
+
+Abnormal patterns
+• Cheyne-Stokes
+waxing/waning
+• Biot
+irregular apnea
+• Kussmaul
+deep breathing (acidosis)
+
+•
+
+E ects
+• shivering
+• arrhythmias
+• hypoxia
+• Acidosis
+👉 ~25°C = lethal
+
+Important note
+• Activity
+false high temp
+• Rectal exam
+temp may drop
+
+Bradycardia (low HR)
+- hypothyroidism
+- hypothermia
+
+Signs
+• shivering
+• depression
+• anorexia
+
+⸻
+3. Hypothermia
+• Low body temperature
+Causes:
+• cold exposure
+• disease
+
+How to measure
+• Rectal temperature (early in exam!)
+• Lubricate thermometer
+• Insert gently
+• Wait for beep
+read value
+
+•
+
+Types
+• Regular
+• Irregular
+
+KEY IDEA
+• Fever = in ammation
+• Hyperthermia = external causes
+
+Dog: ~37.5–39.2°C
+Cat: ~37.8–39.2°C
+Horse: ~37.5–38.5°C
+Cow: ~37.8–39.2°C
+
+⸻
+3. RESPIRATION (BREATHING)
+
+⸻
+PULSE RHYTHM
+
+⸻
+2. Fever (in ammatory)
+Due to:
+• infection (septic)
+• immune disease (aseptic)
+
+Core temperature
+• Deep body tissues
+• Stable unless extreme conditions
+• Measured with thermometer
+
+•
+•
+•
+•
+
+ABNORMAL TEMPERATURE
+
+•
+
+⸻
+MEMORY TIP
+• Cold = dangerous, especially in neonates
+
+Strong
+- fever
+- hypertrophic cardiomyopathy
+- excitement / hyperthyroidism
+Bounding (hyperkinetic)
+- patent ductus arteriosus
+- severe aortic regurgitation
+- fever/sepsis
+
+MEMORY TIP
+• Weak = low output
+• Strong = high pressure
+
+⸻
+RESPIRATORY DEPTH
+Terms
+• Hyperpnea
+deep breathing
+• Dyspnea
+labored breathing
+
+Resp distress
+Signs of dyspnea
+• open mouth breathing
+• neck extension
+• nostril dilation
+~
+
+⸻
+2. PULSE
+
+VERY IMPORTANT
+• Temperature = clinical nding
+• NOT a diagnosis
+
+What does pulse assess?
+• Heart rate
+• Rhythm
+• Strength (quality)
+
+Always interpret with:
+• history
+• physical exam
+
+Normal heart rates
+• Dog: 60–160 bpm
+• Cat: 120–240 bpm
+• Horse: 28–46 bpm
+fi
+
+fl
+
+fl
+
+fl
+
+fi
+
+assess
+
+How to measure
+• Use ngers over artery
+Common sites:
+• femoral
+• facial artery
+• Palpate both sides
+
+NORMAL VARIATIONS
+• age, sex, season of year
+• time of day
+• environment
+• exercise
+• feeding
+ff
+
+/cheapesway to
+
+⸻
+INTERPRETATION
+
+C O
+.
+
+IMPORTANT PULSE ABNORMALITIES
+
+KEY IDEA
+hear a breath
+• Dyspnea = emergency Regularly
+like
+
+brachyceph dogs
+
+.
+
+Pulsus alternans
+• alternating strong/weak
+👉 severe heart disease
+Pulsus bigeminus
+• paired beats
+👉 arrhythmia
+Pulsus paradoxus
+•
+pulse during inspiration
+👉 cardiac tamponade
+Pulselessness
+• no pulse
+👉 thromboembolism
+
+⸻
+RESPIRATORY TYPE & SYMMETRY
+Types
+• Thoracic
+• Abdominal
+• Mixed (normal)
+Symmetry
+• Both sides should move equally
+• Asymmetry
+disease (pain, pneumothorax)
+
+~
+can't
+
+really hear it
+
+but exper phase LONG
+.
+
+⸻
+4. RUMEN CONTRACTIONS (RUMINANTS)
+Normal function
+• 1–3 contractions/min
+• Important for digestion
+
+⸻
+FINAL SUMMARY (EXAM GOLD)
+⸻
+Core vitals
+
+How to examine
+• Inspection
+• Palpation
+• Auscultation (most sensitive)
+
+👉 TPR = Temperature, Pulse, Respiration
+•
+•
+
+Normal ndings
+• 3 contractions / 2 min
+• gas eructation present
+Abnormal ndings
+•
+sounds
+disease
+•
+uid sounds
+rumen overload
+• no movement
+atony
+
+⸻
+Clinical work ow
+J
+
+fi
+
+fi
+
+fl
+
+fi
+
+Capillary re ll time (CRT)
+Blood pressure
+Pain
+
+fi
+
+fl
+
+•
+•
+•
+
+1.
+2.
+3.
+4.
+
+Temperature
+Pulse
+Respiration
+Additional parameters
+
+⸻
+Absolute key idea
+
+MEMORY TIP
+• No rumen movement = BAD sign
+⸻
+OTHER IMPORTANT VITAL PARAMETERS
+
+Rumen (in ruminants)
+CRT, BP, pain
+
+~
+
+👉 Vital signs = rst indicator of life-threatening problems
+⸻
+🎯 ONE-LINE MEMORY
+👉 Temp
+
+Pulse
+
+Resp
+
+(Rumen)
+
+Evaluate life status
+
+

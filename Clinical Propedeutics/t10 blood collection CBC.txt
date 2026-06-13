@@ -1,0 +1,726 @@
+================================================================================
+TOPIC: BLOOD COLLECTION AND COMPLETE BLOOD COUNT (CBC)
+================================================================================
+
+=== FROM: 00_Propedeutics_5 p.31-32 ===
+HAEMATOLOGY
+RED BLOOD CELLS
+-> according to the number
+• ↑ policythemia – dehydration, hound dogs
+• ↓ anemia
+– non regenerative : decreased production
+– regenerative : increased destruction
+• due to bleeding – (post)hemorrhagic
+• due to hemolysis - hemolityc
+How to proceed ?
+-> (micro)hematocrit or pcv
+• corpuscular part (cells) (%)
+• rbc and wbc („buffy coat”=0,5-1%)
+• plasma colour…
+• to transfuse or not to transfuse?
+
+WHITE BLOOD CELLS
+-> according to the number
+• ↑ inflammation, infection, hematopoetic neoplasia
+• ↓ viral infections, pancytopenia (+ anemia + low platelates)
+
+PLATELETS
+-> according to the number
+• ↑ thrombosis
+• ↓ low platelates – dic, evan’s syndrome, cavalier king charles spaniels
+
+production <=> consumption
+-> neutrophils
+• ↑ inflammation, infection (bacterial), hematopoetic neoplasia
+=> left shifting = increase of the nb of immature neutrophils during an important inflammation / infection due to their release since the body needs help
+• serious infections, sepsis
+-> eosinophils
+• ↑ alergic, parasitic, neoplasia
+-> lymphocytes
+• ↑ viral infections, hematopoetic neoplasia (leukemia, lymphoma)
+-> monocytes
+• ↑ inflammation, reconvalescency
+
+BLOOD SMEAR
+=> gives lots of information
+Red Blood cells
+-> normal
+-> aglutination
+- ex IMHA (immune-mediated hemolytic anemia) = disease where the immune system destroys RBC
+-> rouleaux
+-> inclusions
+ex babesia
+White Blood cells
+-> good case
+• leukopenia → leukocitosis
+• hypothermia → fiever
+-> very bad case
+• leukocitosis → leukopenia
+• fiever → hypothermia
+
+COMPLETE LABORATORY PROFILE:
+• COMPLETE BLOOD COUNT (CBC)
+• URINALYSIS
+• LARGE CHEMISTRY PROFILE (BIOCHEMISTRY + ELECTROLYTE/ACID-BASE STATUS)
+
+CHEMISTRY PROFILE
+
+Annual complete laboratory profiles on healthy animals
+• age: 1-7 years
+• individual ”baseline” values
+• subtle changes as the animal ages?
+• subclinical/early developing diseases?
+
+PREPARING THE BLOOD SAMPLE FOR BIOCHEMISTRY ANALYSIS
+
+➢ primary panel: organ specific diagnostic tests
+➢ secondary panel: less specific for the organ tested, but can be effected when there is primarily organ pathology
+
+LIVER
+
+PARAMETERS
+-> nutrients & metabolites
+urea
+creatinine
+total protein
+bilirubin
+triglyceride
+cholesterol
+glucose
+
+-> enzymes
+alt (alanine aminotransferase)
+ast (aspartate aminotransferase)
+alp (alkaline phosphatase)
+amylase
+lipase
+ck (creatine kinase)
+ld/ldh (lactate dehidrogenase)
+ggt (gamma glutamyltransferase)
+sdh (sorbitol dehydrogenase)
+gldh (glutamat dehydrogenase)
+
+•
+-> electrolytes & metals
+sodium
+Pb function : TP decreased, Alb decreased
+potassium
+Tumors : TP increased, Alb/Glob decreased (bc Glob increased)
+Dehydration : TP increased, Alb/Glob unchanged
+chloride
+calcium
+•
+phosphate
+irone
+copper
+nutrients and metabolites enzymes electrolytes and metals
+
+primary panel:
+alt, ast - integrity of the hepatocyte
+alp, ggt - cholestasis
+tp, alb, (glob, alb/glob) : functional hepatic mass
+
+•
+
+detection tests:
+1.
+hepatocellular damage
+2.
+cholestasis
+3.
+liver function disorders
+
+Cholestasis
+• alp & ggt => predominantly hepatobiliary (but overlap with hepatocellular)
+• bilirubin Increased bc not excreted in bile
+
+IMPORTANT
+➢ healthy patients may have abnormal test results
+• reference intervals!!!- 5% of total clinically normal animals will have result outside the lower and upper reference interval limits
+• only slightly outside the reference intervals!!
+➢ sick patients may have normal test results
+• response to therapy?
+• repeat laboratory analysis!!
+➢ we have to be awere that diseases of some organ systems can cause abnormal results in tests used primarily to indicate disease in a different organ system
+
+KIDNEYS
+
+Liver function disorders
+meal low / After meal not really increased if normal
+• bile acids pre- and poststimulation Before
+liver but significantly increased if functional disorder
+• ammonia Increased bc not transformed in urea
+
+-> magnitude of liver enzyme elevation:
+<5xURR : mild
+URR : Upper Reference Range
+5-10xURR : moderate
+>10xURR : marked
+-> total protein (TP) => total serum protein: albumin+globulins / total plasma protein: albumin+globulins including fibrinogen
+albumin and all other proteins except the imunoglobulins are synthesized in the liver / immunoglobulins: produced by plasma cells and b lymphocites in lymphoid tissue
+- ↓ tp
+
+- ↑ tp
+•
+
+primary panel:
+↑ urea
+↑ crea
+↑ (sdma)
+(urinalysis, usg, upcr)
+
+•
+
+- relative (dehydration)
+- absolute (increase in globulin fraction)
+- anabolic steroids
+- falsley high values: haemolysis and lipaemia
+
+secondary panel:
+↑P
+Na
+K
+Ca – terminal state
+
+•
+
+synthesized in the liver from ammonia
+(breakdown from proteins (tissue or dietary) → amino acids→ ammonia, some ammonia is absorbed from bowel)
+excreted by the kidney (1/4 excreted by the gut)
+
+➢ azotemia: ↑ urea
+➢ uremia: specific clinical syndrome- develops due to present of high levels of urea in the blood
+=> haemolitic serum: changes objective values
+Creatinine
+•
+•
+
+- relative (overhydration, errors)
+- age- young animals
+- decreased protein synthesis (starvation, small intestinal malabsorption, liver disorders, congenital heart failure)
+- increased protein loss (kidney, gi tract, burns, haemorrhage, sepsis and bacteriaemia)
+
+-> albumin = main storage form of protein, source of amino acids to the tissue, responsible for colloid osmotic pressure of the blood, it binds and transports many substances (hormones, ca, mg, some drugs) - synthesized in the liver - accounts for 35-50% tp
+=> should be part of every preanesthetic panel (as close as possible to surgical events)
+
+Urea
+•
+
+secondary panel:
+bile - cholestasis
+↑ chol with normal trig - chronic cholestasis
+↓ glucose, ↓ bun, ↓ chol, ↑ coagul - ↓ decreased functional hepatic mass
+
+derived almost solely from the catabolism of creatine found in the body’s muscle tissues (this catabolism is steady.. around 2% a day)
+excreted solely via the kidneys
+
+- ↓ albumin - almost all the causes of ↓ tp will also result in low albumin
+- ↑ albumin - relative (dehydration) / absolute : generally doesn’t, there have been reports following anabolic steroids / error: drug interference
+-> ALT - liver specific in dog and cat (heart and kidney: very low concentrations) - indicates damage to the liver cells that had resulted in enzyme release!!
+=> it is not a test of liver function - the increase in activity is roughly proportional to number of cells injured and not to the degree of injury
+- ↓ no known significance
+- ↑ slight increases are probably unimportant (detoxication: mild degree of injury occasionally)
+- ↑ acute infectious hepatitis, toxic h., chronic active h., severe trauma, acute pancreatitis, severe shock with hypoxia, neoplasia, secondary liver d. (steroid hepatopathy, hepatic lipidosis), drugs……
+-> persistent damage results in a persistence of the elevated activity: primary neoplasia/chronic active hepatitis
+
+➢ falsley high values: high level of ketones, drugs (interfere with analitic method- cephalosporines inhibit tubular secretion- trimethoprim, cimetidine…)
+=> haemolitic and lipemic serum changes objective values
+
+EXOCRINE PANCREAS
+
+SDMA (symmetric dimethylarginine)
+• is considered a sensitive and early marker (more sensitive than serum creatinine) of declining GFR in dogs and cats
+produced by all nucleated cells at a constant rate, with highest concentrations in the brain, and is excreted primarily by the kidneys, with some evidence of liver uptake in humans
+• it does not appear to be reabsorbed in renal tubules or influenced by many non-renal factors, other than diet
+Example urea – deviation from the reference range!!!
+
+•
+
+primary panel:
+- ↑ lipase (↑3x) => spec pli, dggr, (snap c/fpl)
+- urea Give infos about pancreas indirectly bc in acute pancreatitis we have a dehydration and
+- crea hypoperfusion of organs that affects the kidneys a lot
+In fact, in case of pancreatitis we observe a huge systemic inflammatory reaction marked by the
+- usg
+leakage of fluid, and the animal vomits and drinks less leading to the dehydration
+So :
+•
+•
+•
+
+-> dog: 2,5-7 mmol/l
+• slightly raised urea level is not necessarily the result of renal failure
+• urea values of 17-20 mmol/l and above are significant
+• values >16 mmol/l are unlikely to be due solely to increased protein breakdown
+• values > 35 mmol/l are unlikely to be due solely to impaired renal perfusion (ckd, akd, obstruction or rupture of the urinary tract)
+• values above 67-70 mmol/l carry a poor prognosis
+• values < 2,5 mmol/l result from reduced synthesis because of defective liver function or reduce protein intake
+
+urea increases due to hypovolemia
+Creatinine increases due to renal lesions
+USG increases due to hypovolemia and less concentrated jrine
+
+Liver and cholestasis are measured here bc pancreas is
+next to those organs and can impact them
+
+snap cpl test = semi-quantitative test
+spec cpl test = quantitative test
+
+-> PLI (pancreatic lipase immunoreactivity concentration)
+• measures lipase activity based on its unique structure
+• parenchymal lipase: acinar cells of the pancreas
+Most specific parameter regarding pancreas
+• chronic renal failure had no effect
+• prednisolone had no effect which is not the case of normal lipase
+
+CPL = Concentration Pancreatic Lipase
+Snap CPL test : indicates if the test is positive (above ref value) or negative (under ref value)
+Spec CPL test : indicates the value
+
+ENDOCRINE SYSTEM
+
+LACTATE CONCENTRATION
+• used as an indicator of tissue hypoperfusion and hypoxia, particularly in critical care or perioperative settings.
+• used to determine the severity of an underlying disorder, assess response to therapy, and predict outcome, especially if serial lactate levels are measured.
+• decreasing levels of lactate suggest improvement, whereas prolonged increases in lactate concentration imply deterioration with a poor prognosis.
+• repeated lactate concentrations should be determined on the same instrument with close attention to sample collection and processing and adherence to recommendations for instrument quality control
+
+secondary panel:
+- ↑ glu : transient diabete mellitus bc in case of acute pancreatitis islets can be temporary impacted
+- ↓ ca bc saponification of fatty acids formed by leaked lipase
+- ↑/↓ alb impacted by dehydration (increase) and leakage of fluids (decrease)
+- ↑ alt, ↑ alp, ↑ ggt, ↑ tbil : secondary peritonitis and hepatitis / secondary post hepatic cholestasis
+- (n/↑) chol bc increases with cholestasis (compression by pancreas in pancreatitis), etc
+- ↑ trig impacted by pancreas, liver, cholestasis, etc
+
+=> of course diagnosis of endocrine disease depends upon specific demonstration of abnormal hormone levels
+•
+
+endocrine pancreatis panel
+adrenal gland panel
+parathyroid gland panel
+thyroid gland panel
+
+cushing´s syndrome, addison´s disease, diabetes
+mellitus, hyperinsulinism, hypo- and hyperthyroidism,
+hyper- and hypoparathyroidism
+
+GI TRACT
+=> there are no specific test for gi tract in the general panel
+•
+
+primary panel (not specific!!):
+- tp : inflamatory disease, dehydration
+- albumin : dehydration
+- globulin : inflamatory disease, dehydration
+- electrolytes (k, na, cl)
+=> ↓ malasorption / loss of proteins
+
+•
+
+specialized assays:
+- cobolamin
+- b12
+
+-e 
+=== FROM: Proped_Notes ===
+BLOOD COLLECTION AND CBC
+
+BIG IDEA
+
+⸻
+METHODS OF BLOOD COLLECTION
+
+Why is blood collection important?
+
+Options
+
+Because:
+• It directly a ects diagnosis
+• Poor technique = wrong results
+
+1. Vacutainer system
+• vacuum tube pulls blood automatically
+
+“Pre-analytics determines accuracy”
+
+2. Needle + syringe
+
+MEMORY TIP
+• Bad sample = bad diagnosis
+
+3. Needle + open tube
+
+anticoagulant
+
+Used for:
+• coagulation tests (PT, APTT)
+
+When transferring blood:
+• ❌ Don’t push through needle
+causes hemolysis
+• ✔ Remove needle
+• ✔ Let blood ow gently along tube wall
+• ✔ Mix gently (invert tube)
+
+Before taking blood, ALWAYS consider:
+Who is collecting? (experience matters)
+• Animal:
+- species
+- size
+- temperament
+• Medical condition (injury? fragile patient?)
+Type of sample:
+• whole blood
+• serum
+• plasma
+• Amount needed & tests required
+
+⸻
+CHOOSING EQUIPMENT
+
+KEY IDEA
+• You don’t just “take blood” — you plan it
+
+Needles (VERY IMPORTANT)
+• Small animals
+small gauge (23–25G)
+• Larger animals
+bigger needles (20–18G)
+
+KEY IDEA
+• Rough handling = destroyed cells
+
+WHY?
+• Too small
+hemolysis
+• Too big
+trauma
+
+⸻
+PRE-ANALYTICS (VERY IMPORTANT)
+
+Examples
+• wrong tube
+• bad handling
+• contamination
+• hemolysis
+
+⸻
+BLOOD TUBES & ANTICOAGULANTS (VERY HIGH-YIELD)
+
+MEMORY TIP
+• Most lab errors happen before analysis
+
+Used for:
+• 👉 Complete Blood Count
+
+MUST be aseptic
+• clip hair (sometimes)
+• disinfect site
+• wash hands + gloves
+• use sterile needle/syringe
+
+Key rules
+•
+ll to line
+• mix gently
+• stable sample
+WHY EDTA?
+• 👉 Prevents clotting
+
+CRITICAL POINT
+• Sample must be taken without complications
+Otherwise:
+• hemolysis (RBC destruction)
+• clotting
+➡ leads to false results
+After sampling
+• apply compression
+
+Used for:
+• biochemistry
+Procedure
+• do NOT mix
+• let clot (20–60 min)
+• centrifuge
+Tube types
+• Red
+no gel
+• Yellow
+gel separator
+KEY IDEA
+• 👉 Serum = clotted blood
+
+General rule
+• super cial vein
+• minimal discomfort
+Common veins
+Dogs & cats
+• jugular
+• cephalic
+• saphenous
+
+Small animals
+• tail vein (rats)
+• ear vein (rabbit)
+
+keeps cells intact
+
+Used for:
+• biochemistry
+• plasma analysis
+
+prevent bleeding
+Special cases
+• CBC for reptiles & birds
+
+ff
+
+fl
+
+ff
+
+fi
+
+ff
+
+fi
+
+fi
+
+fi
+
+🟡 SERUM (NO ANTICOAGULANT)
+
+Possible problems
+• bleeding
+• infection
+• bruising
+• pain
+• nerve damage
+
+MEMORY TIP
+• 👉 Jugular = large volume
+• 👉 Peripheral = small samples
+
+Stability
+• plasma
+up to 48h
+• blood gases
+only minutes
+fl
+
+⸻
+COMPLICATIONS
+
+WHY?
+• poor technique
+• non-sterile conditions
+• animal movement
+
+⸻
+CBC (COMPLETE BLOOD COUNT)
+WHAT DOES CBC INCLUDE?
+1. Quantitative data
+• number of cells
+• size
+• variability
+2. Qualitative data
+• cell morphology
+• parasites
+• abnormalities
+KEY IDEA
+• 👉 CBC = numbers + appearance
+
+⸻
+WHAT TO ANALYZE FIRST (EXAM GOLD)
+1.
+2.
+3.
+4.
+5.
+6.
+
+RBC / HCT / PCV
+WBC
+Platelets
+RBC indices
+WBC di erential
+PLT indices
+
+⸻
+RBC / HCT / PCV
+
+⸻
+VENEPUNCTURE TECHNIQUE
+
+Hematocrit (HCT)
+• calculated value
+• depends on RBC + MCV
+
+Steps (IMPORTANT)
+• clip hair
+• disinfect
+• apply compression
+• palpate vein
+• insert needle at ~45°
+• follow vein direction
+• collect sample
+
+PCV (packed cell volume)
+
+🔴 LITHIUM HEPARIN
+
+MEMORY TIP
+• Clean + gentle = good sample
+
+MEMORY TIP
+• 👉 Wrong label = useless sample
+
+MEMORY TIP
+• 👉 Citrate = precise volume or results are WRONG
+
+Horses & cattle
+• jugular
+
+🟣 EDTA (CBC)
+
+⸻
+THE PROCEDURE (STEP-BY-STEP)
+
+VERY IMPORTANT RULE
+• 👉 Must ll EXACT volume (1:10 ratio)
+
+⸻
+CHOOSING THE VEIN
+
+Other supplies
+• clippers (cats hate noise!)
+• disinfectant
+• cotton
+
+De nition
+• All processes BEFORE lab analysis that a ect results
+
+Must include
+• owner name
+• animal name
+• ID (ear tag for farm animals)
+
+Stabillity
+• very unstable (15–60 min)
+
+⸻
+IMPORTANT TECHNIQUE (VERY EXAM-IMPORTANT)
+
+⸻
+BLOOD COLLECTION: WHAT TO THINK ABOUT FIRST
+
+⸻
+🏷 LABELLING (VERY IMPORTANT)
+
+🔵 SODIUM CITRATE
+
+KEY IDEA
+• 👉 Angle + direction = success
+
+•
+
+This is a calculated value obtained from
+automated hematology analyzers. It is the
+product of the mean cell volume (MCV)
+and the red blood cell (RBC) count,
+measured by the analyzer. Therefore, if
+there are any inaccuracies in measurement
+of the MCV or RBC count, the HCT will
+re ect those inaccuracies.
+
+measured directly by centrifuge
+
+⸻
+INTERPRETATION
+•
+polycythemia
+•
+anemia
+MEMORY TIP
+• 👉 RBC = oxygen capacity
+
+is a directly measured value
+obtained from centrifuging blood in
+a microhematocrit tube in a
+microhematocrit centrifuge. The
+PCV is measured as the height of
+the red cell column in a
+microhematocrit tube after
+centrifugation
+
+⸻
+🟡 PLATELETS (PLT)
+
+⸻
+WBC (WHITE BLOOD CELLS)
+What you evaluate
+• number
+• morphology
+
+What they show
+• clotting ability
+• platelet number
+• platelet size
+
+Interpretation
+•
+leukocytosis (infection, in ammation)
+•
+leukopenia (immune suppression)
+Di erential count
+• neutrophils
+• lymphocytes
+• monocytes
+
+MEMORY TIP
+• 👉 Platelets = bleeding control
+• Includes information on platelet number and changes in platelets, such as platelet clumping and platelet versus brin clumps.
+• Platelets tend to very in size in all species, with some large platelets being seen in all species.
+• The variation in platelet volume is measured on hematologic analyzers
+• This is analogous to the red blood cell distribution width and is calculated
+similarly (standard deviation of platelet volume ÷ mean platelet volume).
+• Mean platelet volume (MPV) is reported on most hemograms, along with the platelet count and a smear assessment of platelet numbers.
+• Large platelets are often considered immature platelets.
+
+fi
+
+fl
+
+ff
+
+MEMORY TIP
+• 👉 WBC = immune system status
+•
+ff
+
+Important concepts
+• platelet clumping can a ect results
+• large platelets = immature platelets
+• MPV = platelet size indicator
+
+⸻
+FINAL SUMMARY (EXAM GOLD)
+Blood collection
+• aseptic technique
+• correct tube
+• gentle handling
+Pre-analytics
+• 👉 MOST IMPORTANT for
+accuracy
+CBC interpretation
+• RBC
+oxygen / anemia
+• WBC
+infection / immunity
+• PLT
+clotting
+
+

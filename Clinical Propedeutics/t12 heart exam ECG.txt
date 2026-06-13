@@ -1,0 +1,1791 @@
+================================================================================
+TOPIC: HEART EXAMINATION AND ECG
+================================================================================
+
+=== FROM: 00_Propedeutics_5 p.22-23 ===
+🩺
+
+🩺
+
+GENERALITIES
+-> basic methods:
+• 1. inspection
+• 2. palpation
+• 3. percussion
+• 4. auscultation
+-> additional methods:
+• diagnostic imaging (rx, us, ct, mr)
+• endoscopy
+• pulmonary function tests
+• fna, biopsies
+• arterial blood gas analysis
+
+EXAMINATION
+
+EXAMINATION OF THE
+UPPER RESPIRATORY TRACT
+
+Systematically
+➢ nose and sinuses
+➢ larinx and trachea
+➢ thorax
+
+-> „surroundings”
+- exhaled air
+- noises
+- discharge
+-> nose/muzzle (itself from outside)
+-> nasal cavity (and sinuses): „nose/muzzle from inside”
+
+EXAMINATION OF LARYNX AND TRACHEA
+EXTERNAL NOSE EXAMINATION
+
+•
+•
+
+External examination of the larynx
+
+Laryngeal functions reminder :
+• Prevention of food aspiration
+• Regulation of air flow
+• Phonation (voice)
+
+-> inspection = observation from side and below
+• normal laryngeal movements: inspiratory lowering
+• changes in shape (anomalies, growing masses from surrounding tissues...)
+• changes in size (edema, inflammation...)
+
+=> Voice changes:
+- loses sonority
+- becomes lower
+- becomes coarse
+
+•
+
+EXAMINATION OF THE SURROUNDING
+
+External examination
+- Form of the nose
+- Respiratory movements of nostrils
+- Observation of the symmetry
+
+Exhaled air = Breath from nostrils
+➢ smell:
+-> normal: no smell/odour
+-> abnormal = ofensive odour, stench, stink
+examples:
+- putrefaction in gangrenous pneumonia
+- necrosis of turbinate bones
+- suppurative pharyngitis and/or laryngitis
+- ketosis (sweet sickly acetone)
+- carious
+➢ air flow: back of the palms (la), microscopic slide (sa)
+-> normal: symmetrical equal flow
+-> abnormal: reduced to absent (unilaterally or bilaterally)
+examples: foreign bodies, tumors
+
+Exterior
+
+NARES/NOSTRILS
+
+-> inspection
+◦ movement and shape of the nostrils
+◦ symmetry
+-> palpation
+◦ temperature
+◦ painfulness
+◦ consistency of skin and bones
+-> percussion
+◦ direct
+
+•
+
+Nares (= rostral parts of nasal cavities) we check: mucous
+membrane colour, moisture, and if present: discharge and or
+swelling
++ We watch breathing movements of nostrils
+• Cave : nostrils of horses and cattle in respiratory distress will
+dilate fully during inspiration, and may remain fixed in
+permanent dilatation when in severe respiratory distress
+
+Interior (nasal cavities: endoscopy, diagnostic imaging)
+
+➢ temperature: with the dorsum of our hands, combined with other methods
+
+-> inspection
+• direct
+• indirect (rhinoscopy)
+
+Noises
+➢ physiological: according to species, examples: purring, neighing, snorting, snoring, panting (degree/intensity?)
+➢ pathological:
+-> audible without stethoscope - usually: sign of respiratory tract disease
+• coughing
+• sneezing and reverse sneezing
+CLINICAL TIP
+• snorting
+• stertor
+Loud sounds without stethoscope => upper airways problem
+• stridor
+• expiratory grunting
+-> audible with stethoscope
+
+Chech choanae
+
+-> palpation
+• direct (fingers)
+• indirect (≠ probes, catheters)
+
+SINUSES
+
+Inspection + Palpation : swelling, masses, etc and then percussion
+
+◦ Sinus frontalis & sinus maxillaris
+- Horse: maxillary sinuses: teeth
+- Cattle: frontal sinuses: horns
+◦ percussion : direct
+- Physiological – tympanic percussion sound
+- Pathological – dull percussion sound
+
+-> cough = protective reflex initiated from cough center in the medulla oblongata characterized by explosive expiration of air from the lungs, following brief closure of the glottis, which results from irritation of sensory receptors in the respiratory system
+distributed in so-called tusigen zones
+- location: pharynx, larynx, trachea, bronchi (lat. tussis = cough: terminal broncioles and lungs are not tusigen zones)
+- phases : deep inspiration followed by closure of the glottis
+→ vigorous & forced expiration (glottis still closed)
+→ compression of the air in the lungs
+→ sudden opening of the glottis: result: explosive expiration
+- purpose: to remove foreign material, excess mucus and inflammatory products from the respiratory tract distal from larynx
+- usually painless but can also be painful!!!
+-> sneezing = protective reflex characterized by sudden, forceful and brief exhallation with purpose to clear nasopharynx induced by irritative stimulation of the nasal mucosa (examples: smoke, gases, foreign bodies, etc.)
+- normal: occasional sneezing
+- abnormal: persistent sneezing (local disease process: eg. inflammation, tumor)
+-> reverse sneezing = protective reflex (mostly) in dogs characterized by spastic inspiratory effort with purpose to clear nasopharynx of irritants
+- persistent reverse sneezing is a sign of nasopharyngeal or paranasal sinus disease process
+-> snorting = voluntary short explosive expiration through the nasal cavities
+- common in cattle & horses
+-> stertor (nasalis) = low-pitched snoring sound occurring during breathing and produced by the movements (vibrations) of the soft palate, pharynx or nasopharynx
+- physiological in brachycephalic breeds and/or in unconscious state (eg. anesthesia)
+ENDOSCOPY
+- pathological: diseases of soft palate
+• Nose
+-> stridor (nasalis) = high-pitched inspiratory sound indicating narrowing or obstruction of the lumen of upper airways
+• Larynx
+• Trachea
+-> expiratory grunt = audible grunt during expiration produced by sudden laryngeal opening after a period of breath-holding against a closed larynx
+• Bronchial tree (
+Quick bc animal cannot breath !)
+- usually in cattle with painful conditions and/or severe pneumonia, pleuritis and/or pulmonary emphysema
+
+due to cough
+exception to the rule (inspection, auscultation, palpation, percussion instead of inspection, palpation, percussion, auscultation)
++ includes thyroid examination and assessment of cough (tussis)
+cranial cervical region
+
+-> auscultation = direct (ears) or indirect (stethoscope)
+• respiratory sounds
+- physiological (tracheal sounds; described as „wind blowing sounds”→ should be harsh, louder and longer lasting during expiration)
+- pathological (stridor, stertor, „whistling-type” inspiratory noise and „wood-sawing” noise: example: RLN in horses
+-> palpation
+◦ hor. : from below (and bimanually)
+◦ cattle : from above (and bimanually)
+◦ small animals : one hand
+• Try to reach as dorsal as possible
+• Extend the head and neck
+• Start gently at first and gradually increase the pressure
+=> we can reveal heat, swelling and pain
+Internal examination of the larynx
+-> inspection
+◦ small animals
+- open the mouth by hand and push the tongue down
+- front part of larynx - epiglotis, rima glotidis, vocal cords, and dorsal laryngeal arch
+◦ large animals
+- the larynx can be seen from the inside only indirectly, by using laryngoscope or in cattle also with rigid plexiglass speculum
+-> palpation
+◦ small animals : requires sedation or anesthesia
+◦ large animals : by hand with restraining and using mouth openers or in heavy sedation
+- Changes in the mucous membrane surface (ulcers, oedema, tumors, compressing masses)
+- Changes in the structure of the larynx
+-> horse: partial laryngeal hemiparesis (lat.hemiplegia laryngis), recurrent laryngeal neuropathy, dorsal displacement of soft palate (DDSP)
+-> dog: laryngeal paralysis
+Hor. : Guttural pouches / Eustachian tube diverticulae
+- air-filled diverticulae with UNKNOWN function (equidae)
+- medial to the mandible and parotid salivary glands
+- cannot be visualised or palpated in healthy horse
+- diseases: air accumulation (foals), empyema, mycosis (often cause of erosion of large internal carotid artery)
+Examination of the trachea
+-> inspection : in most cases, the inspection of the area of trachea is not particularly useful
+-> auscultation = indirect
+• Always before palpation in order to check for spontaneous cough
+• The physiological finding is tracheal respiratory sound
+• Pathologically: it may be intensified, interrupted or wheezes can be heard
+-> palpation
+• Gentle palpation with one hand is continued from larynx caudally to thoracic inlet
+Last one to palpate bc painfull -> cough
+• We are looking for: changes in shape, temperature, sensitivity to pain (painful areas during normal palpation) and our ability to elicit the COUGH
+
+Discharge
+
+Cough
+
+➢ physiological: small amount of transparent watery discarge without odour
+➢ pathological: all other forms
+
+=> It is symptom and not a disease
+- Can be caused by diseases of respiratory system but also of cardiovascular system
+- It is accompanied by a special sound: still owners can confuse it with vomiting and retching
+- Tusigenic zones = zones that can lead to coughing if stimulated (esp. during palpation of trachea)
+
+-> characteristics :
+- inflammation elicits mucus production: clear to slightly opaque & viscous
+- purulent discharge: bacterial infection (also secondary to mycotic diseases and foreign bodies) grayish-white, yellowish to greenish
+- unilateral discharge: not just nasal cavity but also paranasal sinuses and teeth
+- bilateral discharge: more common as consequence of pulmonary disease
+- bilateral discharge with fresh food + immediately after eating: pharyngeal or esophageal dysphagia or cleft palate
+=> dogs depigmentation of skin and mucosa indicate the chronic nature of the process! horses: white hairs „snips” are normal !!!
+
+CLINICAL TIP (Cattle)
+For the cough reflex test, we press and release the trachea several times in
+an attempt to induce coughing. If coughing does not occur, that is
+generally normal because it can be difficult to trigger. The abnormal
+finding is when the cough is easily induced or particularly pronounced.
+
+-> color red: red alert = epistaxis & hemoptysis
+➢ epistaxis = hemorrhage visible at the external nares (small amounts: epistaxis, larger amounts: rhinorrhagia)
+➢ hemoptysis = coughing up blood from lower respiratory tract (ie. lungs). blood is usually bright red and frothy with air bubbles
+- etiology:
+. traumatic injury to nasal mucosa
+. hemorrhage elsewhere in the respiratory tract
+. increased fragility of the capillaries
+. systemic hypertension
+. bleeding disorders (ie. thrombocytopenia, clotting defects…)
+=> sudden passing of the large amounts of blood through the nose is usually associated with with pulmonary hemorrhage and in horses and cattle can be fatal!!!
+-> consistency
+- serous : watery, liquid
+- mucus : viscous, slippery
+- purulent : opaque, thick liquid
+
+-> assessment :
+- History taking: 5th reason for visiting the vet
+- Observing the patient from the distance and close
+-> Is spontaneous cough present:
+◦ hor. : strong, loud, deep, sonant (glottis can close completely)
+◦ cattle : weak, protracted, sharp and high (glottis is very narrow)
+◦ dog, cat : long, weak, quiet and sharp (glottis remains open)
+-> Cough provocation test with assessment of cough:
+- spontaneous or provoked
+- ease of provoking the cough ?
+- frequency (rare, often, paroxysms?)
+- strength
+- productivity (dry or moist, productive or nonproductive, sputum?)
+Examination of thyroid gland
+- practical reasons (it is anatomically just there)
+
+- -
+
+RECAP
+•
+•
+•
+
+first: history taking
+observing from distance
+do the auscultation before palpation!!!
+(when it is about larynx and trachea)
+• provocation of the cough reflex
+(why, how, assessment..etc.)
++ thyroid gland is also here
+
+-> smell of discharge
+- physiological discharge is odourless!
+- process of decomposition and decay in the nose - the gangrenose smell
+- after vomiting - acidic smell
+=> additional analyses
+- microscopic: (epithelial cells, leukocytes, erythrocytes, fibrin, elastic fibers, parasites)
+- parasitological
+- microbiological (bacteriological, virological, micological)
+-
+
+-> Inspection (size – enlargement- goiter)
+-> Palpation (shape, size, structure, consistency, mobility, painfulnes)
+-> Aditional testing:
+- endocrinological tests
+- diagnostic imaging: RX, US, CT, MR, scintigraphy
+- FNA, biopsy
+
+Cough provocation test
+◦ cattle, horses, small ruminants, companion animals:
+- by pressing (squeezing) cranial tracheal rings with fingers for a short time
+◦ cattle: putting some form of towel on muzzle to prevent breathing for 1-2 min
+◦ pigs: encouraging them to squeak
+
+Sputum
+= content expectorated from the respiratory system, most commonly composed of mucus but may contain pus,
+blood, fibrin and microorganisms
+• in veterinary medicine is rarely collected for further examination
+• animals usually swallow it
+• can be analyzed macroscopically, bacteriologically, mycologically and parasitologically with questionable
+reliability
+• fluids from respiratory tract can be collected during endoscopic procedure
+
+-> Basic clinical methods
+• inspection
+• palpation
+• percussion
+• auscultation
+-> Additional methods
+• diagnostic imaging (XR, US, CT, MR)
+• thoracocentesis
+• bronchoscopy, bal
+• FNA, biopsy
+
+CLINICAL TIP
+-> CT and rhinoscopy require anesthesia
+-> CT first bc rhinoscopy can cause damages
+
+EXAMINATION OF THE
+LOWER RESPIRATORY TRACT
+CHEST PERCUSSION
+
+CHEST INSPECTION FROM DISTANCE
+•
+
+take a tour arround the animal and observe
+- Shape (physiological?, deformities?, asymmetry?)
+- Size (in relation to abdomen, and body condition score)
+- Movements of chest wall
+-> frequency (remember trias?: normal - eupnea; abnormal: increased - tachypnea / decreased - bradypnea)
+-> rhythm (normal: repeated in regular cycles, expiration lasts slightly longer than inspiration; abnormal: Biot‘s, Cheyne-Stokes, syncope...)
+-> amplitude = depth (normal, deep, shallow)
+
+=> performed in order to determine the borders of lung fields :
+• in practicals : digito-digital percussion in a systematic manner
+- resonant atympanic sound to dull sound
+- normal: usual size when compared to anatomic landmarks, abnormal: smaller field: abdominal eventration or distension, larger field - emphysema)
+- to recognise the presence of effusion (dull instead of atympanic sound ventrally)
+How we do it ?
+
+➢ Increase in depth and frequency – HYPERPNEA
+➢ Decrease in depth and frequency – HYPOPNEA
+➢ Different kinds of difficulties in respiration - DYSPNEA
+
+1. start percussion with orientation point in the 7 or 8 ic space (getting acquainted with the sound quality)
+2. remember that dorsal border is not to be set, this border is about 10 -15 cm distant from spine (below paraspinal muscles)
+3. the caudal border is in last ic space, dorsal
+4. so only posterolateral border should really have to be set by percussion
+
+Breathing movements
+• Physiological changes: high environmental temperature, caloric meal, excercising, fear (stress), gravidity
+• Pathological changes: decreased oxigen exchange and CO2 elimination due to mechanical or toxic (endo, exo) causes (pneumonia, oedema, neurological, pain)
+-> Mech. - HYPERPNEA : space occupying process like scars, strictures, liquid accumulation (including all infections)
+-> Tox. + Neur. - HYPOPNEA : intoxication with opiates, uremic or hepatic coma, brain damage (trauma, encephalitises (listeriosis), tumors...)
+=> inspiratory VS. expiratory dyspnea
+• Inspiratory dyspnea :
+- animal extends head and neck
+- nostrils are wide open
+- movement of larynx are clearly visible
+- expand anterior extremities, elbows abducted
+- inhalation phase is extremely extended
+- stenotic noises can be present
+
+•
+
+Posterolateral lung border
+•
+•
+
+Start from caudal to cranial ic spaces
+In each ic space moving downward inch by inch until we hear change in the percussion sound
+
+Expiratory dyspnea
+- the animal tries to expel as much air from the lungs as possible,
+abdominal muscles included in expiratory effort (RAO, COPD, IAD;
+hives, astma...)
+- exhallation is double-loaded or even biphasic
+
+=> types of respiration
+◦ Costoabdominal type – normal type in all mammals
+◦ Abdominal type – pain in chest: dry pleuritis, intercostal myositis, pleural content (air, fluids..)
+◦ Costal type – diaphragmatic diseases, enlargement of visceral organs, pulmonary parenchimal diseases (pneumonia with loss of respiratory surface)
+
+CHEST PALPATION
+
+CHEST AUSCULTATION
+•
+•
+•
+
+• Temperature of the palpated area: dorsum of the palm
+• Fremitus – if it exists (touch with the palm)
+- „PLEURALIS” (rubbing when visceral and parietal pleura slip one over eachother when covered with fibrin)
+- „BRONCHALIS” (tremors resulting from the presence of large amount of excretions in large airways)
+• Painfulness, Sensitivity : applying finger pressure in the intercostal spaces
+
+Usually with stetoscope (indirect, rarely direct)
+Start somewhere in the middle of the lung field to hear orientational sound
+Go through both lung fields in systematic manner from above to below and from cranial to caudal
+
+Respiratory sound formation
+•
+•
+
+Normal breath sound production is directly related to:
+◦ air flow velocity and
+◦ airway lumen diameter
+Velocity in terminal bronchioli and alveolas is too slow to produce sound but it contributes to sound formation by filtrating sounds on their way to chest wall and our stetoscope
+
+Normal lungs respiratory sounds
+•
+
+Bronchial – loud, harsh and high-pitched=„wind blowing”
+- heard over trachea & large airways (in health)
+- expiration louder and longer than inspiration
+- if heard over perifery they are abnormal and may indicate consolidation
+
+•
+
+Bronchovesicular – „harsh sounds”
+- heard in intermediate lung region in health
+- mostly expiratory that increase in intensity as we move more near to central airways
+- as fluid and tissue transmits sound better: indicate early lung disease or CHF if exaggerated
+
+•
+
+Vesicular – „rustling of leaves”
+- heard over the periphery of the lung field
+- inspiration is louder and longer than expiration
+- indicate normal, air filled lung between stethoscope and sound generation site
+
+THORACOCENTESIS
+• Evacuation of ANY KIND OF CONTENT from thoracic cavity
+• Aseptic field preparation
+• Usually sedation is NOT NEEDED
+• 7th to 9th ic space or US guidance (BETTER)
+• Butterfly needle or IV catheter with 3-way stopcock
+• The important thing is to prevent air to get in the thoracic cavity and cause pneumothorax (which is not the case very often because the pressure in cavity full of liquid is higher than outside)
+•...but to stay on the safe side use 3 way stopcock or at least press catheter before pulling out
+
+CLINICAL TIP
+•
+•
+•
+•
+•
+•
+
+Count intercostal spaces from caudal to cranial bc not possible to count clearly under scapula
+Stop at the 8th IS
+Always check with ultrasounds - depends on species, pathologies (ex enlarged heart in cardiomyopathy that you would perforate), etc
+Puncture skin more or less ventrally / dorsally depending on if you’re looking for air (dorsal) or liquid (ventral)
+Guide the opposite tip of the syringe dorsally
+Never let the needle opened bc air will come into cavity which is negative causing a pneumothorax)
+
+USE FIRST TUBE SO YOU ARE SURE TO GET IT !
+• Haematology analysis
+-> Blood count : look for cells having nucleus
+• Cytology
+• Biochemistry : check prot. triglycerides, etc (exudate vs transudate)
+• Fridge
+-> if effusions -> culture
+-> ?
+
+Abnormal respiratory sounds
+• Harsh breathing (respiratory) sound : consolidation of lung tissue due to congestion, edema
+• Bronchial sound over lung : consolidation of lung tissue due to inflamation or atelectasis
+• Amphorical breath sound : due to cavernous tissue
+• Weakened breath sound or no sound at all (respiratio nulla) : due to emphisema or effusion
+• Crackles
+◦ Heard more commonly during inspiration (early, late, paninspiratory)
+◦ Discontinuous (≤ 250 mscec)
+◦ „distant popping” (fine, medium, coarse)
+◦ Imply either accumulation of fluid secretions or exudate within airways (pneumonia, bronchitis and severe pulmonary edema)
+◦ Old name „rales”
+• Wheezes
+◦ Most commonly expiratory sounds
+◦ Continuous (≥ 250 msec), musical quality
+◦ Can be high-pitched or low-pitched
+◦ Caused by airflow through a narrow opening
+◦ wheezes imply decreased airway lumen diameter due to thickening of airway walls or collapse of airways due to pressure from surrounding pulmonary (diseased) tissue (strictures, compression, foreign bodies
+◦ Old name „rhonchi”
+
+-e 
+=== FROM: 00_Propedeutics_5 p.11 (ECG) ===
+ECG
+
+REMINDER CONDUCTION SYSTEM HEART
+
+The cardiac conduction system starts at the sinoatrial node (SA node), the heart’s main pacemaker because it has the fastest
+spontaneous depolarization rate. The impulse spreads through the atria via :
+-> the Bachmann pathway to the left atrium
+-> the internodal pathways to the atrioventricular node (AV node), where it is briefly delayed.
+
+🩺
+REMINDER WAVES
+Classic ECG waveform showing one cardiac cycle :
+•
+•
+•
+
+•
+•
+•
+
+It then travels through the bundle of His, which divides into the right and left bundle branches. The left branch further splits into
+the anterior and posterior fascicles, before the signal reaches the Purkinje fibers, causing coordinated ventricular contraction.
+
+P wave
+atrial depolarization (atria contract) - can be negative but abnormal!
+PR interval
+time for the impulse to travel from the atria to the ventricles (includes AV node delay)
+QRS complex
+ventricular depolarization (ventricles contract) - can be reversed (+/-) but abnormal !
+- Q = initial small negative deflection
+- R = large positive spike
+- S = negative deflection after R
+ST segment
+ventricles are fully depolarized (plateau phase)
+T wave
+ventricular repolarization (recovery phase) - can be physiologically positive, negative or both (2 phases)
+QT interval
+total time of ventricular depolarization + repolarization
+
+All these cells can depolarize spontaneously, but since they are slower, the SA node dominates. If it fails, the AV node can take
+over as a secondary pacemaker.
++ AV node essential for ventricular depolarization bc annulus fibrosus isolate atria from ventricules and stop propagation of
+depolarization btw them
+
+INTERPRETATION
+
+BASICS OF ECG
+•
+•
+•
+
+electrocardiogram = ECG not = EKG
+ECG : medical device capable of recording the electrical activity of the heart from electrodes placed on the surface of skin
+-> it does not reflect the mechanical activity of the heart
+elektrocardiography : clinical method that documents electrical activity of the heart
+
+Indications
+
+sec (50 mm/sec; 1 = 0,02 sec)
+mv (1cm/1mv; 1 = 0,1 mv)
+
+1 HR determination
+
+=> numerous
+•
+•
+
+=> systematic:
+1. orientational examination of morphological characteristics of waves and complexes
+2. heart rate and rhythm,
+3. measurments in lead II
+4. mean electrical axis determination
+5. arrythmia analysis
+
+=> calculate the average HR
+
+ECG is the most important method for diagnosing arrhytmias - definitive diagnosis
+when to take ecg: syncope, before, during and after surgical procedures, electrolyte concentration disturbances, during pericardiocentesis
+
+=> 2 ways, depending of rhythm (rhythmical or arrhytmical)
+rhythmical (50 mm/sec)
+3000:27=111 bpm
+
+De- and repolarization ?
+
+arrhytmical - 50 mm/sec; 1cm = 1 mv
+3 seconds - 30 bigger squares (150 mm squares/50 mm/sec) or 15 bigger squares (75 mm squares) 25 mm/sec
+than we counts the number of qrs in that area and multiply it with 20
+
+➢ result of depolarization = myocard contraction (which is the response to electrical impulse)
+➢ result of repolarization = myocard relaxation
+Lead (or electrode)
+-> leads (electrodes) enables to „observe” the heart from different angles
+• every lead consists of positive and negative pole, and notes the spreading of electrical impulse
+
+2 Rythm
+A. Check regularity
+- check if intervals btw R-waves or P-waves are always equal(ish) :
+
+-> Yes = rhythm
+-> No - but the shortest is not more than 2x shorter comparing to longest = arrhythmia
+- (almost) everything else is some form of pathology
+
+➢ standard bipolar leads (einthoven)
+➢ augmented leads (goldbergeru)
+
+OR
+
+10% of difference is considered as irregularity
+
+EINTHOVEN’S TRIANGLE
+
+=> Einthoven’s triangle represents the 3 standard limb leads in an ECG :
+- Lead I: from right arm (RA, ­) to left arm (LA, +)
+- Lead II: from right arm (RA, ­) to left leg (LL, +)
+- Lead III: from left arm (LA, ­) to left leg (LL, +)
+•
+
+The triangle surrounds the heart, and each lead records the electrical activity from a different angle
+
+•
+
+The green arrow represents the mean electrical axis of ventricular depolarization, which normally points downwards
+and to the left (close to Lead II), meaning Lead II usually shows the most positive signal.
+
+=> Key idea: each lead is just a different “view” of the same cardiac electrical activity.
+
+B. Check presence of all elements
+
+If we talk about normal ecg, in ii lead:
+p-wave is always positive
+qrs complex is always positive and follows p-wave within 0,13 seconds
+t-wave always follows qrs
+Is there p-wave for every qrs complexes (and viceversa), is the morphology normal and are they uniform ?
+Check also T-wave (repolarization) !
+
+-> Yes – the impulse is generated in SA node so the rhythm is sinus
+➢ sinus rhythm : regular with all elements (normal)
+➢ sinus arrythmia : irregular with all elements
+➢ wandering pacemaker (brachicephalyc breeds) : irregular, P-waves present but change shape, PR interval can vary, QRS complexes remain normal - site of impulse generation shifts btw different atrial pacemaker cells, not just the SA node
+II lead measurements
+
+HOW TO RECORD ECG
+•
+•
+•
+
+electrods should be placed directly on skin
+contact should be enchanched with alcohol or special gel
+dogs should lay on right side (idealy), cats should stay as they want ☺
+
+1.
+2.
+3.
+4.
+
+record standard leads ( speed 25 mm/sec for 30 do 60 sec)
+than swich speed to 50 mm/sec for 30 sec
+record augmented leads
+the most import is to record lead II
+
+-> RA (red) : jugular vein area
+-> RL (black) : on the neck
+-> LA (yellow) : cardiac apex – behind shoulder
+
+We measure in lead II at a recording speed of 50 mm/sec and instrument sensitivity 1mV/10 rare
+-> we measure :
+- P-wave (duration, amplitude)
+- PR (PQ)-interval (duration)
+- QRS complex (duration)
+- R-wave (amplitude)
+- QT interval (duration)
+- ST-connector (shape)
+- T-val (amplitude, oblik)
+=> heart chambers enlargement
+•
+LA – prolonged P (more than 0,04 sec) => P-mitrale
+•
+RA – high P (more than 0,4 mv) => P-pulmonale
+•
+LV – R higher than 3mv
+•
+Both ventricles enlarged – QRS wider than 0,06 sec
+-> LV enlargement :
+
+-> enlargement of the whole heart :
+p-pulmonale (0,6 mv), p-mitrale (0,08 sec), high r (5mv), wide qrs (0,10 sec)
+
+-e 
+=== FROM: Proped_Notes ===
+CLINICAL EXAMINATION OF
+CARDIOVASCULAR SYSTEM
+
+⸻
+BIG IDEA
+
+⸻
+STRUCTURE OF CARDIOVASCULAR EXAM
+
+2
+
+1. Basic examination (does ~50% of work)
+• History
+• Signalment (breed, sex, age)
+Physical exam:
+• inspection
+• palpation
+• percussion
+• auscultation
+2. Additional (ancillary) tests
+• ECG
+• Radiography
+• Echocardiography
+• Cardiac biomarkers
+• Advanced imaging (CT, MRI)
+• Catheterization
+
+⸻
+WHY HISTORY + EXAM ARE IMPORTANT
+
+Gallop rhythms (dogs/cats)
+• S3 gallop
+ventricular lling
+• S4 gallop
+atrial contraction
+
+⸻
+PHYSICAL EXAM SEQUENCE
+
+KEY IDEA
+• Extra sounds = pathology (in small animals)
+
+Order (VERY IMPORTANT)
+1. Inspection
+2. Mucous membranes + CRT
+3. Jugular veins
+4. Pulse
+5. Temperature
+6. Heart/lung auscultation
+Check perfusion
+
+Horses & cows
+• S3 and S4 can be normal
+Check circulation
+
+Why it matters
+Most valuable part of exam gives info on:
+• heart
+• great vessels
+Used for:
+• diagnosis
+• monitoring
+
+⸻
+HISTORY: CARDIAC CLUES
+
+Technique
+• Quiet environment
+• Gentle restraint
+• Take your time
+• Listen to all valves
+• Palpate pulse at same time
+Assess:
+• heart rate
+• rhythm
+• murmurs
+
+🐶 Dogs & cats
+• lethargy, exercise intolerance, tiredness
+• respiratory distress, cough, tachypnea
+• syncope (fainting)
+• abdominal distension
+• weight changes
+🐴 Horses
+• weakness
+•
+performance
+• exercise intolerance
+• jugular vein distension
+• Syncope
+• Respiratory distress
+
+MEMORY TIP
+• Auscultation = rate + rhythm + sounds + murmurs
+
+⸻
+HEART SOUNDS
+Normal sounds
+
+🐄 Ruminants
+• ventral (ventral) edema
+• enlarged jugular veins
+• weakness
+• respiratory distress
+• enlarged mammary veins
+
+S1 (“lub”)
+• closure of AV valves
+• start of systole
+S2 (“dub”)
+• closure of semilunar valves
+• end of systole
+
+MEMORY TIP
+• Heart disease = exercise intolerance + uid buildup
+
+fl
+
+ff
+
+fi
+
+ff
+
+fl
+
+MEMORY TIP
+• S1 = AV valves
+• S2 = semilunar valves
+fi
+
+⸻
+ABNORMAL HEART SOUNDS
+
+MEMORY TIP
+• Right = body
+• Left = lungs
+
+Listen
+
+MEMORY TIP : Extra sounds:
+• dogs/cats
+abnormal
+• horses
+often normal
+
+⸻
+HEART AUSCULTATION (MOST IMPORTANT)
+
+They allow you to:
+• Di erentiate cardiac vs respiratory disease
+• Make a de nitive diagnosis
+• Assess severity
+• Monitor treatment success
+• Build owner relationship
+
+fi
+
+Increased sounds
+• young animals
+• thin/cachectic
+• hyperdynamic circulation
+
+Left-sided failure
+• pulmonary congestion
+• pulmonary edema
+
+RULE
+• Look
+
+KEY IDEA
+• Clinical exam = foundation
+• Tests = con rmation
+
+fi
+
+Decreased sounds
+• obesity
+• pleural/pericardial e usion
+
+Right-sided failure
+uid buildup in:
+• abdomen (ascites)
+• liver congestion
+
+Core principles
+• Good diagnostics = good therapy
+• Cardiology without auscultation is impossible
+
+ff
+
+fl
+
+⸻
+INTENSITY CHANGES
+
+⸻
+RIGHT vs LEFT HEART FAILURE
+
+⸻
+AUSCULTATION POINTS (VALVES)
+LEFT side
+• Pulmonary
+• Aortic
+• Mitral
+RIGHT side
+• Tricuspid
+Dogs (important!)
+• Left apex
+mitral valve
+• Left base
+aortic + pulmonary
+• Right side
+tricuspid
+Cats :
+• Harder to nd
+Horses (easier)
+• Mitral
+left 5th ICS
+• Aortic
+left 4th ICS
+• Pulmonary
+left 3rd ICS
+• Tricuspid
+right 3–4th ICS
+Ruminants :
+• Similar valve location to horses
+• Heart : ventral in the thoracic cavity
+• Approx 60% of the bovine heart is positioned in the
+left hemithorax
+MEMORY TIP
+• Left = 3–5 ICS (P-A-M order)
+
+⸻
+HEART MURMURS
+laminar sound
+
+normally
+What is a murmur? >
+• Turbulent blood ow that becomes audible
+How to describe murmurs
+1. Intensity (1–6/6)
+2. Location (R vs L, base vs Apex)
+3. Timing (systolic, diastolic, continuous)
+4. Shape (regurgitation vs ejection)
+value
+
+pb
+
+value not
+
+flexible
+
+so
+
+it's a struggle
+
+going back
+⸻
+MURMUR GRADING
+• Grade 1
+very faint
+• Grade 3
+moderate
+• Grade 6
+extremely loud + heard o chest
+
+J
+
+MEMORY TIP
+• ≥3 = clinically important
+
+⸻
+NON-PATHOLOGIC vs PATHOLOGIC MURMURS
+Non-pathologic
+• soft (grade 1–2)
+• systolic
+• short duration
+• disappear at rest
+• no other abnormalities
+Pathologic
+• loud (grade 3–6)
+• continuous or diastolic
+• radiates
+• present all the time
+• associated abnormalities
+MEMORY TIP
+• Loud + persistent = pathologic
+⸻
+SPECIAL: HORSE MURMURS 🐴
+• Many are functional (normal)
+Common in:
+• foals
+• Trained athletes
+• Often disappear at rest
+⸻
+PATHOLOGIC MURMURS (IMPORTANT) ⚠
+Types
+• Regurgitant
+MR, TR
+• Ejection
+stenosis
+• Decrescendo
+AR, PR
+• Continuous
+PDA
+
+O
+contraction
+
+(
+
+S
+regurgitation
+
+oa
+
+li
+
+grest
+
+b
+Key associations
+"embrgo"
+holea
+• Mitral regurgitation
+left apex
+• Tricuspid regurgitation
+right side
+• PDA
+continuous murmur
+
+⸻
+ECG
+
+Examp : for what type of disorder
+↓ we do ECG
+
+Purpose
+• GOLD STANDARD for arrhythmias
+Gives:
+• heart rate
+• rhythm
+MEMORY TIP
+•
+ECG = rhythm diagnosis
+•
+
+value
+
+shrinking
+
+pulmonarystehoMs stenosis
+se
+
+⸻
+CARDIAC BIOMARKERS
+
+⸻
+IMAGING
+
+What is a biomarker?
+Measurable indicator of:
+• normal processes
+• disease
+• therapy response
+
+Radiography
+• cardiomegaly
+• disease progression
+• therapy monitoring
+
+Types
+• Leakage markers
+- Troponins
+- Myoglobin
+•
+
+Echocardiography (VERY IMPORTANT)
+• GOLD STANDARD for structure/function
+Shows:
+• valves
+• chambers
+• contractility
+
+Functional markers
+- BNP
+- CRP
+
+What echo can do
+• measure chambers
+• evaluate function
+• assess blood ow
+
+How to use :
+• diagnose heart failure
+• detect subclinical disease - screening tests
+• Risk strati cation — detection of animals at higher risk of an adverse outcome
+• monitoring disease progression or response to therapy
+• Guiding of therapy
+
+What echo cannot do
+• diagnose arrhythmias
+• predict clinical signs
+• fully assess heart size
+
+KEY IDEA
+• Troponin = heart damage
+• BNP = heart stress
+
+MEMORY TIP
+• Echo = structure + function
+
+⸻
+FINAL SUMMARY (EXAM GOLD)
+Clinical exam ow
+• History
+Physical exam
+
+fi
+
+fl
+
+fi
+
+Tests
+
+Most important step
+👉 AUSCULTATION
+Core things to assess
+• Heart rate
+• Rhythm
+• Sounds (S1, S2)
+• Murmurs
+
+!
+
+Key diagnostic tools
+• ECG
+rhythm
+• Echo
+structure/function
+• Biomarkers
+damage/stress
+⸻
+ONE-LINE MEMORY
+• Listen
+Identify sounds
+
+fl
+
+Auscultation
+
+Detect murmurs
+
+Con rm with tests
+
+CLINICAL EXAMINATION OF
+PERIPHERAL CIRCULATION
+
+⸻
+BIG IDEA
+
+2. PULSE RHYTHM
+
+What is peripheral circulation?
+• It refers to blood ow outside the heart:
+- arteries
+- capillaries
+- veins
+Why it matters
+• Re ects cardiovascular function
+• Shows tissue perfusion
+• Helps detect shock, heart failure, dehydration
+MEMORY TIP
+• Peripheral circulation = “Is blood reaching tissues properly?”
+
+Types
+• Regular
+• Irregular
+• Regularly irregular
+• Irregularly irregular
+Important
+• Check for pulse de cits (heart beats ≠ pulses)
+KEY IDEA
+• Irregular pulse = possible arrhythmia
+
+3. PULSE AMPLITUDE & QUALITY
+
+2. JUGULAR PULSATION
+
+⸻
+CAPILLARY BED ASSESSMENT
+
+What you see
+• Changes in vein distension during cardiac cycle
+
+Capillary re ll time (CRT) : How to do :
+1. Press gum
+2. Release
+3. Measure re ll
+
+Waves (during each heart cycle, 3 venous pressure waves) :
+• a wave
+atrial contraction
+• c wave
+tricuspid closure / synchronous w carotid pulse
+• v wave
+ventricular systole
+
+Normal
+• 1–1.5 sec (max 2 sec)
+
+KEY IDEA
+• It’s NOT true pulse
+
+Interpretation :
+Slow CRT (>2 sec)
+• poor perfusion
+• shock
+
+Types of venous stasis =
+Negative stasis
+• vein empties with heartbeat
+
+Fast CRT (<1 sec)
+• hyperdynamic circulation
+
+Positive stasis (abnormal)
+• vein stays full 👉 severe disease
+
+⸻
+Clinical scenarios
+• Pale + slow CRT = Decompensated shock
+
+⸻
+ABDOMINOJUGULAR (HEPATOJUGULAR) TEST
+
+it’s pressure changes
+
+&
+
+Depends on:
+Di erence between:
+• systolic pressure
+• diastolic pressure
+
+⸻
+WHAT YOU ASSESS
+3 MAIN COMPONENTS
+🟥 Arteries
+• Pulse
+• Blood pressure
+
+Types
+• Weak (hypokinetic)
+- shock
+- low cardiac output
+
+🟦 Capillaries
+• CRT (capillary re ll time)
+• Mucous membrane color
+
+•
+
+🟪 Veins
+• Jugular veins
+• Venous pressure
+
+Strong (hyperkinetic)
+- fever
+- high output states
+
+Special pulse abnormalities
+• Pulsus alternans
+alternating strength
+• Pulsus bigeminus
+paired beats
+• Pulsus paradoxus
+pulse on inspiration
+• Pulselessness
+no pulse
+
+MEMORY RULE
+• Arteries
+pulse
+• Capillaries
+perfusion
+• Veins
+pressure
+
+MEMORY TIP
+• Weak = low output
+• Strong = high output
+
+⸻
+ARTERIAL PULSE ASSESSMENT
+
+⸻
+SYSTEMIC ARTERIAL BLOOD PRESSURE
+
+How to palpate pulse
+• Use ngers over artery
+• Apply gentle pressure
+• Palpate bilaterally if possible
+
+Key de nitions
+• Arterial BP —> pressure exerted by blood against arterial wall
+• Systolic arterial BP
+max pressure (during contraction)
+• Diastolic arterial BP
+min pressure (btw contractions)
+• Mean arterial pressure (MAP)
+average BP in an ind during
+one heart cycle (perfusion pressure)
+
+What to evaluate
+1. Rate
+2. Rhythm
+3. Amplitude & quality
+
+Measurement methods
+• Direct (invasive) = Most accurate
+Catheterization
+
+•
+
+1. PULSE RATE
+•
+•
+•
+
+Normal
+eucardia
+High
+tachycardia
+Low
+bradycardia
+
+Indirect (non-invasive)
+- Doppler
+- Oscillometry
+
+⸻
+“POOR MAN’S BP MONITOR” = pulse quality
+
+MEMORY TIP
+• Tachy = fast
+• Brady = slow
+
+Using pulse quality to estimate BP
+• Strong peripheral pulse
+adequate BP
+• Used for exclusion of arterial hypotension
+Clinical thresholds
+• Dorsal pedal pulse
+SAP > 90 mmHg
+• Only femoral pulse in the absence of dorsal pedal artery pulse
+SAP ~60–90 mmHg
+• Inability to palpate femoral artery pulse
+SAP < 60 mmHg
+
+fi
+
+fi
+
+fl
+
+fi
+
+ff
+
+fi
+
+fi
+
+fi
+
+fi
+
+fi
+
+fi
+
+fl
+
+fl
+
+fl
+
+fi
+
+ff
+
+MEMORY TIP
+• No pulse = shock until proven otherwise
+
+•
+
+Pink + normal CRT = Normal perfusion
+
+•
+
+Bright red + fast CRT = Compensated shock
+
+How to perform
+• Press rmly cranial abdomen (animal standing)
+• Increases venous return
+Interpretation
+• Jugular distension that persists = positive test (abnormal)
+
+MEMORY TIP
+• Pale = bad
+• Bright red = early shock
+
+MEMORY TIP
+• Persistent jugular lling = heart failure
+
+⸻
+VEIN ASSESSMENT
+
+⸻
+EXERCISE TESTING
+
+Main veins examined
+• Jugular
+• Saphenous
+• Median veins
+
+WHY DO IT?
+• Detect exercise intolerance
+Evaluate:
+• cardiovascular system - oxygen transport
+• respiratory system
+• musculoskeletal system - lameness
+
+Why important?
+• Re ects right heart function
+⸻
+JUGULAR VEIN EXAMINATION (maj jugular, saphenous & median v.)
+
+⸻
+TYPES OF TESTS
+1. Treadmill test
+Controlled conditions you can add:
+• ECG
+• echo
+• lactate measurement
+
+1. Jugular lling
+Normal
+• Jugular vein appears empty when standing
+• Fills when head is lowered
+
+2. Field test
+• Natural conditions
+
+Abnormal (engorged)
+• Visible distension when standing
+
+Signs of cardiopulmonary disease
+• dyspnea
+• fatigue
+• prolonged
+heart rate after exercise
+
+👉 Suggests:
+• right-sided heart failure
+• thoracic obstruction
+Key test
+• Compress vein
+should empty quickly
+• If NOT
+abnormal
+
+⸻
+6-MINUTE WALK TEST (IMPORTANT)
+What it measures
+• Functional capacity
+• Cardiopulmonary reserve
+
+MEMORY TIP
+• Full jugular = right heart problem
+
+How it works
+• Measure distance walked in 6 minutes
+
+⸻
+FINAL SUMMARY (EXAM GOLD)
+Peripheral circulation exam
+•
+👉 Pulse + CRT + veins
+Key interpretations
+•
+Weak pulse
+low output
+•
+Slow CRT
+poor perfusion
+•
+Engorged jugular
+right heart failure
+
+Key idea
+• Not maximal e ort
+• Re ects daily activity tolerance
+
+Exercise testing
+•
+👉 Con rms functional limitation
+ONE-LINE MEMORY
+•
+Pulse
+CRT
+
+Jugular
+
+Exercise = full circulation assessment
+
+MEMORY TIP
+• 6MWT = real-life performance
+
+associated
+mouvements
+are
+
+called
+
+Venous
+
+pulse
+
+ECG
+
+⸻
+HOW TO RECORD ECG
+
+⸻
+BIG IDEA
+
+Basic rules
+• Electrodes placed directly on skin
+• Use alcohol/gel for better contact
+Dog:
+• ideally lying on right side
+Cat:
+• position less strict
+
+What is an ECG?
+•
+•
+
+ECG = recording of the electrical activity of the heart
+Obtained using electrodes placed on the skin
+
+Important concept
+ECG shows:
+• electrical activity
+
+Recording steps
+1. Record standard leads (25 mm/sec, 30–60 sec)
+2. Switch to 50 mm/sec (30 sec)
+3. Record augmented leads
+4. Lead II is the most important
+
+ECG does NOT show:
+• mechanical activity (actual contraction strength)
+MEMORY TIP
+• ECG = electricity, not pumping
+
+EXAM TIP
+• Always analyze lead II
+
+⸻
+CARDIAC ELECTRICAL SYSTEM
+
+Step 1: Check P-QRS relationship
+• P for every QRS?
+• QRS for every P?
+👉 YES
+
+sinus rhythm
+
+Step 2: Check R-R intervals
+• Equal intervals
+sinus rhythm
+Unequal intervals
+• If variation is mild
+sinus arrhythmia
+• Otherwise
+pathology
+Special (dogs) ~ common Brachocephalz
+• Wandering pacemaker (normal in some breeds)
+
+changement Pwave shape
+
+Main pathway
+1. SA node (pacemaker)
+2. AV node
+3. Bundle of His
+4. Purkinje bers
+Key physiology
+• Depolarization
+• Repolarization
+
+⸻
+RHYTHM ANALYSIS (VERY IMPORTANT)
+
+contraction
+relaxation
+
+⸻
+ECG PAPER INTERPRETATION
+
+MEMORY TIP
+• Rhythm = P + R-R pattern
+
+Scale
+• Speed: 50 mm/sec
+1 small square = 0.02 sec
+• Voltage : 1 cm = 1 mV / 1 small square = 0.1 mV
+
+⸻
+MEASUREMENTS IN LEAD II
+
+MEMORY TIP
+• Horizontal = time
+• Vertical = voltage
+
+⸻
+MEMORY TIP
+• Depolarize = contract
+• Repolarize = relax
+
+⸻
+HEART RATE (HR) CALCULATION
+1. Regular rhythm
+
+What to measure
+• P wave (duration + amplitude)
+• PR interval
+• QRS duration
+• R wave amplitude
+• QT interval
+• ST segment
+• T wave
+KEY IDEA
+• Lead II = main diagnostic lead
+
+⸻
+ECG WAVES (VERY IMPORTANT)
+
+Formula:
+• 3000 ÷ number of small squares between R waves
+
+⸻
+NORMAL VALUES (DOGS & CATS)
+
+⸻
+Main components
+
+Example:
+• 3000 / 27 = 111 bpm
+
+Dogs
+• HR:
+- 70–160 (adult)
+- up to 220 (puppies)
+• PR: 0.06–0.13 sec
+• QRS: < 0.05–0.06 sec
+
+P wave
+• Atrial depolarization
+
+2. Irregular rhythm
+• Count QRS in 3 seconds
+1min
+• Multiply by 20
+>
+-
+
+QRS complex
+• Ventricular depolarization
+
+⸻
+MEMORY TIP
+• Regular
+divide
+• Irregular
+count × 20
+
+T wave
+• Ventricular repolarization
+KEY IDEA
+• P
+QRS
+
+⸻
+ECG INTERPRETATION (STEP-BY-STEP)
+T = one heartbeat
+Systematic approach
+
+⸻
+⚡ LEADS (ELECTRODES)
+
+1.
+2.
+3.
+4.
+5.
+6.
+
+What is a lead?
+• Allows observation of the heart from di erent angles
+Each lead has:
+• positive pole
+• negative pole
+
+⸻
+NORMAL ECG (LEAD II)
+
+Types
+• Standard bipolar (Einthoven)
+• Augmented (Goldberger)
+
+Key rules
+• P wave
+always positive
+• QRS
+positive and follows P within 0.13 sec
+• T wave
+follows QRS
+MEMORY RULE
+• P
+QRS
+T (in order, always)
+ff
+
+ff
+
+MEMORY TIP
+• Leads = di erent “views” of the heart
+
+fi
+
+Wave morphology
+Heart rate
+Rhythm
+Measurements (lead II)
+Electrical axis
+Arrhythmia analysis
+
+Cats
+• HR: 160–240
+• PR: 0.05–0.09 sec
+• QRS: < 0.04 sec
+MEMORY TIP
+•
+Cats = faster HR than dogs
+⸻
+ECG CHANGES = CHAMBER ENLARGEMENT
+Left atrium (LA)
+• Prolonged P wave (>0.04 sec) = P mitrale
+Right atrium (RA)
+• High P wave (>0.4 mV) : P pulmonale
+Left ventricle (LV)
+• High R wave (>3 mV)
+Both ventricles
+• Wide QRS (>0.06 sec)
+⸻
+MEMORY TIP
+• Big chamber = big wave
+
+⸻
+FINAL SUMMARY (EXAM GOLD)
+ECG tells you:
+•
+•
+•
+•
+
+heart rate
+rhythm
+conduction
+chamber enlargement
+
+NOT:
+• pumping ability
+
+

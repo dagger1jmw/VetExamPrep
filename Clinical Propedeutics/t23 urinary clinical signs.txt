@@ -1,0 +1,1187 @@
+================================================================================
+TOPIC: URINARY SYSTEM: CLINICAL SIGNS
+================================================================================
+
+=== FROM: 00_Propedeutics_5 p.27-28 ===
+
+URINARY SYSTEM : CLINICAL SIGNS
+ANATOMY REMINDER
+
+KIDNEY REMINDER
+=> the main role of the kidney is to maintain the volume
+-> metabolic : activation of vit. D
+-> excretion : products of protein catabolism, medicines, toxins, hormones
+-> regulation :
+- normal hydration status and electrolyte
+- normal acid-base status
+- blood pressure
+-> endocrine : hormone production and activation (renin, erythropoietin, calcitriol)
+
+Be careful about anatomical differences
+btw species / individuals
+-> esp. male cat look like female dog
+
+URINARY TRACT INFECTION
+How to collect urine sample (urinalysis and bacterial culture)
+
+HISTORY
+-> general symptoms
+• anorexia
+• weakness
+• depression
+• vomiting
+• diarrhea
+-> urinary tract symptoms
+• vocalizing during voiding
+• licking of genitalia
+• urination in inappropriate places and postures
+• and…..
+➢ Dysuria: usually associated with disorders of the lower urinary tract - painful or difficult urination, manifested as:
+➢ Pollakiuria: excessively frequent passage of small volume of urine
+➢ Stranguria: straining to urinate because of spasm of the bladder and urethra
+➢ Anuria: complete cessation of urine formation by the kidneys it may occur in terminal disease
+• complete renal failure and severe shock
+• occurs in complete urethral obstruction
+➢ Oliguria: reduced output of urine
+• prerenal – severe dehydration, shock, chronic heart failure
+• renal – acute nephrosis, glomerulonephritis
+• post renal – ureteral or urethral obstruction
+➢ Polyuria: abnormally large output of urine - urinary/non urinary disease
+
+•
+•
+•
+•
+
+WATER INTAKE IN DOGS AND CATS:
+- Normal intake in a controlled environment: 6-25 ml/kg/day (0.25-1 ml/kg/h)
+- Polydipsia => Dogs: 100 ml/kg/day (4,2 ml/kg/h); Cats: 50 ml/kg/day (2,1 ml/kg/h)
+URINE PRODUCTION IN DOGS AND CATS:
+- Normal production: 1-2 ml/kg/h (24-48 ml/kg/day)
+POLYURIA => 50 ml/kg/day (2,1 ml/kg/h)
+OLIGURIA < 1 ml/kg/h (24ml/kg/day)
+- When a rehydrated animal receives an adequate amount of fluid: output: 2-5 ml/kg/h
+-> Output < 2 ml/kg/h = OLIGURIA
+
+➢ Macro(hematuria): the presence of blood in urine
+➢ Pigmenturia: presence of pigments in urine – bilirubin (bilirubinuria), myoglobin (myoglobinuria), hemoglobin (hemoglobinuria)…
+➢ Urinary incontinence: involuntary escape of urine during the storage phase of the urinary cycle
+-> this can appear clinically in a variety of ways: the most common presentation is intermittent or continuous dribbling of urine combined with episodes of normal voiding
+
+➢ sporadic
+
+Bacterial cystitis
+
+➢ recurrent
+
+• voided sample (midstream)
+• manually expressed S.
+• catheterisation
+• cystocentesis
+
+- urinalysis
+- quantitative aerobic bacterial urine culture
+- CBC, biochemical panel
+- ultrasonography
+- plane/contrast-enhanced radiography (cystourethography)
+- excretory urography (kidneys and ureters)
+- cystoscopy (biopsy)
+
+=> ideally urine specimens should be plated within 30 minutes of collection
+
+URETHRAL OBSTRUCTION
+Urolithiasis
+
+➢ anatomic : urolithiasis, granulomatous urethritis, neoplasia…
+➢ functional : urethral spasm, reflex dyssynergia…
+•
+•
+
+• abdominal and rectal palpation
+• male dog: subcutaneous urethra palpation
+• ultrasound
+- X-ray +/- contrast
+- urinalysis:
+-> indicate presence of urinary tract inflammation
+-> pH: depending on the stone type, bacterial infection, animal’s diet
+=> quantitative urolith analysis
+
+signs : dysuria and/or pollakiuria/stranguria, attenuated/ absent urine stream
+diagnosis :
+- catheterize
+- x-ray
+- contrast retrograde urethrogram
+- in complete u. obstruction: azotemia, hyperkalemia (very dangerous for the heart) !!
+
+Neoplasia
+• rarely, but almost 95% malignant
+➢ cats :
+- lymphoma
+➢ dogs :
+- 2% of all malignancy
+- Urothelial carcinoma – UC (transitional cell carcinoma - TCC); 90%)
+- older dogs with hematuria, dysuria-stranguria
+•
+
+DG TCC:
+-> X-ray (contrast), ultrasound
+-> Cytology: transurethral traumatic catheterization
+-> Histopathology: cystoscopy+biopsy
+
+HEMATURIA
+-> cause: any disease that compromises the urogenital mucosa and results in bleeding
+• macroscopic hematuria (red, pink, brown urine coloration)
+• microscopic hematuria
+• cystocentesis- can cause microscopic hematuria- when in doubt compare to voided sample
+=> hematuria vs. pigmenturia (e.g. hemoglobinuria, myoglobiunura)- CENTRIFUGATION: pellet of red cells with yellow clear supernatant vs. coloration
+
+URINARY SYSTEM : CLINICAL SIGNS
+POLYDIPSIA & POLYURIA
+
+DISORDERS OF MICTURITION
+• Inappropriate passage of urine
+• Caused by congenital abnormalities or acquired disorders
+
+= increased thirst and urine production
+• Water consumption greater than 80-100 ml/kg/day and urine production greater than 40-50 ml/kg/day
+• PU and PD usually co-exist
+• Primary polydipsia with secondary polyuria or primary polyuria with secondary polydipsia
+
+Urinary retention
+= apparent reduction in the frequency of urination
+• Occurs temporarily in partial obstruction of the urethra, spasm of the external sphincter of the bladder, and in inability to adopt a normal posture for urination
+• Gross distension of bladder
+Urine leakage (incontinence)
+= involuntary escape of urine during the storage phase
+• Pollakiuria : abnormally frequent passage of urine
+• Stranguria : painful discharge of urine
+-> Evaluating an animal with incontinence
+• Distended urinary bladder
+• Small urinary bladder
+• Normal urinary bladder
++ Important anamnestic points:
+- Age of onset
+- Reproductive status
+- Age at neutering
+- Current medications
+- History of trauma or previous urinary tract disorders
++ Physical examination
+-> Urine staining or scalding?
+- Evaluation of perineum
+- Palpation of bladder
+-> Size of bladder and wall thickness? + possibility of expression ?
+- Rectal examination
+-> Anal tone, prostate gland, pelvic urethra?
+- ± vaginal examination, vaginoscopy
+-> Vaginal strictures, tumors, ectopic ureters?
+- Neurologic examination – allways include perineal and bulbospongiosus reflexes
+- Observation of voiding posture and urine stream size and character, palpation of residual urine
+-> Normal residual volume 0,2-0,4 ml/kg
+- Urinanalysis
+- Pharmacologic testing
+-> Parasympathomimetic drugs, α-adrenergic drugs...?
+
+History and how owners see that
+• The owner may not be aware of one or both components
+=> Pollakiuria vs. Polyuria vs. Incontinence
+• Polyuria : often manifested by nocturia, pollakiuria and incontinence
+• Polydipsia : constantly empty water bowl, drinking from unusual sources
+=> Make the owner to mesure 24-hour water consumption
+
+CLINICAL TIP
+In large animals you will see dirty backlimbs if the animal pee to often
+
+-> Causes of incontinence
+• Urethral sphincter mechanism incompetence
+• Anatomic abnormality in the termination of the urethra
+• Inability of bladder to expand in capacity
+• Spasms of the bladder
+• Nerve damage
+➢ Paradoxal incontinence : induced by bladder or urethral obstruction – some urine is leaking around the blockage
+➢ Overflow incontinence : the bladder can not contract but will fill until urine flows passively
+
+PROTEINURIA
+
+AZOTEMIA
+
+• Urine of dogs and cats contains only a small amount of protein
+• Selective permeability of the glomerular capillary wall restricts the filtration of most plasma proteins on the basis of protein weight and charge
+• 60,000 – 65.000 daltons
+• The negatively charged glomerular capillary wall impedes the pasage of negatively charged proteins (albumin)
+• Proteins that do pass can be resorbed in proximal tubular epithelial cells
+
+= increased concentrations of urea and creatinine in the blood
+• Urea is synthesized in the liver from ammonia which is generated from catabolism of endogenous and ingested proteins - It is excreted by kidneys
+• Creatinine is irreversibly formed by nonenzymatic metabolism in the muscle
+-> Its production is proportional to muscle mass - Not affected by ingested protein because the production is constant
+=> increase in serum creatinine concentration is indicative of decreased renal excretion
+
+RENOMEGALY
+• How big should the kidney be?
+-> C: 2,5-3x lenght of the L2
+-> D: 2,5-3,5x lenght of the L2
+• Detected by physical examination or by abdominal imaging
+
+Why proteinuria occurs ?
+
+Causes ?
+
+• Renal proteinuria:
+-> Glomerular capillary wall lesions
+-> Tubular lesions
+-> Both
+
+• Edema
+• Acute inflammation
+• Diffusely infiltrating neoplasia
+• Unilateral compensatory hypertrophy
+• Trauma
+• Perirenal cysts
+• Hydronephrosis
+• Hematoma
+
+How to detect proteinuria ?
+• Semiquantitative methods:
+- Dipstick colorimetric test
+- Sulfosalicylic turbidimetric test
+-> It should be interpreted in light of USG and urine sediment
+-> Once it is documented next step is to identify its source
+
+Additional methods
+• Ultrasonography
+• Intravenous urography
+• CT/MRI
+• FNA – fine needle byopsy
+
+
+=== FROM: Proped_Notes p.77-82,91-92 ===
+
+CLINICAL SIGNS
+
+⸻
+BLADDER PALPATION (VERY IMPORTANT)
+
+BIG PICTURE
+This lecture focuses on key urinary abnormalities you MUST recognize clinically:
+• Disorders of urination (micturition)
+• Incontinence
+• PU/PD
+• Proteinuria
+• Azotemia
+• Renomegaly
+MEMORY TIP
+• Urinary disease = pattern recognition + interpretation
+
+⸻
+HOW OWNERS NOTICE PU/PD
+
+Evaluate:
+• size
+• wall thickness
+• ability to express
+
+•
+•
+
+Polyuria signs:
+• urinating more often
+• accidents (incontinence)
+• nocturia
+
+⸻
+INTERPRETATION
+• large bladder
+obstruction or retention
+• small bladder
+in ammation
+• normal
+functional issue
+
+Polydipsia signs:
+• empty water bowl
+• drinking from unusual places
+
+⸻
+1. DISORDERS OF MICTURITION
+
+⸻
+CAUSES OF INCONTINENCE
+
+De nition
+• Inappropriate passage or inability to urinate properly
+
+Main causes:
+• urethral sphincter mechanism incompetence
+• anatomical abnormalities in the termination of the urethra
+• bladder dysfunction : inability to expand in capacity
+• spasms of the bladder
+• nerve damage
+
+Causes
+• congenital abnormalities
+• Acquired diseases
+KEY IDEA
+• Always ask: Is the problem storage or voiding?
+
+Special types
+🟡 Paradoxical incontinence
+• Induced by bladder or urethral obstruction - leakage around
+obstruction
+
+⸻
+2. URINARY RETENTION
+
+🔵 Over ow incontinence
+• Bladder can not contract but bladder over lls until
+
+De nition
+• Reduced frequency of urination
+
+MEMORY TIP
+• Incontinence ≠ always simple leakage
+
+Causes
+• partial urethral obstruction
+• external sphincter spasm of the bladder
+• inability to assume normal posture
+
+De nition
+• PU
+• PD
+
+MEMORY TIP
+• Big bladder + no urine = retention/obstruction
+
+Diuretics and corticosteroids can give leakage
+
+De nition
+• Involuntary urine leakage during storage phase
+
+2. Reduced ADH response
+• corticosteroids
+• hyperthyroidism
+• hypercalcemia
+• Cushing’s disease
+
+MUST include:
+• perineal exam
+• bladder palpation
+• rectal exam
+• ± vaginal exam, vaginoscopy
+• neurologic exam - always include perineal and bulbospongious re exes
+
+3. Loss of medullary gradient
+• kidney disease
+• excessive uids
+
+Special focus
+• perineal re ex
+• bulbospongiosus re ex
+
+⸻
+THIRST REGULATION
+
+Osmotic factors
+• dehydration
+• increased plasma osmolality
+
+fl
+
+Non-osmotic factors
+• low blood pressure
+• fever
+• pain
+fi
+
+fl
+
+fl
+
+fi
+
+fi
+
+fl
+
+fl
+
+fl
+
+fi
+
+fi
+
+fi
+
+MEMORY TIP
+• Neuro exam is ESSENTIAL in incontinence
+
+⸻
+5. PROTEINURIA
+•
+
+Urine of Cats/dogs contain only a small amount of protein
+
+De nition
+• Presence of excess protein in urine
+NORMAL SITUATION
+• very little protein passes through kidney
+•
+ltered proteins are reabsorbed in proximal tubular epithelial cells
+WHY?
+Glomerular barrier:
+• size restriction
+• charge restriction (repels albumin) : the negatively charged glomerular capillary
+wall impedes the passage of negatively charges proteins (albumin)
+⸻
+CAUSES OF PROTEINURIA
+Renal proteinuria causes:
+• glomerular capillary wall lesions
+• tubular damage
+• both
+⸻
+DETECTION OF PROTEINURIA
+Methods (semiquantitative methods) :
+• dipstick colorimetric test
+• sulfosalicylic acid turbidimetric test
+
+Stimulated by:
+
+ALSO observe:
+• urination posture
+• urine stream size and character
+Normal residual urine: 👉 0.2–0.4 ml/kg
+
+fi
+
+USG)
+
+think mechanism
+
+Thresholds
+• water intake > 80–100 ml/kg/day
+• urine output > 40–50 ml/kg/day
+
+1. Osmotic diuresis
+• glucose (diabetes mellitus)
+• ketones (DKA)
+• post-obstruction
+
+⸻
+CLINICAL EXAM FOR INCONTINENCE
+
+fi
+
+Minimum database:
+• CBC
+• biochemistry
+• urinalysis (VERY IMPORTANT
+• imaging (X-ray, ultrasound)
+
+urine
+drinking
+
+⸻
+CAUSES OF PRIMARY POLYURIA
+
+IMPORTANT HISTORY QUESTIONS
+• age of onset
+• neutering status
+• medications (diuretics, corticosteroids!)
+• trauma history or previous urinary tract disorder
+
+fi
+
+⸻
+DIAGNOSTIC APPROACH
+
+passive leakage
+
+IMPORTANT
+• Usually occur together
+• Primary PD with secondary PU or primary PU with secondary PD
+
+Important associated signs
+• pollakiuria - abnormally frequent passage of urine
+• stranguria - painful discharge of urine
+• abnormal bladder size - distended/small/normal
+
+fi
+
+IMPORTANT
+• Make owner measure 24-hour water intake
+
+⸻
+4. POLYURIA & POLYDIPSIA (PU/PD)
+
+Clinical nding
+• Gross Distended bladder
+
+⸻
+3. URINARY INCONTINENCE
+
+owner might not be aware of one or both components
+PU vs PD vs Incontinence
+
+👉 Interpret in light with:
+• urine speci c gravity (refractometer)
+• sediment
+👉 After detection
+
+nd cause
+
+7
+
+MEMORY TIP
+• Proteinuria = kidney damage until proven otherwise
+
+⸻
+6. AZOTEMIA (VERY IMPORTANT)
+
+⸻
+BUN vs CREATININE INTERPRETATION
+
+De nition
+Increased:
+• Concentrations of urea (BUN)
+• And creatinine in the blood
+
+High BUN relative to creatinine:
+• high protein diet
+• GI bleeding
+• pre-renal azotemia
+
+ORIGIN
+• urea synthesized in liver from NH3 (generated from catabolism
+of endogenous and ingested proteins)
+excreted in kidneys
+
+Low BUN:
+• liver disease
+• low protein diet
+
+•
+
+creatinine irreversibly formed by nonenzymatic metabolism in
+the muscle
+production proportional to muscle mass
+not
+a ected by ingested proteins. Because the production is
+constant, an increase in serum [creatinine] is indicative of
+decreased kidneys excretion
+
+KEY IDEA
+👉 Creatinine = more reliable kidney marker
+⸻
+CAUSES OF AZOTEMIA
+🟢 Pre-renal
+• dehydration
+• low cardiac output
+🔴 Renal
+• kidney disease
+
+fi
+
+fl
+
+fl
+
+ff
+
+fi
+
+fi
+
+ff
+
+🔵 Post-renal
+• obstruction
+• ruptured bladder
+
+⸻
+7. RENOMEGALY (ENLARGED KIDNEY)
+How to evaluate size:
+👉 Compare to L2 vertebra:
+• Cat: 2.5–3× L2
+• Dog: 2.5–3.5× L2
+⸻
+CAUSES OF RENOMEGALY
+•
+•
+•
+•
+•
+•
+•
+•
+
+edema
+Acute in ammation
+Di usely in ltrating neoplasia
+Unilaterally compensatory hypertrophy
+trauma
+Perirenal cysts
+hydronephrosis
+hematoma
+
+⸻
+ADDITIONAL DIAGNOSTICS
+•
+•
+•
+•
+
+ultrasound
+IV urography
+CT / MRI
+biopsy (FNA)
+
+⸻
+FINAL CLINICAL THINKING (EXAM GOLD)
+When you see urinary signs:
+Step 1: Identify type
+• retention?
+• incontinence?
+• PU/PD?
+Step 2: Localize
+• bladder/urethra
+• kidney/systemic
+Step 3: Evaluate bladder
+• large
+obstruction
+• small
+in ammation
+Step 4: Run tests
+• urinalysis (USG!!)
+• blood tests
+• imaging
+⸻
+FINAL SUMMARY
+MOST IMPORTANT CONCEPTS:
+• Incontinence = multiple causes
+investigate fully
+• PU/PD = systemic disease until proven otherwise
+• Proteinuria = kidney damage marker
+• Azotemia = classify (pre/renal/post)
+• Bladder size = HUGE diagnostic clue
+⸻
+ONE-LINE MEMORY
+• 👉 Urinary signs = identify pattern
+con rm with urine + blood tests
+
+localize
+
+CLINICAL EXAMINCATION OF U.S.
+
+•
+•
+•
+•
+•
+•
+•
+•
+
+ANURIA– complete cessation of urine formation by the kidneys
+OLIGURIA– reduced output of urine
+POLYURIA– formation and elimination of abnormally large quantities of urine (many non-urinary diseases may be associated with polyuria)
+POLLAKIURIA– abnormally frequent passage of urine; it may occur with or without an increase in the volume of urine excreted
+DYSURIA– painful or di cult urination
+STRANGURIA– slow and painful urination / due to spasms
+(MACRO)HEMATURIA– the presence of blood in urine
+PIGMENTURIA– presence of pigments in urine - bilirubin (bilirubinuria), myoglobin (myoglobinuria), hemoglobin (hemoglobinuria) etc.
+
+⸻
+PHYSICAL EXAMINATION OF THE URETHRA
+•
+•
+•
+•
+•
+•
+•
+
+Urethra of female dogs and cats is di cult to examine
+Digital vaginal examination can be done in order to evaluate the urethral ori ce, best with the aid of a speculum and light source
+In male cats examination of the urethra is limited to inspection of the distal portion of the penile urethra
+The urethra of male dogs can be examined by inspection and palpation : the urethral meatus may be examined by exteriorizing the penis, and the
+perineal portion may be palpated under the skin
+The pelvic urethra is examined by rectal examination
+Evaluation of position, degree of distension, evidence of pain, thickness of wall, and presence of masses
+Normal urethra is a smooth tubular structure on the oor of the pelvis
+
+⸻
+PHYSICAL EXAMINATION OF THE URINARY TRACT IN DOGS AND CATS
+•
+•
+•
+•
+•
+
+Signalment and history should precede the physical exam
+History should include information on : the frequency of urination, volume of urine produced, changes in water intake, and the appearance
+(color and odor) of the urine
+Owners more easily notice abnormality increased water intake - PD than abnormally increases urine production - PU
+PD usually occurs if there is signi cant PU
+Do not forget to ask about possible exposure to nephrotoxins and drugs
+
+⸻
+PHYSICAL EXAMINATION OF THE URINARY TRACT IN LARGE ANIMALS
+
+•
+•
+•
+•
+
+Although we are taking about examination of the urinary tract, a complete physical examination, including a rectal examination and an ocular
+fundic examination should be done
+Diagnostic aids, such as medical imaging and laboratory investigations, complement the physical examination
+Physical evaluation of the urinary tract in dogs and cats is carried out by the visual inspection, palpation of the abdomen and rectal examination
+Do not forget to collect a urine sample for analysis!
+
+• Examination of the urinary tract in large animals consists of :
+1/ taking history
+2/ performing a distant examination of the external genitalia
+3/ visual observation of the act of urination
+4/ physical examination, primarily by inspection and palpation, and
+5/ urinalysis
+•
+
+Major clinical and historical ndings include dysuria, abnormal urine (color and consistency), and changes in the volume of urine produced and voided
+
+⸻
+PHYSICAL EXAMINATION OF THE KIDNEYS
+•
+•
+•
+
+Because of the considerable thickness and rigidity of the abdominal wall kidneys cannot be palpated per abdomen in cattle and horses, and compact
+muscling of swine also precludes external palpation
+In cattle and horses kidneys are examined by rectal palpation
+In sheep and goats kidney are evaluated by external palpation, since rectal examination is not possible because of the small anus
+
+⸻
+PALPATION OF THE KIDNEYS
+
+BLADDER
+•
+•
+
+fi
+
+fl
+
+ffi
+
+fi
+
+•
+•
+
+fi
+
+•
+
+Evaluation of the kidneys for location, size, shape, consistency and pain
+In dogs, kidneys are being shaped and in cats are more spherical
+Enlargement of one or both kidneys due to infectious, neoplastic, or anonymous conditions may facilitate their palpation
+In cats, several disease diseases are associated with enlargement of kidneys :
+-> renomegaly : polycystic, kidney disease, renal lymphoma and granulomatous nephritis (associated with the line infectious peritonitis)
+Most chronic diseases, causing mainly chronic renal failure are associated with normal or small kidneys
+
+ffi
+
+•
+•
+•
+•
+
+In sheep and goats the kidneys are bean-shaped, without
+lobulations
+Kidneys can be palpated externally by placing a hand in the upper
+margin of each paralumbar fossa immediately behind the last rib,
+followed by moving of each hand in a caudomedial direction across
+the fossa
+The kidneys of swine are smooth and bean-shaped, encased in fat
+In swine palpation of the kidneys, external or internal (recital) is not
+possible
+
+⸻
+PALPATION OF THE URETERS
+•
+•
+
+⸻
+EXAMINATION OF THE URETHRA
+
+The ureters in normal cattle and horses are virtually impossible to palpate because of their small diameter and subperitoneal course
+If the ureters are palpate the likelihood of an abnormally is high - bilateral enlargement is caused by in ammatory process (e.g. pyelonephritis or
+urethritis) : unilateral enlargement is mostly caused by an urethral urolithiasis or abscess
+
+•
+•
+•
+•
+
+In large animals, the penis and associated urethra can only be inspected along the length of glans penis to the fornix of the prepuce :
+palpation is possible along most of its length
+In bulls and steers, the preputial hairs should be examined for signs of dryness (no recent urination) and presence of crystals of the hairs
+(crystalluria and urolithiasis) : the penis should be palpated (swelling, pain) from the prepuce to just above the scrotum
+In sheep and goats penis can be exteriorized by pushing the sigmoid exure cranially with one hand while simultaneously retracting the
+prepuce with the other hand; in castrated bucks and rams penis is dif cult to exteriorize
+In horses, the penis may be exteriorized by exerting slow steady retraction with a hand grasping the glans
+
+⸻
+PALPATION OF THE URINARY BLADDER
+
+fl
+
+fl
+
+fl
+
+fl
+
+fi
+
+fi
+
+In normal cattle/horses the bladder is pear-shaped, narrowest at its attachement with the pelvic urethra which lies on the oor of the pelvis
+It is usually not palpable because it remains relatively empty —> has a slightly corrugated serosal surface
+In the cow/mare, the bladder is even more dif cult to locate because of the overlying reproductive tract
+In small ruminants and swine, the bladder has the same features as that of cattle and horses
+A readily palpable bladder can be an abnormal nding, or can re ect a simple retention
+
+fi
+
+•
+•
+•
+•
+•
+
+DIAGNOSTIC PLAN
+PO/PD CASE
+
+🟥 2. PRIMARY POLYURIA
+
+BIG IDEA
+👉 The goal of veterinary medicine is:
+• Get a diagnosis
+• Treat the patient
+• Use a logical, step-by-step approach
+
+Mechanism
+• 👉 Kidney cannot concentrate urine
+
+As emphasized in the lecture:
+• 👉 Truth in medicine is di cult to nd
+
+Urine
+• SG 1.008–1.012
+👉 called isosthenuria
+
+MEMORY TIP
+• 👉 Good vets don’t guess — they build a plan
+
+⸻
+Causes (VERY IMPORTANT)
+
+⸻
+GOALS OF DIAGNOSTICS
+
+Diabetes insipidus (DI)
+• Central DI
+no ADH
+• Nephrogenic DI
+kidneys don’t respond
+
+From vet perspective:
+• Identify disease
+• Cure patient
+• Use correct tests
+
+Osmotic diuresis
+👉 substances in urine pull water out
+• diabetes mellitus
+• CKD
+• drugs (diuretics)
+
+From owner perspective:
+• Healthy pet
+• A ordable treatment
+
+⸻
+Other causes
+• hypercalcemia
+• hypokalemia
+• liver disease
+• Cushing’s / Addison’s
+• pyometra
+• infections
+
+KEY IDEA
+• 👉 You must balance medicine + practicality
+⸻
+WHAT ARE PU / PD?
+De nitions
+• PU (Polyuria)
+increased urine production
+• PD (Polydipsia)
+increased water intake
+
+MEMORY TIP
+• 👉 PU = kidney problem OR osmotic problem
+KEY CONCEPT
+
+IMPORTANT
+• 👉 They are usually linked
+•
+•
+
+PU
+PD
+
+causes PD
+causes PU
+
+MEMORY TIP
+• 👉 Always ask: which came rst?
+⸻
+NORMAL WATER BALANCE (VERY IMPORTANT)
+
+MEMORY TIP
+• 👉 Always verify before diagnosing
+
+🟦 1. PRIMARY POLYDIPSIA
+⸻
+STEP 2: HISTORY & CLINICAL EXAM
+
+causes PU
+
+fi
+
+fi
+
+ffi
+
+fi
+
+fi
+
+Urine
+• very dilute
+• SG < 1.008
+👉 called hyposthenuria
+
+GENERAL SIGNS (page 9)
+• vomiting
+• coughing
+• bleeding
+• neurological signs
+fi
+
+Collect:
+• signalment
+• history
+• clinical signs
+• lab tests
+
+ff
+
+Causes :
+• behavioral (psychogenic)
+• hypothalamic dysfunction
+• fever
+• systemic disease
+
+fi
+
+KEY IDEA
+• Lab result = clue, not answer
+
+Sample method
+• 👉 Cystocentesis preferred
+⸻
+INTERPRETATION OF SG (VERY HIGH-YIELD)
+🟩 SG > 1.030 (dog) / 1.035 (cat)
+• 👉 kidneys CAN concentrate
+Meaning:
+• NOT true PU
+• think:
+• dehydration
+• intermittent problem
+
+⸻
+DIFFERENTIALS FOR HYPERCALCEMIA
+Main causes
+• lymphoma
+• mammary tumor
+• anal sac adenocarcinoma
+• multiple myeloma
+Diagnostic steps
+• lymph node FNA
+• imaging (X-ray, ultrasound)
+• rectal exam
+• biopsy
+⸻
+FINAL DIAGNOSIS (CASE)
+👉 Metastatic anal sac adenocarcinoma
+• enlarged anal sac
+• enlarged lymph nodes
+• con rmed by cytology
+Treatment plan
+• surgery (if possible)
+• biopsy
+• palliative care (if declined)
+
+Thresholds
+• 50 ml/kg/day
+abnormal
+• 90–100 ml/kg/day
+severe
+
+⸻
+TYPES OF PU/PD
+
+fi
+
+What to check :
+• Speci c gravity (SG)
+• Glucose
+• Protein
+• Culture
+
+⸻
+STEP 1: CONFIRM PU/PD (VERY IMPORTANT)
+
+KEY IDEA
+• 👉 PU/PD = failure in brain–hormone–kidney axis
+
+fi
+
+Presentation (page 27)
+• PU/PD
+• decreased appetite
+• vomiting
+• hypercalcemia
+IMPORTANT LESSON
+• Hypercalcemia is NOT a diagnosis!
+
+Proceed to:
+• CBC
+• biochemistry
+• further tests
+
+IMPORTANT
+👉 Water intake varies with:
+• diet
+• activity
+• temperature
+
+ff
+
+⸻
+CLINICAL CASE: “DUDO”
+
+⸻
+STEP 3: URINALYSIS (CRITICAL STEP)
+
+🟨 SG < 1.030 / 1.035
+• 👉 kidneys NOT concentrating
+
+Challenges
+• hard to measure at home
+• animals drink from multiple sources
+
+ff
+
+Y
+
+MEMORY TIP
+•
+Not all “urinary problems” = PU
+
+Polyuria happens when:
+👉 Either:
+• too much water intake
+• OR kidneys can’t retain water
+
+Mechanism
+• ADH
+kidneys reabsorb water
+• Result
+concentrated urine
+
+fi
+
+Must distinguish:
+• Polyuria
+large volume
+• Pollakiuria
+frequent urination
+• Stranguria
+painful urination
+• Incontinence
+involuntary leakage
+• Nocturia
+urination at night
+
+DO NOT TRUST OWNER ONLY
+• 👉 Must con rm objectively
+
+Controlled by:
+• Hypothalamus
+detects dehydration
+• Pituitary gland
+releases ADH
+• Kidneys
+adjust urine concentration
+
+Mechanism
+• 👉 Excess drinking
+
+IMPORTANT DIFFERENTIAL TERMS
+
+⸻
+GLUCOSE IN URINE
+Glucose positive
+Think :
+• diabetes mellitus
+• renal glycosuria
+• Fanconi syndrome
+⸻
+IF STILL NO DIAGNOSIS
+Perform:
+• Water deprivation test (WDT)
+Helps di erentiate:
+• central DI
+• nephrogenic DI
+• primary polydipsia
+MEMORY TIP
+• WDT = last step, not rst
+
+⸻
+FINAL SUMMARY (EXAM GOLD)
+Diagnostic approach
+1. Con rm PU/PD
+2. Take history
+3. Perform exam
+4. Run urinalysis
+5. Interpret SG
+6. Run further tests
+7. Narrow di erentials
+MOST IMPORTANT CONCEPTS
+• SG interpretation = KEY
+• PU ≠ urinary disease always
+• Lab results ≠ diagnosis
+• Think step-by-step
+ONE-LINE MEMORY
+• 👉 PU/PD = con rm
+classify
+narrow causes
+test logically
+
+interpret SG
+
+

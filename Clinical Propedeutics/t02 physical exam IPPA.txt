@@ -1,0 +1,954 @@
+================================================================================
+TOPIC: PHYSICAL EXAMINATION METHODS (IPPA)
+SOURCE: 00_Propedeutics_5 p.6, Proped_Notes p.9-11
+================================================================================
+
+METHODS OF CLINICAL EXAMINATION
+3
+
+PROPEDEUTICA
+-> propaideuo : ancient Greek for pre-learning
+- The idea is to identify and know the "physiological, healthy, normal" state of the organ / system and based of that knowledge one
+may recognize differences, pathological changes
+=> clinical propedeutics is discipline that precedes clinical pathology
+
+METHODS OF CLINICAL EXAMINATION
+
+1
+
+PERCUSSION
+
+= tapping
+- Percussion is a complex physical examination method, which simultaneously involve the specific touching (tapping) and hearing
+- The idea is to bring the examined area in the state of vibration by tapping and then to estimate the echo
+- The percussion sound depends on the type, mass and quality of the examined tissue
+- The basic difference in the sound quality is determined by the amount (and distribution) of gas present in examined area
+
+1) INSPECTION - inspectio
+2) PALPATION - palpatio
+3) PERCUSSION - percussio
+4) AUSCULTATION - auscultatio
+
+=> A little bit like checking the filling of the wine barrel
+Direct percussion
+= performed by finger or percussion hammer
+- appropriate to examine nasal and paranasal sinuses
+
+INSPECTION
+Indirect percussion
+
+= visual inspection
+
+= performed by digito-digital method or percussion hammer and plesimeter
+- appropriate to examine organs in thoracic and abdominal cavity
+
+Direct inspection (external inspection)
+
+-> Middle finger is firmly pressed on body surface and with other finger sharp and quick force is applied, so vibration of underneath tissue is produced
+
+= just with our eyes
+- simple, but one has to keep in mind what abnormal changes may be present
+- we begin the inspection so that we observe the whole animal, and then we focus on a different area of the body (from head to tail)
++ For successful direct inspection, adequate light, preferably daylight is of importance
+=> The aim is to identify abnormalities of size, shape, posture, gait
+Indirect inspection (internal inspection)
+= when we are using additional tools (endoscopes) called indirect inspections or internal inspections
+- when we have to inspect body openings, hollows, cavities, internal organs, we could do it only by indirect method, using different kinds of endoscopes
+-> simple (lens and lamps) rigid endoscopes (otoscope, rhinoscop, laryngoscope, cystoscope, ophthalmoscope, laparoscope etc.)
+-> more complex instruments that consist of light sources and optical systems, through which the image is transmitted to the screen
++ XR, US, CT and MR may be considered as special forms of indirect inspection
+
+DIGITAL PERCUSSION TECHNIQUE
+- The percussion is performed so that the tip of the middle finger of dominant hand is used to tap first phalange of middle finger of other hand, which have to be firmly attached to the examined area
+- Tap movement must be short, fast and light, and must fall vertically on the underneath finger
+- Between two knocks it should be short pause
+- In the same place we do not tap more than 2 - 3 times
+- After the second or third stroke at the same place, we move further for 2-3 cm - So we gradually goes over the entire surface
+- The percussion is preferably performed in a medium large, enclosed room as it is the best for resonance
+- Silence is an important condition
++ In some occasions percussion is done also outside if conditions permit
+-> The basic difference in the sound quality is determined by the amount and distribution of gas present in examined area
+- Resonant sound : high and clear
+> Tympanic resonant sound, drumlike sound - normally heard over the area where the gas is in one compartment, like over the dorsal rumen sac
+> Atympanic resonant sound : the gas is split into number of little pockets like in lungs, so the sound is not so clear and high like tympanic
+- Dull (or flat) sound - normally heard over dense areas such as the heart or liver
+=> percussion helps to determine whether the underlying tissues are filled with air, fluid, or solid material
+-> Dullness is sign of fluid or solid tissue, resonance is sign of air
+
+2
+
+4
+PALPATION
+
+AUSCULTATION
+
+= listening
+
+= touching
+
+=> Auscultation is a physical method of clinical examination where certain areas of the body are examined by listening
+- Changes in the frequency, rhythm and intensity of normal sounds can be detected and also abnormal sounds can be recognized
+
+Direct palpation
+
+Direct auscultation
+
+= use tips of the fingers, palm, back of the hand or fist
+=> The aim is to compare the quality of the examined areas with surrounding tissue and, sometimes, with same places on the opposite side of the body, to
+estimate symmetry individual parts of the body
+
+= we lay our ear at the examined place
+- Old school clinicians recommended this method as superior to indirect one
+
+-> by palpation we can assessed (changes in) :
+- position
+- shape
+- size
+- structure
+- temperature
+- sensitivity to touch (pain response)
+- mobility within surrounding tissue
+- consistency (firmness) : resistance to the pressure we apply during palpation
+> Soft consistency is fluffy and gentle (like skin fold above the knee, dewlap)
+> Elastic consistency : similar to the consistency of the healthy liver or muscle in relaxation (soft-elastic) or muscle in contraction (hard-elastic)
+> Hard consistency : similar to the bone consistency
+> Edema-like consistency : characterized by decreased ability to straighten after pressure, like dough
+> Emphysema-like consistency : the tissue is soft and under the pressure crackling of gas bubbles in the tissue may be felt (creping)
+> Fluctuation : is such a consistency where, under pressure, a kind of waveform under the surface is felt
+-> consequence of the presence of fluid in a newly created tissue cavity (i.e. cyst or apsces, haemathoma)
+*also when membrane slips one to other we may feel specific phenomena called “fremitus” – specific kind of shivering or friction
++ Specific forms of palpation are: pulse palpation, rectal palpation and endoruminal palpation
+Indirect palpation
+= with different kind of tubes, sondes, for example catheterization or nasogastric intubation are form of indirect palpation
+⚠ The palpation supplemented inspection, so it is applied immediately after the inspection or most commonly with it
+
+Indirect auscultation
+= performed with the help of stethoscope or phonendoscope
+-> the difference is that the stethoscope has no membrane, while the phonendoscope has a membrane)
+- Areas are searched systematically from cranial to caudal and from dorsal to ventral
+- Most commonly, we auscultate respiratory sounds, heart tones, and peristaltic sounds
+=> One of most prominent sound is rumen contraction sounds, something like thunder is coming
+
+ADDITIONAL CLINICAL METHODS
+=> Those main four clinical methods are substantial, but in a way relatively subjective, and our professional intention is to confirm any assumption with a more objective method, so we introduce a lot of additional clinical methods
+- In the old time only measurement ( mesuration ) and estimation of smell were included but nowdays with technology improvements it comprise a lot of different procedures
+- Some of additional methods we can perform in-house, and for others we have to send samples (or patient) in other institution.
+-> examples
+- hematology and coagulation testing
+- biochemistry
+- infectious and parasitic diseases testing
+- allergy testing
+- immunology testing
+- genetics aberrations testing
+- toxicology testing
+- cytology examination (FNA)
+- histopathology examination (biopsy)
+- dg imaging: Rx, US, CT, MR
+-> minimal database – establishing a list of few differential diagnosis
+-> evidence based approach do not allowed us to treat patient only on the basis of assumption so we obligatory have to confirme initial ideas from physical examination with objective additional methods
+
+-e 
+
+================================================================================
+FROM: Proped_Notes
+================================================================================
+
+METHODS OF CLINICAL EXAMINATION
+
+Big Idea (Propedeutics)
+What is propedeutics?
+
+⸻
+Tissue consistency (VERY IMPORTANT)
+
+Advanced forms:
+
+•
+
+From Greek “propaideuo” = pre-learning
+
+•
+
+It is a discipline that comes before clinical pathology
+
+Main goal
+•
+
+To understand the normal (physiological, healthy) state of organs and systems
+
+•
+
+So that we can recognize pathological changes
+
+Types of consistency:
+
+•
+
+X-ray (XR)
+
+•
+
+Ultrasound (US)
+
+•
+
+Soft
+
+•
+
+CT
+
+•
+
+Elastic
+
+•
+
+MRI
+
+⸻
+🔑 What to remember
+
+🔑 Key concept
+
+•
+
+Start general
+
+then speci c
+
+You cannot recognize disease unless you know what is normal.
+
+•
+
+Direct = eyes only
+
+⸻
+Four Basic Methods of Clinical Examination
+
+•
+
+Indirect = tools and imaging
+
+There are 4 main physical methods:
+1.
+
+Inspection (looking)
+
+2.
+
+Palpation (touching)
+
+3.
+
+Percussion (tapping)
+
+4.
+
+Auscultation (listening)
+
+⸻
+
+De nition
+
+⸻
+2. PALPATION (Palpatio)
+
+Inspection = visual examination of the animal.
+
+De nition
+
+⸻
+Types of inspection
+
+Palpation = examination by touch
+
+A. Direct inspection (external)
+
+⸻
+Types of palpation
+
+•
+
+Performed using only your eyes
+
+•
+
+You rst observe the whole animal
+
+•
+
+Then examine speci c regions (head
+
+A. Direct palpation
+tail)
+
+What you look for:
+•
+
+size
+
+•
+
+shape
+
+•
+
+posture
+
+•
+
+gait (movement)
+
+Uses instruments to look inside the body
+
+•
+
+body openings
+
+•
+
+cavities
+
+•
+
+internal organs
+
+palm
+
+•
+
+back of the hand
+
+•
+
+st
+
+•
+
+with surrounding tissue
+
+•
+
+with the opposite side (symmetry)
+
+•
+
+position
+
+•
+
+shape
+
+•
+
+size
+
+•
+
+structure
+
+•
+
+consistency
+
+•
+
+temperature
+
+•
+
+pain (sensitivity)
+
+•
+
+mobility
+
+fi
+
+fi
+
+Within surrounding tissues
+
+fl
+
+fi
+
+fi
+
+Tools used:
+Endoscopes:
+•
+otoscope
+•
+rhinoscope
+•
+laryngoscope
+•
+cystoscope
+•
+ophthalmoscope
+•
+laparoscope
+
+fi
+
+•
+
+⸻
+What can be assessed by palpation?
+
+Good lighting (preferably daylight) is essential
+
+Needed for:
+
+fi
+
+ngertips
+
+Compare:
+
+⸻
+B. Indirect inspection (internal)
+
+fi
+
+•
+
+Purpose:
+
+Important condition:
+
+•
+
+•
+
+soft-elastic
+
+relaxed muscle
+
+•
+
+hard-elastic
+
+contracted muscle
+
+•
+
+Hard
+
+•
+
+Edema-like
+
+•
+
+Emphysema-like
+
+•
+
+Fluctuating
+
+like bone
+doughy, stays indented
+crackling (gas under skin)
+
+uid wave (abscess, cyst)
+
+⸻
+Special palpation techniques
+•
+
+pulse palpation
+
+•
+
+rectal palpation
+
+•
+
+endoruminal palpation
+
+•
+
+fremitus
+
+vibration felt when tissues rub / friction
+
+B. Indirect palpation
+
+1. INSPECTION (Inspectio)
+
+•
+
+like loose skin (e.g. dewlap)
+
+Using tools:
+•
+
+tubes
+
+•
+
+sondes
+
+Examples:
+•
+
+catheterization
+
+•
+
+nasogastric intubation
+
+Relationship to inspection
+•
+
+Palpation supplements inspection
+
+Usually done:
+•
+
+immediately after inspection
+
+•
+
+or at the same time
+
+⸻
+What to remember : Palpation answers:
+👉 What does it feel like?
+
+3. PERCUSSION (Percussio)
+De nition : Percussion = tapping the body and listening to the sound
+
+⸻
+4. AUSCULTATION (Auscultatio)
+
+⸻
+Principle
+
+De nition : Auscultation = listening to body sounds
+
+•
+
+Tapping causes vibration
+
+•
+
+You evaluate the sound (echo) produced
+
+⸻
+What you evaluate
+
+Sound depends on:
+
+•
+
+frequency
+
+•
+
+tissue type
+
+•
+
+rhythm
+
+•
+
+density
+
+•
+
+intensity
+
+•
+
+amount of gas
+
+•
+
+abnormal sounds
+
+⸻
+Types of percussion
+
+⸻
+Types of auscultation
+
+A. Direct percussion
+
+A. Direct auscultation
+
+Performed with:
+
+•
+
+ear placed directly on body
+
+•
+
+•
+
+considered very sensitive (old method)
+
+ngers
+
+B. Indirect auscultation
+
+•
+
+biochemistry
+
+•
+
+infectious disease testing
+
+•
+
+parasitology
+
+•
+
+allergy testing
+
+•
+
+immunology
+
+•
+
+genetic testing
+
+•
+
+toxicology
+
+•
+
+cytology (FNA)
+
+•
+
+histopathology (biopsy)
+
+•
+
+X-ray
+
+nasal sinuses
+
+using:
+
+•
+
+ultrasound
+
+•
+
+paranasal sinuses
+
+•
+
+stethoscope
+
+•
+
+CT
+
+•
+
+phonendoscope
+
+•
+
+MRI
+
+•
+
+nger-to- nger (digito-digital)
+
+•
+hammer + pleximeter
+Used for:
+•
+
+thorax
+
+•
+
+abdomen
+
+⸻
+Important concept: Evidence-based medicine
+
+Di erence:
+
+Methods:
+
+•
+
+stethoscope
+
+no membrane
+
+•
+
+phonendoscope
+
+has membrane
+
+⸻
+Method
+
+⸻
+Technique (IMPORTANT FOR EXAM)
+•
+
+Middle nger pressed rmly on body
+
+•
+
+Other nger taps quickly and sharply
+
+•
+
+Create a list of possible diagnoses (di erentials)
+
+caudal
+
+•
+
+Then con rm them with tests
+
+•
+
+dorsal
+
+ventral
+
+•
+
+short, fast, vertical
+
+•
+
+heart sounds
+
+•
+
+Tap only 2–3 times per spot
+
+•
+
+intestinal (peristaltic) sounds
+
+•
+
+Move 2–3 cm each time
+
+look
+
+•
+
+Palpation
+
+feel
+
+•
+
+Percussion
+
+tap + listen
+
+rumen sounds = loud, like “thunder”
+
+•
+
+Auscultation
+
+listen
+
+⸻
+What to remember : Auscultation answers:
+👉 What can I hear inside the body?
+
+⸻
+
+1. Resonant sound (air present) is high and clear :
+•
+Tympanic
+drum-like (gas in one compartment : large gas cavity, e.g. rumen)
+•
+Atympanic
+softer (gas split into number of little pockets : lungs, air in small spaces)
+2. Dull sound ( uid or solid)
+heard over dense areas like :
+•
+livers
+•
+heart
+
+⸻
+5. Additional Clinical Methods
+Why they are needed
+
+Interpretation
+•
+Resonance
+air
+•
+Dullness
+uid or solid tissue
+
+fi
+
+ff
+
+fi
+
+fi
+
+fi
+
+fl
+
+fl
+
+fi
+
+fi
+
+fl
+
+fi
+
+fi
+
+fi
+
+fl
+
+fi
+
+fi
+
+fi
+
+⸻
+What to remember : Percussion answers:
+👉 What is underneath? (air, uid, or solid)
+
+The 4 basic methods:
+Inspection
+
+•
+
+⸻
+Percussion sounds
+
+Final Study Summary (VERY IMPORTANT)
+
+•
+
+Special example:
+
+enclosed space for better sound
+
+We must con rm ndings with objective tests
+
+cranial
+
+respiratory sounds
+
+•
+
+•
+
+•
+
+•
+
+quiet environment
+
+We cannot treat based only on assumption
+
+examine systematically from :
+
+Movement must be:
+
+•
+
+•
+
+⸻
+Minimal database
+
+⸻
+What you listen to
+
+Perform in:
+
+fi
+
+hematology and coagulation tests
+
+•
+
+B. Indirect percussion
+
+fi
+
+•
+
+diagnostic imaging:
+
+•
+percussion hammer
+Used for:
+
+ff
+
+⸻
+Modern additional methods include:
+
+•
+
+Basic methods are subjective
+
+•
+
+We need objective con rmation of ndings
+
+What each method tells you:
+•
+
+Inspection
+
+appearance
+
+•
+
+Palpation
+
+structure and consistency
+
+•
+
+Percussion
+
+air vs uid vs solid
+
+•
+
+Auscultation
+
+internal sounds
+
+⸻
+Final key idea
+👉 Clinical examination =
+Subjective physical methods + objective diagnostic con rmation
+
+

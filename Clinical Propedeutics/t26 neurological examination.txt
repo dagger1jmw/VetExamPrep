@@ -1,0 +1,1144 @@
+================================================================================
+TOPIC: NEUROLOGICAL EXAMINATION
+================================================================================
+
+=== FROM: 00_Propedeutics_5 p.25-26 ===
+
+NEUROLOGIC EXAMINATION
+
+=> neurologic problem: y/n?
+->most probably
+• seizures
+• changes in level of consciousness
+• behavioural changes
+• ataxia
+• paresis, paralysis
+-> may be
+• syncope/collapse
+• weakness
+• pain
+• blindness
+• inability to swallow
+• anosmia
+• incontinence
+• (limp)
+
+GENERALITIES
+• neurologic exam localizes 80-90% of the patients
+• questions: normal or abnormal / in which manner?
+• abnormal? → consult colleagues and/or literature...make a video clip...
+• know the differences btw breeds / individuals
++ differences should be the result of the patient’s reactions - not the result of our different performances
+• reproducible : if we are not sure what was the reaction >>> repeat
+• tools : pleximeter (neuro-hammer), strong light source, hemostat, cotton-tipped sticks
+
+-> what is the main complaint ?
+ex: the dog „drags” the caudal part of the body, cat “spits out” food
+-> video?!
++ ask the owner:
+• duration of clinical signs
+• course of the disease: stabile, progressive, intermittent?
+• undertaken therapy: did it help?
+• other necessary info: vaccinations, food, traveling history....
+
+Additional diagnostic methods for :
+-> intracranial lesion
+• radiography, ct or/and mri, csf analysis
+• baep/baer (deafness), eeg
+-> spinal lesion
+• radiography, myelography, ct or/and mri
+• csf analysis
+• serologies, pcr, genetic tests, usual labwork
+-> pns lesion: nc, emg, muscle and nerve biopsy
+
+DO NOT FORGET
+
+ANAMNESIS
+
+• perform a physical exam
+-> especially:
+- patients with decreased levels of consciousness
+- patients that are clinically poor/unwell
+• perform an orthopedic exam
+-> especially:
+- patients with gait disorders
+- perform an ophtalmologic exam
+
+Mental status
+
+Evaluation of cranial nerves
+
+= level of consciousness +/- other signs of forebrain and/or brainsteam lesion
+
+=> we have to test + conscious proprioception and + levels of consciousness to discriminate:
+- central problems (eg. brainstem tumor)
+- periferal problems (eg. polyneuropathy)
+
+Attitude & Posture
+-> body and head
+• normal or …. ?
+• whole body posture: wide-based stance
+• head and eyes: attitude
+• head tilt: vestibular syndrome
+• head turn: + body + circling
+-> spinal cord: congenital/acquired?
+• malformations? (eg. hemivertebrae)
+• intraparenchimal lesions?
+• spinal pain?
+• abnormal spinal postures: scoliosis (eg. coms, syringomyelia), lordosis, kyphosis
+-> limb postures: palmigrade and plantigrade
+• decerebrate rigidity: lesion of rostral brain-stem - extension of 4 limbs + opisthotonus + stupor to coma
+• decerebellate rigidity: lesion of cerebellum - extension of forelimbs + flexion of the hips (iliopsoas contraction) + normal mental status
+• schiff-sherrington posture: lesion of thoracic or lumbal spinal cord - extensor hypertonus forelimbs + paralysis hindlimbs
+Gait assessment
+•
+
+•
+•
+
+•
+
+normal gait = conscious control of CNS over stepping circuits - each extremity goes to exchanging of phases of extension and flexion in repetitive series of
+movements
+-> depends on :
+- forebrain: loc, purpose & voluntary control (esp. learned movements)
+- brainstem: loc, integration of movements to gaits (eg. walk, gallop)
+- cerebellum: smoothness & coordination
+- vestibular system: balance
+- spine: umn and lmn pathways, proprioceptive pathways
+- sensory & motor periferal nerves
+- neuromuscular junction
+each species and breed has a characteristic gait
+gait observation :
+- non-slippery surfaces
+- we observe first, then we let someone take a walk + we watch or film
+- normal or abnormal ? - if abnormal describe how?
+clinical signs
+-> ataxia: uncoordinated gait
+- sensory: proprioceptive pathways
+- vestibular: asymmetric
+- cerebellar: dysmetria = inability to control the strength and/or speed of the movements
+-> hypometria: shortened stride / hypermetria: elongated stride
+
+No irritating substances bc it stimulates trigeminal nerve
+-> CN II = optic nerve (sensory pathway for vision, pupillary light reflex, menace response (is not a reflex!) & visual placing (postural reaction))
+- lesion: loss of vision to blindness
+- observe : animal moving around obstacles, pupillary size and isocoria
+- tests :
+• visual following (cotton ball)
+• menace response and pupillary reflex (together with CN III and CN VII) = threatening movement toward patient‘s eye (test both eyes!)
+- info from optic cortex → motoric cortex → cerebellum → nucleus of CN VII => blink
+• pupillary light reflex: effector CN III → normal: direct & consensual PLR
+=> partial or complete loss of vision can be ophtalmological or neurological problem
+=> dilated and unresponsive pupils
+→→ ophtalmological examination (+ fundic examination + tear production)
+-> CN III = oculomotor nerve (pupillary constriction)
+- observation: eye position at rest and movement of the eyeball and upper eyelid, isocoria = pupils symmetric size
+- tests: pupillary light reflex & oculocephalic reflex
+- clinical signs:
+• entrolateral strabismus + inability to rotate the eye dorsally, ventrally or medially = external ophtalmoplegia (≠ positional strabismus CN VIII)
+• dilated unresponsive pupil = internal ophtalmoplegia
+• narrowing of the palpebral fissure = ptosis of upper eyelid
+-> CN V = trigeminal nerve (sensory innervation: corneas, face, nasal and oral cavity / motoric innervation of masticatory muscles)
+- observation: atrophy of (+ palpation) masticatory muscles
+- tests: resistance of the jaw to opening of the mouth, touching/pinching of the face, palpebral reflex, corneal reflex, response to the stimulation of the nose
+- clinical signs:
+• no withdrawal of the head with stimulation of nasal mucosa = forebrain lesion
+• ipsilateral masticatory muscle atrophy
+• decreased jaw tone (if bilateral: dropped jaw)
+• partial or complete loss of facial sensation
+-> CN VII = facial nerve (motoric: muscles of the facial expression / sensory: taste: tongue & palate, pinna / parasympathetic: tear production)
+- observation: facial symmetry, blinking
+- tests: reflexes: palpebral, corneal, menace response, touching the face, shirmer‘s tear test, (atropine)
+- clinical signs:
+• drooping ear & lip + inability to move
+• widened palpebral fisure + no blinking while testing „menace response”
+• no abduction of nostrils + deviation of the nose to healthy side →→ chronic: inversely
+• parasympathetic = keratoconjunctivitis sicca
+-> CN VIII = vestibulocochlear nerve (sensory: hearing & vestibular function)
+- observation: body & head posture, gait, eyes
+- tests: oculocephalic reflex, response to noise, baer
+Vestibular syndrome
+- clinical signs: head tilt, asymmetrical ataxia, falling, rolling, circling, abnormal nystagmus, ventrolateral positional strabismus
+-> central
+- nystagmus can change direction with head position change
+- postural reaction deficits
+- other CN involved: V, VI, IX and X
+- mental status ↓↓↓
+-> paradoxal
+- tremor, dysmetria
+- head tilt is to the opposite side
+-> periferal = „no signs of central involvement”
+- nystagmus does not change direction with head position change
+- no postural reaction deficits
+- other CN involved: VII and/or horner‘s syndrome
+
+-> paresis to paralysis = deficit of motor function - inadequate to absent voluntary movements - spastic or flaccid
+- monoparesis/monoplegia: usually LMN (= Lower Motor Neuron) of the limb
+- paraparesis/paraplegia: lesion caudal to t2 spinal segment
+- tetraparesis/tetraplegia: lesion cranial to t3 spinal segment of the spine or generalized lmn deficit
+- hemiparesis/hemiplegia
+-> unilateral: ipsilateral lesion cranial to t2 to caudal brainstem
+-> contralateral in cranial part of midbrain or forebrain
+-> lameness: mostly orthopedic problem
+- usually shortened steps due to pain!!!! (or carried)
+- paretic limbs: dragged
+- billateral pain: short–strided stilted gait or even not walk
+- exception, “nerve root signature” = pain transferred to extremity due to compression/inflammation of the nerve root (eg. lateral disc extrusion,
+tumor) or spinal nerve
+Abnormal movements (if present)
+
+we assess them by:
+• observing (eg. facial paralysis)
+• testing (eg. palpebral reflex)
+
+-> CN I = olfactory nerve (sensory pathway for conscious perception of smell)
+- lesion : hypo- or anosmia
+- test: with patient‘s eyes covered we offer food and observe (sniffing, licking, aversion of the head) → subjective
+
+Behavior
+= abnormal for owners / vets ?
+• clinical signs: agression, compulsive walking (or any other activity), loss of learned behaviour, vocalisation, head pressing, hemineglect
+
+-> CN IX & X = glossopharyngeal & vagal nerve (motor: tongue, pharynx, larynx, oesophagus / sensory: tongue (caudal third), palate and pharynx, larynx, thoracic
+and abdominal viscera / parasympathetic: salivary glands (ix), thoracic and abdominal viscera)
+- test: gag (swallowing) reflex
+- clinical signs: dysphagia, loss of gag reflex, dysphonia, regurgitation
+
+tremors: rest or action
+- rhythmical oscillatory movements: frequency (hz)
+- localized or generalized:
+-> postural tremor: while maintained against gravity
+-> intention tremor: goal-oriented movements (cerebellum)
+
+-> CN XII = hypoglossal nerve (motor innervation to the muscles of the tongue)
+- observation: tongue: atrophy? asymmetry? deviation?
+- test: applying food paste or drops of water on the nose, gently stretching the tongue
+- clinical signs: prehension, mastication and deglutition of food
+-> recent lesion: deviation toward the contralateral side / chronic lesion: deviation toward the side of the lesion
+
+•
+
+myotonia:
+- delayed relaxation of muscle following voluntary contraction
+- (m. congenita: fainting goats)
+
+Neurolocalization
+
+•
+
+myoclonus:
+- sequence of brief, shocklike muscle or muscle group contractions
+-> jerky movements of affected part
+
+•
+
+•
+
+cataplexy
+- paroxysmal onset of flaccid paralysis with preserved consciousness (duration: few seconds to few minutes)
+- induced by excitement
+- reversed by external stimuli (≠ epilepsy)
+- can be accompanied by narcolepsy
+
+•
+
+head bobbing
+- breed-related: bulldog and dobermann pinscher
+- idiopathic or secondary to structural lesion of thalamus
+
+•
+
+paroxysmal dyskinesias
+- heterogenous group of clinical syndromes – involuntary movements + no changes in consciousness
+
+-> Upper motor neuron:
+• brain cortex
+• basal nuclei
+• brainstem
+• cerebellum
+• cranial nerves
+-> Reflex arc: combination of two nerves
+
+Vitamin d or damnit v
+• vascular
+• inflammatory, infection
+• trauma, toxic
+• anomaly
+• metabolic
+• iatrogenous, idiopathic
+• neoplasia, nutritive
+• degenerative
+
+HANDS-ON EXAMINATION
+
+OBSERVATION OF THE PATIENT
+
+- (((deliric, encephalopatic/inappropriate))) = awake but confused
+- wake (normal): appropriate interaction
+- depressed, apathic (obtunded) = decreased alertness -> every serious disease can cause this
+- stupor: reacts only to strong stimuli (pain)
+- coma: does not react to any stimuli
+
+The neuro-exam
+• mental status + behavior
+• gait and postural reactions
+• spinal reflexes
+• cranial nerves
+• palpation and pain perception
+
+Evaluation of postural reactions
+= complex reactions that enable our patients to maintain normal posture
+• they are not ideal for neurological localization, but they help us find subtle neurological deficits
+• tests are performed in the order of increased load on tested limb
+1 - proprioceptive positioning (paw position or „knuckling” response)
+2 - wheelbarrowing
+3 - hopping
+4 - hemiwalking
+5 - placing response (tactile and visual)
+6 - extensor postural thrust
+Evaluation of spinal reflexes, muscles size and tone
+= test the integrity of the sensory and motor part of reflex arc, and the effect of upper motor neurons (umn) on the reflex
+•
+•
+•
+
+reflexes can be : increased to clonus <> normal <> decreased to absent
+we have to determine are there any deficits of upper motor neurons (umn) or lower motor neurons (lmn)
+criteria: qualities of the reflexes, muscle tone, intensity and speed of atrophy
+Grades :
+• + 2 reflex significantly increased, clonus
+• + 1 reflex increased
+• 0 reflex normal
+• 1 reflex decreased
+• 2 reflex absent
+
+-> which reflexes to examine?
+• thoracic limb
+- flexor (withdrawal) reflex : coordinated polysinaptic reflexes: all the flexor muscles of the limb contract
+-> test : us pinching gently interdigital skin
+-> normal reaction: flexion of shoulder, elbow & carpus - strength & duration of flexor reflex proportional to stimulus
+- extensor carpi radialis reflex : most reliable reflex on thoracic limb
+-> test: radial nerve integrity & c7-t1 spinal segments
+-> normal reaction: slight extension of the carpus
+- biceps (brachii) reflex
+-> test: musculocutaneous nerve integrity & c6-c8 spinal segments
+-> normal reaction: contraction of m. biceps brachii, or slight flexion of the elbow
+- triceps reflex : often difficult to elicit in normal animals
+-> test: radial nerve integrity & c7-t2 spinal segments
+-> normal reaction: visible contraction of m. triceps brachii or slight extension of the elbow
+• pelvic limb
+- flexsor (withdrawal) reflex : coordinated polysinaptic reflexes: all the flexor muscles of the limb contract
+-> test : us pinching gently interdigital skin
+-> normal reaction: flexion of the hip, stifle & hock - strength & duration of flexor reflex proportional to stimulus
+- patellar reflex : most reliable (except for flexor reflexes)
+-> test: femoral nerve integrity & l4-l6 spinal segments
+-> normal reaction: single brisk stifle extension
+- cranial tibial reflex
+-> test: peroneal branch of sciatic nerve & l6-l7 spinal segments
+-> normal reaction: flexion of the hock (tarsus)
+- gastrocnemius reflex : the least reliable on pelvic limb
+-> test: sciatic nerve integrity & l6-s2 spinal segments
+-> normal reaction: extension of the hock
+• perineal reflex
+-> test: sacral nerve (s1-s3) & caudal spinal segments, pudendal nerve branches (perineal & caudal rectal nerve)
+-> normal reaction: anal sphincter contraction & tail flexion
+• panniculus reflex (m. cutaneus trunci) : cutoff indicates spinal cord lesion 1-(2)-4 segments cranial from cutoff level
+-> test: sensory - lateral thoracic nerve & (c8-t1) spinal segments
+-> normal reaction: bilateral contraction of. cutaneous trunci muscle: twiching of the skin
+Evaluating nociception (= pain perception) - observation, light palpation & superficial and deep pain
+-> how we know that the patient is in pain ? => observation of :
+• abnormal activity (increased or decreased)
+• abnormal sleeping pattern
+• changes in posture and attitude
+1. testing the superficial pain perception
+• agression
+2. testing the deep pain perception
+• guarding” of the painful area (tense muscles)
+- fibers: small diameter, unmyelinated, centrally in the spinal
+• disuse of painful area (eg. lameness)
+cord and resistant to damage, bilateral and multisynaptic
+• vocalisation
+- fibers enter at dorsal nerve root: sensory
+• increased temperature
+• tachycardia and/or tachypnoea
+• increased blood pressure
+CLINICAL TIP
+Check pain perception at the end bc unplaisant for the animal
+
+=> always interpret neurological signs as there is only one lesion - multifocal lesions are rare (inflammation or disseminated tumors
+• absence of neurologic deficits does not exclude the presence of a neurological problem (eg. epilepsy)
+•
+
+neuroexam: has the patient decreased reflexes generally (lmn signs)? check: spinal and/or cranial nerves
+yes: → peripheral nervous system
+no: → central nervous system
+
+•
+
+neuroexam: does the patient have abnormal menace response and/or abnormal at least one of the cranial nerves?
+yes: → intracranial lesion
+no: → spinal lesion
+
+=> cerebellum
+- ataxia (loss of unconscious proprioception)
+- hypermetria
+- intention tremor (purposeful movements, head)
+
+-> forebrain
+• mental status: normal to coma
+• behavior: normal to severe abnormalities (eg. agression, compulsive activities, attention seeking)
+• seizures, pu/pd
+• posture: from normal to “weird” postures
+• gait: (almost) normal, have no aim? circling toward the lesion side
+• cranial nerves: CN II
+• postural reactions: contralateral deficits
+• spinal reflexes: normal
+
+-> brainstem
+• mental status: depressed to coma
+• behavior: no changes
+• gait: more significant changes to inability to move
+• cranial nerves: ipsilateral deficits
+• postural reactions: ipsilateral deficits
+• spinal reflexes: upper motor neuron deficits
+
+NEUROLOGIC EXAMINATION OF
+LARGE PATIENTS
+
+1 Remember the important differences between small and large animal patients
+2 Signalment + History
+3 The neuro-exam (the “toys” and the procedure)
+4 Neuroanatomic localisation + Ddx + suggest further workup
+
+4 HANDS-OFF NEURO-EXAM
+
+1 REMEMBER THE IMPORTANT DIFFERENCES BTW SMALL AND LARGE PATIENTS
+Mentation
+➢ normal > obtunded > stupor > coma
+Behaviour
+
+• Forebrain disease vs. species-specific “normal” behaviour
+• Sometimes associated with disorders of other systems — context is essential (e.g. frenzied behaviour in bulls during breeding season, behavioural changes in mares
+during dioestrus)
+• Subtle signs include: Frequent or continuous yawning (hepatic encephalopathy), Drifting or leaning to one side (asymmetrical encephalopathies), Failure to
+recognize familiar animals (e.g. foal ignoring or not recognizing the mare)
+• Prominent signs include: Seizures, Circling, Head pressing, Frantic running, Biting of other animals or inanimate objects, Abnormal body posture
+• Fluctuation of clinical signs (mild to severe) is common in metabolic encephalopathies (e.g. hyperammonemia)
+
+WHY DOES NEUROLOCALIZATION MATTER ?
+
+(Episodic changes)
+• Seizure : an umbrella term encompassing transient, paroxysmal, and episodic phenomena such as: epileptic seizures, syncope, episodes of myotonia, sleep disorders,
+pain episodes, vestibular episodes, and paroxysmal dyskinesias.
+• These events are frequently missed during clinical examination: a thorough history and video documentation (e.g. smartphone recordings) are of key importance.
+(Abnormal movements)
+Posture
+
+2 SIGNALMENT
+
+1. Postural deformities: Often congenital; includes arthrogryposis, flexural limb deformities
+2. Opisthotonus: Common in tetanus, May result from rostral cerebellar lesions (e.g. trauma) — without loss of consciousness, Also associated with severe midbrain
+damage — typically with stupor or coma
+4. Tetanus: Persistent, generalised muscle spasm, Occurs without tremor, Caused by tetanospasmin intoxication
+5. Low head/neck carriage: muscular weakness or pain
+6. Head tilt (laterocolis): vestibular (or cerebellar dysfunction)
+7. Pleurothotonus: head, neck and body deviation to one side (may be seen with forebrain or brainstem disease)
+8. Extended head/neck posture (“star-gazing behaviour”): severe forebrain disease (eg. polioencephalomalacia or basilar empyema)
+Gait
+
+• Age, breed, sex, use and value
+• Age is associated with higher incidence of certain diseases (congenital in young animals vs. neoplasia in old)
+• Certain diseases are associated with breed
+• Few are associated with sex
+• The use of an animal may help in forming the ddx list, but also impact prognosis and further therapy (many large animals are kept for economic purposes)
+• Consider the impact on other heard-mates (infectious diseases)
+
+3 HISTORY
+• Important to determine the “onset-progression” graph
+• To prioritise ddx
+• Data about heard-mates
+• Infos about previous medication
+• Travel history
+• Previous diseases
+• Previous diagnostics
+
+• Walking in: straight line, tail pull test, trotting, walking in circles and turning, backward, serpentines, tight circling
+• Assess: stride length, trajectory and placement of limbs (viewed from the front, back and sides)
+• +/- blindfolding (to accentuate vestibular ataxia)
+• Describe: ambulatory vs. non-ambulatory + which limbs are affected + type of gait abnormality
+• Take your time!! → Gait analysis is perhaps the most important part of the neuro exam (especially in large animal medicine)
+1 Straight line
+2 Backwards
+3 Serpentine
+4 Blindfold test
+5 Wide circling
+6 Tight circling
+7 Tail pull (standing) : Abnormal standing test: Suggestive of ipsilateral lower motoneuron lesion, L3 to S2 gray matter or nerves
+8 Tail pull (walking)
+=> Normal standing and abnormal walking tests = Lateralizing = ipsilateral brainstem to S2 central motor and/or general proprioceptive pathways (upper motoneuron)
+
+5 HANDS-ON NEURO-EXAM
+Cranial nerves
+➢ Symmetry of the parts of the head
+• Nasal discharge? (guttural pouch or upper respiratory disease)
+• Muscles of mastication? (Mild asymmetry of the masticatory muscles may be normal)
+• Strabismus? Spontaneous nystagmus? Head tilt?
+• Eyelashes in horses! (Horner syndrome - mm. arectores cilliorum)
+• Tongue (is it protruding? symmetry? normal movements …)
+➢ Facial sensation (CN V) & Palpebral reflex (CN V + CN VII)
+Nasal sensation (CN & Forebrain)
+Menace response
+• Check the palpebral reflex first (CN VII – facial nerve is the efferent branch of the menace response)
+• Check the vision first (the visual pathway is the afferent pathway of the menace response)
+• A cerebellar lesion may also cause ipsilateral loss of the menace response
+• In calves and foals present by week 2 after birth
+Pupillary light reflex & Dazzle reflex
+Fundoscopic exam
+Oculocephalic reflex (physiologic nystagmus)
+External thoracolaryngeal reflex - slap test
+Tongue tone (CN XII)
+Spinal reflexes, Atrophy, Muscle tone (RAT)
+Musculus cutaneous trunci reflex
+Tail & Anal tone, Anal reflex (+ rectal examination)
++ in neonates and small ruminants :
+Limb reflexes
+(Postural reactions) in neonates and small ruminants
+
+
+=== FROM: Proped_Notes p.83-85 ===
+
+NEUROLOGIC EXAMINATION
+
+BIG IDEA
+The neurologic exam is used to answer 4 KEY QUESTIONS:
+1. Is this neurological or not? do complete neuro exam
+2. Where is the lesion? list of diff diagnoses after
+3. What disease could cause it?
+4. How severe is it?
+
+Main abnormalities
+
+Controlled by:
+• Forebrain
+• Brainstem (ARAS system)
+
+MEMORY TIP
+• Neuro exam = LOCALIZE rst, diagnose later
+
+Levels of consciousness
+• ✅ Normal / wake
+alert
+• ⚠ Obtunded
+depressed
+• ⚠ Stupor
+responds only to strong stimuli
+• ❌ Coma
+no response
+
+🟠 ATAXIA (uncoordinated gait)
+Types:
+• sensory (proprioceptive)
+• vestibular (asymmetric)
+• cerebellar (dysmetria)
+
+a
+
+⸻
+GOAL OF THE NEURO EXAM
+• Localizes 80–90% of lesions
+Must be:
+• systematic
+• reproducible
+• consistent
+
+🟣 PARESIS / PARALYSIS
+= de cit of moto function, inadequate to absent
+voluntary movements : spastic or accid
+
+Behavioral abnormalities
+• aggression
+• compulsive walking
+• loss of learned behavior
+• head pressing
+• vocalization
+
+⸻
+IMPORTANT RULE
+• Always follow the same routine
+• If unsure
+repeat test (reproducibility)
+
+•
+•
+•
+•
+
+ABNORMAL MOVEMENTS
+Types
+• Tremors (rest / intention)
+• Myotonia
+• Myoclonus
+• Cataplexy
+• Head bobbing
+• Dyskinesia
+
+⸻
+2. POSTURE
+Body posture: normal or …?
+• wide-based stance
+instability
+• head tilt
+vestibular disease
+• head turn + circling
+forebrain lesion
+
+Ask about:
+• duration (acute vs chronic)
+• progression (stable / progressive / intermittent)
+• treatments? Did it help?
+• Other info : environment, travel, vaccines
+
+Spine and limbs : congenital / acquired?
+• Malformations (ex : hemivertebrae)
+• Intraparenchimal lesions?
+• Spinal pain?
+Spine abnormalities:
+• scoliosis
+• kyphosis
+• lordosis
+Limb postures :
+• Palmigrade and plantigrade
+
+Breed predispositions (VERY EXAM-RELEVANT)
+• Beagle
+epilepsy, SRMA
+• Golden retriever
+muscular diseases
+• Siamese
+vestibular disease, deafness
+• Manx
+spinal malformation
+MEMORY TIP
+• Signalment = huge clue
+
+MEMORY TIP
+• 👉 Intention tremor = cerebellum
+
+Before neuro exam:
+• full physical exam : especially w patients with decreased
+levels of consciousness and that are clinically poor/unwell
+• orthopedic exam (for gait issues) : especially W patients
+with gait disorders
+• ophthalmologic exam
+
+🟦 Decerebellate rigidity
+• forelimbs extended
+• hindlimbs exed
+👉 cerebellum
+
+⸻
+STRUCTURE OF NEURO EXAM
+
+Includes:
+1. Mental status & behavior
+2. Posture & attitude
+3. Gait assessment
+4. Abnormal movements (if present)
+
+⸻
+3. GAIT
+•
+
+NS controls the locomotor system
+
+Normal gait: conscious control of CNS
+over stepping circuits: each extremity goes
+to exchanging of phases of extension and
+exion in repetitive series of movements
+
+Controlled by MANY systems:
+• forebrain (voluntary movement)
+• brainstem
+• cerebellum (coordination)
+• vestibular system (balance)
+• spinal cord : UMN & LMN pathways, proprioceptive pathways
+• peripheral nerves
+• Neuromuscular junction
+
+II. HANDS-ON EXAM
+1. Cranial nerves
+2. Postural reactions
+3. Spinal re exes + muscle tone
+4. Pain perception
+
+KEY IDEA
+• 👉 Gait = whole nervous system working together
+
+fi
+
+fl
+
+fl
+
+fl
+
+fi
+
+fl
+
+fl
+
+fi
+
+ff
+
+fl
+
+fl
+
+fi
+
+fl
+
+fl
+
+fl
+
+ff
+
+fl
+
+ffi
+
+fl
+
+fi
+
+GAIT ANALYSIS
+Always :
+• observe rst
+• use non-slippery surface
+• record if needed
+
+⸻
+CRANIAL NERVES (VERY HIGH-YIELD)
+General rule:
+• Observe (facial paralysis) + test re exes (eyelid)
+Test conscious proprioception and levels of concsiousness to distinguish:
+• central vs peripheral lesions
+CN I – Olfactory
+• smell
+• test: food response
+• lesion
+anosmia
+
+🟨 Schi -Sherrington posture
+• forelimbs rigid
+• hindlimbs paralyzed
+👉 spinal lesion
+
+I. OBSERVATION
+
+- Observation: atrophy of(+ palpation) masticatory muscles
+CN V – Trigeminal
+- Tests:
+• facial sensation
+- 1) resistance of the jaw to opening of the mouth),
+- 2) touching/pinching of the face,
+• chewing muscles
+- 3) palpebral re ex,
+- 4) corneal re ex,
+Signs:
+- 5) RESPONSE to the stimulation of the nose
+• dropped jaw
+• loss of sensation (partial or complete)
+• Ipsilateral masticatory m. Atrophy
+• Forebrain lesion : no withdrawal of head w stimulation
+of nasal mucosa
+
+- Motoric: muscles of the facial expression
+
+- Sensory: taste: tongue & palate, pinna
+CN VII – Facial
+- Parasympathetic: tear production
+- Observation: facial symmetry, blinking
+• facial expression
+- Tests: re exes: palpebral, corneal, menace response,
+• tear production
+touching the face, Shirmer‘s tear test, (atropine)
+Signs:
+• facial paralysis (dropping ear & lip & inability to move)
+• no blinking (when doing menace response)
+• Parasympathetic : keratoconjunctivitis sicca
+
+CN VIII – Vestibulocochlear
+• balance + hearing
+- Sensory: hearing & vestibular function
+- Observation: body & head posture, gait, eyes
+Signs:
+- Tests: oculocephalic reflex, response to noise, BAER
+• head tilt
+• nystagmus leyes moving
+• circling
+CN IX & X
+• swallowing
+Signs:
+• dysphagia
+• regurgitation
+
+- Motor: tongue, pharynx, larynx, oesophagus
+- Sensory: tongue (caudal third), palate and pharynx, larynx, thoracic and
+abdominal viscera
+- Parasympathetic: salivary glands (IX), thoracic and abdominal viscera
+- Test: gag (swallowing) re ex
+- Clinical signs: dysphagia, loss of gag reflex, dysphonia, regurgitation
+
+CN XII – Hypoglossal
+• tongue movement
+Signs:
+• tongue deviation
+
+Special neurological postures (VERY IMPORTANT) :
+🟥 Decerebrate rigidity
+• all limbs extended
+• stupor/coma
+👉 brainstem lesion
+
+⸻
+DON’T FORGET
+
+monoparesis
+single limb
+paraparesis
+hindlimbs
+tetraparesis
+all limbs
+hemiparesis
+one side
+
+LAMENESS
+• 👉 usually orthopedic (NOT neuro!)
+
+MEMORY TIP
+• Behavior = forebrain function
+
+⸻
+STEP 0: HISTORY & SIGNALMENT
+
+fl
+
+fl
+
+- sensory innervation: corneas, face, nasal and oral cavity
+- + motoric innervation of masticatory muscles
+
+⸻
+1. MENTAL STATUS & BEHAVIOR
+
+- Sensory pathway for conscious perception of smell
+- lesion: hypo- or anosmia
+- Test: with patient‘s eyes covered we o er food and
+observe: sni ng (licking, aversion of the head)
+subjective
+- No irritating substances: stimulates trigeminal nerve
+
+CN II – Optic
+• vision
+tests:
+• menace response
+• PLR (pupillary light re ex)
+
+- motor innervation to the muscles of the tongue
+- Observation: tongue: atrophy? asymmetry? deviation?
+- Test: applying food paste or drops of water on the nose, gently
+stretching the tongue
+Clinical signs: prehension, mastication and deglutition of food
+- Recent lesion: deviation toward the contralateral side
+- Chronic lesion: deviation toward the side of the lesion
+
+⸻
+PALPATION
+•
+
+Gently palpate whole body : head neck trunk & limbs
+
+Evaluate:
+• painful areas / restricted movement
+• muscle tone
+• Muscle atrophy
+• distribution of lesions (generalized or local)
+
+- Sensory pathway for vision, pupillary light re ex, menace response (is
+not a re ex!) & visual placing (postural reaction)
+- Lesion: loss of vision to blindness
+- Observe: animal moving around obstacles, pupillary size and isocoria
+- Tests: visual following (cotton ball), menace response and pupillary re ex
+(together with CN III i CN VII)
+
+⸻
+POSTURAL REACTIONS
+What they test:
+• 👉 conscious proprioception
+
+CN III – Oculomotor
+• pupil constriction
+• eye movement
+Signs:
+• dilated pupil
+• strabismus
+
+- pupillary constriction
+- external ocular muscles: dorsal, ventral & medial m. rectus bulbi & ventral oblique muscle
+- Observation: eye position at rest and movement of the eyeball and upper eyelid, isocoria
+= pupils symmetric size
+- Tests:
+- 1) pupillary light re ex
+- 2) oculocephalic reflex
+
+Key points:
+• Not ideal for neurological localization but help nd
+subtle neurological de cits
+• Test performed in order of increased load on
+tested limb
+1. proprioceptive positioning (paw position or
+knuckling response)
+2. Wheelbarrowing
+3. Hopping
+4. Hemiwalking
+5. Placing response (tactile and visual)
+6. Extensor postural thrust
+
+⸻
+PAIN PERCEPTION (NOCICEPTION)
+
+⸻
+IMPORTANT REFLEXES
+⸻
+SPINAL REFLEXES
+
+Thoracic limb
+• Flexor withdrawal re ex
+• biceps (brachii) re ex
+• triceps re ex
+• extensor carpi radialis re ex
+
+Purpose:
+• test integrity of the sensory and motor part
+of re ex arc & the e ect of upper motor
+neurons (UMN) on the re ex
+di erentiate:
+• UMN vs LMN
+•
+UPPER motor neuron:
+Brain cortex
+Basal nuclei
+Brainstem
+Cerebellum
+
+Evaluate LAST
+
+⸻
+ADDITIONAL DIAGNOSTICS
+
+Includes:
+• Observation
+• Light palpation
+• super cial pain perception
+• deep pain perception
+
+Brain lesions
+• MRI / CT
+• CSF analysis
+• EEG
+• BAEF/BAER (deafness)
+
+Why important?
+• con rms severity
+• helps localization
+
+Spinal lesions
+• radiography
+• myelography
+• MRI and/or CT
+• CSF analysis
+
+•
+Cranial nerves:
+Re ex arc: combination
+of two nerves
+
+Forebrain
+• behavior changes
+• seizures
+• circling
+• normal gait initially
+
+Pelvic limb
+• patellar re ex (important)
+• Flexor withdrawal re ex
+• Cranial tibial re ex
+• gastrocnemius re ex
+
+Re ex grading
+
+⸻
+INTRACRANIAL LOCALIZATION
+- Mental status: normal to coma
+- Behavior: normal to severe abnormalities (eg. agression, compulsive
+activities, attention seeking)
+- Seizures, PU/PD
+- Posture: from normal to “weird” postures
+- Gait: (almost) normal, have no aim? Circling toward the lesion side
+- Cranial nerves: CN II
+- Postural reactions: CONTRALATERAL DEFICITS
+- Spinal reflexes: normal
+
+Brainstem
+•
+consciousness
+• cranial nerve de cits
+• severe gait issues
+
+- Mental status: depressed to coma
+- Behavior: no changes
+- Gait: more signi cant changes to inability to move
+- Cranial nerves: IPSILATERAL DEFICITS
+- Postural reactions: IPSILATERAL DEFICITS
+- Spinal reflexes: UPPER MOTOR NEURON DEFICITS
+
+🧠 UMN vs LMN (VERY IMPORTANT)
+
+⸻
+NEUROLOCALIZATION (CRITICAL PART)
+Step 1: Central vs Peripheral
+•
+re exes
+PNS
+• normal/ re exes
+CNS
+
+fl
+
+fl
+
+fl
+
+fl
+
+fl
+
+fl
+
+fi
+
+fi
+
+fl
+
+ff
+
+fl
+
+fl
+
+fl
+
+fl
+
+fl
+
+fi
+
+fl
+
+fi
+
+ff
+
+fi
+
+fl
+
+fl
+
+fi
+
+fi
+
+fl
+
+fl
+
+fl
+
+ff
+
+fl
+
+Special re exes
+• perineal re ex
+• panniculus re ex
+
+Step 2: Brain vs spinal cord
+• cranial nerve de cits
+brain
+• no CN de cits
+spinal
+spinal lesion localization
+
+Cerebellum
+• hypermetria
+• intention tremor
+• normal strength
+
+- Coordinates and regulates degree and range of movements
+- Does not participate in the initiation of movements
+Lesions: REMEMBER KITTEN!!!
+- ataxia (loss of unconscious proprioception)
+- hypermetria
+- intention tremor (purposeful movements, head)
+
+⸻
+FINAL STEP: DIFFERENTIAL DIAGNOSIS
+Use mnemonic:
+VITAMIN D
+• Vascular
+• In ammatory
+• Trauma
+• Anomaly
+• Metabolic
+• Idiopathic
+• Neoplasia
+• Degenerative
+
+PNS
+• EMG
+• NC
+• Muscle and nerve biopsy
+
+⸻
+FINAL SUMMARY (EXAM GOLD)
+Always follow this order:
+1. Observe
+2. Test cranial nerves
+3. Check gait & posture
+4. Test re exes
+5. Evaluate pain
+6. Localize lesion
+7. List di erentials
+MOST IMPORTANT CONCEPTS
+• Neuro exam = localization tool
+• Always be systematic
+• UMN vs LMN = critical
+• CN de cits = brain lesion
+• Proprioception = very sensitive test
+⸻
+ONE-LINE MEMORY
+• 👉 Neuro exam = observe
+localize
+diagnose
+
+test
+
+

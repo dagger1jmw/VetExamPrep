@@ -1,0 +1,488 @@
+================================================================================
+TOPIC: ADMINISTRATION OF MEDICATIONS
+================================================================================
+
+=== FROM: 00_Propedeutics_5 ===
+🩺
+
+ADMINISTRATION OF MEDICATIONS
+➢ treatment at home?
+➢ treatment on daily basis (vet visiting once a day) ?
+➢ hospitalization, treatment of intensive patients ?
+
+PLACING IV CATHETER
+
+AT HOME THERAPY
+•
+
+prescription drugs
+- rp./ name of medication
+- d. quantity
+- s. dosage and frequency
+
+=> Many drugs that vets use are human drugs ... but doses are not the same!!!
+
+•
+•
+•
+•
+
+INJECTIONS
+
+Bovine
+
+TYPES OF MEDICATION
+
+Swine
+
+-> i/m, s/c : neck muscle area
+
+-> iv bovine: v. jugularis
+
+1 – sc, im
+2,3 – im pigglets
+4 – iv / auricular vein
+5 – v. jugularis
+6 – v. cave anterior
+
+Enteral
+•
+•
+
+per os (solid, liquid): tablet (pills), capsule, drops, syrup, powder, boluses
+per rectum
+
+Parenteral – avoiding GI system
+-> per cutaneous
+• ointment, cream
+-> injections – when?
+• i/m
+• s/c
+• i/v
+-> localized therapy:
+• intraarticular
+• intraocular
+• ...?
+
+CLINICAL TIP
+-> Intramuscular injection (IM)
+- Preferred site: neck triangle injection site (between the scapula, cervical vertebrae, and nuchal ligament)
+- Procedure :
+1 Clap/tap the area before injection
+2 Insert the needle fully first, then attach the syringe
+3 Hold syringe and needle together during injection because thick products may separate them
+4 Aspirate before injection, then inject
+5 Remove syringe and needle together
+6 Avoid gluteal muscles because of meat consumption/meat quality concerns
+
+➢ solutions (water, oil)
+➢ suspensions
+
++ Lamb / Kid : Preferred IM site = semitendinosus muscle
+
+➢ ampoule
+➢ vials - liquid (dense vs. clear) or dry (powder)
+➢ bottles
+➢ plastic bags
+
+-> Subcutaneous injection (SC)
+- Preferred site: skin cranial to the scapula
+- Change needle each time because ruminant skin is thick
+- Second choice: skin caudo-dorsal to the elbow
+-> Intravenous injection (IV)
+- Mainly in the jugular vein => lift the head slightly and turn it a little
+- Mammary vein can sometimes be used
+-> Catheter placement
+- Usually placed in the jugular vein or ear veins
+
+APPLICATION PER OS
+Horse
+• per os = through mouth
+• by fingers, applicators, sonde
+
+-> im : neck muscle area
+
+-> what can you do to save your hands… ?
+- good manipulation
+- hide pills in the food !!
+
+RISK
+•
+
+in the abscence of diagnosis surgery could become a trauma while medicine could become a poison
+
+-> so what shall we do when we dont’t have a diagnosis...?
+- we will try to get it asap
+- we will treat the patient with supportive therapy (using the drugs that are at last harmfull)
+- we will monitor the patient and make dicision for the treatment on the basis of it’s clinical condition
+•
+
+all medicine are poison? everything we do has a risk–benefit ratio => it is the dose that makes the poison!
+
+-> venepuncture and iv administration
+
+Dog and cat
+-> sc
+
+-> i/v
+- v. cephalica antebrachi
+- v. saphena
+
+control of the expiration date!
+adequate storage!
+medication feature
+medical waste..!!
+
+rule #1 : do no harm
+
+-e 
+=== FROM: Proped_Notes ===
+ADMINISTRATION OF MEDICATION
+
+⸻
+IMPORTANT WARNING
+
+💊 ADMINISTRATION OF MEDICATIONS
+
+Human drugs in veterinary medicine
+• Many drugs are human drugs
+• BUT: 👉 DOSES ARE NOT THE SAME
+
+What is the goal of giving medications?
+👉 Not just “give drugs” — but:
+• Make a correct diagnosis rst
+• Choose the right drug
+• Use it correctly and safely
+“Use knowledge and consider risk–bene t ratio”
+
+KEY IDEA
+• 👉 Same drug ≠ same dose across species
+
+MEMORY TIP
+• Every drug = bene t + risk
+
+⸻
+TYPES OF MEDICATION ADMINISTRATION
+
+your job is to balance them
+
+🟢 1. ENTERAL (via GI tract)
+
+⸻
+ROLE OF THE VETERINARIAN
+
+Types
+- Per os (oral)
+• tablets
+• capsules
+• syrups
+• powders
+• drops
+
+Main goals
+• Treat sick animals
+• Choose correct medication(s)
+• Prevent disease in others
+
+3. Hospitalization (intensive care)
+• Continuous monitoring
+• IV therapy, oxygen, etc.
+
+⸻
+🐾 SPECIES DIFFERENCES (VERY IMPORTANT)
+Dogs
+• easier oral administration
+
+B. Injections
+• IM (intramuscular)
+• SC (subcutaneous)
+• IV (intravenous)
+
+⸻
+HOW TO CHOOSE?
+
+Cats
+• more di cult
+
+C. Localized therapy
+• intra-articular
+• intraocular
+
+Depends on:
+• severity of disease
+• owner ability
+• need for monitoring
+
+Explanation
+• 👉 Drug goes directly into body tissues or bloodstream
+
+What must a prescription include?
+• Rp.
+drug name
+• D.
+quantity
+• S.
+dosage + frequency
+
+Advantages
+• fast action
+• precise dosing
+• works in emergencies
+
+Also includes:
+• patient name
+• drug strength
+• route of administration
+• duration
+
+fi
+
+ff
+
+fi
+
+fi
+
+ff
+
+fi
+
+ff
+
+- IM (intramuscular)
+• muscle
+• moderate speed
+- IV (intravenous)
+• vein
+• fastest e ect
+
+Horses
+• IM
+
+neck muscles
+
+Dogs & cats
+• SC
+chest/shoulder region
+All species
+• IV possible
+Cattle
+• IM/SC common
+• IV
+jugular vein
+Pigs
+• SC, IM
+• IV
+ear vein or jugular
+Dogs & cats (IV)
+• cephalic vein
+• saphenous vein
+MEMORY TIP
+• 👉 Species determines where you inject
+
+⸻
+IV CATHETER & BLOOD SAMPLING
+
+Venepuncture
+• accessing veins for:
+• blood sampling
+• IV drugs
+Containers
+• Ampoules
+• Vials (liquid or powder)
+• Bottles
+• Infusion bags
+
+KEY IDEA 👉 Always know:
+• what form & how to prepare & how to inject
+ff
+
+Common routes
+- SC (subcutaneous)
+• under skin
+• slow absorption
+
+Why important?
+• allows repeated injections
+•
+uid therapy
+• emergency access
+
+⸻
+PARENTERAL FORMS
+Types
+• Solutions (water/oil)
+• Suspensions
+
+GENERAL RULES
+• choose correct site
+• choose correct needle
+• maintain sterility
+
+Horses
+• oral paste/syringe
+MEMORY TIP
+• Each species = di erent technique
+
+Disadvantages
+• requires skill
+• risk of complications
+
+MEMORY TIP
+•
+Prescription = WHAT + HOW MUCH + HOW OFTEN
+
+risk of injury
+
+Cattle
+• use bolus guns
+
+⸻
+PRESCRIPTIONS (VERY IMPORTANT)
+
+ffi
+
+risk of bites (shown in images)
+
+KEY IDEA
+• Technique matters for safety + compliance
+
+Includes
+A. Through skin
+• creams
+• ointments
+
+⸻
+INJECTIONS (CLINICAL PART)
+
+⸻
+INJECTION SITES BY SPECIES
+
+🔵 2. PARENTERAL (bypassing GI tract)
+
+2. Daily veterinary care
+• Vet checks animal regularly
+
+fl
+
+Methods
+• by hand ( ngers)
+• applicators
+• feeding tubes
+
+Solution
+• 👉 Hide pills in food
+• very practical trick
+
+Disadvantages
+• slower e ect
+• vomiting risk
+• absorption variability
+
+Three options
+1. Home therapy
+• Owner gives medication
+
+Advanced concept
+• Sometimes use body surface area (m²) (shown in table on
+page 16)
+
+PROBLEM
+• 👉 Animals resist
+
+Advantages
+• easy
+• cheap
+• safe
+
+⸻
+WHERE WILL THE PATIENT BE TREATED?
+
+Why?
+• Animals vary in size
+• Small error = big consequence
+
+⸻
+ORAL ADMINISTRATION (PER OS)
+
+Explanation
+• 👉 Drug is absorbed through digestive system
+
+KEY IDEA
+• 👉 Wrong drug or wrong dose = harm instead of help
+
+Principle
+👉 Dose = mg/kg body weight
+
+MEMORY TIP
+• 👉 Wrong dose = toxicity or no e ect
+
+- Per rectum
+• suppositories
+
+CRITICAL PRINCIPLE 👉 “DO NO HARM”
+This means:
+• Don’t treat blindly
+• Don’t overdose
+• Don’t use unnecessary drugs
+
+⸻
+DOSING (VERY IMPORTANT)
+
+KEY IDEA
+• 👉 IV access = life-saving in emergencies
+
+⸻
+IMPORTANT PRACTICAL RULES
+ALWAYS CHECK
+• expiration date
+• storage conditions
+• drug appearance
+• sterility
+ALSO
+• handle medical waste properly
+MEMORY TIP
+• Bad drug = dangerous drug
+
+⸻
+WHEN YOU DON’T HAVE A DIAGNOSIS
+What to do?
+• Try to get diagnosis ASAP
+• Use supportive therapy
+• Choose least harmful drugs
+• Monitor patient closely
+KEY IDEA
+• 👉 Treat safely until you know more
+
+⸻
+FINAL PHARMACOLOGY PRINCIPLE
+VERY IMPORTANT CONCEPT
+• 👉 “All medicine can be poison”
+•
+
+👉 “The dose makes the poison”
+
+Meaning
+• Any drug can be:
+• helpful at correct dose
+• toxic at high dose
+
+⸻
+FINAL SUMMARY (EXAM GOLD)
+Core steps
+1. Diagnose
+2. Choose correct drug
+3. Choose correct route
+4. Calculate correct dose
+5. Monitor patient
+Golden rules
+• Do no harm
+• Dose = mg/kg
+• Species matters
+• Route matters
+• Always check drug
+⸻
+ONE-LINE MEMORY
+👉 Right drug + right dose + right route + right patient = safe treatment
+
+

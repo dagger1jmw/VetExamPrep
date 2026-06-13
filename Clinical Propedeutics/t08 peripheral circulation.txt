@@ -1,0 +1,1243 @@
+================================================================================
+TOPIC: CLINICAL EXAMINATION OF PERIPHERAL CIRCULATION
+================================================================================
+
+=== FROM: 00_Propedeutics_5 ===
+⚠
+
+CLINICAL EXAMINATION OF
+THE CARDIOVASCULAR SYSTEM
+
+➢ (good) diagnostics are a prerequisite for (good) therapy
+➢ cardiology without auscultation is unthinkable, unimaginable
+
+CLUES THAT WE CAN FIND IN HISTORY
+
+GENERALITIES
+Basic examination techniques
+
+Additional (ancillary) techniques
+
+Dogs/cats
+
+•
+•
+•
+
+•
+•
+•
+•
+•
+•
+
+• lethargy, decreased physical activity, exercise intolerance, tiredness
+• respiratory distress, tachypnea, cough
+• syncope
+• abdominal distension
+• increase or decrease in body weight
+
+(history)
+breed, sex, age, signalment
+physical exam: inspection,
+palpation, percussion &
+auscultation
+
+electrocardiography
+radiography
+echocardiography
+cardiac biomarkers
+advances imaging (msct, mr)
+heart catheterization…
+
+-> normal findings
+• first heart sound (s1): closure of the atrioventricular valves, end of diastole/beginning of systole (“lub”)
+• second heart sound (s2): closure of the semilunar valves, end of systole/beginning of diastole (“dub”)
+-> abnormal findings => gallop (cardiac gallop, gallop rhythm)
+• s3 gallop: “ventricular” gallop (“lub-dub-ah”)
+• s4 gallop: “atrial” gallop (“fah-lub-dub”)
+Horses
+
+CLINICAL TIP (Larges)
+Look for the heart (esp. auscultation) under the shoulder
+
+• s1, s2, s3, s4 can be heard in a healthy horse
+• s4 can be heard in almost all horses, while s3 can be heard in about 30% cases
+• sometimes splitting of the first and second tones occurs
+
+➢ Right sided congestive heart failure → visceral organs (esp. liver) oedema / congestion
++ (cat) pulmonary oedema and pleural effusion
+➢ Left sided congestive heart failure → pulmonary (esp. liver) oedema / congestion
+
+Right hemithorax
+t = tricuspid valve
+(a = aortic valve)
+
+Cows
+Use the point of the elbow (olecranon) as a
+landmark and dig the stethoscope into the
+axillary region!
+
+• all four heart tones can also be heard in cows
+
+Murmur occurs when blood travels fast enough to become turbulent, thereby generating enough acoustical
+energy to be audible
+Characterize murmurs by:
+-> intensity (grades 1-6/6)
+Heart murmurs in cats are described as sternal and presternal
+-> locations (right vs. left, base vs. apex)
+-> timing (systolic, diastolic and continuous)
+-> shape (regurgitation vs. ejection)
+
+CARDIAC BIOMARKERS
+
+ELECTROCARDIOGRAPHY - ECG/EKG
+
+-> biomarker : characteristic objectively measured and evaluated as an indicator of normal biologic processes, pathogenic processes, or pharmacologic
+responses to a therapeutic intervention
+
+• golden standard for diagnosis of arrhythmias
+• information about heart rate and cardiac rhythm
+
+•
+
+Intensity
+left heart apex (= apical point)
+-> point of maximal
+intensity of the mitral valve
+
+left heart base (= basal point)
+-> point of maximal
+intensity of the
+pulmonary/aortic
+valve
+
+p wave = atrial depolarization
+qrs complex = ventricular depolarization
+t wave = ventricular repolarization
+
+right heart apex (= apical point)
+-> point of maximal intensity
+of the tricuspid valve
+
+cardiac biomarkers
+-> leakage markers
+- troponin i
+- troponin t
+- troponin c
+- myoglobin
+- creatine kinase
+- ldh
+- ast
+- myosin light & heavy chain
+
+Cats
+-> different heart positions inside the thoracic cavity
+
+-> nonpathologic
+- systolic
+- discrete (grade 1-2/6)
+- quieter in rest, louder with excitement
+- short in duration – proto- or mesosystolic
+- localized
+- without additional abnormalities (arrhythmias, gallop etc.)
+
+• mitral valve : left 5th ICS halfway between point of soulder and elbow
+• aortic valve : left 4th ICS just below point of shoulder
+• pulmonary valve : left 3rd ICS below point of shoulder
+• tricuspid valve : right 3rd to 4th ICS
+
+-> pathologic
+- systolic, diastolic or continuous
+- moderate to very loud (grade 3-6/6)
+- heard all the time, regardless of activity
+- typically holo- or pansystolic
+- radiates
+- with additional abnormalities
+
+NONPATHOLOGIC HEART MURMURS IN HORSES
+Bovine
+
+•
+•
+•
+
+heart murmurs are commonly heard in many adult horses – most of them are called functional (flow) murmurs
+these murmurs are very common in foals, trained athletes, and in horses with highly sympathetic nervous activity
+typically disappear (or are hardly audible) at rest
+
+1.
+2.
+3.
+4.
+5.
+
+• golden standard in cardiovascular diagnostics
+• noninvasive
+• assesment of cardiac structure and function:
+a) valvular morphology
+b) myocardium
+c) chamber size
+d) global cardiac architecture
+e) systolic and diastolic function
+
+•
+•
+•
+•
+
+anatomic characteristics
+ventricular and valvular movements
+measurements of heart chambers
+synchronization of events
+
+-> use in cases where myocardial ischemia, infarction or inflammation is suspected to be present
+(these should be associated with dramatic elevations, in contrast to the fairly modest elevations seen in typical acquired heart diseases like dmvd or dcm)
+B-type natriuretic peptide - bnp
+• cardiac neurohormone specifically secreted from the ventricles in response to increased wall stress (pressure or volume)
+• released as prohormone which is then cleaved into active hormone bnp and nt-probnp
+• functions
+o diuretic
+o natriuretic
+o vascular relaxation
+o regulating bp and fluid balance
+o inhibition of raas
+o enhances diastolic function
+o decreases filling pressures in the heart
+• use in cases of :
+- cardiogenic vs non-cardiogenic causes of respiratory distress distinction
+- detection of subclinical heart disease
+- predicting the occurrence of heart failure
+
+1. color doppler – assessment of regurgitation and shunts
+2. PW doppler – normal valvular flows, assessment of diastolic function, noninvasive
+calculation of stroke volume and cardiac output
+3. CW doppler – severity of stenotic lesions, maximal regurgitant velocity
+Use
+
+CLINICAL TIP (ONLY ruminants)
+Cardiac percussion can be performed in ruminants
+Pay attention to the cardiac part of the lungs because the right accessory lung lobe partially covers the heart
+-> Relative dullness: muffled/decreased resonance because lung tissue is still present over the heart
+-> Absolute dullness: completely dull sound because the heart is directly against the thoracic wall
+
+THORACIC RADIOGRAPHY
+
+• cardiomegaly assesment
+• differentiation between compensated and decompensated disease
+• therapy success
+• disease history – progression
+• differential diagnoses
+• cannot diagnose mild forms of cardiac diseases
+
+• echocardiography can:
+a. display cardiac anatomy
+b. measure cardiac chambers/thickness of myocardium
+c. evaluate/measure mechanical function of the heart
+d. display physiological/pathological flow
+e. calculate pressure gradients
+• echocardiography cannot:
+a. (diagnose arrhythmias)
+b. evaluate the degree of cardiomegaly
+c. anticipate clinical signs in an individual patient
+d. (diagnose congestive heart failure)
+
+diagnosis of heart failure
+detection of occult (sub-clinical) disease – screening tests
+risk stratification – detection of animals at higher risk of an adverse outcome
+monitoring disease progression or response to therapy
+guiding of therapy
+
+• regulatory proteins
+• part of contractile apparatus of skeletal and cardiac muscle tissue
+• part of the thin filament (together with actin and tropomyosin)
+• essential for calcium-mediated regulation of muscle contraction
+
+Doppler
+
+• similar valve locations compared to horses
+• heart is positioned ventrally in the thoracic cavity
+• approximately 60% of the bovine heart is positioned in the left hemithorax
+
+functional markers
+- bnp
+- c-reactive protein
+- anp
+- endothelin-1
+- epinephrine
+- norepinephrine
+- renin
+- angiotensin ii
+- aldosterone
+- arginine vasopressin…
+
+Cardiac troponins
+
+➢ transthoracic (tte)
+➢ transesophageal (tee)
+-> basic echocardiographic methods
+- twodimensional (2d) mode
+- m (motion)-mode
+- doppler (color and spectral)
+- contrast 2d mode
+-> advanced echocardiographic methods
+- tissue doppler
+- speckle tracking
+- strain and strain rate
+- 4d echocardiography
+
+•
+
+How to use cardiac biomarkers ?
+
+ECHOCARDIOGRAM - ULTRASONIC SURGERY OF THE HEART
+Significance of a newly discovered heart murmur
+
+Equine
+
+Most of the time you hear only S1, S2 and S3 - Sometimes S3 is mixed in S2 and you don’t distinguish it
+
+• in most of the cases the first and second heart tones are heard the best
+• third and fourth are quieter, and are not always heard, especially in situations where the environmental noise levels are high (farms)
+
+HEART MURMURS
+
+Dogs
+
+decreased intensity = adipositas, pleural or pericardial effusion
+increased intensity = young animals, hyperdynamic circulation, skinny/cachetic
+
+Dogs and cats
+
+1 Palpate to feel and localize apical point (where bit is the
+strongest) then place your stethoscope there
+2 To find basal point on left side, move your stethoscope craniodorsally to approximately reach caudal margin of scapula
+-> important to localize murmurs
+
+-> principles (technique)
+- quite surroundings
+- gentle restraint of the patient
+- take your time, be thorough
+- auscultation of all heart valves
+- simultaneous pulse palpation
+- determination of the heart rate
+- rhythm assessments
+- heart murmur discovery
+
+Ictus cordis = area of the thoracic wall where the heartbeat is most strongly palpable or visible due to the heart stricking the chest wall
+
+left hemithorax
+p = pulmonary valve
+a = aortic valve
+m = mitral valve
+
+•
+•
+
+CLINICAL TIP (Small)
+
+• peripheral (ventral) edema
+• enlarged jugular veins
+• weakness
+• respiratory distress
+• enlarged mammary veins
+
+S1 louder than S2
+
+Differences in the intensity of the heart
+
+• most valuable/most important part of the cardiovascular examination
+• information about the heart, but also great vessels
+• extremely important in the diagnostic work-up, but also afterwards in monitoring
+• quality stethoscope
+• proper use of the stethoscope
+
+Ruminants (cows)
+
+POINTS OF MAXIMAL INTENSITY OF HEART VALVES
+
+➢ first heart tone (s1) = closure of the atrioventricular valves, end of diastole/beginning of systole (“lub”)
+➢ second heart tone (s2) = closure of the semilunar valves, end of systole/beginning of diastole (“dub”)
+➢ s3 = passive filling of the ventricles - beginning diastole Lower frequence
+➢ s4 = atrial systole - end of diastole
+
+Heart auscultation
+
+• (general) weakness
+• decreased performance
+• exercise intolerance
+• respiratory distress
+• syncope
+• enlarged (congested) jugular veins
+
+CLINICAL TIP
+Very harsh heart sounds in sheep
+
+Genesis of heart tones
+CLINICAL TIP (Horse)
+Palpation of the heart for swelling, mass, pain or
+fremitus (= scratching pleura during inflammation)
+
+=> look, listen, feel … and be thorough!
+
+Horses
+The importance of good history taking and through physical examination :
+=> differentitation of cardiovascular from other (typically) respiratory diseases
+• definitive diagnosis
+• assessment of disease severity
+• assessment of therapeutic success (or failure)
+• development of a good/healthy
+• veterinarian-owner relationship
+
+inspection – „eyeballing“!
+mucous membranes, CRT
+jugular veins => use alcohol to soak hairs or shave
+pulse / palpation
+body temperature
+heart/lung auscultation
+
+With an agressive animal, use a muzzle for
+physical exam (enough) but give sedatives for ECG
+
+HEART TONE
+
+PHYSICAL EXAMINATION
+1.
+2.
+3.
+4.
+5.
+6.
+
+CLINICAL TIP
+
+RIGHT LATERAL SIDE
+Examination protocol
+1.
+2.
+3.
+4.
+
+performed better when animal is in lateral recumbency – the ultrasound probe is placed from underneath the animal
+clipping of hairs if the quality of the image is poor (in short-haired animals is usually not required)
+apply alcohol on the coat/skin, be generous
+use plenty of ultrasound gel
+
+Note: echo can be done in any position but positioning often affects the image quality (i. e. movement artefacts, lung artefacts etc.)
+
+CLINICAL EXAMINATION OF
+THE PERIPHERAL CIRCULATION
+STANDARDIZED EXERCISE TESTING
+
+ASSESSMENT OF THE CAPILLARY BED
+
+PERIPHERAL CIRCULATION ASSESSMENT
+
+• peripheral perfusion can be examined by measuring capillary refill time (crt)
+• crt is defined as the time required for a distal capillary bed (oral mucosa) regaining its color after pressure has been applied to cause blanching
+• nonpigmented mucosa of the upper lip or gingival mucosa
+• normal crt is 1 to 1.5 (up to 2) seconds
+• slow return of color may indicate poor perfusion
+
+• exercise intolerance is ultimately a neuromuscular phenomenon resulting from extreme metabolic stress at the level of muscle fibers
+➢ disorders that affect oxygen transport (cardiopulmonary system)
+➢ disorders that affect mechanical efficiency (locomotor system - lameness)
+=> two types of tests
+-> treadmill test
+-> field test
+• dyspnea, fatigue, and a prolonged elevation in heart rate following exercise are signs suggestive of cardiorespiratory insufficiency
+• additionally, ecg, echocardiography and endoscopy can be performed
+• measurement of lactate levels
+
+Arteries
+• pulse assessment
+• arterial blood pressure
+
+Veins
+• capillary refill time
+• mucous membrane color
+
+6 minute walk test (6mwt)
+
+Capillaries
+• surface vein assessment
+• central venous pressure
+The pale scenario
+• pale mucous membranes
+• prolonged crt (>2 sec)
+• decompensated phase
+
+The pink scenario
+• pink mucous membranes
+• normal crt (1-1.5 sec)
+• normal perfusion
+
+The bright red scenario
+• bright red (brick red) mucous membranes
+• fast crt (<1 sec)
+• compensated phase
+
+• the 6 minute walk test (6mwt) is used in people as a functional assessment of cardiopulmonary reserves
+• it is not designed to evaluate maximal effort, but instead to more closely evaluate the activities of daily living
+• the test is performed by measuring the distance an individual may walk comfortably over six minutes
+• importantly, the 6mwt is not performed in those individuals that are short of breath, but rather in those that are potentially affected
+with a cardiopulmonary disease that might affect exercise tolerance
+
+ARTERIAL PULSE ASSESSMENT
+•
+•
+
+pulse is felt by placing fingers transversely on the skin over the artery and applying gentle pressure until the pulse wave can be felt; when possible palpate bilaterally
+evaluation of the:
+- rate,
+- rhythm,
+- amplitude and quality
+
+Rate
+•
+•
+•
+
+normal - eucardia
+too high - tachycardia
+too low - bradycardia
+
+SURFACE VEIN ASSESSMENT
+
+Rhythm
+•
+•
+
+• superficial major veins, primarily the jugular, saphenous and median veins can be inspected and palpated with the animal standing
+
+regular
+irregular
+-> regularly
+-> irregularly
+-> pulse deficits
+
+=> jugular vein
+• examination provides information on functioning of the right heart
+- degree of jugular filling
+- jugular pulsation
+• in a standing animal the jugular vein is higher than the heart and normally appears empty
+
+Amplitude and quality
+
+Jugular filling
+
+=> subjective evaluation of pulse strenght is based on the difference between the systolic and diastolic arterial pressures
+– the greater the difference, stronger is the pulse
+•
+•
+•
+•
+•
+•
+
+hypokinetic pulse
+hyperkinetic pulse
+pulsus alternans
+pulsus bigeminus
+pulsus paradoxus
+pulselessness
+
+• central venous pressure determines the height of the filling of the jugular vein
+• when the head of the animal is down and below the level of the heart, jugular veins will normally be full
+• in healthy, normal animals, veins below the level of the heart (e. g. subcutaneous abdominal vein, the milk vein) are normally full
+-> engorged jugular veins
+• jugular veins that are fully distended when the animal is standing with its head in normal position are engorged => right-sided congestive heart failure or space-occupying lesion of the thoracic inlet
+• if we compress the engorged jugular vein, the segment of the vein below the compression point does not empty rapidly
+
+SYSTEMIC ARTERIAL BLOOD PRESSURE
+• arterial blood pressure = pressure exerted by blood against the arterial wall
+• systolic arterial blood pressure = peak pressure during the heart contraction
+• diastolic arterial blood pressure = minimal pressure between the heart contractions
+• mean arterial blood pressure = average blood pressure in a individual animal during one heart cycle; perfusion pressure
+
+Jugular pulsation
+• during each heart cycle, three venous pressure waves can be recorded:
+- a wave
+- c wave
+- v wave
+• the a wave is the result of atrial contraction; the c wave is synchronous with carotid pulse; the v wave marks the end of the ventricular systole
+• the associated movements are called venous pulse
+
+a wave – atrial contraction
+c wave – tricuspid valve closure;
+x descent – atrial relaxation
+v wave – ventricular ejection
+=> poor man’s blood pressure monitor = pulse quality
+• used for exclusion of arterial hypotension
+• palpation of dorsal pedal artery pulse generally correlates with sap >90 mmhg
+• palpation of femoral artery pulse in the absence of dorsal pedal artery pulse – sap >60<90 mmhg
+• inability to palpate femoral artery pulse – sap <60 mmhg
+
+=> although commonly referred to as venous pulsation it is actually a variation in the degree of jugular distension
+-> negative venous stasis : when the jugular vein becomes distended above the compression point, with the section of the vein below emptying with the heart beat
+-> positive venous stasis : in advanced cases of venous stasis the segment of the jugular vein below the compression point does not empty, but remains just as full
+Abdominojugular (hepatojugular) reflux (reflex)
+• apply firm pressure to the cranial abdomen while the animal is standing quietly – this transiently increases venous return
+• jugular distension that persists while abdominal pressure is applied – positive (abnormal test)
+
+-e 
+=== FROM: Proped_Notes ===
+⸻
+Cardiovascular system
+The cardiovascular exam includes:
+heart:
+
+⸻
+Nervous system
+⸻
+Urogenital system
+
+•
+
+inspection
+
+•
+
+palpation
+
+•
+
+percussion
+
+•
+
+kidneys
+
+•
+
+auscultation
+
+•
+
+ureters
+
+blood vessels:
+
+•
+
+bladder
+
+•
+
+peripheral arteries
+
+•
+
+urethra
+
+•
+
+veins
+
+•
+
+urination and urine testing
+
+•
+
+capillaries
+
+•
+
+reproductive organs
+
+•
+
+inspection and palpation
+
+What to remember : You do not only listen to the heart. You also assess circulation
+through blood vessels.
+Quick memory point : Cardiovascular exam = heart + vessels + circulation.
+
+This exam includes:
+
+What to remember :
+This system includes both:
+•
+
+urinary tract
+
+•
+
+reproductive organs
+
+⸻
+Digestive system
+
+Quick memory point : Think of both urine production and passage,
+plus reproductive status and organs.
+
+The digestive system exam includes:
+•
+
+appetite and thirst
+
+The nervous system exam includes:
+•
+
+consciousness
+
+•
+
+skull and spine
+
+•
+
+sensitivity
+
+•
+
+motility
+
+•
+
+re exes
+
+•
+
+senses
+
+What to remember : This helps assess brain, spinal cord, peripheral nerves,
+and sensory function.
+Quick memory point : Nervous exam = mental state, movement, sensation,
+re exes, senses.
+⸻
+What comes after the clinical exam
+After the physical clinical exam, the process may continue with:
+•
+
+laboratory tests:
+
+⸻
+Locomotor system
+
+•
+
+blood
+
+•
+
+urine
+
+The locomotor system includes:
+
+•
+
+feces
+
+•
+
+food and water intake
+
+•
+
+chewing, burping
+
+•
+
+bones
+
+•
+
+discharge
+
+•
+
+mouth and oral cavity
+
+•
+
+joints
+
+•
+
+special diagnostic methods
+
+•
+
+pharynx, esophagus
+
+•
+
+muscles
+
+•
+
+environmental examination
+
+•
+
+stomach (tubing)
+
+•
+
+abdomen and abdominal cavity
+
+•
+
+liver
+
+•
+
+rectal examination
+
+•
+
+pain
+
+•
+
+defecation and examination of feces
+
+•
+
+swelling
+
+•
+
+deformity
+
+What to remember :
+
+•
+
+reduced movement
+
+This system is examined from intake to output:
+• what goes in
+• how it is chewed and swallowed
+• what happens in the digestive tract
+• what comes out
+
+•
+
+lameness
+
+•
+
+muscle wasting
+
+Quick memory point : Digestive system = appetite, mouth, swallowing, stomach,
+abdomen, liver, rectum, feces.
+
+What to remember : This is the system of movement and support.
+Look for:
+
+Why this matters : The physical exam is essential, but sometimes not enough
+for a nal diagnosis.
+⸻
+Special diagnostic tests
+• The lecture then mentions special diagnostic tests.
+What to remember
+• These are extra methods used after the clinical exam when more
+information is needed, such as advanced procedures or imaging.
+⸻
+Environment : The lecture also includes environmental examination.
+What to remember
+The animal’s surroundings matter. You may need to examine:
+•
+
+housing
+
+•
+
+feeding
+
+•
+
+hygiene
+
+•
+
+pasture
+
+•
+
+management conditions
+
+fl
+
+fi
+
+fl
+
+This is especially important in herd and large-animal medicine.
+
+⸻
+Large animals
+
+⸻
+1. Species
+
+For large animals:
+
+Why species matters
+
+•
+
+each side of the animal is examined separately
+
+•
+
+this is not indicated for small animals
+
+Species di er in susceptibility to disease, especially:
+
+What to remember : Because large animals have a large body size, each side must
+be examined methodically.
+
+•
+
+infectious diseases
+
+•
+
+parasitic diseases
+
+Species-speci c diseases happen because of:
+
+⸻
+Not all animals are easy to examine
+Important practical points :
+
+•
+
+anatomical di erences
+
+•
+
+physiological di erences
+
+•
+
+not all animals are easy to examine
+
+•
+
+di erent way of life
+
+•
+
+almost all clinical examination methods can be applied to horses and cattle
+
+•
+
+other circumstances
+
+•
+
+small ruminants and especially pigs are more di cult to examine
+
+•
+
+for these animals, we often use an abbreviated examination
+
+•
+
+we may also shorten the examination in restless or aggressive animals
+
+⸻
+1’. Breed
+The lecture states:
+
+⸻
+Emergency cases
+In emergency cases:
+
+•
+
+highly productive breeds are generally less resistant
+
+•
+
+breed has signi cance in the choice and dosage of drugs
+
+What to remember = Breed can a ect:
+
+the exam sometimes needs to be simpli ed
+
+•
+
+we perform a short exam or an urgent intervention
+
+• a full examination is done after stabilization if the animal is in lifethreatening danger
+
+•
+
+disease risk
+
+•
+
+drug sensitivity
+
+•
+
+treatment planning
+
+⸻
+2 .Sex / Gender
+
+Most important rule : In emergencies = stabilize rst, examine fully after.
+
+For sex, the lecture highlights:
+⸻
+Signalment in more detail
+De nition =
+
+recognize the animal later
+
+•
+
+understand their clinical and diagnostic meaning
+
+This is especially important in:
+
+function
+
+•
+
+reproductive status
+
+•
+
+court cases
+
+•
+
+veterinary inspection cases
+
+•
+
+lifestyle-related diseases
+
+Geriatric animals: old animals = Common concerns:
+•
+
+neoplastic diseases / tumors
+
+•
+
+di culty taking food
+
+Age and prognosis :
+•
+
+age a ects prognosis
+
+•
+
+younger animals usually have a more favorable outcome than older animals
+
+•
+
+what disease is likely
+
+•
+
+how good the outcome may be
+
+⸻
+4. Color and markings
+Color = Color depends on:
+•
+
+quality of pigment
+
+•
+
+distribution of pigment in skin and hair
+
+•
+
+and is often hereditary and breed-related
+
+Markings / signs = These are:
+•
+
+natural or acquired pigmentless spots
+
+•
+
+of di erent shapes
+
+Clinical meaning
+• animals with less skin pigment are less resistant than darkly pigmented animals
+What to remember = Color and markings help with identi cation, but they may also have
+some clinical importance.
+⸻
+5. Name
+
+•
+
+whether the animal is male or female
+
+•
+
+most animals have names
+
+•
+
+whether it is intact or neutered
+
+•
+
+animals feel more comfortable when we call them by their name
+
+•
+
+pregnancy, lactation, cycling, breeding status
+
+⸻
+3. Age
+
+⸻
+Components of signalment
+
+What to remember = The name is useful not only for identi cation, but also for helping the
+animal remain calmer during examination.
+
+Neonates: up to 2 weeks
+
+⸻
+6. Identi cation chip or tags
+
+Common concerns:
+
+Forms of identi cation :
+
+Signalment includes:
+
+•
+
+congenital diseases
+
+•
+
+microchip
+
+•
+
+eartag
+
+2.
+
+sex
+
+•
+
+intrauterine infections
+
+•
+
+tattoo
+
+3.
+
+age
+
+•
+
+brand
+
+4.
+
+color and markings
+
+5.
+
+name
+
+6.
+
+identification chip or tags
+
+Pediatrics: young animals
+
+•
+
+parasitic infections
+
+•
+
+infectious diseases
+
+fi
+
+fi
+
+ffi
+
+fi
+
+fi
+
+ff
+
+ff
+
+fi
+
+ff
+
+fi
+
+ff
+
+fi
+
+fi
+
+Common concerns:
+
+ff
+
+ff
+
+colostrum intake and passive immunity
+
+ff
+
+•
+
+ffi
+
+species and breed
+
+ff
+
+1.
+
+fi
+
+fi
+
+•
+
+What to remember = Sex matters because some diseases and clinical decisions
+depend on:
+
+In signalment, we register characteristics and signs by which we can:
+•
+
+Common concerns:
+
+Quick memory point = Age a ects both:
+Quick memory point : The rst diagnostic clue is often simply = What species is this
+animal?
+
+What to remember : The ideal full examination is not always possible. Safety and
+practicality matter.
+
+•
+
+Adults: reproductively mature animals
+
+What to remember
+These are oﬃcial or practical ways to identify the animal accurately.
+
+

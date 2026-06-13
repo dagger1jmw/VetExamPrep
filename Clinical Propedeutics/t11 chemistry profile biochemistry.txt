@@ -1,0 +1,847 @@
+================================================================================
+TOPIC: CHEMISTRY PROFILE AND BIOCHEMISTRY
+================================================================================
+
+=== FROM: Proped_Notes ===
+CHEMISTRY PROFILE
+
+Complete laboratory pro le includes:
+• CBC (blood cells)
+• Urinalysis
+• Biochemistry (chemistry pro le + electrolytes + acid-base)
+KEY IDEA
+• 👉 Biochemistry = organ function (not just numbers!)
+
+understand mechanism
+
+For sick patients
+• monitor response to therapy
+• repeat tests
+
+Two panels
+1. Primary panel
+• speci c for organ
+
+Properties
+• constant production
+• not a ected by muscle mass
+• excreted by kidneys
+
+2. Secondary panel
+• indirect changes
+
+MEMORY TIP
+• 👉 SDMA = early kidney failure
+
+⸻
+KIDNEY (RENAL PANEL)
+
+Storage
+• +4°C
+• -20°C
+• -80°C
+
+PRIMARY markers
+•
+urea
+•
+creatinine
+•
+SDMA
+Urinalysis, USG, UPCR
+SECONDARY changes
+•
+phosphorus
+• Na, K changes
+• Ca changes (late disease)
+
+days
+months
+years
+
+Important terms
+- in organism
+• Azotemia =
+urea
+(v) in blood
+• Uremia = clinical syndrome
+high
+urea
+
+3 MAIN GROUPS (page 5)
+1. Nutrients & metabolites
+• urea
+• creatinine
+• glucose
+• cholesterol
+• bilirubin
+
+Interpretation
+urea:
+• kidney disease
+• dehydration
+• high protein breakdown
+urea:
+• liver disease
+• low protein intake
+muscle
+
+2. Enzymes
+• ALT, AST
+• ALP, GGT
+• amylase, lipase
+
+indicator
+
+VERY IMPORTANT VALUES (dogs)
+• 17–20 mmol/L
+signi cant
+• 35 mmol/L
+likely renal cause
+• 67 mmol/L
+poor prognosis
+
+fi
+
+ff
+
+fi
+
+fi
+
+fi
+
+•
+•
+•
+•
+
+TP
+liver disease
+kidney loss
+GI loss
+bleeding
+
+globulins)
+
+Produced in liver
+
+Functions
+• maintains oncotic pressure
+• transports substances
+•
+•
+•
+
+albumin
+liver disease
+kidney loss
+malnutrition
+
+•
+
+albumin
+dehydration
+
+PRIMARY tests
+• ALT, AST
+cell damage - integrity of hepatocytes
+• ALP, GGT
+cholestasis
+• TP, ALB, GLOB, ALB/GLOB liver function - functional
+hepatic mass
+
+MEMORY TIP
+• 👉 Albumin = liver function + protein status
+
+SECONDARY changes
+•
+bilirubin —> cholestasis
+•
+CHOL with normal TRIG —> chronic cholestasis
+
+⸻
+PANCREAS (EXOCRINE)
+
+glucose
+urea
+cholesterol
+coagulation
+
+It
+
+decreased
+
+functionnal hepatic mass
+
+PRIMARY marker
+•
+lipase
+Speci c test
+• PLI (pancreatic lipase)
+>
+
+2. Cholestasis (bileduct pb)
+Predominantly hepatobiliary but overlap w/hepatocellular :
+• ALP
+• GGT
+• bilirubin
+3. Liver function disorders (function pb)
+• bile acids (pre and post stimulation)
+• ammonia liver transformation from amonia
+:
+
+·
+
+TP
+
+>
+-
+
+immunoreactivity
+
+Key points
+• proportional to number of damaged cells
+• not severity of damage
+Causes of increase
+• hepatitis
+• toxins
+• hypoxia
+• pancreatitis
+• drugs
+
+Secondary changes
+•
+glucose
+•
+calcium
+•
+liver enzymes
+KEY IDEA
+• 👉 PLI = most speci c for pancreatitis
+
+urea
+
+↓
+if too many : liver can't
+
+⸻
+function
+🔴 ALT (VERY IMPORTANT)
+correctly
+What it shows
+Chepatocyte damage
+• 👉 Liver cell damage (NOT function)
+
+MEMORY TIP : 👉 ALT
+fi
+
+ff
+
+fi
+
+ff
+
+fi
+
+fl
+
+fl
+
+3. Electrolytes & minerals
+• Na, K, Cl
+• Ca, P
+• Fe, Cu
+fi
+
+damage
+
+TP
+dehydration
+in ammation (
+
+>
+-
+
+Excretion
+• kidneys
+
+⸻
+WHAT DOES BIOCHEMISTRY MEASURE?
+
+•
+•
+
+•
+
+⸻
+3 TYPES OF LIVER TESTS
+1. Hepatocellular damage [4rpb)
+• ALT, AST in Mitochondria of hepatocytes
+
+Origin
+• produced in liver from ammonia
+
+Components
+• albumin
+• globulins
+
+🟡 ALBUMIN
+
+⸻
+LIVER PANEL
+
+•
+•
+•
+•
+
+⸻
+🔴 UREA
+
+KEY IDEA
+• 👉 Bad handling = false results
+•
+
+GFR SiSBMAM
+
+Why important?
+• 👉 Increases BEFORE creatinine
+
+detect early disease
+
+Steps for biochemistry:
+1. Collect blood
+2. Let clot (20–30 min)
+3. Centrifuge (10 min)
+4. Separate serum
+5. Store properly
+
+⸻
+🔴 SDMA (VERY IMPORTANT NEW MARKER)
+What is it?
+• early kidney marker
+
+KEY IDEA
+• 👉 One disease = multiple abnormalities
+
+⸻
+SAMPLE PREPARATION (VERY PRACTICAL)
+
+False increases
+• drugs
+• ketones
+• hemolysis/lipemia
+
+Shows ↓
+
+Main systems:
+• kidney
+• liver
+• pancreas / GI
+• endocrine
+
+Reference intervals
+• 5% of healthy animals fall outside normal range
+👉 So: Slight abnormality ≠ disease
+
+Preventive medicine
+• yearly lab tests
+
+Key point
+• 👉 More speci c than urea for kidney function
+
+👉 Always interpret results by organ system
+
+interpret in context
+
+🟡 TOTAL PROTEIN (TP)
+
+Excretion
+• ONLY kidneys
+
+⸻
+SYSTEMIC APPROACH (VERY IMPORTANT)
+
+You MUST always remember:
+• Healthy animals
+may have abnormal results
+• Sick animals
+may have normal results
+• One organ disease
+can a ect OTHER tests
+
+⸻
+PROTEINS (TP, ALBUMIN)
+
+Origin
+• muscle metabolism
+
+For EVERY value, ask:
+• where is it produced?
+• how is it excreted?
+• what a ects it?
+• what does
+or
+mean?
+MEMORY TIP
+• 👉 Don’t memorize numbers
+
+⸻
+CRITICAL INTERPRETATION RULES (VERY IMPORTANT)
+
+MEMORY TIP
+• 👉 Lab results ≠ diagnosis
+
+⸻
+🔴 CREATININE
+
+⸻
+HOW TO STUDY EACH PARAMETER
+
+WHAT IS A CHEMISTRY PROFILE?
+
+⸻
+GI TRACT
+No speci c tests
+👉 Only indirect markers:
+• TP
+• albumin
+• electrolytes
+Suggests
+• malabsorption
+• in ammation
+• protein loss
+
+= liver cells leaking
+
+⸻
+ENDOCRINE SYSTEM
+Diagnosis requires:
+• 👉 Hormone testing
+Examples
+• Cushing’s
+• Addison’s
+• diabetes
+
+⸻
+LACTATE (CRITICAL CARE)
+
+MEMORY TIP
+• 👉 Electrolytes can hint endocrine disease
+
+pain marker
+
+What it shows
+• tissue hypoxia
+• poor perfusion
+Interpretation
+• decreasing
+• increasing
+
+Typical pattern (example)
+•
+Na +
+K
+Addison’s
+
+-
+
+improving
+worsening
+
+KEY IDEA
+• 👉 Lactate = severity + prognosis
+
+⸻
+SPECIAL INTERPRETATION NOTES
+Examples
+• bilirubin
+when not eating (not only liver disease)
+• iron
+in in ammation
+• chloride
+acidosis indicator
+
+⸻
+FINAL SUMMARY (EXAM GOLD)
+Always think:
+1. Which organ?
+2. Primary or secondary change?
+3. True or false abnormal?
+Core systems
+• kidney
+urea, creatinine, SDMA
+• liver
+ALT, ALP, bilirubin
+• pancreas
+lipase, PLI
+• proteins
+TP, albumin
+Golden rules
+• interpret together
+• repeat tests
+• consider patient condition
+
+fl
+
+⸻
+ONE-LINE MEMORY
+• 👉 Biochemistry = organ function interpreted in context, not isolated values
+
+CLINICAL EXAMINATION OF
+CARDIOVASCULAR SYSTEM
+
+⸻
+BIG IDEA
+
+⸻
+STRUCTURE OF CARDIOVASCULAR EXAM
+
+2
+
+1. Basic examination (does ~50% of work)
+• History
+• Signalment (breed, sex, age)
+Physical exam:
+• inspection
+• palpation
+• percussion
+• auscultation
+2. Additional (ancillary) tests
+• ECG
+• Radiography
+• Echocardiography
+• Cardiac biomarkers
+• Advanced imaging (CT, MRI)
+• Catheterization
+
+⸻
+WHY HISTORY + EXAM ARE IMPORTANT
+
+Gallop rhythms (dogs/cats)
+• S3 gallop
+ventricular lling
+• S4 gallop
+atrial contraction
+
+⸻
+PHYSICAL EXAM SEQUENCE
+
+KEY IDEA
+• Extra sounds = pathology (in small animals)
+
+Order (VERY IMPORTANT)
+1. Inspection
+2. Mucous membranes + CRT
+3. Jugular veins
+4. Pulse
+5. Temperature
+6. Heart/lung auscultation
+Check perfusion
+
+Horses & cows
+• S3 and S4 can be normal
+Check circulation
+
+Why it matters
+Most valuable part of exam gives info on:
+• heart
+• great vessels
+Used for:
+• diagnosis
+• monitoring
+
+⸻
+HISTORY: CARDIAC CLUES
+
+Technique
+• Quiet environment
+• Gentle restraint
+• Take your time
+• Listen to all valves
+• Palpate pulse at same time
+Assess:
+• heart rate
+• rhythm
+• murmurs
+
+🐶 Dogs & cats
+• lethargy, exercise intolerance, tiredness
+• respiratory distress, cough, tachypnea
+• syncope (fainting)
+• abdominal distension
+• weight changes
+🐴 Horses
+• weakness
+•
+performance
+• exercise intolerance
+• jugular vein distension
+• Syncope
+• Respiratory distress
+
+MEMORY TIP
+• Auscultation = rate + rhythm + sounds + murmurs
+
+⸻
+HEART SOUNDS
+Normal sounds
+
+🐄 Ruminants
+• ventral (ventral) edema
+• enlarged jugular veins
+• weakness
+• respiratory distress
+• enlarged mammary veins
+
+S1 (“lub”)
+• closure of AV valves
+• start of systole
+S2 (“dub”)
+• closure of semilunar valves
+• end of systole
+
+MEMORY TIP
+• Heart disease = exercise intolerance + uid buildup
+
+fl
+
+ff
+
+fi
+
+ff
+
+fl
+
+MEMORY TIP
+• S1 = AV valves
+• S2 = semilunar valves
+fi
+
+⸻
+ABNORMAL HEART SOUNDS
+
+MEMORY TIP
+• Right = body
+• Left = lungs
+
+Listen
+
+MEMORY TIP : Extra sounds:
+• dogs/cats
+abnormal
+• horses
+often normal
+
+⸻
+HEART AUSCULTATION (MOST IMPORTANT)
+
+They allow you to:
+• Di erentiate cardiac vs respiratory disease
+• Make a de nitive diagnosis
+• Assess severity
+• Monitor treatment success
+• Build owner relationship
+
+fi
+
+Increased sounds
+• young animals
+• thin/cachectic
+• hyperdynamic circulation
+
+Left-sided failure
+• pulmonary congestion
+• pulmonary edema
+
+RULE
+• Look
+
+KEY IDEA
+• Clinical exam = foundation
+• Tests = con rmation
+
+fi
+
+Decreased sounds
+• obesity
+• pleural/pericardial e usion
+
+Right-sided failure
+uid buildup in:
+• abdomen (ascites)
+• liver congestion
+
+Core principles
+• Good diagnostics = good therapy
+• Cardiology without auscultation is impossible
+
+ff
+
+fl
+
+⸻
+INTENSITY CHANGES
+
+⸻
+RIGHT vs LEFT HEART FAILURE
+
+⸻
+AUSCULTATION POINTS (VALVES)
+LEFT side
+• Pulmonary
+• Aortic
+• Mitral
+RIGHT side
+• Tricuspid
+Dogs (important!)
+• Left apex
+mitral valve
+• Left base
+aortic + pulmonary
+• Right side
+tricuspid
+Cats :
+• Harder to nd
+Horses (easier)
+• Mitral
+left 5th ICS
+• Aortic
+left 4th ICS
+• Pulmonary
+left 3rd ICS
+• Tricuspid
+right 3–4th ICS
+Ruminants :
+• Similar valve location to horses
+• Heart : ventral in the thoracic cavity
+• Approx 60% of the bovine heart is positioned in the
+left hemithorax
+MEMORY TIP
+• Left = 3–5 ICS (P-A-M order)
+
+⸻
+HEART MURMURS
+laminar sound
+
+normally
+What is a murmur? >
+• Turbulent blood ow that becomes audible
+How to describe murmurs
+1. Intensity (1–6/6)
+2. Location (R vs L, base vs Apex)
+3. Timing (systolic, diastolic, continuous)
+4. Shape (regurgitation vs ejection)
+value
+
+pb
+
+value not
+
+flexible
+
+so
+
+it's a struggle
+
+going back
+⸻
+MURMUR GRADING
+• Grade 1
+very faint
+• Grade 3
+moderate
+• Grade 6
+extremely loud + heard o chest
+
+J
+
+MEMORY TIP
+• ≥3 = clinically important
+
+⸻
+NON-PATHOLOGIC vs PATHOLOGIC MURMURS
+Non-pathologic
+• soft (grade 1–2)
+• systolic
+• short duration
+• disappear at rest
+• no other abnormalities
+Pathologic
+• loud (grade 3–6)
+• continuous or diastolic
+• radiates
+• present all the time
+• associated abnormalities
+MEMORY TIP
+• Loud + persistent = pathologic
+⸻
+SPECIAL: HORSE MURMURS 🐴
+• Many are functional (normal)
+Common in:
+• foals
+• Trained athletes
+• Often disappear at rest
+⸻
+PATHOLOGIC MURMURS (IMPORTANT) ⚠
+Types
+• Regurgitant
+MR, TR
+• Ejection
+stenosis
+• Decrescendo
+AR, PR
+• Continuous
+PDA
+
+O
+contraction
+
+(
+
+S
+regurgitation
+
+oa
+
+li
+
+grest
+
+b
+Key associations
+"embrgo"
+holea
+• Mitral regurgitation
+left apex
+• Tricuspid regurgitation
+right side
+• PDA
+continuous murmur
+
+⸻
+ECG
+
+Examp : for what type of disorder
+↓ we do ECG
+
+Purpose
+• GOLD STANDARD for arrhythmias
+Gives:
+• heart rate
+• rhythm
+MEMORY TIP
+•
+ECG = rhythm diagnosis
+•
+
+value
+
+shrinking
+
+pulmonarystehoMs stenosis
+se
+
+
