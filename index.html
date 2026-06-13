@@ -1902,38 +1902,93 @@ async function fetchTopicFile(topicId) {
   }
 }
 
-// ---- Core Gemini API call ----
+// ---- Core Gemini API call with auto-continuation ----
+const GEMINI_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=';
+const MAX_OUTPUT_TOKENS = 65535;
+
 async function callGemini(systemPrompt, userMessage, outputEl) {
   if (!aiState.key) { showAiError(outputEl, 'No API key set. Please confirm your key first.'); return; }
   outputEl.style.display = 'block';
   outputEl.innerHTML = '<div class="ai-thinking">✨ Thinking...</div>';
 
-  const messages = [{ role: 'user', content: systemPrompt + '\n\n---\n\n' + userMessage }];
+  const fullPrompt = systemPrompt + '\n\n---\n\nUSER INPUT:\n' + userMessage;
 
-  try {
-    const res = await fetch(
-      'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=' + aiState.key,
-      {
+  // Build conversation history for continuation
+  let contents = [{ role: 'user', parts: [{ text: fullPrompt }] }];
+  let fullText = '';
+  let chunkCount = 0;
+  const MAX_CHUNKS = 5; // safety cap — shouldn't need more than 2-3
+
+  while (chunkCount < MAX_CHUNKS) {
+    chunkCount++;
+    const isFirstChunk = chunkCount === 1;
+
+    if (!isFirstChunk) {
+      outputEl.innerHTML = formatAiResponse(fullText) + '<div class="ai-thinking" style="margin-top:8px">✨ Continuing response...</div>';
+    }
+
+    try {
+      const res = await fetch(GEMINI_URL + aiState.key, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          contents: [{ role: 'user', parts: [{ text: systemPrompt + '\n\n---\n\nUSER INPUT:\n' + userMessage }] }],
-          generationConfig: { maxOutputTokens: 2048, temperature: 0.3 }
+          contents,
+          generationConfig: { maxOutputTokens: MAX_OUTPUT_TOKENS, temperature: 0.3 }
         })
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        const errMsg = (data.error && data.error.message) || ('HTTP ' + res.status);
+        const isRateLimit = errMsg.toLowerCase().includes('quota') || errMsg.toLowerCase().includes('429') || res.status === 429;
+        if (fullText) {
+          // Show whatever we got, plus the error
+          outputEl.innerHTML = formatAiResponse(fullText) + '<div class="ai-msg" style="background:#fff0f0;border:1px solid var(--wrong-dark);margin-top:8px"><strong>⚠ Error on continuation:</strong> ' + escapeHtml(errMsg) + (isRateLimit ? ' (rate limit — try again in a moment)' : '') + '</div>';
+        } else {
+          showAiError(outputEl, errMsg, isRateLimit);
+        }
+        return;
       }
-    );
-    const data = await res.json();
-    if (!res.ok) {
-      const errMsg = (data.error && data.error.message) || ('HTTP ' + res.status);
-      const isRateLimit = errMsg.toLowerCase().includes('quota') || errMsg.toLowerCase().includes('429') || res.status === 429;
-      showAiError(outputEl, errMsg, isRateLimit);
+
+      const candidate = data.candidates?.[0];
+      const chunkText = candidate?.content?.parts?.map(p => p.text || '').join('') || '';
+      const finishReason = candidate?.finishReason || 'STOP';
+
+      fullText += chunkText;
+
+      if (finishReason === 'MAX_TOKENS' && chunkText.trim()) {
+        // Response was cut off — add assistant turn and ask to continue
+        contents.push({ role: 'model', parts: [{ text: chunkText }] });
+        contents.push({ role: 'user', parts: [{ text: 'Please continue exactly where you left off, without repeating anything already written.' }] });
+        // Loop continues for next chunk
+      } else {
+        // STOP, FINISH, or any other reason — we're done
+        break;
+      }
+
+    } catch(e) {
+      if (fullText) {
+        outputEl.innerHTML = formatAiResponse(fullText) + '<div class="ai-msg" style="background:#fff0f0;border:1px solid var(--wrong-dark);margin-top:8px"><strong>⚠ Network error on continuation:</strong> ' + escapeHtml(e.message) + '</div>';
+      } else {
+        showAiError(outputEl, 'Network error: ' + e.message);
+      }
       return;
     }
-    const text = data.candidates?.[0]?.content?.parts?.[0]?.text || 'No response received.';
-    outputEl.innerHTML = '<div class="ai-msg">' + escapeHtml(text).replace(/\n/g,'<br>').replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/\*(.+?)\*/g,'<em>$1</em>') + '</div>';
-  } catch(e) {
-    showAiError(outputEl, 'Network error: ' + e.message);
   }
+
+  outputEl.innerHTML = formatAiResponse(fullText || 'No response received.');
+}
+
+function formatAiResponse(text) {
+  return '<div class="ai-msg">'
+    + escapeHtml(text)
+        .replace(/\n/g, '<br>')
+        .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\*(.+?)\*/g, '<em>$1</em>')
+        .replace(/^###\s+(.+?)(<br>|$)/gm, '<strong style="font-size:0.95rem;color:var(--primary-dark)">$1</strong><br>')
+        .replace(/^##\s+(.+?)(<br>|$)/gm, '<strong style="font-size:1rem;color:var(--primary-dark)">$1</strong><br>')
+    + '</div>';
 }
 
 function showAiError(el, msg, isRateLimit) {
@@ -2008,14 +2063,13 @@ RULES:
 - Make it realistic and exam-appropriate.
 - Output ONLY the scenario — no answers, no hints, no headings.`;
 
-  const res = await fetch(
-    'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=' + aiState.key,
+  const res = await fetch(GEMINI_URL + aiState.key,
     {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         contents: [{ role: 'user', parts: [{ text: systemPrompt }] }],
-        generationConfig: { maxOutputTokens: 300, temperature: 0.7 }
+        generationConfig: { maxOutputTokens: 1024, temperature: 0.7 }
       })
     }
   );
