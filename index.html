@@ -1737,37 +1737,37 @@ const GITHUB_RAW = 'https://raw.githubusercontent.com/dagger1jmw/VetExamPrep/mai
 
 // Map topic IDs to their .txt filenames on GitHub
 const AI_TOPIC_FILES = {
-  't01': 't01_handling_restraint.txt',
-  't02': 't02_physical_exam_IPPA.txt',
-  't03': 't03_order_clinical_exam.txt',
-  't04': 't04_history_taking.txt',
-  't05': 't05_habitus_body_condition.txt',
-  't06': 't06_vital_signs.txt',
-  't07': 't07_mucous_membranes_lymph_nodes.txt',
-  't08': 't08_peripheral_circulation.txt',
-  't09': 't09_drug_administration.txt',
-  't10': 't10_blood_collection_CBC.txt',
-  't11': 't11_chemistry_profile_biochemistry.txt',
-  't12': 't12_heart_exam_ECG.txt',
-  't13': 't13_blood_pressure.txt',
-  't14': 't14_weight_exercise_testing.txt',
-  't15': 't15_respiratory_system.txt',
-  't16': 't16_GI_clinical_signs.txt',
-  't17': 't17_oral_oesophagus_stomach_tube.txt',
-  't18': 't18_abdominal_exam_small_animals.txt',
-  't19': 't19_abdominal_exam_horses_ruminants.txt',
-  't20': 't20_liver_examination.txt',
-  't21': 't21_rectal_examination.txt',
-  't22': 't22_abdominocentesis_thoracocentesis.txt',
-  't23': 't23_urinary_clinical_signs.txt',
-  't24': 't24_urinary_system_examination.txt',
-  't25': 't25_catheterisation_urinalysis.txt',
-  't26': 't26_neurological_examination.txt',
-  't27': 't27_dermatology.txt',
-  't28': 't28_small_mammals.txt',
-  't29': 't29_haematology_reference.txt',
-  't30': 't30_past_exam_questions.txt',
-  't31': 't31_exam_topics_list.txt',
+  't01': ['t01_handling_restraint.txt'],
+  't02': ['t02_physical_exam_IPPA.txt'],
+  't03': ['t03_order_clinical_exam.txt'],
+  't04': ['t05_habitus_body_condition.txt', 't04_history_taking.txt'],
+  't05': ['t06_vital_signs.txt'],
+  't06': ['t06_vital_signs.txt'],
+  't07': ['t06_vital_signs.txt'],
+  't08': ['t06_vital_signs.txt'],
+  't09': ['t11_chemistry_profile_biochemistry.txt'],
+  't10': ['t10_blood_collection_CBC.txt', 't29_haematology_reference.txt'],
+  't11': ['t07_mucous_membranes_lymph_nodes.txt'],
+  't12': ['t08_peripheral_circulation.txt'],
+  't13': ['t13_blood_pressure.txt'],
+  't14': ['t14_weight_exercise_testing.txt'],
+  't15': ['t09_drug_administration.txt'],
+  't16': ['t12_heart_exam_ECG.txt'],
+  't17': ['t16_GI_clinical_signs.txt'],
+  't18': ['t17_oral_oesophagus_stomach_tube.txt'],
+  't19': ['t18_abdominal_exam_small_animals.txt'],
+  't20': ['t19_abdominal_exam_horses_ruminants.txt'],
+  't21': ['t19_abdominal_exam_horses_ruminants.txt'],
+  't22': ['t21_rectal_examination.txt'],
+  't23': ['t15_respiratory_system.txt'],
+  't24': ['t23_urinary_clinical_signs.txt', 't24_urinary_system_examination.txt'],
+  't25': ['t25_catheterisation_urinalysis.txt'],
+  't26': ['t26_neurological_examination.txt'],
+  't27': ['t27_dermatology.txt'],
+  't28': ['t28_small_mammals.txt'],
+  't29': ['t20_liver_examination.txt'],
+  't30': ['t27_dermatology.txt'],
+  't31': ['t22_abdominocentesis_thoracocentesis.txt'],
 };
 
 let aiState = {
@@ -1879,17 +1879,24 @@ function closeAiFeature() {
   aiState.currentFeature = null;
 }
 
-// ---- Fetch topic file from GitHub (cached) ----
+// ---- Fetch topic file(s) from GitHub (cached, supports multiple files) ----
 async function fetchTopicFile(topicId) {
   if (aiState.fileCache[topicId]) return aiState.fileCache[topicId];
-  const filename = AI_TOPIC_FILES[topicId];
-  if (!filename) return null;
+  const files = AI_TOPIC_FILES[topicId];
+  if (!files || files.length === 0) return null;
   try {
-    const res = await fetch(GITHUB_RAW + encodeURIComponent(filename));
-    if (!res.ok) throw new Error('HTTP ' + res.status);
-    const text = await res.text();
-    aiState.fileCache[topicId] = text;
-    return text;
+    const texts = await Promise.all(files.map(async filename => {
+      const cacheKey = '__file__' + filename;
+      if (aiState.fileCache[cacheKey]) return aiState.fileCache[cacheKey];
+      const res = await fetch(GITHUB_RAW + encodeURIComponent(filename));
+      if (!res.ok) throw new Error('HTTP ' + res.status + ' for ' + filename);
+      const text = await res.text();
+      aiState.fileCache[cacheKey] = text;
+      return text;
+    }));
+    const combined = texts.join('\n\n================================================================================\n\n');
+    aiState.fileCache[topicId] = combined;
+    return combined;
   } catch(e) {
     return null;
   }
