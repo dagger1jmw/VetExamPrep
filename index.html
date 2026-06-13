@@ -1737,37 +1737,37 @@ const GITHUB_RAW = 'https://raw.githubusercontent.com/dagger1jmw/VetExamPrep/mai
 
 // Map topic IDs to their .txt filenames on GitHub
 const AI_TOPIC_FILES = {
-  't01': ['t01_handling_restraint.txt'],
-  't02': ['t02_physical_exam_IPPA.txt'],
-  't03': ['t03_order_clinical_exam.txt'],
-  't04': ['t05_habitus_body_condition.txt', 't04_history_taking.txt'],
-  't05': ['t06_vital_signs.txt'],
-  't06': ['t06_vital_signs.txt'],
-  't07': ['t06_vital_signs.txt'],
-  't08': ['t06_vital_signs.txt'],
-  't09': ['t11_chemistry_profile_biochemistry.txt'],
-  't10': ['t10_blood_collection_CBC.txt', 't29_haematology_reference.txt'],
-  't11': ['t07_mucous_membranes_lymph_nodes.txt'],
-  't12': ['t08_peripheral_circulation.txt'],
-  't13': ['t13_blood_pressure.txt'],
-  't14': ['t14_weight_exercise_testing.txt'],
-  't15': ['t09_drug_administration.txt'],
-  't16': ['t12_heart_exam_ECG.txt'],
-  't17': ['t16_GI_clinical_signs.txt'],
-  't18': ['t17_oral_oesophagus_stomach_tube.txt'],
-  't19': ['t18_abdominal_exam_small_animals.txt'],
-  't20': ['t19_abdominal_exam_horses_ruminants.txt'],
-  't21': ['t19_abdominal_exam_horses_ruminants.txt'],
-  't22': ['t21_rectal_examination.txt'],
-  't23': ['t15_respiratory_system.txt'],
-  't24': ['t23_urinary_clinical_signs.txt', 't24_urinary_system_examination.txt'],
-  't25': ['t25_catheterisation_urinalysis.txt'],
-  't26': ['t26_neurological_examination.txt'],
-  't27': ['t27_dermatology.txt'],
-  't28': ['t28_small_mammals.txt'],
-  't29': ['t20_liver_examination.txt'],
-  't30': ['t27_dermatology.txt'],
-  't31': ['t22_abdominocentesis_thoracocentesis.txt'],
+  't01': ['t01%20handling%20restraint.txt'],
+  't02': ['t02%20physical%20exam%20IPPA.txt'],
+  't03': ['t03%20order%20clinical%20exam.txt'],
+  't04': ['t05%20habitus%20body%20condition.txt', 't04%20history%20taking.txt'],
+  't05': ['t06%20vital%20signs.txt'],
+  't06': ['t06%20vital%20signs.txt'],
+  't07': ['t06%20vital%20signs.txt'],
+  't08': ['t06%20vital%20signs.txt'],
+  't09': ['t11%20chemistry%20profile%20biochemistry.txt'],
+  't10': ['t10%20blood%20collection%20CBC.txt', 't29%20haematology%20reference.txt'],
+  't11': ['t07%20mucous%20membranes%20lymph%20nodes.txt'],
+  't12': ['t08%20peripheral%20circulation.txt'],
+  't13': ['t13%20blood%20pressure.txt'],
+  't14': ['t14%20weight%20exercise%20testing.txt'],
+  't15': ['t09%20drug%20administration.txt'],
+  't16': ['t12%20heart%20exam%20ECG.txt'],
+  't17': ['t16%20GI%20clinical%20signs.txt'],
+  't18': ['t17%20oral%20oesophagus%20stomach%20tube.txt'],
+  't19': ['t18%20abdominal%20exam%20small%20animals.txt'],
+  't20': ['t19%20abdominal%20exam%20horses%20ruminants.txt'],
+  't21': ['t19%20abdominal%20exam%20horses%20ruminants.txt'],
+  't22': ['t21%20rectal%20examination.txt'],
+  't23': ['t15%20respiratory%20system.txt'],
+  't24': ['t23%20urinary%20clinical%20signs.txt', 't24%20urinary%20system%20examination.txt'],
+  't25': ['t25%20catheterisation%20urinalysis.txt'],
+  't26': ['t26%20neurological%20examination.txt'],
+  't27': ['t27%20dermatology.txt'],
+  't28': ['t28%20small%20mammals.txt'],
+  't29': ['t20%20liver%20examination.txt'],
+  't30': ['t27%20dermatology.txt'],
+  't31': ['t22%20abdominocentesis%20thoracocentesis.txt'],
 };
 
 let aiState = {
@@ -1888,7 +1888,7 @@ async function fetchTopicFile(topicId) {
     const texts = await Promise.all(files.map(async filename => {
       const cacheKey = '__file__' + filename;
       if (aiState.fileCache[cacheKey]) return aiState.fileCache[cacheKey];
-      const res = await fetch(GITHUB_RAW + encodeURIComponent(filename));
+      const res = await fetch(GITHUB_RAW + filename);
       if (!res.ok) throw new Error('HTTP ' + res.status + ' for ' + filename);
       const text = await res.text();
       aiState.fileCache[cacheKey] = text;
