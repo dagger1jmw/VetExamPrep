@@ -138,6 +138,39 @@
   #subject-nav-strip.visible { display: flex; align-items: center; gap: 2px; flex-wrap: wrap; }
   #subject-nav-strip .subject-label { font-size: 0.78rem; font-weight: 700; color: var(--text-muted); padding: 8px 10px 8px 0; margin-right: 6px; border-right: 1px solid var(--border); white-space: nowrap; }
   @media (max-width: 600px) { .hero h1 { font-size: 1.3rem; } .page { padding: 12px; } nav .logo { font-size: 0.95rem; } .subject-grid { grid-template-columns: 1fr; } }
+  /* AI Tutor page */
+  .ai-setup-box { background: linear-gradient(135deg,#f5f0fb,#e8f4ff); border: 2px solid var(--primary); border-radius: 18px; padding: 24px; margin-bottom: 22px; }
+  .ai-step { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 16px; }
+  .ai-step-num { width: 32px; height: 32px; border-radius: 50%; background: var(--primary); color: white; font-weight: 800; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .ai-step-body { flex: 1; font-size: 0.88rem; line-height: 1.6; }
+  .ai-step-body strong { color: var(--primary-dark); }
+  .ai-step-body code { background: var(--surface2); border: 1px solid var(--border); border-radius: 5px; padding: 1px 6px; font-size: 0.82rem; color: var(--primary-dark); }
+  .ai-key-input { width: 100%; padding: 12px 14px; border: 2px solid var(--border); border-radius: 10px; font-size: 0.95rem; font-family: monospace; background: var(--surface); color: var(--text); margin: 10px 0; transition: border-color 0.2s; }
+  .ai-key-input:focus { outline: none; border-color: var(--primary); }
+  .ai-key-input.valid { border-color: var(--correct-dark); }
+  .ai-key-input.invalid { border-color: var(--wrong-dark); }
+  .ai-feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 14px; margin-top: 6px; }
+  .ai-feature-btn { background: var(--surface); border: 2px solid var(--border); border-radius: 14px; padding: 20px 16px; cursor: pointer; transition: all 0.2s; text-align: center; }
+  .ai-feature-btn:hover { border-color: var(--primary); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(120,80,200,0.15); }
+  .ai-feature-btn .af-icon { font-size: 2rem; margin-bottom: 8px; }
+  .ai-feature-btn .af-name { font-weight: 700; color: var(--primary-dark); font-size: 0.95rem; margin-bottom: 4px; }
+  .ai-feature-btn .af-desc { font-size: 0.78rem; color: var(--text-muted); }
+  .ai-panel { display: none; }
+  .ai-panel.active { display: block; }
+  .ai-panel-header { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+  .ai-panel-back { background: none; border: none; color: var(--primary-dark); font-size: 0.88rem; font-weight: 700; cursor: pointer; padding: 6px 0; }
+  .ai-panel-back:hover { text-decoration: underline; }
+  .topic-select-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(200px,1fr)); gap: 8px; margin-bottom: 16px; }
+  .topic-select-btn { background: var(--surface2); border: 1.5px solid var(--border); border-radius: 10px; padding: 10px 12px; font-size: 0.82rem; font-weight: 600; color: var(--text); cursor: pointer; text-align: left; transition: all 0.15s; }
+  .topic-select-btn:hover, .topic-select-btn.selected { border-color: var(--primary); background: #f0e6ff; color: var(--primary-dark); }
+  .ai-chat-area { background: var(--surface); border: 1.5px solid var(--border); border-radius: 12px; padding: 16px; min-height: 120px; max-height: 420px; overflow-y: auto; margin-bottom: 12px; font-size: 0.88rem; line-height: 1.7; }
+  .ai-chat-area .ai-msg { background: linear-gradient(135deg,#f0e6ff,#e8f4ff); border-radius: 10px; padding: 12px 14px; margin-bottom: 10px; white-space: pre-wrap; }
+  .ai-chat-area .user-msg { background: var(--surface2); border-radius: 10px; padding: 10px 14px; margin-bottom: 10px; color: var(--text-muted); font-style: italic; }
+  .ai-chat-area .ai-thinking { color: var(--text-muted); font-style: italic; animation: pulse 1.2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+  .ai-textarea { width: 100%; min-height: 100px; padding: 12px; border: 1.5px solid var(--border); border-radius: 10px; font-size: 0.88rem; font-family: inherit; resize: vertical; background: var(--surface); color: var(--text); }
+  .ai-textarea:focus { outline: none; border-color: var(--primary); }
+  .rate-limit-note { background: #fff3cd; border: 1px solid #ffc107; border-radius: 10px; padding: 12px 14px; font-size: 0.82rem; color: #856404; margin-top: 14px; line-height: 1.6; }
 </style>
 </head>
 <body>
@@ -152,6 +185,7 @@
   <button class="nav-btn" id="snav-practical" onclick="showPage('practical')">🔬 Practical</button>
   <button class="nav-btn" id="snav-pastqs" onclick="showPage('pastqs')">📋 Past Exams</button>
   <button class="nav-btn" id="snav-stats" onclick="showPage('stats')">📊 Progress</button>
+  <button class="nav-btn" id="snav-ai" onclick="showPage('ai')" style="color:var(--primary-dark);font-weight:800">✨ AI Tutor</button>
 </div>
 
 <div id="page-subjects" class="page active">
@@ -181,6 +215,7 @@
     <div class="mode-card" onclick="startExamMode()"><div class="icon">🎯</div><h3>Exam Prep Mode</h3><p>3–4 random questions per topic. Simulate your exam.</p></div>
     <div class="mode-card" onclick="showPage('practical')"><div class="icon">🔬</div><h3>Practical Skills</h3><p>Describe clinical procedures. Self-grade after revealing model answers.</p></div>
     <div class="mode-card" onclick="showPage('pastqs')"><div class="icon">📋</div><h3>Past Exam Questions</h3><p>Practice with real questions from previous written exams.</p></div>
+    <div class="mode-card" onclick="showPage('ai')" style="border-color:var(--primary);background:linear-gradient(135deg,#f5f0fb,#e8f4ff)"><div class="icon">✨</div><h3 style="color:var(--primary-dark)">AI Tutor</h3><p>Topic review, clinical scenarios, generated questions, and summaries — powered by Gemini.</p></div>
   </div>
   <div class="section-title">📊 Recent Sessions</div>
   <div id="home-stats"></div>
@@ -252,6 +287,196 @@
   <div class="section-title">🕐 Session History</div>
   <div id="session-history-list"></div>
 </div>
+
+<!-- =====================================================================
+     AI TUTOR PAGE
+     ===================================================================== -->
+<div id="page-ai" class="page">
+
+  <!-- Setup / Key entry panel -->
+  <div id="ai-setup-view">
+    <div class="hero" style="background:linear-gradient(135deg,#c7e4f9 0%,#e8d5f5 60%,#b5ead7 100%);color:var(--text)">
+      <h1 style="color:var(--primary-dark)">✨ AI Study Tutor</h1>
+      <p style="color:var(--text-muted)">Powered by Google Gemini — uses your course notes directly from GitHub as its knowledge base. Your API key is stored only in your browser.</p>
+    </div>
+
+    <div class="ai-setup-box">
+      <div style="font-weight:800;font-size:1.05rem;color:var(--primary-dark);margin-bottom:16px">🔑 How to get your free Gemini API key</div>
+
+      <div class="ai-step">
+        <div class="ai-step-num">1</div>
+        <div class="ai-step-body">Go to <strong><a href="https://aistudio.google.com/apikey" target="_blank" style="color:var(--primary-dark)">aistudio.google.com/apikey</a></strong> and sign in with your free Google account.</div>
+      </div>
+
+      <div class="ai-step">
+        <div class="ai-step-num">2</div>
+        <div class="ai-step-body"><strong>Click "Create API Key"</strong> — choose <em>Create new project</em> when prompted. Your key will start with <code>AIza...</code> — copy it.</div>
+      </div>
+
+      <div class="ai-step">
+        <div class="ai-step-num">3</div>
+        <div class="ai-step-body">Paste it below and click <strong>Confirm Key</strong>. It is saved only in your browser's localStorage — it never leaves your device.</div>
+      </div>
+
+      <div class="ai-step">
+        <div class="ai-step-num">4</div>
+        <div class="ai-step-body"><strong>Free tier limits:</strong> 15 requests/min and 1 million tokens/day. If you hit a rate limit error, you can create a <strong>new project</strong> (not just a new key in the same project — a new project gets a fresh quota). Go back to AI Studio → select "Create new project" → create a new key there.</div>
+      </div>
+
+      <div style="margin-top:18px">
+        <label style="font-weight:700;font-size:0.85rem;color:var(--text-muted);letter-spacing:0.05em">GEMINI API KEY</label>
+        <input type="password" id="ai-key-input" class="ai-key-input" placeholder="AIza..." autocomplete="off" oninput="aiKeyInputChanged()">
+        <div id="ai-key-status" style="font-size:0.82rem;color:var(--text-muted);margin-bottom:12px">Enter your key above.</div>
+        <button class="btn btn-primary" onclick="confirmApiKey()" id="ai-confirm-btn">✓ Confirm Key</button>
+        <button class="btn btn-ghost btn-sm" onclick="clearApiKey()" id="ai-clear-btn" style="display:none;margin-left:8px">Clear Key</button>
+      </div>
+
+      <div class="rate-limit-note" style="margin-top:16px">
+        ⚠️ <strong>Hit a rate limit?</strong> You must create a <strong>new project</strong> in AI Studio — not just a new API key. Keys in the same project share the same quota. Go to <a href="https://aistudio.google.com/apikey" target="_blank" style="color:#856404">aistudio.google.com/apikey</a>, click the project selector at the top, then <em>New project</em>.
+      </div>
+    </div>
+
+    <!-- Feature buttons — shown after key is confirmed -->
+    <div id="ai-features-grid" style="display:none">
+      <div style="font-weight:800;font-size:1.05rem;color:var(--primary-dark);margin-bottom:14px">What would you like to do?</div>
+      <div class="ai-feature-grid">
+        <div class="ai-feature-btn" onclick="openAiFeature('review')">
+          <div class="af-icon">📝</div>
+          <div class="af-name">Topic Review</div>
+          <div class="af-desc">Tell the AI what you know about a topic. It checks your answer against the course notes and tells you what's right, what's missing, and what's wrong.</div>
+        </div>
+        <div class="ai-feature-btn" onclick="openAiFeature('practical')">
+          <div class="af-icon">🏥</div>
+          <div class="af-name">Practical Scenarios</div>
+          <div class="af-desc">Get a clinical scenario (e.g. "Perform thoracocentesis on a dyspnoeic dog"). Describe your procedure and the AI grades your technique.</div>
+        </div>
+        <div class="ai-feature-btn" onclick="openAiFeature('questions')">
+          <div class="af-icon">🎯</div>
+          <div class="af-name">Generate Questions</div>
+          <div class="af-desc">The AI generates new exam-style questions from the course notes for any topic — great for drilling beyond the built-in question bank.</div>
+        </div>
+        <div class="ai-feature-btn" onclick="openAiFeature('summary')">
+          <div class="af-icon">📋</div>
+          <div class="af-name">Topic Summary</div>
+          <div class="af-desc">Ask for a concise summary of any topic — key facts, normal values, clinical pearls — drawn directly from your course notes.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Feature panels (shown when a feature button is clicked) -->
+
+  <!-- TOPIC REVIEW -->
+  <div id="ai-panel-review" class="ai-panel">
+    <div class="ai-panel-header">
+      <button class="ai-panel-back" onclick="closeAiFeature()">← Back to AI Tutor</button>
+      <div style="font-weight:800;color:var(--primary-dark);font-size:1rem">📝 Topic Review</div>
+    </div>
+    <div class="card" style="margin-bottom:14px">
+      <div style="font-weight:600;margin-bottom:10px">1. Select a topic</div>
+      <div class="topic-select-grid" id="review-topic-grid"></div>
+    </div>
+    <div class="card">
+      <div style="font-weight:600;margin-bottom:8px">2. Write everything you know about this topic</div>
+      <div style="font-size:0.82rem;color:var(--text-muted);margin-bottom:10px">Don't hold back — the more you write, the more detailed the feedback. Include normal values, procedures, species differences, clinical signs — anything relevant.</div>
+      <textarea id="review-input" class="ai-textarea" placeholder="Write your knowledge of the selected topic here..."></textarea>
+      <div style="margin-top:10px">
+        <button class="btn btn-primary" onclick="submitReview()">✓ Submit for Review</button>
+        <span id="review-topic-label" style="margin-left:12px;font-size:0.82rem;color:var(--text-muted)">No topic selected</span>
+      </div>
+    </div>
+    <div id="review-chat" class="ai-chat-area" style="display:none;margin-top:14px"></div>
+  </div>
+
+  <!-- PRACTICAL SCENARIOS -->
+  <div id="ai-panel-practical" class="ai-panel">
+    <div class="ai-panel-header">
+      <button class="ai-panel-back" onclick="closeAiFeature()">← Back to AI Tutor</button>
+      <div style="font-weight:800;color:var(--primary-dark);font-size:1rem">🏥 Practical Scenarios</div>
+    </div>
+    <div class="card" style="margin-bottom:14px">
+      <div style="font-weight:600;margin-bottom:10px">1. Select a topic for the scenario</div>
+      <div class="topic-select-grid" id="practical-topic-grid"></div>
+      <button class="btn btn-primary btn-sm" style="margin-top:10px" onclick="generateScenario()">🎲 Generate a Clinical Scenario</button>
+    </div>
+    <div id="practical-scenario-box" style="display:none">
+      <div class="card" style="background:linear-gradient(135deg,#fff3cd,#ffeaa7);border:1.5px solid #ffc107;margin-bottom:14px">
+        <div style="font-weight:700;color:#856404;margin-bottom:8px">📋 Clinical Scenario</div>
+        <div id="practical-scenario-text" style="line-height:1.7"></div>
+      </div>
+      <div class="card">
+        <div style="font-weight:600;margin-bottom:8px">Describe your procedure step by step</div>
+        <textarea id="practical-input" class="ai-textarea" placeholder="Describe what you would do, step by step..."></textarea>
+        <button class="btn btn-primary" style="margin-top:10px" onclick="submitPractical()">✓ Submit Answer</button>
+      </div>
+      <div id="practical-chat" class="ai-chat-area" style="display:none;margin-top:14px"></div>
+    </div>
+  </div>
+
+  <!-- GENERATE QUESTIONS -->
+  <div id="ai-panel-questions" class="ai-panel">
+    <div class="ai-panel-header">
+      <button class="ai-panel-back" onclick="closeAiFeature()">← Back to AI Tutor</button>
+      <div style="font-weight:800;color:var(--primary-dark);font-size:1rem">🎯 Generate Questions</div>
+    </div>
+    <div class="card" style="margin-bottom:14px">
+      <div style="font-weight:600;margin-bottom:10px">1. Select a topic</div>
+      <div class="topic-select-grid" id="questions-topic-grid"></div>
+      <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+        <div>
+          <label style="font-size:0.82rem;font-weight:600;color:var(--text-muted)">Type</label><br>
+          <select id="q-type-select" class="styled" style="margin-top:4px">
+            <option value="mixed">Mixed (MCQ + T/F)</option>
+            <option value="mcq">MCQ only</option>
+            <option value="short">Short answer</option>
+          </select>
+        </div>
+        <div>
+          <label style="font-size:0.82rem;font-weight:600;color:var(--text-muted)">Number</label><br>
+          <select id="q-count-select" class="styled" style="margin-top:4px">
+            <option value="5">5 questions</option>
+            <option value="10" selected>10 questions</option>
+            <option value="15">15 questions</option>
+          </select>
+        </div>
+        <div style="align-self:flex-end">
+          <button class="btn btn-primary" onclick="generateQuestions()">🎯 Generate Questions</button>
+        </div>
+      </div>
+    </div>
+    <div id="questions-chat" class="ai-chat-area" style="display:none"></div>
+  </div>
+
+  <!-- TOPIC SUMMARY -->
+  <div id="ai-panel-summary" class="ai-panel">
+    <div class="ai-panel-header">
+      <button class="ai-panel-back" onclick="closeAiFeature()">← Back to AI Tutor</button>
+      <div style="font-weight:800;color:var(--primary-dark);font-size:1rem">📋 Topic Summary</div>
+    </div>
+    <div class="card" style="margin-bottom:14px">
+      <div style="font-weight:600;margin-bottom:10px">Select a topic to summarise</div>
+      <div class="topic-select-grid" id="summary-topic-grid"></div>
+      <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+        <div>
+          <label style="font-size:0.82rem;font-weight:600;color:var(--text-muted)">Focus</label><br>
+          <select id="summary-focus-select" class="styled" style="margin-top:4px">
+            <option value="full">Full overview</option>
+            <option value="values">Normal values only</option>
+            <option value="clinical">Clinical pearls &amp; high-yield facts</option>
+            <option value="species">Species differences</option>
+            <option value="procedure">Procedures &amp; techniques</option>
+          </select>
+        </div>
+        <div style="align-self:flex-end">
+          <button class="btn btn-primary" onclick="generateSummary()">📋 Generate Summary</button>
+        </div>
+      </div>
+    </div>
+    <div id="summary-chat" class="ai-chat-area" style="display:none"></div>
+  </div>
+
+</div>
+<!-- END AI TUTOR PAGE -->
 
 <div class="modal-overlay" id="result-modal">
   <div class="modal">
@@ -1503,6 +1728,399 @@ function resetAllStats() {
   renderStats();
   renderHome();
 }
+
+// =====================================================================
+// AI TUTOR — GEMINI 2.5 FLASH
+// =====================================================================
+
+const GITHUB_RAW = 'https://raw.githubusercontent.com/dagger1jmw/VetExamPrep/main/Clinical%20Propedeutics/';
+
+// Map topic IDs to their .txt filenames on GitHub
+const AI_TOPIC_FILES = {
+  't01': 't01_handling_restraint.txt',
+  't02': 't02_physical_exam_IPPA.txt',
+  't03': 't03_order_clinical_exam.txt',
+  't04': 't04_history_taking.txt',
+  't05': 't05_habitus_body_condition.txt',
+  't06': 't06_vital_signs.txt',
+  't07': 't07_mucous_membranes_lymph_nodes.txt',
+  't08': 't08_peripheral_circulation.txt',
+  't09': 't09_drug_administration.txt',
+  't10': 't10_blood_collection_CBC.txt',
+  't11': 't11_chemistry_profile_biochemistry.txt',
+  't12': 't12_heart_exam_ECG.txt',
+  't13': 't13_blood_pressure.txt',
+  't14': 't14_weight_exercise_testing.txt',
+  't15': 't15_respiratory_system.txt',
+  't16': 't16_GI_clinical_signs.txt',
+  't17': 't17_oral_oesophagus_stomach_tube.txt',
+  't18': 't18_abdominal_exam_small_animals.txt',
+  't19': 't19_abdominal_exam_horses_ruminants.txt',
+  't20': 't20_liver_examination.txt',
+  't21': 't21_rectal_examination.txt',
+  't22': 't22_abdominocentesis_thoracocentesis.txt',
+  't23': 't23_urinary_clinical_signs.txt',
+  't24': 't24_urinary_system_examination.txt',
+  't25': 't25_catheterisation_urinalysis.txt',
+  't26': 't26_neurological_examination.txt',
+  't27': 't27_dermatology.txt',
+  't28': 't28_small_mammals.txt',
+  't29': 't29_haematology_reference.txt',
+  't30': 't30_past_exam_questions.txt',
+  't31': 't31_exam_topics_list.txt',
+};
+
+let aiState = {
+  key: localStorage.getItem('vpGeminiKey') || '',
+  confirmed: false,
+  selectedTopic: null,   // current topic id for whichever panel is open
+  fileCache: {},         // cache fetched .txt files so we don't re-fetch
+  currentFeature: null,
+};
+
+// ---- Key management ----
+function renderAiPage() {
+  const hasKey = !!aiState.key;
+  const inp = document.getElementById('ai-key-input');
+  const status = document.getElementById('ai-key-status');
+  const clearBtn = document.getElementById('ai-clear-btn');
+  const featGrid = document.getElementById('ai-features-grid');
+  if (inp) inp.value = hasKey ? aiState.key : '';
+  if (hasKey) {
+    aiState.confirmed = true;
+    if (inp) inp.classList.add('valid');
+    if (status) status.textContent = '✓ Key loaded from storage.';
+    if (clearBtn) clearBtn.style.display = 'inline-flex';
+    if (featGrid) featGrid.style.display = 'block';
+  } else {
+    if (featGrid) featGrid.style.display = 'none';
+  }
+  buildTopicGrids();
+}
+
+function aiKeyInputChanged() {
+  const inp = document.getElementById('ai-key-input');
+  const status = document.getElementById('ai-key-status');
+  inp.classList.remove('valid','invalid');
+  status.textContent = 'Enter your key above.';
+}
+
+function confirmApiKey() {
+  const inp = document.getElementById('ai-key-input');
+  const key = inp.value.trim();
+  const status = document.getElementById('ai-key-status');
+  if (!key.startsWith('AIza') || key.length < 30) {
+    inp.classList.add('invalid');
+    status.textContent = '✗ That doesn\'t look like a valid Gemini key. It should start with AIza and be ~40 characters.';
+    status.style.color = 'var(--wrong-dark)';
+    return;
+  }
+  aiState.key = key;
+  aiState.confirmed = true;
+  localStorage.setItem('vpGeminiKey', key);
+  inp.classList.add('valid');
+  status.textContent = '✓ Key saved to browser storage.';
+  status.style.color = 'var(--correct-dark)';
+  document.getElementById('ai-clear-btn').style.display = 'inline-flex';
+  document.getElementById('ai-features-grid').style.display = 'block';
+}
+
+function clearApiKey() {
+  aiState.key = '';
+  aiState.confirmed = false;
+  localStorage.removeItem('vpGeminiKey');
+  const inp = document.getElementById('ai-key-input');
+  inp.value = '';
+  inp.classList.remove('valid','invalid');
+  document.getElementById('ai-key-status').textContent = 'Key cleared.';
+  document.getElementById('ai-key-status').style.color = 'var(--text-muted)';
+  document.getElementById('ai-clear-btn').style.display = 'none';
+  document.getElementById('ai-features-grid').style.display = 'none';
+}
+
+// ---- Topic selector grids ----
+function buildTopicGrids() {
+  ['review','practical','questions','summary'].forEach(panel => {
+    const el = document.getElementById(panel + '-topic-grid');
+    if (!el) return;
+    el.innerHTML = TOPICS.map(t =>
+      '<button class="topic-select-btn" id="tsel-'+panel+'-'+t.id+'" onclick="selectAiTopic(\''+panel+'\',\''+t.id+'\')">'+t.name+'</button>'
+    ).join('');
+  });
+}
+
+function selectAiTopic(panel, topicId) {
+  // deselect all in this panel
+  document.querySelectorAll('#'+panel+'-topic-grid .topic-select-btn').forEach(b => b.classList.remove('selected'));
+  const btn = document.getElementById('tsel-'+panel+'-'+topicId);
+  if (btn) btn.classList.add('selected');
+  aiState['selected_'+panel] = topicId;
+  if (panel === 'review') {
+    const label = document.getElementById('review-topic-label');
+    if (label) label.textContent = 'Selected: ' + (TOPICS.find(t=>t.id===topicId)||{}).name;
+  }
+}
+
+// ---- Feature navigation ----
+function openAiFeature(feature) {
+  if (!aiState.confirmed) {
+    alert('Please confirm your API key first.');
+    return;
+  }
+  document.getElementById('ai-setup-view').style.display = 'none';
+  document.querySelectorAll('.ai-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('ai-panel-'+feature).classList.add('active');
+  aiState.currentFeature = feature;
+}
+
+function closeAiFeature() {
+  document.getElementById('ai-setup-view').style.display = 'block';
+  document.querySelectorAll('.ai-panel').forEach(p => p.classList.remove('active'));
+  aiState.currentFeature = null;
+}
+
+// ---- Fetch topic file from GitHub (cached) ----
+async function fetchTopicFile(topicId) {
+  if (aiState.fileCache[topicId]) return aiState.fileCache[topicId];
+  const filename = AI_TOPIC_FILES[topicId];
+  if (!filename) return null;
+  try {
+    const res = await fetch(GITHUB_RAW + encodeURIComponent(filename));
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const text = await res.text();
+    aiState.fileCache[topicId] = text;
+    return text;
+  } catch(e) {
+    return null;
+  }
+}
+
+// ---- Core Gemini API call ----
+async function callGemini(systemPrompt, userMessage, outputEl) {
+  if (!aiState.key) { showAiError(outputEl, 'No API key set. Please confirm your key first.'); return; }
+  outputEl.style.display = 'block';
+  outputEl.innerHTML = '<div class="ai-thinking">✨ Thinking...</div>';
+
+  const messages = [{ role: 'user', content: systemPrompt + '\n\n---\n\n' + userMessage }];
+
+  try {
+    const res = await fetch(
+      'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=' + aiState.key,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contents: [{ role: 'user', parts: [{ text: systemPrompt + '\n\n---\n\nUSER INPUT:\n' + userMessage }] }],
+          generationConfig: { maxOutputTokens: 2048, temperature: 0.3 }
+        })
+      }
+    );
+    const data = await res.json();
+    if (!res.ok) {
+      const errMsg = (data.error && data.error.message) || ('HTTP ' + res.status);
+      const isRateLimit = errMsg.toLowerCase().includes('quota') || errMsg.toLowerCase().includes('429') || res.status === 429;
+      showAiError(outputEl, errMsg, isRateLimit);
+      return;
+    }
+    const text = data.candidates?.[0]?.content?.parts?.[0]?.text || 'No response received.';
+    outputEl.innerHTML = '<div class="ai-msg">' + escapeHtml(text).replace(/\n/g,'<br>').replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/\*(.+?)\*/g,'<em>$1</em>') + '</div>';
+  } catch(e) {
+    showAiError(outputEl, 'Network error: ' + e.message);
+  }
+}
+
+function showAiError(el, msg, isRateLimit) {
+  const rateLimitHint = isRateLimit
+    ? '<br><br><strong>Rate limit hit.</strong> You need to create a <em>new project</em> in <a href="https://aistudio.google.com/apikey" target="_blank" style="color:#c0392b">AI Studio</a> — not just a new key. A new project gets a fresh quota. Click the project selector at the top of AI Studio → "New project" → create a new key there.'
+    : '';
+  el.style.display = 'block';
+  el.innerHTML = '<div class="ai-msg" style="background:#fff0f0;border:1px solid var(--wrong-dark)"><strong>⚠ Error:</strong> ' + escapeHtml(msg) + rateLimitHint + '</div>';
+}
+
+function escapeHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ---- FEATURE 1: TOPIC REVIEW ----
+async function submitReview() {
+  const topicId = aiState['selected_review'];
+  const input = document.getElementById('review-input').value.trim();
+  const chatEl = document.getElementById('review-chat');
+  if (!topicId) { alert('Please select a topic first.'); return; }
+  if (!input) { alert('Please write something about the topic first.'); return; }
+
+  chatEl.style.display = 'block';
+  chatEl.innerHTML = '<div class="user-msg">' + escapeHtml(input.substring(0,200)) + (input.length>200?'...':'') + '</div><div class="ai-thinking">✨ Fetching course notes and reviewing your answer...</div>';
+
+  const notes = await fetchTopicFile(topicId);
+  const topicName = (TOPICS.find(t=>t.id===topicId)||{}).name || topicId;
+
+  if (!notes) {
+    chatEl.innerHTML += '<div class="ai-msg" style="background:#fff0f0">Could not fetch course notes from GitHub. Check your internet connection.</div>';
+    return;
+  }
+
+  const systemPrompt = `You are a veterinary propedeutics tutor. The student has written what they know about the topic "${topicName}". Your job is to review their answer against the official course notes provided below.
+
+COURSE NOTES FOR "${topicName}":
+${notes.substring(0, 12000)}
+
+INSTRUCTIONS:
+- First, praise what they got CORRECT and COMPLETE. Be specific — quote their correct points back.
+- Then, identify what is MISSING from their answer (important facts from the notes they didn't mention).
+- Then, flag anything INCORRECT or CONFUSED.
+- End with a short 2-3 sentence summary of the most important things to remember for this topic.
+- Be encouraging but accurate. Use clear headings: ✓ CORRECT, ⚠ MISSING, ✗ INCORRECT, 📌 KEY POINTS TO REMEMBER.
+- Keep the response focused and practical for exam preparation.`;
+
+  await callGemini(systemPrompt, input, chatEl);
+}
+
+// ---- FEATURE 2: PRACTICAL SCENARIOS ----
+async function generateScenario() {
+  const topicId = aiState['selected_practical'];
+  const scenarioBox = document.getElementById('practical-scenario-box');
+  const scenarioText = document.getElementById('practical-scenario-text');
+  const chatEl = document.getElementById('practical-chat');
+  if (!topicId) { alert('Please select a topic first.'); return; }
+
+  scenarioBox.style.display = 'block';
+  chatEl.style.display = 'none';
+  scenarioText.innerHTML = '<em style="color:var(--text-muted)">Generating scenario...</em>';
+
+  const notes = await fetchTopicFile(topicId);
+  const topicName = (TOPICS.find(t=>t.id===topicId)||{}).name || topicId;
+
+  const systemPrompt = `You are a veterinary propedeutics tutor. Generate ONE realistic clinical scenario based on the topic "${topicName}" using this course material:
+
+${(notes||'').substring(0, 8000)}
+
+RULES:
+- Describe a patient (species, age, sex, presenting signs) and a specific task for the student (e.g. "Perform a rectal examination", "Collect a blood sample", "Take the pulse").
+- Keep it to 3-4 sentences.
+- Make it realistic and exam-appropriate.
+- Output ONLY the scenario — no answers, no hints, no headings.`;
+
+  const res = await fetch(
+    'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=' + aiState.key,
+    {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        contents: [{ role: 'user', parts: [{ text: systemPrompt }] }],
+        generationConfig: { maxOutputTokens: 300, temperature: 0.7 }
+      })
+    }
+  );
+  const data = await res.json();
+  if (!res.ok) { scenarioText.innerHTML = '<em style="color:var(--wrong-dark)">Error generating scenario.</em>'; return; }
+  const text = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
+  scenarioText.innerHTML = escapeHtml(text).replace(/\n/g,'<br>');
+  aiState.practicalNotes = notes;
+  aiState.practicalScenario = text;
+  aiState.practicalTopicName = topicName;
+}
+
+async function submitPractical() {
+  const input = document.getElementById('practical-input').value.trim();
+  const chatEl = document.getElementById('practical-chat');
+  if (!input) { alert('Please describe your procedure first.'); return; }
+
+  const systemPrompt = `You are a veterinary propedeutics tutor. A student was given this clinical scenario:
+
+"${aiState.practicalScenario || 'General clinical scenario'}"
+
+The topic is: ${aiState.practicalTopicName || 'Clinical propedeutics'}
+
+Relevant course notes:
+${(aiState.practicalNotes||'').substring(0, 10000)}
+
+The student's answer is their step-by-step procedure. Evaluate it:
+- ✓ CORRECT STEPS: What did they do right?
+- ⚠ MISSING STEPS: What important steps did they omit?
+- ✗ INCORRECT TECHNIQUE: What did they do wrong or in the wrong order?
+- 📌 CORRECT PROCEDURE: Give the full correct step-by-step procedure from the notes.
+Be specific, practical, and exam-focused.`;
+
+  await callGemini(systemPrompt, input, chatEl);
+}
+
+// ---- FEATURE 3: GENERATE QUESTIONS ----
+async function generateQuestions() {
+  const topicId = aiState['selected_questions'];
+  const chatEl = document.getElementById('questions-chat');
+  const qType = document.getElementById('q-type-select').value;
+  const qCount = document.getElementById('q-count-select').value;
+  if (!topicId) { alert('Please select a topic first.'); return; }
+
+  const notes = await fetchTopicFile(topicId);
+  const topicName = (TOPICS.find(t=>t.id===topicId)||{}).name || topicId;
+  const typeInstr = qType === 'mcq' ? 'MCQ only (4 options each, indicate correct answer)'
+    : qType === 'short' ? 'short answer questions'
+    : 'a mix of MCQ (with 4 options) and True/False questions';
+
+  const systemPrompt = `You are a veterinary propedeutics tutor. Generate exactly ${qCount} exam-quality ${typeInstr} on the topic "${topicName}" based ONLY on the following course notes. After all questions, provide an answer key.
+
+COURSE NOTES:
+${(notes||'').substring(0, 12000)}
+
+FORMAT:
+Q1. [question text]
+A) ...  B) ...  C) ...  D) ...  (if MCQ)
+Correct: [A/B/C/D or True/False]
+
+Focus on clinical facts, normal values, species differences, and procedural details that would appear in a veterinary exam. Make the questions appropriately challenging.`;
+
+  await callGemini(systemPrompt, 'Generate the questions now.', chatEl);
+}
+
+// ---- FEATURE 4: TOPIC SUMMARY ----
+async function generateSummary() {
+  const topicId = aiState['selected_summary'];
+  const chatEl = document.getElementById('summary-chat');
+  const focus = document.getElementById('summary-focus-select').value;
+  if (!topicId) { alert('Please select a topic first.'); return; }
+
+  const notes = await fetchTopicFile(topicId);
+  const topicName = (TOPICS.find(t=>t.id===topicId)||{}).name || topicId;
+
+  const focusInstr = {
+    full: 'a complete overview covering all key concepts, normal values, procedures, and clinical relevance',
+    values: 'ONLY normal values and reference ranges, organised by species in a clear table or list',
+    clinical: 'high-yield clinical pearls, exam tips, and the most commonly tested facts',
+    species: 'species differences and species-specific considerations (dog, cat, horse, cow, small ruminants)',
+    procedure: 'step-by-step procedures and techniques described in the notes'
+  }[focus] || 'a full overview';
+
+  const systemPrompt = `You are a veterinary propedeutics tutor. Create ${focusInstr} for the topic "${topicName}" based ONLY on the following course notes.
+
+COURSE NOTES:
+${(notes||'').substring(0, 12000)}
+
+Keep it concise, well-structured, and exam-focused. Use bullet points, bold for key terms, and clear headings. This is revision material — every fact should be useful for exam preparation.`;
+
+  await callGemini(systemPrompt, 'Generate the summary now.', chatEl);
+}
+
+// ---- Update showPage to handle AI page ----
+// (Patch into existing showPage — add 'ai' handling)
+const _origShowPage = showPage;
+showPage = function(id) {
+  _origShowPage(id);
+  if (id === 'ai') {
+    // Ensure correct nav highlight
+    ['home','topics','practical','pastqs','stats'].forEach(pid => {
+      const b = document.getElementById('snav-'+pid);
+      if (b) b.classList.remove('active');
+    });
+    const aiBtn = document.getElementById('snav-ai');
+    if (aiBtn) aiBtn.classList.add('active');
+    renderAiPage();
+  } else {
+    const aiBtn = document.getElementById('snav-ai');
+    if (aiBtn) aiBtn.classList.remove('active');
+  }
+};
 
 // =====================================================================
 // INIT
