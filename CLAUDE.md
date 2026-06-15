@@ -12,11 +12,16 @@ Single-file browser-based veterinary exam prep app hosted on GitHub Pages.
 
 ## Deploying
 
+Work is committed on the local `master` branch. **GitHub Pages deploys from `main`**, so always push to both:
+
 ```bash
-npm run deploy "your commit message here"
+git add index.html propedeutics_exam_prep_V11.html
+git commit -m "your message"
+git push origin master        # update local history
+git push origin master:main   # this is what triggers GitHub Pages
 ```
 
-This builds and pushes to GitHub Pages. Always validate JS before deploying (see below).
+Always validate JS before deploying (see below).
 
 ## Validating JavaScript before any deploy
 
