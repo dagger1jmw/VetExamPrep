@@ -1,0 +1,113 @@
+NEUROPATHOLOGY — SUBTOPIC 13: PERIPHERAL NERVOUS SYSTEM DISORDERS
+Pages 26–27
+==============================================================
+
+PERIPHERAL NERVE SYSTEM (PNS)
+
+==============================================================
+DIVISIONS OF THE PERIPHERAL NERVOUS SYSTEM
+==============================================================
+  1. SENSORIMOTOR DIVISION — sensory and motor nerves
+  2. AUTONOMOUS DIVISION — sympathetic and parasympathetic system
+  3. ENTERIC DIVISION — myenteric (Auerbach) plexus and submucosal (Meissner) plexus
+
+==============================================================
+DYSAUTONOMIAS
+==============================================================
+Definition: degeneration of neurons in the ganglia of the enteric division of the PNS
+  - Can be acquired or hereditary
+
+--- EQUINE DYSAUTONOMIA (EQUINE GRASS SICKNESS) — ACQUIRED ---
+Cause: ingestion of food contaminated with Clostridium botulinum type C
+
+Macro: NO macroscopic changes on PNS
+
+Micro:
+  - Chromatolysis, degeneration: neurons of autonomic and enteric ganglia within the ileum
+  - Chromatolysis, pyknosis, vacuolar change in affected neurons
+
+Clinical signs:
+  - Dysphagia
+  - Paralytic ileus
+  - Gut stasis (colic)
+  - VERY BAD PROGNOSIS, very high mortality
+
+==============================================================
+MYASTHENIA GRAVIS
+==============================================================
+
+--- INHERITED FORM ---
+  - Genetic disease
+  - Too small number of acetylcholine receptors on the muscular plates (endplates) of neuromuscular junctions
+  - No macroscopic or microscopic changes in CNS or PNS
+
+--- ACQUIRED FORM ---
+  - Associated with: thymoma, thymic hyperplasia
+  - Development of ANTIBODIES that bind to acetylcholine receptors on postsynaptic muscle membranes
+  - Type: TYPE II HYPERSENSITIVITY
+  - No macro or micro changes in CNS or PNS
+
+Clinical signs:
+  - Skeletal muscle weakness (fatigable)
+  - Megaoesophagus development
+
+==============================================================
+BOTULISM
+==============================================================
+Agent: intoxication with exotoxin of Clostridium botulinum types A, B, C, D
+Species most commonly affected: horses and cattle
+
+THREE TYPES REGARDING PORTAL OF ENTRY:
+
+  1. TOXIC INFECTIVE (foals):
+     - Bacterial spores enter the organism
+     - Proliferation and toxin production under anaerobic conditions (intestinal colonisation)
+
+  2. ORAL INTOXICATION (adult horses):
+     - Pre-formed toxins introduced through contaminated feed (silage, haylage, decomposed carcasses)
+
+  3. TISSUE INJURY (rare):
+     - Development of anaerobic conditions in deep traumatic wounds with necrosis
+     - Proliferation of spores and formation of toxins in situ
+
+MECHANISM OF ACTION OF TOXIN:
+  - Exotoxin in the bloodstream enters neuromuscular junctions
+  - Binds to PRESYNAPTIC CHOLINERGIC MEMBRANE RECEPTORS
+  - Enters the cytosol of the nerve pedunculus
+  - PERMANENTLY DISABLES the release of acetylcholine
+  - Interferes with Ca²⁺-conditioned exocytosis
+
+Result:
+  - Flaccid paralysis
+  - Death due to flaccid paralysis and suffocation (diaphragm failure)
+
+Pathology:
+  - NO macroscopic changes
+  - NO microscopic changes
+
+==============================================================
+PERIPHERAL NERVE SHEATH TUMOURS
+==============================================================
+Also called: SCHWANNOMA / NEUROFIBROMA / NEURILEMOMA
+
+Species and nerve predilections:
+  DOGS: Vth cranial nerve (trigeminal), posterior cervical, anterior thoracic brachial plexus root, and skin
+  CATTLE: VIIIth cranial nerve (vestibulocochlear), brachial plexus, intercostal nerves, autonomic nerves
+  CATS: similar distribution to dogs
+
+Macro:
+  - Nodular thickening of the nervous trunk or nerve root
+  - Can be located within the dura mater
+  - Can spread through the vertebral foramen to the external environment
+  - Texture: soft to hard elastic
+  - Colour: white to grey
+
+Micro — TWO PATTERNS:
+  ANTONI A TYPE:
+    - Densely cellular
+    - Monomorphous spindle cells
+    - Variety of rich collagen stroma
+
+  ANTONI B TYPE:
+    - Less densely cellular
+    - Cell aggregates within abundant MYXOMATOUS STROMA

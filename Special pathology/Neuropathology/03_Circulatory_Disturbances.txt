@@ -1,0 +1,61 @@
+NEUROPATHOLOGY — SUBTOPIC 3: CIRCULATORY DISTURBANCES
+Pages 5–6
+==============================================================
+
+SEQUEL TO THE DEVELOPMENT OF LESIONS (General Pathway):
+  Endothelial dysfunction
+  → vasoactive mediators
+  → local and systemic changes in blood flow, pressure and permeability increase
+  → bacterial toxins increase damage
+  → vasculitis, bleeding, DIC, ischemia
+  → infarction
+  → vasogenic oedema
+
+==============================================================
+INFARCTION
+==============================================================
+Definition: necrosis due to arteriolar obstruction
+
+FAST ISCHEMIA (e.g. emboli):
+  - Extensive tissue lesion
+  - Neuronal necrosis: within seconds/minutes
+  - Necrosis of other structures: within hours
+
+SLOW ISCHEMIA (e.g. atherosclerosis):
+  - Development of anastomoses (partial compensation)
+
+CAUSES OF CEREBRAL ISCHEMIC NECROSIS:
+  - Interrupted circulation in the brain — after heart attack (cardiac arrest)
+  - Sudden hypotension — caused by reduction of heart rate
+  - Drop in oxygen concentration in inhaled air
+  - Methemoglobinemia — CO (carbon monoxide) poisoning
+  - Cyanide intoxication — inhibition of cellular respiration
+
+EXTENT OF ISCHEMIC NECROSIS (STROKE):
+  - Greater than the area of vascularisation covered by the obstructed artery
+  - Reason: degenerated neurons in the necrotic centre release neurotransmitter GLUTAMATE
+    → damage of healthy neurons at the edge of necrosis via EXCITOTOXICITY
+
+HAEMORRHAGIC INFARCTION:
+  - More devastating effect than pale (ischemic) infarction
+  - Compressive atrophy and necrosis of surrounding brain due to blood accumulation in necrotic tissue
+
+MACROSCOPIC APPEARANCE:
+  - Liquefactive necrosis = tissue softening; abundance of lipids and enzymes
+  - Grey matter infarction = HAEMORRHAGIC
+  - White matter infarction = PALE (ischemic) — small number of anastomoses
+
+REPAIR:
+  - Lack of fibrous connective tissue stroma in CNS
+  - Small infarcts → reparation with astrogliosis
+  - Large infarcts → cyst formation
+
+==============================================================
+CONGESTIVE BRAIN SWELLING
+==============================================================
+  - Post-traumatic brain enlargement
+  - Cause: elevated intracranial pressure, uncontrolled vasodilation, increased total volume of blood in distended brain capillaries
+  - Mechanism:
+      Increased hydrostatic pressure
+      → leakage of fluid into extravascular spaces
+      → increase in cellular fluid = intracellular swelling

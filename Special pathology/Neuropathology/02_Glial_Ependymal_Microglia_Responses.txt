@@ -1,0 +1,99 @@
+NEUROPATHOLOGY — SUBTOPIC 2: GLIAL, EPENDYMAL & MICROGLIA RESPONSES
+Pages 3–4
+==============================================================
+
+==============================================================
+ASTROCYTE RESPONSES TO INJURY
+==============================================================
+
+ASTROCYTOSIS
+  - Increase in cell number and cell volume
+
+ASTROGLIOSIS
+  - Cell hypertrophy due to intensified synthesis of intermediate filaments
+  - Increase in length and complexity of branching astrocytic processes
+  - Swelling = acute reversible response
+  - Permanent stimulation leads to hypertrophy
+
+GEMYSTOCYTES
+  - Astrocytes with eccentric nucleus and abundant pink (eosinophilic) cytoplasm
+  - Unlike the "invisible cytoplasm" of healthy astrocytes
+  - Occur in diseases with long-term disruption of balance between intracellular and extracellular fluid
+
+ALZHEIMER TYPE II ASTROCYTES
+  - Astrocytic nuclei in pairs with pronounced nucleoli surrounded by a clear bright space — ring of oedematous cytoplasm
+  - Present in large numbers in individuals with HEPATIC ENCEPHALOPATHY
+
+==============================================================
+OLIGODENDROCYTE RESPONSES TO INJURY
+==============================================================
+
+SATELLITOSIS
+  - Swelling and hypertrophy of perineuronal oligodendrocytes
+  - Cell swelling, hypertrophy, degeneration: perineuronal and interfascicular oligodendrocytes
+  - Proliferation and replacement of degenerated cells: exclusive precursor cells of oligodendrocytes
+
+PRIMARY DEMYELINATION
+  - Interfascicular cells degenerate under: ischemia, viruses, lead poisoning, autoimmune diseases
+  - Axon remains intact
+  - Protracted demyelination → irreversible atrophy of neurons
+  - Precursor cells located in subventricular zone → proliferation-differentiation to oligodendroglia cells → REMYELINATION
+
+SECONDARY DEMYELINATION
+  - Axonal injury leads to myelin loss = secondary demyelination + necrosis of neurons
+  - Phagocytosis and removal of myelin lamellae and dissolution of oligodendroglia (CNS) or Schwann cells (PNS)
+  - Resembles Wallerian degeneration
+
+==============================================================
+EPENDYMAL CELLS AND CHOROID PLEXUS EPITHELIAL CELLS AT INJURY
+==============================================================
+
+ATROPHY (compressive) AND DEGENERATION
+  - Increased chamber volume — hydrocephalus
+  - Loss of microvilli and cilia
+  - Reduction of cell organelles
+
+NECROSIS
+  - Ventricular enlargement, stretching, and tearing of the ependymal lining
+  - Direct exposure of the CNS to CSF
+  - THERE IS NO REGENERATION of ependymal cells
+  - Denuded areas remain permanently
+
+==============================================================
+MICROGLIA RESPONSE TO INJURY
+==============================================================
+  - Tissue injury activates them → become immunocompetent
+  - Secrete cytokines, chemokines, nitric oxide (NO), reactive oxygen species (ROS)
+  - Together with astrocytes and neurons: coordinate inflammatory processes
+  - The response range is proportional to the severity of the injury
+  - Hypertrophy and hyperplasia
+  - Phagocytosis: myelin, cellular detritus, neurons (NEURONOPHAGIA)
+
+==============================================================
+MENINGES RESPONSE TO INJURY
+==============================================================
+Routes of infection:
+  - Hematogenic infection
+  - By axonal transport
+  - Transmission within leukocytes
+
+MENINGITIS
+  - Inflammation of leptomeninges (arachnoidea + pia mater)
+  - Exudates and inflammatory cells accumulate in subarachnoid space
+  - Can be: acute, subacute, or chronic
+  - Types: suppurative, nonsuppurative, granulomatous, eosinophilic
+
+PACHYMENINGITIS
+  - Inflammation of the dura mater
+  - Inflammation of external (periosteal layer) of dura mater — consequence of osteomyelitis
+  - Formation of extradural abscesses
+  - Consequence of skull fracture
+  - Spread of leptomeningitis to internal surface of the dura
+  - Senile changes — mineralisation and ossification of the spinal cord dura
+
+DURAL OSSIFICATION / OSSIFICATING PACHYMENINGITIS (= Dural Metaplasia)
+  - Senile change in large breed dogs
+  - Cervical and lumbar regions
+  - Formation of bone plates with bone marrow
+  - Ventrolateral surface
+  - Bone plates compress spinal cord nerve roots → pain on flexion and extension of the spine

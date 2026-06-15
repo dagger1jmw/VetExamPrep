@@ -1,0 +1,69 @@
+NEUROPATHOLOGY — SUBTOPIC 1: NEURONAL INJURY RESPONSES
+Pages 2–3
+==============================================================
+
+MICROSCOPIC CHANGES VISIBLE IN THE BODY OF NEURONAL CELLS
+  a. Central chromatolysis — due to axonal injury
+  b. Ischemic change of cells (necrosis)
+  c. Increase of neuronal cell body in lysosomal storage diseases
+  d. Lipofuscin pigment accumulation during aging
+  e. Neurofilament accumulation in certain degenerative neuronal diseases
+  f. Formation of inclusions in certain viral diseases
+
+==============================================================
+NEURONAL CELLULAR RESPONSES TO INJURY
+==============================================================
+
+CENTRAL CHROMATOLYSIS
+  - Histopathological changes in the body of neurons when chromatin and cell nucleus are displaced to the periphery due to swelling of the cell
+  - Pathogenesis: includes (besides traumatic injury) vitamin B3 deficiency
+
+TOTAL CHROMATOLYSIS
+  - Disruption and loss of Nissl's substance due to axotomy (breakdown), ischemia, toxic insult, viral infection
+  - Rarely reversible; more often the first stage of apoptosis of neurons
+
+VACUOLISATION
+  - Neuronal vacuolisation characteristic of TSE (transmissible spongiform encephalopathies / prion diseases)
+
+VIRAL INCLUSION
+  - Intracytoplasmic (e.g. Negri bodies in rabies) or intranuclear
+
+NECROSIS
+  - Process that affects cell groups
+  - Hydropic degeneration, nuclear fragmentation, cell lysis due to damage of the cell membrane
+  - Cellular debris causes inflammatory response
+
+APOPTOSIS
+  - Process that affects individual isolated cells
+  - Cell death does NOT trigger an inflammatory response
+
+ISCHEMIC NEURON (Neuronal Necrosis)
+  - Cellular morphology details are lost in the neuron body
+  - Neuron = reduced size, triangular, eosinophilic with condensed nucleus
+  - Ischemic homogenization of the cell = necrosis
+
+NEURONOPHAGIA
+  - The neuron body is surrounded by macrophages/microglia that remove cellular detritus
+
+EXCITOTOXICITY
+  - Mechanism often involved in the development of neuronal necrosis
+  - Based on the action of neuroexcitatory neurotransmitters (amino acids): GLUTAMATE and ASPARTATE
+  - Sequence:
+      Initial injury → persistent activation of glutamate receptors on affected neurons
+      → influx of extracellular Ca2+ ions
+      → impaired mitochondrial functioning
+      → development of ROS (reactive oxygen species)
+      → damage to lipid membranes of nerve cells
+
+WALLERIAN DEGENERATION
+  - Changes occurring in a nerve after axon transection or breakdown in both PNS and CNS
+
+  Changes PROXIMAL to the site of injury:
+    - Central chromatolysis (coagulation of soma, dispersion of Nissl's substance, peripheral displacement of the nucleus)
+
+  Changes DISTAL from injury site:
+    - Wallerian degeneration: axonal swelling and fragmentation of myelin → degeneration and phagocytosis by microglia and macrophages
+
+  CNS vs PNS difference:
+    - CNS: process is slower, very limited regeneration
+    - PNS: if there is not too much gap between the cut ends AND endoneural tubes are preserved → good prospects for regeneration

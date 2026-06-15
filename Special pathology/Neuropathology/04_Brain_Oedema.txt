@@ -1,0 +1,63 @@
+NEUROPATHOLOGY — SUBTOPIC 4: BRAIN OEDEMA
+Page 7
+==============================================================
+
+FOUR TYPES OF BRAIN OEDEMA:
+
+==============================================================
+1. CYTOTOXIC OEDEMA
+==============================================================
+Definition: Cell swelling with NORMAL blood vessel permeability
+
+Mechanism:
+  - Hydropic degeneration of CNS cells → intracellular fluid accumulation
+  - Energy deficit (NRJ deficit)
+  → disruption of Na+/K+ pump
+  → elevated water and sodium inside cells
+  → reduced volume of extracellular fluid
+  → increased ion concentration
+  → transfer of capillary fluid and CSF into extracellular space of cells
+
+Key features:
+  - Hematoencephalic barrier REMAINS INTACT
+  - Affects BOTH white and grey matter
+  - Gyri and sulci become indistinct and FLATTENED
+  - Swelling develops within seconds after injury
+  - Macro appearance: similar to vasogenic oedema
+
+Causes: hypoxia, ischemia, hypothermia, intoxication
+
+==============================================================
+2. VASOGENIC OEDEMA
+==============================================================
+Definition: Tissue swelling due to increase of extracellular fluid volume
+
+Mechanism:
+  - Breakdown of hematoencephalic barrier
+  → plasma and electrolytes enter the perivascular and extracellular brain space
+  → preferentially affects WHITE MATTER
+
+Causes:
+  - Inflammation, haematoma, contusion, infarction
+  - Cerebral hypertension, neoplasia
+
+==============================================================
+3. HYDROSTATIC INTERSTITIAL OEDEMA
+==============================================================
+Mechanism:
+  - Hydrocephalus → increased CSF volume and pressure
+  → leaking of CSF through the ependymal layer into the white matter of the brain
+
+==============================================================
+4. HYPO-OSMOTIC OEDEMA
+==============================================================
+Cause: Water intoxication / sodium deficiency
+
+Mechanism:
+  - Irregular ion concentration and distribution between blood and nerve tissue
+  - Hyperosmolarity develops first (e.g. sodium accumulation)
+  - Then rapid shift to hypoosmolarity
+  - Brain unable to adapt fast enough and cannot resolve pre-accumulated ions/osmotically active molecules
+  - Water suddenly enters the brain → oedema
+
+Clinical context: sodium chloride toxicosis (pigs, poultry) — water deprivation followed by unrestricted access

@@ -1,0 +1,109 @@
+NEUROPATHOLOGY — SUBTOPIC 0: CELLS OF THE CNS
+Pages 1–2
+==============================================================
+
+CELL TYPES OF THE CNS
+The CNS contains five major cell types:
+  - Neurons
+  - Glial cells
+  - Endothelial cells
+  - Meninges (collagen and elastic fibres, fibrocytes)
+  - Blood vessel pericytes
+  - Ependymal cells
+
+==============================================================
+1. NEURONS
+==============================================================
+Function:
+  - Accepting, transferring, and delivering of impulses
+  - Transmission of electrical and chemical impulses
+  - Local and temporal interpretation of impulses
+  - Inhibitory and stimulatory regulation of impulses
+
+Types:
+  - Afferent (sensory)
+  - Efferent (motor)
+  - Interneurons — interneuronal communication within the CNS
+
+==============================================================
+2. GLIAL CELLS
+==============================================================
+Glia = "glue"
+10x more glial cells than neurons.
+
+Origin:
+  - From neuroectoderm: astrocytes, oligodendroglia, and ependymal cells
+  - From mesoderm (bone marrow): microglia
+
+a) ASTROCYTES
+  - Protoplasmatic type (Type I) — grey matter
+  - Fibrous type (Type II) — white matter
+
+  Functions:
+    - Regulation of concentrations of extracellular neurotransmitters and balance of fluid/electrolytes
+    - Correction of injury (loss of tissue substance) by proliferation of astrocytic cell strains (analogous to fibroblasts)
+    - Supporting and bonding bundles of functionally linked axons passing through the CNS
+    - Participation in the barrier system
+
+b) OLIGODENDROGLIA
+  - Interfascicular oligodendrocytes: myelination of axons
+  - Satellite oligodendrocytes: regulation of perineuronal microenvironment; on disorders respond by proliferation = SATELLITOSIS
+
+c) EPENDYMAL CELLS
+  - Line the ventricular system
+  - Choroid plexus epithelial cells: modified ependymal cells that line the choroid plexus (capillary network protruding into the ventricular system)
+    * Create CSF
+    * Function as Blood-CSF barrier
+    * Prominent brush border (microvilli)
+
+MICROGLIA
+  - Belongs to the monocytic-macrophage system
+  - Functions: immunosurveillance, immunoregulation, and phagocytosis
+
+==============================================================
+3. MENINGES
+==============================================================
+From outside to inside: dura mater → arachnoidea → pia mater
+  - Subarachnoid space filled with CSF
+  - Function: structural/functional barrier; participates in amortization of head trauma
+
+==============================================================
+4. ENDOTHELIAL CELLS AND HEMATOENCEPHALIC BARRIER (Blood-Brain Barrier)
+==============================================================
+Barrier consists of:
+  - Endothelial cells of the capillary
+  - Basement membrane
+  - Astrocyte foot processes
+
+Very expressed (tight) junctions between endothelial cells.
+Very selective molecule transport.
+
+Active regulation:
+  - Selective regulation of extracellular space
+  - Isolation from sudden biochemical changes in peripheral circulation
+  - Active regulation of transport of proteins and hydrophilic molecules
+  - Diffusion of small lipid molecules
+  - Receptor transport: insulin, transferrin, glucose, purine, amino acids
+  - Negative charge of the basement membrane prevents entry of anionic molecules
+
+Sub-anatomical details:
+  - In several areas, pia mater = one cell layer with fenestrated capillaries
+  - Arteries penetrating cerebral cortex enter pia mater and glia limitans, then disappear as they transform into capillaries
+  - Pia mater and glia limitans separate CNS from subarachnoid space
+  - Ependymal barrier (CSF barrier): barrier between CSF and brain — more permeable than other barriers; formed by ependymal cells and astrocytic processes
+
+==============================================================
+GREY MATTER vs WHITE MATTER
+==============================================================
+GREY MATTER:
+  - Cell bodies of neurons (soma)
+  - Oligodendrocytes/oligodendroglia (perineuronal satellite cells)
+  - Protoplasmatic astrocytes
+  - Microglia
+  - Neuropil: network of thin myelinated axons, dendrites, glial cells (oligodendroglia and astrocyte) processes and synapses
+
+WHITE MATTER:
+  - Network of well-myelinated axons
+  - Oligodendrocytes (interfascicular)
+  - Fibrous astrocytes
+  - Microglia

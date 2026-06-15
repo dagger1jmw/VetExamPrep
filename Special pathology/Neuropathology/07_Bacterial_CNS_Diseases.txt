@@ -1,0 +1,118 @@
+NEUROPATHOLOGY — SUBTOPIC 7: BACTERIAL CNS DISEASES
+Pages 12–14
+==============================================================
+
+DISEASES CAUSED BY MICROBES — BACTERIA
+
+==============================================================
+BRAIN ABSCESSES
+==============================================================
+Entry routes:
+  - Hematogenous (bacterial emboli via bloodstream)
+  - Direct extension from adjacent infected structures
+
+Course:
+  ACUTE: tissue lysis with hyperaemic borders
+  CHRONIC: limitation by fibrous capsule or astrocytic proliferation
+
+Destruction mechanism:
+  - Inflammatory products (lytic neutrophil enzymes)
+  - Bacterial toxins (enzymatic action)
+
+Effect on surrounding brain:
+  - Compression → increased intracranial pressure
+  - Dislocation of brain parts (cerebellar vermis, parahippocampal gyri)
+
+==============================================================
+EPENDYMITIS AND CHOROID PLEXITIS
+==============================================================
+  - Similar pathogens to those causing brain abscesses
+  - Route: hematogenous or direct spreading
+  - CSF appearance: opaque yellow-white to yellow-green (purulent)
+  - Can lead to obstruction of CSF circulation → hydrocephalus
+
+==============================================================
+MENINGITIS
+==============================================================
+Common agents: E.coli, Streptococcus spp.
+Routes: hematogenous, direct extension, leukocyte trafficking
+Course: acute, subacute, or chronic
+Types: leptomeningitis or pachymeningitis
+Exudate: suppurative, eosinophilic, non-suppurative, or granulomatous
+
+==============================================================
+NEONATAL SEPTICAEMIA
+==============================================================
+Common agents:
+  - E.coli
+  - Streptococcus spp.
+  - Salmonella spp.
+  - Pasteurella spp.
+  - Haemophilus spp.
+
+==============================================================
+THROMBOTIC MENINGOENCEPHALITIS (TEME) — FEEDLOT CATTLE
+==============================================================
+Agent: Histophilus somni (Gram-negative)
+  - Can colonise the upper respiratory mucosa under normal conditions
+
+Pathogenesis:
+  - Under undetected circumstances: penetrates deeper into respiratory system
+  - Leads to bacteraemia
+  - Bacterial emboli reach the brain (capillaries at the white-to-grey matter border)
+  - Bacteria bind to endothelial cells (via receptors)
+  - Contraction and desquamation of vascular endothelial cells
+  - → Vasculitis → thrombosis → infarcts
+  - Additional bacterial multiplication in infarcted tissue → further inflammation
+
+Macro:
+  - Irregular, small to large foci of bleeding and necrosis
+  - Randomly scattered on surface and in parenchyma
+  - Most common location: cerebrum at grey/white matter border
+  - Brain oedema, leptomeningitis
+
+Micro:
+  - Vasculitis and perivasculitis (neutrophils, macrophages)
+  - Vascular necrosis → thrombosis and infarction
+  - Sometimes: Gram-negative bacterial colonies visible
+
+==============================================================
+LISTERIOSIS — Listeria monocytogenes
+==============================================================
+Source of infection: poor-quality silage (inadequately fermented, high pH)
+
+Portal of entry and CNS breakthrough:
+  Oral mucosa
+  → invasion of sensory and motor branches of n. trigeminus (trigeminal nerve)
+  → migration via sensory axons to trigeminal ganglion / brain-spinal cord
+  → migration via motor axons directly to midbrain, spinal cord
+  → rostral and caudal extension of bacteria in the brain
+  → highest bacterial concentration = central grey and white matter of PONS AND MEDULLA
+  → possible extension to: cerebellum and cranial part of spinal cord
+
+Cells infected: neurons, microglia, epithelial cells of choroid plexus, macrophages
+
+Pathogenesis (2 key enzymes):
+  - PHOSPHOLIPASE: degradation of sphingomyelin and phospholipids — essential for interstitial spread of bacteria
+  - LISTERIOLYSIN (HAEMOLYSIN): allows intracellular replication
+
+  → POWERFUL BODY IMMUNE RESPONSE
+  → Mechanism of axonal damage and neuronal death: activity of inflammation products, phospholipase, and haemolysin
+
+Macro:
+  - Usually negative (no gross changes)
+  - Sometimes: opacity of leptomeninges, focal necrosis, opaque CSF
+
+Micro (progression):
+  - Beginning: loose clusters of microglia cells and neutrophils → abscess formation
+  - In some foci: macrophages dominant
+  - +/- vasculitis (fibrinoid necrosis/change)
+  - Intralesional Gram-positive bacteria
+  - Necrotic foci
+  - Macrophage foci / accumulation of gitter cells (myelin phagocytosis)
+  - Leptomeningitis: macrophages, lymphocytes, plasma cells, rare neutrophils
+
+THREE CLINICAL FORMS OF LISTERIOSIS:
+  1. Meningoencephalitis (most common neurological form in adult ruminants)
+  2. Abortions / stillbirth (reproductive form)
+  3. Septicaemia in newborns (neonatal form)

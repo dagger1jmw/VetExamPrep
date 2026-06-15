@@ -655,6 +655,140 @@
   </div>
 </div>
 
+<!-- =====================================================================
+     NEUROPATHOLOGY — AI TUTOR
+===================================================================== -->
+<div id="page-neuro-ai" class="page">
+
+  <div id="neuro-ai-setup-view">
+    <div class="hero" style="background:linear-gradient(135deg,#c7e4f9 0%,#e8d5f5 60%,#b5ead7 100%);color:var(--text)">
+      <h1 style="color:var(--primary-dark)">✨ AI Study Tutor</h1>
+      <p style="color:var(--text-muted)">Neuropathology edition — powered by Google Gemini, uses your course notes from GitHub as its knowledge base.</p>
+    </div>
+
+    <div class="ai-setup-box" id="neuro-ai-key-box">
+      <div id="neuro-ai-key-form">
+        <div style="font-weight:800;font-size:1.05rem;color:var(--primary-dark);margin-bottom:12px">🔑 Gemini API Key</div>
+        <p style="font-size:0.88rem;color:var(--text-muted);margin-bottom:14px">If you already set your key in Clinical Propedeutics → AI Tutor, it's already saved here. Otherwise, paste it below.</p>
+        <label style="font-weight:700;font-size:0.85rem;color:var(--text-muted);letter-spacing:0.05em">GEMINI API KEY</label>
+        <input type="password" id="neuro-ai-key-input" class="ai-key-input" placeholder="Paste your Gemini API key..." autocomplete="off" oninput="neuroAiKeyInputChanged()">
+        <div id="neuro-ai-key-status" style="font-size:0.82rem;color:var(--text-muted);margin-bottom:12px">Enter your key above.</div>
+        <button class="btn btn-primary" onclick="confirmNeuroApiKey()">✓ Confirm Key</button>
+      </div>
+      <div id="neuro-ai-key-saved" style="display:none;font-size:0.88rem">
+        ✓ <strong>API key saved.</strong>
+        <button class="btn btn-ghost btn-sm" onclick="clearNeuroApiKey()" style="margin-left:8px">Clear Key</button>
+      </div>
+    </div>
+
+    <div id="neuro-ai-features-grid" style="display:none;margin-top:20px">
+      <div style="font-weight:800;font-size:1.05rem;color:var(--primary-dark);margin-bottom:14px">What would you like to do?</div>
+      <div class="ai-feature-grid">
+        <div class="ai-feature-btn" onclick="openNeuroAiFeature('review')">
+          <div class="af-icon">📝</div>
+          <div class="af-name">Topic Review</div>
+          <div class="af-desc">Write what you know about a subtopic. The AI checks your answer against the course notes and gives detailed feedback on what's right, missing, and wrong.</div>
+        </div>
+        <div class="ai-feature-btn" onclick="openNeuroAiFeature('questions')">
+          <div class="af-icon">🎯</div>
+          <div class="af-name">Generate Questions</div>
+          <div class="af-desc">The AI generates new exam-style questions from the course notes for any neuropathology subtopic — great for drilling beyond the built-in question bank.</div>
+        </div>
+        <div class="ai-feature-btn" onclick="openNeuroAiFeature('summary')">
+          <div class="af-icon">📋</div>
+          <div class="af-name">Topic Summary</div>
+          <div class="af-desc">Get a concise revision summary for any subtopic — key mechanisms, lesions, species differences — drawn directly from your course notes.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOPIC REVIEW -->
+  <div id="neuro-ai-panel-review" class="ai-panel">
+    <div class="ai-panel-header">
+      <button class="ai-panel-back" onclick="closeNeuroAiFeature()">← Back to AI Tutor</button>
+      <div style="font-weight:800;color:var(--primary-dark);font-size:1rem">📝 Topic Review</div>
+    </div>
+    <div class="card" style="margin-bottom:14px">
+      <div style="font-weight:600;margin-bottom:10px">1. Select a subtopic</div>
+      <div class="topic-select-grid" id="neuro-review-topic-grid"></div>
+    </div>
+    <div class="card">
+      <div style="font-weight:600;margin-bottom:8px">2. Write everything you know about this subtopic</div>
+      <div style="font-size:0.82rem;color:var(--text-muted);margin-bottom:10px">Include cell types, pathological mechanisms, lesions, species differences, clinical signs — anything relevant.</div>
+      <textarea id="neuro-review-input" class="ai-textarea" placeholder="Write your knowledge of the selected subtopic here..."></textarea>
+      <div style="margin-top:10px">
+        <button class="btn btn-primary" onclick="submitNeuroReview()">✓ Submit for Review</button>
+        <span id="neuro-review-topic-label" style="margin-left:12px;font-size:0.82rem;color:var(--text-muted)">No subtopic selected</span>
+      </div>
+    </div>
+    <div id="neuro-review-chat" class="ai-chat-area" style="display:none;margin-top:14px"></div>
+  </div>
+
+  <!-- GENERATE QUESTIONS -->
+  <div id="neuro-ai-panel-questions" class="ai-panel">
+    <div class="ai-panel-header">
+      <button class="ai-panel-back" onclick="closeNeuroAiFeature()">← Back to AI Tutor</button>
+      <div style="font-weight:800;color:var(--primary-dark);font-size:1rem">🎯 Generate Questions</div>
+    </div>
+    <div class="card" style="margin-bottom:14px">
+      <div style="font-weight:600;margin-bottom:10px">1. Select a subtopic</div>
+      <div class="topic-select-grid" id="neuro-questions-topic-grid"></div>
+      <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+        <div>
+          <label style="font-size:0.82rem;font-weight:600;color:var(--text-muted)">Type</label><br>
+          <select id="neuro-q-type-select" class="styled" style="margin-top:4px">
+            <option value="mixed">Mixed (MCQ + T/F)</option>
+            <option value="mcq">MCQ only</option>
+            <option value="short">Short answer</option>
+          </select>
+        </div>
+        <div>
+          <label style="font-size:0.82rem;font-weight:600;color:var(--text-muted)">Number</label><br>
+          <select id="neuro-q-count-select" class="styled" style="margin-top:4px">
+            <option value="5">5 questions</option>
+            <option value="10" selected>10 questions</option>
+            <option value="15">15 questions</option>
+          </select>
+        </div>
+        <div style="align-self:flex-end">
+          <button class="btn btn-primary" onclick="generateNeuroQuestions()">🎯 Generate Questions</button>
+        </div>
+      </div>
+    </div>
+    <div id="neuro-questions-chat" class="ai-chat-area" style="display:none"></div>
+  </div>
+
+  <!-- TOPIC SUMMARY -->
+  <div id="neuro-ai-panel-summary" class="ai-panel">
+    <div class="ai-panel-header">
+      <button class="ai-panel-back" onclick="closeNeuroAiFeature()">← Back to AI Tutor</button>
+      <div style="font-weight:800;color:var(--primary-dark);font-size:1rem">📋 Topic Summary</div>
+    </div>
+    <div class="card" style="margin-bottom:14px">
+      <div style="font-weight:600;margin-bottom:10px">Select a subtopic to summarise</div>
+      <div class="topic-select-grid" id="neuro-summary-topic-grid"></div>
+      <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+        <div>
+          <label style="font-size:0.82rem;font-weight:600;color:var(--text-muted)">Focus</label><br>
+          <select id="neuro-summary-focus-select" class="styled" style="margin-top:4px">
+            <option value="full">Full overview</option>
+            <option value="mechanisms">Pathological mechanisms</option>
+            <option value="clinical">Clinical signs &amp; diagnosis</option>
+            <option value="species">Species differences</option>
+            <option value="lesions">Gross &amp; histological lesions</option>
+          </select>
+        </div>
+        <div style="align-self:flex-end">
+          <button class="btn btn-primary" onclick="generateNeuroSummary()">📋 Generate Summary</button>
+        </div>
+      </div>
+    </div>
+    <div id="neuro-summary-chat" class="ai-chat-area" style="display:none"></div>
+  </div>
+
+</div>
+<!-- END NEUROPATHOLOGY AI TUTOR PAGE -->
 
 <div class="modal-overlay" id="result-modal">
   <div class="modal">
@@ -1268,6 +1402,7 @@ const NAV_CONFIGS = {
       {id:'neuro-practical',label:'🔬 Practical',  fn:"spShowPage('neuro','practical')"},
       {id:'neuro-pastqs',   label:'📋 Past Exams', fn:"spShowPage('neuro','pastqs')"},
       {id:'neuro-stats',    label:'📊 Progress',   fn:"spShowPage('neuro','stats')"},
+      {id:'neuro-ai',       label:'✨ AI Tutor',   fn:"spShowPage('neuro','ai')", style:'color:var(--primary-dark);font-weight:800'},
     ]
   },
 };
@@ -2400,6 +2535,225 @@ Keep it concise, well-structured, and exam-focused. Use bullet points, bold for 
   await callGemini(systemPrompt, 'Generate the summary now.', chatEl);
 }
 
+// =====================================================================
+// NEUROPATHOLOGY — AI TUTOR
+// =====================================================================
+
+const NEURO_GITHUB_RAW = 'https://raw.githubusercontent.com/dagger1jmw/VetExamPrep/main/Special%20pathology/Neuropathology/';
+
+const NEURO_AI_FILES = {
+  0:  '00_Cells_of_the_CNS.txt',
+  1:  '01_Neuronal_Injury_Responses.txt',
+  2:  '02_Glial_Ependymal_Microglia_Responses.txt',
+  3:  '03_Circulatory_Disturbances.txt',
+  4:  '04_Brain_Oedema.txt',
+  5:  '05_CNS_Defence_Mechanisms_and_Portals_of_Entry.txt',
+  6:  '06_Malformations_and_Developmental_Disorders.txt',
+  7:  '07_Bacterial_CNS_Diseases.txt',
+  8:  '08_Viral_CNS_Diseases.txt',
+  9:  '09_Fungal_and_Parasitic_CNS_Diseases.txt',
+  10: '10_Prion_Diseases_and_Degenerative_Diseases.txt',
+  11: '11_Traumatic_Injuries.txt',
+  12: '12_CNS_Tumours.txt',
+  13: '13_Peripheral_Nervous_System_Disorders.txt',
+};
+
+function renderNeuroAiPage() {
+  const hasKey = !!aiState.key;
+  const inp    = document.getElementById('neuro-ai-key-input');
+  const status = document.getElementById('neuro-ai-key-status');
+  const form   = document.getElementById('neuro-ai-key-form');
+  const saved  = document.getElementById('neuro-ai-key-saved');
+  const featGrid = document.getElementById('neuro-ai-features-grid');
+  if (hasKey) {
+    aiState.confirmed = true;
+    if (inp) inp.value = aiState.key;
+    if (form) form.style.display = 'none';
+    if (saved) saved.style.display = 'block';
+    if (featGrid) featGrid.style.display = 'block';
+  } else {
+    if (form) form.style.display = 'block';
+    if (saved) saved.style.display = 'none';
+    if (featGrid) featGrid.style.display = 'none';
+  }
+  buildNeuroTopicGrids();
+}
+
+function neuroAiKeyInputChanged() {
+  const inp    = document.getElementById('neuro-ai-key-input');
+  const status = document.getElementById('neuro-ai-key-status');
+  inp.classList.remove('valid','invalid');
+  if (status) status.textContent = 'Enter your key above.';
+}
+
+function confirmNeuroApiKey() {
+  const inp    = document.getElementById('neuro-ai-key-input');
+  const key    = inp.value.trim();
+  const status = document.getElementById('neuro-ai-key-status');
+  if (!key || key.length < 20) {
+    inp.classList.add('invalid');
+    if (status) { status.textContent = '✗ Key too short — Gemini API keys are typically 30+ characters.'; status.style.color = 'var(--wrong-dark)'; }
+    return;
+  }
+  aiState.key = key;
+  aiState.confirmed = true;
+  localStorage.setItem('vpGeminiKey', key);
+  document.getElementById('neuro-ai-key-form').style.display = 'none';
+  document.getElementById('neuro-ai-key-saved').style.display = 'block';
+  document.getElementById('neuro-ai-features-grid').style.display = 'block';
+}
+
+function clearNeuroApiKey() {
+  aiState.key = '';
+  aiState.confirmed = false;
+  localStorage.removeItem('vpGeminiKey');
+  const inp = document.getElementById('neuro-ai-key-input');
+  if (inp) { inp.value = ''; inp.classList.remove('valid','invalid'); }
+  const status = document.getElementById('neuro-ai-key-status');
+  if (status) { status.textContent = 'Key cleared.'; status.style.color = 'var(--text-muted)'; }
+  document.getElementById('neuro-ai-key-form').style.display = 'block';
+  document.getElementById('neuro-ai-key-saved').style.display = 'none';
+  document.getElementById('neuro-ai-features-grid').style.display = 'none';
+}
+
+function buildNeuroTopicGrids() {
+  ['review','questions','summary'].forEach(panel => {
+    const el = document.getElementById('neuro-' + panel + '-topic-grid');
+    if (!el) return;
+    el.innerHTML = NEURO_SUBTOPICS.map((st, i) =>
+      '<button class="topic-select-btn" id="ntsel-'+panel+'-'+i+'" onclick="selectNeuroAiTopic(\''+panel+'\','+i+')">'+st.icon+' '+st.name+'</button>'
+    ).join('');
+  });
+}
+
+function selectNeuroAiTopic(panel, idx) {
+  document.querySelectorAll('#neuro-' + panel + '-topic-grid .topic-select-btn').forEach(b => b.classList.remove('selected'));
+  const btn = document.getElementById('ntsel-' + panel + '-' + idx);
+  if (btn) btn.classList.add('selected');
+  aiState['nselected_' + panel] = idx;
+  if (panel === 'review') {
+    const label = document.getElementById('neuro-review-topic-label');
+    if (label) label.textContent = 'Selected: ' + NEURO_SUBTOPICS[idx].name;
+  }
+}
+
+function openNeuroAiFeature(feature) {
+  if (!aiState.confirmed) { alert('Please confirm your API key first.'); return; }
+  document.getElementById('neuro-ai-setup-view').style.display = 'none';
+  document.querySelectorAll('#page-neuro-ai .ai-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('neuro-ai-panel-' + feature).classList.add('active');
+}
+
+function closeNeuroAiFeature() {
+  document.getElementById('neuro-ai-setup-view').style.display = 'block';
+  document.querySelectorAll('#page-neuro-ai .ai-panel').forEach(p => p.classList.remove('active'));
+}
+
+async function fetchNeuroFile(idx) {
+  const cacheKey = '__neuro__' + idx;
+  if (aiState.fileCache[cacheKey]) return aiState.fileCache[cacheKey];
+  const filename = NEURO_AI_FILES[idx];
+  if (!filename) return null;
+  try {
+    const res = await fetch(NEURO_GITHUB_RAW + filename);
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const text = await res.text();
+    aiState.fileCache[cacheKey] = text;
+    return text;
+  } catch(e) {
+    return null;
+  }
+}
+
+async function submitNeuroReview() {
+  const idx = aiState['nselected_review'];
+  if (idx === undefined || idx === null) { alert('Please select a subtopic first.'); return; }
+  const input  = document.getElementById('neuro-review-input').value.trim();
+  const chatEl = document.getElementById('neuro-review-chat');
+  if (!input) { alert('Please write something about the subtopic first.'); return; }
+
+  chatEl.style.display = 'block';
+  chatEl.innerHTML = '<div class="user-msg">' + escapeHtml(input.substring(0,200)) + (input.length>200?'...':'') + '</div><div class="ai-thinking">✨ Fetching course notes and reviewing your answer...</div>';
+
+  const notes        = await fetchNeuroFile(idx);
+  const subtopicName = NEURO_SUBTOPICS[idx].name;
+
+  if (!notes) {
+    chatEl.innerHTML += '<div class="ai-msg" style="background:#fff0f0">Could not fetch course notes from GitHub. Check your internet connection.</div>';
+    return;
+  }
+
+  const systemPrompt = `You are a veterinary neuropathology tutor. The student has written what they know about the subtopic "${subtopicName}". Review their answer against the official course notes below.
+
+COURSE NOTES FOR "${subtopicName}":
+${notes.substring(0, 12000)}
+
+INSTRUCTIONS:
+- Praise what they got CORRECT and COMPLETE — be specific and quote their correct points back.
+- Identify what is MISSING from their answer (important facts from the notes they didn't mention).
+- Flag anything INCORRECT or CONFUSED.
+- End with a short 2-3 sentence summary of the most important things to remember for this subtopic.
+- Use clear headings: ✓ CORRECT, ⚠ MISSING, ✗ INCORRECT, 📌 KEY POINTS TO REMEMBER.
+- Be encouraging but accurate. Keep it practical and exam-focused.`;
+
+  await callGemini(systemPrompt, input, chatEl);
+}
+
+async function generateNeuroQuestions() {
+  const idx = aiState['nselected_questions'];
+  if (idx === undefined || idx === null) { alert('Please select a subtopic first.'); return; }
+  const chatEl  = document.getElementById('neuro-questions-chat');
+  const qType   = document.getElementById('neuro-q-type-select').value;
+  const qCount  = document.getElementById('neuro-q-count-select').value;
+
+  const notes        = await fetchNeuroFile(idx);
+  const subtopicName = NEURO_SUBTOPICS[idx].name;
+  const typeInstr    = qType === 'mcq'   ? 'MCQ only (4 options each, indicate correct answer)'
+                     : qType === 'short' ? 'short answer questions'
+                     : 'a mix of MCQ (with 4 options) and True/False questions';
+
+  const systemPrompt = `You are a veterinary neuropathology tutor. Generate exactly ${qCount} exam-quality ${typeInstr} on the subtopic "${subtopicName}" based ONLY on the following course notes. After all questions, provide an answer key.
+
+COURSE NOTES:
+${(notes||'').substring(0, 12000)}
+
+FORMAT:
+Q1. [question text]
+A) ...  B) ...  C) ...  D) ...  (if MCQ)
+Correct: [A/B/C/D or True/False]
+
+Focus on pathological mechanisms, cell types, species differences, gross and histological lesions, and clinical signs. Make the questions appropriately challenging for a veterinary exam.`;
+
+  await callGemini(systemPrompt, 'Generate the questions now.', chatEl);
+}
+
+async function generateNeuroSummary() {
+  const idx = aiState['nselected_summary'];
+  if (idx === undefined || idx === null) { alert('Please select a subtopic first.'); return; }
+  const chatEl  = document.getElementById('neuro-summary-chat');
+  const focus   = document.getElementById('neuro-summary-focus-select').value;
+
+  const notes        = await fetchNeuroFile(idx);
+  const subtopicName = NEURO_SUBTOPICS[idx].name;
+
+  const focusInstr = {
+    full:       'a complete overview covering all key pathological concepts, mechanisms, lesions, and clinical relevance',
+    mechanisms: 'ONLY the pathological mechanisms — the step-by-step sequence from trigger to lesion',
+    clinical:   'clinical signs, diagnostic features, and high-yield exam facts',
+    species:    'species differences and species-specific diseases or susceptibilities',
+    lesions:    'gross and histological lesions — macroscopic appearance, microscopic findings, and how to recognise them'
+  }[focus] || 'a full overview';
+
+  const systemPrompt = `You are a veterinary neuropathology tutor. Create ${focusInstr} for the subtopic "${subtopicName}" based ONLY on the following course notes.
+
+COURSE NOTES:
+${(notes||'').substring(0, 12000)}
+
+Keep it concise, well-structured, and exam-focused. Use bullet points, bold for key terms, and clear headings. This is revision material — every fact should be useful for exam preparation.`;
+
+  await callGemini(systemPrompt, 'Generate the summary now.', chatEl);
+}
+
 // ---- Update showPage to handle AI page ----
 // (Patch into existing showPage — add 'ai' handling)
 const _origShowPage = showPage;
@@ -2435,6 +2789,7 @@ function spShowPage(topic, page) {
     const el = document.getElementById('neuro-stat-qcount');
     if (el) el.textContent = qTotal;
   }
+  if (topic === 'neuro' && page === 'ai') renderNeuroAiPage();
 }
 
 function openSpTopic(topicId) {

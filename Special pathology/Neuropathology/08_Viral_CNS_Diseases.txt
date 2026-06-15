@@ -1,0 +1,170 @@
+NEUROPATHOLOGY — SUBTOPIC 8: VIRAL CNS DISEASES
+Pages 15–17
+==============================================================
+
+==============================================================
+RABIES
+==============================================================
+Agent: Rhabdoviridae — one of the most prominent neurotropic viruses
+Note: Precise mechanism of pathogenic action on neurons has not yet been established
+
+Macro: most often no gross changes found
+
+Micro:
+  - Lymphocytic meningoencephalitis
+  - NEGRI BODIES: intracytoplasmic eosinophilic inclusions (pathognomonic)
+  - Spongiform lesions in grey matter neuropil (NOT found in dogs)
+
+==============================================================
+CANINE DISTEMPER (CDV)
+==============================================================
+Agent: Morbillivirus, family Paramyxoviridae — PANTROPIC virus
+
+Pathogenesis:
+  - Aerosol with virus → upper respiratory tract infection
+  - → invasion of local mucosal macrophages → replication in regional lymph nodes
+  - PRIMARY VIRAEMIA: other lymph nodes, spleen, thymus → immunosuppression
+  - SECONDARY VIRAEMIA: infection of respiratory epithelium, GI tract mucosa, urinary bladder, and CNS
+  - Infected macrophages in perivascular space → spread virus further to CNS
+  - ALL CNS cells can be infected
+
+Mechanism of CNS lesion formation:
+  - Direct action of virus on oligodendrocytes → demyelination
+  - Inflammatory mediators from lymphocytes, microglia, and macrophages
+
+Macro: usually no gross changes; sometimes white matter softening
+
+Micro:
+  - Demyelination
+  - Status spongiosus
+  - Astrocyte hypertrophy
+  - Variable neuronal degeneration
+  - Inclusions: intracytoplasmic AND intranuclear primarily in ASTROCYTES (also ependymal cells and neurons)
+  - Later phase: phagocytosis of myelin by microglia; variable axonal necrosis
+
+OLD DOG ENCEPHALITIS:
+  - Persistent CNS infection with DEFECTIVE FORM of CDV
+
+==============================================================
+FELINE INFECTIOUS PERITONITIS (FIP)
+==============================================================
+Major CNS lesion: PYOGRANULOMATOUS INFLAMMATION (vasculitis) → vascular necrosis → infarcts
+
+Mechanism of lesion formation:
+  - Development of immune complexes (virus-antibody-complement)
+  - Perivascular accumulation (+ macrophages)
+  - Infected macrophages: cytokine release → increased vessel permeability
+
+TWO FORMS:
+  WET (EFFUSIVE) FORM:
+    - Serositis
+    - Accumulation of modified transudate (abdominal and thoracic cavity)
+
+  DRY (NON-EFFUSIVE) FORM:
+    - Leptomeningitis, chorioependymitis, focal encephalomyelitis, ophthalmitis
+    - Pyogranulomatous vasculitis of leptomeninges and periventricular white matter
+
+==============================================================
+BOVINE MALIGNANT CATARRHAL FEVER (BMCF)
+==============================================================
+Agent: Sporadic, highly fatal viral diseases of cattle and other ruminants
+  - 2 forms: Ovine herpesvirus 2, Caprine herpesvirus 1/2; in wildebeest: Alcelaphine herpesvirus 1
+  - Target tissue: vasculature, lymphoid organs, epithelial tissue (respiratory and digestive)
+  - Virus transmitted within circulating T-lymphocytes
+
+Key lesion: NECROTISING VASCULITIS (probably due to cellular immunity and cytotoxic lymphocyte activity)
+
+CNS lesions:
+  Macro: hyperaemia and cloudiness of leptomeninges
+  Micro: nonsuppurative meningoencephalomyelitis and vasculitis; lymphocytic perivascular accumulation; necrotising vasculitis of leptomeninges and brain (white matter)
+
+==============================================================
+PSEUDORABIES (AUJESZKY'S DISEASE)
+==============================================================
+Agent: Pseudorabies virus (suid herpesvirus 1)
+
+Species specificity:
+  - PIGS (primary host): can die from infection; mature pigs often show inapparent infection; pigs remain persistently infected latent carriers
+  - Other domestic mammals: severe, frequently fatal disease
+
+Pathogenesis:
+  - Virus enters upper respiratory tract (nasopharynx), tonsils, local lymph nodes
+  - Enters sensory nerve endings → transport to trigeminal ganglia and olfactory bulb → brain
+  - Glycoproteins on virus surface allow cell binding and entry
+
+Extra-neural lesions in pigs: respiratory system, lymphoid system, digestive tract, reproductive tract
+
+CNS lesions:
+  Macro: possibly leptomeningeal congestion
+  Micro:
+    - Non-purulent meningoencephalomyelitis and trigeminal ganglioneuritis
+    - INTRANUCLEAR EOSINOPHILIC INCLUSIONS
+    - Degeneration and necrosis (neurons +/-)
+
+==============================================================
+VISNA
+==============================================================
+Agent: Distinct viral strain of ovine Maedi-Visna virus (MVV) complex = LENTIVIRUS, family Retroviridae
+
+Pathogenesis:
+  - Virus integrates into genome of promonocytes (bone marrow) and monocytes (blood)
+  - Replication occurs ONLY AFTER these cells mature into macrophages → persistent infection
+  - Virus enters CNS INSIDE MACROPHAGES (leukocyte monitoring / Trojan horse)
+  - Can also infect oligodendrocytes and possibly endothelial cells
+
+Macro: possibly yellowish-creamy areas on cross section
+
+Micro:
+  - Non-purulent encephalomyelitis (primarily subependymal white matter in brain and spinal cord)
+  - Pleocytosis (increased number of leukocytes in CSF)
+  - Oedema, necrosis, astrocytosis, choroiditis, nonsuppurative leptomeningitis
+  - Later stage: more severe demyelination
+
+Extra-CNS lesions: pneumonia (Maedi), mastitis, arthritis, mesangial glomerulitis
+
+==============================================================
+CAPRINE LEUKOENCEPHALOMYELITIS
+==============================================================
+Agent: Lentivirus closely related to MVV (sheep) = Caprine Arthritis Encephalitis (CAE)
+Transmission: colostrum/milk or close contact
+Mechanism: similar to VISNA
+Macro and micro CNS lesions: similar to VISNA but faster appearance and more severe; onset at 2–4 months of age
+Extra-neural lesions (adult goats): pneumonia, mastitis, arthritis
+
+==============================================================
+WEST NILE VIRAL ENCEPHALOMYELITIS
+==============================================================
+Agent: Flavivirus
+Transmission: mosquitoes → birds (reservoir), horses, humans
+
+Pathogenesis (equine encephalomyelitis):
+  - Place of infection: neurons and microglia
+
+Macro:
+  - Grey matter: hyperaemia, petechiae
+  - Extensive bleeding in brain stem (lower part)
+  - Ventral horns of the thoracolumbar part of the spinal cord
+
+Micro:
+  - Polioencephalomyelitis (mononuclear infiltrate, rarely neutrophils, bleeding)
+  - No extra-neural lesions in horses
+
+Clinical signs: GI signs, nervous symptoms
+
+==============================================================
+OTHER NON-SUPPURATIVE INFLAMMATIONS OF BRAIN AND SPINAL CORD
+==============================================================
+HORSES:
+  - Borna disease
+  - Equine encephalomyelitis (western, eastern, Venezuelan) — Alphavirus, family Togaviridae
+
+PIGS:
+  - Teschen disease, Talfan disease, benign enzootic paresis, polioencephalomyelitis (Enterovirus)
+  - Haemagglutinating encephalomyelitis (Coronavirus)
+  - Classical swine fever, hog cholera (Pestivirus)
+
+SHEEP:
+  - Louping ill (Flavivirus): sheep and other animals
+
+HUMANS:
+  - Japanese encephalitis (Flavivirus): horse, swine, cattle, sheep, human

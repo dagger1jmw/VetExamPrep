@@ -1,0 +1,144 @@
+NEUROPATHOLOGY — SUBTOPIC 6: MALFORMATIONS & DEVELOPMENTAL DISORDERS
+Pages 9–11
+==============================================================
+
+IV. SPECIFIC DISEASES AND DISORDERS OF THE CNS — MALFORMATIONS
+
+==============================================================
+NEURAL TUBE CLOSURE DEFECTS (DYSRAPHIA)
+==============================================================
+Cause:
+  - Abnormal interaction of the neuroepithelium (neurons, astrocytes, oligodendrocytes, ependymal cells) with notochordal and mesenchymal cells in early development
+  - 4 locations at closure initiation sites = locus-specific dysraphic anomalies
+      Closing point 1: posterior neuropore
+      Closing sites II, III, and IV: anterior neuropores
+  - Defect of genes regulating the metabolic pathway of folic acid and folate transport
+  - Inherited aetiology or intrauterine viral infections
+
+ANENCEPHALIC / PORENCEPHALIC HYPOPLASIA
+  - Error at closure sites II and IV
+  - Abnormal development of the rostral side of the neural tube
+  - Lack of cerebral hemisphere; brain stem preserved in varying degrees
+
+MENINGOENCEPHALOCELE AND CRANIUM BIFIDUM
+  - Medial defect of the cranial wall with protrusion of meninges and brain tissue
+  - Defect covered by skin forming a sac (-cele) = meningoencephalocele
+  - Defect covered by skin and lined from inside by meninges = meningocele
+
+MENINGOMYELOCELE AND SPINA BIFIDA
+  - Vertebral counterpart of cranium bifidum
+
+HYDROMYELIA
+  - Abnormal extension of the central spinal canal
+  - Forms a huge elongated cyst filled with CSF
+  - Bordered by ependymal cells (distinguishes from syringomyelia)
+
+SYRINGOMYELIA
+  - Formation of a cyst or tubular cavitation WITHIN the spinal cord
+  - NOT bordered by ependymal cells
+  - NOT related to the central canal
+
+==============================================================
+NEURONAL MIGRATION DISORDERS
+==============================================================
+
+LISSENCEPHALY / AGYRIA / PACHYGYRIA
+  - Smooth brain surface without gyri and sulci
+  - Affects part or entire cerebral cortex
+  - Cortex is thicker; histologically missing laminar neuronal arrangement
+  - Genetically conditioned defect of the signal pathway leading neurons to proper locations during brain development
+
+==============================================================
+ENCEPHALOCLASTIC DEFECTS
+==============================================================
+
+PORENCEPHALY
+  - Formation of small liquid-filled cavities in the brain
+  - Results in cleavage or cyst in the wall of the hemisphere in contact with the subarachnoid space or lateral ventricle
+  - Caused by destruction of immature neuroblasts
+
+HYDRANENCEPHALY
+  - Formation of large cavities in the brain filled with liquid in areas of WHITE MATTER
+  - Heavier form of the encephaloclastic disease
+
+==============================================================
+CEREBELLAR HYPOPLASIA
+==============================================================
+Definition: small, undeveloped cerebellum; primarily due to intrauterine viral infections
+
+Causative agents — PARVOVIRUSES:
+  - Feline panleukopenia virus (kittens)
+  - Canine parvovirus (puppies)
+
+Causative agents — PESTIVIRUSES:
+  - Bovine viral diarrhoea virus (BVD) — calves
+  - Classical swine fever virus — piglets
+
+Mechanism:
+  - Infection in late gestation or early neonatal period
+  - Infiltrate and destroy undifferentiated cells of the outer granular layer of the cerebellum
+  - These cells should migrate inward and build the inner granular layer
+
+Severity depends on:
+  - Intensity of necrosis and vasculitis
+  - Foetal/neonatal age at time of infection
+
+Histology:
+  - Loss of outer granular layer
+  - Loss of Purkinje cells; malposition of Purkinje cells retained in granular layer
+  - Oedema and bleeding in the white matter
+  - Focal cavitation and white matter necrosis
+  - Lymphocytic leptomeningitis
+
+==============================================================
+HYDROCEPHALUS
+==============================================================
+Definition: Abnormal accumulation of CSF in ventricular spaces and subarachnoid space
+
+Development sequence:
+  Non-absorption → increased CSF pressure in ventricles
+  → widening of ventricles
+  → multifocal ependymal disruption
+  → CSF compresses periventricular white matter
+  → hydrostatic oedema of white matter
+  → degeneration and atrophy of myelin and axons
+  → loss of tissue and expansion of ventricles
+  → compressive atrophy → NECROSIS
+
+Most vulnerable obstruction site:
+  Blockage order: interventricular foramen → bilateral interventricular foramina → mesencephalic aqueduct → lateral opening of IV ventricle
+
+--- 1. CONGENITAL HYDROCEPHALUS ---
+Clinical signs:
+  - Most common in brachycephalic or miniature breeds
+  - Manifestation in first 3 months of life
+  - Poor motor skills, inability to learn, sensory disturbances, dullness, aggression attacks, circling
+
+Morphological characteristics:
+  - Expansion of ventricular system proximal to obstruction
+  - Thinning of white matter; grey matter thickness preserved
+  - Atrophy of interventricular septum and hippocampus
+  - Flattening of cortical gyri
+  - Herniation of parahippocampal gyri under tentorium
+  - Herniation of cerebellum through foramen magnum
+  - Skull bones thin and often not sutured
+
+Types:
+  COMMUNICATING: limiting arterial pulsating hydrocephalus; rare in animals; preserved communication between ventricular and subarachnoid space
+    - Causes: arteritis, subarachnoid bleeding, meningitis
+
+  NON-COMMUNICATING: consequence of obstruction within the ventricular system
+    - Mesencephalic aqueduct most vulnerable to obstruction
+    - Disruption of CSF resorption
+
+  EX-VACUO / COMPENSATING: occurs secondary to loss or lack of brain tissue; part of progression of hydranencephaly
+
+--- 2. ACQUIRED HYDROCEPHALUS ---
+UNCOMMUNICATING: due to injuries of ependyma or obstruction of IV ventricle opening, cerebral aqueduct, or interventricular foramen
+  - No change in skull bones
+  - Causes: compression by abscesses and neoplasms, blockage due to inflammation, cholesteatomas of choroid plexus in horses
+
+EX-VACUO / COMPENSATING: secondary to loss of neural tissue
+  - Spreading ventricles into white substance
+  - Unilateral or bilateral hydrocephalus — loss of white and grey matter
+  - Caused by: brain infarction (irregular shape) or brain aging (atrophy, ceroid lipofuscinosis)

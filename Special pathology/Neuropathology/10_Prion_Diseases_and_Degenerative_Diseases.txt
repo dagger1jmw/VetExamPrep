@@ -1,0 +1,144 @@
+NEUROPATHOLOGY — SUBTOPIC 10: PRION DISEASES & DEGENERATIVE DISEASES
+Pages 20–22
+==============================================================
+
+==============================================================
+PRION DISEASES (TRANSMISSIBLE SPONGIFORM ENCEPHALOPATHIES — TSE)
+==============================================================
+Diseases:
+  - Ovine spongiform encephalopathy (scrapie)
+  - Bovine spongiform encephalopathy (BSE)
+  - Feline spongiform encephalopathy
+  - Chronic wasting disease (deer)
+  - Transmissible mink encephalopathy
+  - Exotic ungulate encephalopathy
+
+Mechanism:
+  - Accumulation of abnormal isoforms (beta-pleated sheet conformation) of otherwise normal cellular protein: PRION PROTEIN (PrP)
+  - Post-translational modification of the normal prion protein occurs
+
+Pathology:
+  - NO macroscopic changes
+  - Histo: neuronal degeneration with cytoplasmic vacuoles = SPONGIFORM CHANGE + ASTROCYTOSIS
+
+==============================================================
+DEGENERATIVE DISEASES — METABOLIC
+==============================================================
+
+--- HEPATIC ENCEPHALOPATHY ---
+Cause: liver failure (acute, chronic, or atrophy) → failure of ornithine urea cycle → accumulation of toxic substances in bloodstream
+
+Key toxic substance: AMMONIA (NH3)
+
+Mechanisms of CNS damage:
+  - Alterations of amino acid turnover
+  - Disruption of water and electrolyte transport through neuronal membranes
+  - Inhibition of excitatory and inhibitory postsynaptic potential generation
+  - Increased permeability of hematoencephalic barriers → entry of neurotoxins
+  - Disturbed osmoregulation within the CNS
+
+Micro:
+  - Spongiform change (intramyelin oedema, fragmentation, and vacuolisation of myelin membrane)
+  - Development of ALZHEIMER TYPE II ASTROCYTES
+
+==============================================================
+DEGENERATIVE DISEASES — NUTRITIVE
+==============================================================
+
+--- VITAMIN B1 (THIAMINE) DEFICIENCY ---
+Role of thiamine: cofactor of several enzymes involved in carbohydrate (CH) metabolism
+
+Mechanism of brain damage:
+  - Reduced enzyme activity → lack of energy
+  - Oxidative stress → reactive oxygen species (ROS)
+  - Thiamine essential in synthesis of neurotransmitters
+
+Most sensitive species: ruminants and dogs
+
+RUMINANTS — POLIOENCEPHALOMALACIA (Cerebrocortical Necrosis):
+  - Caused by thiamine deficiency (or bacterial/enzymatic degradation of thiamine in rumen)
+  - Macro: brain swelling, yellowish discoloration of cerebrocortical grey matter
+    * Autofluorescence
+    * Oedematous separation and necroses at the grey-white matter interface
+    * Prominent areas of atrophy of gyri
+    * Thinning or absence of grey matter
+  - Micro: neuronal degeneration and necrosis, spongiosis, myelin degeneration
+
+CARNIVORES:
+  - Macro: bilateral symmetrical malacia of brain stem nuclei
+  - Micro: neuronal degeneration and necrosis, spongiosis, myelin degeneration
+
+==============================================================
+DEGENERATIVE DISEASES — TOXICOSES
+==============================================================
+
+--- CLOSTRIDIUM PERFRINGENS TYPE D ENCEPHALOPATHY ---
+Species: sheep, goats, cattle
+Toxin: EPSILON TOXIN
+
+Mechanism:
+  - Vascular injury and failure of hematoencephalic barrier
+  - Epsilon toxin binds to endothelial cells
+  - Opens tight junctions
+  - Increased vascular permeability
+  - → Vasogenic oedema → swelling of astrocytic processes → necrosis
+
+Macro:
+  - Bilaterally symmetrical foci of ENCEPHALOMALACIA
+  - Extra-neural changes: congestion and pulmonary oedema, hydropericardium, petechiae, PULPY KIDNEY
+
+Micro:
+  - Vasogenic oedema
+  - Hyalinisation of capillary walls
+  - Endothelial cell swelling
+  - Pericapillary bleeding
+  - Acute necrosis of neurons and macroglial cells
+
+--- SODIUM CHLORIDE (SALT) INTOXICATION ---
+Species: pigs, poultry; occasionally dogs, horses, sheep
+Context: animals deprived of water and then given unlimited access; also important role of NaCl quantity in food
+
+Mechanism:
+  - HYPEROSMOLARITY develops (sodium accumulates in brain)
+  - Sudden shift to HYPOOSMOLARITY (water access)
+  - Water suddenly enters the brain → oedema
+  - Brain unable to adapt fast enough
+  - Cannot resolve pre-accumulated ions and osmotically active molecules
+
+Macro: oedematous brain and meningeal congestion
+
+Micro:
+  - CEREBROCORTICAL LAMINAR NEURONAL NECROSIS
+  - Astrocytic swelling
+  - Frequent infiltration of EOSINOPHILS and macrophages
+
+--- OEDEMA DISEASE (ENTEROTOXEMIC COLIBACILLOSIS) ---
+Agent: E.coli strains producing SHIGA-LIKE TOXIN TYPE IIe (verotoxin)
+Species: pigs, 4–8 weeks of age
+
+Mechanism:
+  - Toxin causes necrosis of smooth muscle cells of small arteries and arterioles
+  - → Focal reduction of blood circulation through CNS
+  - → Infarction = ANGIOPATHY
+
+Macro (extra-neural): swelling of specific localities, transudation into body cavities
+
+Macro (brain): bilaterally symmetric focal necrosis (yellow-grey, soft, lytic) within the CAUDAL MEDULLA OBLONGATA
+
+Micro (medulla oblongata and meninges):
+  - Perivascular oedema at early stage
+  - Necrosis of smooth muscles of the tunica media
+  - Retention of fibrinogenic material
+  - Accumulation of macrophages and lymphocytes within adventitia
+  - Degenerative angiopathy (spongiosis, vasogenic oedema, necrosis of neurons and glia cells)
+  - NOTE: Preserved endothelium and NO thrombosis
+
+==============================================================
+DEGENERATIVE DISEASES — STORAGE DISEASES
+==============================================================
+
+--- LYSOSOMAL STORAGE DISEASES ---
+Definition: disorder of lysosomal-mediated degradation of substrates of normal cell metabolism
+  - Substrates cannot be degraded in lysosomes → accumulation → death of affected cell
+  - Causes: various mutations affecting the metabolism of these substances
+  - Result: increase of neuronal cell body size (visible microscopically)

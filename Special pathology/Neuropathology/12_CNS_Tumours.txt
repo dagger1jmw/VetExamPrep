@@ -1,0 +1,144 @@
+NEUROPATHOLOGY — SUBTOPIC 12: CNS TUMOURS
+Pages 24–25
+==============================================================
+
+VII. TUMOURS
+
+==============================================================
+EMBRYONAL / PRIMITIVE NEOPLASIA
+==============================================================
+
+--- PRIMITIVE NEUROECTODERMAL TUMOUR (PNET) ---
+  - Exceptionally rare (calves, primates)
+  - Young animals; aggressive biological behaviour
+  - Origin: primitive embryonic stem cells
+
+--- MALIGNANT RHABDOID TUMOUR ---
+  - Described in kidneys and brain (people); subcutis, muscle, and brain (dog and cat)
+  - Extremely rare; young animals; aggressive biological behaviour
+  - Origin: embryonic stem cells — large circular to polyhedral cells
+
+--- MEDULLOBLASTOMA ---
+  Species: dogs, cats, cows, pigs
+  Age: rare in young animals; rarely in old animals
+  Behaviour: metastasis via CSF
+
+  Location: CEREBELLUM
+
+  Macro:
+    - Well-circumscribed, soft
+    - Without bleeding and cystic structures
+    - Can cause hydrocephalus
+    - Locally invasive
+
+  Micro:
+    - Highly cellular neoplasia
+    - Cells with round to elongated nuclei and small amount of cytoplasm
+
+  Origin: primitive neuroepithelial cells (neurons) of the ROOF OF THE IV BRAIN VENTRICLE
+
+==============================================================
+GLIAL TUMOURS (GLIOMAS)
+==============================================================
+
+--- ASTROCYTOMA ---
+  Classification: according to degree of differentiation
+    - Diffuse astrocytoma
+    - Anaplastic astrocytoma
+    - Glioblastoma multiforme
+    - ALL FORMS ARE MALIGNANT
+
+  Note: degree of malignancy is INVERSELY PROPORTIONAL to degree of differentiation
+
+  Species: most common in DOGS (especially brachycephalic breeds); rarely cats
+
+  Location: cerebral hemisphere (temporal and piriform lobes), thalamus-hypothalamus, midbrain; rarely cerebellum and spinal cord
+
+  Macro:
+    - Compressive atrophy of surrounding tissue
+    - Well-differentiated forms: morphologically similar to normal CNS tissue
+    - Malignant forms: infiltrative growth, necrosis, bleeding, cavitation
+
+  Micro:
+    - Large differences in appearance depending on subtype
+    - SPECIFICITY: tumour cells are arranged AROUND BLOOD VESSELS (perivascular arrangement)
+
+--- OLIGODENDROGLIOMA ---
+  Species: dogs, cats, and cattle
+  Note: according to some authors, the MOST COMMON neuroectodermal neoplasia of the CNS
+
+  Location: white matter of cerebrum, brain stem, interventricular septum
+  Behaviour: locally invasive; rare CSF dissemination
+
+  Macro: usually well-restricted, grey or pink, soft, creamy with bleeding areas
+
+  Micro:
+    - Highly cellular
+    - Expressed (hyperchromatic) nucleus
+    - PALE OR TRANSLUCENT CYTOPLASM ("fried egg" appearance)
+
+==============================================================
+CHOROID PLEXUS TUMOURS
+==============================================================
+
+Species: most common in dogs, horses, cattle
+Most common location: IV VENTRICLE (also possible in III and lateral ventricles)
+
+--- CHOROID PLEXUS PAPILLOMA ---
+  - Usually well-circumscribed, white to red expansive growth
+  - Histo: very similar to structure and cells of normal choroid plexus
+
+--- CHOROID PLEXUS CARCINOMA ---
+  - Invasive (less circumscribed)
+  - Histologically: increased mitoses, solid form of growth
+  - METASTASES: inside the ventricular system or subarachnoid space
+
+==============================================================
+EPENDYMOMA
+==============================================================
+  Species: rare; dogs, cats, cattle, and horses
+  Location: most common in LATERAL VENTRICLES; rarely III and IV ventricles and central canal of spinal cord
+  Behaviour: metastasis via CSF and subarachnoid space; often causes hydrocephalus
+
+  Macro: large intraventricular mass; usually clear edges; soft, grey-white to red; frequent necrosis and bleeding
+
+  Micro:
+    - Well vascularised, cellular
+    - Form ROSETTES
+    - Malignancy determined by: invasive growth, frequency of mitoses, and anaplasia
+
+==============================================================
+MESODERMAL TUMOURS
+==============================================================
+
+--- MENINGIOMA ---
+  Most common MESODERMAL neoplasm of the CNS; particularly common in OLDER ANIMALS, especially CATS
+
+  Location:
+    CATS: tela choroidea, surface of hemisphere, surface of cerebellum, tentorium, brain base
+    DOGS: brain base, hemisphere surface, cerebellum, tentorium, spinal cord, optic nerve sheaths
+
+  Origin: ARACHNOIDAL CAP CELLS on the outer surface of the arachnoidea
+
+  Growth: slow — COMPRESSIVE ATROPHY of surrounding tissue
+
+  Histological forms (based on appearance):
+    - Epithelial
+    - Fibroblastic
+    - Transitional
+    - Psammomatous
+    - Angioblastic / malignant
+
+  Micro (regardless of histological form):
+    - Cells form VORTEX / LAYER CONFIGURATION
+    - Or form fascicles / bundles
+    - Centre is often mineralised
+
+--- HEMANGIOSARCOMA ---
+  - Rarely primary tumour; more commonly metastatic
+  - Location: interface of grey and white matter
+  - Species: most commonly dogs and cats
+  - BLOODY CONSISTENCY: differentiates it from metastatic melanoma
+
+--- MAMMARY CARCINOMA ---
+  - Can metastasise to the CNS

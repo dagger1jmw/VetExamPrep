@@ -1,0 +1,77 @@
+NEUROPATHOLOGY — SUBTOPIC 5: CNS DEFENCE MECHANISMS & PORTALS OF ENTRY
+Pages 7–8
+==============================================================
+
+==============================================================
+II. DEFENCE MECHANISMS OF THE CNS
+==============================================================
+a. Skin: structural and functional barrier
+b. Calvaria, vertebrae: structural barrier
+c. Meninges and CSF: structural and functional barrier
+d. Barrier system:
+     - Hematoencephalic barrier (blood-brain barrier)
+     - Blood-CSF barrier
+     - Glia limitans
+e. Microglia and trafficking macrophages
+f. Immunological responses
+
+HEMATOENCEPHALIC BARRIER (Blood-Brain Barrier):
+  - Selective regulation of extracellular space
+  - Isolation from sudden biochemical changes in peripheral circulation
+  - Active regulation of transport of proteins and hydrophilic molecules
+  - Diffusion of small lipid molecules
+  - Receptor transport: insulin, transferrin, glucose, purine, amino acids
+  - Negative charge of the basement membrane PREVENTS entry of anionic molecules
+
+Sub-anatomical note:
+  - In several areas, pia mater = one cell layer with fenestrated capillaries
+  - Arteries penetrating cerebral cortex enter pia mater and glia limitans before becoming capillaries
+  - Pia mater and glia limitans separate the CNS from the subarachnoid space
+
+EPENDYMAL BARRIER (CSF Barrier):
+  - Barrier between CSF and brain
+  - MORE PERMEABLE than other CNS barriers
+  - Based on mechanical barrier formed by ependymal cells and astrocytic processes
+
+==============================================================
+III. PORTALS OF ENTRY INTO THE CNS
+==============================================================
+
+a. DIRECT EXTENSION
+   - Penetrating wounds
+   - Middle/inner ear infection
+   - Sinuses/nasal cavity
+   - Bone/bone marrow (osteomyelitis)
+   - Skull trauma
+   - Neoplasia
+
+b. HEMATOGENOUS
+   - Localisation within the meningeal capillary network
+   - Localisation in the CNS parenchyma
+   - Localisation in the choroid plexus capillary network
+   - Extension from plexus into CSF
+
+c. LEUKOCYTE TRAFFICKING
+   - Extension within macrophages and lymphocytes
+   - Examples: FeLV, Blastomyces dermatitidis — use monitoring cells for CNS entry (Trojan horse)
+
+d. RETROGRADE AXONAL TRANSPORT
+   - Examples: Rabies virus, Listeria monocytogenes
+   - Primarily infect tissues rich in terminal plates of sensory and motor neurons
+   - Travel retrogradely along the axon to the CNS
+
+==============================================================
+RESULT OF INFLAMMATORY RESPONSE IN THE CNS
+==============================================================
+Goal: dilution and removal of the infectious agent
+
+Types of CNS inflammatory response:
+  - SEROUS / SUPPURATIVE (most bacteria)
+  - EOSINOPHILIC (NaCl toxicity, larval migration)
+  - LYMPHOCYTIC AND MONOCYTIC (viruses, protozoa)
+  - GRANULOMATOUS (fungi, protozoa, some bacteria)
+
+If pathogens breach the barrier system:
+  - Surveillance patrol of cytokines, chemokines, receptors activates acute response
+  - Passage of neutrophils across hematoencephalic barrier
+  - → INFLAMMATION, OEDEMA, HAEMORRHAGE

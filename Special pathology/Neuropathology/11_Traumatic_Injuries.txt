@@ -1,0 +1,101 @@
+NEUROPATHOLOGY — SUBTOPIC 11: TRAUMATIC INJURIES
+Pages 22–23
+==============================================================
+
+VI. TRAUMATIC INJURIES
+
+==============================================================
+GENERAL PRINCIPLES
+==============================================================
+Caused by physical insults acting as:
+  - Axial forces
+  - Angular forces
+  - Rotational forces
+
+Effects:
+  - CNS compression
+  - CNS tissue tension and breakdown
+  - Neuronal and axonal lacerations
+  - CNS and meningeal blood vessel injuries
+
+Nature of injuries:
+  - Consequences of collision: bones with brain gyri, spinal cord with vertebral wall
+  - Can be: FOCAL or DIFFUSE
+  - Depend on: direction of force + strength
+  - Injurious injury usually occurs in the TRANSITION ZONE OF GREY TO WHITE MATTER
+
+==============================================================
+CONCUSSION
+==============================================================
+Definition: implies short-term loss of consciousness
+
+Classification: DIFFUSE type injury
+
+Macro: usually WITHOUT macroscopic changes
+
+Micro:
+  - Diffuse axonal injury (axonal degeneration)
+  - Wallerian degeneration
+  - Unregulated vasodilation → brain oedema
+
+==============================================================
+DIFFUSE BRAIN AXONAL INJURY — MECHANISM
+==============================================================
+Sequence of events:
+  1. Membrane and cytoskeleton breakdown
+  2. Increase of membrane permeability
+  3. Ion concentration disorder
+  4. Glutamate releasing
+  5. Excitotoxicity
+  6. Cell death
+  7. ROS (reactive oxygen species) releasing
+  8. Inflammation
+  9. Wallerian degeneration
+
+==============================================================
+CNS HAEMORRHAGE
+==============================================================
+Causes of bleeding in the animal brain:
+
+  - VASCULITIS: infection with Histophilus somni
+  - ENDOTHELIAL DAMAGE:
+      * Canine contagious hepatitis virus (ICH)
+      * Septicaemia or endotoxaemia
+      * Immune complexes
+      * Parasitic larval migration
+  - TRAUMA:
+      * Contusion (coup or contrecoup lesion)
+      * Penetrating injury
+
+==============================================================
+CONTUSION
+==============================================================
+Definition: blood vessel rupture + neuronal damage
+
+Macroscopic findings: possible fractures, bleeding
+
+Classification by location of lesion:
+  - COUP: at the point of striking (direct impact site)
+  - CONTRECOUP: on the opposite side of the brain from the impact
+  - COUP-CONTRECOUP: on both sides of the brain
+
+==============================================================
+TRAUMATIC INJURY OF THE SPINAL CORD
+==============================================================
+  - Most common in DOGS
+  - Conditioned by the width of the vertebral canal
+  - Caudal vertebral canal is narrower → WORSE injuries in the narrow vertebral space
+
+==============================================================
+HEMATOMYELIA / HAEMORRHAGIC MYELOMALACIA
+==============================================================
+Definition: bleeding inside the spinal cord tissue (intraparenchymal)
+
+Mechanism:
+  - Arterial breakdown
+  - Arterial blood forced into the grey matter
+  - Formation of dissecting blood-filled cavity
+  - Spreads until haemostasis or equalisation of pressures within the ruptured blood vessel and newly developed haematoma
+
+FATAL if: dissecting haematoma reaches the zone of n. phrenicus (phrenic nerve, cervical cord)
+  → paralysis of breathing → death

@@ -1,0 +1,130 @@
+NEUROPATHOLOGY — SUBTOPIC 9: FUNGAL & PARASITIC CNS DISEASES
+Pages 18–19
+==============================================================
+
+==============================================================
+FUNGI
+==============================================================
+General:
+  - Usually dissemination of systemic mycosis in IMMUNOSUPPRESSED animals
+  - Rare: aspergillus, candida, mucor, skin fungi, or blue-green algae
+  - More often: Coccidioides immitis, Blastomyces dermatitidis, Histoplasma capsulatum, Cryptococcus neoformans
+
+Portal of entry:
+  - Within macrophages (leukocyte monitoring)
+  - Hematogenous route
+  - Lead to granulomatous to pyogranulomatous inflammation
+
+Macro: well-limited yellow-brown focal lesions
+
+--- CRYPTOCOCCOSIS (Cryptococcus neoformans) ---
+Species affected: cats, dogs, horses, cattle
+Entry: direct spread after sinus or nasal infection, OR within macrophages
+
+Virulence mechanisms:
+  1. Thick protective MUCOPOLYSACCHARIDE CAPSULE
+  2. Special metabolic pathway protecting against oxidative injury
+
+Macro: within CNS and leptomeninges — multiple small cysts of GELATINOUS appearance
+
+Micro:
+  - Multicellular to monocellular fungi
+  - CATS: without inflammatory reaction (or with mild/moderate infiltration of neutrophils, eosinophils, epithelioid cells, giant cells, lymphocytes)
+  - DOGS, HORSES, CATTLE: mild to moderate inflammatory infiltration
+
+Associated risk factors:
+  - Prior or simultaneous infection with FIV, FeLV, Ehrlichia canis
+  - Long-term glucocorticoid therapy
+
+Histochemistry:
+  - Fungi: spherical, half-moon shaped capsule
+  - On H&E preparations: colourless, foamy appearance
+
+==============================================================
+PROTOZOA
+==============================================================
+
+--- TOXOPLASMOSIS (Toxoplasma gondii) ---
+Definitive host: CAT (sexual replication and oocyst shedding)
+Intermediate hosts: fish, amphibians, reptiles, birds, humans, and other mammals
+
+CNS lesions occur in:
+  - In utero infections
+  - Adult immunocompromised individuals
+
+Pathogenesis:
+  1. TACHYZOITES infect and destroy endothelial cells
+     → vasculitis → haemorrhagic infarcts and oedema
+  2. Strong inflammatory response and neuronal damage:
+     - Type III and IV hypersensitivity
+     - Cytotoxic T lymphocytes
+
+Macro:
+  - Acute: bleeding, necrosis
+  - Chronic: yellow-brown necrotic foci
+
+Micro:
+  ACUTE: swelling of endothelial cells, infarctions, oedema, tachyzoites within endothelium
+  SUBACUTE: necrosis, often extensive bleeding, lymphocytic and macrophage perivascular infiltrates, astrogliosis, microgliosis
+  CHRONIC: cysts with BRADYZOITES (often without major lesions if initial inflammatory response was effective)
+
+Staining: visible with H&E; specifically visualised by immunohistochemical staining
+
+--- NEOSPOROSIS (Neospora caninum) ---
+Definitive host: DOGS
+Intermediate hosts: dogs, cats, cattle, sheep, horses
+
+Entry: not clearly established — possibly transplacental with macrophages
+
+Location within CNS: protozoa found in neurons, ependymal cells, mononuclear cells, and endothelial cells
+
+Injury mechanism: endothelial cell damage
+
+CNS diseases:
+  - In utero infections (mid-to-late pregnancy): abortions in cattle
+  - Adult animal infections: dogs and horses
+
+Macro and micro: similar to toxoplasmosis
+Key difference: cystic developmental forms of N. caninum noted ONLY IN THE BRAIN (not other organs)
+
+==============================================================
+MULTICELLULAR PARASITES
+==============================================================
+
+--- INSECT LARVAE ---
+SHEEP — Oestrus ovis:
+  - Nasal cavity → ethmoidal bone → cranium → CNS damage
+
+CATTLE — Hypoderma bovis:
+  - Larval migration into the spinal canal
+  - CNS damage usually occurs AFTER ANTHELMINTIC THERAPY
+  - (Inflammatory reaction to dead parasites causes the damage)
+
+--- TAPEWORMS / CESTODES ---
+COENUROSIS:
+  - Agent: Coenurus cerebralis (larva of dog tapeworm Taenia multiceps)
+  - Host: sheep (intermediate host); dogs (definitive host)
+  - Enters hematogenously → brain → large cyst filled with fluid → COMPRESSIVE ATROPHY
+
+NEUROCYSTICERCOSIS:
+  - Agent: Cysticercus cellulosae (larval form of human tapeworm Taenia solium)
+  - Intermediate carrier: pig, also dog
+  - Forms round cysts in the brain
+
+--- CEREBROSPINAL NEMATODIASIS ---
+Definition: aberrant migration of larval nematode parasites into or through the CNS
+
+Common species:
+  - Strongylus spp. (horse)
+  - Baylisascaris procyonis (dog)
+  - Dirofilaria immitis (dog)
+  - Halicephalobus deletrix (horse)
+  - Toxocara canis (dog)
+
+Entry into CNS: hematogenic route
+
+Mechanism of injury: damage to endothelium due to larval migration
+
+Macro: LINEAR OR SNAKE-LIKE TRACES of necrosis and bleeding in CNS tissue
+
+Micro: visible larvae, mononuclear and eosinophilic encephalitis
