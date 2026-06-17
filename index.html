@@ -805,7 +805,7 @@
     <h1 style="color:var(--primary-dark)">🦋 Endocrine Pathology</h1>
     <p style="color:var(--text-muted)">Study endocrine gland pathology — subtopic notes and questions.</p>
     <div class="hero-stats">
-      <div class="hero-stat"><div class="num">0</div><div class="lbl">Questions</div></div>
+      <div class="hero-stat"><div class="num" id="endo-stat-qcount">0</div><div class="lbl">Questions</div></div>
       <div class="hero-stat"><div class="num">15</div><div class="lbl">Subtopics</div></div>
       <div class="hero-stat"><div class="num" id="endo-stat-sessions">0</div><div class="lbl">Sessions</div></div>
     </div>
@@ -816,9 +816,9 @@
       <div class="icon">📖</div><h3>Subtopic Study</h3>
       <p>Read lecture notes for each subtopic. 15 subtopics drawn directly from the course document.</p>
     </div>
-    <div class="mode-card" style="opacity:0.55;cursor:default">
+    <div class="mode-card" onclick="startAllEndoQuiz()">
       <div class="icon">🎯</div><h3>Exam Prep Mode</h3>
-      <p style="color:var(--text-muted)">Coming soon — randomised questions across all subtopics.</p>
+      <p>Randomised questions drawn from all subtopics with questions added so far — full mixed practice exam.</p>
     </div>
   </div>
 </div>
@@ -839,19 +839,16 @@
       <div class="spacer"></div>
       <span id="endo-notes-title" style="font-weight:700;color:var(--primary-dark);font-size:0.95rem"></span>
     </div>
+    <div id="endo-study-btn-area" style="margin-bottom:12px"></div>
     <div id="endo-notes-body" class="sp-content"></div>
   </div>
 </div>
 
 <!-- =====================================================================
-     ENDOCRINE PATHOLOGY — QUIZ (placeholder structure, no questions yet)
+     ENDOCRINE PATHOLOGY — QUIZ
 ===================================================================== -->
 <div id="page-endo-quiz" class="page">
-  <div class="empty-state">
-    <div class="icon">🎯</div>
-    <div style="font-size:1rem;font-weight:700;color:var(--primary-dark);margin-bottom:8px">Questions Coming Soon</div>
-    <div style="font-size:0.88rem;color:var(--text-muted)">Endocrine pathology exam questions will appear here once they are added.</div>
-  </div>
+  <div id="endo-quiz-area"></div>
 </div>
 
 <!-- =====================================================================
@@ -2878,6 +2875,11 @@ function spShowPage(topic, page) {
   }
   if (topic === 'neuro' && page === 'ai') renderNeuroAiPage();
   if (topic === 'endo' && page === 'topics') renderEndoSubtopics();
+  if (topic === 'endo' && page === 'home') {
+    const qTotal = Object.values(ENDO_QUESTIONS).reduce((s, arr) => s + arr.length, 0);
+    const el = document.getElementById('endo-stat-qcount');
+    if (el) el.textContent = qTotal;
+  }
 }
 
 function openSpTopic(topicId) {
@@ -2904,6 +2906,11 @@ function openEndoSubtopic(idx) {
   document.getElementById('endo-subtopic-list').style.display = 'none';
   document.getElementById('endo-notes-title').textContent = st.icon + ' ' + st.name;
   document.getElementById('endo-notes-body').innerHTML = st.content;
+  const qs = ENDO_QUESTIONS[idx];
+  const qCount = qs ? qs.length : 0;
+  document.getElementById('endo-study-btn-area').innerHTML = qCount > 0
+    ? `<button class="btn btn-primary btn-sm" onclick="beginEndoQuiz(randomiseAnswers(shuffle(ENDO_QUESTIONS[${idx}])), '${st.icon} ${st.name.replace(/'/g,"\\'")}')">🎯 Study ${qCount} Questions</button>`
+    : '';
   document.getElementById('endo-notes-panel').style.display = 'block';
   window.scrollTo(0, 0);
 }
@@ -2911,6 +2918,108 @@ function openEndoSubtopic(idx) {
 function closeEndoNotes() {
   document.getElementById('endo-notes-panel').style.display = 'none';
   document.getElementById('endo-subtopic-list').style.display = '';
+}
+
+// ── ENDO QUIZ ENGINE ─────────────────────────────────────────────────
+
+let endoQuiz = null;
+
+function startAllEndoQuiz() {
+  let all = [];
+  Object.values(ENDO_QUESTIONS).forEach(arr => { all = all.concat(arr); });
+  if (!all.length) return;
+  beginEndoQuiz(randomiseAnswers(shuffle(all)), '🦋 All Subtopics');
+}
+
+function beginEndoQuiz(questions, title) {
+  endoQuiz = { questions, idx: 0, title, answered: false, correct: 0, total: 0 };
+  spShowPage('endo', 'quiz');
+  renderEndoQuestion();
+}
+
+function renderEndoQuestion() {
+  const q = endoQuiz.questions[endoQuiz.idx];
+  if (!q) { finishEndoQuiz(); return; }
+  endoQuiz.answered = false;
+  const diffColor = {easy:'var(--correct-dark)',medium:'#b8860b',hard:'var(--wrong-dark)'}[q.diff];
+  const diffBg = {easy:'var(--correct-bg)',medium:'#fff3cd',hard:'var(--wrong-bg)'}[q.diff];
+  let html = `
+    <div class="question-header">
+      <div class="flex-row" style="flex-wrap:wrap;gap:6px">
+        <span class="badge" style="background:var(--primary-light);color:var(--primary-dark)">${endoQuiz.title}</span>
+        <span class="badge" style="background:${diffBg};color:${diffColor}">${q.diff}</span>
+        <span class="badge" style="background:#e9ecef;color:#495057">${q.type==='tf'?'True/False':'MCQ'}</span>
+      </div>
+      <div class="progress-text">${endoQuiz.idx+1} / ${endoQuiz.questions.length}</div>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" style="width:${(endoQuiz.idx/endoQuiz.questions.length)*100}%"></div></div>
+    <div class="question-text">${q.q}</div>`;
+  if (q.type === 'tf') {
+    html += '<div class="tf-btns"><button class="tf-btn" onclick="answerEndoTF(true)">&#10003; True</button><button class="tf-btn" onclick="answerEndoTF(false)">&#10007; False</button></div>';
+  } else {
+    html += '<div class="options">';
+    for (let i = 0; i < q.opts.length; i++) {
+      html += `<button class="option-btn" onclick="answerEndoMCQ(${i})"><span class="opt-letter">${String.fromCharCode(65+i)}</span>${q.opts[i]}</button>`;
+    }
+    html += '</div>';
+  }
+  html += `<div id="endo-q-feedback" style="display:none"></div>
+    <div class="quiz-actions" id="endo-quiz-actions">
+      <button class="btn btn-ghost btn-sm" onclick="endoSkipQuestion()">Skip</button>
+    </div>`;
+  document.getElementById('endo-quiz-area').innerHTML = html;
+}
+
+function answerEndoMCQ(idx) {
+  if (endoQuiz.answered) return;
+  endoQuiz.answered = true;
+  const q = endoQuiz.questions[endoQuiz.idx];
+  const correct = idx === q.ans;
+  endoQuiz.total++;
+  if (correct) endoQuiz.correct++;
+  document.querySelectorAll('#endo-quiz-area .option-btn').forEach((btn, i) => {
+    btn.disabled = true;
+    if (i === q.ans) btn.classList.add('correct');
+    else if (i === idx && !correct) btn.classList.add('wrong');
+  });
+  showEndoFeedback(q, correct);
+}
+
+function answerEndoTF(given) {
+  if (endoQuiz.answered) return;
+  endoQuiz.answered = true;
+  const q = endoQuiz.questions[endoQuiz.idx];
+  const correct = given === q.ans;
+  endoQuiz.total++;
+  if (correct) endoQuiz.correct++;
+  document.querySelectorAll('#endo-quiz-area .tf-btn').forEach(btn => {
+    btn.disabled = true;
+    const isTrue = btn.textContent.trim().startsWith('✓');
+    if (isTrue && q.ans === true) btn.classList.add('correct');
+    else if (!isTrue && q.ans === false) btn.classList.add('correct');
+    else if (isTrue && given === true && !correct) btn.classList.add('wrong');
+    else if (!isTrue && given === false && !correct) btn.classList.add('wrong');
+  });
+  showEndoFeedback(q, correct);
+}
+
+function showEndoFeedback(q, correct) {
+  const fb = document.getElementById('endo-q-feedback');
+  fb.style.display = 'block';
+  fb.className = 'feedback ' + (correct ? 'correct' : 'wrong');
+  fb.innerHTML = `<strong>${correct ? '✓ Correct!' : '✗ Incorrect'}</strong><br>${q.exp}`;
+  document.getElementById('endo-quiz-actions').innerHTML = `<button class="btn btn-primary" onclick="nextEndoQuestion()">Next →</button>`;
+}
+
+function endoSkipQuestion() { endoQuiz.idx++; renderEndoQuestion(); }
+function nextEndoQuestion() { endoQuiz.idx++; renderEndoQuestion(); }
+
+function finishEndoQuiz() {
+  const pct = endoQuiz.total > 0 ? Math.round(endoQuiz.correct / endoQuiz.total * 100) : 0;
+  document.getElementById('result-score-circle').textContent = pct + '%';
+  document.getElementById('result-title').textContent = pct >= 80 ? '🎉 Excellent!' : pct >= 60 ? '👍 Good Job!' : '📚 Keep Studying!';
+  document.getElementById('result-subtitle').textContent = `${endoQuiz.correct} / ${endoQuiz.total} correct`;
+  document.getElementById('result-modal').classList.add('open');
 }
 
 // ── Neuropathology subtopic notes ─────────────────────────────────────
@@ -3775,6 +3884,27 @@ Cells form <span class="sp-key">vortex/whorl configurations</span> or fascicles/
 </ul>`
   },
 ];
+
+// =====================================================================
+// ENDOCRINE PATHOLOGY — QUESTIONS DATA (built one subtopic at a time)
+// =====================================================================
+const ENDO_QUESTIONS = {
+  0: [ // Endocrine Glands: General Principles
+    {type:'mcq',diff:'easy',q:'What is the primary definition of an endocrine gland?',opts:['A collection of specialised cells that regulates homeostatic functions by releasing hormones into the bloodstream','A collection of specialised cells that releases secretions onto an epithelial surface via a duct','A collection of specialised cells that synthesises antibodies for systemic immune defence','A collection of specialised cells that filters and stores blood cells in the spleen'],ans:0,exp:'Endocrine glands synthesise, store, and release secretions directly into the bloodstream to coordinate homeostasis — unlike exocrine glands, which use a duct.'},
+    {type:'mcq',diff:'easy',q:'In which mode of hormone signalling does the receptor occur on the plasma membrane of the SAME cell type that secreted the signalling molecule?',opts:['Endocrine signalling (e.g. TSH acting on distant thyroid follicular cells)','Autocrine signalling (e.g. IL-1 acting back on the monocyte that secreted it)','Paracrine signalling (e.g. a local factor acting on a nearby different cell type)','Intracrine signalling (e.g. a steroid hormone acting on its own nuclear receptor)'],ans:1,exp:'Autocrine signalling: the receptor is on the plasma membrane of the same cell type that released the molecule, as with IL-1 acting on monocytes.'},
+    {type:'mcq',diff:'medium',q:'Intracrine signalling is characterised by which receptor location?',opts:['Receptors on the plasma membrane of a distant target cell reached via the bloodstream','Receptors on the plasma membrane of the same cell type that secreted the molecule','Receptors on the nuclear envelope of the cell that synthesised or internalised the molecule','Receptors on a different, nearby target cell type located close to the secreting cell'],ans:2,exp:'Intracrine signalling involves receptors on the nuclear envelope of the cell that synthesised or internalised the signalling molecule, typical of steroid hormones.'},
+    {type:'tf',diff:'medium',q:'Paracrine signalling involves a receptor located on the same cell type that released the signalling molecule.',ans:false,exp:'That description is autocrine signalling. Paracrine signalling involves a receptor on a different, nearby target cell type.'},
+    {type:'mcq',diff:'medium',q:'Which structural feature is characteristic of endocrine cells that secrete polypeptide hormones?',opts:['Well-developed rough endoplasmic reticulum and Golgi apparatus that package hormone into secretory granules','Large cytoplasmic lipid bodies containing cholesterol and other steroid precursor molecules','Abundant smooth endoplasmic reticulum with no rough endoplasmic reticulum or Golgi apparatus','Dense bundles of intermediate filaments replacing the normal secretory organelles'],ans:0,exp:'Polypeptide-hormone-secreting cells have well-developed RER (assembles hormone) and Golgi apparatus (packages hormone into secretory granules).'},
+    {type:'mcq',diff:'medium',q:'Why must steroid-hormone-secreting endocrine cells maintain continuous biosynthetic activity?',opts:['They lack secretory granules and significant stores of pre-formed hormone','They store large reserves of pre-formed hormone in dense secretory granules','They release hormone only in response to direct neural stimulation','They convert stored glycogen directly into active hormone on demand'],ans:0,exp:'Steroid-secreting cells have no secretory granules and no significant pre-formed hormone stores, so they depend on continued biosynthesis.'},
+    {type:'tf',diff:'easy',q:'Steroid hormones can cross the plasma membrane and act on receptors within the nucleus, producing a long-lasting effect.',ans:true,exp:'Steroid hormones are lipid-soluble and cross the membrane to bind nuclear receptors, giving a long-lasting effect.'},
+    {type:'tf',diff:'easy',q:'Peptide hormones can passively cross the plasma membrane the same way steroid hormones do.',ans:false,exp:'Peptide hormones cannot cross the plasma membrane; they act via receptors on the cell surface, triggering the hormonal effect.'},
+    {type:'mcq',diff:'medium',q:'What makes thyroid hormones biochemically unique among the major hormone classes?',opts:['They are pure steroid hormones synthesised entirely from cholesterol','They are pure polypeptide hormones with no other distinguishing features','They are neither pure steroid nor pure protein hormones, and they contain iodine','They are catecholamines synthesised exclusively from tyrosine without iodine'],ans:2,exp:'Thyroid hormones are neither pure steroid nor pure protein hormones — they are unique iodine-containing hormones.'},
+    {type:'mcq',diff:'easy',q:'Which of the following is NOT one of the major endocrine organs covered in this system?',opts:['Pituitary gland (hypophysis)','Pineal gland (melatonin secretion)','Spleen (lymphoid filtration organ)','Pancreatic islets (islets of Langerhans)'],ans:2,exp:'The spleen is a lymphoid filtration organ, not one of the major endocrine organs (pituitary, adrenal, thyroid, parathyroid, pancreatic islets, chemoreceptor organs, pineal gland, endocrine adipose tissue).'},
+    {type:'mcq',diff:'medium',q:'Chemoreceptor organs are included among endocrine-related structures primarily because they...',opts:['secrete neurotransmitter-like substances (dopamine, catecholamines) in response to hypoxia','produce large volumes of digestive enzymes for the gastrointestinal tract','filter and concentrate urine within the renal medulla','generate electrical impulses that directly contract skeletal muscle'],ans:0,exp:'Chemoreceptor (glomus) cells contain neurotransmitters such as dopamine and catecholamines, released in response to hypoxia.'},
+    {type:'tf',diff:'easy',q:'Adipose tissue is now recognised as having genuine endocrine activity through secretion of adipokines.',ans:true,exp:'Adipose tissue secretes adipokines such as leptin and adiponectin, giving it recognised endocrine activity.'},
+    {type:'mcq',diff:'hard',q:'Which statement correctly distinguishes autocrine from paracrine signalling?',opts:['Autocrine acts on the same cell type that secreted it; paracrine acts on a different, nearby cell type','Autocrine acts on a different, nearby cell type; paracrine acts on the same cell type that secreted it','Autocrine requires passage through the bloodstream; paracrine never leaves the secreting cell','Autocrine and paracrine are simply two names for the identical signalling mechanism'],ans:0,exp:'Autocrine signalling acts back on the same cell type that secreted the molecule; paracrine signalling acts on a different, nearby target cell type.'},
+  ],
+};
 
 // =====================================================================
 // ENDOCRINE PATHOLOGY — SUBTOPICS DATA
