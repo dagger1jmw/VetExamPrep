@@ -526,6 +526,13 @@
       <p style="font-size:0.83rem;color:var(--text-muted);margin:4px 0 0">CNS cells, injury responses, defences, infections, malformations, degenerative diseases, tumours, and PNS disorders.</p>
       <div class="sp-meta"><span class="sp-pill">13 Subtopics</span><span class="sp-pill">27 Pages</span></div>
     </div>
+    <div class="sp-topic-chip sp-available" onclick="openSpTopic('endo')">
+      <div class="sp-badge">Available</div>
+      <div class="sp-icon">🦋</div>
+      <div class="sp-name">Endocrine Pathology</div>
+      <p style="font-size:0.83rem;color:var(--text-muted);margin:4px 0 0">General principles, pituitary, adrenal, thyroid, parathyroid, pancreatic islets, chemoreceptor organs, pineal gland, and endocrine adipose tissue.</p>
+      <div class="sp-meta"><span class="sp-pill">15 Subtopics</span><span class="sp-pill">16 Pages</span></div>
+    </div>
     <div class="sp-topic-chip sp-coming">
       <div class="sp-badge">Coming Soon</div>
       <div class="sp-icon">❤️</div>
@@ -789,6 +796,78 @@
 
 </div>
 <!-- END NEUROPATHOLOGY AI TUTOR PAGE -->
+
+<!-- =====================================================================
+     ENDOCRINE PATHOLOGY — HOME
+===================================================================== -->
+<div id="page-endo-home" class="page">
+  <div class="hero" style="background:linear-gradient(135deg,#ffe5b4 0%,#ffd1dc 50%,#c7e4f9 100%);color:var(--text)">
+    <h1 style="color:var(--primary-dark)">🦋 Endocrine Pathology</h1>
+    <p style="color:var(--text-muted)">Study endocrine gland pathology — subtopic notes and questions.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">0</div><div class="lbl">Questions</div></div>
+      <div class="hero-stat"><div class="num">15</div><div class="lbl">Subtopics</div></div>
+      <div class="hero-stat"><div class="num" id="endo-stat-sessions">0</div><div class="lbl">Sessions</div></div>
+    </div>
+  </div>
+  <div class="section-title">🚀 Start Studying</div>
+  <div class="mode-grid">
+    <div class="mode-card" onclick="spShowPage('endo','topics')">
+      <div class="icon">📖</div><h3>Subtopic Study</h3>
+      <p>Read lecture notes for each subtopic. 15 subtopics drawn directly from the course document.</p>
+    </div>
+    <div class="mode-card" style="opacity:0.55;cursor:default">
+      <div class="icon">🎯</div><h3>Exam Prep Mode</h3>
+      <p style="color:var(--text-muted)">Coming soon — randomised questions across all subtopics.</p>
+    </div>
+  </div>
+</div>
+
+<!-- =====================================================================
+     ENDOCRINE PATHOLOGY — TOPICS (Subtopic notes)
+===================================================================== -->
+<div id="page-endo-topics" class="page">
+  <div id="endo-subtopic-list">
+    <div class="flex-row" style="margin-bottom:16px">
+      <div class="section-title" style="margin:0">📖 Subtopics</div>
+    </div>
+    <div class="sp-subtopic-grid" id="endo-subtopic-grid"></div>
+  </div>
+  <div id="endo-notes-panel" style="display:none">
+    <div class="flex-row" style="margin-bottom:14px">
+      <button class="btn btn-ghost btn-sm" onclick="closeEndoNotes()">← All Subtopics</button>
+      <div class="spacer"></div>
+      <span id="endo-notes-title" style="font-weight:700;color:var(--primary-dark);font-size:0.95rem"></span>
+    </div>
+    <div id="endo-notes-body" class="sp-content"></div>
+  </div>
+</div>
+
+<!-- =====================================================================
+     ENDOCRINE PATHOLOGY — QUIZ (placeholder structure, no questions yet)
+===================================================================== -->
+<div id="page-endo-quiz" class="page">
+  <div class="empty-state">
+    <div class="icon">🎯</div>
+    <div style="font-size:1rem;font-weight:700;color:var(--primary-dark);margin-bottom:8px">Questions Coming Soon</div>
+    <div style="font-size:0.88rem;color:var(--text-muted)">Endocrine pathology exam questions will appear here once they are added.</div>
+  </div>
+</div>
+
+<!-- =====================================================================
+     ENDOCRINE PATHOLOGY — PROGRESS
+===================================================================== -->
+<div id="page-endo-stats" class="page">
+  <div class="flex-row" style="margin-bottom:18px">
+    <div class="section-title" style="margin:0">📊 My Progress</div>
+  </div>
+  <div class="empty-state">
+    <div class="icon">📊</div>
+    <div style="font-size:1rem;font-weight:700;color:var(--primary-dark);margin-bottom:8px">No Data Yet</div>
+    <div style="font-size:0.88rem;color:var(--text-muted)">Progress tracking will appear here once questions are available and answered.</div>
+  </div>
+</div>
+<!-- END ENDOCRINE PATHOLOGY PAGES -->
 
 <div class="modal-overlay" id="result-modal">
   <div class="modal">
@@ -1403,6 +1482,14 @@ const NAV_CONFIGS = {
       {id:'neuro-pastqs',   label:'📋 Past Exams', fn:"spShowPage('neuro','pastqs')"},
       {id:'neuro-stats',    label:'📊 Progress',   fn:"spShowPage('neuro','stats')"},
       {id:'neuro-ai',       label:'✨ AI Tutor',   fn:"spShowPage('neuro','ai')", style:'color:var(--primary-dark);font-weight:800'},
+    ]
+  },
+  endo: {
+    label: '🦋 Endocrine Pathology',
+    btns: [
+      {id:'endo-home',     label:'🏠 Home',       fn:"spShowPage('endo','home')"},
+      {id:'endo-topics',   label:'📖 Topics',     fn:"spShowPage('endo','topics')"},
+      {id:'endo-stats',    label:'📊 Progress',   fn:"spShowPage('endo','stats')"},
     ]
   },
 };
@@ -2790,10 +2877,40 @@ function spShowPage(topic, page) {
     if (el) el.textContent = qTotal;
   }
   if (topic === 'neuro' && page === 'ai') renderNeuroAiPage();
+  if (topic === 'endo' && page === 'topics') renderEndoSubtopics();
 }
 
 function openSpTopic(topicId) {
   spShowPage(topicId, 'home');
+}
+
+// ── Endocrine Pathology subtopic notes ─────────────────────────────────
+
+function renderEndoSubtopics() {
+  const grid = document.getElementById('endo-subtopic-grid');
+  if (!grid) return;
+  grid.innerHTML = ENDO_SUBTOPICS.map((st, i) =>
+    `<div class="sp-subtopic-chip" onclick="openEndoSubtopic(${i})">
+      <div class="ss-icon">${st.icon}</div>
+      <div class="ss-name">${st.name}</div>
+      <div class="ss-pages">${st.pages}</div>
+    </div>`
+  ).join('');
+}
+
+function openEndoSubtopic(idx) {
+  const st = ENDO_SUBTOPICS[idx];
+  if (!st) return;
+  document.getElementById('endo-subtopic-list').style.display = 'none';
+  document.getElementById('endo-notes-title').textContent = st.icon + ' ' + st.name;
+  document.getElementById('endo-notes-body').innerHTML = st.content;
+  document.getElementById('endo-notes-panel').style.display = 'block';
+  window.scrollTo(0, 0);
+}
+
+function closeEndoNotes() {
+  document.getElementById('endo-notes-panel').style.display = 'none';
+  document.getElementById('endo-subtopic-list').style.display = '';
 }
 
 // ── Neuropathology subtopic notes ─────────────────────────────────────
@@ -3656,6 +3773,358 @@ Cells form <span class="sp-key">vortex/whorl configurations</span> or fascicles/
   <li><span class="sp-key">Antoni A:</span> densely cellular, monomorphous spindle cells + collagen-rich stroma</li>
   <li><span class="sp-key">Antoni B:</span> less dense; cell aggregates within abundant myxomatous stroma</li>
 </ul>`
+  },
+];
+
+// =====================================================================
+// ENDOCRINE PATHOLOGY — SUBTOPICS DATA
+// =====================================================================
+const ENDO_SUBTOPICS = [
+  {
+    icon: '⚖️', name: 'Endocrine Glands: General Principles', pages: 'Page 1',
+    content: `
+<h2>The Endocrine System: General Principles</h2>
+<p>Endocrine glands are <span class="sp-key">collections of specialised cells that regulate homeostatic functions through release of hormones into the bloodstream</span>. They synthesise, store, and release secretions directly into the blood in response to changes in the internal and external environment, coordinating multiple activities that maintain homeostasis.</p>
+<h3>Modes of Hormone Signalling</h3>
+<table>
+  <tr><th>Mode</th><th>Mechanism</th><th>Example</th></tr>
+  <tr><td><span class="sp-key">Endocrine</span></td><td>Signalling molecule travels via the circulatory system to receptors on a distant target cell type</td><td>TSH released into a vesicle, acts on distant thyroid follicular cells</td></tr>
+  <tr><td><span class="sp-key">Autocrine</span></td><td>Receptor on the plasma membrane of the same cell type that secreted the molecule</td><td>IL-1 acting back on monocytes</td></tr>
+  <tr><td><span class="sp-key">Intracrine</span></td><td>Receptor on the nuclear envelope of the cell that synthesised or internalised the molecule</td><td>Steroid hormones</td></tr>
+  <tr><td><span class="sp-key">Paracrine</span></td><td>Receptor on a different target cell type located near the secreting cell</td><td>Local tissue signalling factors</td></tr>
+</table>
+<h3>Characteristics of Endocrine Cells</h3>
+<ul>
+  <li><strong>Polypeptide hormone-secreting cells:</strong> well-developed rough ER (assembles hormones) and Golgi apparatus (packages hormones into secretory granules for storage/transport). On the secretory signal, granules move to the cell periphery by microfilament contraction.</li>
+  <li><strong>Steroid hormone-secreting cells:</strong> large cytoplasmic lipid bodies containing cholesterol and other precursors. No secretory granules and no significant stored pre-formed hormone — they depend on continued biosynthesis.</li>
+</ul>
+<div class="sp-note">Steroid hormones cross the cell membrane and act in the nucleus — long-lasting effect. Peptide hormones cannot cross the membrane; they act via receptors on the plasma membrane, triggering the hormonal effect. Thyroid hormones are unique: neither pure steroid nor pure protein, and they contain iodine.</div>
+<h3>The Major Endocrine Organs</h3>
+<p>Pituitary gland (hypophysis), adrenal gland (glandula suprarenalis), thyroid gland (glandula thyreoidea), parathyroid gland (glandula parathyreoidea), pancreatic islets (islets of Langerhans), chemoreceptor organs, pineal gland, and the endocrine activity of adipose tissue.</p>`
+  },
+  {
+    icon: '🔄', name: 'Mechanisms of Endocrine Dysfunction', pages: 'Pages 2–3',
+    content: `
+<h2>Mechanisms of Endocrine Dysfunction</h2>
+<h3>Primary vs Secondary Hypofunction</h3>
+<table>
+  <tr><th>Primary Hypofunction</th><th>Secondary Hypofunction</th></tr>
+  <tr><td>Failure of development of an endocrine gland (e.g. adenohypophyseal aplasia → pituitary dwarfism in dogs); destruction of secretory cells by disease; biochemical defect in hormone synthesis</td><td>A destructive lesion in one organ causes hypofunction of a distant target endocrine gland (e.g. pituitary gland lesion → hypofunction of its target glands)</td></tr>
+</table>
+<h3>Primary vs Secondary Hyperfunction</h3>
+<table>
+  <tr><th>Primary Hyperfunction</th><th>Secondary Hyperfunction</th></tr>
+  <tr><td>One of the most important pathological mechanisms of endocrine disease in animals: excessive hormone secretion (usually neoplastic), more than the body's ability to use and degrade it</td><td>A lesion in one organ (e.g. adenohypophysis) causes excess trophic hormone secretion → long-term stimulation of the target organ</td></tr>
+</table>
+<h3>Hypersecretion by Non-Endocrine Neoplasms (Ectopic Hormone Production)</h3>
+<p>Non-endocrine neoplasms more often secrete peptides than steroids, iodothyronines, or catecholamines. Classic example: <span class="sp-key">adenocarcinoma of the apocrine glands of the anal sac in dogs</span> produces <span class="sp-key">PTH-rP</span> (PTH-related protein), which mimics PTH action and binds PTH receptors on target cells → persistent hypercalcaemia.</p>
+<h3>Endocrine Dysfunction from Failure of Target Cell Response</h3>
+<ul>
+  <li>Lack of adenylate cyclase in the cell membrane (no signal transduction)</li>
+  <li>Alteration of hormone receptors on the cell surface</li>
+</ul>
+<h3>Endocrine Hyperactivity Secondary to Disease of Other Organs</h3>
+<div class="sp-chain">Chronic renal failure → retention of phosphorus → decline in serum Ca → parathyroid gland stimulation</div>
+<div class="sp-chain">Impaired intestinal Ca absorption → hypocalcaemia → parathyroid gland stimulation</div>
+<h3>Endocrine Dysfunction from Abnormal Hormone Degradation</h3>
+<p><strong>Decreased degradation:</strong></p>
+<ul>
+  <li>Liver disease (cirrhosis) → decreased hepatic degradation of oestrogen → feminisation</li>
+  <li>Chronic renal disease in dogs → decreased degradation of PTH → hyperparathyroidism</li>
+</ul>
+<p><strong>Increased degradation:</strong> xenobiotics (e.g. phenobarbital) induce hepatic enzymes (e.g. uridine diphosphate glucuronyl transferase), increasing the degradation rate of thyroxine and consequently increasing TSH secretion.</p>
+<h3>Iatrogenic Syndromes of Hormone Excess</h3>
+<p>Administration of exogenous hormones affects target cell activity and causes functional disturbances:</p>
+<ul>
+  <li>Adrenal cortical steroids at inappropriately high daily doses → cortisol hypersecretion effect → atrophy of the adrenal cortex</li>
+  <li>Administration of large doses of insulin → hypoglycaemia</li>
+  <li>Progesterone (used for oestrus prevention in the dog) → stimulates expression of the GH gene in mammary glands → elevated circulating growth hormone → acromegaly</li>
+</ul>`
+  },
+  {
+    icon: '🧠', name: 'Pituitary Gland: Structure, Cysts & Panhypopituitarism', pages: 'Page 4',
+    content: `
+<h2>Pituitary Gland (Hypophysis): Structure and Function</h2>
+<h3>Adenohypophysis (pars distalis and pars intermedia)</h3>
+<ul>
+  <li><span class="sp-key">Basophils:</span> LH, TSH, FSH</li>
+  <li><span class="sp-key">Acidophils:</span> GH (somatotropin), LTH/prolactin (lactotrophs), ACTH</li>
+  <li><span class="sp-key">Chromophobes:</span> ACTH and MSH</li>
+</ul>
+<h3>Neurohypophysis (pars nervosa, infundibular stalk)</h3>
+<ul>
+  <li><span class="sp-key">Oxytocin</span></li>
+  <li><span class="sp-key">ADH (vasopressin):</span> synthesised in the cell bodies of hypothalamic neurons, packaged into secretory granules with a binding protein, transported down the long axonal processes of the hypothalamo-hypophyseal tract, and released into the circulation at the pars nervosa.</li>
+</ul>
+<h3>Pituitary Cysts</h3>
+<p>Failure of the oropharyngeal ectoderm of <span class="sp-key">Rathke's pouch</span> to differentiate into adenohypophysis.</p>
+<h3>Juvenile Panhypopituitarism (Pituitary Dwarfism)</h3>
+<table>
+  <tr><th>Feature</th><th>Detail</th></tr>
+  <tr><td>Breeds</td><td>German Shepherd, Spitz, Toy Pinscher</td></tr>
+  <tr><td>Inheritance</td><td>Autosomal recessive (well described in the German Shepherd)</td></tr>
+  <tr><td>Molecular defect</td><td><span class="sp-key">LHX3 gene</span> — deletion in exon 5 → low GH, TSH, prolactin and gonadotropin; ACTH normal or low</td></tr>
+  <tr><td>Clinical signs</td><td>Slower growth, retention of puppy hair coat, bilaterally symmetric alopecia, brownish-black skin hyperpigmentation, infantile genitals, shortened lifespan</td></tr>
+  <tr><td>Appearance</td><td>"Coyote or fox-like": small size with a soft, woolly coat</td></tr>
+</table>`
+  },
+  {
+    icon: '🐴', name: "Adenohypophyseal Neoplasms & Equine PPID", pages: 'Page 5',
+    content: `
+<h2>Neoplasms of the Adenohypophysis</h2>
+<table>
+  <tr><th>Neoplasm</th><th>Notes</th></tr>
+  <tr><td><span class="sp-key">Adenoma</span></td><td>Older horses and dogs</td></tr>
+  <tr><td><span class="sp-key">Craniopharyngioma</span></td><td>Younger animals</td></tr>
+  <tr><td><span class="sp-key">Carcinoma</span></td><td>Malignant, less common</td></tr>
+</table>
+<h3>Equine Pituitary Pars Intermedia Dysfunction (PPID)</h3>
+<p>In the horse, a <span class="sp-key">benign adenoma of the pars intermedia</span> derived from cells producing peptides from <span class="sp-key">POMC (pro-opiomelanocortin)</span> leads to <span class="sp-key">PPID</span> — equine "Cushing's disease." The underlying pathogenesis differs from Cushing's disease in dogs and humans.</p>
+<div class="sp-note">Compression of the hypothalamus by the enlarging neoplasm produces: polyuria, polydipsia, polyphagia, muscle weakness, hyperthermia, and hypertrichosis/hirsutism (failure to shed the hair coat — a classic PPID sign).</div>`
+  },
+  {
+    icon: '💧', name: 'Neurohypophysis: Diabetes Insipidus & Neoplasms', pages: 'Page 6',
+    content: `
+<h2>Neurohypophysis</h2>
+<h3>Diabetes Insipidus</h3>
+<p>Compression and destruction of the pars nervosa, infundibular stalk, or the supraoptic nucleus of the hypothalamus causes inadequate ADH production → diabetes insipidus.</p>
+<table>
+  <tr><th>Hypophyseal (central) DI</th><th>Nephrogenic DI</th></tr>
+  <tr><td>Inadequate ADH production by the neurohypophysis</td><td>Kidney tubular epithelium fails to respond adequately to normal or increased ADH concentrations due to pathological changes</td></tr>
+  <tr><td>Both produce large volumes of hypotonic urine</td><td></td></tr>
+</table>
+<div class="sp-warn">⚠️ Key differential feature: urine osmolality increases in response to exogenous ADH administration in the hypophyseal (central) form, but NOT in the nephrogenic form.</div>
+<h3>Neoplasms</h3>
+<p>Primary neurohypophyseal neoplasms are uncommon.</p>
+<ul>
+  <li><span class="sp-key">Pituicytoma:</span> a neoplasm of glial cells (pituicytes) of the pars nervosa</li>
+  <li>More commonly: expansion of an adenohypophyseal neoplasm (adenoma) or a cerebral neoplasm (e.g. third ventricle ependymoma) into the neurohypophysis</li>
+</ul>`
+  },
+  {
+    icon: '🟠', name: 'Adrenal Cortex: Hormones, Structural Disorders & Adenoma', pages: 'Page 7',
+    content: `
+<h2>Adrenal Gland (Glandula Suprarenalis)</h2>
+<p>The adrenal medulla produces catecholamine hormones (derived from tyrosine): <span class="sp-key">norepinephrine</span> (noradrenaline) and <span class="sp-key">epinephrine</span> (adrenaline).</p>
+<h3>Adrenal Cortex Hormones</h3>
+<table>
+  <tr><th>Class</th><th>Function</th><th>Most Potent</th></tr>
+  <tr><td>Mineralocorticoids</td><td>Affect ion transport — excretion of K, conservation of Na (distal tubules); control of blood pressure and extracellular fluid volume</td><td><span class="sp-key">Aldosterone</span></td></tr>
+  <tr><td>Glucocorticoids</td><td>Carbohydrate/lipid/protein metabolism — increase gluconeogenesis and lipolysis, decrease lipogenesis; suppress inflammatory and immunologic response (reduced resistance to infection)</td><td><span class="sp-key">Cortisol and corticosterone</span></td></tr>
+  <tr><td>Sex steroids</td><td>Progesterone, oestrogen, androgen — excessive secretion (usually neoplastic) leads to virilism, precocious sexual development, or feminisation</td><td>—</td></tr>
+</table>
+<h3>Structural Disorders</h3>
+<ul>
+  <li><strong>Adrenocortical atrophy:</strong> secondary to pituitary gland aplasia, anencephaly, or cyclopia (loss of trophic ACTH drive)</li>
+  <li><strong>Adrenocortical haemorrhage:</strong> Waterhouse–Friderichsen syndrome — anticoagulant therapy, trauma, infectious aetiology (gram-positive organisms)</li>
+  <li><strong>Adrenalitis (hypernephritis):</strong> necrotising (<em>T. gondii</em>), granulomatous (fungal), or suppurative (bacterial)</li>
+  <li><strong>Hyperplasia:</strong> including the congenital adrenogenital syndrome</li>
+  <li><strong>Neoplasia</strong>; <strong>hypo- and hyperadrenocorticism</strong></li>
+</ul>
+<h3>Adenoma</h3>
+<p>May be endocrinologically active or inactive. Reported in the dog, horse, bovine, and sheep.</p>`
+  },
+  {
+    icon: '⚠️', name: "Adrenal Cortex: Carcinoma, Cushing's & Addison's Disease", pages: 'Page 8',
+    content: `
+<h2>Adrenocortical Carcinoma</h2>
+<p>Less frequent than adenoma (bovine, dog). Often functional (cortisol secretion → atrophy of the contralateral adrenal cortex). Invades surrounding tissue and the wall of the caudal vena cava. Usually larger than adenomas, with multiple areas of calcification and ossification. Neoplastic cells show all the characteristics of carcinoma. Growth pattern: trabecular, lobular, and focal.</p>
+<h3>Hyperplasia and Neoplasia in Mink and Ferret</h3>
+<p>More common in caged animals. Diffuse and nodular hyperplasia; ~45% adenomas and ~55% carcinomas. Neoplastic cells produce 17β-oestradiol or androgenic steroids → vulvar enlargement in gonadectomised animals, alopecia, polyuria, polydipsia.</p>
+<h3>Cushing's Disease (Hyperadrenocorticism)</h3>
+<p>Cortisol excess — one of the most common endocrinopathies in adult and aged dogs; infrequent in cats and rare in other domestic species.</p>
+<p><strong>Causes:</strong> functional adrenal neoplasm (cortisol secretion); ACTH-secreting adenoma of the pituitary gland (pituitary-dependent — more common); iatrogenic excess of corticosteroids (therapy).</p>
+<p><strong>Clinical/pathologic findings:</strong> increased appetite; weakened and atrophied muscles of the extremities and abdomen; hepatomegaly (fat and glycogen); skin lesions (epidermal atrophy, atrophy of hair follicles and sebaceous glands, loss of collagen and elastin in the dermis and subcutis, calcification in skin/lung/skeletal muscle/stomach wall); increased gluconeogenesis, lipogenesis, and protein catabolism.</p>
+<h3>Addison's Disease (Hypoadrenocorticism)</h3>
+<p>Adrenocortical insufficiency — most common in young, sexually mature dogs.</p>
+<p><strong>Causes:</strong> pituitary gland destruction (→ reduced ACTH = secondary); idiopathic adrenocortical atrophy (possibly immune-mediated, primary); systemic infections.</p>
+<div class="sp-chain">Loss of negative feedback to the pituitary → increased release of ACTH (and possibly MSH) → skin hyperpigmentation</div>
+<p><strong>Consequences:</strong> decreased mineralocorticoids → marked alteration of serum K, Na, and Cl (decreased urinary K, hyperkalaemia, hyponatraemia, increased urinary chloride). Decreased glucocorticoids → decreased gluconeogenesis and increased sensitivity to insulin.</p>
+<table>
+  <tr><th>Cushing's Disease</th><th>Addison's Disease</th></tr>
+  <tr><td>Hormone excess (cortisol)</td><td>Hormone deficiency (mineralo- + glucocorticoids)</td></tr>
+  <tr><td>Adult/aged dogs</td><td>Young, sexually mature dogs</td></tr>
+  <tr><td>PU/PD, polyphagia, pot-bellied abdomen, skin atrophy</td><td>Hyperpigmentation, hyperkalaemia, hyponatraemia, hypoglycaemic tendency</td></tr>
+</table>`
+  },
+  {
+    icon: '⚡', name: 'Adrenal Medulla: Hyperplasia & Neoplasms', pages: 'Page 9',
+    content: `
+<h2>Adrenal Medulla</h2>
+<h3>Hyperplasia</h3>
+<ul>
+  <li><span class="sp-key">Diffuse:</span> caused by compression on the adrenal cortex</li>
+  <li><span class="sp-key">Nodular:</span> precedes the development of pheochromocytoma</li>
+</ul>
+<h3>Neoplasms</h3>
+<table>
+  <tr><th>Neoplasm</th><th>Notes</th></tr>
+  <tr><td><span class="sp-key">Neuroblastoma</span></td><td>Arises from primitive neuroectodermal cells</td></tr>
+  <tr><td><span class="sp-key">Pheochromocytoma</span></td><td>The most common neoplasm of the adrenal medulla, arising from catecholamine-secreting chromaffin cells — bovine and dog; can also occur extramedullary (extra-adrenal paraganglioma)</td></tr>
+  <tr><td><span class="sp-key">Ganglioneuroma</span></td><td>—</td></tr>
+</table>
+<div class="sp-note">When functional (uncommon), catecholamine-secreting medullary neoplasms cause tachycardia, cardiac hypertrophy, arteriolosclerosis, medial hyperplasia of arterioles, and systemic hypertension.</div>`
+  },
+  {
+    icon: '🦋', name: 'Thyroid Gland: Structure, Function & Non-Neoplastic Disease', pages: 'Pages 9–10',
+    content: `
+<h2>Thyroid Gland: Structure and Function</h2>
+<p>The <span class="sp-key">largest of the endocrine organs</span>; functions exclusively as an endocrine gland. Two lobes connected by an isthmus. Consists of follicles of varying size containing colloid, produced by follicular cells. Two cell populations: <span class="sp-key">follicular cells</span> and <span class="sp-key">parafollicular (C) cells</span>.</p>
+<h3>Hormone Synthesis</h3>
+<p>Tyrosine + iodine bound to tyrosyl residues in thyroglobulin → <span class="sp-key">thyroxine (T4)</span> and <span class="sp-key">triiodothyronine (T3)</span>. Parafollicular (C) cells, located between follicular cells or between follicles, secrete <span class="sp-key">calcitonin</span>.</p>
+<h3>Thyroid Hormone Functions</h3>
+<p>Increase basal metabolism, glycolysis, gluconeogenesis, intestinal glucose absorption; stimulate new protein synthesis; affect lipid metabolism and conversion of cholesterol to bile acids; activate lipoprotein lipase; sensitise adipose tissue to lipolysis (with other hormones); cardiac stimulation; neural transmission; brain activity and neuronal development in younger animals.</p>
+<h3>Non-Neoplastic Thyroid Disease</h3>
+<table>
+  <tr><th>Condition</th><th>Key Features</th></tr>
+  <tr><td><span class="sp-key">Amyloidosis</span></td><td>Not common in the thyroid gland; dogs, cats (Abyssinian), bovines. Usually part of generalised amyloidosis (secondary to a chronic suppurative process elsewhere). Usually does not interfere clinically with thyroid function.</td></tr>
+  <tr><td><span class="sp-key">Idiopathic follicular atrophy (collapse)</span></td><td>Loss of follicular epithelium with gland replacement by adipose connective tissue and minimal inflammatory response. C cells remain present.</td></tr>
+  <tr><td><span class="sp-key">Lymphocytic thyroiditis</span></td><td>Inherited and immunologic basis — antibodies against thyroglobulin, microsomal antigen (thyroperoxidase), TSH receptor protein, nuclear antigen, and a second colloid antigen. Trigger = interaction of genetic and environmental factors (iodine excess, infections, gravidity). Resembles Hashimoto's disease in humans.</td></tr>
+  <tr><td><span class="sp-key">Accessory (ectopic) thyroid tissue</span></td><td>Developmental remnant tissue outside the normal gland location</td></tr>
+  <tr><td><span class="sp-key">Thyroglossal duct cysts</span></td><td>Developmental remnant of the thyroglossal duct</td></tr>
+  <tr><td><span class="sp-key">Follicular and parafollicular cell neoplasms</span></td><td>See following subtopics</td></tr>
+</table>`
+  },
+  {
+    icon: '🌡️', name: "Thyroid Gland: Hypothyroidism, Hyperthyroidism & Goiter", pages: 'Page 11',
+    content: `
+<h2>Hypothyroidism</h2>
+<p>Reduced secretion of thyroid hormones. Clinically important in dogs (Golden Retriever, Doberman Pinscher, Dachshund, Schnauzer, Cocker), less common in other species.</p>
+<p><strong>Effects:</strong> decreased metabolic rate → weight gain without changes in appetite; increased cholesterol → arteriosclerosis (coronary and cerebral vessels); hepatomegaly; glomerular and corneal lipidosis; thinning of the hair coat and symmetric alopecia; hyperpigmentation (areas of alopecia); myxoedema of the dermis and subcutis; lack of libido, absent oestrus cycle, reduced sperm count, reduced conception rates, atrophic spermatogenic epithelium of the testes.</p>
+<h2>Hyperthyroidism</h2>
+<div class="sp-note">The cat is the species to look for. Hyperthyroidism is one of the two most common feline endocrinopathies (diabetes mellitus is the other).</div>
+<p>Caused by excessive secretion of thyroid hormones — adenoma and multinodular hyperplasia of follicular cells. There is an increased incidence of neoplasms and other focal proliferative lesions resulting in hyperthyroidism.</p>
+<p><strong>Potential risk factors:</strong> indoor environment, treatment with insecticides, exposure to herbicides and fertilisers, canned food.</p>
+<p><strong>Laboratory changes:</strong> increased T4, T3, ALT, AST, ALP; disturbance of Ca homeostasis with concomitant diffuse chief cell hyperplasia in the parathyroid glands.</p>
+<h2>Goiter</h2>
+<p>Non-neoplastic, non-inflammatory enlargement of the thyroid gland.</p>
+<p><strong>Causes:</strong> goitrogenic compounds; deficiency or excess of iodine; genetically determined defects in the synthesis of thyroglobulin.</p>
+<div class="sp-chain">Reduced thyroid hormone concentration → increased TSH secretion → hypertrophy and hyperplasia of follicular cells</div>
+<table>
+  <tr><th>Type</th><th>Features</th></tr>
+  <tr><td>Diffuse hyperplastic</td><td>From iodine deficiency or goitrogenic compounds in the diet of the dam (horse, bovine, sheep, goat, pig) → irregular follicles in size/shape, thyroid gland enlarged and dark red</td></tr>
+  <tr><td>Multifocal nodular</td><td>Horse, cat, dog — usually endocrinologically inactive, usually in older animals</td></tr>
+  <tr><td>Colloid</td><td>Hyperplastic follicular cells continue to produce colloid but endocytosis of colloid is decreased; thyroid gland lighter in colour</td></tr>
+  <tr><td>Congenital (dyshormonogenetic)</td><td>Can be autosomal recessive; alterations in synthesis of thyroglobulin or thyroid peroxidase. Lambs, kids, calves, dogs, and cats. Abortion or short survival. Risk increased if the dam grazes pasture containing goitrogenic plants during gestation.</td></tr>
+</table>`
+  },
+  {
+    icon: '🦴', name: 'Thyroid C Cells & Parathyroid Gland Structure', pages: 'Page 12',
+    content: `
+<h2>Thyroid C (Parafollicular) Cells</h2>
+<p>More prominent in farm animals.</p>
+<ul>
+  <li><span class="sp-key">Calcitonin</span> secretion regulates serum calcium concentration (increased Ca → increased calcitonin secretion)</li>
+  <li>Long-term hypercalcaemia → C cell hyperplasia</li>
+  <li>PTH and calcitonin act as <strong>antagonists</strong> in bone resorption, but <strong>synergistically</strong> in reducing tubular phosphorus resorption</li>
+  <li>Most common disorder = neoplasms (adenoma and carcinoma), in older bulls but not cows</li>
+  <li>Often coincide with other endocrine neoplasms (e.g. bilateral pheochromocytoma)</li>
+</ul>
+<h2>Parathyroid Glands</h2>
+<ul>
+  <li>Consist of two pairs of glands (pigs and rats have a single pair)</li>
+  <li>Located in the cranial cervical region; composed of <span class="sp-key">chief cells</span> (secrete PTH) in a fine fibrovascular stroma, plus <span class="sp-key">oxyphil cells</span></li>
+  <li>Unique feedback control mechanism based on the concentration of Ca ions (and, to a lesser extent, Mg) in blood: increased extracellular Ca → decreased PTH synthesis and secretion</li>
+</ul>
+<h3>PTH Actions</h3>
+<p>PTH acts primarily on target cells in the <strong>kidney and bone</strong>, and indirectly on the intestine, to maintain sufficient plasma Ca concentration:</p>
+<ul>
+  <li>Increases osteoclast and osteocyte activity</li>
+  <li>Blocks tubular reabsorption of phosphorus in the proximal tubules</li>
+  <li>Increases Ca absorption in the distal convoluted tubules</li>
+</ul>
+<div class="sp-note">The 3rd major hormone involved in calcium metabolism regulation, alongside PTH and calcitonin, is <span class="sp-key">vitamin D3 (cholecalciferol)</span>, which increases absorption of Ca and P from the intestine.</div>`
+  },
+  {
+    icon: '🧪', name: 'Parathyroid Disorders', pages: 'Page 13',
+    content: `
+<h2>Parathyroid Disorders</h2>
+<div class="sp-warn">⚠️ Hypercalcaemia leads to: bradycardia, polyuria and polydipsia, vomiting, anorexia, muscular weakness.</div>
+<h3>Hypoparathyroidism</h3>
+<p>Decreased PTH secretion, or inability to influence target cells.</p>
+<p><strong>Causes:</strong> inflammation, neoplasms, trophic atrophy from long-term hypercalcaemia (e.g. increased dietary Ca intake — a possible mechanism for parturient paresis).</p>
+<p><strong>Effects:</strong> tetany, ataxia, intermittent tremor of separate muscle groups, nervousness, convulsive seizures (associated with increased blood phosphorus concentrations).</p>
+<h3>Hyperparathyroidism</h3>
+<p>Increased PTH secretion — can be primary (with neoplasia) or secondary.</p>
+<table>
+  <tr><th>Primary Hyperparathyroidism</th><th>Secondary Hyperparathyroidism</th></tr>
+  <tr><td>From adenomas and carcinomas of the parathyroid gland that secrete PTH → increased osteoclastic activity → fibrous osteodystrophy and bone fractures</td><td>From nutritional imbalances (deficient cholecalciferol, excess P with relatively lower Ca — cats, dogs, horses ["big head disease"], birds) or renal disease (chronic renal failure → reduced glomerular filtration rate → phosphorus retention/hyperphosphataemia)</td></tr>
+  <tr><td colspan="2">Both lead to: hypertrophy and hyperplasia of chief cells</td></tr>
+</table>
+<h3>Pseudohyperparathyroidism</h3>
+<p>Resembles hyperparathyroidism, but there are no changes in the parathyroid gland itself. Hypercalcaemia is most often <strong>cancer-associated</strong>:</p>
+<ul>
+  <li>Neoplasms of other organs secrete substances that mimic PTH effects (e.g. anal sac apocrine gland adenocarcinoma — binds PTH receptors, induces bone resorption → hypercalcaemia → parathyroid gland atrophy from feedback) → renal, myocardial, and gastric mucosal calcification</li>
+  <li>Metastases of solid neoplasms to bone (e.g. lung and mammary gland adenocarcinoma in humans)</li>
+  <li>Haematologic malignancies — <span class="sp-key">lymphosarcoma</span> is the most common neoplasm causing hypercalcaemia in dogs</li>
+</ul>`
+  },
+  {
+    icon: '🍬', name: 'Pancreatic Islets: Hormones & Diabetes Mellitus', pages: 'Page 14',
+    content: `
+<h2>Pancreatic Islets (Islets of Langerhans)</h2>
+<p>Contain multiple cell types: <span class="sp-key">B (beta) cells</span> (secrete insulin), <span class="sp-key">A (alpha) cells</span> (secrete glucagon), and <span class="sp-key">F or PP cells</span> (pancreatic polypeptide).</p>
+<h3>Insulin</h3>
+<p>Physiologic stimulus for release = <strong>glucose</strong> (also requires an appropriate calcium concentration). Insulin stimulates anabolic reactions involving carbohydrates, lipids, proteins, and nucleic acids:</p>
+<ul>
+  <li>Increases transfer of glucose and certain other monosaccharides, some amino acids, fatty acids, and K and Mg ions across the plasma membrane</li>
+  <li>Increases glucose oxidation and glycogenesis; stimulates lipogenesis and formation of ATP, DNA, RNA</li>
+  <li>Decreases lipolysis, proteolysis, ketogenesis, and gluconeogenesis</li>
+</ul>
+<h3>Glucagon</h3>
+<p>Secreted in response to a reduction in blood glucose concentration. Stimulates energy release from target cells, increases glycogenolysis, gluconeogenesis, and lipolysis.</p>
+<h3>Hyperfunction</h3>
+<p>Endocrinologically active neoplasms that secrete insulin (adenomas and carcinomas) — notably described in the <span class="sp-key">ferret</span>.</p>
+<h3>Hypofunction → Diabetes Mellitus</h3>
+<p><strong>Mechanisms:</strong> degenerative changes in B cells of the pancreatic islets; lack of target cell response (lack of adenylate cyclase or receptor changes); reduced effectiveness of insulin due to anti-insulin antibodies or inactive complexes; damage to B cells from immune-mediated islet cytotoxicity; inappropriate secretion of counter-regulatory hormones by neoplasms in other endocrine organs.</p>
+<div class="sp-note">Predisposed: female dogs — Miniature Poodles, Dachshunds, terriers — and cats.</div>
+<table>
+  <tr><th>Type 1 Diabetes</th><th>Type 2 Diabetes</th></tr>
+  <tr><td>Deficiency of insulin caused by primary immune-mediated, or rarely idiopathic, loss of B cells</td><td>More complex — reflects both increased resistance to insulin's effects and inadequate insulin secretion</td></tr>
+</table>`
+  },
+  {
+    icon: '🔬', name: 'Pancreatic Islet Neoplasms & Chemoreceptor Organs', pages: 'Page 15',
+    content: `
+<h2>Non-Beta Islet Cell Neoplasms</h2>
+<p>Derived from ectopic <span class="sp-key">APUD (Amine Precursor Uptake and Decarboxylation)</span> cells.</p>
+<h3>Gastrinoma (Gastrin-Secreting)</h3>
+<p>Human, dogs, cats. In humans, gastrin hypersecretion produces <span class="sp-key">Zollinger–Ellison syndrome</span> (peptic ulceration of the gastrointestinal tract). Animals with a Zollinger–Ellison-like syndrome show single or multiple neoplasms in the pancreas — firm, partly encapsulated, extending into the surrounding pancreas.</p>
+<h3>Glucagon-Secreting Neoplasms (Alpha Cell Neoplasms)</h3>
+<p>Most common in dogs. Classically associated with <span class="sp-key">superficial necrolytic dermatitis</span> (hepatocutaneous syndrome).</p>
+<h2>Neoplasms of Chemoreceptor Organs</h2>
+<p>Chemoreceptor organs are sensitive indicators of changes in blood CO2, pH, and oxygen tension, aiding regulation of respiration and circulation. Present in: carotid body, aortic bodies, the nodose ganglion of the vagus nerve, the ciliary ganglion of the orbit, the pancreas, and bodies along the internal jugular vein below the middle ear.</p>
+<p>Carotid and aortic bodies increase minute volume and respiratory rate via parasympathetic nerves, and increase arterial blood pressure via the sympathetic nervous system. Composed of parenchymal chemoreceptor cells, stellate cells, and collections of glomus cells supported by glia-like cells that contain neurotransmitters (dopamine, catecholamines), used in the response to hypoxia.</p>
+<div class="sp-note">The most common change in chemoreceptor organs is neoplasia — the <span class="sp-key">chemodectoma</span>.</div>
+<table>
+  <tr><th>Neoplasm</th><th>Features</th></tr>
+  <tr><td><span class="sp-key">Aortic body neoplasm</span> (adenoma/carcinoma)</td><td>Near the base of the heart (single or multiple), attached to the adventitia of the pulmonary artery or aorta. More common than carotid body neoplasms in animals (the opposite is true in humans). Most common in dogs (Boxers, Boston Terriers). Usually non-functional but causes heart failure via compression.</td></tr>
+  <tr><td><span class="sp-key">Carotid body neoplasm</span> (adenoma/carcinoma)</td><td>Near the bifurcation of the carotid artery, attached to the adventitia. Genetic predisposition aggravated by chronic hypoxia (Boxers, terriers).</td></tr>
+  <tr><td><span class="sp-key">Ectopic thyroid gland neoplasm</span></td><td>Key differential diagnosis for chemodectoma — grossly difficult to differentiate, not subdivided by fine fibrous strands of connective tissue.</td></tr>
+</table>`
+  },
+  {
+    icon: '🌙', name: 'Pineal Gland & Endocrine Adipose Tissue', pages: 'Page 16',
+    content: `
+<h2>Pineal Gland</h2>
+<p>Located between the cerebral hemispheres, dorsally and caudally toward the hypothalamus. Disorders are rare in the pineal gland of domestic animals.</p>
+<p>In adult animals, the pineal gland signals information about the length of the light period to the hypothalamus–pituitary axis, regulating <span class="sp-key">circadian rhythm and seasonal reproductive activity</span>.</p>
+<div class="sp-chain">Pinealocytes secrete melatonin (a tryptophan derivative) during darkness → melatonin binds receptors on the pars tuberalis of the pituitary → blocks gonadotropin-releasing hormone</div>
+<p>Light period prolongation suppresses melatonin secretion → increased reproductive activity in spring, especially in seasonally reproductive animals such as the horse.</p>
+<h2>Adipose Tissue: Endocrine Activity and Obesity</h2>
+<p>Adipose tissue secretes chemical substances into the blood that influence distant target cells in the hypothalamus, liver, and skeletal muscles.</p>
+<h3>Two Important Adipokines</h3>
+<table>
+  <tr><th>Adipokine</th><th>Effects</th></tr>
+  <tr><td><span class="sp-key">Leptin</span></td><td>Produced by adipocytes; involved in appetite suppression and heat generation; pro-inflammatory effect</td></tr>
+  <tr><td><span class="sp-key">Adiponectin</span></td><td>Increases glucose uptake and metabolism (increases insulin sensitivity); anti-inflammatory effect</td></tr>
+</table>
+<div class="sp-note">The balance of leptin and adiponectin determines prevention of, or predisposition to, obesity and insulin resistance.</div>
+<h3>Obesity as an Endocrine Disease</h3>
+<p>Obesity is an endocrine disease not only because it results from other endocrinopathies, but because adipose tissue itself secretes adipokines. It is a major health problem in pets — especially dogs and cats — dairy cows (during the gravidity-to-lactation transition), and inactive horses on high-carbohydrate diets.</p>
+<p><strong>Risk factors:</strong> breed, castration, age, diet (quantity and quality), inactivity.</p>
+<div class="sp-chain">Obesity → resistance to leptin (reduced hypothalamic response) → increased leptin production → insulin resistance correlates with rising leptin → increased risk for diabetes mellitus (especially in cats)</div>
+<p>In obese dogs and cats, adiponectin blood concentration is decreased. The shift toward more leptin and less adiponectin increases the number and activity of monocytes and macrophages in adipose tissue of obese animals — a source of cytokines (TNF-α, IL-6) that drive appetite suppression and a pro-inflammatory state, worsening insulin resistance and dysregulating lipolysis.</p>`
   },
 ];
 
