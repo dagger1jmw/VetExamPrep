@@ -547,12 +547,12 @@
       <p style="font-size:0.83rem;color:var(--text-muted);margin:4px 0 0">Upper and lower airway diseases, pneumonias, pleural diseases, neoplasia.</p>
       <div class="sp-meta"><span class="sp-pill">Coming Soon</span></div>
     </div>
-    <div class="sp-topic-chip sp-coming">
-      <div class="sp-badge">Coming Soon</div>
+    <div class="sp-topic-chip sp-available" onclick="openSpTopic('gi')">
+      <div class="sp-badge">Available</div>
       <div class="sp-icon">🫀</div>
       <div class="sp-name">Gastrointestinal Pathology</div>
       <p style="font-size:0.83rem;color:var(--text-muted);margin:4px 0 0">Oral cavity, oesophagus, stomach, intestines, liver, pancreas.</p>
-      <div class="sp-meta"><span class="sp-pill">Coming Soon</span></div>
+      <div class="sp-meta"><span class="sp-pill">14 Subtopics</span></div>
     </div>
   </div>
 </div>
@@ -865,6 +865,75 @@
   </div>
 </div>
 <!-- END ENDOCRINE PATHOLOGY PAGES -->
+
+<!-- =====================================================================
+     GASTROINTESTINAL PATHOLOGY — HOME
+===================================================================== -->
+<div id="page-gi-home" class="page">
+  <div class="hero" style="background:linear-gradient(135deg,#c9f5d5 0%,#fff3c4 50%,#ffd1dc 100%);color:var(--text)">
+    <h1 style="color:var(--primary-dark)">🫀 Gastrointestinal Pathology</h1>
+    <p style="color:var(--text-muted)">Study alimentary tract pathology — subtopic notes and questions.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num" id="gi-stat-qcount">0</div><div class="lbl">Questions</div></div>
+      <div class="hero-stat"><div class="num">14</div><div class="lbl">Subtopics</div></div>
+      <div class="hero-stat"><div class="num" id="gi-stat-sessions">0</div><div class="lbl">Sessions</div></div>
+    </div>
+  </div>
+  <div class="section-title">🚀 Start Studying</div>
+  <div class="mode-grid">
+    <div class="mode-card" onclick="spShowPage('gi','topics')">
+      <div class="icon">📖</div><h3>Subtopic Study</h3>
+      <p>Read lecture notes for each subtopic. 14 subtopics drawn directly from the course document.</p>
+    </div>
+    <div class="mode-card" onclick="startAllGiQuiz()">
+      <div class="icon">🎯</div><h3>Exam Prep Mode</h3>
+      <p>Randomised questions drawn from all subtopics with questions added so far — full mixed practice exam.</p>
+    </div>
+  </div>
+</div>
+
+<!-- =====================================================================
+     GASTROINTESTINAL PATHOLOGY — TOPICS (Subtopic notes)
+===================================================================== -->
+<div id="page-gi-topics" class="page">
+  <div id="gi-subtopic-list">
+    <div class="flex-row" style="margin-bottom:16px">
+      <div class="section-title" style="margin:0">📖 Subtopics</div>
+    </div>
+    <div class="sp-subtopic-grid" id="gi-subtopic-grid"></div>
+  </div>
+  <div id="gi-notes-panel" style="display:none">
+    <div class="flex-row" style="margin-bottom:14px">
+      <button class="btn btn-ghost btn-sm" onclick="closeGiNotes()">← All Subtopics</button>
+      <div class="spacer"></div>
+      <span id="gi-notes-title" style="font-weight:700;color:var(--primary-dark);font-size:0.95rem"></span>
+    </div>
+    <div id="gi-study-btn-area" style="margin-bottom:12px"></div>
+    <div id="gi-notes-body" class="sp-content"></div>
+  </div>
+</div>
+
+<!-- =====================================================================
+     GASTROINTESTINAL PATHOLOGY — QUIZ
+===================================================================== -->
+<div id="page-gi-quiz" class="page">
+  <div id="gi-quiz-area"></div>
+</div>
+
+<!-- =====================================================================
+     GASTROINTESTINAL PATHOLOGY — PROGRESS
+===================================================================== -->
+<div id="page-gi-stats" class="page">
+  <div class="flex-row" style="margin-bottom:18px">
+    <div class="section-title" style="margin:0">📊 My Progress</div>
+  </div>
+  <div class="empty-state">
+    <div class="icon">📊</div>
+    <div style="font-size:1rem;font-weight:700;color:var(--primary-dark);margin-bottom:8px">No Data Yet</div>
+    <div style="font-size:0.88rem;color:var(--text-muted)">Progress tracking will appear here once questions are available and answered.</div>
+  </div>
+</div>
+<!-- END GASTROINTESTINAL PATHOLOGY PAGES -->
 
 <div class="modal-overlay" id="result-modal">
   <div class="modal">
@@ -1487,6 +1556,14 @@ const NAV_CONFIGS = {
       {id:'endo-home',     label:'🏠 Home',       fn:"spShowPage('endo','home')"},
       {id:'endo-topics',   label:'📖 Topics',     fn:"spShowPage('endo','topics')"},
       {id:'endo-stats',    label:'📊 Progress',   fn:"spShowPage('endo','stats')"},
+    ]
+  },
+  gi: {
+    label: '🫀 Gastrointestinal Pathology',
+    btns: [
+      {id:'gi-home',     label:'🏠 Home',       fn:"spShowPage('gi','home')"},
+      {id:'gi-topics',   label:'📖 Topics',     fn:"spShowPage('gi','topics')"},
+      {id:'gi-stats',    label:'📊 Progress',   fn:"spShowPage('gi','stats')"},
     ]
   },
 };
@@ -2880,6 +2957,12 @@ function spShowPage(topic, page) {
     const el = document.getElementById('endo-stat-qcount');
     if (el) el.textContent = qTotal;
   }
+  if (topic === 'gi' && page === 'topics') renderGiSubtopics();
+  if (topic === 'gi' && page === 'home') {
+    const qTotal = Object.values(GI_QUESTIONS).reduce((s, arr) => s + arr.length, 0);
+    const el = document.getElementById('gi-stat-qcount');
+    if (el) el.textContent = qTotal;
+  }
 }
 
 function openSpTopic(topicId) {
@@ -3019,6 +3102,142 @@ function finishEndoQuiz() {
   document.getElementById('result-score-circle').textContent = pct + '%';
   document.getElementById('result-title').textContent = pct >= 80 ? '🎉 Excellent!' : pct >= 60 ? '👍 Good Job!' : '📚 Keep Studying!';
   document.getElementById('result-subtitle').textContent = `${endoQuiz.correct} / ${endoQuiz.total} correct`;
+  document.getElementById('result-modal').classList.add('open');
+}
+
+// ── Gastrointestinal Pathology subtopic notes ───────────────────────────
+
+function renderGiSubtopics() {
+  const grid = document.getElementById('gi-subtopic-grid');
+  if (!grid) return;
+  grid.innerHTML = GI_SUBTOPICS.map((st, i) =>
+    `<div class="sp-subtopic-chip" onclick="openGiSubtopic(${i})">
+      <div class="ss-icon">${st.icon}</div>
+      <div class="ss-name">${st.name}</div>
+      <div class="ss-pages">${st.pages}</div>
+    </div>`
+  ).join('');
+}
+
+function openGiSubtopic(idx) {
+  const st = GI_SUBTOPICS[idx];
+  if (!st) return;
+  document.getElementById('gi-subtopic-list').style.display = 'none';
+  document.getElementById('gi-notes-title').textContent = st.icon + ' ' + st.name;
+  document.getElementById('gi-notes-body').innerHTML = st.content;
+  const qs = GI_QUESTIONS[idx];
+  const qCount = qs ? qs.length : 0;
+  document.getElementById('gi-study-btn-area').innerHTML = qCount > 0
+    ? `<button class="btn btn-primary btn-sm" onclick="beginGiQuiz(randomiseAnswers(shuffle(GI_QUESTIONS[${idx}])), '${st.icon} ${st.name.replace(/'/g,"\\'")}')">🎯 Study ${qCount} Questions</button>`
+    : '';
+  document.getElementById('gi-notes-panel').style.display = 'block';
+  window.scrollTo(0, 0);
+}
+
+function closeGiNotes() {
+  document.getElementById('gi-notes-panel').style.display = 'none';
+  document.getElementById('gi-subtopic-list').style.display = '';
+}
+
+// ── GI QUIZ ENGINE ───────────────────────────────────────────────────
+
+let giQuiz = null;
+
+function startAllGiQuiz() {
+  let all = [];
+  Object.values(GI_QUESTIONS).forEach(arr => { all = all.concat(arr); });
+  if (!all.length) return;
+  beginGiQuiz(randomiseAnswers(shuffle(all)), '🫀 All Subtopics');
+}
+
+function beginGiQuiz(questions, title) {
+  giQuiz = { questions, idx: 0, title, answered: false, correct: 0, total: 0 };
+  spShowPage('gi', 'quiz');
+  renderGiQuestion();
+}
+
+function renderGiQuestion() {
+  const q = giQuiz.questions[giQuiz.idx];
+  if (!q) { finishGiQuiz(); return; }
+  giQuiz.answered = false;
+  const diffColor = {easy:'var(--correct-dark)',medium:'#b8860b',hard:'var(--wrong-dark)'}[q.diff];
+  const diffBg = {easy:'var(--correct-bg)',medium:'#fff3cd',hard:'var(--wrong-bg)'}[q.diff];
+  let html = `
+    <div class="question-header">
+      <div class="flex-row" style="flex-wrap:wrap;gap:6px">
+        <span class="badge" style="background:var(--primary-light);color:var(--primary-dark)">${giQuiz.title}</span>
+        <span class="badge" style="background:${diffBg};color:${diffColor}">${q.diff}</span>
+        <span class="badge" style="background:#e9ecef;color:#495057">${q.type==='tf'?'True/False':'MCQ'}</span>
+      </div>
+      <div class="progress-text">${giQuiz.idx+1} / ${giQuiz.questions.length}</div>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" style="width:${(giQuiz.idx/giQuiz.questions.length)*100}%"></div></div>
+    <div class="question-text">${q.q}</div>`;
+  if (q.type === 'tf') {
+    html += '<div class="tf-btns"><button class="tf-btn" onclick="answerGiTF(true)">&#10003; True</button><button class="tf-btn" onclick="answerGiTF(false)">&#10007; False</button></div>';
+  } else {
+    html += '<div class="options">';
+    for (let i = 0; i < q.opts.length; i++) {
+      html += `<button class="option-btn" onclick="answerGiMCQ(${i})"><span class="opt-letter">${String.fromCharCode(65+i)}</span>${q.opts[i]}</button>`;
+    }
+    html += '</div>';
+  }
+  html += `<div id="gi-q-feedback" style="display:none"></div>
+    <div class="quiz-actions" id="gi-quiz-actions">
+      <button class="btn btn-ghost btn-sm" onclick="giSkipQuestion()">Skip</button>
+    </div>`;
+  document.getElementById('gi-quiz-area').innerHTML = html;
+}
+
+function answerGiMCQ(idx) {
+  if (giQuiz.answered) return;
+  giQuiz.answered = true;
+  const q = giQuiz.questions[giQuiz.idx];
+  const correct = idx === q.ans;
+  giQuiz.total++;
+  if (correct) giQuiz.correct++;
+  document.querySelectorAll('#gi-quiz-area .option-btn').forEach((btn, i) => {
+    btn.disabled = true;
+    if (i === q.ans) btn.classList.add('correct');
+    else if (i === idx && !correct) btn.classList.add('wrong');
+  });
+  showGiFeedback(q, correct);
+}
+
+function answerGiTF(given) {
+  if (giQuiz.answered) return;
+  giQuiz.answered = true;
+  const q = giQuiz.questions[giQuiz.idx];
+  const correct = given === q.ans;
+  giQuiz.total++;
+  if (correct) giQuiz.correct++;
+  document.querySelectorAll('#gi-quiz-area .tf-btn').forEach(btn => {
+    btn.disabled = true;
+    const isTrue = btn.textContent.trim().startsWith('✓');
+    if (isTrue && q.ans === true) btn.classList.add('correct');
+    else if (!isTrue && q.ans === false) btn.classList.add('correct');
+    else if (isTrue && given === true && !correct) btn.classList.add('wrong');
+    else if (!isTrue && given === false && !correct) btn.classList.add('wrong');
+  });
+  showGiFeedback(q, correct);
+}
+
+function showGiFeedback(q, correct) {
+  const fb = document.getElementById('gi-q-feedback');
+  fb.style.display = 'block';
+  fb.className = 'feedback ' + (correct ? 'correct' : 'wrong');
+  fb.innerHTML = `<strong>${correct ? '✓ Correct!' : '✗ Incorrect'}</strong><br>${q.exp}`;
+  document.getElementById('gi-quiz-actions').innerHTML = `<button class="btn btn-primary" onclick="nextGiQuestion()">Next →</button>`;
+}
+
+function giSkipQuestion() { giQuiz.idx++; renderGiQuestion(); }
+function nextGiQuestion() { giQuiz.idx++; renderGiQuestion(); }
+
+function finishGiQuiz() {
+  const pct = giQuiz.total > 0 ? Math.round(giQuiz.correct / giQuiz.total * 100) : 0;
+  document.getElementById('result-score-circle').textContent = pct + '%';
+  document.getElementById('result-title').textContent = pct >= 80 ? '🎉 Excellent!' : pct >= 60 ? '👍 Good Job!' : '📚 Keep Studying!';
+  document.getElementById('result-subtitle').textContent = `${giQuiz.correct} / ${giQuiz.total} correct`;
   document.getElementById('result-modal').classList.add('open');
 }
 
@@ -4472,6 +4691,452 @@ const ENDO_SUBTOPICS = [
 <p><strong>Risk factors:</strong> breed, castration, age, diet (quantity and quality), inactivity.</p>
 <div class="sp-chain">Obesity → resistance to leptin (reduced hypothalamic response) → increased leptin production → insulin resistance correlates with rising leptin → increased risk for diabetes mellitus (especially in cats)</div>
 <p>In obese dogs and cats, adiponectin blood concentration is decreased. The shift toward more leptin and less adiponectin increases the number and activity of monocytes and macrophages in adipose tissue of obese animals — a source of cytokines (TNF-α, IL-6) that drive appetite suppression and a pro-inflammatory state, worsening insulin resistance and dysregulating lipolysis.</p>`
+  },
+];
+
+// ── Gastrointestinal Pathology data ─────────────────────────────────────
+const GI_QUESTIONS = {};
+
+const GI_SUBTOPICS = [
+  {
+    icon: '👄', name: 'GI Tract Overview & Developmental Anomalies', pages: 'Pages 1–2',
+    content: `
+<h2>Introduction to the Alimentary System</h2>
+<p>The alimentary system comprises the <span class="sp-key">oral cavity (teeth, tonsils, salivary glands, tongue), pharynx, oesophagus, stomach (simple or complex), intestines, liver, and pancreas</span>. Its core functions are ingestion, grinding and mixing (digestion), absorption of nutrients, and metabolism.</p>
+<h3>Predisposing Factors to GI Disease</h3>
+<ul>
+  <li>Direct exposure to the environment</li>
+  <li>Management and husbandry factors</li>
+  <li>Age</li>
+  <li>Loose suspension of viscera within the abdomen</li>
+</ul>
+<h3>Portals of Entry of Pathogens</h3>
+<ul>
+  <li>Ingestion (the most common route)</li>
+  <li>Coughed up and swallowed material</li>
+  <li>Systemic blood-borne infections</li>
+  <li>Parasite migration</li>
+</ul>
+<h3>Protective Mechanisms of the GI Tract</h3>
+<p>Endogenous secretions, resident flora and fauna, vomiting, increased peristalsis (diarrhoea), rapid epithelial turnover, and local immune response.</p>
+<h3>Basic Reactions of the GI Tract</h3>
+<p>Cellular degeneration and necrosis (vesicles, erosions, ulcers, villous atrophy), inflammation, cell proliferation and neoplasia, and altered physiology (secretion, absorption, and motility).</p>
+<h3>Clinical Signs of GI Disease</h3>
+<table>
+  <tr><th>Category</th><th>Signs</th></tr>
+  <tr><td>Specific</td><td>Dysphagia (difficulty swallowing), regurgitation, vomiting, diarrhoea</td></tr>
+  <tr><td>Abnormal evacuations</td><td><span class="sp-key">Haematochezia</span> (fresh blood — lower GI problem); <span class="sp-key">melena</span> (digested blood, black — upper GI problem)</td></tr>
+  <tr><td>Non-specific</td><td>Weight loss, abdominal pain, suboptimal performance</td></tr>
+</table>
+<div class="sp-note">Diagnostic procedures for GI disease include clinical exam, endoscopy, ultrasound, laparoscopy, biopsy, faecal examination, necropsy, and other laboratory tests.</div>
+<h2>Developmental Abnormalities of the Oral Cavity</h2>
+<table>
+  <tr><th>Condition</th><th>Defect</th><th>Causes</th><th>Consequences</th></tr>
+  <tr><td><span class="sp-key">Palatoschisis</span> (cleft palate)</td><td>Failure of fusion of the lateral palatine processes of the maxillary bone</td><td>Genetic (Charolais cattle, often with arthrogryposis); toxic plants in cattle, sheep, and pigs (<em>Crotalaria retusa</em>, <em>Lupinus formosus</em>); steroid administration in primates</td><td>Starvation or aspiration pneumonia and death; may be uni- or bilateral, superficial or extending into the nostril; usually no clinical significance if mild</td></tr>
+  <tr><td><span class="sp-key">Cheiloschisis</span> (cleft lip/hare lip)</td><td>Failure of fusion of the upper lip along the midline or philtrum</td><td>Similar developmental/genetic causes</td><td>Cosmetic to functional depending on severity</td></tr>
+</table>
+<div class="sp-warn">Cleft palate allows direct communication between the oral and nasal cavities — affected neonates are at high risk of aspiration pneumonia when nursing.</div>`
+  },
+  {
+    icon: '🫧', name: 'Vesicular & Erosive/Ulcerative Stomatitis', pages: 'Pages 2–3',
+    content: `
+<h2>Inflammatory Diseases of the Mouth</h2>
+<p><span class="sp-key">Stomatitis</span> is the general term for inflammation of the mouth. Related terms: cheilitis (lips), glossitis (tongue), gingivitis (gums), pharyngitis (pharynx), tonsillitis (tonsils), sialoadenitis (salivary glands).</p>
+<p><strong>Causes of stomatitis:</strong> infectious agents, trauma, chemical injury, auto-immune disease, systemic disease, idiopathic.</p>
+<p><strong>Morphological changes:</strong> macules (redness), papules, vesicles (fluid-filled blisters), erosions, ulcers, necrosis and pseudomembranes, granulomas.</p>
+<h3>Vesicular Stomatitides</h3>
+<p>A <span class="sp-key">vesicle</span> is a fluid-filled raised lesion ≤1cm across (a bulla is >1cm; "blister" is the common term for either). <strong>Pathogenesis:</strong> viral epithelial damage → intracellular oedema (ballooning degeneration) → cell lysis → vesicle/bulla → rupture → erosions/ulcers → cellular infiltration → scab/granulation tissue. Lesions can occur in any stratified epithelium.</p>
+<table>
+  <tr><th>Disease</th><th>Species</th><th>Key features</th></tr>
+  <tr><td><span class="sp-key">Foot-and-mouth disease (FMD)</span></td><td>Mainly ruminants and pigs</td><td>Picornavirus (7 antigenic types); highly contagious, high morbidity, low mortality; drooling, lameness; vesicles → erosions/ulcers/scabs in oral mucosa, feet, and teats; in neonates: myocardial degeneration and myocarditis → acute heart failure; secondary bacterial infection and hoof separation are complications</td></tr>
+  <tr><td>Vesicular stomatitis</td><td>Horses, calves, pigs</td><td>Clinically resembles FMD</td></tr>
+  <tr><td>Swine vesicular disease (SVD)</td><td>Swine</td><td>Clinically resembles FMD</td></tr>
+  <tr><td>Vesicular exanthema</td><td>Swine</td><td>Clinically resembles FMD</td></tr>
+  <tr><td>Feline vesicular glossitis</td><td>Cats</td><td>Caused by feline calicivirus</td></tr>
+</table>
+<div class="sp-warn">In dogs and cats, vesicular oral lesions should prompt a search for auto-immune disease or calicivirus infection. In food/large animals, the major reportable viral vesicular diseases (FMD, SVD, vesicular stomatitis) must be ruled out.</div>
+<h3>Erosive and Ulcerative Stomatitides</h3>
+<p>An <span class="sp-key">erosion</span> is discontinuity of a body surface from partial loss of surface epithelium; an <span class="sp-key">ulcer</span> is full-thickness loss revealing underlying basement membrane/connective tissue. Pathogenesis here is epithelial necrosis and inflammation without prior vesiculation.</p>
+<table>
+  <tr><th>Cause</th><th>Notes</th></tr>
+  <tr><td>Bovine viral diarrhoea (BVD)</td><td>Ulcers of squamous epithelium of mouth, may extend to oesophagus and forestomachs</td></tr>
+  <tr><td>Malignant catarrhal fever (MCF)</td><td>Erosive/ulcerative oral lesions as part of systemic disease</td></tr>
+  <tr><td>Rinderpest / peste des petits ruminants</td><td>Erosive/ulcerative stomatitis in cattle / small ruminants</td></tr>
+  <tr><td>Bluetongue</td><td>Erosive/ulcerative oral lesions in sheep</td></tr>
+  <tr><td>Feline calicivirus and felid herpesvirus-1</td><td>Erosive/ulcerative oral lesions in cats</td></tr>
+  <tr><td>Uraemia, foreign bodies, eosinophilic granuloma complex, NSAIDs, vitamin C deficiency</td><td>Non-infectious causes</td></tr>
+</table>
+<div class="sp-chain">Uraemic stomatitis: high blood and salivary urea → oral bacteria convert urea to ammonia → caustic injury; high BUN → vascular damage → thrombosis → ischaemia → infarction</div>`
+  },
+  {
+    icon: '🔥', name: 'Papular, Necrotizing & Eosinophilic Stomatitis', pages: 'Page 3',
+    content: `
+<h2>Papular Stomatitides</h2>
+<p>A <span class="sp-key">papule</span> is an elevated, dome-shaped or flat-topped lesion ≤1cm across. Pathogenesis: epithelial degeneration, hyperplasia, and inflammation → papule → ulceration and slow healing. Mainly affects young animals. Histologically: ballooning degeneration with intracytoplasmic eosinophilic inclusion bodies.</p>
+<table>
+  <tr><th>Disease</th><th>Etiology</th><th>Lesions</th></tr>
+  <tr><td>Contagious ecthyma (orf)</td><td>Parapoxvirus</td><td>"Scabby mouth" — lesions at sites of trauma: lips, udder, teats, coronary bands</td></tr>
+  <tr><td>Bovine papular stomatitis</td><td>Parapoxvirus</td><td>Round, sharply demarcated ulcers, plaques, and papules</td></tr>
+</table>
+<h2>Necrotizing (Deep) Stomatitides</h2>
+<p>Often secondary to erosions/ulcers and trauma; opportunistic bacteria penetrate the mucosa and invade deeper tissues, resulting in chronic inflammation (abscess, granuloma, or cellulitis).</p>
+<table>
+  <tr><th>Disease</th><th>Etiology / species</th><th>Lesions</th></tr>
+  <tr><td><span class="sp-key">Oral necrobacillosis</span> (calf diphtheria)</td><td><em>Fusobacterium necrophorum</em> (Gram-negative, filamentous); cattle, sheep, pigs</td><td>Ulcers/erosions often covered by yellow-grey pseudomembranes, extensive coagulative necrosis involving the dental pad and hard palate</td></tr>
+  <tr><td><span class="sp-key">Actinobacillosis</span> ("wooden tongue")</td><td><em>Actinobacillus lignieresii</em> (Gram-negative); cattle, sheep, pigs, horses</td><td>Granulomas with club colonies in oral soft tissues (tongue) and regional lymph nodes; connective tissue + granulomatous inflammation</td></tr>
+  <tr><td>Eosinophilic stomatitis (oral eosinophilic granuloma/ulcer)</td><td>Immune-mediated(?); cats, rarely young dogs (Siberian husky)</td><td>Loss of tongue musculature with fibrous replacement during healing; ulcerated masses on the underside of the tongue and floor of the oral cavity, upper lip, gums, palate, tongue, pharynx; many eosinophils, flame figures, chronic inflammatory cells</td></tr>
+  <tr><td>Eosinophilic granuloma complex (cats, skin-associated)</td><td>Likely immune-mediated</td><td>Eosinophilic ulcer/granuloma, linear (collagenolytic) granuloma, eosinophilic plaque; ulcerated skin with fragmented collagen bordered by degranulated eosinophils</td></tr>
+  <tr><td>Lymphoplasmacytic stomatitis</td><td>Idiopathic, probably immune-mediated in cats; associated with bacteria or calicivirus in FIV/FeLV-infected cats</td><td>Gingivitis-stomatitis-pharyngitis complex or lymphoplasmacytic stomatitis form; infiltrate of lymphocytes and plasma cells</td></tr>
+  <tr><td>Chronic ulcerative paradental stomatitis (CUPS)</td><td>Older dogs, associated with dental plaque</td><td>Red, inflamed gums; ulceration of the buccal mucosa ("kissing ulcers") against dental plaque; periodontal disease often present</td></tr>
+</table>
+<div class="sp-note">Six recognised types of necrotizing/deep stomatitis: oral necrobacillosis, actinobacillosis, eosinophilic stomatitis, eosinophilic granuloma complex, lymphoplasmacytic stomatitis, and chronic ulcerative paradental stomatitis (CUPS).</div>`
+  },
+  {
+    icon: '🦷', name: 'Oral Growths, Dental & Periodontal Disease', pages: 'Pages 3–4',
+    content: `
+<h2>Oral Growths (Hyperplasia and Neoplasia)</h2>
+<p>Common in dogs and cats. Clinical signs: discrete mass(es), often ulcerated; dysphagia; ptyalism (increased salivation); halitosis; facial swelling. Both benign and malignant forms occur; histopathology is needed for diagnosis.</p>
+<table>
+  <tr><th>Growth</th><th>Features</th></tr>
+  <tr><td>Gingival hyperplasia</td><td>Simple overgrowth of gum tissue; very common in adult brachycephalic dogs</td></tr>
+  <tr><td>Papilloma (wart)</td><td>Papillomavirus-induced benign tumour of young dogs, calves, and foals; single or multiple (papillomatosis); pedunculated, papilliform, or cauliflower-like masses; may regress spontaneously with long-lasting immunity</td></tr>
+  <tr><td>Epulis</td><td>Gingival growth — neoplasia of the periodontal ligament origin</td></tr>
+  <tr><td><span class="sp-key">Squamous cell carcinoma (SCC)</span></td><td>Most common oral tumour in cats (often arises from tonsils); locally invasive, nodular, often ulcerated mass; poorer prognosis in cats, and in dogs when tonsillar</td></tr>
+  <tr><td><span class="sp-key">Malignant melanoma</span></td><td>Most common malignant oral tumour in dogs; risk factors: small breeds, oral pigmentation; poor prognosis</td></tr>
+  <tr><td>Fibrosarcoma</td><td>Less common than SCC and melanoma; better prognosis</td></tr>
+</table>
+<h2>Diseases of Teeth and Dental Tissues</h2>
+<p><strong>Brachydont (simple) teeth:</strong> humans, carnivores, swine, ruminant incisors — do not continue to grow once erupted. <strong>Hypsodont (complex) teeth:</strong> horses, ruminant cheek teeth, boar tusks — continue to grow throughout life.</p>
+<table>
+  <tr><th>Category</th><th>Examples</th></tr>
+  <tr><td>Abnormal positioning (malocclusion)</td><td>Prognathia (protrusion of the mandible), brachygnathia (short mandible)</td></tr>
+  <tr><td>Primary dysplasia</td><td>Tooth agenesis (anodontia), supernumerary teeth (polyodontia)</td></tr>
+  <tr><td>Secondary dysplasia</td><td>Segmental enamel hypoplasia from canine distemper in puppies, intra-uterine BVD infection, or cachexia (ameloblasts destroyed → no enamel)</td></tr>
+  <tr><td>Abnormal coloration</td><td>Tetracyclines ingested during enamel mineralisation → permanent yellowish discoloration; congenital porphyria → porphyrins incorporated into dentin; fluorosis → discoloration and abnormal wear</td></tr>
+</table>
+<h3>Periodontal Disease</h3>
+<div class="sp-chain">Dental plaque (bacteria + food particles + organic matrix) → dental calculus/tartar (mineralised plaque) → inflammation starting at the gingival crevice → gingival recession and destruction of the periodontal ligament → tooth loosening</div>
+<p><strong>Sequelae:</strong> pulpitis, tooth abscess, alveolar osteomyelitis, tooth loss, bacteraemia.</p>
+<h3>Dental Neoplasia</h3>
+<p>Peripheral odontogenic fibroma (fibromatous epulis of periodontal ligament origin); odontomas and ameloblastomas (benign but locally aggressive).</p>`
+  },
+  {
+    icon: '💧', name: 'Diseases of Tonsils & Salivary Glands', pages: 'Page 4',
+    content: `
+<h2>Diseases of the Tonsils</h2>
+<ul>
+  <li><span class="sp-key">Tonsillitis</span> — tonsils enlarged and covered with exudate</li>
+  <li><span class="sp-key">Neoplasia</span> — lymphoma (lymphosarcoma), squamous cell carcinoma (SCC); the tonsil is a common site of origin for feline oral SCC</li>
+</ul>
+<h2>Diseases of the Salivary Glands</h2>
+<table>
+  <tr><th>Condition</th><th>Description</th></tr>
+  <tr><td>True salivary cyst</td><td>Cystic distension of the salivary gland, lined by epithelium</td></tr>
+  <tr><td><span class="sp-key">Mucocele / sialocele</span></td><td>Pseudocyst — not lined by epithelium, filled with saliva, following duct rupture</td></tr>
+  <tr><td><span class="sp-key">Ranula</span></td><td>True salivary cyst on the floor of the mouth alongside the tongue (ventral side of the tongue)</td></tr>
+  <tr><td>Sialoadenitis</td><td>Inflammation of the salivary gland</td></tr>
+  <tr><td>Sialolithiasis</td><td>Stones (calculi) in salivary glands or ducts</td></tr>
+  <tr><td>Neoplasia</td><td>Salivary gland carcinoma</td></tr>
+</table>
+<div class="sp-note">A mucocele/sialocele forms when trauma or duct obstruction causes saliva to leak into surrounding tissue, where it becomes walled off by reactive fibrous and granulation tissue rather than a true epithelial lining — this distinguishes it from a true salivary cyst.</div>`
+  },
+  {
+    icon: '🚧', name: 'Diseases of the Oesophagus', pages: 'Page 5',
+    content: `
+<h2>Diseases of the Oesophagus</h2>
+<p><strong>Clinical consequences of oesophageal disease:</strong> regurgitation, dysphagia, odynophagia (painful swallowing), multiple swallowing attempts, excessive salivation; may lead to aspiration pneumonia. <span class="sp-key">Achalasia</span> refers to oesophageal motility disorders.</p>
+<h3>Megaoesophagus</h3>
+<p>Dilation due to insufficient, absent, or uncoordinated peristalsis. Causes: innervation or denervation disorders, physical obstructions, stenosis. Often no microscopic lesions are present.</p>
+<table>
+  <tr><th>Form</th><th>Causes</th></tr>
+  <tr><td>Congenital</td><td>Vascular ring anomaly; idiopathic</td></tr>
+  <tr><td>Acquired</td><td>Idiopathic; muscle disease (myasthenia gravis, Chagas' disease, hypothyroidism, polymyositis); lead and thallium poisoning</td></tr>
+</table>
+<h3>Oesophageal Obstruction (Choke) and Rupture</h3>
+<p><span class="sp-key">Choke</span> is the clinical term for oesophageal obstruction secondary to stenosis or blockage. Common obstruction sites: larynx, thoracic inlet, base of the heart, diaphragmatic hiatus.</p>
+<div class="sp-chain">Obstruction → circumferential pressure necrosis → perforation → cellulitis → pleuritis/pyothorax; other sequelae include bloat, stenosis, and pneumonia</div>
+<h3>Reflux Oesophagitis</h3>
+<p>Chemical damage of the squamous epithelium due to repeated gastric acid reflux.</p>
+<h3>Parasitic Lesions</h3>
+<table>
+  <tr><th>Parasite</th><th>Lesion</th></tr>
+  <tr><td><em>Sarcocystis</em></td><td>Pale, elongated nodules within oesophageal muscle</td></tr>
+  <tr><td><em>Spirocerca lupi</em></td><td>Migrates stomach → aortic wall → distal oesophagus, producing granulomatous inflammation and fibroplasia; sequelae: dysphagia, hypertrophic osteoarthropathy, spondylosis deformans, aortic aneurysms (haemothorax), fibrosarcoma/osteosarcoma</td></tr>
+  <tr><td><em>Gongylonema</em> spp.</td><td>Serpentine nematodes located beneath the mucosa</td></tr>
+  <tr><td><em>Gasterophilus</em> and <em>Hypoderma</em> spp.</td><td>Fly larvae migrating through tissue</td></tr>
+</table>
+<h3>Oesophageal Neoplasms</h3>
+<p>Sarcomas associated with <em>S. lupi</em>; papilloma (BPV-4); squamous cell carcinoma (associated with bracken fern, <em>Pteridium aquilinum</em>); lymphoma. Infections may also extend from the mouth into the oesophagus.</p>`
+  },
+  {
+    icon: '🎈', name: 'Forestomach Disease: Ruminal Tympany (Bloat)', pages: 'Page 5',
+    content: `
+<h2>Diseases of the Forestomach</h2>
+<p>Most forestomach disorders relate to management practices.</p>
+<h2>Ruminal Tympany (Bloat)</h2>
+<p>Overdistension of the rumen and reticulum with fermentation gases.</p>
+<table>
+  <tr><th>Type</th><th>Cause</th></tr>
+  <tr><td><span class="sp-key">Primary</span> (legume bloat, dietary bloat, frothy bloat)</td><td>Stable foam formation prevents normal eructation</td></tr>
+  <tr><td><span class="sp-key">Secondary</span></td><td>Physical obstruction or stenosis of the oesophagus — tumours (papilloma, lymphoma), foreign bodies, or pressure from enlarged lymph nodes</td></tr>
+</table>
+<h3>Pathophysiology of Primary (Frothy) Bloat</h3>
+<div class="sp-chain">Legumes release chloroplast particles containing soluble proteins → rumen microbes colonise particles and degrade proteins to insoluble forms → gas bubbles trapped among particles fail to coalesce → stable foam forms</div>
+<div class="sp-chain">Organic acids from legumes + salivary bicarbonate → CO₂ production; ruminal fermentation and acid production → low pH (5–6)</div>
+<div class="sp-chain">Legumes and fine particles → decreased salivary secretion → increased viscosity of rumen contents → foam → physical blockage of the cardia</div>
+<div class="sp-chain">Accumulation of gas → increased intra-abdominal pressure → diaphragmatic and abdominal vein compression → respiratory and circulatory failure → death</div>
+<h3>Signs and Lesions of Bloat</h3>
+<ul>
+  <li>Marked abdominal distension</li>
+  <li>Animal found dead, often rolled onto its back</li>
+  <li>Large volume of frothy rumen content</li>
+  <li>Marked congestion of the head and neck</li>
+  <li>Low rumen pH (&lt;6)</li>
+  <li>A visible "bloat line" on the oesophagus at the thoracic inlet</li>
+</ul>`
+  },
+  {
+    icon: '🔧', name: 'Forestomach Disease: Foreign Bodies & Grain Overload', pages: 'Page 5',
+    content: `
+<h2>Foreign Bodies and Inflammation of the Forestomach</h2>
+<table>
+  <tr><th>Foreign body type</th><th>Notes</th></tr>
+  <tr><td>Trichobezoar</td><td>Hairball</td></tr>
+  <tr><td>Phytobezoar</td><td>Plant material ball</td></tr>
+  <tr><td>Lead substances / sharp metals</td><td>Source of toxicity and physical trauma</td></tr>
+</table>
+<h3>Hardware Disease (Traumatic Reticuloperitonitis/Reticulopericarditis)</h3>
+<div class="sp-chain">Sharp foreign bodies (nails, wire) accumulate in the reticulum → penetrate the reticular wall → peritonitis → penetrate the diaphragm and enter the pericardium → pericarditis</div>
+<p>Affected serosal surfaces become thickened by white fibrous tissue enclosing an accumulation of purulent exudate.</p>
+<h3>Grain Overload (Ruminal Lactic Acidosis, Engorgement Toxaemia, Rumen Overload, Chemical Rumenitis)</h3>
+<div class="sp-chain">Sudden change to a high, easily-fermentable diet → overgrowth of Gram-positive bacteria → increased lactic and dissociated fatty acids → pH below 5 and ruminal atony</div>
+<div class="sp-chain">Acidic pH eliminates normal Gram-negative bacteria and damages the mucosa (microvesicles) → organic acids exert an osmotic effect → fluid drawn into the rumen → sudden death from dehydration, acidosis, and endotoxaemia</div>
+<p><strong>Gross/histologic lesions:</strong> marked hyperaemia, erosion, and multiple confluent vesicles of the ruminal mucosa (gross); moderate cellular infiltration and vesiculation of the mucosa (histologic).</p>
+<h3>Sequelae of Grain Overload</h3>
+<table>
+  <tr><th>Sequela</th><th>Description</th></tr>
+  <tr><td>Bacterial rumenitis</td><td><em>Trueperella pyogenes</em>, <em>Fusobacterium necrophorum</em>; healed ulcers form "stellate scars"</td></tr>
+  <tr><td>Liver abscesses</td><td>Often subclinical; may rupture into the vena cava → fatal septic embolism</td></tr>
+  <tr><td>Mycotic rumenitis</td><td>Well-demarcated, circular haemorrhagic infarcts; can become systemic and cause placentitis and abortion</td></tr>
+</table>
+<div class="sp-warn">Survivors of severe grain overload often carry grave long-term sequelae — chronic rumenitis, liver abscessation, and laminitis are common downstream complications.</div>`
+  },
+  {
+    icon: '🌀', name: 'Stomach & Abomasum: Physical Disorders', pages: 'Page 6',
+    content: `
+<h2>Diseases of the Stomach and Abomasum: Physical Influences</h2>
+<h3>Acute Gastric Dilation and Volvulus (GDV)</h3>
+<p><strong>Cause and pathogenesis:</strong> large/giant breed dogs (rarely pigs); a large meal (dry or highly fermentable); failure of eructation and pyloric outflow; excessive gas and functional obstruction of the cardia and pylorus → dilation → rotation on its mesenteric axis (volvulus).</p>
+<div class="sp-chain">Dilated, rotated stomach compresses the diaphragm, vena cava, and portal vein → reduced venous return → falling cardiac output and visceral perfusion → shock</div>
+<p><strong>Gross changes:</strong> severe abdominal distension, clockwise rotation on a ventrodorsal axis, haemorrhagic infarction, rupture of the stomach, V-shaped bending and congestion of the spleen and intestines.</p>
+<h3>Abomasal Displacement (Left and Right)</h3>
+<table>
+  <tr><th>Type</th><th>Pathogenesis</th></tr>
+  <tr><td><span class="sp-key">Left displacement (LDA)</span></td><td>Most common in dairy cows — older, high-producing animals in the post-calving period; high-grain diet → atony → gas production; recent parturition → displacement to the cranial left abdomen → obstruction → continued HCl secretion → chloride sequestration → hypochloraemia and metabolic alkalosis; sequelae: ulceration and fibrous adhesions</td></tr>
+  <tr><td><span class="sp-key">Right displacement (RDA)</span></td><td>Cows and calves — overdistended abomasum undergoes right and dorsal displacement with rotation (volvulus) → venous infarction → rupture; sequela: vagal nerve trauma → vagal indigestion → secondary bloat</td></tr>
+</table>
+<h3>Gastric Dilation, Impaction and Rupture (Horses)</h3>
+<p>Associated with fermentable feeds, lush pasture, excessive water intake; secondary to intestinal obstruction or equine dysautonomia. A key forensic distinction is made between ante-mortem and post-mortem gastric rupture.</p>`
+  },
+  {
+    icon: '🪱', name: 'Gastric Ulcers, Gastritis, Parasites & Neoplasia', pages: 'Pages 6–7',
+    content: `
+<h2>Gastric Ulcers</h2>
+<p>Important in animals, though less so than in humans. Pathogenesis: imbalance between acid secretion and mucosal protection (the gastric mucosal barrier).</p>
+<div class="sp-chain">Epithelial necrosis → erosion → ulceration → bleeding → perforation → peritonitis</div>
+<p><strong>Main signs:</strong> haematemesis, melena, anaemia, abdominal pain.</p>
+<table>
+  <tr><th>Etiologic factor</th><th>Mechanism</th></tr>
+  <tr><td>Local mucosal injury</td><td>Direct epithelial damage</td></tr>
+  <tr><td>High gastric acidity</td><td>Mast cell tumours (histamine release); Zollinger-Ellison syndrome (hypergastrinaemia)</td></tr>
+  <tr><td>Local ischaemia</td><td>Stress ulcers</td></tr>
+  <tr><td>Steroids and NSAIDs (e.g. aspirin)</td><td>Interference with prostaglandin synthesis (cyclo-oxygenase blockade), direct epithelial necrosis</td></tr>
+  <tr><td>Others</td><td>Diet, infection, uraemia (ammonium ions and vasculopathy); the role of <em>Helicobacter</em> spp. in animals remains undetermined</td></tr>
+</table>
+<h2>Gastritis</h2>
+<table>
+  <tr><th>Species</th><th>Causes</th></tr>
+  <tr><td>Dogs and cats</td><td>Uraemia; eosinophilic gastritis (parasitic/allergic); scirrhous form; possible <em>Helicobacter</em> spp. involvement; chronic gastritis (mucosal atrophy/hypertrophy); hypertrophic gastropathy</td></tr>
+  <tr><td>Pigs</td><td>Sepsis — colibacillosis, salmonellosis</td></tr>
+  <tr><td>Cattle, sheep, and goats</td><td><em>C. septicum</em> (braxy and bradsot); <em>C. perfringens</em> type 1 (abomasitis with ulceration)</td></tr>
+</table>
+<p><strong>Mycotic gastritis:</strong> <em>Mucor</em>, <em>Rhizopus</em>, <em>Absidia</em>, <em>Aspergillus</em> spp. Predisposing factors: viral infection, antibiotic therapy, endotoxaemia, steroids, neoplasia.</p>
+<h2>Parasitic Diseases of the Stomach</h2>
+<table>
+  <tr><th>Species</th><th>Parasite</th><th>Key features</th></tr>
+  <tr><td>Ruminants</td><td><span class="sp-key">Haemonchosis</span> (<em>Haemonchus contortus</em> in sheep/goats; <em>H. placei</em> in cattle)</td><td>Average blood loss ~0.05mL/parasite/day; anaemia, hypoproteinaemia, cachexia, oedema, ascites, hydropericardium, hydrothorax, subcutaneous oedema</td></tr>
+  <tr><td>Ruminants</td><td><span class="sp-key">Ostertagiosis</span> (<em>Teladorsagia circumcincta</em>, <em>Ostertagia ostertagi</em>)</td><td>Mucous metaplasia/hyperplasia, achlorhydria, diarrhoea, hypoproteinaemia, wasting</td></tr>
+  <tr><td>Ruminants/Equine</td><td>Trichostrongylosis (<em>Trichostrongylus axei</em>)</td><td>Mucosal irritation, diarrhoea</td></tr>
+  <tr><td>Equine</td><td><em>Gasterophilus</em> spp.</td><td>Multiple crater-shaped or pock-like ulcers; <em>G. intestinalis</em> in squamous mucosa, <em>G. nasalis</em> in glandular mucosa</td></tr>
+  <tr><td>Equine</td><td><em>Draschia megastoma</em></td><td>Tumour-like nodules and ulcers of the glandular mucosa</td></tr>
+  <tr><td>Swine</td><td>Hyostrongylosis (<em>Hyostrongylus rubidus</em>)</td><td>Gastric ulcers with mucous metaplasia and hyperplasia</td></tr>
+</table>
+<h2>Gastric Neoplasia</h2>
+<p>Primary gastric tumours are uncommon in animals: lymphoma; squamous cell carcinoma (horses); <span class="sp-key">adenocarcinoma</span> (dogs — ulcerated plaques/nodules with marked scirrhous/desmoplastic reaction, metastases common); adenoma (often pedunculate); leiomyoma and leiomyosarcoma.</p>`
+  },
+  {
+    icon: '🌪️', name: 'Intestine: Congenital & Obstructive Disorders', pages: 'Page 8',
+    content: `
+<h2>Congenital Anomalies of the Intestine</h2>
+<table>
+  <tr><th>Anomaly</th><th>Description</th></tr>
+  <tr><td>Stenosis</td><td>Partial occlusion (segmental defect)</td></tr>
+  <tr><td>Atresia</td><td>Complete occlusion (segmental defect)</td></tr>
+  <tr><td><span class="sp-key">Megacolon</span></td><td>Reduction/absence of ganglion cells of the myenteric plexus (aganglionosis); may be secondary to atresia ani or damage to colonic innervation</td></tr>
+</table>
+<h2>Obstruction and Functional Disorders</h2>
+<p>Mechanisms: obturation (intraluminal), compression (external), stenosis (strictures/narrowing), intestinal displacement, functional (absence of peristalsis).</p>
+<h3>Consequences of Obstruction</h3>
+<ul>
+  <li>Death from toxaemia (bacterial overgrowth), shock (dehydration), or starvation</li>
+  <li>Gross lesions: distended abdomen, dilated bowel proximal to the obstruction, collapsed and empty distal segment</li>
+  <li>Congested/infarcted area at the site of obstruction</li>
+  <li>Perforation</li>
+</ul>
+<h3>Intussusception</h3>
+<p>One segment telescopes into the distal segment. The entrapped segment is the <span class="sp-key">intussusceptum</span>; the enveloping segment is the <span class="sp-key">intussuscipiens</span>.</p>
+<div class="sp-chain">Irritability/hypermotility → vascular strangulation → congestion/oedema → ischaemia → infarction → gangrene</div>
+<h3>Herniation</h3>
+<table>
+  <tr><th>Type</th><th>Examples</th></tr>
+  <tr><td>Internal</td><td>Foramen of Winslow (epiploic/omental), omental or mesenteric tears, renosplenic ligament</td></tr>
+  <tr><td>External (true hernial sac)</td><td>Diaphragmatic, ventral, umbilical, scrotal, or femoral</td></tr>
+</table>
+<p><strong>Sequelae:</strong> incarceration (fixation), strangulation (interference with blood flow), perforation, adynamic ileus.</p>
+<h3>Volvulus, Torsion, and Pedunculated Lipomas</h3>
+<p><span class="sp-key">Volvulus</span> = twisting on the mesenteric axis (classically the left colon in horses) → luminal and vascular compromise → obstruction and infarction. <span class="sp-key">Torsion</span> = rotation along the long axis (e.g. of the caecum) → luminal and vascular compromise. Mesenteric lipomas can wrap around the mesentery or bowel, causing strangulation.</p>`
+  },
+  {
+    icon: '🦠', name: 'Enteritis: Pathophysiology of Diarrhoea & Viral Causes', pages: 'Page 9',
+    content: `
+<h2>Inflammation of the Intestine (Enteritis)</h2>
+<p><span class="sp-key">Diarrhoea</span>: secretion of abnormally fluid faeces with increased faecal volume and defecation frequency. <span class="sp-key">Dysentery</span>: painful, bloody diarrhoea.</p>
+<h3>Pathophysiology of Diarrhoea</h3>
+<table>
+  <tr><th>Mechanism</th><th>Description</th></tr>
+  <tr><td>Malabsorption</td><td>Defective digestion/absorption → stools with increased osmolarity</td></tr>
+  <tr><td>Osmotic diarrhoea</td><td>Exerted by unabsorbed luminal solutes</td></tr>
+  <tr><td>Hypersecretion</td><td>Excessive intestinal fluid secretion induced by enterotoxins</td></tr>
+  <tr><td>Exudation</td><td>Increased capillary or epithelial permeability</td></tr>
+  <tr><td>Deranged motility</td><td>Hypermotility (decreased transit time → malabsorption) or decreased motility (increased transit time → bacterial overgrowth → malabsorption)</td></tr>
+</table>
+<p><strong>Consequences of diarrhoea:</strong> dehydration, acidosis, hypoproteinaemia and ascites, electrolyte imbalance, death.</p>
+<p><strong>Gross types of enteritis:</strong> catarrhal, haemorrhagic, fibrinous/fibrinonecrotic, ulcerative, proliferative/hyperplastic, granulomatous.</p>
+<p><strong>Causes of enteritis:</strong> viruses, bacteria, parasites, dietary factors, ingested intoxicants, allergies, idiopathic.</p>
+<h2>Viral Enteritis</h2>
+<p>Most common in young animals, often with concurrent infections. Clinical signs: thin body condition, sunken eyes, soiled perineum. Multiple fresh samples are required for diagnosis.</p>
+<h3>Viral Targets Within the Villus</h3>
+<table>
+  <tr><th>Virus</th><th>Target</th></tr>
+  <tr><td>Rotavirus</td><td>Upper two-thirds of the villus (mature/absorptive enterocytes)</td></tr>
+  <tr><td>Coronavirus</td><td>Tip and middle of the villus</td></tr>
+  <tr><td>Parvovirus</td><td>Crypt (immature enterocytes), Peyer's patches</td></tr>
+</table>
+<h3>Viral Enteritis in Ruminants</h3>
+<table>
+  <tr><th>Agent</th><th>Notes</th></tr>
+  <tr><td>Rotavirus, coronavirus</td><td>Calves &lt;1–3 weeks old</td></tr>
+  <tr><td><span class="sp-key">Bovine viral diarrhoea (BVD)</span> — pestivirus</td><td>Sporadic, high mortality; young adults (8 months–2 years); two species BVDV-1 and BVDV-2; cytopathic (CP) and non-cytopathic (NCP) biotypes; transmission by inhalation, ingestion, transplacental, or vaccination</td></tr>
+  <tr><td>Malignant catarrhal fever (MCF) — gamma-herpesvirus</td><td>African forms (AHV-1, wildebeest) and other forms (OHV-2, CpHV-2, worldwide); erosion/ulceration of mucosa, CNS signs, eye lesions, lymphadenopathy; lymphocytic arteritis and periarteritis in multiple organs</td></tr>
+  <tr><td>Rinderpest, peste des petits ruminants (morbillivirus)</td><td>Severe erosive/ulcerative enteric disease</td></tr>
+</table>
+<div class="sp-chain">NCP BVDV crosses the placenta in the first 4 months of gestation → fetal resorption, mummification, abortion, or congenital anomalies; if the calf survives → persistently infected (PI) calf (immunotolerant) → sheds virus continuously; if a PI animal is later exposed to a CP biotype → mucosal disease develops</div>
+<h3>Viral Enteritis in Pigs, Cats, and Dogs</h3>
+<table>
+  <tr><th>Disease</th><th>Notes</th></tr>
+  <tr><td>Transmissible gastroenteritis (TGE) — coronavirus</td><td>Highly contagious, high mortality in pigs &lt;14 days old; severe villous atrophy</td></tr>
+  <tr><td>Porcine epidemic diarrhoea (coronavirus), porcine rotavirus</td><td>Other porcine enteric viral diseases</td></tr>
+  <tr><td>Feline panleukopenia (feline parvovirus enteritis)</td><td>Young cats, minks, raccoons; targets rapidly dividing cells of the intestine, bone marrow, and lymphoid organs</td></tr>
+  <tr><td>Canine parvovirus enteritis (CPV-2)</td><td>Similar to feline disease; rare interstitial myocarditis in puppies</td></tr>
+  <tr><td>Canine distemper</td><td>Pantropic morbillivirus</td></tr>
+</table>
+<div class="sp-chain">Faeco-oral infection → viral replication → necrosis and sloughing of enterocytes → release of viral particles → extensive loss of enterocytes → villous atrophy → impaired digestion and absorption → diarrhoea (rate of enterocyte loss exceeds the rate of replacement)</div>
+<p><strong>Intestinal lesions (parvoviral enteritis):</strong> segmental crypt necrosis and loss, villous atrophy, intranuclear inclusions, crypt squamous metaplasia and hyperplasia (regeneration). <strong>Other lesions:</strong> lymphoid necrosis, bone marrow hypoplasia, fetal cerebellar hypoplasia.</p>`
+  },
+  {
+    icon: '🧫', name: 'Bacterial Enteritis', pages: 'Page 9',
+    content: `
+<h2>Bacterial Enteritis</h2>
+<p>Major causes: colibacillosis, salmonellosis, clostridial diseases (enterotoxaemia), Johne's disease (paratuberculosis), Lawsonia enteritis, swine dysentery.</p>
+<h3>Colibacillosis</h3>
+<p>A common disease of the newborn — <em>E. coli</em> is part of normal gut flora; disease depends on the number of organisms ingested, ability to adhere to enterocytes, ability to proliferate, and ability to produce toxins or invade tissue. <strong>Predisposing factors:</strong> heavily contaminated environment, failure to receive colostrum, milk substitutes, cold stress, overcrowding, concurrent infections.</p>
+<table>
+  <tr><th>Form</th><th>Mechanism</th></tr>
+  <tr><td>Enterotoxic colibacillosis (ETEC)</td><td>Enterotoxin-mediated secretory diarrhoea</td></tr>
+  <tr><td>Postweaning colibacillosis</td><td>Occurs around weaning</td></tr>
+  <tr><td>Septicaemic colibacillosis</td><td>Fibrinous polyserositis</td></tr>
+  <tr><td>Enteroinvasive colibacillosis</td><td>Bacterial invasion of mucosa</td></tr>
+  <tr><td>Attaching and effacing <em>E. coli</em></td><td>Effacement of microvilli</td></tr>
+  <tr><td>Mucoid enteritis of rabbits</td><td>Species-specific form</td></tr>
+  <tr><td><span class="sp-key">Edema disease</span> (enterotoxaemic colibacillosis, verotoxigenic <em>E. coli</em>)</td><td>Pigs 6–14 weeks old, often after dietary change; angiotoxin absorbed from the intestine causes fibrinoid necrosis of arteries/arterioles → generalised oedema (stomach, intestine, gall bladder, skin, eyelids), cerebral oedema with neuronal necrosis (swine cerebral angiopathy); usually neurological signs without diarrhoea</td></tr>
+</table>
+<h3>Salmonellosis</h3>
+<p>A zoonosis transmitted faeco-orally; organisms invade enterocytes and macrophages, causing enteritis, septicaemia, and endotoxaemia. Most animals are symptomless carriers; human infections are mostly traced to poultry and swine products.</p>
+<table>
+  <tr><th>Form</th><th>Features</th></tr>
+  <tr><td>Peracute/septicaemic (<em>S. choleraesuis</em>)</td><td>Widespread petechial haemorrhages, DIC; fibrinoid necrosis of blood vessels → thrombosis → ischaemia, cyanosis; fibrinous polyserositis</td></tr>
+  <tr><td>Acute</td><td>Fibrinonecrotic enterocolitis, necrosis of Peyer's patches, mesenteric lymphadenopathy; multifocal hepatitis (paratyphoid nodules)</td></tr>
+  <tr><td>Chronic</td><td>Vasculitis → thrombosis → infarct → button ulcers; ulcerative enterocolitis and proctitis; rectal strictures and obstruction</td></tr>
+</table>
+<h3>Clostridial Enteritis</h3>
+<p><em>Clostridium perfringens</em> causes enterotoxaemia — sudden death in well-nourished animals from necrotising/haemorrhagic enterocolitis and toxaemia. Five toxigenic types, each producing one or more exotoxins:</p>
+<table>
+  <tr><th>Type</th><th>Toxins</th><th>Disease</th></tr>
+  <tr><td>A</td><td>Alpha</td><td>Haemorrhagic/necrotic enteritis and abomasitis; antibiotic-associated enteritis (horses, rabbits); colitis X in horses</td></tr>
+  <tr><td>B</td><td>Beta, alpha, epsilon</td><td>Lamb dysentery</td></tr>
+  <tr><td>C</td><td>Alpha, beta</td><td>Bloody diarrhoea in neonates; struck in adults</td></tr>
+  <tr><td>D</td><td>Alpha, epsilon</td><td><span class="sp-key">Pulpy kidney disease</span> in lambs, and encephalomalacia</td></tr>
+  <tr><td>E</td><td>Alpha, iota</td><td>Enteritis in lagomorphs; enterotoxaemia in ruminants</td></tr>
+</table>
+<div class="sp-chain">Pulpy kidney disease (type D): diet change → rapid growth of clostridial organisms → angiotoxin → endothelial damage → haemorrhages, focal symmetrical encephalomalacia, and nephrosis → rapid death; toxin also mobilises hepatic glycogen → terminal glycosuria in sheep</div>
+<p><strong>Gross lesions (besides enteritis):</strong> soft, dark-red "pulpy" kidneys (nephrosis — autolytic); fibrinous pericardial effusion; focal symmetrical encephalomalacia. <strong>Microscopic:</strong> Gram-positive bacilli in intestinal mucosa.</p>
+<p><strong>Other clostridial diseases:</strong> <em>C. piliforme</em> (Tyzzer's disease — enterocolitis and hepatitis in rodents, foals, dogs, cats); <em>C. difficile</em> (associated with oral antibiotics; colitis X in horses).</p>
+<h3>Johne's Disease (Paratuberculosis)</h3>
+<p><em>Mycobacterium avium</em> ssp. <em>paratuberculosis</em> (MAP); oral and transplacental transmission; low morbidity (1–2%), mortality typically in animals &gt;19 months old; chronic wasting disease with diarrhoea, malabsorption, and TNF effects (diarrhoea may not occur in sheep and goats).</p>
+<table>
+  <tr><th>Form</th><th>Species / lesion</th></tr>
+  <tr><td>Lepromatous</td><td>Cattle — prominent mucosal folds</td></tr>
+  <tr><td>Tuberculoid</td><td>Sheep, goats, deer — caseating granulomas</td></tr>
+</table>
+<p>Also: granulomatous lymphangitis and lymphadenitis → lymphangiectasia.</p>
+<h3>Lawsonia Enteritis</h3>
+<p><em>Lawsonia intracellularis</em> in pigs &gt;4 weeks; hyperplasia of crypt epithelium → crypt necrosis; morbidity 5–15%, mortality ~50%; affects the ileum. <strong>Synonyms:</strong> proliferative enteropathy, intestinal adenomatosis complex, proliferative haemorrhagic enteropathy, distal ileal hypertrophy, regional/terminal ileitis.</p>
+<h3>Swine Dysentery</h3>
+<p><em>Brachyspira hyodysenteriae</em> plus anaerobic bacteria; pigs 8–14 weeks old; morbidity ~90%, mortality ~30%; affects the colon.</p>
+<p><strong>Findings:</strong> colonic malabsorption syndrome, fibrinonecrotic pseudomembranes, haemorrhage, necrosis of superficial mucosa, luminal spirochaetes (demonstrated with Warthin-Starry stain).</p>`
+  },
+  {
+    icon: '🔬', name: 'Enteritis: Idiopathic & Parasitic Causes; Intestinal Neoplasia', pages: 'Page 9',
+    content: `
+<h2>Enteric Diseases of Uncertain Aetiology</h2>
+<table>
+  <tr><th>Disease</th><th>Features</th></tr>
+  <tr><td><span class="sp-key">Inflammatory bowel disease (IBD)</span></td><td>Dogs and cats; chronic vomiting, diarrhoea, weight loss; lymphoplasmacytic enteritis</td></tr>
+  <tr><td>Histiocytic ulcerative colitis (Boxer colitis)</td><td>Possibly immune-mediated; villus atrophy, epithelial necrosis, crypt dilation, lamina propria fibrosis; may precede lymphoma onset; classically Boxer and French Bulldog; foamy macrophages loaded with <em>E. coli</em> antigens; raised ulcerative lesions</td></tr>
+  <tr><td>Eosinophilic gastroenteritis</td><td>Parasitic problem or dietary hypersensitivity; haematemesis, melena, haematochezia, circulating eosinophilia, hypereosinophilic syndrome</td></tr>
+  <tr><td>Feline ulcerative colitis</td><td>Idiopathic ulcerative colonic disease in cats</td></tr>
+  <tr><td>Intestinal lymphangiectasia</td><td>Protein-losing enteropathy in dogs; chronic diarrhoea, steatorrhoea, hypoproteinaemia, ascites; causes: congenital developmental disorder of lymphatic vessels, acquired lymph vessel obstruction (lipogranulomatous lymphangitis), or idiopathic</td></tr>
+</table>
+<h2>Parasitic Enteric Diseases</h2>
+<p>Caused mainly by helminths (nematodes, cestodes) and protozoa (coccidia, cryptosporidia, giardia).</p>
+<h3>Helminthosis</h3>
+<p><strong>Effects on the host:</strong> competition for nutrients, local irritation, obstruction of the gut lumen (if large numbers/size), blood loss, migration to other tissue sites.</p>
+<p><strong>Causative agents:</strong> ascarids, hookworms, trichostrongyles, <em>Oesophagostomum</em> spp., <em>Trichuris</em>, strongyles, tapeworms (cestodiasis).</p>
+<h3>Protozoal Disease</h3>
+<table>
+  <tr><th>Disease</th><th>Features</th></tr>
+  <tr><td>Coccidiosis</td><td>Poultry, ruminants, young pigs; <em>Eimeria</em> and <em>Isospora</em> spp.; proliferative, haemorrhagic, or necrotic lesions</td></tr>
+  <tr><td>Cryptosporidiosis</td><td>Affects the enterocyte surface; watery diarrhoea; zoonotic</td></tr>
+  <tr><td>Giardiosis</td><td>Affects the microvillous border → malabsorption; often subclinical; zoonotic</td></tr>
+</table>
+<h2>Neoplastic Diseases of the Intestine</h2>
+<table>
+  <tr><th>Tumour</th><th>Features</th></tr>
+  <tr><td>Intestinal lymphoma (lymphosarcoma)</td><td>Stenosis; ulceration with bleeding/infection</td></tr>
+  <tr><td>Intestinal adenocarcinoma</td><td>Stenosis, obturation, ulceration; metastasis to the serosa (peritoneal carcinomatosis), liver, and lymph nodes</td></tr>
+  <tr><td>Intestinal adenoma / colorectal polyps</td><td>May progress to adenocarcinoma</td></tr>
+  <tr><td>Leiomyoma / leiomyosarcoma and gastrointestinal stromal tumours (GIST)</td><td>Mesenchymal tumours of the intestinal wall</td></tr>
+</table>`
   },
 ];
 
