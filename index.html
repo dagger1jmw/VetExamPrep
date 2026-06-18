@@ -554,6 +554,13 @@
       <p style="font-size:0.83rem;color:var(--text-muted);margin:4px 0 0">Oral cavity, oesophagus, stomach, intestines, liver, pancreas.</p>
       <div class="sp-meta"><span class="sp-pill">14 Subtopics</span></div>
     </div>
+    <div class="sp-topic-chip sp-available" onclick="openSpTopic('hepato')">
+      <div class="sp-badge">Available</div>
+      <div class="sp-icon">🟤</div>
+      <div class="sp-name">Hepatobiliary System</div>
+      <p style="font-size:0.83rem;color:var(--text-muted);margin:4px 0 0">Liver structure, response to injury, failure, circulatory and metabolic disease, infections, toxins, neoplasia, biliary tract, and exocrine pancreas.</p>
+      <div class="sp-meta"><span class="sp-pill">15 Subtopics</span></div>
+    </div>
   </div>
 </div>
 
@@ -934,6 +941,75 @@
   </div>
 </div>
 <!-- END DIGESTIVE SYSTEM PAGES -->
+
+<!-- =====================================================================
+     HEPATOBILIARY SYSTEM — HOME
+===================================================================== -->
+<div id="page-hepato-home" class="page">
+  <div class="hero" style="background:linear-gradient(135deg,#e0c9a6 0%,#f5e3c4 50%,#ffd1dc 100%);color:var(--text)">
+    <h1 style="color:var(--primary-dark)">🟤 Hepatobiliary System</h1>
+    <p style="color:var(--text-muted)">Study liver, biliary tract, and exocrine pancreas pathology — subtopic notes and questions.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num" id="hepato-stat-qcount">0</div><div class="lbl">Questions</div></div>
+      <div class="hero-stat"><div class="num">15</div><div class="lbl">Subtopics</div></div>
+      <div class="hero-stat"><div class="num" id="hepato-stat-sessions">0</div><div class="lbl">Sessions</div></div>
+    </div>
+  </div>
+  <div class="section-title">🚀 Start Studying</div>
+  <div class="mode-grid">
+    <div class="mode-card" onclick="spShowPage('hepato','topics')">
+      <div class="icon">📖</div><h3>Subtopic Study</h3>
+      <p>Read lecture notes for each subtopic. 15 subtopics drawn directly from the course document.</p>
+    </div>
+    <div class="mode-card" onclick="startAllHepatoQuiz()">
+      <div class="icon">🎯</div><h3>Exam Prep Mode</h3>
+      <p>Randomised questions drawn from all subtopics with questions added so far — full mixed practice exam.</p>
+    </div>
+  </div>
+</div>
+
+<!-- =====================================================================
+     HEPATOBILIARY SYSTEM — TOPICS (Subtopic notes)
+===================================================================== -->
+<div id="page-hepato-topics" class="page">
+  <div id="hepato-subtopic-list">
+    <div class="flex-row" style="margin-bottom:16px">
+      <div class="section-title" style="margin:0">📖 Subtopics</div>
+    </div>
+    <div class="sp-subtopic-grid" id="hepato-subtopic-grid"></div>
+  </div>
+  <div id="hepato-notes-panel" style="display:none">
+    <div class="flex-row" style="margin-bottom:14px">
+      <button class="btn btn-ghost btn-sm" onclick="closeHepatoNotes()">← All Subtopics</button>
+      <div class="spacer"></div>
+      <span id="hepato-notes-title" style="font-weight:700;color:var(--primary-dark);font-size:0.95rem"></span>
+    </div>
+    <div id="hepato-study-btn-area" style="margin-bottom:12px"></div>
+    <div id="hepato-notes-body" class="sp-content"></div>
+  </div>
+</div>
+
+<!-- =====================================================================
+     HEPATOBILIARY SYSTEM — QUIZ
+===================================================================== -->
+<div id="page-hepato-quiz" class="page">
+  <div id="hepato-quiz-area"></div>
+</div>
+
+<!-- =====================================================================
+     HEPATOBILIARY SYSTEM — PROGRESS
+===================================================================== -->
+<div id="page-hepato-stats" class="page">
+  <div class="flex-row" style="margin-bottom:18px">
+    <div class="section-title" style="margin:0">📊 My Progress</div>
+  </div>
+  <div class="empty-state">
+    <div class="icon">📊</div>
+    <div style="font-size:1rem;font-weight:700;color:var(--primary-dark);margin-bottom:8px">No Data Yet</div>
+    <div style="font-size:0.88rem;color:var(--text-muted)">Progress tracking will appear here once questions are available and answered.</div>
+  </div>
+</div>
+<!-- END HEPATOBILIARY SYSTEM PAGES -->
 
 <div class="modal-overlay" id="result-modal">
   <div class="modal">
@@ -1564,6 +1640,14 @@ const NAV_CONFIGS = {
       {id:'gi-home',     label:'🏠 Home',       fn:"spShowPage('gi','home')"},
       {id:'gi-topics',   label:'📖 Topics',     fn:"spShowPage('gi','topics')"},
       {id:'gi-stats',    label:'📊 Progress',   fn:"spShowPage('gi','stats')"},
+    ]
+  },
+  hepato: {
+    label: '🟤 Hepatobiliary System',
+    btns: [
+      {id:'hepato-home',     label:'🏠 Home',       fn:"spShowPage('hepato','home')"},
+      {id:'hepato-topics',   label:'📖 Topics',     fn:"spShowPage('hepato','topics')"},
+      {id:'hepato-stats',    label:'📊 Progress',   fn:"spShowPage('hepato','stats')"},
     ]
   },
 };
@@ -2963,6 +3047,12 @@ function spShowPage(topic, page) {
     const el = document.getElementById('gi-stat-qcount');
     if (el) el.textContent = qTotal;
   }
+  if (topic === 'hepato' && page === 'topics') renderHepatoSubtopics();
+  if (topic === 'hepato' && page === 'home') {
+    const qTotal = Object.values(HEPATO_QUESTIONS).reduce((s, arr) => s + arr.length, 0);
+    const el = document.getElementById('hepato-stat-qcount');
+    if (el) el.textContent = qTotal;
+  }
 }
 
 function openSpTopic(topicId) {
@@ -3238,6 +3328,142 @@ function finishGiQuiz() {
   document.getElementById('result-score-circle').textContent = pct + '%';
   document.getElementById('result-title').textContent = pct >= 80 ? '🎉 Excellent!' : pct >= 60 ? '👍 Good Job!' : '📚 Keep Studying!';
   document.getElementById('result-subtitle').textContent = `${giQuiz.correct} / ${giQuiz.total} correct`;
+  document.getElementById('result-modal').classList.add('open');
+}
+
+// ── Hepatobiliary System subtopic notes ─────────────────────────────────
+
+function renderHepatoSubtopics() {
+  const grid = document.getElementById('hepato-subtopic-grid');
+  if (!grid) return;
+  grid.innerHTML = HEPATO_SUBTOPICS.map((st, i) =>
+    `<div class="sp-subtopic-chip" onclick="openHepatoSubtopic(${i})">
+      <div class="ss-icon">${st.icon}</div>
+      <div class="ss-name">${st.name}</div>
+      <div class="ss-pages">${st.pages}</div>
+    </div>`
+  ).join('');
+}
+
+function openHepatoSubtopic(idx) {
+  const st = HEPATO_SUBTOPICS[idx];
+  if (!st) return;
+  document.getElementById('hepato-subtopic-list').style.display = 'none';
+  document.getElementById('hepato-notes-title').textContent = st.icon + ' ' + st.name;
+  document.getElementById('hepato-notes-body').innerHTML = st.content;
+  const qs = HEPATO_QUESTIONS[idx];
+  const qCount = qs ? qs.length : 0;
+  document.getElementById('hepato-study-btn-area').innerHTML = qCount > 0
+    ? `<button class="btn btn-primary btn-sm" onclick="beginHepatoQuiz(randomiseAnswers(shuffle(HEPATO_QUESTIONS[${idx}])), '${st.icon} ${st.name.replace(/'/g,"\\'")}')">🎯 Study ${qCount} Questions</button>`
+    : '';
+  document.getElementById('hepato-notes-panel').style.display = 'block';
+  window.scrollTo(0, 0);
+}
+
+function closeHepatoNotes() {
+  document.getElementById('hepato-notes-panel').style.display = 'none';
+  document.getElementById('hepato-subtopic-list').style.display = '';
+}
+
+// ── HEPATO QUIZ ENGINE ───────────────────────────────────────────────
+
+let hepatoQuiz = null;
+
+function startAllHepatoQuiz() {
+  let all = [];
+  Object.values(HEPATO_QUESTIONS).forEach(arr => { all = all.concat(arr); });
+  if (!all.length) return;
+  beginHepatoQuiz(randomiseAnswers(shuffle(all)), '🟤 All Subtopics');
+}
+
+function beginHepatoQuiz(questions, title) {
+  hepatoQuiz = { questions, idx: 0, title, answered: false, correct: 0, total: 0 };
+  spShowPage('hepato', 'quiz');
+  renderHepatoQuestion();
+}
+
+function renderHepatoQuestion() {
+  const q = hepatoQuiz.questions[hepatoQuiz.idx];
+  if (!q) { finishHepatoQuiz(); return; }
+  hepatoQuiz.answered = false;
+  const diffColor = {easy:'var(--correct-dark)',medium:'#b8860b',hard:'var(--wrong-dark)'}[q.diff];
+  const diffBg = {easy:'var(--correct-bg)',medium:'#fff3cd',hard:'var(--wrong-bg)'}[q.diff];
+  let html = `
+    <div class="question-header">
+      <div class="flex-row" style="flex-wrap:wrap;gap:6px">
+        <span class="badge" style="background:var(--primary-light);color:var(--primary-dark)">${hepatoQuiz.title}</span>
+        <span class="badge" style="background:${diffBg};color:${diffColor}">${q.diff}</span>
+        <span class="badge" style="background:#e9ecef;color:#495057">${q.type==='tf'?'True/False':'MCQ'}</span>
+      </div>
+      <div class="progress-text">${hepatoQuiz.idx+1} / ${hepatoQuiz.questions.length}</div>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" style="width:${(hepatoQuiz.idx/hepatoQuiz.questions.length)*100}%"></div></div>
+    <div class="question-text">${q.q}</div>`;
+  if (q.type === 'tf') {
+    html += '<div class="tf-btns"><button class="tf-btn" onclick="answerHepatoTF(true)">&#10003; True</button><button class="tf-btn" onclick="answerHepatoTF(false)">&#10007; False</button></div>';
+  } else {
+    html += '<div class="options">';
+    for (let i = 0; i < q.opts.length; i++) {
+      html += `<button class="option-btn" onclick="answerHepatoMCQ(${i})"><span class="opt-letter">${String.fromCharCode(65+i)}</span>${q.opts[i]}</button>`;
+    }
+    html += '</div>';
+  }
+  html += `<div id="hepato-q-feedback" style="display:none"></div>
+    <div class="quiz-actions" id="hepato-quiz-actions">
+      <button class="btn btn-ghost btn-sm" onclick="hepatoSkipQuestion()">Skip</button>
+    </div>`;
+  document.getElementById('hepato-quiz-area').innerHTML = html;
+}
+
+function answerHepatoMCQ(idx) {
+  if (hepatoQuiz.answered) return;
+  hepatoQuiz.answered = true;
+  const q = hepatoQuiz.questions[hepatoQuiz.idx];
+  const correct = idx === q.ans;
+  hepatoQuiz.total++;
+  if (correct) hepatoQuiz.correct++;
+  document.querySelectorAll('#hepato-quiz-area .option-btn').forEach((btn, i) => {
+    btn.disabled = true;
+    if (i === q.ans) btn.classList.add('correct');
+    else if (i === idx && !correct) btn.classList.add('wrong');
+  });
+  showHepatoFeedback(q, correct);
+}
+
+function answerHepatoTF(given) {
+  if (hepatoQuiz.answered) return;
+  hepatoQuiz.answered = true;
+  const q = hepatoQuiz.questions[hepatoQuiz.idx];
+  const correct = given === q.ans;
+  hepatoQuiz.total++;
+  if (correct) hepatoQuiz.correct++;
+  document.querySelectorAll('#hepato-quiz-area .tf-btn').forEach(btn => {
+    btn.disabled = true;
+    const isTrue = btn.textContent.trim().startsWith('✓');
+    if (isTrue && q.ans === true) btn.classList.add('correct');
+    else if (!isTrue && q.ans === false) btn.classList.add('correct');
+    else if (isTrue && given === true && !correct) btn.classList.add('wrong');
+    else if (!isTrue && given === false && !correct) btn.classList.add('wrong');
+  });
+  showHepatoFeedback(q, correct);
+}
+
+function showHepatoFeedback(q, correct) {
+  const fb = document.getElementById('hepato-q-feedback');
+  fb.style.display = 'block';
+  fb.className = 'feedback ' + (correct ? 'correct' : 'wrong');
+  fb.innerHTML = `<strong>${correct ? '✓ Correct!' : '✗ Incorrect'}</strong><br>${q.exp}`;
+  document.getElementById('hepato-quiz-actions').innerHTML = `<button class="btn btn-primary" onclick="nextHepatoQuestion()">Next →</button>`;
+}
+
+function hepatoSkipQuestion() { hepatoQuiz.idx++; renderHepatoQuestion(); }
+function nextHepatoQuestion() { hepatoQuiz.idx++; renderHepatoQuestion(); }
+
+function finishHepatoQuiz() {
+  const pct = hepatoQuiz.total > 0 ? Math.round(hepatoQuiz.correct / hepatoQuiz.total * 100) : 0;
+  document.getElementById('result-score-circle').textContent = pct + '%';
+  document.getElementById('result-title').textContent = pct >= 80 ? '🎉 Excellent!' : pct >= 60 ? '👍 Good Job!' : '📚 Keep Studying!';
+  document.getElementById('result-subtitle').textContent = `${hepatoQuiz.correct} / ${hepatoQuiz.total} correct`;
   document.getElementById('result-modal').classList.add('open');
 }
 
@@ -5362,6 +5588,449 @@ const GI_SUBTOPICS = [
   <tr><td>Intestinal adenoma / colorectal polyps</td><td>May progress to adenocarcinoma</td></tr>
   <tr><td>Leiomyoma / leiomyosarcoma and gastrointestinal stromal tumours (GIST)</td><td>Mesenchymal tumours of the intestinal wall</td></tr>
 </table>`
+  },
+];
+
+const HEPATO_QUESTIONS = {};
+
+const HEPATO_SUBTOPICS = [
+  {
+    icon: '🔬', name: 'Liver Structure, Function & Patterns of Injury', pages: 'Pages 1–2',
+    content: `
+<h2>Structure and Function</h2>
+<p>The liver is the <span class="sp-key">largest visceral organ</span>, receiving roughly 25% of cardiac stroke volume (67% via the portal vein, 33% via the hepatic artery). Relative liver size varies by diet: carnivores 2–3% of body mass, omnivores ~2%, herbivores ~1%.</p>
+<p>The <span class="sp-key">hepatic lobule</span> is the basic functional unit — a hexagonal arrangement of sheets of hepatocytes around a central vein, with a <span class="sp-key">portal triad</span> (bile duct + portal vein branch + hepatic artery branch, plus nerves and lymph vessels) at each corner.</p>
+<h3>Liver Functions</h3>
+<ul>
+  <li>Bilirubin metabolism</li>
+  <li>Carbohydrate metabolism</li>
+  <li>Fat metabolism</li>
+  <li>Xenobiotic metabolism / biotransformation</li>
+  <li>Protein synthesis</li>
+  <li>Immune function (Kupffer cells)</li>
+</ul>
+<h2>Hepatobiliary Response to Injury</h2>
+<p>Destruction or lowering of functional reserves, lowered capacity for regeneration, and disrupted bile flow are the clinical hallmarks of liver disease.</p>
+<h3>Mechanisms of Liver Destruction</h3>
+<ul>
+  <li>Metabolic biotransformation via the <span class="sp-key">cytochrome P450</span> pathway into reactive compounds</li>
+  <li>Stimulation of autoimmunity</li>
+  <li>Disruption of calcium homeostasis</li>
+  <li>Damage to bile canaliculi and to mitochondria</li>
+</ul>
+<h3>Portals of Entry</h3>
+<ul>
+  <li>Haematogenous</li>
+  <li>Retrograde (via biliary and pancreatic canals)</li>
+  <li>Direct extension (trauma through the abdominal/thoracic wall, or from the lumen of the GI tract)</li>
+</ul>
+<h3>Morphologic Classification</h3>
+<p>The pattern and distribution of hepatic lesions depends on the <span class="sp-key">portal of entry</span> (e.g. haematogenous infection gives a random multifocal distribution), the type of inflammatory response, the causative agent (virus, bacteria, fungi), and which intrahepatic cell type is involved. Hepatic lesions are characterised by the pattern of change within the lobule (multifocal, zonal, massive), the type of inflammatory cell present, signs of necrosis/fibrosis/regeneration, and the duration of the inflammatory response.</p>
+<h3>2.1 Patterns of Hepatocellular Degeneration and Necrosis</h3>
+<table>
+  <tr><th>Pattern</th><th>Description</th></tr>
+  <tr><td><span class="sp-key">Random</span></td><td>Any part of the liver — individual cell necrosis, multifocal necrosis, or piecemeal necrosis at lobe borders</td></tr>
+  <tr><td><span class="sp-key">Zonal</span></td><td>Repetitive patterns: centrilobular, paracentral, midzonal, periportal, or bridging (multifocal)</td></tr>
+  <tr><td><span class="sp-key">Massive</span></td><td>Affects the whole lobule/lobe</td></tr>
+</table>
+<div class="sp-note">Zonal necrosis patterns are diagnostically useful — centrilobular necrosis points toward hypoxia or many hepatotoxins, while periportal necrosis points toward agents absorbed directly from portal blood.</div>`
+  },
+  {
+    icon: '🔥', name: 'Patterns of Hepatitis & Common Responses to Injury', pages: 'Page 2',
+    content: `
+<h2>2.2 Patterns (Types) of Hepatitis</h2>
+<table>
+  <tr><th>Type</th><th>Features</th></tr>
+  <tr><td><span class="sp-key">Acute hepatitis</span></td><td>Inflammation with hepatocellular necrosis and apoptosis</td></tr>
+  <tr><td><span class="sp-key">Chronic hepatitis</span></td><td>Fibrosis with accumulation of mononuclear cells (lymphocytes, macrophages, plasma cells), frequent regeneration, sometimes neutrophils, possible granulomas</td></tr>
+  <tr><td><span class="sp-key">Non-specific reactive hepatitis</span></td><td>Diffuse, non-specific response to systemic disease (often GI tract) or a smouldering process from previous hepatitis — mild inflammatory infiltrate in the portal tract or parenchyma without necrosis</td></tr>
+  <tr><td><span class="sp-key">Cholangitis</span></td><td>Affects only the bile ducts: neutrophilic (acute or chronic), lymphocytic (cats), or destructive (necrosis of biliary epithelial cells, e.g. trimethoprim-sulfamethoxazole in dogs)</td></tr>
+  <tr><td><span class="sp-key">Cholangiohepatitis</span></td><td>Combined hepatitis and inflammation of the bile ducts</td></tr>
+</table>
+<h2>2.3 Common Responses to Hepatocellular Injury</h2>
+<table>
+  <tr><th>Response</th><th>Notes</th></tr>
+  <tr><td><span class="sp-key">Regeneration</span></td><td>The liver is famous for its capacity to regenerate</td></tr>
+  <tr><td><span class="sp-key">Fibrosis</span></td><td>Optimal regeneration requires a scarless, intact framework with good vascularisation and a preserved biliary tree. Can be focal, multifocal, diffuse, or biliary; significance depends on effect on hepatic function, circulation, and bile flow, and on reversibility</td></tr>
+  <tr><td><span class="sp-key">Biliary hyperplasia</span></td><td>Proliferation of biopotential progenitor (oval) cells, from which bile ducts and/or periportal hepatocytes can develop — a common finding in biliary outflow obstruction</td></tr>
+  <tr><td><span class="sp-key">Liver cirrhosis</span></td><td>End-stage, irreversible diffuse fibrosis converting normal architecture into structurally abnormal lobules</td></tr>
+</table>
+<div class="sp-chain">Chronic hepatotoxicity (e.g. aflatoxin, pyrrolizidine alkaloids) → repeated hepatocellular injury → fibrosis → cirrhosis; occurs swiftly in young animals</div>
+<h3>Causes of Cirrhosis</h3>
+<ul>
+  <li>Chronic toxicity (toxins, therapeutic agents)</li>
+  <li>Chronic cholangitis and/or obstruction</li>
+  <li>Chronic passive congestion (right-sided heart failure)</li>
+  <li>Congenital dysfunction of copper or iron metabolism</li>
+  <li>Idiopathic</li>
+</ul>
+<div class="sp-warn">Cirrhosis is irreversible — the goal in earlier-stage fibrosis is to remove the inciting cause before architecture is permanently distorted.</div>`
+  },
+  {
+    icon: '⚠️', name: 'Manifestations of Liver Failure', pages: 'Page 3',
+    content: `
+<h2>Manifestations of Failure of Liver Functions</h2>
+<p>Hepatic insufficiency is a clinical syndrome resulting from a significant drop in hepatocyte number or function (acute or chronic damage). Not all liver functions are lost simultaneously.</p>
+<h3>Hepatic Encephalopathy</h3>
+<p>Clinically: depression, behavioural changes, mania, convulsions — signs are more pronounced after feeding. Seen with acute hepatic disease (horses, ruminants), chronic hepatic disease, and portosystemic shunts (carnivores).</p>
+<div class="sp-chain">Shunting of portal blood away from the liver → accumulation of neurotoxic substances (mainly ammonia) in the blood → CNS effects → encephalopathy</div>
+<h3>Metabolic Disturbances</h3>
+<ul>
+  <li>Bleeding tendencies — reduced coagulation factor synthesis, impaired platelet function, reduced vitamin K absorption, DIC</li>
+  <li>Intravascular haemolysis (mostly in horses)</li>
+  <li>Hypoalbuminaemia — reduced production or loss via ascites/GI tract</li>
+</ul>
+<h3>Vascular and Haemodynamic Alterations</h3>
+<p><span class="sp-key">Portal hypertension</span> and acquired portosystemic shunting lead to ascites, driven by portal hypertension, hypoalbuminaemia, and lowered colloid-osmotic pressure.</p>
+<h3>Cutaneous Manifestations</h3>
+<table>
+  <tr><th>Condition</th><th>Mechanism</th></tr>
+  <tr><td><span class="sp-key">Photosensitisation</span></td><td>Photodynamic pigment activated by UV (290–400nm). Primary: direct absorption of photosensitising substances (St John's wort/<em>Hypericum perforatum</em>, chlorpromazine, phenothiazine). Secondary (hepatic): ruminants with disrupted phylloerythrin excretion. Congenital: abnormal haem metabolism with porphyrin retention</td></tr>
+  <tr><td><span class="sp-key">Hepatocutaneous syndrome</span></td><td>Rare disease in dogs (necrolytic migratory erythema / superficial necrolytic dermatitis) — crusts, erosions, and scales at mucocutaneous junctions and thickened paw pads</td></tr>
+</table>
+<h3>Immunologic Manifestations</h3>
+<p>Reduced blood filtration by Kupffer cells leads to more frequent endotoxaemia and increased risk of systemic infection.</p>
+<h3>Disturbances in Bile Flow</h3>
+<p><span class="sp-key">Cholestasis</span> and <span class="sp-key">icterus (jaundice)</span> — plasma bilirubin >2mg/dL causes jaundice in elastin-rich tissues (sclera, aorta). Classified as prehepatic, hepatic, or post-hepatic. Grossly: generalised yellow discoloration, liver yellow to green-brown. Histologically: bile within bile canaliculi and hepatocytes.</p>`
+  },
+  {
+    icon: '🧬', name: 'Developmental Anomalies of the Liver', pages: 'Page 3',
+    content: `
+<h2>Developmental Anomalies</h2>
+<table>
+  <tr><th>Anomaly</th><th>Notes</th></tr>
+  <tr><td><span class="sp-key">Congenital cysts</span></td><td>Most commonly arise from embryonal anomalies of the bile ducts; seen in dogs, cats, and pigs</td></tr>
+  <tr><td><span class="sp-key">Hepatic displacement</span></td><td>Diaphragmatic hernia, ventral hernia</td></tr>
+  <tr><td><span class="sp-key">Lobe torsion</span></td><td>Most common in cattle and horses</td></tr>
+  <tr><td><span class="sp-key">Tension lipidosis</span></td><td>Focal white areas adjacent to the insertion of the ligament</td></tr>
+  <tr><td><span class="sp-key">Capsular fibrosis</span></td><td>Resolution of non-septic peritonitis; possible larval nematode migration (villous perihepatitis)</td></tr>
+</table>
+<div class="sp-note">Most developmental liver anomalies are incidental necropsy findings rather than primary causes of clinical disease, unless they predispose to torsion, rupture, or secondary infection.</div>`
+  },
+  {
+    icon: '🩸', name: 'Circulatory Abnormalities of the Liver', pages: 'Pages 4–5',
+    content: `
+<h2>Circulatory Abnormalities</h2>
+<p>Circulatory disturbances arise from failure of blood inflow into, or outflow from, the liver.</p>
+<h3>5.1 Disturbances of Blood Flow (Inflow)</h3>
+<table>
+  <tr><th>Disorder</th><th>Features</th></tr>
+  <tr><td><span class="sp-key">Anaemia</span></td><td>Acute: centrilobular/periacinar degeneration and necrosis. Chronic: atrophy of centrilobular hepatocytes with dilation and congestion of sinusoids, accentuating the lobular pattern</td></tr>
+  <tr><td><span class="sp-key">Congenital portosystemic shunt</span></td><td>Intrahepatic (failure of ductus venosus obliteration at birth, more common in large-breed dogs) or extrahepatic (portal vein anastomoses to caudal vena cava or azygos vein, more common in small-breed dogs and cats). Leads to hepatoencephalopathy and hepatocellular atrophy</td></tr>
+  <tr><td><span class="sp-key">Portal vein thrombosis</span></td><td>Uncommon, mostly in dogs; associated with hypercoagulable states (liver disease, hyperadrenocorticism, protein-losing entero/nephropathies, neoplasia, immune-mediated and infectious disease) or local inflammation (e.g. pancreatitis)</td></tr>
+</table>
+<h3>Portal Hypertension</h3>
+<table>
+  <tr><th>Type</th><th>Cause</th></tr>
+  <tr><td>Prehepatic</td><td>Portal vein obstructed before entering the liver</td></tr>
+  <tr><td>Intrahepatic</td><td>Chronic liver disease, fibrosis, cirrhosis, amyloidosis, regenerative nodules</td></tr>
+  <tr><td>Post-hepatic</td><td>Partial or complete thrombosis of the hepatic vein or adjacent caudal vena cava (uncommon)</td></tr>
+</table>
+<p>Congestive heart failure can also produce portal hypertension, which can in turn drive acquired portosystemic shunting and ascites. Additional causes include intrahepatic arteriovenous shunts (direct hepatic artery–portal vein communications) and congenital portal vein hypoplasia (microvascular dysplasia) in dogs and occasionally cats.</p>
+<h3>5.2 Disturbances of Outflow</h3>
+<table>
+  <tr><th>Disorder</th><th>Features</th></tr>
+  <tr><td><span class="sp-key">Passive congestion (acute)</span></td><td>Consequence of acute right-sided heart failure — slight liver enlargement and pronounced lobular pattern</td></tr>
+  <tr><td><span class="sp-key">Passive congestion (chronic)</span></td><td>Most common in older dogs from tricuspid valve insufficiency (endocardiosis) — "<span class="sp-key">nutmeg liver</span>", centrilobular congestion, midzonal/periportal hepatocyte steatosis, and in later stages centrilobular fibrosis</td></tr>
+  <tr><td><span class="sp-key">Hepatic veno-occlusive disease</span></td><td>Outflow obstruction at the level of the small hepatic veins</td></tr>
+</table>
+<h3>5.3 Incidental Vascular Disorders</h3>
+<table>
+  <tr><th>Disorder</th><th>Features</th></tr>
+  <tr><td><span class="sp-key">Telangiectasis</span></td><td>Dilated, blood-filled sinusoids where hepatocytes are lost; variable-sized dark red-blue foci, most common in cattle and cats, no clinical significance</td></tr>
+  <tr><td><span class="sp-key">Infarction</span></td><td>Infrequent due to dual blood supply; causes include hepatic artery thrombosis, liver lobe torsion, mycotic rumenitis, and hepatic vein thrombosis</td></tr>
+</table>`
+  },
+  {
+    icon: '🧈', name: 'Hepatocellular Steatosis & Glycogen Accumulation', pages: 'Pages 5–6',
+    content: `
+<h2>6.1 Hepatocellular Steatosis (Lipidosis)</h2>
+<p>Excessive lipid accumulation within the liver. Fat normally reaches the liver from adipose tissue (as free fatty acids), the GI tract (as chylomicrons), or is produced within the liver from amino acids and glucose. Free fatty acids are esterified into triglycerides, complexed with apoproteins, and released as lipoproteins, oxidised for energy, or used to synthesise phospholipids and cholesterol.</p>
+<h3>Mechanisms of Steatosis</h3>
+<ul>
+  <li>Increased dietary intake of fats and carbohydrates</li>
+  <li>Increased esterification</li>
+  <li>Increased fat mobilisation from depots (lactation, starvation, endocrinopathies)</li>
+  <li>Decreased oxidation due to energy deficiency</li>
+  <li>Decreased synthesis of apoproteins</li>
+  <li>Decreased hepatic secretion of lipoproteins (drug or toxin injury of secretory mechanisms)</li>
+</ul>
+<p><strong>Grossly:</strong> enlarged, yellow liver; mild cases show only an accentuated lobular pattern.</p>
+<table>
+  <tr><th>Microscopic pattern</th><th>Features</th></tr>
+  <tr><td><span class="sp-key">Microvesicular</span></td><td>Acute and toxic — swollen hepatocytes with numerous small vacuoles</td></tr>
+  <tr><td><span class="sp-key">Macrovesicular</span></td><td>Chronic, nutritive, or metabolic — large vacuoles pushing the nucleus to the periphery</td></tr>
+</table>
+<h3>Causes</h3>
+<ul>
+  <li><strong>Nutritive:</strong> excess dietary fat/cholesterol, starvation of obese animals, cobalt/vitamin B12 deficiency (sheep, goats)</li>
+  <li><strong>Toxic/anoxic injury:</strong> decreased FA oxidation, decreased lipoprotein production/secretion</li>
+  <li><span class="sp-key">Ketosis</span> — disturbed carbohydrate/short-chain FA metabolism with increased fat metabolism and energy demand; common in cows at peak lactation and pregnant ewes (especially twin pregnancies, "pregnancy toxaemia")</li>
+  <li><span class="sp-key">Fatty liver syndrome of cattle</span> — similar mechanism to ketosis, obese animals after calving, preceded by anorexia, metritis, retained placenta, parturient paresis, or abomasal displacement</li>
+  <li>Feline fatty liver syndrome, equine hepatocellular steatosis</li>
+  <li>Endocrine disorders (diabetes, hyperthyroidism)</li>
+</ul>
+<div class="sp-warn">Sequelae of severe steatosis: hepatocellular necrosis, fatty cysts, fat embolism, liver rupture and haemoabdomen, and increased susceptibility to toxic injury.</div>
+<h2>6.2 Glycogen Accumulation</h2>
+<p>Glucose is normally stored in hepatocytes as glycogen.</p>
+<table>
+  <tr><th>Cause</th><th>Notes</th></tr>
+  <tr><td>Diabetes mellitus</td><td>Excess glycogen accumulation</td></tr>
+  <tr><td><span class="sp-key">Hyperadrenocorticism</span></td><td>Glucocorticoid-induced hepatopathy — steroids induce glycogen synthase, producing an enlarged, pale liver with glycogen-laden hepatocytes most prominent in the midzonal area</td></tr>
+  <tr><td>Glycogen storage diseases</td><td>Inherited enzyme defects</td></tr>
+</table>`
+  },
+  {
+    icon: '💎', name: 'Amyloid, Copper & Pigment Accumulation; Nutritive Liver Diseases', pages: 'Page 6',
+    content: `
+<h2>6.3 Amyloidosis</h2>
+<p>Not a single disease but a term for conditions with accumulation of proteins folded into beta-pleated sheets.</p>
+<table>
+  <tr><th>Type</th><th>Cause</th></tr>
+  <tr><td>Primary</td><td>Plasma cell tumours</td></tr>
+  <tr><td>Secondary</td><td>Long-standing inflammation</td></tr>
+  <tr><td>Inherited/familial</td><td>Shar-Pei, Siamese, Abyssinian, and other oriental cat breeds</td></tr>
+</table>
+<p>Amyloid deposits accumulate most commonly in blood vessel walls, portal area connective tissue, and the space of Disse — can produce hepatomegaly, liver rupture, and hepatic failure.</p>
+<h2>6.4 Copper Accumulation</h2>
+<p>Copper is an essential trace element, but modest excess is harmful.</p>
+<div class="sp-chain">Copper excess → lipid peroxidation → hepatocellular necrosis → copper release into blood → haemolytic crisis</div>
+<p>Causes: excess dietary copper in ruminants, molybdenum deficiency, hepatic/cholestatic disease, and hereditary copper metabolism disorders — best described in the <span class="sp-key">Bedlington terrier</span> (autosomal recessive defect impairing biliary copper excretion).</p>
+<h2>6.5 Pigment Accumulation</h2>
+<table>
+  <tr><th>Pigment</th><th>Notes</th></tr>
+  <tr><td>Bile pigment</td><td>Cholestasis</td></tr>
+  <tr><td><span class="sp-key">Haemosiderin</span></td><td>Golden-brown pigment; haemosiderosis is local or systemic iron accumulation without organ impairment, distinct from haemochromatosis</td></tr>
+  <tr><td><span class="sp-key">Lipofuscin</span></td><td>Yellow-brown to dark brown pigment from incomplete lipid oxidation</td></tr>
+  <tr><td>Melanin</td><td>Dark brown/black endogenous pigment; congenital melanosis described in pigs and ruminants</td></tr>
+  <tr><td>Parasitic haematin</td><td>Liver flukes produce very dark excreta (a mixture of iron and porphyrin)</td></tr>
+</table>
+<h2>6.6 Nutritive Diseases of the Liver</h2>
+<table>
+  <tr><th>Disease</th><th>Features</th></tr>
+  <tr><td><span class="sp-key">Hepatosis dietetica</span></td><td>Fast-growing young pigs; vitamin E and selenium deficiency causes oxidative hepatocellular injury, with haemorrhagic centrilobular to massive necrosis</td></tr>
+  <tr><td><span class="sp-key">White liver disease of sheep</span></td><td>Cobalt deficiency → lowered vitamin B12 synthesis → hepatocellular steatosis</td></tr>
+</table>`
+  },
+  {
+    icon: '🦠', name: 'Viral & Bacterial Diseases of the Liver', pages: 'Pages 7–8',
+    content: `
+<h2>Infectious Diseases of the Liver</h2>
+<p>Portals of entry/spread: haematogenous, ascending, or by direct extension. Causative agents include viruses, bacteria, fungi, protozoa, and helminths.</p>
+<h2>Viruses</h2>
+<table>
+  <tr><th>Disease</th><th>Cause</th><th>Key features</th></tr>
+  <tr><td><span class="sp-key">Infectious canine hepatitis</span> (hepatitis contagiosa canis)</td><td>Canine adenovirus 1</td><td>Oral infection → tonsillitis → viraemia with tropism for hepatocytes and endothelium → vomiting, diarrhoea, petechiae, haemorrhages on serosae/organs, enlarged fragile liver, fibrin strands on the capsule, enlarged hyperaemic tonsils/lymph nodes, gallbladder wall oedema; "<span class="sp-key">blue eye</span>" from corneal endothelial degeneration/oedema. Histology: centrilobular single-cell hepatocellular necrosis with large intranuclear inclusions, endothelial damage with haemorrhage, minimal inflammation</td></tr>
+  <tr><td>Herpesviral infection</td><td>Equine herpesvirus 1, bovine herpesvirus 1, canine herpesvirus 1, pseudorabies virus</td><td>Multifocal hepatic necrosis, minimal inflammatory response, intranuclear inclusions</td></tr>
+  <tr><td>Rift Valley fever</td><td>Phlebovirus, Phenuiviridae</td><td>Arthropod-transmitted zoonosis</td></tr>
+  <tr><td>Wesselsbron disease</td><td>Flavivirus</td><td>Mosquito-transmitted zoonosis</td></tr>
+  <tr><td>Feline infectious peritonitis</td><td>Coronavirus</td><td>Pyogranulomatous hepatic involvement as part of systemic disease</td></tr>
+  <tr><td>Equine infectious anaemia</td><td>Lentivirus, Retroviridae</td><td>Chronic immune-mediated disease with hepatic involvement</td></tr>
+</table>
+<h2>Bacteria</h2>
+<table>
+  <tr><th>Pattern</th><th>Cause / notes</th></tr>
+  <tr><td><span class="sp-key">Multifocal necrotising/suppurative inflammation</span></td><td><em>Salmonella</em> spp., <em>Listeria monocytogenes</em>, <em>Actinobacillus</em> spp. — mainly fetuses and neonates</td></tr>
+  <tr><td><span class="sp-key">Abscess</span></td><td>Single or multiple; causes include <em>Fusobacterium necrophorum</em>, <em>Corynebacterium pseudotuberculosis</em>, <em>Trueperella</em>, streptococci/staphylococci, <em>Rhodococcus equi</em>. Portals of entry: portal veins, umbilical veins, hepatic arteries (systemic infection), ascending biliary infection, parasite migration, or direct extension. Sequelae: encapsulation, fibrous adhesions, or rupture into the hepatic vein/caudal vena cava (thrombophlebitis, endocarditis, embolic lung abscesses)</td></tr>
+  <tr><td>Granulomas</td><td>Tuberculosis (mycobacteriosis) disseminated from lungs; fungal granulomas (e.g. <em>Mucor</em> spp. from ulcerative rumenitis via the portal circulation)</td></tr>
+  <tr><td><span class="sp-key">Bacillary haemoglobinuria</span></td><td><em>Clostridium haemolyticum</em>, cattle and sheep. Spores ingested, concentrated in Kupffer cells, activated by fluke migration/hepatic injury → anaerobic proliferation → phospholipase C exotoxin → hepatocellular necrosis and intravascular haemolysis → icterus, haemoglobinaemia, haemoglobinuria</td></tr>
+  <tr><td><span class="sp-key">Infectious necrotic hepatitis</span> (black disease)</td><td><em>Clostridium novyi</em> type B; cattle and sheep (horses/pigs rare). Spores germinate in low-oxygen necrotic foci (often from parasite migration) → exotoxin → coagulation necrosis, haemorrhage; faster putrefaction due to elevated body temperature before death</td></tr>
+  <tr><td><span class="sp-key">Tyzzer's disease</span></td><td><em>Clostridium piliforme</em>; rodents and young/immunocompromised animals (foals, calves, kittens, puppies). Oral infection → portal vein → liver lesion: multifocal necrotising hepatitis, necrotic colitis, filamentous bacteria visible with silver stains (Warthin-Starry)</td></tr>
+</table>
+<div class="sp-note">Other systemic bacteraemias (<em>Leptospira interrogans</em>, <em>Salmonella</em> spp., <em>Yersinia pseudotuberculosis</em>, <em>Brucella</em> spp., <em>Mannheimia haemolytica</em>) can produce variably sized single or multiple hepatic necroses and/or abscesses as part of disseminated disease.</div>`
+  },
+  {
+    icon: '🍄', name: 'Fungal & Parasitic Diseases of the Liver', pages: 'Page 8',
+    content: `
+<h2>Fungi</h2>
+<ul>
+  <li>Haemorrhagic infarcts</li>
+  <li>Granulomatous hepatitis — <em>Blastomyces</em> spp., <em>Histoplasma</em> spp.</li>
+  <li>Other causes — <em>Coccidioides</em>, <em>Aspergillus</em></li>
+</ul>
+<h2>Parasites</h2>
+<h3>Nematodes</h3>
+<table>
+  <tr><th>Species</th><th>Notes</th></tr>
+  <tr><td><span class="sp-key">Ascaris suum</span></td><td>Pigs — migrating larvae produce hepatic "milk spots"</td></tr>
+  <tr><td><em>Stephanurus dentatus</em></td><td>Pigs</td></tr>
+  <tr><td><em>Strongylus vulgaris</em></td><td>Horses</td></tr>
+  <tr><td><em>Calodium (Capillaria) hepatica</em></td><td>Dogs and cats — ova provoke granulomatous inflammation</td></tr>
+  <tr><td><span class="sp-key">Dirofilaria immitis</span></td><td>Heavy infestation can cause fatal postcaval syndrome in dogs (DIC, intravascular haemolysis, acute liver failure)</td></tr>
+</table>
+<h3>Cestodes</h3>
+<table>
+  <tr><th>Species</th><th>Notes</th></tr>
+  <tr><td><em>Echinococcus granulosus</em> (hydatidosis)</td><td>Intermediate stage in many species; canids are the definitive host</td></tr>
+  <tr><td><em>Cysticercus tenuicollis</em></td><td>Intermediate stage of <em>Taenia hydatigena</em> (canid definitive host); lesions resemble juvenile <em>Fasciola</em> migration</td></tr>
+  <tr><td><em>Stilesia hepatica</em>, <em>Thysanosoma actinoides</em></td><td>Bile ducts of ruminants — chronic inflammation</td></tr>
+</table>
+<h3>Trematodes</h3>
+<table>
+  <tr><th>Species</th><th>Notes</th></tr>
+  <tr><td><span class="sp-key">Fasciola hepatica / F. gigantica</span></td><td>Most important — found within biliary ducts</td></tr>
+  <tr><td><span class="sp-key">Fascioloides magna</span></td><td>Within hepatic parenchyma — cavitary lesions (cysts and pseudocysts)</td></tr>
+  <tr><td><em>Dicrocoelium dendriticum</em></td><td>Ruminants, horses, dogs, cats</td></tr>
+  <tr><td><em>Opisthorchis tenuicollis</em></td><td>Pigs, dogs, cats</td></tr>
+</table>
+<h3>Protozoa</h3>
+<p>Liver lesions mostly multifocal necrosis and inflammation (predominantly neutrophils and macrophages): toxoplasmosis, neosporosis, coccidiosis (in rabbits, <em>Eimeria stiedae</em> causes proliferative cholangitis), leishmaniosis, histomoniasis (turkeys).</p>`
+  },
+  {
+    icon: '🌿', name: 'Hepatotoxic Plants, Mycotoxins, Mushrooms & Algae', pages: 'Pages 9–10',
+    content: `
+<h2>Toxic Diseases of the Liver</h2>
+<p>The liver is the most common site of toxic injury — toxic substances absorbed in the GI tract pass directly to the liver, where biotransformation makes substances excretable but can also bioactivate them into more toxic forms.</p>
+<table>
+  <tr><th>Toxin category</th><th>Notes</th></tr>
+  <tr><td><span class="sp-key">Predictable toxins</span></td><td>Most veterinary hepatotoxins (e.g. carbon tetrachloride)</td></tr>
+  <tr><td><span class="sp-key">Idiosyncratic drug reactions</span></td><td>Damage apparent only in a few exposed animals; less common, limited to certain drugs/substances</td></tr>
+</table>
+<p><strong>Lesions — acute:</strong> hydropic (vacuolar) degeneration and steatosis/necrosis (commonly centrilobular). <strong>Chronic:</strong> fibrosis, biliary hyperplasia, or nodular regeneration.</p>
+<h3>Mechanisms (cellular targets)</h3>
+<ul>
+  <li>Biotransformation via cytochrome P450</li>
+  <li>Creation of neoantigens stimulating autoimmunity</li>
+  <li>Stimulation of apoptosis</li>
+  <li>Disruption of calcium homeostasis</li>
+  <li>Disruption of canalicular molecular pumps</li>
+  <li>Mitochondrial damage</li>
+</ul>
+<h2>Hepatotoxic Plants</h2>
+<table>
+  <tr><th>Toxin</th><th>Notes</th></tr>
+  <tr><td><span class="sp-key">Pyrrolizidine alkaloids</span></td><td>Worldwide distribution (pigs, horses, ruminants); ingested alkaloids react with hepatic cytochrome P450 to form pyrrolic esters that bind cytosolic/nuclear proteins and nucleic acids — can also be ingested via milk. Acute: centrilobular necrosis. Chronic (most common): fibrosis, regenerative nodules, megalocytosis (antimitotic effect)</td></tr>
+  <tr><td>Cycads</td><td>Contain cycasin and macrozamin (non-toxic glycosides); toxicity follows intestinal bacterial deconjugation and hepatic bioactivation into an alkylating agent — lesions resemble pyrrolizidine toxicity</td></tr>
+</table>
+<h2>Mycotoxins</h2>
+<table>
+  <tr><th>Toxin</th><th>Notes</th></tr>
+  <tr><td><span class="sp-key">Aflatoxins</span></td><td><em>Aspergillus flavus</em> (B1, B2, G1, G2 — B1 most potent toxin/carcinogen); from moldy crops; affects pigs, poultry, cattle, dogs. Bioactivated by cytochrome P450 into intermediates that bind DNA/RNA/protein — toxic, teratogenic, carcinogenic. Acute: centrilobular to massive steatosis/necrosis. Chronic: steatosis, fibrosis, biliary hyperplasia, megalocytosis</td></tr>
+  <tr><td><span class="sp-key">Sporidesmin</span></td><td><em>Pithomyces chartarum</em>; unconjugated sporidesmin in bile is toxic to biliary epithelium (sheep, goats) → cholangiohepatitis and cholestasis, atrophy/fibrosis of the left liver lobe, photosensitisation from impaired phylloerythrin secretion ("facial eczema")</td></tr>
+  <tr><td>Phomopsins</td><td>Toxic metabolite of <em>Diaporthe toxica</em> growing on lupins; causes liver atrophy/fibrosis, icterus, hepatic lipidosis, and photosensitisation</td></tr>
+</table>
+<h2>Mushrooms</h2>
+<p><span class="sp-key">Amanita phalloides</span> (death cap) contains toxic cyclopeptides (amatoxin, phalloidin) that inhibit RNA polymerase II, disrupting DNA/RNA transcription and intracellular actin filaments. Acute injury: hepatocellular steatosis, haemorrhage, and centrilobular to massive necrosis.</p>
+<h2>Blue-Green Algae</h2>
+<p>Closer biologically to bacteria than plants. <em>Microcystis aeruginosa</em> blooms on stagnant warm water in late summer/early fall. <span class="sp-key">Microcystin LR</span> inhibits protein phosphatases, causing rapid hyperphosphorylation of cytoskeletal proteins and hepatocyte damage. Lesions: acute haemorrhagic gastroenteritis, centrilobular to massive liver necrosis with haemorrhage; survivors may develop chronic hepatic lesions.</p>`
+  },
+  {
+    icon: '☣️', name: 'Hepatotoxic Chemicals & Therapeutic Drugs', pages: 'Page 10',
+    content: `
+<h2>Chemicals</h2>
+<table>
+  <tr><th>Agent</th><th>Notes</th></tr>
+  <tr><td><span class="sp-key">White phosphorus</span></td><td>Rodenticide; mechanism unclear, causes steatosis and periportal necrosis without requiring metabolic transformation (direct toxicity)</td></tr>
+  <tr><td><span class="sp-key">Carbon tetrachloride</span></td><td>Used as an anthelmintic and pesticide; bioactivated by mixed-function oxidases to a toxic form, producing centrilobular lipidosis and necrosis</td></tr>
+  <tr><td><span class="sp-key">Iron</span></td><td>Iron-dextran injections in piglets can cause massive hepatic necrosis; ferrous fumarate as a food additive in foals causes massive necrosis, biliary hyperplasia, and oval cell hyperplasia</td></tr>
+  <tr><td><span class="sp-key">Copper</span></td><td>Chronic liver damage and fibrosis in dogs; acute intravascular haemolysis and anaemia in ruminants (especially sheep)</td></tr>
+</table>
+<h2>Hepatotoxic Therapeutic Drugs — Idiosyncratic Reactions</h2>
+<p>Species and individual susceptibility varies markedly:</p>
+<table>
+  <tr><th>Drug</th><th>Susceptible group</th></tr>
+  <tr><td>Trimethoprim-sulfonamide</td><td>Dobermans</td></tr>
+  <tr><td>Carprofen</td><td>Labradors</td></tr>
+  <tr><td>Ivermectin</td><td>Collies</td></tr>
+  <tr><td>Acetaminophen</td><td>Cats (reduced glucuronyltransferase activity)</td></tr>
+  <tr><td>Anticonvulsants</td><td>End-stage liver disease with chronic use</td></tr>
+  <tr><td>Diazepam</td><td>Acute liver failure in cats</td></tr>
+</table>
+<div class="sp-warn">Idiosyncratic hepatotoxicity is unpredictable and dose-independent in the susceptible individual — always consider breed/species-specific drug sensitivities before prescribing.</div>`
+  },
+  {
+    icon: '❓', name: 'Diseases of Unknown Cause', pages: 'Page 11',
+    content: `
+<h2>Diseases of Unknown Cause</h2>
+<table>
+  <tr><th>Disease</th><th>Features</th></tr>
+  <tr><td><span class="sp-key">Equine serum hepatitis (Theiler's disease)</span></td><td>Unclear cause, frequently follows injection of a biological product containing equine serum (e.g. tetanus antitoxin, mare serum gonadotropin). Lesions: encephalopathy, icterus; liver green to brown or dark brown; centrilobular degeneration (steatosis) and hepatocellular necrosis, mild fibrosis, and regeneration</td></tr>
+  <tr><td><span class="sp-key">Lymphocytic cholangitis</span> (lymphocytic cholangiohepatitis / lymphocytic portal hepatitis)</td><td>Unknown aetiology, cats over 4 years old. Lesions: icterus and cholestasis, abundant lymphocyte/plasma cell accumulation within the portal tract and around bile ducts, duct proliferation, hepatic and biliary fibrosis</td></tr>
+  <tr><td><span class="sp-key">Canine chronic hepatitis</span></td><td>Chronic, unclear cause — possible associations with leptospirosis, canine adenovirus 1, pharmaceuticals, copper toxicosis. Lesions: small (sometimes nodular) liver, portal and periportal mononuclear infiltrate, intrahepatic cholestasis, bridging fibrosis, regenerative nodules</td></tr>
+</table>
+<div class="sp-note">These three entities share a common theme: chronic mononuclear portal inflammation progressing to fibrosis, despite differing (or unknown) inciting causes.</div>`
+  },
+  {
+    icon: '🎯', name: 'Proliferative Diseases of the Liver', pages: 'Page 11',
+    content: `
+<h2>Non-Neoplastic Proliferative Lesions</h2>
+<table>
+  <tr><th>Lesion</th><th>Features</th></tr>
+  <tr><td><span class="sp-key">Hepatocellular nodular hyperplasia</span></td><td>Incidence increases with age. Increased hepatocyte production with decreased numbers of portal tracts and central veins; distorted lobular pattern; no fibrosis, necrosis, or inflammation</td></tr>
+  <tr><td><span class="sp-key">Regenerative nodules</span></td><td>Hepatocellular proliferation in response to cell loss; disruption/loss of normal hepatic architecture with variable fibrosis</td></tr>
+  <tr><td>Cholangiocellular hyperplasia</td><td>Proliferation of bile duct epithelium</td></tr>
+</table>
+<h2>Neoplastic (Tumours)</h2>
+<p>Can be benign or malignant, and primary or metastatic.</p>
+<table>
+  <tr><th>Cell of origin</th><th>Benign</th><th>Malignant</th></tr>
+  <tr><td>Hepatocytes</td><td>Hepatocellular adenoma</td><td>Hepatocellular carcinoma</td></tr>
+  <tr><td>Biliary epithelium</td><td>Cholangiocellular adenoma</td><td>Cholangiocellular carcinoma</td></tr>
+  <tr><td>Neuroendocrine cells</td><td>—</td><td>Carcinoids</td></tr>
+  <tr><td>Mesenchymal tissue (vessels, connective tissue)</td><td>Benign mesenchymal tumours</td><td>Malignant mesenchymal tumours</td></tr>
+</table>
+<div class="sp-note">Distinguishing nodular hyperplasia/regenerative nodules from true neoplasia relies on architecture: hyperplastic nodules blend with adjacent parenchyma and lack a true capsule, while adenomas compress surrounding tissue and are usually well demarcated.</div>`
+  },
+  {
+    icon: '🟡', name: 'Diseases of the Biliary Tract', pages: 'Page 12',
+    content: `
+<h2>Diseases of the Biliary Tract</h2>
+<table>
+  <tr><th>Condition</th><th>Features</th></tr>
+  <tr><td><span class="sp-key">Gallstones (cholelithiasis)</span></td><td>Concretions of normally soluble bile components, mainly in ruminants; due to supersaturation and precipitation of bile. Usually no clinical significance unless they migrate and obstruct the extrahepatic bile ducts</td></tr>
+  <tr><td><span class="sp-key">Bile duct obstruction</span></td><td>Causes include cholangitis, parasites, fibrosis, and cholelithiasis; leads to post-hepatic icterus and atrophy/fibrosis of bile ducts; rarely produces pressure necrosis and inflammation</td></tr>
+  <tr><td>Gallbladder distention</td><td>From fasting, or secondary to obstruction</td></tr>
+  <tr><td><span class="sp-key">Mucocele</span></td><td>Dogs — gallbladder distended with mucinous content. Cause unproven: decreased motility, altered bile composition, bile stasis, cystic mucinous hyperplasia of the mucosa. Can lead to rupture of extrahepatic bile ducts and ischaemic necrosis/rupture</td></tr>
+  <tr><td><span class="sp-key">Cholangitis</span></td><td>Intra- or extrahepatic; haematogenous or ascending intestinal infection. Purulent cholangiohepatitis (older cats and dogs) or lymphocytic cholangitis (cats)</td></tr>
+  <tr><td>Gallbladder/biliary rupture</td><td>Most commonly traumatic; leakage into the abdominal cavity causes chemical peritonitis</td></tr>
+  <tr><td><span class="sp-key">Cholecystitis</span></td><td>Acute or chronic; fibrinous (cattle with salmonellosis or yersiniosis) or haemorrhagic (salmonellosis in cattle, arsenic poisoning)</td></tr>
+  <tr><td>Gallbladder wall oedema</td><td>Right-sided heart failure, infectious canine hepatitis</td></tr>
+  <tr><td>Cystic mucinous hyperplasia</td><td>Older dogs and sheep; sessile/polypoid mucosal accumulations with large cysts and abundant apical mucin; unknown cause</td></tr>
+  <tr><td>Tumours</td><td>Rare</td></tr>
+</table>`
+  },
+  {
+    icon: '🥞', name: 'Pathology of the Exocrine Pancreas', pages: 'Pages 13–14',
+    content: `
+<h2>Structure and Function</h2>
+<p>The pancreas is a lobular tubuloalveolar gland with endocrine (islets of Langerhans) and exocrine (80–85% of the gland) components. The exocrine part consists of secretory units (acinar cells) plus a duct system. Acinar cells are columnar to triangular, with apical eosinophilic <span class="sp-key">zymogen granules</span> containing digestive enzymes — lipases/phospholipases (fat digestion), trypsin/chymotrypsin (protein digestion), and amylases (carbohydrate digestion). Enzymes are released as proenzymes into the acinar lumen → duct system → duodenum, where they are activated; release is controlled by inhibitory pancreatic enzyme systems.</p>
+<h2>Dysfunction / Response to Injury</h2>
+<p>Most commonly manifests as <span class="sp-key">pancreatitis</span>.</p>
+<div class="sp-chain">Pancreatic damage → release of enzymes into surrounding parenchyma → premature activation → autodigestion → trypsin activates the kinin system, complement, and coagulation cascade → severe inflammation and necrosis, sometimes DIC</div>
+<p>Regenerative capacity is limited to modest after necrosis (better after partial pancreatectomy). Severe injury can be followed by ductal proliferation and atrophy of exocrine lobules.</p>
+<h3>Aging</h3>
+<p>Decreased secretion of bicarbonate and pancreatic enzymes; nodular hyperplasia of the exocrine pancreas is common in older dogs and cats, uncommon in cattle.</p>
+<h3>Portals of Entry / Pathways of Spread</h3>
+<p>Activation of enzymes causes autodigestion; activated enzymes plus vasoactive peptides and inflammatory mediators can enter the systemic circulation, producing inflammation/necrosis in other organs (liver, lungs) and systemic inflammatory response syndrome (SIRS). Intestinal bacterial reflux through the pancreatic ducts can cause pancreatitis and septicaemia.</p>
+<h3>Defence Mechanisms</h3>
+<p>Continuous secretory flow into the duodenum prevents reflux of duodenal contents; enzymes are isolated within membrane-bound zymogen granules until secretion; protective trypsin inhibitors are also secreted.</p>
+<h2>Pancreatic Hypoplasia / Juvenile Atrophy</h2>
+<p>Seen in calves, sheep, goats, and dogs; difficult to distinguish from atrophy (lipofuscin within atrophic cells). Clinically causes exocrine insufficiency with a normal endocrine portion. Grossly: small, pale pancreas, sometimes only small wisps of white-cream tissue in the mesentery. Microscopically: scarce, poorly differentiated acinar tissue in small clusters without zymogen granules.</p>
+<h2>Acute Pancreatitis</h2>
+<table>
+  <tr><th>Group</th><th>Features</th></tr>
+  <tr><td><span class="sp-key">German Shepherds, Collies (~6–12 months)</span></td><td>Complex inheritance involving multiple genes and environmental factors; maldigestion with rapid weight loss despite a voracious appetite. Micro: islands of normal exocrine tissue remain but the tissue is markedly depleted; endocrine islets relatively unaffected</td></tr>
+  <tr><td><span class="sp-key">Cocker Spaniel</span></td><td>Gross: oedematous pancreas with grey-white coagulation necrosis and dark red/blue-black haemorrhage areas, interspersed with normal parenchyma; chalky-white mesenteric fat saponification foci; blood-stained peritoneal fluid; fibrinous peritoneal adhesions. Micro: focal extensive haemorrhage and coagulation necrosis with leukocyte infiltration, fibrinous exudate in interlobular septa, necrosis/inflammation of adjacent mesenteric fat</td></tr>
+  <tr><td><span class="sp-key">Cats</span></td><td>Two syndromes — acute necrotising pancreatitis and suppurative pancreatitis; often coexists with inflammatory bowel disease and/or neutrophilic (suppurative) cholangitis. Severe cases produce systemic effects: haemorrhage, DIC, shock</td></tr>
+</table>
+<h2>Chronic Pancreatitis</h2>
+<p>Fibrosis and parenchymal atrophy with modest regenerative capacity, in all species a consequence of pancreatic duct obstruction and the mechanisms underlying acute pancreatitis.</p>
+<table>
+  <tr><th>Species/breed</th><th>Features</th></tr>
+  <tr><td>Sheep</td><td>Fibrosis after necrosis caused by zinc intoxication</td></tr>
+  <tr><td>Horses</td><td>Sporadic — parasitic migration, ascending bacterial infection, chronic eosinophilic gastroenteritis; exocrine signs rare</td></tr>
+  <tr><td>Dogs</td><td>Result of repeated mild acute pancreatic necrosis/pancreatitis episodes; more common in Cocker Spaniels, Cavalier King Charles Spaniels, Collies, Boxers. English Cocker Spaniels show interlobular/periductular fibrosis and inflammation with marked absence of interlobular ducts; other predisposed breeds show intralobular and ductular hyperplasia</td></tr>
+  <tr><td>Cats</td><td>Extensive fibrosis with little inflammation; commonly ectasia of pancreatic ducts with cyst formation</td></tr>
+</table>
+<p>Grossly: deformed, distorted, shrunken, nodular pancreas with fibrous adhesions to adjacent tissue.</p>
+<h2>Hyperplastic and Neoplastic Lesions</h2>
+<table>
+  <tr><th>Lesion</th><th>Features</th></tr>
+  <tr><td><span class="sp-key">Nodular hyperplasia</span></td><td>More common in older dogs and cats, also seen in cattle; no clinical significance, but must be distinguished from true tumours. Gross: multiple raised, smooth, grey-white nodules. Micro: unencapsulated aggregates of acinar cells, may lack or contain zymogen granules</td></tr>
+  <tr><td><span class="sp-key">Pancreatic adenoma</span></td><td>Rare benign tumour; shares features with hyperplastic nodules but is single and larger than normal lobules</td></tr>
+  <tr><td><span class="sp-key">Pancreatic carcinoma</span></td><td>Uncommon, most often in dogs and cats. Gross: solitary or multiple grey/yellow nodules, firm to hard, may invade adjacent tissue and seed the peritoneal lining; metastasis to regional and right hepatic lymph nodes, sometimes widely. Micro: well-differentiated tubular adenocarcinomas or undifferentiated solid carcinomas, with variable fibrous stroma (greatest in poorly differentiated tumours)</td></tr>
+</table>
+<div class="sp-warn">Pancreatic adenocarcinoma in cats has a unique paraneoplastic cutaneous syndrome — symmetric, glistening alopecia of the ventral trunk and limbs.</div>`
   },
 ];
 
