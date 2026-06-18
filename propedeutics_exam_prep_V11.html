@@ -661,12 +661,15 @@
 <div id="page-neuro-stats" class="page">
   <div class="flex-row" style="margin-bottom:18px">
     <div class="section-title" style="margin:0">📊 My Progress</div>
+    <div class="spacer"></div>
+    <button class="btn btn-ghost btn-sm" onclick="resetNeuroStats()" style="color:var(--wrong-dark)">🗑 Reset Progress</button>
   </div>
-  <div class="empty-state">
-    <div class="icon">📊</div>
-    <div style="font-size:1rem;font-weight:700;color:var(--primary-dark);margin-bottom:8px">No Data Yet</div>
-    <div style="font-size:0.88rem;color:var(--text-muted)">Progress tracking will appear here once questions are available and answered.</div>
-  </div>
+  <div class="stats-grid" id="neuro-overall-stats"></div>
+  <div class="section-title">📈 By Subtopic (worst first)</div>
+  <div class="card" id="neuro-subtopic-stats-list"></div>
+  <div class="divider"></div>
+  <div class="section-title">🕐 Session History</div>
+  <div id="neuro-session-history-list"></div>
 </div>
 
 <!-- =====================================================================
@@ -864,12 +867,15 @@
 <div id="page-endo-stats" class="page">
   <div class="flex-row" style="margin-bottom:18px">
     <div class="section-title" style="margin:0">📊 My Progress</div>
+    <div class="spacer"></div>
+    <button class="btn btn-ghost btn-sm" onclick="resetEndoStats()" style="color:var(--wrong-dark)">🗑 Reset Progress</button>
   </div>
-  <div class="empty-state">
-    <div class="icon">📊</div>
-    <div style="font-size:1rem;font-weight:700;color:var(--primary-dark);margin-bottom:8px">No Data Yet</div>
-    <div style="font-size:0.88rem;color:var(--text-muted)">Progress tracking will appear here once questions are available and answered.</div>
-  </div>
+  <div class="stats-grid" id="endo-overall-stats"></div>
+  <div class="section-title">📈 By Subtopic (worst first)</div>
+  <div class="card" id="endo-subtopic-stats-list"></div>
+  <div class="divider"></div>
+  <div class="section-title">🕐 Session History</div>
+  <div id="endo-session-history-list"></div>
 </div>
 <!-- END ENDOCRINE SYSTEM PAGES -->
 
@@ -933,12 +939,15 @@
 <div id="page-gi-stats" class="page">
   <div class="flex-row" style="margin-bottom:18px">
     <div class="section-title" style="margin:0">📊 My Progress</div>
+    <div class="spacer"></div>
+    <button class="btn btn-ghost btn-sm" onclick="resetGiStats()" style="color:var(--wrong-dark)">🗑 Reset Progress</button>
   </div>
-  <div class="empty-state">
-    <div class="icon">📊</div>
-    <div style="font-size:1rem;font-weight:700;color:var(--primary-dark);margin-bottom:8px">No Data Yet</div>
-    <div style="font-size:0.88rem;color:var(--text-muted)">Progress tracking will appear here once questions are available and answered.</div>
-  </div>
+  <div class="stats-grid" id="gi-overall-stats"></div>
+  <div class="section-title">📈 By Subtopic (worst first)</div>
+  <div class="card" id="gi-subtopic-stats-list"></div>
+  <div class="divider"></div>
+  <div class="section-title">🕐 Session History</div>
+  <div id="gi-session-history-list"></div>
 </div>
 <!-- END DIGESTIVE SYSTEM PAGES -->
 
@@ -1002,12 +1011,15 @@
 <div id="page-hepato-stats" class="page">
   <div class="flex-row" style="margin-bottom:18px">
     <div class="section-title" style="margin:0">📊 My Progress</div>
+    <div class="spacer"></div>
+    <button class="btn btn-ghost btn-sm" onclick="resetHepatoStats()" style="color:var(--wrong-dark)">🗑 Reset Progress</button>
   </div>
-  <div class="empty-state">
-    <div class="icon">📊</div>
-    <div style="font-size:1rem;font-weight:700;color:var(--primary-dark);margin-bottom:8px">No Data Yet</div>
-    <div style="font-size:0.88rem;color:var(--text-muted)">Progress tracking will appear here once questions are available and answered.</div>
-  </div>
+  <div class="stats-grid" id="hepato-overall-stats"></div>
+  <div class="section-title">📈 By Subtopic (worst first)</div>
+  <div class="card" id="hepato-subtopic-stats-list"></div>
+  <div class="divider"></div>
+  <div class="section-title">🕐 Session History</div>
+  <div id="hepato-session-history-list"></div>
 </div>
 <!-- END HEPATOBILIARY SYSTEM PAGES -->
 
@@ -1792,6 +1804,68 @@ function randomiseAnswers(questions) {
     }
     return { ...q, opts: newOpts, ans: roll };
   });
+}
+
+// ── Special Pathology shared progress-tracking helpers ──────────────────
+// Used by Neuro/Endo/GI/Hepato quiz engines to record per-subtopic stats.
+
+function tagSubtopic(arr, idx) {
+  return (arr || []).map(q => ({ ...q, subtopic: idx }));
+}
+
+function recordSpAnswer(stats, subtopicIdx, correct, storageKey) {
+  if (subtopicIdx == null) return;
+  if (!stats[subtopicIdx]) stats[subtopicIdx] = { correct: 0, total: 0 };
+  stats[subtopicIdx].total++;
+  if (correct) stats[subtopicIdx].correct++;
+  localStorage.setItem(storageKey, JSON.stringify(stats));
+}
+
+function renderSpStats(prefix, stats, sessions, subtopics) {
+  const total = Object.values(stats).reduce((a, s) => a + (s.total || 0), 0);
+  const correct = Object.values(stats).reduce((a, s) => a + (s.correct || 0), 0);
+  const pct = total > 0 ? Math.round(correct / total * 100) : 0;
+
+  document.getElementById(prefix + '-overall-stats').innerHTML = `
+    <div class="stat-card"><div class="big">${total}</div><div class="lbl">Total Answered</div></div>
+    <div class="stat-card"><div class="big">${correct}</div><div class="lbl">Correct</div></div>
+    <div class="stat-card"><div class="big">${pct}%</div><div class="lbl">Overall Score</div></div>
+    <div class="stat-card"><div class="big">${sessions.length}</div><div class="lbl">Sessions</div></div>
+  `;
+
+  const rows = subtopics.map((st, i) => {
+    const s = stats[i] || { correct: 0, total: 0 };
+    return { icon: st.icon, name: st.name, ...s, pct: s.total > 0 ? Math.round(s.correct / s.total * 100) : null };
+  }).filter(r => r.total > 0).sort((a, b) => (a.pct || 0) - (b.pct || 0));
+
+  const listEl = document.getElementById(prefix + '-subtopic-stats-list');
+  if (rows.length === 0) {
+    listEl.innerHTML = '<div style="padding:16px;color:var(--text-muted)">No subtopics attempted yet. Start studying!</div>';
+  } else {
+    listEl.innerHTML = rows.map(r => `
+      <div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--border)">
+        <div style="font-size:1.2rem;flex-shrink:0">${r.icon}</div>
+        <div style="flex:1;min-width:0"><div style="font-weight:500;font-size:0.9rem">${r.name}</div>
+          <div style="background:var(--border);border-radius:4px;height:6px;margin-top:4px"><div style="background:${r.pct>=70?'var(--correct-dark)':r.pct>=50?'#ffc107':'var(--wrong-dark)'};width:${r.pct}%;height:100%;border-radius:4px;transition:width 0.5s"></div></div>
+        </div>
+        <div style="font-weight:700;color:${r.pct>=70?'var(--correct-dark)':r.pct>=50?'#856404':'var(--wrong-dark)'};min-width:40px;text-align:right">${r.pct}%</div>
+        <div style="font-size:0.8rem;color:var(--text-muted);min-width:55px;text-align:right">${r.correct}/${r.total}</div>
+      </div>
+    `).join('');
+  }
+
+  const histEl = document.getElementById(prefix + '-session-history-list');
+  if (sessions.length === 0) {
+    histEl.innerHTML = '<div style="padding:16px;color:var(--text-muted)">No sessions yet.</div>';
+  } else {
+    histEl.innerHTML = sessions.slice(0, 10).map(s => {
+      const pct = s.total > 0 ? Math.round(s.correct / s.total * 100) : 0;
+      return `<div class="card" style="margin-bottom:10px">
+        <div class="flex-row"><span style="font-weight:600">${s.title}</span><span class="badge" style="background:${pct>=70?'var(--correct-bg)':pct>=50?'#fff3cd':'var(--wrong-bg)'};color:${pct>=70?'var(--correct-dark)':pct>=50?'#856404':'var(--wrong-dark)'}">${pct}%</span></div>
+        <div style="color:var(--text-muted);font-size:0.85rem;margin-top:4px">${s.date} &nbsp;·&nbsp; ${s.correct}/${s.total} correct</div>
+      </div>`;
+    }).join('');
+  }
 }
 
 function startTopicStudy(topicId) {
@@ -3035,24 +3109,28 @@ function spShowPage(topic, page) {
     if (el) el.textContent = qTotal;
   }
   if (topic === 'neuro' && page === 'ai') renderNeuroAiPage();
+  if (topic === 'neuro' && page === 'stats') renderNeuroStats();
   if (topic === 'endo' && page === 'topics') renderEndoSubtopics();
   if (topic === 'endo' && page === 'home') {
     const qTotal = Object.values(ENDO_QUESTIONS).reduce((s, arr) => s + arr.length, 0);
     const el = document.getElementById('endo-stat-qcount');
     if (el) el.textContent = qTotal;
   }
+  if (topic === 'endo' && page === 'stats') renderEndoStats();
   if (topic === 'gi' && page === 'topics') renderGiSubtopics();
   if (topic === 'gi' && page === 'home') {
     const qTotal = Object.values(GI_QUESTIONS).reduce((s, arr) => s + arr.length, 0);
     const el = document.getElementById('gi-stat-qcount');
     if (el) el.textContent = qTotal;
   }
+  if (topic === 'gi' && page === 'stats') renderGiStats();
   if (topic === 'hepato' && page === 'topics') renderHepatoSubtopics();
   if (topic === 'hepato' && page === 'home') {
     const qTotal = Object.values(HEPATO_QUESTIONS).reduce((s, arr) => s + arr.length, 0);
     const el = document.getElementById('hepato-stat-qcount');
     if (el) el.textContent = qTotal;
   }
+  if (topic === 'hepato' && page === 'stats') renderHepatoStats();
 }
 
 function openSpTopic(topicId) {
@@ -3082,7 +3160,7 @@ function openEndoSubtopic(idx) {
   const qs = ENDO_QUESTIONS[idx];
   const qCount = qs ? qs.length : 0;
   document.getElementById('endo-study-btn-area').innerHTML = qCount > 0
-    ? `<button class="btn btn-primary btn-sm" onclick="beginEndoQuiz(randomiseAnswers(shuffle(ENDO_QUESTIONS[${idx}])), '${st.icon} ${st.name.replace(/'/g,"\\'")}')">🎯 Study ${qCount} Questions</button>`
+    ? `<button class="btn btn-primary btn-sm" onclick="beginEndoQuiz(randomiseAnswers(shuffle(tagSubtopic(ENDO_QUESTIONS[${idx}], ${idx}))), '${st.icon} ${st.name.replace(/'/g,"\\'")}')">🎯 Study ${qCount} Questions</button>`
     : '';
   document.getElementById('endo-notes-panel').style.display = 'block';
   window.scrollTo(0, 0);
@@ -3096,10 +3174,12 @@ function closeEndoNotes() {
 // ── ENDO QUIZ ENGINE ─────────────────────────────────────────────────
 
 let endoQuiz = null;
+let endoStats = JSON.parse(localStorage.getItem('vpEndoStats') || '{}');
+let endoSessions = JSON.parse(localStorage.getItem('vpEndoSessions') || '[]');
 
 function startAllEndoQuiz() {
   let all = [];
-  Object.values(ENDO_QUESTIONS).forEach(arr => { all = all.concat(arr); });
+  Object.entries(ENDO_QUESTIONS).forEach(([k, arr]) => { all = all.concat(tagSubtopic(arr, Number(k))); });
   if (!all.length) return;
   beginEndoQuiz(randomiseAnswers(shuffle(all)), '🦋 All Subtopics');
 }
@@ -3150,6 +3230,7 @@ function answerEndoMCQ(idx) {
   const correct = idx === q.ans;
   endoQuiz.total++;
   if (correct) endoQuiz.correct++;
+  recordSpAnswer(endoStats, q.subtopic, correct, 'vpEndoStats');
   document.querySelectorAll('#endo-quiz-area .option-btn').forEach((btn, i) => {
     btn.disabled = true;
     if (i === q.ans) btn.classList.add('correct');
@@ -3165,6 +3246,7 @@ function answerEndoTF(given) {
   const correct = given === q.ans;
   endoQuiz.total++;
   if (correct) endoQuiz.correct++;
+  recordSpAnswer(endoStats, q.subtopic, correct, 'vpEndoStats');
   document.querySelectorAll('#endo-quiz-area .tf-btn').forEach(btn => {
     btn.disabled = true;
     const isTrue = btn.textContent.trim().startsWith('✓');
@@ -3193,6 +3275,21 @@ function finishEndoQuiz() {
   document.getElementById('result-title').textContent = pct >= 80 ? '🎉 Excellent!' : pct >= 60 ? '👍 Good Job!' : '📚 Keep Studying!';
   document.getElementById('result-subtitle').textContent = `${endoQuiz.correct} / ${endoQuiz.total} correct`;
   document.getElementById('result-modal').classList.add('open');
+  if (endoQuiz.total > 0) {
+    endoSessions.unshift({ date: new Date().toLocaleDateString(), title: endoQuiz.title, correct: endoQuiz.correct, total: endoQuiz.total });
+    localStorage.setItem('vpEndoSessions', JSON.stringify(endoSessions));
+  }
+}
+
+function renderEndoStats() { renderSpStats('endo', endoStats, endoSessions, ENDO_SUBTOPICS); }
+
+function resetEndoStats() {
+  if (!confirm('Reset progress for the Endocrine System? This cannot be undone.')) return;
+  endoStats = {};
+  endoSessions = [];
+  localStorage.removeItem('vpEndoStats');
+  localStorage.removeItem('vpEndoSessions');
+  renderEndoStats();
 }
 
 // ── Digestive System subtopic notes ─────────────────────────────────────
@@ -3218,7 +3315,7 @@ function openGiSubtopic(idx) {
   const qs = GI_QUESTIONS[idx];
   const qCount = qs ? qs.length : 0;
   document.getElementById('gi-study-btn-area').innerHTML = qCount > 0
-    ? `<button class="btn btn-primary btn-sm" onclick="beginGiQuiz(randomiseAnswers(shuffle(GI_QUESTIONS[${idx}])), '${st.icon} ${st.name.replace(/'/g,"\\'")}')">🎯 Study ${qCount} Questions</button>`
+    ? `<button class="btn btn-primary btn-sm" onclick="beginGiQuiz(randomiseAnswers(shuffle(tagSubtopic(GI_QUESTIONS[${idx}], ${idx}))), '${st.icon} ${st.name.replace(/'/g,"\\'")}')">🎯 Study ${qCount} Questions</button>`
     : '';
   document.getElementById('gi-notes-panel').style.display = 'block';
   window.scrollTo(0, 0);
@@ -3232,10 +3329,12 @@ function closeGiNotes() {
 // ── GI QUIZ ENGINE ───────────────────────────────────────────────────
 
 let giQuiz = null;
+let giStats = JSON.parse(localStorage.getItem('vpGiStats') || '{}');
+let giSessions = JSON.parse(localStorage.getItem('vpGiSessions') || '[]');
 
 function startAllGiQuiz() {
   let all = [];
-  Object.values(GI_QUESTIONS).forEach(arr => { all = all.concat(arr); });
+  Object.entries(GI_QUESTIONS).forEach(([k, arr]) => { all = all.concat(tagSubtopic(arr, Number(k))); });
   if (!all.length) return;
   beginGiQuiz(randomiseAnswers(shuffle(all)), '🫀 All Subtopics');
 }
@@ -3286,6 +3385,7 @@ function answerGiMCQ(idx) {
   const correct = idx === q.ans;
   giQuiz.total++;
   if (correct) giQuiz.correct++;
+  recordSpAnswer(giStats, q.subtopic, correct, 'vpGiStats');
   document.querySelectorAll('#gi-quiz-area .option-btn').forEach((btn, i) => {
     btn.disabled = true;
     if (i === q.ans) btn.classList.add('correct');
@@ -3301,6 +3401,7 @@ function answerGiTF(given) {
   const correct = given === q.ans;
   giQuiz.total++;
   if (correct) giQuiz.correct++;
+  recordSpAnswer(giStats, q.subtopic, correct, 'vpGiStats');
   document.querySelectorAll('#gi-quiz-area .tf-btn').forEach(btn => {
     btn.disabled = true;
     const isTrue = btn.textContent.trim().startsWith('✓');
@@ -3329,6 +3430,21 @@ function finishGiQuiz() {
   document.getElementById('result-title').textContent = pct >= 80 ? '🎉 Excellent!' : pct >= 60 ? '👍 Good Job!' : '📚 Keep Studying!';
   document.getElementById('result-subtitle').textContent = `${giQuiz.correct} / ${giQuiz.total} correct`;
   document.getElementById('result-modal').classList.add('open');
+  if (giQuiz.total > 0) {
+    giSessions.unshift({ date: new Date().toLocaleDateString(), title: giQuiz.title, correct: giQuiz.correct, total: giQuiz.total });
+    localStorage.setItem('vpGiSessions', JSON.stringify(giSessions));
+  }
+}
+
+function renderGiStats() { renderSpStats('gi', giStats, giSessions, GI_SUBTOPICS); }
+
+function resetGiStats() {
+  if (!confirm('Reset progress for the Digestive System? This cannot be undone.')) return;
+  giStats = {};
+  giSessions = [];
+  localStorage.removeItem('vpGiStats');
+  localStorage.removeItem('vpGiSessions');
+  renderGiStats();
 }
 
 // ── Hepatobiliary System subtopic notes ─────────────────────────────────
@@ -3354,7 +3470,7 @@ function openHepatoSubtopic(idx) {
   const qs = HEPATO_QUESTIONS[idx];
   const qCount = qs ? qs.length : 0;
   document.getElementById('hepato-study-btn-area').innerHTML = qCount > 0
-    ? `<button class="btn btn-primary btn-sm" onclick="beginHepatoQuiz(randomiseAnswers(shuffle(HEPATO_QUESTIONS[${idx}])), '${st.icon} ${st.name.replace(/'/g,"\\'")}')">🎯 Study ${qCount} Questions</button>`
+    ? `<button class="btn btn-primary btn-sm" onclick="beginHepatoQuiz(randomiseAnswers(shuffle(tagSubtopic(HEPATO_QUESTIONS[${idx}], ${idx}))), '${st.icon} ${st.name.replace(/'/g,"\\'")}')">🎯 Study ${qCount} Questions</button>`
     : '';
   document.getElementById('hepato-notes-panel').style.display = 'block';
   window.scrollTo(0, 0);
@@ -3368,10 +3484,12 @@ function closeHepatoNotes() {
 // ── HEPATO QUIZ ENGINE ───────────────────────────────────────────────
 
 let hepatoQuiz = null;
+let hepatoStats = JSON.parse(localStorage.getItem('vpHepatoStats') || '{}');
+let hepatoSessions = JSON.parse(localStorage.getItem('vpHepatoSessions') || '[]');
 
 function startAllHepatoQuiz() {
   let all = [];
-  Object.values(HEPATO_QUESTIONS).forEach(arr => { all = all.concat(arr); });
+  Object.entries(HEPATO_QUESTIONS).forEach(([k, arr]) => { all = all.concat(tagSubtopic(arr, Number(k))); });
   if (!all.length) return;
   beginHepatoQuiz(randomiseAnswers(shuffle(all)), '🟤 All Subtopics');
 }
@@ -3422,6 +3540,7 @@ function answerHepatoMCQ(idx) {
   const correct = idx === q.ans;
   hepatoQuiz.total++;
   if (correct) hepatoQuiz.correct++;
+  recordSpAnswer(hepatoStats, q.subtopic, correct, 'vpHepatoStats');
   document.querySelectorAll('#hepato-quiz-area .option-btn').forEach((btn, i) => {
     btn.disabled = true;
     if (i === q.ans) btn.classList.add('correct');
@@ -3437,6 +3556,7 @@ function answerHepatoTF(given) {
   const correct = given === q.ans;
   hepatoQuiz.total++;
   if (correct) hepatoQuiz.correct++;
+  recordSpAnswer(hepatoStats, q.subtopic, correct, 'vpHepatoStats');
   document.querySelectorAll('#hepato-quiz-area .tf-btn').forEach(btn => {
     btn.disabled = true;
     const isTrue = btn.textContent.trim().startsWith('✓');
@@ -3465,6 +3585,21 @@ function finishHepatoQuiz() {
   document.getElementById('result-title').textContent = pct >= 80 ? '🎉 Excellent!' : pct >= 60 ? '👍 Good Job!' : '📚 Keep Studying!';
   document.getElementById('result-subtitle').textContent = `${hepatoQuiz.correct} / ${hepatoQuiz.total} correct`;
   document.getElementById('result-modal').classList.add('open');
+  if (hepatoQuiz.total > 0) {
+    hepatoSessions.unshift({ date: new Date().toLocaleDateString(), title: hepatoQuiz.title, correct: hepatoQuiz.correct, total: hepatoQuiz.total });
+    localStorage.setItem('vpHepatoSessions', JSON.stringify(hepatoSessions));
+  }
+}
+
+function renderHepatoStats() { renderSpStats('hepato', hepatoStats, hepatoSessions, HEPATO_SUBTOPICS); }
+
+function resetHepatoStats() {
+  if (!confirm('Reset progress for the Hepatobiliary System? This cannot be undone.')) return;
+  hepatoStats = {};
+  hepatoSessions = [];
+  localStorage.removeItem('vpHepatoStats');
+  localStorage.removeItem('vpHepatoSessions');
+  renderHepatoStats();
 }
 
 // ── Neuropathology subtopic notes ─────────────────────────────────────
@@ -3490,7 +3625,7 @@ function openNeuroSubtopic(idx) {
   const qs = NEURO_QUESTIONS[idx];
   const qCount = qs ? qs.length : 0;
   document.getElementById('neuro-study-btn-area').innerHTML = qCount > 0
-    ? `<button class="btn btn-primary btn-sm" onclick="beginNeuroQuiz(randomiseAnswers(shuffle(NEURO_QUESTIONS[${idx}])), '${st.icon} ${st.name.replace(/'/g,"\\'")}')">🎯 Study ${qCount} Questions</button>`
+    ? `<button class="btn btn-primary btn-sm" onclick="beginNeuroQuiz(randomiseAnswers(shuffle(tagSubtopic(NEURO_QUESTIONS[${idx}], ${idx}))), '${st.icon} ${st.name.replace(/'/g,"\\'")}')">🎯 Study ${qCount} Questions</button>`
     : '';
   document.getElementById('neuro-notes-panel').style.display = 'block';
   window.scrollTo(0, 0);
@@ -3504,10 +3639,12 @@ function closeNeuroNotes() {
 // ── NEURO QUIZ ENGINE ──────────────────────────────────────────────────
 
 let neuroQuiz = null;
+let neuroStats = JSON.parse(localStorage.getItem('vpNeuroStats') || '{}');
+let neuroSessions = JSON.parse(localStorage.getItem('vpNeuroSessions') || '[]');
 
 function startAllNeuroQuiz() {
   let all = [];
-  Object.values(NEURO_QUESTIONS).forEach(arr => { all = all.concat(arr); });
+  Object.entries(NEURO_QUESTIONS).forEach(([k, arr]) => { all = all.concat(tagSubtopic(arr, Number(k))); });
   if (!all.length) return;
   beginNeuroQuiz(randomiseAnswers(shuffle(all)), '🧠 All Subtopics');
 }
@@ -3558,6 +3695,7 @@ function answerNeuroMCQ(idx) {
   const correct = idx === q.ans;
   neuroQuiz.total++;
   if (correct) neuroQuiz.correct++;
+  recordSpAnswer(neuroStats, q.subtopic, correct, 'vpNeuroStats');
   document.querySelectorAll('#neuro-quiz-area .option-btn').forEach((btn, i) => {
     btn.disabled = true;
     if (i === q.ans) btn.classList.add('correct');
@@ -3573,6 +3711,7 @@ function answerNeuroTF(given) {
   const correct = given === q.ans;
   neuroQuiz.total++;
   if (correct) neuroQuiz.correct++;
+  recordSpAnswer(neuroStats, q.subtopic, correct, 'vpNeuroStats');
   document.querySelectorAll('#neuro-quiz-area .tf-btn').forEach(btn => {
     btn.disabled = true;
     const isTrue = btn.textContent.trim().startsWith('✓');
@@ -3601,6 +3740,21 @@ function finishNeuroQuiz() {
   document.getElementById('result-title').textContent = pct >= 80 ? '🎉 Excellent!' : pct >= 60 ? '👍 Good Job!' : '📚 Keep Studying!';
   document.getElementById('result-subtitle').textContent = `${neuroQuiz.correct} / ${neuroQuiz.total} correct`;
   document.getElementById('result-modal').classList.add('open');
+  if (neuroQuiz.total > 0) {
+    neuroSessions.unshift({ date: new Date().toLocaleDateString(), title: neuroQuiz.title, correct: neuroQuiz.correct, total: neuroQuiz.total });
+    localStorage.setItem('vpNeuroSessions', JSON.stringify(neuroSessions));
+  }
+}
+
+function renderNeuroStats() { renderSpStats('neuro', neuroStats, neuroSessions, NEURO_SUBTOPICS); }
+
+function resetNeuroStats() {
+  if (!confirm('Reset progress for Neuropathology? This cannot be undone.')) return;
+  neuroStats = {};
+  neuroSessions = [];
+  localStorage.removeItem('vpNeuroStats');
+  localStorage.removeItem('vpNeuroSessions');
+  renderNeuroStats();
 }
 
 // ── NEURO_QUESTIONS DATA ──────────────────────────────────────────────
