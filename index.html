@@ -568,6 +568,13 @@
       <p style="font-size:0.83rem;color:var(--text-muted);margin:4px 0 0">Epidermal, dermal, pigmentary and adnexal responses to injury, congenital disorders, physical/chemical injury, infections, immunologic disease, and tumours.</p>
       <div class="sp-meta"><span class="sp-pill">14 Subtopics</span></div>
     </div>
+    <div class="sp-topic-chip sp-available" onclick="openSpTopic('malerepro')">
+      <div class="sp-badge">Available</div>
+      <div class="sp-icon">♂️</div>
+      <div class="sp-name">Male Reproductive System</div>
+      <p style="font-size:0.83rem;color:var(--text-muted);margin:4px 0 0">Defence mechanisms, disorders of sexual development, scrotum, testis, epididymis, spermatic cord, accessory glands, penis and prepuce, and related neoplasia.</p>
+      <div class="sp-meta"><span class="sp-pill">14 Subtopics</span></div>
+    </div>
   </div>
 </div>
 
@@ -1101,6 +1108,78 @@
   <div id="skin-session-history-list"></div>
 </div>
 <!-- END PATHOLOGY OF THE SKIN PAGES -->
+
+<!-- =====================================================================
+     MALE REPRODUCTIVE SYSTEM — HOME
+===================================================================== -->
+<div id="page-malerepro-home" class="page">
+  <div class="hero" style="background:linear-gradient(135deg,#c7e4f9 0%,#d4f1f4 50%,#e8d5f5 100%);color:var(--text)">
+    <h1 style="color:var(--primary-dark)">♂️ Male Reproductive System</h1>
+    <p style="color:var(--text-muted)">Study disorders of sexual development, scrotum, testis, epididymis, spermatic cord, accessory glands, penis and prepuce — subtopic notes and questions.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num" id="malerepro-stat-qcount">0</div><div class="lbl">Questions</div></div>
+      <div class="hero-stat"><div class="num">14</div><div class="lbl">Subtopics</div></div>
+      <div class="hero-stat"><div class="num" id="malerepro-stat-sessions">0</div><div class="lbl">Sessions</div></div>
+    </div>
+  </div>
+  <div class="section-title">🚀 Start Studying</div>
+  <div class="mode-grid">
+    <div class="mode-card" onclick="spShowPage('malerepro','topics')">
+      <div class="icon">📖</div><h3>Subtopic Study</h3>
+      <p>Read lecture notes for each subtopic. 14 subtopics drawn directly from the course document.</p>
+    </div>
+    <div class="mode-card" onclick="startAllMalereproQuiz()">
+      <div class="icon">🎯</div><h3>Exam Prep Mode</h3>
+      <p>Randomised questions drawn from all subtopics with questions added so far — full mixed practice exam.</p>
+    </div>
+  </div>
+</div>
+
+<!-- =====================================================================
+     MALE REPRODUCTIVE SYSTEM — TOPICS (Subtopic notes)
+===================================================================== -->
+<div id="page-malerepro-topics" class="page">
+  <div id="malerepro-subtopic-list">
+    <div class="flex-row" style="margin-bottom:16px">
+      <div class="section-title" style="margin:0">📖 Subtopics</div>
+    </div>
+    <div class="sp-subtopic-grid" id="malerepro-subtopic-grid"></div>
+  </div>
+  <div id="malerepro-notes-panel" style="display:none">
+    <div class="flex-row" style="margin-bottom:14px">
+      <button class="btn btn-ghost btn-sm" onclick="closeMalereproNotes()">← All Subtopics</button>
+      <div class="spacer"></div>
+      <span id="malerepro-notes-title" style="font-weight:700;color:var(--primary-dark);font-size:0.95rem"></span>
+    </div>
+    <div id="malerepro-study-btn-area" style="margin-bottom:12px"></div>
+    <div id="malerepro-notes-body" class="sp-content"></div>
+  </div>
+</div>
+
+<!-- =====================================================================
+     MALE REPRODUCTIVE SYSTEM — QUIZ
+===================================================================== -->
+<div id="page-malerepro-quiz" class="page">
+  <div id="malerepro-quiz-area"></div>
+</div>
+
+<!-- =====================================================================
+     MALE REPRODUCTIVE SYSTEM — PROGRESS
+===================================================================== -->
+<div id="page-malerepro-stats" class="page">
+  <div class="flex-row" style="margin-bottom:18px">
+    <div class="section-title" style="margin:0">📊 My Progress</div>
+    <div class="spacer"></div>
+    <button class="btn btn-ghost btn-sm" onclick="resetMalereproStats()" style="color:var(--wrong-dark)">🗑 Reset Progress</button>
+  </div>
+  <div class="stats-grid" id="malerepro-overall-stats"></div>
+  <div class="section-title">📈 By Subtopic (worst first)</div>
+  <div class="card" id="malerepro-subtopic-stats-list"></div>
+  <div class="divider"></div>
+  <div class="section-title">🕐 Session History</div>
+  <div id="malerepro-session-history-list"></div>
+</div>
+<!-- END MALE REPRODUCTIVE SYSTEM PAGES -->
 
 <div class="modal-overlay" id="result-modal">
   <div class="modal">
@@ -1747,6 +1826,14 @@ const NAV_CONFIGS = {
       {id:'skin-home',     label:'🏠 Home',       fn:"spShowPage('skin','home')"},
       {id:'skin-topics',   label:'📖 Topics',     fn:"spShowPage('skin','topics')"},
       {id:'skin-stats',    label:'📊 Progress',   fn:"spShowPage('skin','stats')"},
+    ]
+  },
+  malerepro: {
+    label: '♂️ Male Reproductive System',
+    btns: [
+      {id:'malerepro-home',     label:'🏠 Home',       fn:"spShowPage('malerepro','home')"},
+      {id:'malerepro-topics',   label:'📖 Topics',     fn:"spShowPage('malerepro','topics')"},
+      {id:'malerepro-stats',    label:'📊 Progress',   fn:"spShowPage('malerepro','stats')"},
     ]
   },
 };
@@ -3229,6 +3316,13 @@ function spShowPage(topic, page) {
     if (el) el.textContent = qTotal;
   }
   if (topic === 'skin' && page === 'stats') renderSkinStats();
+  if (topic === 'malerepro' && page === 'topics') renderMalereproSubtopics();
+  if (topic === 'malerepro' && page === 'home') {
+    const qTotal = Object.values(MALEREPRO_QUESTIONS).reduce((s, arr) => s + arr.length, 0);
+    const el = document.getElementById('malerepro-stat-qcount');
+    if (el) el.textContent = qTotal;
+  }
+  if (topic === 'malerepro' && page === 'stats') renderMalereproStats();
 }
 
 function openSpTopic(topicId) {
@@ -3857,6 +3951,162 @@ function resetSkinStats() {
   localStorage.removeItem('vpSkinStats');
   localStorage.removeItem('vpSkinSessions');
   renderSkinStats();
+}
+
+// ── Male Reproductive System subtopic notes ───────────────────────────
+
+function renderMalereproSubtopics() {
+  const grid = document.getElementById('malerepro-subtopic-grid');
+  if (!grid) return;
+  grid.innerHTML = MALEREPRO_SUBTOPICS.map((st, i) =>
+    `<div class="sp-subtopic-chip" onclick="openMalereproSubtopic(${i})">
+      <div class="ss-icon">${st.icon}</div>
+      <div class="ss-name">${st.name}</div>
+      <div class="ss-pages">${st.pages}</div>
+    </div>`
+  ).join('');
+}
+
+function openMalereproSubtopic(idx) {
+  const st = MALEREPRO_SUBTOPICS[idx];
+  if (!st) return;
+  document.getElementById('malerepro-subtopic-list').style.display = 'none';
+  document.getElementById('malerepro-notes-title').textContent = st.icon + ' ' + st.name;
+  document.getElementById('malerepro-notes-body').innerHTML = st.content;
+  const qs = MALEREPRO_QUESTIONS[idx];
+  const qCount = qs ? qs.length : 0;
+  document.getElementById('malerepro-study-btn-area').innerHTML = qCount > 0
+    ? `<button class="btn btn-primary btn-sm" onclick="beginMalereproQuiz(randomiseAnswers(shuffle(tagSubtopic(MALEREPRO_QUESTIONS[${idx}], ${idx}))), '${st.icon} ${st.name.replace(/'/g,"\\'")}')">🎯 Study ${qCount} Questions</button>`
+    : '';
+  document.getElementById('malerepro-notes-panel').style.display = 'block';
+  window.scrollTo(0, 0);
+}
+
+function closeMalereproNotes() {
+  document.getElementById('malerepro-notes-panel').style.display = 'none';
+  document.getElementById('malerepro-subtopic-list').style.display = '';
+}
+
+// ── MALE REPRODUCTIVE SYSTEM QUIZ ENGINE ──────────────────────────────
+
+let malereproQuiz = null;
+let malereproStats = JSON.parse(localStorage.getItem('vpMalereproStats') || '{}');
+let malereproSessions = JSON.parse(localStorage.getItem('vpMalereproSessions') || '[]');
+
+function startAllMalereproQuiz() {
+  let all = [];
+  Object.entries(MALEREPRO_QUESTIONS).forEach(([k, arr]) => { all = all.concat(tagSubtopic(arr, Number(k))); });
+  if (!all.length) return;
+  beginMalereproQuiz(randomiseAnswers(shuffle(all)), '♂️ All Subtopics');
+}
+
+function beginMalereproQuiz(questions, title) {
+  malereproQuiz = { questions, idx: 0, title, answered: false, correct: 0, total: 0 };
+  spShowPage('malerepro', 'quiz');
+  renderMalereproQuestion();
+}
+
+function renderMalereproQuestion() {
+  const q = malereproQuiz.questions[malereproQuiz.idx];
+  if (!q) { finishMalereproQuiz(); return; }
+  malereproQuiz.answered = false;
+  const diffColor = {easy:'var(--correct-dark)',medium:'#b8860b',hard:'var(--wrong-dark)'}[q.diff];
+  const diffBg = {easy:'var(--correct-bg)',medium:'#fff3cd',hard:'var(--wrong-bg)'}[q.diff];
+  let html = `
+    <div class="question-header">
+      <div class="flex-row" style="flex-wrap:wrap;gap:6px">
+        <span class="badge" style="background:var(--primary-light);color:var(--primary-dark)">${malereproQuiz.title}</span>
+        <span class="badge" style="background:${diffBg};color:${diffColor}">${q.diff}</span>
+        <span class="badge" style="background:#e9ecef;color:#495057">${q.type==='tf'?'True/False':'MCQ'}</span>
+      </div>
+      <div class="progress-text">${malereproQuiz.idx+1} / ${malereproQuiz.questions.length}</div>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" style="width:${(malereproQuiz.idx/malereproQuiz.questions.length)*100}%"></div></div>
+    <div class="question-text">${q.q}</div>`;
+  if (q.type === 'tf') {
+    html += '<div class="tf-btns"><button class="tf-btn" onclick="answerMalereproTF(true)">&#10003; True</button><button class="tf-btn" onclick="answerMalereproTF(false)">&#10007; False</button></div>';
+  } else {
+    html += '<div class="options">';
+    for (let i = 0; i < q.opts.length; i++) {
+      html += `<button class="option-btn" onclick="answerMalereproMCQ(${i})"><span class="opt-letter">${String.fromCharCode(65+i)}</span>${q.opts[i]}</button>`;
+    }
+    html += '</div>';
+  }
+  html += `<div id="malerepro-q-feedback" style="display:none"></div>
+    <div class="quiz-actions" id="malerepro-quiz-actions">
+      <button class="btn btn-ghost btn-sm" onclick="malereproSkipQuestion()">Skip</button>
+    </div>`;
+  document.getElementById('malerepro-quiz-area').innerHTML = html;
+}
+
+function answerMalereproMCQ(idx) {
+  if (malereproQuiz.answered) return;
+  malereproQuiz.answered = true;
+  const q = malereproQuiz.questions[malereproQuiz.idx];
+  const correct = idx === q.ans;
+  malereproQuiz.total++;
+  if (correct) malereproQuiz.correct++;
+  recordSpAnswer(malereproStats, q.subtopic, correct, 'vpMalereproStats');
+  document.querySelectorAll('#malerepro-quiz-area .option-btn').forEach((btn, i) => {
+    btn.disabled = true;
+    if (i === q.ans) btn.classList.add('correct');
+    else if (i === idx && !correct) btn.classList.add('wrong');
+  });
+  showMalereproFeedback(q, correct);
+}
+
+function answerMalereproTF(given) {
+  if (malereproQuiz.answered) return;
+  malereproQuiz.answered = true;
+  const q = malereproQuiz.questions[malereproQuiz.idx];
+  const correct = given === q.ans;
+  malereproQuiz.total++;
+  if (correct) malereproQuiz.correct++;
+  recordSpAnswer(malereproStats, q.subtopic, correct, 'vpMalereproStats');
+  document.querySelectorAll('#malerepro-quiz-area .tf-btn').forEach(btn => {
+    btn.disabled = true;
+    const isTrue = btn.textContent.trim().startsWith('✓');
+    if (isTrue && q.ans === true) btn.classList.add('correct');
+    else if (!isTrue && q.ans === false) btn.classList.add('correct');
+    else if (isTrue && given === true && !correct) btn.classList.add('wrong');
+    else if (!isTrue && given === false && !correct) btn.classList.add('wrong');
+  });
+  showMalereproFeedback(q, correct);
+}
+
+function showMalereproFeedback(q, correct) {
+  const fb = document.getElementById('malerepro-q-feedback');
+  fb.style.display = 'block';
+  fb.className = 'feedback ' + (correct ? 'correct' : 'wrong');
+  fb.innerHTML = `<strong>${correct ? '✓ Correct!' : '✗ Incorrect'}</strong><br>${q.exp}`;
+  document.getElementById('malerepro-quiz-actions').innerHTML = `<button class="btn btn-primary" onclick="nextMalereproQuestion()">Next →</button>`;
+}
+
+function malereproSkipQuestion() { malereproQuiz.idx++; renderMalereproQuestion(); }
+function nextMalereproQuestion() { malereproQuiz.idx++; renderMalereproQuestion(); }
+
+function finishMalereproQuiz() {
+  const pct = malereproQuiz.total > 0 ? Math.round(malereproQuiz.correct / malereproQuiz.total * 100) : 0;
+  document.getElementById('result-score-circle').textContent = pct + '%';
+  document.getElementById('result-title').textContent = pct >= 80 ? '🎉 Excellent!' : pct >= 60 ? '👍 Good Job!' : '📚 Keep Studying!';
+  document.getElementById('result-subtitle').textContent = `${malereproQuiz.correct} / ${malereproQuiz.total} correct`;
+  resultModalNav = { home: () => spShowPage('malerepro','home'), stats: () => spShowPage('malerepro','stats') };
+  document.getElementById('result-modal').classList.add('open');
+  if (malereproQuiz.total > 0) {
+    malereproSessions.unshift({ date: new Date().toLocaleDateString(), title: malereproQuiz.title, correct: malereproQuiz.correct, total: malereproQuiz.total });
+    localStorage.setItem('vpMalereproSessions', JSON.stringify(malereproSessions));
+  }
+}
+
+function renderMalereproStats() { renderSpStats('malerepro', malereproStats, malereproSessions, MALEREPRO_SUBTOPICS); }
+
+function resetMalereproStats() {
+  if (!confirm('Reset progress for Male Reproductive System? This cannot be undone.')) return;
+  malereproStats = {};
+  malereproSessions = [];
+  localStorage.removeItem('vpMalereproStats');
+  localStorage.removeItem('vpMalereproSessions');
+  renderMalereproStats();
 }
 
 // ── Neuropathology subtopic notes ─────────────────────────────────────
@@ -7271,6 +7521,333 @@ const SKIN_SUBTOPICS = [
 </table>
 <h3>Other / Miscellaneous Tumours</h3>
 <p>Trichoblastoma (arising from hair follicles), and other miscellaneous skin disorders and cutaneous neoplasias.</p>`
+  },
+];
+
+const MALEREPRO_QUESTIONS = {};
+
+const MALEREPRO_SUBTOPICS = [
+  {
+    icon: '🧫', name: 'Dysfunction, Defence Mechanisms & Immunity', pages: 'Pages 1–2',
+    content: `
+<h2>Dysfunction / Responses to Injury</h2>
+<p><span class="sp-key">Spermatic granulomas</span> are one of the most important and dramatic responses of the male reproductive system (MRS) to injury. They follow disruption of a seminiferous tubule or duct (spermiostasis, spermatocele). Spermatozoa are antigenically foreign to the body once outside their normal confines, provoking severe granulomatous (foreign body-type) inflammation. Severe fibrosis obstructs further tubules and ducts, increasing inflammation — a self-perpetuating cycle.</p>
+<h3>Portals of Entry / Pathways of Spread</h3>
+<p>Direct penetration, ascending infection, haematogenous spread, and peritoneal spread.</p>
+<table>
+  <tr><th>Region</th><th>Key points</th></tr>
+  <tr><td><span class="sp-key">Scrotum and contents</span></td><td>Ascending infection by microbes; pubertal animals are more prone due to hormonal changes; may ascend to the epididymis and, rarely (long duct length), to the testis; haematogenous spread (<i>Brucella</i> spp.); direct penetration; vaginal tunics prone to injury from intra-abdominal peritoneal disease or direct penetration</td></tr>
+  <tr><td><span class="sp-key">Accessory genital glands</span></td><td>Ascending infection from the prepuce (retrograde to spermatozoal flow) or from testis/epididymis; haematogenous (<i>Brucella</i> spp., <i>Mycoplasma</i> spp.)</td></tr>
+  <tr><td><span class="sp-key">Penis and prepuce</span></td><td>Direct penetrating injury, blunt trauma (intromission, masturbation); venereal spread of sexually transmitted pathogens</td></tr>
+</table>
+<h2>Defence Mechanisms / Barrier Systems</h2>
+<p>The internal genitalia are highly sensitive to injury: spermatozoa are highly antigenic and the duct system is long and narrow, so there is little tolerance for inflammation before necrosis and fibrosis occur. The MRS relies primarily on <span class="sp-key">isolation</span> for protection. Innate immunity is more important than adaptive immunity — pattern recognition molecules, soluble secretory factors, continuous flushing, and rapid recruitment of neutrophils/macrophages all limit infection. Adaptive responses in the testis are actively inhibited by local immunosuppressive factors.</p>
+<table>
+  <tr><th>Region</th><th>Defences</th></tr>
+  <tr><td><span class="sp-key">Scrotum and contents</span></td><td>Intrascrotal location, very long deferent duct and flushing make ascending infection unlikely; antibacterial testicular/epididymal fluid; the <span class="sp-key">blood-testis barrier</span> (Sertoli cell junctions, basement membrane, peritubular cells) separates germinal epithelium from the interstitium; interstitial immune function is suppressed (anti-inflammatory); neutrophils are not normally present in seminal plasma but can infiltrate rapidly; macrophages reside within the testis; interstitial endocrine cells inhibit the immune response</td></tr>
+  <tr><td><span class="sp-key">Accessory genital glands</span></td><td>Located within the protective pelvic cavity, rare direct penetration; epithelial barrier; flushing action of urine and the length of the urethra</td></tr>
+  <tr><td><span class="sp-key">Penis and prepuce</span></td><td>Stratified squamous epithelium; antibacterial urine and genital fluids; humoral adaptive immunity (lymphoid follicles near the preputial orifice); the preputial cavity has its own resident flora</td></tr>
+</table>
+<h2>Inflammation</h2>
+<p>Uniquely, the male genital tract mounts an inflammatory response to its own spermatozoa and germ cells once they are outside the blood-testis barrier, since these act as foreign (antigenic) material. Direct damage to testicular parenchyma produces granulomatous, intratubular inflammation (<span class="sp-key">orchitis</span>). Spermatozoa plus macrophages, multinucleate giant cells, CD4+ T cells, B cells and plasma cells become walled off by a fibrous capsule (spermatocele); if this ruptures, free spermatozoa enter the scrotal (vaginal) cavity causing <span class="sp-key">periorchitis</span>.</p>
+<div class="sp-note">Recent classification divides testicular inflammation into interstitial, intratubular, or granulomatous/necrotising patterns rather than by aetiology alone.</div>`
+  },
+  {
+    icon: '🧬', name: 'Disorders of Sexual Development (DSD)', pages: 'Pages 2–5',
+    content: `
+<h2>Overview</h2>
+<p>Disorders of sexual development (DSD) are categorised by sex chromosomes, genotype, gonad type, phenotype, and cause. Uniform nomenclature removed the older emphasis on labelling affected animals strictly as "male" or "female". Many anomalies result in a female phenotype (covered with the female reproductive system); a large number, however, are specific to the male reproductive system. Some have genetic implications — affected animals should not be used as breeding stock.</p>
+<h3>Sex Chromosome Disorders of Sexual Development</h3>
+<ul>
+  <li>Y chromosome short-arm deletion with isochromosome formation (duplication of one arm, loss of the other) → female phenotype with hypoplastic gonads</li>
+  <li>Cattle and cats: isochromosome Y, or duplication of a sex chromosome in an individual carrying a Y (<span class="sp-key">XXY or XYY</span>); external genitalia are male</li>
+  <li><span class="sp-key">Klinefelter syndrome (XXY)</span> — testicular hypoplasia</li>
+  <li><span class="sp-key">Chimeras</span> (XX:XY) — phenotypically sexually ambiguous, degree depending on the proportion of each cell line; <span class="sp-key">freemartins</span> are chimeras (discussed with the female reproductive system)</li>
+</ul>
+<h3>XX Disorders of Sexual Development</h3>
+<p>Differentiation of the bipotential fetal gonad into a testis depends on the sex-determining region of the Y chromosome (<span class="sp-key">SRY</span>). Animals with XX sex chromosomes but testes or ovotestes and a male phenotype may be SRY-positive or SRY-negative.</p>
+<table>
+  <tr><th>Type</th><th>Features</th></tr>
+  <tr><td>XX SRY– testicular DSD</td><td>Reported in dogs, goats, horses — a testis-determining region exists on another chromosome</td></tr>
+  <tr><td>XX SRY+ DSD</td><td>Not reported in domestic animals</td></tr>
+  <tr><td>XX ovotesticular DSD</td><td>May show ambiguous genitalia; phenotype can be male, female, or a combination. Ovotestes typically have central testicular tissue surrounded peripherally by ovarian structures; rarely an end-to-end arrangement with clear demarcation occurs</td></tr>
+</table>
+<h3>XY Disorders of Sexual Development</h3>
+<p>XY DSD is classified as: (1) with abnormal gonads such as gonadal dysgenesis or ovotestes, (2) with ovaries, or (3) with testes. <span class="sp-key">XY testicular DSD is the most common</span> (SRY-positive or SRY-negative).</p>
+<ul>
+  <li>XY SRY– testicular DSD: primitive, undifferentiated gonads (gonadal dysgenesis) with a female phenotype</li>
+  <li>XY SRY+ testicular DSD with a female phenotype: <span class="sp-key">male pseudohermaphrodites</span> — genital tract differentiation is abnormal</li>
+</ul>
+<p>Three named syndromes fall under XY SRY+ testicular DSD: <span class="sp-key">persistent Müllerian duct syndrome (PMDS)</span>, <span class="sp-key">androgen insensitivity</span>, and <span class="sp-key">steroid 5α-reductase deficiency</span>.</p>
+<h2>Hermaphroditism and Pseudohermaphroditism</h2>
+<p>A hermaphrodite has complete or partial reproductive organs and gametes normally associated with both sexes. <span class="sp-key">True hermaphroditism</span> = a mixture of essential sex glands, and is rare in domestic animals (bilateral/ambiglandular with ovotestes on both sides; unilateral with ovary and testis on one side only; or alternating, with an ovary on one side and a testis on the other).</p>
+<p><span class="sp-key">Pseudohermaphroditismus masculinus (testicularis)</span> — male chromosomes and gonads, but the tubular organs are modified toward the female sex; this is the most common form in domestic animals.</p>
+<h3>Persistent Müllerian Duct Syndrome (PMDS)</h3>
+<p>A rare disorder of anti-Müllerian hormone (AMH) production or function, resulting in persistence of the female tubular system. Caused by mutation of either the AMH gene or its receptor. Reported in miniature schnauzers, basset hounds, and goats.</p>
+<h3>Androgen Receptor Disorders</h3>
+<p>Mutation in the androgen receptor gene (X-linked); hundreds of mutations identified. The normal receptor has both a hormone-binding and a DNA-binding domain. In domestic animals (equine, bovine, feline), complete androgen insensitivity is seen: testes are often inguinally cryptorchid, and external genitalia are female with a cranial blind-ending vagina; neither the paramesonephric nor mesonephric ductal systems are normally developed.</p>
+<h3>Segmental Aplasia of the Mesonephric Duct</h3>
+<p>Affects structures of mesonephric origin (epididymis, deferent duct, ampulla, vesicular gland) — most commonly the epididymis alone (body and tail), usually unilateral; autosomal recessive in bulls and dogs. The blind-ending epididymal duct causes spermiostasis → dilation → rupture → spermatic granulomas.</p>
+<h3>Ciliary Dyskinesia (Immotile Cilia Syndrome)</h3>
+<p>Defects in the spermatozoal flagellum and the ciliary axoneme of epithelial cells in numerous organs; autosomal recessive in humans, dogs, pigs, mice, and rats. Causes (1) immotile/hypomotile spermatozoa from flagellar lesions and (2) oligospermia or azoospermia. Affected females show infertility from defective uterine tube ciliary function.</p>
+<h3>Spermatic Granuloma of the Epididymal Head</h3>
+<p>Often mistaken for infectious epididymitis. Blind efferent ductules with no connection to the epididymis can be resorbed, or persist and enlarge into cysts, or rupture — causing spermiostasis → spermatocele → spermatic granuloma of the epididymal head (SGEH).</p>
+<h3>Cysts of the Reproductive Tract</h3>
+<p>Minor anomalies resulting from duplication or failure of regression of embryonic ducts and tubules. <span class="sp-key">Inclusion cysts</span> have a collagenous wall, an internal mesothelial-like lining, and clear fluid; they are unconnected to the epididymal duct/efferent ductules (remnants of mesonephric tubules), found adjacent to (external paradidymis) or within (internal paradidymis) the head of the epididymis. Cysts connected to the ductular system are lined by ciliated columnar epithelium and are clinically significant because they cause spermiostasis.</p>`
+  },
+  {
+    icon: '🫧', name: 'Disorders of the Scrotum and Contents', pages: 'Pages 5–6',
+    content: `
+<h2>Scrotal Skin and Tunics</h2>
+<p>The scrotal skin and tunics are critical for thermoregulation and are sensitive to increased temperature and oxidative stress, both of which cause infertility. Trauma is common — kicks from mares, fighting in bulls and rams, and biting in dogs and cats. Altered or absent androgen signalling produces developmental defects: failure of scrotal fusion, cleft formation, and bifurcation. <span class="sp-key">Hypospadias</span> (urethral opening on the ventral penile surface) is a related defect of androgen-dependent development.</p>
+<h3>Dermatitis of the Scrotal Skin</h3>
+<p>Commonly a component of generalised dermatopathy or a local dermatitis from trauma, frostbite, irritants (e.g. cement dust), or parasites. The scrotum is a predilection site for specific pathogens: <i>Dermatophilus congolensis</i>, <i>Besnoitia besnoitii</i> (bull), and <i>Chorioptes bovis</i> (ram). Scrotal dermatitis generates additional heat, which in turn causes testicular degeneration.</p>
+<h3>Scrotal Neoplasms</h3>
+<p>In dogs: papillomas, mast cell tumours, haemangiosarcomas. In dogs and boars, haemangiosarcomas are probably hamartomas rather than true neoplasms. Testicular tumours (Sertoli and Leydig cell tumours) may also be transplantational onto scrotal tissue.</p>
+<h2>Vaginal Tunic</h2>
+<p>The vaginal tunic is an extension of the peritoneum, continuous with the peritoneal cavity, and is therefore subject to peritoneal disorders.</p>
+<table>
+  <tr><th>Disorder</th><th>Features</th></tr>
+  <tr><td><span class="sp-key">Hydrocele</span></td><td>Ascites-like fluid accumulation within the vaginal tunic</td></tr>
+  <tr><td>Polyserositis / FIP</td><td>Inflammation of the tunics and periorchitis (pigs; feline infectious peritonitis)</td></tr>
+  <tr><td>Neoplasia</td><td>Mesothelioma, peritoneal carcinomatosis</td></tr>
+  <tr><td>Parasites</td><td><i>Cysticercus tenuicollis</i> metacestode larva (rams)</td></tr>
+</table>
+<p>Inflammation of the vaginal tunics without peritonitis follows trauma or extension from orchitis/epididymitis: trypanosomiasis (bulls, rams, bucks), <i>Brucella abortus</i> (bulls), <i>Brucella ovis</i> and <i>Actinobacillus seminis</i> (rams), and <i>Brucella melitensis</i> (bucks). Adhesions between the parietal and visceral vaginal tunic begin fibrinous and progress to fibrosis.</p>
+<h2>Size Disorders of Testis and Epididymis</h2>
+<p>The testis and epididymis are normally inseparable — if they can be separated, this itself indicates disease.</p>
+<div class="sp-note">Reduced size: DSD-related reduction or absence of scrotal contents; segmental aplasia of the mesonephric duct causing epididymal tail aplasia (XY SRY+ testicular DSD, male phenotype); unilateral castration or unilateral cryptorchidism (one side missing); bilateral castration or bilateral cryptorchidism (both sides missing); hypoplasia (congenital — testis fails to reach full size by puberty, e.g. with DSD or cryptorchidism); atrophy.</div>
+<p>Small testicular size matters clinically because sperm production correlates directly with testicular volume and weight.</p>`
+  },
+  {
+    icon: '⬇️', name: 'Developmental Anomalies of the Testis', pages: 'Pages 6–7',
+    content: `
+<h2>Cryptorchidism</h2>
+<p>Disruption of normal testicular descent, reported in the dog, horse, boar, and ram. The aetiology may be genetic; exposure to estrogen-like compounds has also been proposed to inhibit descent. Affected testes are hypoplastic and may be located in the abdomen or inguinal canal. <span class="sp-key">Unilateral is far more common than bilateral.</span> Cryptorchid testes show degeneration, collagen deposition, thickening of the tubular basement membrane, and germinal epithelial atrophy, and are frequently affected by neoplasia.</p>
+<table>
+  <tr><th>Term</th><th>Meaning</th></tr>
+  <tr><td><span class="sp-key">Monorchidia</span></td><td>Only one testicle present</td></tr>
+  <tr><td><span class="sp-key">Anorchidia</span></td><td>Complete lack of testicles</td></tr>
+  <tr><td><span class="sp-key">Ectopia testis</span></td><td>Testicle located in the wrong anatomical position</td></tr>
+</table>
+<h2>Hypoplasia of the Testis</h2>
+<p>A reduction in testicular size, common in cryptorchidism and difficult to differentiate from atrophy. The seminiferous tubules are reduced and the interstitium appears (but is not actually) increased. More commonly unilateral, which is difficult to explain since most causes are systemic. Typically evident by puberty.</p>
+<div class="sp-warn">Causes of testicular hypoplasia: inadequate diet (zinc deficiency), endocrine abnormalities (decreased inhibition of FSH and LH), and cytogenetic abnormalities (from chromosomal translocation to non-disjunction).</div>
+<p>The key microscopic distinguishing feature between hypoplasia and atrophy is <span class="sp-key">waving of the basal membrane</span> in degenerated tubules — this indicates the tubules had reached normal size before collapsing (i.e. atrophy), which is absent in primary hypoplasia.</p>`
+  },
+  {
+    icon: '🩸', name: 'Testicular Degeneration, Atrophy & Circulatory Disturbances', pages: 'Pages 7–8',
+    content: `
+<h2>Testicular Degeneration and Atrophy</h2>
+<p><span class="sp-key">Atrophy</span> is reduction of the testicle occurring after puberty (in contrast to hypoplasia, which precedes it). It is frequent, may be local or systemic, and unilateral or bilateral. Features include hydropic degeneration, oligospermia, azoospermia, and testicular induration. Grossly, the testis is initially swollen and soft, later becoming fibrotic in the interstitium. Dystrophic calcification may be seen in the bull, buck, and ram.</p>
+<div class="sp-note">Causes of testicular degeneration/atrophy: trauma, scrotal inflammation, disturbed circulation, nutritional deficiency (vitamin A, zinc), infectious disease, hyperestrogenism, radiation, and certain drugs (amphotericin B, gentamicin).</div>
+<h2>Disturbed Testicular Circulation</h2>
+<table>
+  <tr><th>Lesion</th><th>Notes</th></tr>
+  <tr><td>Oedema</td><td>Inflammation, trauma</td></tr>
+  <tr><td>Bleeding</td><td>Contusions</td></tr>
+  <tr><td><span class="sp-key">Haemorrhagic infarction</span></td><td>Torsion — the most common cause in a cryptorchid testis</td></tr>
+  <tr><td>Thrombosis of the testicular artery</td><td>Often of unknown cause</td></tr>
+  <tr><td>Arteritis of the testicular artery</td><td>Stallion — equine viral arteritis (EAV), migration of <i>Strongylus</i> larvae</td></tr>
+</table>
+<div class="sp-warn">Testicular torsion causing haemorrhagic infarction is most common in a retained (cryptorchid) testis, since the abnormal location and lack of normal anchoring increase mobility of the spermatic cord.</div>`
+  },
+  {
+    icon: '🦠', name: 'Orchitis & Testicular Cysts', pages: 'Page 8',
+    content: `
+<h2>Orchitis (Inflammation of the Testis)</h2>
+<p>Orchitis is less frequent than epididymitis. Patterns include:</p>
+<table>
+  <tr><th>Pattern</th><th>Features / cause</th></tr>
+  <tr><td>Non-specific</td><td>Unknown aetiology; bull, stallion; microscopic lymphocytic infiltrate between tubules and perivascularly</td></tr>
+  <tr><td>Intratubular</td><td>Ascending infection; yellow focal granulomas with macrophages and lymphocytes</td></tr>
+  <tr><td>Interstitial orchitis</td><td>Malignant catarrhal fever, bluetongue disease</td></tr>
+  <tr><td>Suppurative</td><td><i>Streptococcus</i>, <i>Staphylococcus</i>, <i>Trueperella pyogenes</i></td></tr>
+  <tr><td><span class="sp-key">Necrotising</span></td><td>Most severe form — grey-brown necrosis, sometimes fistula; <i>Brucella abortus</i> and <i>B. suis</i>, trauma, ischaemia</td></tr>
+  <tr><td><span class="sp-key">Granulomatous</span></td><td>Classic of brucellosis — swollen testis, suppurative exudate in the vaginal cavity, focal necrosis, granulomas of lymphocytes/histiocytes/plasma cells progressing to testicular fibrosis; also <i>Mycobacterium bovis</i>, <i>Blastomyces dermatitidis</i></td></tr>
+</table>
+<p>A more recent classification groups testicular inflammation simply as interstitial, intratubular, or granulomatous/necrotising.</p>
+<h3>Causes of Infectious Orchitis by Species</h3>
+<table>
+  <tr><th>Species</th><th>Pathogens</th></tr>
+  <tr><td>Bull</td><td><i>Trueperella pyogenes</i>, <i>Brucella abortus</i>, <i>Mycobacterium tuberculosis</i></td></tr>
+  <tr><td>Dog</td><td><i>Brucella canis</i>, canine distemper virus, <i>E. coli</i>, <i>Proteus vulgaris</i>, <i>Burkholderia pseudomallei</i></td></tr>
+  <tr><td>Ram</td><td><i>Brucella ovis</i>, sheep poxvirus, <i>Corynebacterium ovis</i>, <i>Chlamydia psittaci</i></td></tr>
+  <tr><td>Boar</td><td><i>Brucella suis</i>, <i>Burkholderia pseudomallei</i></td></tr>
+  <tr><td>Stallion</td><td>Equine infectious anaemia, equine viral arteritis, <i>Salmonella abortusequi</i></td></tr>
+</table>
+<h2>Testicular Cysts</h2>
+<p>Retention cysts (bull, boar, buck, ram) are most commonly the result of chronic inflammation.</p>
+<table>
+  <tr><th>Cyst type</th><th>Content</th></tr>
+  <tr><td><span class="sp-key">Spermatocele</span></td><td>Spermatozoa</td></tr>
+  <tr><td><span class="sp-key">Galactocele</span></td><td>Milky fluid</td></tr>
+  <tr><td><span class="sp-key">Hydrocele</span></td><td>Fluid accumulation within the cavum vaginale or funiculus</td></tr>
+</table>`
+  },
+  {
+    icon: '🎗️', name: 'Testicular Neoplasms', pages: 'Pages 8–9',
+    content: `
+<h2>Seminoma</h2>
+<p>A germ cell neoplasm arising from spermatogonia. It is the <span class="sp-key">most common testicular neoplasm in the aged stallion</span> and the second most common canine testicular neoplasm. Often multicentric within the testis, locally invasive, with rare metastasis. Grossly homogeneous, white to pink-grey, firm, bulging on cut section with fine fibrous trabeculae. Microscopically, cells grow intratubularly or diffusely; they are large and round with scant cytoplasm, a large nucleus, a prominent nucleolus, and a high mitotic rate.</p>
+<h2>Leydig Cell Tumour</h2>
+<p>An interstitial endocrine cell neoplasm seen in the dog, bull, and stallion. Grossly bronze to orange, with visible haemorrhage, round and well-circumscribed; can secrete hormones including estrogens. Microscopically: large, round, polyhedral to spindle cells with abundant vacuolated cytoplasm containing brown pigment; necrosis and haemorrhage may be visible, but the tumour is encapsulated and non-invasive.</p>
+<h2>Sertoli Cell Tumour</h2>
+<p>The <span class="sp-key">third most common testicular neoplasm of the dog</span>; over 50% arise in a retained (cryptorchid) testis. Circumscribed, expansile, firm, white, lobulated by fibrous bands, and enlarging. Metastasis is rare (spermatic cord, lymph nodes, abdomen). Histologically: abundant fibrous tissue with intratubular/diffuse Sertoli cells. Roughly one third produce a <span class="sp-key">feminising effect</span> (oestrogen secretion) — gynaecomastia, alopecia, and squamous metaplasia or hyperplasia of the prostate. Treatment is castration.</p>
+<h2>Other Testicular Neoplasms</h2>
+<table>
+  <tr><th>Tumour</th><th>Features</th></tr>
+  <tr><td><span class="sp-key">Testicular teratoma</span></td><td>Arises from totipotential primordial germ cells; uncommon, seen in young/cryptorchid horses; large and cystic, may contain hair, mucus, bone, or teeth; microscopically composed of at least 2 of the 3 embryonic germ layers</td></tr>
+  <tr><td>Embryonal carcinoma</td><td>Rare in domestic animals; undifferentiated cells</td></tr>
+  <tr><td>Gonadoblastoma</td><td>Clusters of germ cells; very rare</td></tr>
+</table>
+<div class="sp-note">Sertoli cell tumours produce estrogens and cause feminisation; Leydig cell tumours can also secrete estrogens but feminising signs are less typical; seminomas are non-secretory germ cell tumours.</div>`
+  },
+  {
+    icon: '🪱', name: 'Disorders of the Epididymis', pages: 'Page 10',
+    content: `
+<h2>Congenital Anomalies</h2>
+<table>
+  <tr><th>Anomaly</th><th>Features</th></tr>
+  <tr><td><span class="sp-key">Segmental aplasia of the Wolffian (mesonephric) ducts</span></td><td>Reduction or complete lack of epididymis; reported in the bull</td></tr>
+  <tr><td><span class="sp-key">Spermatocele</span></td><td>Local enlargement of the epididymis from accumulation of spermatozoa; may be inherited or acquired</td></tr>
+</table>
+<h2>Epididymitis (Inflammation)</h2>
+<p>Epididymitis may be acute or chronic, and focal, multifocal, or diffuse in distribution.</p>
+<table>
+  <tr><th>Category</th><th>Causes</th></tr>
+  <tr><td>Non-infectious</td><td>Trauma; congenital and acquired obstructions leading to sperm granulomas</td></tr>
+  <tr><td><span class="sp-key">Infectious</span></td><td><i>Brucella ovis</i>, <i>Brucella canis</i>, <i>Actinobacillus seminis</i>, <i>Histophilus ovis</i> — these typically progress to granuloma and abscess formation</td></tr>
+</table>
+<div class="sp-note">Epididymitis is more frequent than orchitis overall, and infectious causes (especially <i>Brucella ovis</i> in rams and <i>Brucella canis</i> in dogs) are major causes of subfertility and economic loss in breeding programmes.</div>`
+  },
+  {
+    icon: '🧵', name: 'Disorders of the Spermatic Cord (Funiculus Spermaticus)', pages: 'Page 10',
+    content: `
+<h2>Structure</h2>
+<p>The spermatic cord (funiculus spermaticus) comprises the deferent duct, the plexus pampiniformis, and the cremaster muscle.</p>
+<h2>Disorders</h2>
+<table>
+  <tr><th>Disorder</th><th>Features</th></tr>
+  <tr><td>Epithelial metaplasia</td><td>Cylindrical (columnar) epithelium of the deferent duct undergoes squamous metaplasia — associated with avitaminosis A</td></tr>
+  <tr><td><span class="sp-key">Varicocele</span></td><td>Dilation of the veins of the pampiniform plexus, seen in older rams; impairs normal thermoregulation of the testis, leading to infertility</td></tr>
+  <tr><td><span class="sp-key">Torsion of the spermatic cord</span></td><td>Associated with retained (cryptorchid) testes and neoplasms; presents with colic-like signs; leads to venous infarction</td></tr>
+</table>
+<h3>Inflammation (Funiculitis)</h3>
+<ul>
+  <li>Castration → acute inflammation → chronic form → abscess and fistula formation</li>
+  <li><i>Staphylococcus</i> → botryomycoma with numerous abscesses and fistulas (stallion)</li>
+  <li>Actinobacillosis (<i>A. lignieresi</i>) and tuberculosis — rare causes</li>
+  <li>Verminous granulomas (stallion) from migrating <i>Strongylus</i> sp. larvae</li>
+</ul>`
+  },
+  {
+    icon: '💧', name: 'Disorders of the Vesicular Glands (Seminal Vesicles)', pages: 'Page 11',
+    content: `
+<h2>Structure and Function</h2>
+<p>The vesicular glands (vesiculae seminales) are complex tubuloalveolar glands with distended secretory channels; their secretion is important for sperm vitality.</p>
+<h2>Developmental and Degenerative Disorders</h2>
+<table>
+  <tr><th>Disorder</th><th>Notes</th></tr>
+  <tr><td>Segmental aplasia</td><td>Reported in the bull</td></tr>
+  <tr><td>Hypoplasia</td><td>Consequence of early castration</td></tr>
+  <tr><td>Atrophy</td><td>From castration, testicular disease, inflammation, or pituitary disturbance</td></tr>
+</table>
+<h2>Inflammation (Vesiculitis Seminalis / Spermatocystitis)</h2>
+<p>Causes include viruses, protozoa, <i>Chlamydia</i>, <i>Ureaplasma</i>, <i>Mycoplasma</i>, and <i>Brucella abortus</i>. In bulls, inflammatory cell infiltration of the vesicular glands can cause severe reduction in fertility. <i>Burkholderia pseudomallei</i> is reported in the boar.</p>
+<div class="sp-note">Infection may be ascending, descending, or haematogenous; congenital malformations, urinary reflux, and stasis of sperm within the glands all predispose to disease. Chronic inflammation of the interstitium is the most frequent finding.</div>`
+  },
+  {
+    icon: '🔵', name: 'Diseases of the Prostate: Non-Neoplastic', pages: 'Pages 11–12',
+    content: `
+<h2>General Features</h2>
+<p>The prostate is a tubular gland with tropism toward both androgens and estrogens.</p>
+<table>
+  <tr><th>Disorder</th><th>Notes</th></tr>
+  <tr><td><span class="sp-key">Metaplastic keratinisation</span></td><td>In the dog, this follows estrogen produced by a Sertoli cell tumour; in lambs and calves, dietary/exogenous estrogens (prohibited substances) are implicated. Metaplastic change can secondarily cause suppurative inflammation, duct obstruction, and urinary retention</td></tr>
+  <tr><td>Atrophy and hypoplasia</td><td>Reduced glandular development or involution</td></tr>
+  <tr><td><span class="sp-key">Hypertrophy and hyperplasia</span></td><td>Common in older dogs (endocrine disorders); excess androgens produce acinar hyperplasia, excess estrogen produces fibromuscular hyperplasia</td></tr>
+  <tr><td>Prostatic and paraprostatic cysts</td><td>Fluid-filled structures within or adjacent to the gland</td></tr>
+</table>
+<h2>Prostatitis (Inflammation)</h2>
+<p>Most frequent in dogs. Can be acute or chronic, apostematous (abscessing), haemorrhagic, or septic.</p>
+<ul>
+  <li><span class="sp-key"><i>Brucella canis</i></span> → abscess and granuloma formation</li>
+  <li><i>E. coli</i>, <i>Proteus vulgaris</i>, <i>Streptococcus</i>, <i>Staphylococcus</i> → catarrhal acinar inflammation → spreads to the interstitium → abscess formation → eventual replacement by connective tissue</li>
+</ul>`
+  },
+  {
+    icon: '🎯', name: 'Tumours of the Prostate', pages: 'Page 12',
+    content: `
+<h2>Prostatic Neoplasms</h2>
+<table>
+  <tr><th>Tumour</th><th>Notes</th></tr>
+  <tr><td><span class="sp-key">Adenoma and adenocarcinoma</span></td><td>The most clinically important prostatic tumours; seen in dogs</td></tr>
+  <tr><td>Fibroma</td><td>Benign mesenchymal tumour</td></tr>
+  <tr><td>Leiomyoma</td><td>Benign smooth muscle tumour</td></tr>
+  <tr><td>Sarcoma</td><td>Malignant mesenchymal tumour</td></tr>
+</table>
+<div class="sp-warn">Unlike in humans, canine prostatic adenocarcinoma is not androgen-dependent and is not prevented by castration — castrated dogs remain at risk and the tumour tends to behave aggressively, with frequent local invasion and metastasis.</div>`
+  },
+  {
+    icon: '🔧', name: 'Disorders of Penis & Prepuce: Developmental & Circulatory', pages: 'Page 12',
+    content: `
+<h2>Anomalies of Development</h2>
+<table>
+  <tr><th>Anomaly</th><th>Description</th></tr>
+  <tr><td>Hypoplasia (micropenis)</td><td>Underdeveloped penis; also follows early castration</td></tr>
+  <tr><td>Lack of sigmoid flexure</td><td>Ram, bull</td></tr>
+  <tr><td><span class="sp-key">Hypospadias</span></td><td>Malformed urethral canal creating an abnormal urethral opening on the <b>ventral</b> surface</td></tr>
+  <tr><td><span class="sp-key">Epispadias</span></td><td>Abnormal urethral opening on the <b>dorsal</b> surface</td></tr>
+  <tr><td>Persistent frenulum</td><td>Bull, boar</td></tr>
+  <tr><td>Retroflexio penis</td><td>Caudoventral flexion of the penis</td></tr>
+  <tr><td><span class="sp-key">Phimosis</span></td><td>Inability to extrude the penis from the prepuce; stricture of the preputial orifice (stallion, boar); inherited or acquired (inflammation, trauma)</td></tr>
+  <tr><td><span class="sp-key">Paraphimosis</span></td><td>Inability to retract the penis into the prepuce — the penis remains extruded and is clutched by the prepuce as a constricting cuff; often follows forceful pulling-out of the penis during phimosis</td></tr>
+  <tr><td>Fracture of the penis</td><td>Haematoma → fibrosis → permanent deformity</td></tr>
+  <tr><td>Prolapse of the penis</td><td>Contusion, inflammation</td></tr>
+  <tr><td>Paralysis of the penis</td><td>Damage to the dorsal nerve of the penis from trauma, intoxication, or infectious disease</td></tr>
+</table>
+<h2>Dystrophy and Circulatory Disturbance</h2>
+<table>
+  <tr><th>Disorder</th><th>Notes</th></tr>
+  <tr><td>Penile and preputial atrophy</td><td>Follows castration</td></tr>
+  <tr><td>Dystrophic calcification</td><td>Reported in the bull</td></tr>
+  <tr><td>Persistent oedema</td><td>"Elephantiasis" of the penis</td></tr>
+  <tr><td>Bleeding</td><td>Trauma, sepsis</td></tr>
+  <tr><td><span class="sp-key">Priapism</span></td><td>Persistent erection; more frequent in man (nerve disease); also seen in the dog (canine distemper virus) and stallion (neuroleptic drugs)</td></tr>
+</table>`
+  },
+  {
+    icon: '🦠', name: 'Inflammation & Neoplasms of the Penis and Prepuce', pages: 'Pages 12–14',
+    content: `
+<h2>Phallitis, Balanitis, Posthitis</h2>
+<table>
+  <tr><th>Term</th><th>Site</th></tr>
+  <tr><td>Phallitis</td><td>Penis</td></tr>
+  <tr><td>Balanitis</td><td>Glans penis</td></tr>
+  <tr><td>Posthitis</td><td>Prepuce</td></tr>
+</table>
+<p>Causes are traumatic, medication/irritant, infectious, or foreign-body related. Inflammatory character ranges from catarrhal, suppurative, and pustular to diphtheroid-necrotising or granulomatous.</p>
+<h3>Important Species-Specific Causes</h3>
+<table>
+  <tr><th>Species / agent</th><th>Lesions</th></tr>
+  <tr><td><span class="sp-key">Bovine herpesvirus</span> (cattle)</td><td>Follicular balanoposthitis; possible pustules and ulcers; also <i>Strongyloides papillosus</i></td></tr>
+  <tr><td><span class="sp-key">Dourine</span> (<i>Trypanosoma equiperdum</i>, horses)</td><td>Redness, discharge, yellowish nodules, ulceration, scarring, depigmentation ("frog spots")</td></tr>
+  <tr><td>Habronemiasis (fly larvae)</td><td>Nodular granulomatous inflammation with haemorrhage and granulation tissue</td></tr>
+  <tr><td>Ram</td><td><i>Fusobacterium necrophorum</i> and <i>Clostridium perfringens</i> → ulcerative/necrotic balanoposthitis (cause otherwise unknown); <i>Corynebacterium renale</i> → ulcerative enzootic posthitis</td></tr>
+  <tr><td>Rabbit</td><td><i>Treponema paraluiscuniculi</i> (gram-negative spirochaete) → suppurative-ulcerative balanoposthitis</td></tr>
+  <tr><td>Dog</td><td>Multibacterial → catarrhal-suppurative balanoposthitis; <i>Leishmania infantum</i> → proliferative granulomatous lesions frequently misdiagnosed as transmissible venereal tumour</td></tr>
+  <tr><td>Bull</td><td>Tuberculosis; actinomycosis (rare)</td></tr>
+</table>
+<h2>Neoplasms of the Penis and Prepuce</h2>
+<table>
+  <tr><th>Tumour</th><th>Notes</th></tr>
+  <tr><td><span class="sp-key">Transmissible venereal tumour (TVT)</span></td><td>Dog; transmitted by direct contact during coitus</td></tr>
+  <tr><td><span class="sp-key">Squamous cell carcinoma</span></td><td>Horse, dog; arises on the glans penis</td></tr>
+  <tr><td>Papilloma (fibropapilloma)</td><td>Glans penis of young bulls; viral aetiology; larger tumours can cause phimosis and paraphimosis</td></tr>
+  <tr><td>Metastatic tumours</td><td>Mast cell tumour, melanoma, lymphoma</td></tr>
+</table>
+<div class="sp-note">A proliferative, granulomatous penile/preputial lesion in a dog from an endemic area should prompt consideration of <i>Leishmania infantum</i> infection as a differential for transmissible venereal tumour — the gross appearance can be very similar.</div>`
   },
 ];
 
