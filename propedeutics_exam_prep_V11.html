@@ -561,6 +561,13 @@
       <p style="font-size:0.83rem;color:var(--text-muted);margin:4px 0 0">Liver structure, response to injury, failure, circulatory and metabolic disease, infections, toxins, neoplasia, biliary tract, and exocrine pancreas.</p>
       <div class="sp-meta"><span class="sp-pill">15 Subtopics</span></div>
     </div>
+    <div class="sp-topic-chip sp-available" onclick="openSpTopic('skin')">
+      <div class="sp-badge">Available</div>
+      <div class="sp-icon">🩹</div>
+      <div class="sp-name">Pathology of the Skin</div>
+      <p style="font-size:0.83rem;color:var(--text-muted);margin:4px 0 0">Epidermal, dermal, pigmentary and adnexal responses to injury, congenital disorders, physical/chemical injury, infections, immunologic disease, and tumours.</p>
+      <div class="sp-meta"><span class="sp-pill">14 Subtopics</span></div>
+    </div>
   </div>
 </div>
 
@@ -1022,6 +1029,78 @@
   <div id="hepato-session-history-list"></div>
 </div>
 <!-- END HEPATOBILIARY SYSTEM PAGES -->
+
+<!-- =====================================================================
+     PATHOLOGY OF THE SKIN — HOME
+===================================================================== -->
+<div id="page-skin-home" class="page">
+  <div class="hero" style="background:linear-gradient(135deg,#ffe0d1 0%,#ffd6e8 50%,#d4f1f4 100%);color:var(--text)">
+    <h1 style="color:var(--primary-dark)">🩹 Pathology of the Skin</h1>
+    <p style="color:var(--text-muted)">Study epidermal, dermal, and adnexal responses to injury, congenital disorders, infections, immunologic disease, and skin tumours — subtopic notes and questions.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num" id="skin-stat-qcount">0</div><div class="lbl">Questions</div></div>
+      <div class="hero-stat"><div class="num">14</div><div class="lbl">Subtopics</div></div>
+      <div class="hero-stat"><div class="num" id="skin-stat-sessions">0</div><div class="lbl">Sessions</div></div>
+    </div>
+  </div>
+  <div class="section-title">🚀 Start Studying</div>
+  <div class="mode-grid">
+    <div class="mode-card" onclick="spShowPage('skin','topics')">
+      <div class="icon">📖</div><h3>Subtopic Study</h3>
+      <p>Read lecture notes for each subtopic. 14 subtopics drawn directly from the course document.</p>
+    </div>
+    <div class="mode-card" onclick="startAllSkinQuiz()">
+      <div class="icon">🎯</div><h3>Exam Prep Mode</h3>
+      <p>Randomised questions drawn from all subtopics with questions added so far — full mixed practice exam.</p>
+    </div>
+  </div>
+</div>
+
+<!-- =====================================================================
+     PATHOLOGY OF THE SKIN — TOPICS (Subtopic notes)
+===================================================================== -->
+<div id="page-skin-topics" class="page">
+  <div id="skin-subtopic-list">
+    <div class="flex-row" style="margin-bottom:16px">
+      <div class="section-title" style="margin:0">📖 Subtopics</div>
+    </div>
+    <div class="sp-subtopic-grid" id="skin-subtopic-grid"></div>
+  </div>
+  <div id="skin-notes-panel" style="display:none">
+    <div class="flex-row" style="margin-bottom:14px">
+      <button class="btn btn-ghost btn-sm" onclick="closeSkinNotes()">← All Subtopics</button>
+      <div class="spacer"></div>
+      <span id="skin-notes-title" style="font-weight:700;color:var(--primary-dark);font-size:0.95rem"></span>
+    </div>
+    <div id="skin-study-btn-area" style="margin-bottom:12px"></div>
+    <div id="skin-notes-body" class="sp-content"></div>
+  </div>
+</div>
+
+<!-- =====================================================================
+     PATHOLOGY OF THE SKIN — QUIZ
+===================================================================== -->
+<div id="page-skin-quiz" class="page">
+  <div id="skin-quiz-area"></div>
+</div>
+
+<!-- =====================================================================
+     PATHOLOGY OF THE SKIN — PROGRESS
+===================================================================== -->
+<div id="page-skin-stats" class="page">
+  <div class="flex-row" style="margin-bottom:18px">
+    <div class="section-title" style="margin:0">📊 My Progress</div>
+    <div class="spacer"></div>
+    <button class="btn btn-ghost btn-sm" onclick="resetSkinStats()" style="color:var(--wrong-dark)">🗑 Reset Progress</button>
+  </div>
+  <div class="stats-grid" id="skin-overall-stats"></div>
+  <div class="section-title">📈 By Subtopic (worst first)</div>
+  <div class="card" id="skin-subtopic-stats-list"></div>
+  <div class="divider"></div>
+  <div class="section-title">🕐 Session History</div>
+  <div id="skin-session-history-list"></div>
+</div>
+<!-- END PATHOLOGY OF THE SKIN PAGES -->
 
 <div class="modal-overlay" id="result-modal">
   <div class="modal">
@@ -1660,6 +1739,14 @@ const NAV_CONFIGS = {
       {id:'hepato-home',     label:'🏠 Home',       fn:"spShowPage('hepato','home')"},
       {id:'hepato-topics',   label:'📖 Topics',     fn:"spShowPage('hepato','topics')"},
       {id:'hepato-stats',    label:'📊 Progress',   fn:"spShowPage('hepato','stats')"},
+    ]
+  },
+  skin: {
+    label: '🩹 Pathology of the Skin',
+    btns: [
+      {id:'skin-home',     label:'🏠 Home',       fn:"spShowPage('skin','home')"},
+      {id:'skin-topics',   label:'📖 Topics',     fn:"spShowPage('skin','topics')"},
+      {id:'skin-stats',    label:'📊 Progress',   fn:"spShowPage('skin','stats')"},
     ]
   },
 };
@@ -3131,6 +3218,13 @@ function spShowPage(topic, page) {
     if (el) el.textContent = qTotal;
   }
   if (topic === 'hepato' && page === 'stats') renderHepatoStats();
+  if (topic === 'skin' && page === 'topics') renderSkinSubtopics();
+  if (topic === 'skin' && page === 'home') {
+    const qTotal = Object.values(SKIN_QUESTIONS).reduce((s, arr) => s + arr.length, 0);
+    const el = document.getElementById('skin-stat-qcount');
+    if (el) el.textContent = qTotal;
+  }
+  if (topic === 'skin' && page === 'stats') renderSkinStats();
 }
 
 function openSpTopic(topicId) {
@@ -3600,6 +3694,161 @@ function resetHepatoStats() {
   localStorage.removeItem('vpHepatoStats');
   localStorage.removeItem('vpHepatoSessions');
   renderHepatoStats();
+}
+
+// ── Pathology of the Skin subtopic notes ─────────────────────────────
+
+function renderSkinSubtopics() {
+  const grid = document.getElementById('skin-subtopic-grid');
+  if (!grid) return;
+  grid.innerHTML = SKIN_SUBTOPICS.map((st, i) =>
+    `<div class="sp-subtopic-chip" onclick="openSkinSubtopic(${i})">
+      <div class="ss-icon">${st.icon}</div>
+      <div class="ss-name">${st.name}</div>
+      <div class="ss-pages">${st.pages}</div>
+    </div>`
+  ).join('');
+}
+
+function openSkinSubtopic(idx) {
+  const st = SKIN_SUBTOPICS[idx];
+  if (!st) return;
+  document.getElementById('skin-subtopic-list').style.display = 'none';
+  document.getElementById('skin-notes-title').textContent = st.icon + ' ' + st.name;
+  document.getElementById('skin-notes-body').innerHTML = st.content;
+  const qs = SKIN_QUESTIONS[idx];
+  const qCount = qs ? qs.length : 0;
+  document.getElementById('skin-study-btn-area').innerHTML = qCount > 0
+    ? `<button class="btn btn-primary btn-sm" onclick="beginSkinQuiz(randomiseAnswers(shuffle(tagSubtopic(SKIN_QUESTIONS[${idx}], ${idx}))), '${st.icon} ${st.name.replace(/'/g,"\\'")}')">🎯 Study ${qCount} Questions</button>`
+    : '';
+  document.getElementById('skin-notes-panel').style.display = 'block';
+  window.scrollTo(0, 0);
+}
+
+function closeSkinNotes() {
+  document.getElementById('skin-notes-panel').style.display = 'none';
+  document.getElementById('skin-subtopic-list').style.display = '';
+}
+
+// ── SKIN QUIZ ENGINE ─────────────────────────────────────────────────
+
+let skinQuiz = null;
+let skinStats = JSON.parse(localStorage.getItem('vpSkinStats') || '{}');
+let skinSessions = JSON.parse(localStorage.getItem('vpSkinSessions') || '[]');
+
+function startAllSkinQuiz() {
+  let all = [];
+  Object.entries(SKIN_QUESTIONS).forEach(([k, arr]) => { all = all.concat(tagSubtopic(arr, Number(k))); });
+  if (!all.length) return;
+  beginSkinQuiz(randomiseAnswers(shuffle(all)), '🩹 All Subtopics');
+}
+
+function beginSkinQuiz(questions, title) {
+  skinQuiz = { questions, idx: 0, title, answered: false, correct: 0, total: 0 };
+  spShowPage('skin', 'quiz');
+  renderSkinQuestion();
+}
+
+function renderSkinQuestion() {
+  const q = skinQuiz.questions[skinQuiz.idx];
+  if (!q) { finishSkinQuiz(); return; }
+  skinQuiz.answered = false;
+  const diffColor = {easy:'var(--correct-dark)',medium:'#b8860b',hard:'var(--wrong-dark)'}[q.diff];
+  const diffBg = {easy:'var(--correct-bg)',medium:'#fff3cd',hard:'var(--wrong-bg)'}[q.diff];
+  let html = `
+    <div class="question-header">
+      <div class="flex-row" style="flex-wrap:wrap;gap:6px">
+        <span class="badge" style="background:var(--primary-light);color:var(--primary-dark)">${skinQuiz.title}</span>
+        <span class="badge" style="background:${diffBg};color:${diffColor}">${q.diff}</span>
+        <span class="badge" style="background:#e9ecef;color:#495057">${q.type==='tf'?'True/False':'MCQ'}</span>
+      </div>
+      <div class="progress-text">${skinQuiz.idx+1} / ${skinQuiz.questions.length}</div>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" style="width:${(skinQuiz.idx/skinQuiz.questions.length)*100}%"></div></div>
+    <div class="question-text">${q.q}</div>`;
+  if (q.type === 'tf') {
+    html += '<div class="tf-btns"><button class="tf-btn" onclick="answerSkinTF(true)">&#10003; True</button><button class="tf-btn" onclick="answerSkinTF(false)">&#10007; False</button></div>';
+  } else {
+    html += '<div class="options">';
+    for (let i = 0; i < q.opts.length; i++) {
+      html += `<button class="option-btn" onclick="answerSkinMCQ(${i})"><span class="opt-letter">${String.fromCharCode(65+i)}</span>${q.opts[i]}</button>`;
+    }
+    html += '</div>';
+  }
+  html += `<div id="skin-q-feedback" style="display:none"></div>
+    <div class="quiz-actions" id="skin-quiz-actions">
+      <button class="btn btn-ghost btn-sm" onclick="skinSkipQuestion()">Skip</button>
+    </div>`;
+  document.getElementById('skin-quiz-area').innerHTML = html;
+}
+
+function answerSkinMCQ(idx) {
+  if (skinQuiz.answered) return;
+  skinQuiz.answered = true;
+  const q = skinQuiz.questions[skinQuiz.idx];
+  const correct = idx === q.ans;
+  skinQuiz.total++;
+  if (correct) skinQuiz.correct++;
+  recordSpAnswer(skinStats, q.subtopic, correct, 'vpSkinStats');
+  document.querySelectorAll('#skin-quiz-area .option-btn').forEach((btn, i) => {
+    btn.disabled = true;
+    if (i === q.ans) btn.classList.add('correct');
+    else if (i === idx && !correct) btn.classList.add('wrong');
+  });
+  showSkinFeedback(q, correct);
+}
+
+function answerSkinTF(given) {
+  if (skinQuiz.answered) return;
+  skinQuiz.answered = true;
+  const q = skinQuiz.questions[skinQuiz.idx];
+  const correct = given === q.ans;
+  skinQuiz.total++;
+  if (correct) skinQuiz.correct++;
+  recordSpAnswer(skinStats, q.subtopic, correct, 'vpSkinStats');
+  document.querySelectorAll('#skin-quiz-area .tf-btn').forEach(btn => {
+    btn.disabled = true;
+    const isTrue = btn.textContent.trim().startsWith('✓');
+    if (isTrue && q.ans === true) btn.classList.add('correct');
+    else if (!isTrue && q.ans === false) btn.classList.add('correct');
+    else if (isTrue && given === true && !correct) btn.classList.add('wrong');
+    else if (!isTrue && given === false && !correct) btn.classList.add('wrong');
+  });
+  showSkinFeedback(q, correct);
+}
+
+function showSkinFeedback(q, correct) {
+  const fb = document.getElementById('skin-q-feedback');
+  fb.style.display = 'block';
+  fb.className = 'feedback ' + (correct ? 'correct' : 'wrong');
+  fb.innerHTML = `<strong>${correct ? '✓ Correct!' : '✗ Incorrect'}</strong><br>${q.exp}`;
+  document.getElementById('skin-quiz-actions').innerHTML = `<button class="btn btn-primary" onclick="nextSkinQuestion()">Next →</button>`;
+}
+
+function skinSkipQuestion() { skinQuiz.idx++; renderSkinQuestion(); }
+function nextSkinQuestion() { skinQuiz.idx++; renderSkinQuestion(); }
+
+function finishSkinQuiz() {
+  const pct = skinQuiz.total > 0 ? Math.round(skinQuiz.correct / skinQuiz.total * 100) : 0;
+  document.getElementById('result-score-circle').textContent = pct + '%';
+  document.getElementById('result-title').textContent = pct >= 80 ? '🎉 Excellent!' : pct >= 60 ? '👍 Good Job!' : '📚 Keep Studying!';
+  document.getElementById('result-subtitle').textContent = `${skinQuiz.correct} / ${skinQuiz.total} correct`;
+  document.getElementById('result-modal').classList.add('open');
+  if (skinQuiz.total > 0) {
+    skinSessions.unshift({ date: new Date().toLocaleDateString(), title: skinQuiz.title, correct: skinQuiz.correct, total: skinQuiz.total });
+    localStorage.setItem('vpSkinSessions', JSON.stringify(skinSessions));
+  }
+}
+
+function renderSkinStats() { renderSpStats('skin', skinStats, skinSessions, SKIN_SUBTOPICS); }
+
+function resetSkinStats() {
+  if (!confirm('Reset progress for Pathology of the Skin? This cannot be undone.')) return;
+  skinStats = {};
+  skinSessions = [];
+  localStorage.removeItem('vpSkinStats');
+  localStorage.removeItem('vpSkinSessions');
+  renderSkinStats();
 }
 
 // ── Neuropathology subtopic notes ─────────────────────────────────────
@@ -6426,6 +6675,368 @@ const HEPATO_SUBTOPICS = [
   <tr><td><span class="sp-key">Pancreatic carcinoma</span></td><td>Uncommon, most often in dogs and cats. Gross: solitary or multiple grey/yellow nodules, firm to hard, may invade adjacent tissue and seed the peritoneal lining; metastasis to regional and right hepatic lymph nodes, sometimes widely. Micro: well-differentiated tubular adenocarcinomas or undifferentiated solid carcinomas, with variable fibrous stroma (greatest in poorly differentiated tumours)</td></tr>
 </table>
 <div class="sp-warn">Pancreatic adenocarcinoma in cats has a unique paraneoplastic cutaneous syndrome — symmetric, glistening alopecia of the ventral trunk and limbs.</div>`
+  },
+];
+
+const SKIN_QUESTIONS = {};
+
+const SKIN_SUBTOPICS = [
+  {
+    icon: '🧬', name: 'Skin Structure, Function & Hair Cycle', pages: 'Page 1',
+    content: `
+<h2>Structure</h2>
+<p>Stratum corneum thickness varies by body site — thick over the pads, thinner over the trunk. There is <span class="sp-key">no hair follicle in the dermis</span> proper (follicles are anchored there but originate from epidermal invagination).</p>
+<h3>Intercellular Junctions & Basement Membrane</h3>
+<ul>
+  <li><span class="sp-key">Desmosomes</span> — between two basal cells of the epidermis (intercellular adhesion)</li>
+  <li><span class="sp-key">Hemidesmosomes</span> — between basal cells and the dermis (connection to the basement membrane); built from keratin intermediate filaments, an attachment plaque, a subdesmosomal dense plate, anchoring filaments, and anchoring fibrils, plus integrins and collagen types I, II and IV</li>
+</ul>
+<div class="sp-note">Most diseases of the skin develop because these submolecular structures (desmosomes, hemidesmosomes, basement membrane components) are damaged.</div>
+<h3>Functions of the Skin</h3>
+<ul>
+  <li>Protective barrier against fluid loss, microbiologic agents, and chemical/physical injury</li>
+  <li>Regulates temperature and blood pressure</li>
+  <li>Produces vitamin D</li>
+  <li>Sensory organ</li>
+  <li>Stores nutrients</li>
+  <li>Absorptive surface</li>
+  <li>Participates in innate and adaptive immunity, inflammation and repair</li>
+</ul>
+<h3>Factors Influencing the Skin</h3>
+<table>
+  <tr><th>Category</th><th>Examples</th></tr>
+  <tr><td><span class="sp-key">Exogenous</span></td><td>Nutritional, microbial, chemical, physical, parasitic, actinic, allergic</td></tr>
+  <tr><td><span class="sp-key">Endogenous</span></td><td>Immunologic, congenital, hereditary, hormonal, emotional, metabolic, age, internal disease</td></tr>
+</table>
+<h3>Hair Follicle Cycle Stages</h3>
+<table>
+  <tr><th>Stage</th><th>Function / outcome</th></tr>
+  <tr><td><span class="sp-key">Anagen</span></td><td>Growing hair follicle</td></tr>
+  <tr><td><span class="sp-key">Catagen</span></td><td>Regressing hair follicle</td></tr>
+  <tr><td><span class="sp-key">Telogen</span></td><td>Quiescent (resting) hair follicle</td></tr>
+  <tr><td><span class="sp-key">Exogen</span></td><td>Shedding of hair from the follicle</td></tr>
+  <tr><td><span class="sp-key">Kenogen</span></td><td>Latent (hairless) follicle</td></tr>
+</table>
+<h3>Responses to Injury</h3>
+<p>The distribution and types of inflammatory cells in a skin lesion often represent a recognisable pattern that can be used to formulate a list of specific etiologic agents and to suggest categories of disease with similar lesions and a common pathogenesis.</p>`
+  },
+  {
+    icon: '🔬', name: 'Epidermal Responses to Injury', pages: 'Page 1',
+    content: `
+<h2>Responses of the Epidermis</h2>
+<h3>Disorders of Cornification</h3>
+<p><span class="sp-key">Hyperkeratosis</span> — increase in the thickness of the stratum corneum (orthokeratotic or parakeratotic hyperkeratosis).</p>
+<h3>Epidermal Hyperplasia</h3>
+<p>Increased number of cells within the epidermis (most often of the stratum spinosum = <span class="sp-key">acanthosis</span>). Can be a pre-neoplastic change leading to neoplasia, and is named regular, irregular, papillated, or pseudocarcinomatous.</p>
+<h3>Apoptosis, Necrosis & Dysplasia of Keratinocytes</h3>
+<table>
+  <tr><th>Change</th><th>Features</th></tr>
+  <tr><td><span class="sp-key">Necrosis</span></td><td>Response to a variety of stimuli, often chronic (e.g. prolonged exposure to UV light); dyskeratosis (filamentous degeneration)</td></tr>
+  <tr><td><span class="sp-key">Apoptosis</span></td><td>More common in certain diseases; eosinophilic shrunken nuclei, pyknotic</td></tr>
+  <tr><td><span class="sp-key">Dysplasia</span></td><td>Alteration in size, shape, and organisation of keratinocytes (pre-neoplastic)</td></tr>
+</table>
+<h3>Alterations in Epidermal Fluid Balance</h3>
+<p>Oedema and intracellular fluid accumulation:</p>
+<ul>
+  <li><span class="sp-key">Spongiosis</span> — intercellular fluid accumulation between cells (e.g. with Staphylococcus or Malassezia)</li>
+  <li><span class="sp-key">Hydropic (vacuolar) degeneration</span> — intracellular fluid accumulation in the basal layer</li>
+  <li><span class="sp-key">Ballooning degeneration</span> — intracellular fluid accumulation in more superficial layers</li>
+</ul>
+<div class="sp-note">Macroscopically the skin is swollen, soft, and reddish (inflamed); histologically, both patterns can progress to vesicle formation at later stages.</div>
+<h3>Alterations in Cellular Adhesion</h3>
+<p><span class="sp-key">Acantholysis</span> — disruption of intercellular junctions (desmosomes) between keratinocytes, initiated by damage to cadherins (adhesion molecules). Occurs with immune-mediated injury (e.g. pemphigus, a type II hypersensitivity reaction).</p>
+<p><span class="sp-key">Vesicles</span> — fluid-filled cavities within or beneath the epidermis (a large one, &gt;1cm, is a bulla); result from acantholysis, oedema, or immune-mediated reactions. Can be subcorneal, suprabasal, or subepidermal. Histologically: clear spaces filled with fluid mixed with inflammatory cells, with formation of pustules.</p>
+<h3>Inflammatory Lesions</h3>
+<table>
+  <tr><th>Lesion</th><th>Features</th></tr>
+  <tr><td><span class="sp-key">Exocytosis</span></td><td>Aggregation of migrating leukocytes from the dermis into the epidermis — eosinophils (ectoparasites), lymphocytes (immune-mediated disease, lymphoma), erythrocytes (trauma, circulatory disturbances)</td></tr>
+  <tr><td><span class="sp-key">Pustules</span></td><td>Microabscesses — accumulation of inflammatory cells/pus</td></tr>
+  <tr><td><span class="sp-key">Crusts</span></td><td>Dried fluid and cellular debris on the epidermal surface — dead cells and inflammatory debris accumulation</td></tr>
+</table>`
+  },
+  {
+    icon: '🎨', name: 'Alterations in Pigmentation', pages: 'Page 1',
+    content: `
+<h2>Alterations in Pigmentation</h2>
+<table>
+  <tr><th>Change</th><th>Features</th></tr>
+  <tr><td><span class="sp-key">Hyperpigmentation</span></td><td>Increased production of melanin or increased number of melanocytes (lentigo). Seen in chronic inflammatory diseases and endocrine dermatoses (e.g. Cushing's). Lentigo is a non-neoplastic hyperplasia of melanocytes — pigmented macules of the skin.</td></tr>
+  <tr><td><span class="sp-key">Hypopigmentation</span></td><td>Due to a lack of melanocytes, failure of melanocytes to produce melanin, or failure to transfer melanin to epidermal cells</td></tr>
+  <tr><td><span class="sp-key">Pigmentary incontinence</span></td><td>Loss of melanin from the basal layer of the epidermis or hair follicle caused by damage (inflammation) to the cells, with accumulation of pigment in macrophages in the upper dermis or perifollicular regions</td></tr>
+</table>
+<h3>Forms of Pigmentary Incontinence</h3>
+<ul>
+  <li><span class="sp-key">Leucoderma</span> — inflammatory cells in the basal layers destroy melanocytes; grossly the nose becomes pale</li>
+  <li><span class="sp-key">Leucotrichia</span> — loss of pigment in hair</li>
+</ul>`
+  },
+  {
+    icon: '🧵', name: 'Dermal Responses to Injury', pages: 'Pages 1–2',
+    content: `
+<h2>Responses of the Dermis</h2>
+<h3>Alterations in Growth, Development or Tissue Maintenance</h3>
+<table>
+  <tr><th>Change</th><th>Features</th></tr>
+  <tr><td><span class="sp-key">Dermal atrophy</span></td><td>Reduction of collagen fibres and fibroblasts — thin, transparent skin with visible blood vessels. Causes: catabolic diseases with protein breakdown (e.g. hyperadrenocorticism), starvation</td></tr>
+  <tr><td><span class="sp-key">Fibrosis</span></td><td>Fibroblast proliferation and newly formed collagen after injury and ulceration — increased granulation tissue/connective tissue within the dermis</td></tr>
+</table>
+<h3>Degenerative Collagen Disorders of the Dermis</h3>
+<p><span class="sp-key">Collagen degeneration</span> — altered histologic appearance ("flame figures") seen in conditions with prominent eosinophils (insect bites, mast cell tumours, eosinophilic granuloma). Eosinophils degrade collagen by enzymatic lysis, with macrophage infiltration.</p>
+<h3>Abnormal Deposits</h3>
+<table>
+  <tr><th>Deposit</th><th>Features</th></tr>
+  <tr><td><span class="sp-key">Amyloid</span></td><td>Uncommon — eosinophilic, amorphous proteinous material</td></tr>
+  <tr><td><span class="sp-key">Mucin</span></td><td>Hereditary cutaneous hyaluronosis in Shar-Pei dogs — GAG and hyaluronic acid in the dermis, responsible for retaining water in tissue. Histo: loose appearance of dermis with fluid between collagen fibres</td></tr>
+  <tr><td><span class="sp-key">Calcium deposits</span></td><td>Dystrophic (calcinosis cutis); metastatic (hyperthyroidism/hypercalcaemia — multifocal Ca deposits in degenerate collagen, bad lesions on the back); idiopathic (calcinosis circumscripta — develops over bony prominences, predisposition in German Shepherds, granulomatous inflammation with extensive Ca deposition); iatrogenic (application of too much calcium or vitamin D)</td></tr>
+</table>
+<h3>Inflammatory Disorders (Dermatitis)</h3>
+<p><span class="sp-key">Dermatitis</span> = inflammation of the skin. The type of leukocyte that migrates, and the sequence of cellular influx, depends on activation of different adhesion molecules and chemotactic factors in the different phases of inflammation. The distribution of leukocytes forms recognisable patterns that, when combined with the inflammatory cell type and other morphologic changes, suggest a group of diagnoses and pathogenesis.</p>`
+  },
+  {
+    icon: '🧴', name: 'Adnexal Responses & Biopsy Sampling', pages: 'Pages 1–2',
+    content: `
+<h2>Responses of the Adnexa to Injury</h2>
+<table>
+  <tr><th>Change</th><th>Features</th></tr>
+  <tr><td>Atrophy / Hypertrophy / Hyperplasia</td><td>Abnormalities of hair cycle stages; follicular and sebaceous gland dysplasia; sebaceous adenitis, hydradenitis, vasculitis</td></tr>
+  <tr><td><span class="sp-key">Folliculitis</span></td><td>Absence of blood vessels in the wall of follicles means folliculitis starts as perifolliculitis, then ruptures the follicular wall and spreads — perifolliculitis → mural folliculitis → bulbitis (alopecia areata) → luminal folliculitis (e.g. Demodex, Microsporum, Trichophyton)</td></tr>
+  <tr><td><span class="sp-key">Sebaceous adenitis</span></td><td>Pyogranulomatous inflammatory exudate that destroys the gland</td></tr>
+</table>
+<h2>Biopsy Sampling Principles</h2>
+<ul>
+  <li>A dermatologist may be the better option to take the biopsy</li>
+  <li>Be gentle; biopsy early; take multiple samples representative of the range of lesions</li>
+  <li>Include crusts (immersed in formalin with the sample)</li>
+  <li>Biopsy before starting anti-inflammatory therapy</li>
+  <li>Use the correct biopsy procedure for the type of lesion</li>
+  <li>Immerse in formalin</li>
+  <li>Label the samples and submit a history and photographs if available</li>
+  <li>Be careful of temperature extremes during shipping</li>
+</ul>
+<div class="sp-note">History to provide: age, breed, sex; lesion distribution, appearance, severity, and duration; influence of specific or recent therapy; other clinical problems; abnormalities on blood work, urinalysis, or faecal exam; differential diagnoses.</div>
+<div class="sp-warn">Don't surgically prepare the site if lesions are in the epidermis or dermis; don't use electrocautery or laser for small biopsy samples; don't grasp the punch biopsy sample or lesion areas of larger samples with tissue forceps; don't use a biopsy instrument that is too small (4mm is the minimum useful diameter).</div>`
+  },
+  {
+    icon: '👶', name: 'Congenital & Hereditary Disorders', pages: 'Page 2',
+    content: `
+<h2>Congenital and Hereditary Disorders</h2>
+<p><span class="sp-key">Alopecia</span> = absence of hair from skin where hair is usually present. <span class="sp-key">Hypotrichosis</span> = less than the normal amount of hair (can be standard for the breed).</p>
+<table>
+  <tr><th>Disorder</th><th>Aetiology / Pathogenesis</th><th>Macro / Histo</th></tr>
+  <tr><td><span class="sp-key">Congenital alopecia and hypotrichosis</span></td><td>Hereditary conditions from spontaneous genetic mutations, OR non-genetic disorders — congenital hypotrichosis from maternal iodine deficiency (foals, calves, lambs, pigs), Pestivirus infection, or adenohypophysis hypoplasia</td><td>—</td></tr>
+  <tr><td><span class="sp-key">Collagen dysplasia</span> (hyperelastosis cutis, dermatosparaxis)</td><td>Specific enzyme defects affecting collagen synthesis or processing</td><td>Skin tears easily and is hyperextensible/loose; structurally abnormal dermal collagen with decreased tensile strength</td></tr>
+  <tr><td><span class="sp-key">Epidermolysis bullosa</span></td><td>Structural defects in the basement membrane zone from mutations in genes for structural components (keratin intermediate filaments, hemidesmosome-associated proteins, anchoring fibrils)</td><td>Development of cutaneous blisters (bullae) in response to minor mechanical trauma</td></tr>
+  <tr><td><span class="sp-key">Epitheliogenesis imperfecta</span></td><td>Result of hereditary genetic mutations in some species; risk of secondary bacterial infection/bacteraemia (cattle, dogs, pigs, sheep)</td><td>Incomplete development of skin epithelium — ulceration (head, mucous membranes, eyes)</td></tr>
+</table>`
+  },
+  {
+    icon: '☀️', name: 'Physical, Radiation & Chemical Injury', pages: 'Pages 2–3',
+    content: `
+<h2>Disorders of Physical, Radiation or Chemical Injury</h2>
+<h3>Solar (Actinic) Dermatosis, Keratosis, Neoplasia</h3>
+<p>Damage from UV light — acute (sunburn) or chronic (solar dermatosis, neoplasia). UVB causes formation of photoproducts (abnormal bonds between adjacent pyrimidine bases in DNA) → mutations. Chronic UVB causes mutations to tumour suppressor genes (p53) and immunosuppression — depressing the immune reaction that normally eliminates mutated proliferating cells.</p>
+<table>
+  <tr><th>Macro</th><th>Histo</th></tr>
+  <tr><td>Erythema, scaling, crusting, epidermal hyperplasia, hyperkeratosis, fibrosis; can progress to haemangioma, haemangiosarcoma, melanoma</td><td>Apoptotic cells scattered in the epidermis; hyperkeratosis, acanthosis; dermal hyperaemia, oedema, perivascular infiltrates, haemorrhage; comedones; neoplasia (squamous cell carcinoma, haemangioma, haemangiosarcoma)</td></tr>
+</table>
+<h3>Photosensitisation (Common in Large Animals, esp. Ruminants)</h3>
+<p>Activation of photodynamic substances in the skin, combined with UVA, causes ROS formation and mast cell degranulation with inflammatory mediator release, damaging cell membranes, nucleic acids, proteins, and organelles — leading to erythema, exudation, and necrosis.</p>
+<table>
+  <tr><th>Type</th><th>Mechanism</th></tr>
+  <tr><td><span class="sp-key">Type I (primary)</span></td><td>Ingestion of photodynamic substances in food or medicines (e.g. phenothiazine), transformed into a photoreactive metabolite in the intestine</td></tr>
+  <tr><td><span class="sp-key">Type II</span></td><td>Abnormal metabolism of porphyrin with accumulation of photodynamic substances in the blood — an inherited disease</td></tr>
+  <tr><td><span class="sp-key">Type III (hepatogenous)</span></td><td>Reduced liver capacity to excrete phylloerythrin (produced in the gut from chlorophyll), secondary to primary liver damage (toxic plants, bile duct obstruction)</td></tr>
+</table>
+<p>Lesions occur in unpigmented skin exposed to sunlight (perineum, udder, face); peracute development (several hours) with erythema, oedema, vesicles, and necrosis. Histo: coagulative necrosis of the epidermis, hair follicles, adnexal glands and superficial dermis; fibrinoid vascular degeneration, thrombosis, infarction; secondary bacterial infections.</p>
+<h3>Ionizing Radiation Injury (Dogs)</h3>
+<p>Ionising photons disrupt chemical bonds in cells, causing damage and cell death. Most sensitive cells: highly proliferative cells — epidermal basal cells, hair follicle cells, endothelial cells. Lesions heal with fibrosis — no hair regrowth.</p>
+<h3>Irritant / Allergic Contact Dermatitis</h3>
+<p>Caused by direct contact with irritant substances (acids, alkalis, soaps, detergents, body fluids), or allergic contact dermatitis after prior sensitisation to the offending agent. Macro: erythema, papules, spongiotic dermatitis, rarely vesicles, self-trauma (ulcers, crusts). Histo: spongiotic dermatitis, neutrophilic vesiculopustules, superficial perivascular neutrophilic dermatitis; chronic lesions show epidermal hyperplasia, hyperkeratosis and perivascular dermatitis.</p>
+<h3>Acral Lick Dermatitis (Neurodermatitis)</h3>
+<p>Persistent licking or chewing of the carpal/tarsal regions; may be psychogenic in origin or associated with an underlying disease process in the skin. Macro: alopecia, reddish, haired or hairless, erythematous, ovoid, eroded plaques, may be ulcerated. Histo: hyperkeratosis, acanthosis, erosions, ulcers; dermis thickened by fibrosis and capillaries, with plasmacytic inflammation from chronic mechanical irritation.</p>
+<h3>Callus / Intertrigo (Skin Fold Dermatitis)</h3>
+<p>Superficial dermatitis on closely apposed skin surfaces (udder-thigh dermatitis, facial fold dermatitis in brachycephalic breeds, body fold dermatitis in Shar-Pei). Caused by frictional trauma, accumulated moisture, and bacterial infection. Macro: thick, firm, hyperkeratotic plaque with increased skin folds; secondary folliculitis, furunculosis and ulceration over body prominences (elbow, sternum, side of digit) — erythema, oedema, pustules, ulcers, crusts. Histo: inflammation in the superficial dermis (neutrophils, macrophages, lymphocytes, plasma cells), pustules, ulcers, crusts, necrosis.</p>`
+  },
+  {
+    icon: '🦠', name: 'Viral Skin Diseases', pages: 'Pages 3–4',
+    content: `
+<h2>Microbial and Parasitic Disorders — Viruses</h2>
+<h3>Poxviruses</h3>
+<p>Infect epithelial cells in the epidermis, causing hyperplasia and necrosis with vesicle formation, leading to inflammation.</p>
+<table>
+  <tr><th>Disease</th><th>Aetiology / Pathogenesis</th><th>Gross / Histo</th></tr>
+  <tr><td><span class="sp-key">Poxvirus</span> (domestic, wild & laboratory animals, birds)</td><td>DNA, epitheliotropic. Poxviral invasion of the epidermis → ischaemic necrosis from vascular injury and stimulation of host cell DNA (epidermal hyperplasia, possibly via a viral gene product homologous to EGF)</td><td>Macule, papule, vesicle, crust, scar. Marked epidermal hyperplasia, pustules, crusts, intracytoplasmic eosinophilic inclusions</td></tr>
+  <tr><td><span class="sp-key">Contagious ecthyma</span> (contagious pustular dermatitis) — Parapoxvirus; sheep and goats, rarely humans/cattle</td><td>Affects lips, oral mucosa, eyelids, feet; abrasions → infection</td><td>Lesions characteristic for poxviruses; high morbidity, low mortality, but weight loss</td></tr>
+  <tr><td><span class="sp-key">Lumpy skin disease virus</span> (Capripoxvirus; cattle)</td><td>Arthropod vectors; infection of the skin → viraemia (in leukocytes) → systemic infection → endothelial damage → vasculitis → eruption of numerous well-restricted nodules</td><td>Nodules undergo central necrosis, sequestration and granulation; vasculitis, lymphangitis, thrombosis; epidermal changes typical of poxviruses; intracytoplasmic eosinophilic inclusions. Oedema, generalised lymphadenopathy, weight loss</td></tr>
+</table>
+<h3>Herpesviruses</h3>
+<p>DNA viruses causing occasional skin infections — infection of epithelial cells, replication, lysis of nuclei, viral particles entering the cytoplasm, degeneration of cytoplasmic organelles, cytoplasmic lipid accumulation and protein precipitation.</p>
+<table>
+  <tr><th>Disease</th><th>Features</th></tr>
+  <tr><td><span class="sp-key">BHV-2</span> (Bovine herpesvirus 2)</td><td>Pseudo-lumpy skin disease (generalised) or bovine herpes mammillitis (skin-teat/nipple lesions). Vesicles rupture into ulcers with necrotising dermatitis and crusts; ballooning and reticular degeneration, acantholysis, occasional syncytial cells, intranuclear inclusions (eosinophilic to amphophilic)</td></tr>
+  <tr><td><span class="sp-key">BHV-4</span></td><td>Bovine herpes mammary pustular dermatitis — ulcerated and crusted lesions; necrosis of epidermis and follicles, mixed dermal inflammation rich in eosinophils, large amphophilic intranuclear inclusions</td></tr>
+  <tr><td><span class="sp-key">Feline herpesvirus 1 (FHV-1) dermatitis</span></td><td>Similar but milder than BHV-2/4. Differential diagnoses: hypersensitivity reactions, eosinophilic ulcer</td></tr>
+</table>
+<h3>Papillomaviruses</h3>
+<p>Species- and site-specific pathogens that infect squamous epithelium and fibroblasts, causing benign and (less commonly) malignant tumours.</p>
+<div class="sp-chain">Virus stays as a latent circular DNA episome (basal cell nucleus, outside chromosomes) → as basal cells mature, virus converts to productive infection (typical morphologic changes) → virus can integrate into the host genome → malignant transformation (viral genes inactivate tumour-suppressor proteins p53, Rb)</div>
+<table>
+  <tr><th>Disease</th><th>Features</th></tr>
+  <tr><td><span class="sp-key">Sarcoid</span> (BPV-1 and 2; horses)</td><td>Virus infects dermal fibroblasts. Locally aggressive, non-metastatic fibroblastic tumours, frequently in areas subjected to trauma (head, legs, ventral trunk). Forms: occult, verrucous, nodular, fibroblastic, mixed, malevolent</td></tr>
+</table>`
+  },
+  {
+    icon: '🧫', name: 'Bacterial Skin Diseases', pages: 'Pages 4–5',
+    content: `
+<h2>Cutaneous Bacterial Infections</h2>
+<h3>Superficial Pyodermas</h3>
+<p>Involve the epidermis and upper infundibulum of the hair follicle. Most common cause: Gram-positive cocci. Macro: erythema, alopecia, papules, pustules, crusts. Histo: intraepidermal pustular dermatitis, suppurative luminal folliculitis.</p>
+<ul>
+  <li>Superficial pustular dermatitis</li>
+  <li>Exudative epidermitis</li>
+  <li>Canine superficial (spreading) pyoderma</li>
+  <li>Mucocutaneous pyoderma</li>
+  <li>Dermatophilosis</li>
+  <li>Ovine fleece rot</li>
+  <li>Superficial folliculitis</li>
+</ul>
+<table>
+  <tr><th>Disease</th><th>Features</th></tr>
+  <tr><td><span class="sp-key">Dermatophilosis</span> (horses, cattle, sheep)</td><td>Dermatophilus congolensis. Repeated cycles of bacterial growth, inflammation and epithelial regeneration → formation of stratified pustular crusts</td></tr>
+  <tr><td><span class="sp-key">Exudative epidermitis of pigs</span> (greasy pig disease)</td><td>Staphylococcus hyicus, toxin "exfoliatin" causes erosion of the stratum corneum. Macro: brownish, malodorous exudate. Histo: subcorneal pustular dermatitis, superficial suppurative folliculitis, thick keratin crusts, microabscesses and cocci</td></tr>
+</table>
+<h3>Deep Pyodermas</h3>
+<p>Untreated or severe folliculitis progresses to involve the deeper aspect of the follicle, with follicular distention and rupture (<span class="sp-key">furunculosis</span>), releasing follicular content into the dermis = deep pyoderma. Caused by Staphylococcus sp., Streptococcus sp., C. pseudotuberculosis, Pasteurella sp., Proteus sp., E. coli.</p>
+<ul>
+  <li>Bacterial folliculitis and furunculosis</li>
+  <li>Abscesses</li>
+  <li>Cellulitis</li>
+</ul>
+<h3>Bacterial Granulomatous Dermatitis</h3>
+<ul>
+  <li>Mycobacterial granulomas</li>
+  <li>Granulomas from non-filamentous bacteria — Staphylococcus spp., Streptococcus spp., Pseudomonas aeruginosa, Actinobacillus lignieresii, Proteus spp.</li>
+  <li>Filamentous bacterial granulomas — Nocardia spp., Actinomyces spp., Streptomyces spp., Actinomadura spp.</li>
+</ul>
+<h3>Bacterial Digital Infections (Horses & Ruminants)</h3>
+<ul>
+  <li>Proliferative pododermatitis (horse)</li>
+  <li>Necrotizing pododermatitis (horse)</li>
+  <li>Papillomatous digital dermatitis (cattle)</li>
+  <li>Necrobacillosis of the foot (cattle, sheep)</li>
+  <li>Contagious foot rot (cattle, sheep)</li>
+  <li>Contagious ovine digital dermatitis (sheep)</li>
+</ul>
+<h3>Systemic or Toxic Reactions</h3>
+<p>Erysipelothrix rhusiopathiae, systemic salmonellosis/pasteurellosis/E. coli infection, clostridial dermatitis.</p>
+<div class="sp-warn">Erysipelas in pigs: sepsis causes bacterial embolisation to the skin → vasculitis, thrombosis, infarction → rhomboidal, firm, raised purple lesions. Thrombosis leads to ischaemia, infarction, and subsequent necrosis.</div>`
+  },
+  {
+    icon: '🍄', name: 'Fungal Skin Diseases', pages: 'Page 5',
+    content: `
+<h2>Cutaneous Fungal Infections</h2>
+<p>Fungi invade keratinocytic tissue through proteolytic enzymes — more common in warm, humid environments and in young animals. Lesions: alopecia, papules, pustules, folliculitis, furunculosis, epidermal hyperplasia, microabscesses.</p>
+<table>
+  <tr><th>Category</th><th>Organisms</th></tr>
+  <tr><td><span class="sp-key">Superficial</span> (limited to hair or stratum corneum)</td><td>Piedra — Trichosporon spp.</td></tr>
+  <tr><td><span class="sp-key">Cutaneous</span> (limited to hair, stratum corneum, claws)</td><td>Dermatophytes (Microsporum canis, M. gypseum, Trichophyton mentagrophytes); Candida spp.; Malassezia spp.</td></tr>
+</table>
+<table>
+  <tr><th>Organism</th><th>Pathogenesis</th><th>Gross / Histo</th></tr>
+  <tr><td><span class="sp-key">Malassezia</span> (commensal in dogs and cats — ears, skin folds)</td><td>Lives in the stratum corneum; becomes pathogenic when predisposing factors alter the host's cutaneous microenvironment, epidermal barrier, or immune system (heat and humidity, cornification disorders, FIV, atopic dermatitis, etc.)</td><td>Erythema, alopecia, hyperpigmentation; hyperkeratosis, parakeratosis, spongiotic pustular dermatitis, acanthosis, perivascular mixed cellular dermatitis</td></tr>
+</table>
+<h3>Subcutaneous Fungal Infections</h3>
+<ul>
+  <li>Eumycotic mycetoma — Curvularia geniculata, Madurella spp., Acremonium spp., Pseudallescheria spp.</li>
+  <li>Dermatophyte pseudomycetoma</li>
+  <li>Hyalohyphomycosis</li>
+  <li>Sporotrichosis</li>
+  <li>Entomophthoromycosis (zygomycosis)</li>
+  <li>Oomycosis (pythiosis and lagenidiosis)</li>
+</ul>
+<h3>Systemic Fungal Infections (Usually Pulmonary Portal of Entry)</h3>
+<p>Skin disease can also develop after puncture or other injury to the skin.</p>
+<ul>
+  <li>Blastomycosis</li>
+  <li>Coccidioidomycosis</li>
+  <li>Cryptococcosis</li>
+  <li>Histoplasmosis</li>
+</ul>`
+  },
+  {
+    icon: '🐛', name: 'Parasitic Skin Diseases', pages: 'Pages 5–6',
+    content: `
+<h2>Parasitic Disorders</h2>
+<table>
+  <tr><th>Parasite group</th><th>Examples</th><th>Effects</th></tr>
+  <tr><td>Mites</td><td>Demodex, Psoroptes, Sarcoptes, Chorioptes, Otodectes cynotis, Notoedres cati, Cheyletiella sp.</td><td>Erythema, pustules, scales, crusts</td></tr>
+  <tr><td>Ticks</td><td>Argasidae, Ixodidae</td><td>Anaemia, irritation, disease transmission</td></tr>
+  <tr><td>Lice</td><td>Mallophaga, Anoplura</td><td>Anaemia, weakness, damage to hair and wool</td></tr>
+  <tr><td>Fleas</td><td>Ctenocephalides — dogs, cats</td><td>Hypersensitivity and anaemia</td></tr>
+  <tr><td>Flies</td><td>Sarcophagidae, Cuterebra, Hypoderma</td><td>Myiasis</td></tr>
+  <tr><td>Filariae</td><td>Dirofilaria</td><td>—</td></tr>
+  <tr><td>Protozoa</td><td>Leishmania</td><td>—</td></tr>
+</table>
+<table>
+  <tr><th>Disease</th><th>Pathogenesis</th><th>Gross / Histo</th></tr>
+  <tr><td><span class="sp-key">Demodicosis</span> (Demodex mite)</td><td>—</td><td>Squamous: erythema, alopecia, comedones, scales, crusts, and secondary bacterial infection (furunculosis). Histo: mural lymphocytic folliculitis, apoptosis and keratinocyte degeneration, neutrophils (and bacteria), granulomatous inflammation (follicle rupture)</td></tr>
+  <tr><td><span class="sp-key">Scabies</span> (Sarcoptes scabiei)</td><td>Burrows tunnels in the stratum corneum, causing pruritus (a hypersensitivity reaction)</td><td>Erythema, papules, crusts, excoriations, and later scaly, lichenified, hairless skin. Histo: superficial perivascular dermatitis (eosinophils, mast cells, lymphocytes), acanthosis, parakeratotic hyperkeratosis</td></tr>
+  <tr><td><span class="sp-key">Leishmaniasis</span> (obligate intracellular protozoan of the mononuclear phagocytic system, in macrophage cytoplasm)</td><td>Sand flies are the vector; dogs, cats and rodents serve as reservoirs for human infection</td><td>Cutaneous and visceral forms. Cutaneous lesions: generalised alopecia with silvery-white scales, or more severe nodules and ulcers around the muzzle/nose, ears and eyes, deformed claws. Histo: hyperkeratosis, parakeratosis, crusts, and granulomatous nodules in the dermis including periadnexal regions</td></tr>
+</table>`
+  },
+  {
+    icon: '🛡️', name: 'Immunologic & Autoimmune Skin Diseases', pages: 'Page 6',
+    content: `
+<h2>Immunologic Skin Diseases</h2>
+<p>Associated with an excessive or aberrant immunologic response. <span class="sp-key">Hypersensitivity</span> develops in response to normally harmless foreign compounds (antiserum, pollen, etc.). <span class="sp-key">Autoimmune disease</span> develops when antibodies or T-lymphocytes react against self-antigens after mechanisms of self-tolerance fail.</p>
+<h3>Hypersensitivity</h3>
+<table>
+  <tr><th>Disease</th><th>Mechanism</th><th>Features</th></tr>
+  <tr><td><span class="sp-key">Atopic dermatitis</span> (atopy, allergic inhalant dermatitis)</td><td>Type I (rarely type IV) hypersensitivity</td><td>Predisposed, pruritic allergic skin disease, mostly associated with IgE antibodies to environmental allergens. Histo: superficial perivascular accumulations of lymphocytes</td></tr>
+  <tr><td><span class="sp-key">Insect bite hypersensitivity</span></td><td>Type I and type IV reaction</td><td>Pruritus, self-trauma; mosquito bite hypersensitivity can cause severe inflammation, dermatitis, focal ulceration; alopecia, redness, erythema. Histo: perivascular dermatitis with numerous eosinophils</td></tr>
+</table>
+<h3>Autoimmune Diseases</h3>
+<table>
+  <tr><th>Disease</th><th>Pathogenesis</th><th>Gross / Histo</th></tr>
+  <tr><td><span class="sp-key">Pemphigus foliaceus</span></td><td>Antibodies against desmocollin 1</td><td>Erythema, alopecia, crusted dermatitis. Histo: vesicular and pustular dermatitis, subcorneal layer involvement</td></tr>
+  <tr><td><span class="sp-key">Pemphigus vulgaris</span> (more severe — anti-desmoglein)</td><td>Loss of intercellular junctions deeper in the epidermis</td><td>Erosions, ulcers, crusts, beginning at the nose/eyes and spreading. Histo: suprabasal vesicles/pustules, apoptosis of keratinocytes; larger portions of epidermis are lost — deeper ulcers and larger crusts</td></tr>
+  <tr><td><span class="sp-key">Bullous pemphigoid</span></td><td>Targets the basement membrane</td><td>Severe ulcerative dermatitis with loss of epidermis. Histo: large bullae at the basement membrane, loss of the complete epidermis</td></tr>
+  <tr><td><span class="sp-key">SLE</span> (systemic lupus erythematosus)</td><td>Production of antibodies against different cellular structures</td><td>Lesions on the head/nose, spreading to other parts of the skin</td></tr>
+  <tr><td><span class="sp-key">DLE</span> (discoid lupus erythematosus)</td><td>Influenced by UV rays</td><td>Redness and loss of pigment over the dorsal nose and eyelids; ulcerative dermatitis. Histo: ulceration, serocellular surface crusts</td></tr>
+  <tr><td><span class="sp-key">Erythema multiforme</span></td><td>Immune reaction against epidermal keratinocytes</td><td>Multifocal areas of skin redness and inflammation. Histo: interface dermatitis between epidermis/dermis, infiltration of lymphocytes around keratinocytes, apoptosis and loss leading to vesicle development</td></tr>
+</table>`
+  },
+  {
+    icon: '⚖️', name: 'Nutritional & Endocrine Skin Disorders', pages: 'Page 6',
+    content: `
+<h2>Disorders Related to Nutrient Imbalances, Deficiencies and Altered Metabolism</h2>
+<table>
+  <tr><th>Disorder</th><th>Features</th></tr>
+  <tr><td><span class="sp-key">Hypothyroidism</span></td><td>Alopecia of the body and neck, sometimes with myxoedema and acanthosis</td></tr>
+  <tr><td><span class="sp-key">Hyperadrenocorticism</span> (Cushing's disease)</td><td>Delayed wound healing with secondary infections; calcinosis cutis</td></tr>
+  <tr><td><span class="sp-key">Hypoestrogenism</span></td><td>Alopecia, orthokeratosis, follicular hyperkeratosis, follicles arrested in the telogen phase. Histo: thin epidermis, thinner follicles, follicular hyperkeratosis, no hair growth (alopecia)</td></tr>
+</table>`
+  },
+  {
+    icon: '🔴', name: 'Skin Tumours', pages: 'Pages 6–7',
+    content: `
+<h2>Tumours — Primary and Metastatic</h2>
+<table>
+  <tr><th>Category</th><th>Examples</th></tr>
+  <tr><td><span class="sp-key">Benign</span></td><td>Papilloma, fibropapilloma, trichoepithelioma, pilomatricoma, trichoblastoma, sebaceous adenoma, histiocytoma, melanocytoma, plasmacytoma, fibroma, myxoma, haemangioma, leiomyoma, lymphangioma</td></tr>
+  <tr><td><span class="sp-key">Malignant</span></td><td>Mast cell tumour, melanoma, squamous cell carcinoma, lymphoma, sarcoma</td></tr>
+</table>
+<table>
+  <tr><th>Tumour</th><th>Features</th></tr>
+  <tr><td><span class="sp-key">Papilloma</span></td><td>Benign tumour of stratified squamous or transitional epithelium, mostly in younger animals; evidence of viral infection (papillomavirus) — koilocytes (keratinocytes with light or amphophilic cytoplasm and small/vesicular nuclei, possible basophilic intranuclear inclusions). Macro: well-differentiated, exophytic growth, papillae or plaques. Histo: hyperplasia of the epidermis and hyperkeratosis, gentle fibrovascular stroma</td></tr>
+  <tr><td><span class="sp-key">Squamous cell carcinoma</span></td><td>Most common epithelial tumour in cats. Macro: poorly demarcated, locally invasive (infiltrative); rare metastasis (regional LN, later visceral organs). Histo: neoplastic cells grow in islands/nests, basal cells on the periphery, more keratinised cells centrally; compression creates a compact eosinophilic centre with concentric lamellae — a "keratin pearl"</td></tr>
+  <tr><td><span class="sp-key">Melanocytoma</span> (benign)</td><td>Single or multiple nodules (head, eyelids, muzzle, interdigital, trunk). Histo: packets/sheets of melanocytes with variable melanin, rare mitotic figures</td></tr>
+  <tr><td><span class="sp-key">Malignant melanoma</span></td><td>More common in the oral mucosa. High pleomorphism and atypia, variable pigmentation (amelanotic to highly pigmented), spindle/round/epithelioid vesicular cells, higher mitotic count</td></tr>
+  <tr><td><span class="sp-key">Mast cell tumour</span></td><td>Dogs, cats, pigs, cattle; grades of differentiation I–III (or low/high grade). Mainly on the body and scrotum in dogs. A notable number of eosinophils is present, likely due to release of the eosinophilic chemotactic factor (a normal mast cell granule component)</td></tr>
+  <tr><td><span class="sp-key">Canine cutaneous histiocytoma</span></td><td>Benign, young dogs; head, extremities, scrotum. Oval, solitary, fast-growing, raised above the skin, alopecic; spontaneous regression is typical. Histo: solid infiltrative growth, pleomorphic histiocytes, frequent mitosis; zone of necrosis/inflammation, apoptosis of tumour cells during regression</td></tr>
+</table>
+<h3>Other / Miscellaneous Tumours</h3>
+<p>Trichoblastoma (arising from hair follicles), and other miscellaneous skin disorders and cutaneous neoplasias.</p>`
   },
 ];
 
