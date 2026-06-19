@@ -1110,8 +1110,8 @@
       <p id="result-subtitle" style="color:var(--text-muted);margin-top:7px"></p>
     </div>
     <div class="modal-btns">
-      <button class="btn btn-primary" onclick="closeResultModal();showPage('stats')">📊 View Stats</button>
-      <button class="btn btn-ghost" onclick="closeResultModal();showPage('home')">🏠 Home</button>
+      <button class="btn btn-primary" onclick="closeResultModal();resultModalNav.stats()">📊 View Stats</button>
+      <button class="btn btn-ghost" onclick="closeResultModal();resultModalNav.home()">🏠 Home</button>
     </div>
   </div>
 </div>
@@ -1860,6 +1860,7 @@ function renderTopics() {
 // QUIZ ENGINE
 // =====================================================================
 let quiz = { questions:[], idx:0, session:null };
+let resultModalNav = { home: () => showPage('home'), stats: () => showPage('stats') };
 
 function shuffle(arr) {
   const a = [...arr];
@@ -2103,6 +2104,7 @@ function finishQuiz() {
   document.getElementById('result-score-circle').textContent = pct + '%';
   document.getElementById('result-title').textContent = pct >= 80 ? '🎉 Excellent!' : pct >= 60 ? '👍 Good Job!' : '📚 Keep Studying!';
   document.getElementById('result-subtitle').textContent = `${quiz.session.correct} / ${quiz.session.total} correct`;
+  resultModalNav = { home: () => showPage('home'), stats: () => showPage('stats') };
   document.getElementById('result-modal').classList.add('open');
 }
 
@@ -2278,6 +2280,7 @@ function finishPracticalSession() {
   document.getElementById('result-score-circle').textContent = pct + '%';
   document.getElementById('result-title').textContent = pct >= 80 ? '🎉 Excellent!' : pct >= 60 ? '👍 Good Job!' : '📚 Keep Studying!';
   document.getElementById('result-subtitle').textContent = correct + ' / ' + total + ' procedures correct';
+  resultModalNav = { home: () => showPage('home'), stats: () => showPage('stats') };
   document.getElementById('result-modal').classList.add('open');
   renderPracticalLobby();
 }
@@ -2440,6 +2443,7 @@ function finishPastQsSession() {
   document.getElementById('result-score-circle').textContent = pct + '%';
   document.getElementById('result-title').textContent = pct >= 80 ? '🎉 Excellent!' : pct >= 60 ? '👍 Good Job!' : '📚 Keep Studying!';
   document.getElementById('result-subtitle').textContent = correct + ' / ' + total + ' questions correct';
+  resultModalNav = { home: () => showPage('home'), stats: () => showPage('stats') };
   document.getElementById('result-modal').classList.add('open');
   renderPastQsLobby();
 }
@@ -3368,6 +3372,7 @@ function finishEndoQuiz() {
   document.getElementById('result-score-circle').textContent = pct + '%';
   document.getElementById('result-title').textContent = pct >= 80 ? '🎉 Excellent!' : pct >= 60 ? '👍 Good Job!' : '📚 Keep Studying!';
   document.getElementById('result-subtitle').textContent = `${endoQuiz.correct} / ${endoQuiz.total} correct`;
+  resultModalNav = { home: () => spShowPage('endo','home'), stats: () => spShowPage('endo','stats') };
   document.getElementById('result-modal').classList.add('open');
   if (endoQuiz.total > 0) {
     endoSessions.unshift({ date: new Date().toLocaleDateString(), title: endoQuiz.title, correct: endoQuiz.correct, total: endoQuiz.total });
@@ -3523,6 +3528,7 @@ function finishGiQuiz() {
   document.getElementById('result-score-circle').textContent = pct + '%';
   document.getElementById('result-title').textContent = pct >= 80 ? '🎉 Excellent!' : pct >= 60 ? '👍 Good Job!' : '📚 Keep Studying!';
   document.getElementById('result-subtitle').textContent = `${giQuiz.correct} / ${giQuiz.total} correct`;
+  resultModalNav = { home: () => spShowPage('gi','home'), stats: () => spShowPage('gi','stats') };
   document.getElementById('result-modal').classList.add('open');
   if (giQuiz.total > 0) {
     giSessions.unshift({ date: new Date().toLocaleDateString(), title: giQuiz.title, correct: giQuiz.correct, total: giQuiz.total });
@@ -3678,6 +3684,7 @@ function finishHepatoQuiz() {
   document.getElementById('result-score-circle').textContent = pct + '%';
   document.getElementById('result-title').textContent = pct >= 80 ? '🎉 Excellent!' : pct >= 60 ? '👍 Good Job!' : '📚 Keep Studying!';
   document.getElementById('result-subtitle').textContent = `${hepatoQuiz.correct} / ${hepatoQuiz.total} correct`;
+  resultModalNav = { home: () => spShowPage('hepato','home'), stats: () => spShowPage('hepato','stats') };
   document.getElementById('result-modal').classList.add('open');
   if (hepatoQuiz.total > 0) {
     hepatoSessions.unshift({ date: new Date().toLocaleDateString(), title: hepatoQuiz.title, correct: hepatoQuiz.correct, total: hepatoQuiz.total });
@@ -3833,6 +3840,7 @@ function finishSkinQuiz() {
   document.getElementById('result-score-circle').textContent = pct + '%';
   document.getElementById('result-title').textContent = pct >= 80 ? '🎉 Excellent!' : pct >= 60 ? '👍 Good Job!' : '📚 Keep Studying!';
   document.getElementById('result-subtitle').textContent = `${skinQuiz.correct} / ${skinQuiz.total} correct`;
+  resultModalNav = { home: () => spShowPage('skin','home'), stats: () => spShowPage('skin','stats') };
   document.getElementById('result-modal').classList.add('open');
   if (skinQuiz.total > 0) {
     skinSessions.unshift({ date: new Date().toLocaleDateString(), title: skinQuiz.title, correct: skinQuiz.correct, total: skinQuiz.total });
@@ -3988,6 +3996,7 @@ function finishNeuroQuiz() {
   document.getElementById('result-score-circle').textContent = pct + '%';
   document.getElementById('result-title').textContent = pct >= 80 ? '🎉 Excellent!' : pct >= 60 ? '👍 Good Job!' : '📚 Keep Studying!';
   document.getElementById('result-subtitle').textContent = `${neuroQuiz.correct} / ${neuroQuiz.total} correct`;
+  resultModalNav = { home: () => spShowPage('neuro','home'), stats: () => spShowPage('neuro','stats') };
   document.getElementById('result-modal').classList.add('open');
   if (neuroQuiz.total > 0) {
     neuroSessions.unshift({ date: new Date().toLocaleDateString(), title: neuroQuiz.title, correct: neuroQuiz.correct, total: neuroQuiz.total });
