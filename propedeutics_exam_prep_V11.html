@@ -596,6 +596,13 @@
       <p style="font-size:0.83rem;color:var(--text-muted);margin:4px 0 0">Heart failure, congenital anomalies, pericardial and valvular diseases, myocardial pathology, cardiomyopathies, cardiac neoplasia, vascular diseases, and lymphatic disorders.</p>
       <div class="sp-meta"><span class="sp-pill">10 Subtopics</span></div>
     </div>
+    <div class="sp-topic-chip sp-available" onclick="openSpTopic('bones')">
+      <div class="sp-badge">Available</div>
+      <div class="sp-icon">🦷</div>
+      <div class="sp-name">Bones &amp; Joints</div>
+      <p style="font-size:0.83rem;color:var(--text-muted);margin:4px 0 0">Bone structure, growth and development disorders, osteochondrosis, metabolic bone diseases, osteomyelitis, hip dysplasia, arthritis, and degenerative joint disease.</p>
+      <div class="sp-meta"><span class="sp-pill">8 Subtopics</span></div>
+    </div>
   </div>
 </div>
 
@@ -1418,6 +1425,78 @@
 </div>
 <!-- END CARDIOVASCULAR SYSTEM PAGES -->
 
+<!-- =====================================================================
+     BONES & JOINTS — HOME
+===================================================================== -->
+<div id="page-bones-home" class="page">
+  <div class="hero" style="background:linear-gradient(135deg,#f0ece3 0%,#e8dcc8 50%,#f5f0e8 100%);color:var(--text)">
+    <h1 style="color:var(--primary-dark)">🦷 Bones &amp; Joints</h1>
+    <p style="color:var(--text-muted)">Study bone structure, growth and development disorders, osteochondrosis, metabolic bone diseases, osteomyelitis, hip dysplasia, arthritis, and degenerative joint disease.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num" id="bones-stat-qcount">0</div><div class="lbl">Questions</div></div>
+      <div class="hero-stat"><div class="num">8</div><div class="lbl">Subtopics</div></div>
+      <div class="hero-stat"><div class="num" id="bones-stat-sessions">0</div><div class="lbl">Sessions</div></div>
+    </div>
+  </div>
+  <div class="section-title">🚀 Start Studying</div>
+  <div class="mode-grid">
+    <div class="mode-card" onclick="spShowPage('bones','topics')">
+      <div class="icon">📖</div><h3>Subtopic Study</h3>
+      <p>Read lecture notes for each subtopic. 8 subtopics drawn directly from the course document.</p>
+    </div>
+    <div class="mode-card" onclick="startAllBonesQuiz()">
+      <div class="icon">🎯</div><h3>Exam Prep Mode</h3>
+      <p>Randomised questions drawn from all subtopics with questions added so far — full mixed practice exam.</p>
+    </div>
+  </div>
+</div>
+
+<!-- =====================================================================
+     BONES & JOINTS — TOPICS (Subtopic notes)
+===================================================================== -->
+<div id="page-bones-topics" class="page">
+  <div id="bones-subtopic-list">
+    <div class="flex-row" style="margin-bottom:16px">
+      <div class="section-title" style="margin:0">📖 Subtopics</div>
+    </div>
+    <div class="sp-subtopic-grid" id="bones-subtopic-grid"></div>
+  </div>
+  <div id="bones-notes-panel" style="display:none">
+    <div class="flex-row" style="margin-bottom:14px">
+      <button class="btn btn-ghost btn-sm" onclick="closeBonesNotes()">← All Subtopics</button>
+      <div class="spacer"></div>
+      <span id="bones-notes-title" style="font-weight:700;color:var(--primary-dark);font-size:0.95rem"></span>
+    </div>
+    <div id="bones-study-btn-area" style="margin-bottom:12px"></div>
+    <div id="bones-notes-body" class="sp-content"></div>
+  </div>
+</div>
+
+<!-- =====================================================================
+     BONES & JOINTS — QUIZ
+===================================================================== -->
+<div id="page-bones-quiz" class="page">
+  <div id="bones-quiz-area"></div>
+</div>
+
+<!-- =====================================================================
+     BONES & JOINTS — PROGRESS
+===================================================================== -->
+<div id="page-bones-stats" class="page">
+  <div class="flex-row" style="margin-bottom:18px">
+    <div class="section-title" style="margin:0">📊 My Progress</div>
+    <div class="spacer"></div>
+    <button class="btn btn-ghost btn-sm" onclick="resetBonesStats()" style="color:var(--wrong-dark)">🗑 Reset Progress</button>
+  </div>
+  <div class="stats-grid" id="bones-overall-stats"></div>
+  <div class="section-title">📈 By Subtopic (worst first)</div>
+  <div class="card" id="bones-subtopic-stats-list"></div>
+  <div class="divider"></div>
+  <div class="section-title">🕐 Session History</div>
+  <div id="bones-session-history-list"></div>
+</div>
+<!-- END BONES & JOINTS PAGES -->
+
 <div class="modal-overlay" id="result-modal">
   <div class="modal">
     <div class="result-big">
@@ -2095,6 +2174,14 @@ const NAV_CONFIGS = {
       {id:'cardio-home',   label:'🏠 Home',       fn:"spShowPage('cardio','home')"},
       {id:'cardio-topics', label:'📖 Topics',     fn:"spShowPage('cardio','topics')"},
       {id:'cardio-stats',  label:'📊 Progress',   fn:"spShowPage('cardio','stats')"},
+    ]
+  },
+  bones: {
+    label: '🦷 Bones & Joints',
+    btns: [
+      {id:'bones-home',   label:'🏠 Home',       fn:"spShowPage('bones','home')"},
+      {id:'bones-topics', label:'📖 Topics',     fn:"spShowPage('bones','topics')"},
+      {id:'bones-stats',  label:'📊 Progress',   fn:"spShowPage('bones','stats')"},
     ]
   },
 };
@@ -3605,6 +3692,13 @@ function spShowPage(topic, page) {
     if (el) el.textContent = qTotal;
   }
   if (topic === 'cardio' && page === 'stats') renderCardioStats();
+  if (topic === 'bones' && page === 'topics') renderBonesSubtopics();
+  if (topic === 'bones' && page === 'home') {
+    const qTotal = Object.values(BONES_QUESTIONS).reduce((s, arr) => s + arr.length, 0);
+    const el = document.getElementById('bones-stat-qcount');
+    if (el) el.textContent = qTotal;
+  }
+  if (topic === 'bones' && page === 'stats') renderBonesStats();
 }
 
 function openSpTopic(topicId) {
@@ -4849,6 +4943,158 @@ function resetCardioStats() {
   localStorage.removeItem('vpCardioStats');
   localStorage.removeItem('vpCardioSessions');
   renderCardioStats();
+}
+
+// ── BONES & JOINTS SUBTOPIC NOTES ─────────────────────────────────────
+
+function renderBonesSubtopics() {
+  const grid = document.getElementById('bones-subtopic-grid');
+  if (!grid) return;
+  grid.innerHTML = BONES_SUBTOPICS.map((st, i) =>
+    `<div class="sp-subtopic-chip" onclick="openBonesSubtopic(${i})">
+      <div class="ss-icon">${st.icon}</div>
+      <div class="ss-name">${st.name}</div>
+      <div class="ss-pages">${st.pages}</div>
+    </div>`
+  ).join('');
+}
+
+function openBonesSubtopic(idx) {
+  const st = BONES_SUBTOPICS[idx];
+  document.getElementById('bones-subtopic-list').style.display = 'none';
+  document.getElementById('bones-notes-panel').style.display = '';
+  document.getElementById('bones-notes-title').textContent = st.icon + ' ' + st.name;
+  const qs = BONES_QUESTIONS[idx];
+  const qCount = qs ? qs.length : 0;
+  document.getElementById('bones-study-btn-area').innerHTML = qCount
+    ? `<button class="btn btn-primary btn-sm" onclick="beginBonesQuiz(randomiseAnswers(shuffle(tagSubtopic(BONES_QUESTIONS[${idx}], ${idx}))), '${st.icon} ${st.name.replace(/'/g,"\\'")}')">🎯 Study ${qCount} Questions</button>`
+    : `<span style="color:var(--text-muted);font-size:0.88rem">Questions coming soon for this subtopic.</span>`;
+  document.getElementById('bones-notes-body').innerHTML = st.content;
+}
+
+function closeBonesNotes() {
+  document.getElementById('bones-notes-panel').style.display = 'none';
+  document.getElementById('bones-subtopic-list').style.display = '';
+}
+
+let bonesQuiz = null;
+let bonesStats = JSON.parse(localStorage.getItem('vpBonesStats') || '{}');
+let bonesSessions = JSON.parse(localStorage.getItem('vpBonesSessions') || '[]');
+
+function startAllBonesQuiz() {
+  let all = [];
+  Object.entries(BONES_QUESTIONS).forEach(([k, arr]) => { all = all.concat(tagSubtopic(arr, Number(k))); });
+  if (!all.length) return;
+  beginBonesQuiz(randomiseAnswers(shuffle(all)), '🦷 All Subtopics');
+}
+
+function beginBonesQuiz(questions, title) {
+  bonesQuiz = { questions, idx: 0, title, answered: false, correct: 0, total: 0 };
+  spShowPage('bones', 'quiz');
+  renderBonesQuestion();
+}
+
+function renderBonesQuestion() {
+  const q = bonesQuiz.questions[bonesQuiz.idx];
+  if (!q) { finishBonesQuiz(); return; }
+  bonesQuiz.answered = false;
+  const diffColor = {easy:'var(--correct-dark)',medium:'#b8860b',hard:'var(--wrong-dark)'}[q.diff];
+  const diffBg = {easy:'var(--correct-bg)',medium:'#fff3cd',hard:'var(--wrong-bg)'}[q.diff];
+  let html = `
+    <div class="question-header">
+      <div class="flex-row" style="flex-wrap:wrap;gap:6px">
+        <span class="badge" style="background:var(--primary-light);color:var(--primary-dark)">${bonesQuiz.title}</span>
+        <span class="badge" style="background:${diffBg};color:${diffColor}">${q.diff}</span>
+        <span class="badge" style="background:#e9ecef;color:#495057">${q.type==='tf'?'True/False':'MCQ'}</span>
+      </div>
+      <div class="progress-text">${bonesQuiz.idx+1} / ${bonesQuiz.questions.length}</div>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" style="width:${(bonesQuiz.idx/bonesQuiz.questions.length)*100}%"></div></div>
+    <div class="question-text">${q.q}</div>`;
+  if (q.type === 'tf') {
+    html += '<div class="tf-btns"><button class="tf-btn" onclick="answerBonesTF(true)">&#10003; True</button><button class="tf-btn" onclick="answerBonesTF(false)">&#10007; False</button></div>';
+  } else {
+    html += '<div class="options">';
+    for (let i = 0; i < q.opts.length; i++) {
+      html += `<button class="option-btn" onclick="answerBonesMCQ(${i})"><span class="opt-letter">${String.fromCharCode(65+i)}</span>${q.opts[i]}</button>`;
+    }
+    html += '</div>';
+  }
+  html += `<div id="bones-q-feedback" style="display:none"></div>
+    <div class="quiz-actions" id="bones-quiz-actions">
+      <button class="btn btn-ghost btn-sm" onclick="bonesSkipQuestion()">Skip</button>
+    </div>`;
+  document.getElementById('bones-quiz-area').innerHTML = html;
+}
+
+function answerBonesMCQ(idx) {
+  if (bonesQuiz.answered) return;
+  bonesQuiz.answered = true;
+  const q = bonesQuiz.questions[bonesQuiz.idx];
+  const correct = idx === q.ans;
+  bonesQuiz.total++;
+  if (correct) bonesQuiz.correct++;
+  recordSpAnswer(bonesStats, q.subtopic, correct, 'vpBonesStats');
+  document.querySelectorAll('#bones-quiz-area .option-btn').forEach((btn, i) => {
+    btn.disabled = true;
+    if (i === q.ans) btn.classList.add('correct');
+    else if (i === idx && !correct) btn.classList.add('wrong');
+  });
+  showBonesFeedback(q, correct);
+}
+
+function answerBonesTF(given) {
+  if (bonesQuiz.answered) return;
+  bonesQuiz.answered = true;
+  const q = bonesQuiz.questions[bonesQuiz.idx];
+  const correct = given === q.ans;
+  bonesQuiz.total++;
+  if (correct) bonesQuiz.correct++;
+  recordSpAnswer(bonesStats, q.subtopic, correct, 'vpBonesStats');
+  document.querySelectorAll('#bones-quiz-area .tf-btn').forEach(btn => {
+    btn.disabled = true;
+    const isTrue = btn.textContent.trim().startsWith('✓');
+    if (isTrue && q.ans === true) btn.classList.add('correct');
+    else if (!isTrue && q.ans === false) btn.classList.add('correct');
+    else if (isTrue && given === true && !correct) btn.classList.add('wrong');
+    else if (!isTrue && given === false && !correct) btn.classList.add('wrong');
+  });
+  showBonesFeedback(q, correct);
+}
+
+function showBonesFeedback(q, correct) {
+  const fb = document.getElementById('bones-q-feedback');
+  fb.style.display = 'block';
+  fb.className = 'feedback ' + (correct ? 'correct' : 'wrong');
+  fb.innerHTML = `<strong>${correct ? '✓ Correct!' : '✗ Incorrect'}</strong><br>${q.exp}`;
+  document.getElementById('bones-quiz-actions').innerHTML = `<button class="btn btn-primary" onclick="nextBonesQuestion()">Next →</button>`;
+}
+
+function bonesSkipQuestion() { bonesQuiz.idx++; renderBonesQuestion(); }
+function nextBonesQuestion() { bonesQuiz.idx++; renderBonesQuestion(); }
+
+function finishBonesQuiz() {
+  const pct = bonesQuiz.total > 0 ? Math.round(bonesQuiz.correct / bonesQuiz.total * 100) : 0;
+  document.getElementById('result-score-circle').textContent = pct + '%';
+  document.getElementById('result-title').textContent = pct >= 80 ? '🎉 Excellent!' : pct >= 60 ? '👍 Good Job!' : '📚 Keep Studying!';
+  document.getElementById('result-subtitle').textContent = `${bonesQuiz.correct} / ${bonesQuiz.total} correct`;
+  resultModalNav = { home: () => spShowPage('bones','home'), stats: () => spShowPage('bones','stats') };
+  document.getElementById('result-modal').classList.add('open');
+  if (bonesQuiz.total > 0) {
+    bonesSessions.unshift({ date: new Date().toLocaleDateString(), title: bonesQuiz.title, correct: bonesQuiz.correct, total: bonesQuiz.total });
+    localStorage.setItem('vpBonesSessions', JSON.stringify(bonesSessions));
+  }
+}
+
+function renderBonesStats() { renderSpStats('bones', bonesStats, bonesSessions, BONES_SUBTOPICS); }
+
+function resetBonesStats() {
+  if (!confirm('Reset progress for Bones & Joints? This cannot be undone.')) return;
+  bonesStats = {};
+  bonesSessions = [];
+  localStorage.removeItem('vpBonesStats');
+  localStorage.removeItem('vpBonesSessions');
+  renderBonesStats();
 }
 
 // ── Neuropathology subtopic notes ─────────────────────────────────────
@@ -9943,6 +10189,271 @@ const CARDIO_SUBTOPICS = [
   <li>Lymph node haemorrhage so severe nodes resemble a blood clot</li>
 </ul>
 <div class="sp-warn">African Swine Fever is a notifiable (listed) disease — any suspected case must be reported to veterinary authorities immediately. It does not affect humans.</div>`
+  },
+];
+
+const BONES_QUESTIONS = {
+  // questions to be added per subtopic
+};
+
+const BONES_SUBTOPICS = [
+  {
+    icon: '🔬', name: 'Bone Structure & Bone Growth', pages: 'Pages 1–2',
+    content: `
+<h2>Types of Bone (Histologically)</h2>
+<ul>
+  <li><span class="sp-key">Woven bone</span> — callus, young growing bone, pathological processes</li>
+  <li><span class="sp-key">Lamellar bone</span>:
+    <ul>
+      <li><span class="sp-key">Compact bone</span> — cortex, osteons (cylindrical formations)</li>
+      <li><span class="sp-key">Spongy bone</span> — medullary cavities, basic structural unit (narrow lamellae, trabeculae)</li>
+    </ul>
+  </li>
+</ul>
+<p><span class="sp-key">Cortical/compact bone</span> — very dense and forms the outside of the bones; lamellae tend to be concentric and have defined central holes called Haversian canals.</p>
+<p><span class="sp-key">Trabecular/spongy bone</span> — spongy, consisting of lines of lamellar bones; lamellae are arranged primarily in a linear fashion. Both cortical and trabecular bone are made of lamellar bone. Lamellar bone is mature. Woven bone is formed first. If it lasts too long, it's considered pathologic. Normally present in miniature individuals and newly formed bone.</p>
+<h2>Bone — Cellular Level</h2>
+<ul>
+  <li><span class="sp-key">Osteoblasts</span> — produce the unmineralised bone matrix (osteoid). Once they are finished, the osteoid is mineralised and they become completely ensconced in bone material, and are termed osteocytes</li>
+  <li><span class="sp-key">Osteocytes</span> — stuck within the lamellar bone. They continue to communicate with each other through delicate connections</li>
+  <li><span class="sp-key">Osteoclasts</span> — work to chew away at bone</li>
+</ul>
+<h2>Organic Matrix and Minerals</h2>
+<ul>
+  <li>The initial bone component is an osteoid that contacts collagen type 1 (structural protein)</li>
+  <li>Calcium and phosphorus minerals (in the form of hydroxyapatite) deposit inside the osteoid and give it strength</li>
+  <li>Other non-cellular proteins (cytokines, osteonectin, osteocalcin)</li>
+</ul>
+<h2>Bone Growth — 3 Types</h2>
+<ul>
+  <li><span class="sp-key">Endochondral</span> — initial model from cartilage (long bones); growth plate (physis); transition from cartilage to bone (resting → proliferation → hypertrophy → mineralisation). In the embryo and early fetus, bones grow as cartilage. By the time of birth, growth occurs primarily through the epiphyseal plate. Bones grow in length by expansion of the epiphysis, so growth plate</li>
+  <li><span class="sp-key">Periosteal</span> — fibrous layer and osteogenous layer</li>
+  <li><span class="sp-key">Intramembranous</span> — from osteoblasts → bone (skull). Osteoblast → osteoblast → fibrous tissue → osteoblasts → bones (skull)</li>
+</ul>
+<h2>Periost: Fibrous Layer and Osteogenous Layer</h2>
+<p>Joints: articular cartilage; synovial fluid; articular capsule (fibrous layer/synovial membrane).</p>
+<h2>Portals of Entry</h2>
+<ul>
+  <li><span class="sp-key">Bones</span>: directly through the periost and cortex; trauma/fracture; from the surrounding tissue; haematogenously</li>
+  <li><span class="sp-key">Joints</span>: haematogenously</li>
+</ul>
+<h2>Fracture Repair</h2>
+<p>Fracture = partial or complete break in the continuity of the bone.</p>
+<ul>
+  <li><span class="sp-key">Traumatic</span> — normal bone broken by excessive force</li>
+  <li><span class="sp-key">Pathologic</span> — abnormal bone broken by minimal trauma or by normal weight bearing</li>
+</ul>`
+  },
+  {
+    icon: '🧬', name: 'Disorders of Bone Growth & Development', pages: 'Pages 3–4',
+    content: `
+<h2>1. Disorders of Bone Resorption</h2>
+<h3>Osteopetrosis</h3>
+<p>Increase in bone density due to a failure in bone resorption by osteoclasts (they don't work). Although bone mineral density is increased, the bones usually are more fragile than normal (pathologic fractures). Affect different animal species.</p>
+<ul>
+  <li><span class="sp-key">Cause</span> — mutations that impair generation or function of osteoclasts; viral infections (BDV, FeLV, avian leukosis virus). Species of bone fill the medullary cavity</li>
+</ul>
+<h2>2. Disorders of Bone Formation</h2>
+<h3>Osteogenesis Imperfecta</h3>
+<p>Inherited disorder → this are serious problems with collagen (mutations in COL1 genes → defects in type 1 collagen). Also affected dentin, fetuses and calves. Described in calves, lambs, kittens, puppies, mice.</p>
+<ul>
+  <li>Markedly reduced trabecular bone, evidence of fractures (also intrauterine), delay in compaction of cortical bone</li>
+  <li>Blue sclerа</li>
+  <li>Fragile (pink) teeth</li>
+</ul>
+<h2>3. Disorders of Bone Modelling</h2>
+<h3>Craniomandibular Osteopathy ("Lion Jaw")</h3>
+<ul>
+  <li>Autosomal recessive WHW?</li>
+  <li>Proliferation of woven bone in mandible and compact bone</li>
+</ul>
+<h2>4. Disorders of Endochondral Ossification</h2>
+<h3>Chondrodysplasias</h3>
+<p>There are serious abnormalities in the growth of cartilage (inherited errors in genes that control chondrogenesis).</p>
+<ul>
+  <li>Suffolk and Hampshire sheep → FGFR3 (epiphyseal dysplasia)</li>
+  <li>Chondrodysplastic canine breeds (dachshunds, basset)</li>
+  <li>Disproportionate dwarfism</li>
+  <li>Growth plate — disorganised chondrocytes</li>
+  <li>Thickened, irregular trabecular, retained cartilage</li>
+  <li>→ spider-lamb syndrome</li>
+</ul>`
+  },
+  {
+    icon: '⚙️', name: 'Osteochondrosis & Cervical Vertebral Myelopathy', pages: 'Page 4',
+    content: `
+<h2>Osteochondrosis (Latens and Manifesta)</h2>
+<p>Focal or multifocal cartilage retention (on the metaphyseal panel or all complete) due to the inability to become mineralised and replaced by bone (endochondral ossification failure).</p>
+<ul>
+  <li>Predisposing factors: genetics, trauma, rapid growth, vascular factors</li>
+  <li>Result: limited area of necrosis of a dysplastic cartilage centred around necrotic blood vessels</li>
+</ul>
+<div class="sp-chain">OSTEOSIS → failure of endochondral ossification → retained necrotic cartilage → cleft formation</div>
+<p>When the centre of ossification reaches the area of necrosis → failure of endochondral ossification occurs → <span class="sp-key">retained necrotic cartilage</span> visible grossly → <span class="sp-key">OSTEOCHONDROSIS MANIFESTA</span>.</p>
+
+<h2>Osteochondrosis Dissecans (OCD)</h2>
+<p>Osteochondrosis at the AEC that forms clefts in the necrotic cartilage with subsequent fracture of the overlying articular cartilage.</p>
+<ul>
+  <li>Result is a cartilaginous or osteochondral flap</li>
+  <li>Pain, joint effusion, non-specific asymptomatic lymphoplasmacytic synovitis</li>
+  <li>Free-floating chondral or osteochondral fragments occasionally interfere with mechanical movement of joint</li>
+</ul>
+<div class="sp-note">OCD is clinically important in large breed dogs, horses, and pigs — particularly affecting the shoulder, stifle, hock, and elbow joints.</div>
+
+<h2>Cervical Vertebral Myelopathy (Wobbler Syndrome)</h2>
+<p>Occurs secondary to static or dynamic compression of the spinal cord by abnormally developed cervical vertebrae (C3-C4). In horses and dogs (giant breeds).</p>
+<ul>
+  <li><span class="sp-key">Cervical vertebral static stenosis</span> — constant compression as the result of anatomic stenosis of the spinal canal</li>
+  <li><span class="sp-key">Cervical vertebral instability</span> — occurs only during movement</li>
+</ul>
+<div class="sp-warn">Wobbler syndrome causes progressive ataxia and weakness — affected animals have a characteristic swaying gait. Large and giant breed dogs (Great Dane, Dobermann) and horses are most commonly affected.</div>`
+  },
+  {
+    icon: '⚗️', name: 'Metabolic Bone Diseases', pages: 'Page 5',
+    content: `
+<h2>Osteoporosis</h2>
+<p>Defines a group of skeletal disorders that are characterized by loss of bone mass (osteopenia) and pain and fractures in bones (osteopenia).</p>
+<ul>
+  <li>Imbalance between bone production and resorption</li>
+  <li>The bone cortices are thin and porous and the bone trabeculae are reduced in number and size. Medullary cavities may contain fat</li>
+  <li><span class="sp-key">Pathogenesis</span> — osteoporosis results from bone resorption exceeding bone formation</li>
+  <li>Causes: lack of physical exercise, malnutrition, hyperadrenocorticism, prolonged use of corticosteroids, thyrotoxicosis, hyperparathyroidism and other hormone imbalances</li>
+</ul>
+
+<h2>Rachitis and Osteomalacia</h2>
+<p>Without Vit D provides normal Ca and P concentrations, there is not enough calcium and phosphorous.</p>
+<ul>
+  <li><span class="sp-key">Rickets</span> — in young animals → failure of endochondral ossification. Osteoid gets formed but there is no mineral to get deposited on it. The result is very, very long growth plates and fibrous tissue growing in there → the growth plate is tremendously enlarged and widened — all that cartilage just never got mineralised and there is expansion and fibrous tissue</li>
+  <li><span class="sp-key">Osteomalacia</span> — osteoid gets laid down just fine but it doesn't mineralise → cortical bone soft and deformed</li>
+</ul>
+
+<h2>Fibrous Osteodystrophy</h2>
+<p>Increased, widespread, osteoclastic resorption of bone and replacement by fibro-osseous tissue (thicker but softer bone).</p>
+<ul>
+  <li><span class="sp-key">Primary</span> — functional tumours of parathyroid gland</li>
+  <li><span class="sp-key">Paraneoplastic</span> — PHT</li>
+  <li><span class="sp-key">Secondary nutritional</span> — low Ca, high P (food) (horses)</li>
+  <li><span class="sp-key">Secondary renal</span> — kidney failure (high P, low vit D) (dogs)</li>
+</ul>
+<div class="sp-note">In horses, fibrous osteodystrophy from nutritional secondary hyperparathyroidism causes "bran disease" or "big head disease" — the facial bones soften and expand, giving the head a swollen appearance.</div>`
+  },
+  {
+    icon: '🦠', name: 'Inflammation of Bone (Osteomyelitis)', pages: 'Page 6',
+    content: `
+<h2>Terminology</h2>
+<ul>
+  <li><span class="sp-key">Osteitis</span> — inflammation of bone</li>
+  <li><span class="sp-key">Periostitis</span> — inflammation of periost</li>
+  <li><span class="sp-key">Osteomyelitis</span> — inflammation of medullary cavity of bone</li>
+</ul>
+
+<h2>Causes</h2>
+<ul>
+  <li><span class="sp-key">Infectious</span> — bacteria, viruses (hog cholera, MCF), fungi (Coccidioides immitis, Blastomyces dermatidis)</li>
+  <li><span class="sp-key">Non-infectious</span> — aseptic necrosis, local trauma of periost, avascular formation</li>
+</ul>
+
+<h2>Bacterial Osteomyelitis</h2>
+<p>Haematogenous infection.</p>
+<ul>
+  <li>Causes: <span class="sp-key">Arcanobacterium pyogenes</span>, Actinomyces bovis, Streptococcus spp., Staphylococcus spp., Salmonella spp., E. coli</li>
+</ul>
+<div class="sp-note">In cattle, Actinomyces bovis causes "lumpy jaw" — a classic bacterial osteomyelitis of the mandible with characteristic sulfur granule-containing pus (actinomycosis).</div>
+<div class="sp-chain">Haematogenous spread → bacteria lodge in metaphyseal capillary loops → inflammation → abscess formation → cortical destruction → sequestrum (dead bone) + involucrum (new bone shell)</div>
+
+<h2>Key Pathological Features</h2>
+<ul>
+  <li><span class="sp-key">Sequestrum</span> — fragment of dead bone isolated by inflammation and avascular necrosis</li>
+  <li><span class="sp-key">Involucrum</span> — sheath of new periosteal bone surrounding the sequestrum</li>
+  <li><span class="sp-key">Cloaca</span> — opening in the involucrum through which pus drains</li>
+  <li>Chronic osteomyelitis can lead to pathologic fractures and systemic amyloidosis</li>
+</ul>`
+  },
+  {
+    icon: '🦴', name: 'Hip Dysplasia & Joint Inflammation', pages: 'Pages 6–7',
+    content: `
+<h2>Hip Dysplasia (HD)</h2>
+<p>Common in large breed dogs. Result from gradual deformation of the hip joints after birth.</p>
+<h3>Pathogenesis</h3>
+<p>Gentle mechanical forces when persistently applied, may lead to progressive deformation of the normal bone structure. Conformation, and perhaps inadequate muscle strength, produce biomechanical forces that induce slippage of the femoral head out of the acetabulum, eventually resulting in degenerative joint disease.</p>
+<div class="sp-chain">Lax joint capsule → femoral head slippage → abnormal load distribution → cartilage erosion → degenerative joint disease (DJD)</div>
+
+<h2>Diseases of Joints — Inflammation (Arthritis)</h2>
+<p><span class="sp-key">Arthritis</span> = inflammation of joint cartilage and synovial membrane.<br>
+<span class="sp-key">Synovitis</span> = inflammation of synovial membrane.</p>
+<ul>
+  <li>In dogs and cats, its often monoarticular, often the result of penetration wounds; more often in adults and older animals</li>
+  <li>In the case of farm animals and horses mostly polyarticular; most commonly occurs haematogenous; common in newborn animals (secondary to omphalophlebitis)</li>
+</ul>
+
+<h2>According to Etiology — Infectious Arthritis</h2>
+<ul>
+  <li><span class="sp-key">Bacterial</span>: Staphylococcus, Streptococcus, Arcobacterium pyogenes, E. coli, Haemophilus parasuis, Borrelia burgdorferi</li>
+  <li><span class="sp-key">Mycoplasmas</span>: Mycoplasma hyopneumoniae (pigs), M. bovis, M. hyosynoviae (M. bovis)</li>
+  <li><span class="sp-key">Viral</span>: caprine arthritis encephalitis virus (CAEV)</li>
+</ul>
+
+<h2>Non-Infectious Arthritis — Immune-Mediated → 2 Types</h2>
+<ul>
+  <li>Both infectious and immune mediated (non-infectious) forms of joint inflammation generally provoke a similar pattern of joint destruction</li>
+  <li><span class="sp-key">Erosive</span> — rheumatoid arthritis (autoantibodies)</li>
+  <li><span class="sp-key">Non-erosive</span> — immune mediated conditions (SLE, neoplasms)</li>
+</ul>`
+  },
+  {
+    icon: '🛡️', name: 'Rheumatoid Arthritis & Immune-Mediated Arthritis', pages: 'Page 7',
+    content: `
+<h2>Rheumatoid Arthritis</h2>
+<p>Chronic, erosive, immune polyarthritis.</p>
+<ul>
+  <li>TNF-alpha and IL-1 are continually releases, and these cause persistent inflammation and eventually erosion of cartilage (very painful)</li>
+  <li>Miniature dog breeds</li>
+  <li>Anorexia, fever, lameness, swelling of joints</li>
+  <li>Synovial hyperplasia, brown discolouration</li>
+</ul>
+<div class="sp-chain">Autoantibodies (IgM rheumatoid factor) → immune complex deposition in synovium → complement activation → neutrophil influx → pannus formation → cartilage and bone erosion</div>
+
+<h2>Pannus Formation</h2>
+<p>A key feature of rheumatoid arthritis — <span class="sp-key">pannus</span> is a layer of granulation tissue that spreads over and destroys articular cartilage. Composed of activated fibroblasts, macrophages, and neovascularisation.</p>
+
+<h2>Non-Erosive Immune-Mediated Arthritis</h2>
+<p>Includes conditions such as:</p>
+<ul>
+  <li><span class="sp-key">Systemic lupus erythematosus (SLE)</span> — polyarthritis as part of multisystem autoimmune disease; dogs</li>
+  <li><span class="sp-key">Idiopathic immune-mediated polyarthritis</span> — most common immune-mediated arthritis in dogs and cats; non-erosive; joints show lymphoplasmacytic synovitis without cartilage destruction</li>
+  <li><span class="sp-key">Neoplasm-associated</span> — paraneoplastic polyarthritis; secondary to remote tumour</li>
+</ul>
+<div class="sp-note">The key distinction between erosive and non-erosive arthritis: erosive forms destroy cartilage and subchondral bone (visible radiographically); non-erosive forms cause synovitis and effusion without bony destruction.</div>`
+  },
+  {
+    icon: '🔩', name: 'Degenerative Joint Disease, Disc Disease & Joint Neoplasia', pages: 'Page 8',
+    content: `
+<h2>Osteoarthritis — Degenerative Joint Disease (DJD)</h2>
+<p>Destructive disease of joint cartilage of synovial joints → accumulation of degenerated elements and broken parts of the cartilage in the joint cavity → further damage to the joint cartilage. Joint deformation, pain, malfunction.</p>
+<h3>Contributing Factors</h3>
+<ul>
+  <li>Age, obesity, previous joint injury or infection</li>
+  <li>Abnormal joint conformation (hip dysplasia, OCD)</li>
+  <li>Repetitive mechanical stress</li>
+</ul>
+<div class="sp-chain">Cartilage damage → release of proteolytic enzymes → matrix degradation → cartilage fibrillation → eburnation (exposed subchondral bone) → osteophyte formation → joint capsule fibrosis</div>
+<p>Key gross findings: <span class="sp-key">osteophytes</span> (bone spurs at joint margins), cartilage thinning and fibrillation, subchondral bone sclerosis, joint effusion.</p>
+
+<h2>Degeneration of Intervertebral Discs</h2>
+<p>Chondrodystrophic breeds — loss of water and proteoglycans, reduced cellularity and increase of collagen content in the nucleus pulposus → degenerative changes in anulus fibrosus → formation of nucleus pulposus.</p>
+<p>Non-chondrodystrophic breeds — degenerative changes in anulus fibrosus → later in nucleus pulposus.</p>
+<ul>
+  <li><span class="sp-key">Hansen Type I</span> — chondroid metaplasia; nucleus pulposus mineralises and herniates acutely through ruptured annulus; chondrodystrophic breeds (Dachshund, Beagle)</li>
+  <li><span class="sp-key">Hansen Type II</span> — fibroid metaplasia; partial annular tear with slow protrusion; non-chondrodystrophic large breeds</li>
+</ul>
+
+<h2>Joint Neoplasms</h2>
+<ul>
+  <li><span class="sp-key">Histiocytic sarcoma</span> — malignant histiocyte proliferation; periarticular location in large breed dogs (Rottweiler, Bernese Mountain Dog); locally invasive and metastatic</li>
+  <li><span class="sp-key">Synovial sarcoma</span> — malignant tumour of synovial membrane; dogs; causes periarticular mass with bone lysis</li>
+  <li><span class="sp-key">Synovial myxoma</span> — benign myxomatous tumour of synovial membrane</li>
+</ul>
+<div class="sp-note">Synovial sarcoma is the most common primary joint tumour in dogs. It tends to affect large joints (stifle, shoulder) and has a high rate of local recurrence after excision.</div>`
   },
 ];
 
