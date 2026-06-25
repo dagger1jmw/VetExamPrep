@@ -603,6 +603,13 @@
       <p style="font-size:0.83rem;color:var(--text-muted);margin:4px 0 0">Bone structure, growth and development disorders, osteochondrosis, metabolic bone diseases, osteomyelitis, hip dysplasia, arthritis, and degenerative joint disease.</p>
       <div class="sp-meta"><span class="sp-pill">8 Subtopics</span></div>
     </div>
+    <div class="sp-topic-chip sp-available" onclick="openSpTopic('urinary')">
+      <div class="sp-badge">Available</div>
+      <div class="sp-icon">🫘</div>
+      <div class="sp-name">Urinary System</div>
+      <p style="font-size:0.83rem;color:var(--text-muted);margin:4px 0 0">Renal failure syndromes, developmental anomalies, glomerular diseases, tubular necrosis, infectious nephritis, hydronephrosis, renal neoplasia, and lower urinary tract disorders.</p>
+      <div class="sp-meta"><span class="sp-pill">10 Subtopics</span></div>
+    </div>
   </div>
 </div>
 
@@ -1497,6 +1504,78 @@
 </div>
 <!-- END BONES & JOINTS PAGES -->
 
+<!-- =====================================================================
+     URINARY SYSTEM — HOME
+===================================================================== -->
+<div id="page-urinary-home" class="page">
+  <div class="hero" style="background:linear-gradient(135deg,#c7e4f9 0%,#d5eef7 50%,#b5ead7 100%);color:var(--text)">
+    <h1 style="color:var(--primary-dark)">🫘 Urinary System</h1>
+    <p style="color:var(--text-muted)">Study renal failure syndromes, glomerular diseases, tubular necrosis, infectious nephritis, and lower urinary tract disorders.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num" id="urinary-stat-qcount">0</div><div class="lbl">Questions</div></div>
+      <div class="hero-stat"><div class="num">10</div><div class="lbl">Subtopics</div></div>
+      <div class="hero-stat"><div class="num" id="urinary-stat-sessions">0</div><div class="lbl">Sessions</div></div>
+    </div>
+  </div>
+  <div class="section-title">🚀 Start Studying</div>
+  <div class="mode-grid">
+    <div class="mode-card" onclick="spShowPage('urinary','topics')">
+      <div class="icon">📖</div><h3>Subtopic Study</h3>
+      <p>Read lecture notes for each subtopic. 10 subtopics drawn directly from the course document.</p>
+    </div>
+    <div class="mode-card" onclick="startAllUrinaryQuiz()">
+      <div class="icon">🎯</div><h3>Exam Prep Mode</h3>
+      <p>Randomised questions drawn from all subtopics with questions added so far — full mixed practice exam.</p>
+    </div>
+  </div>
+</div>
+
+<!-- =====================================================================
+     URINARY SYSTEM — TOPICS (Subtopic notes)
+===================================================================== -->
+<div id="page-urinary-topics" class="page">
+  <div id="urinary-subtopic-list">
+    <div class="flex-row" style="margin-bottom:16px">
+      <div class="section-title" style="margin:0">📖 Subtopics</div>
+    </div>
+    <div class="sp-subtopic-grid" id="urinary-subtopic-grid"></div>
+  </div>
+  <div id="urinary-notes-panel" style="display:none">
+    <div class="flex-row" style="margin-bottom:14px">
+      <button class="btn btn-ghost btn-sm" onclick="closeUrinaryNotes()">← All Subtopics</button>
+      <div class="spacer"></div>
+      <span id="urinary-notes-title" style="font-weight:700;color:var(--primary-dark);font-size:0.95rem"></span>
+    </div>
+    <div id="urinary-study-btn-area" style="margin-bottom:12px"></div>
+    <div id="urinary-notes-body" class="sp-content"></div>
+  </div>
+</div>
+
+<!-- =====================================================================
+     URINARY SYSTEM — QUIZ
+===================================================================== -->
+<div id="page-urinary-quiz" class="page">
+  <div id="urinary-quiz-area"></div>
+</div>
+
+<!-- =====================================================================
+     URINARY SYSTEM — PROGRESS
+===================================================================== -->
+<div id="page-urinary-stats" class="page">
+  <div class="flex-row" style="margin-bottom:18px">
+    <div class="section-title" style="margin:0">📊 My Progress</div>
+    <div class="spacer"></div>
+    <button class="btn btn-ghost btn-sm" onclick="resetUrinaryStats()" style="color:var(--wrong-dark)">🗑 Reset Progress</button>
+  </div>
+  <div class="stats-grid" id="urinary-overall-stats"></div>
+  <div class="section-title">📈 By Subtopic (worst first)</div>
+  <div class="card" id="urinary-subtopic-stats-list"></div>
+  <div class="divider"></div>
+  <div class="section-title">🕐 Session History</div>
+  <div id="urinary-session-history-list"></div>
+</div>
+<!-- END URINARY SYSTEM PAGES -->
+
 <div class="modal-overlay" id="result-modal">
   <div class="modal">
     <div class="result-big">
@@ -2182,6 +2261,14 @@ const NAV_CONFIGS = {
       {id:'bones-home',   label:'🏠 Home',       fn:"spShowPage('bones','home')"},
       {id:'bones-topics', label:'📖 Topics',     fn:"spShowPage('bones','topics')"},
       {id:'bones-stats',  label:'📊 Progress',   fn:"spShowPage('bones','stats')"},
+    ]
+  },
+  urinary: {
+    label: '🫘 Urinary System',
+    btns: [
+      {id:'urinary-home',   label:'🏠 Home',       fn:"spShowPage('urinary','home')"},
+      {id:'urinary-topics', label:'📖 Topics',     fn:"spShowPage('urinary','topics')"},
+      {id:'urinary-stats',  label:'📊 Progress',   fn:"spShowPage('urinary','stats')"},
     ]
   },
 };
@@ -3699,6 +3786,15 @@ function spShowPage(topic, page) {
     if (el) el.textContent = qTotal;
   }
   if (topic === 'bones' && page === 'stats') renderBonesStats();
+  if (topic === 'urinary' && page === 'topics') renderUrinarySubtopics();
+  if (topic === 'urinary' && page === 'home') {
+    const qTotal = Object.values(URINARY_QUESTIONS).reduce((s, arr) => s + arr.length, 0);
+    const el = document.getElementById('urinary-stat-qcount');
+    if (el) el.textContent = qTotal;
+    const sEl = document.getElementById('urinary-stat-sessions');
+    if (sEl) sEl.textContent = urinarySessions.length;
+  }
+  if (topic === 'urinary' && page === 'stats') renderUrinaryStats();
 }
 
 function openSpTopic(topicId) {
@@ -5095,6 +5191,161 @@ function resetBonesStats() {
   localStorage.removeItem('vpBonesStats');
   localStorage.removeItem('vpBonesSessions');
   renderBonesStats();
+}
+
+// ── Urinary System subtopic notes ─────────────────────────────────────
+
+function renderUrinarySubtopics() {
+  const grid = document.getElementById('urinary-subtopic-grid');
+  if (!grid) return;
+  grid.innerHTML = URINARY_SUBTOPICS.map((st, i) =>
+    `<div class="sp-subtopic-chip" onclick="openUrinarySubtopic(${i})">
+      <div class="ss-icon">${st.icon}</div>
+      <div class="ss-name">${st.name}</div>
+      <div class="ss-pages">${st.pages}</div>
+    </div>`
+  ).join('');
+}
+
+function openUrinarySubtopic(idx) {
+  const st = URINARY_SUBTOPICS[idx];
+  if (!st) return;
+  document.getElementById('urinary-subtopic-list').style.display = 'none';
+  document.getElementById('urinary-notes-panel').style.display = '';
+  document.getElementById('urinary-notes-title').textContent = st.icon + ' ' + st.name;
+  document.getElementById('urinary-notes-body').innerHTML = st.content;
+  const qs = URINARY_QUESTIONS[idx];
+  const qCount = qs ? qs.length : 0;
+  document.getElementById('urinary-study-btn-area').innerHTML = qCount > 0
+    ? `<button class="btn btn-primary btn-sm" onclick="beginUrinaryQuiz(randomiseAnswers(shuffle(tagSubtopic(URINARY_QUESTIONS[${idx}], ${idx}))), '${st.icon} ${st.name.replace(/'/g,"\\'")}')">🎯 Study ${qCount} Questions</button>`
+    : '';
+  window.scrollTo(0, 0);
+}
+
+function closeUrinaryNotes() {
+  document.getElementById('urinary-notes-panel').style.display = 'none';
+  document.getElementById('urinary-subtopic-list').style.display = '';
+}
+
+// ── URINARY QUIZ ENGINE ───────────────────────────────────────────────
+
+let urinaryQuiz = null;
+let urinaryStats = JSON.parse(localStorage.getItem('vpUrinaryStats') || '{}');
+let urinarySessions = JSON.parse(localStorage.getItem('vpUrinarySessions') || '[]');
+
+function startAllUrinaryQuiz() {
+  let all = [];
+  Object.entries(URINARY_QUESTIONS).forEach(([k, arr]) => { all = all.concat(tagSubtopic(arr, Number(k))); });
+  if (!all.length) return;
+  beginUrinaryQuiz(randomiseAnswers(shuffle(all)), '🫘 All Subtopics');
+}
+
+function beginUrinaryQuiz(questions, title) {
+  urinaryQuiz = { questions, idx: 0, title, answered: false, correct: 0, total: 0 };
+  spShowPage('urinary', 'quiz');
+  renderUrinaryQuestion();
+}
+
+function renderUrinaryQuestion() {
+  const q = urinaryQuiz.questions[urinaryQuiz.idx];
+  if (!q) { finishUrinaryQuiz(); return; }
+  urinaryQuiz.answered = false;
+  const total = urinaryQuiz.questions.length;
+  const idx = urinaryQuiz.idx;
+  const pct = Math.round(idx / total * 100);
+  let html = `<div class="quiz-header"><button class="btn btn-ghost btn-sm" onclick="spShowPage('urinary','home')">← Home</button>
+    <h2>${urinaryQuiz.title}</h2>
+    <span style="font-size:0.82rem;color:var(--text-muted)">${idx+1} / ${total}</span></div>
+    <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
+    <div class="question-card">
+      <div class="q-meta">${q._subtopicIdx !== undefined ? `<span class="tag tag-topic">${URINARY_SUBTOPICS[q._subtopicIdx]?.name||''}</span>` : ''}<span class="tag tag-${q.diff}">${q.diff}</span></div>
+      <div class="q-text">${escapeHtml(q.q)}</div>`;
+  if (q.type === 'mcq') {
+    html += `<div class="options">` + q._display.map((opt,i) =>
+      `<button class="option-btn" id="urinary-opt-${i}" onclick="answerUrinaryMCQ(${i})">
+        <span class="opt-letter">${String.fromCharCode(65+i)}</span>${escapeHtml(opt)}</button>`).join('') + `</div>`;
+  } else {
+    html += `<div class="tf-btns">
+      <button class="tf-btn" id="urinary-tf-true" onclick="answerUrinaryTF(true)">✓ True</button>
+      <button class="tf-btn" id="urinary-tf-false" onclick="answerUrinaryTF(false)">✗ False</button></div>`;
+  }
+  html += `<div id="urinary-q-feedback" style="display:none" class="feedback"></div>
+    <div id="urinary-quiz-actions" style="margin-top:12px;display:flex;gap:9px;flex-wrap:wrap">
+      <button class="btn btn-ghost btn-sm" onclick="urinarySkipQuestion()">Skip →</button></div>
+    </div>`;
+  document.getElementById('urinary-quiz-area').innerHTML = html;
+}
+
+function answerUrinaryMCQ(chosen) {
+  if (urinaryQuiz.answered) return;
+  urinaryQuiz.answered = true;
+  const q = urinaryQuiz.questions[urinaryQuiz.idx];
+  const correct = chosen === q._correctDisplay;
+  urinaryQuiz.total++;
+  if (correct) urinaryQuiz.correct++;
+  recordSpAnswer('vpUrinaryStats', urinaryStats, q, correct);
+  q._display.forEach((_, i) => {
+    const btn = document.getElementById(`urinary-opt-${i}`);
+    btn.disabled = true;
+    if (i === q._correctDisplay) btn.classList.add('correct');
+    else if (i === chosen) btn.classList.add('wrong');
+  });
+  showUrinaryFeedback(q, correct);
+}
+
+function answerUrinaryTF(given) {
+  if (urinaryQuiz.answered) return;
+  urinaryQuiz.answered = true;
+  const q = urinaryQuiz.questions[urinaryQuiz.idx];
+  const isTrue = q.ans === true;
+  const correct = given === isTrue;
+  urinaryQuiz.total++;
+  if (correct) urinaryQuiz.correct++;
+  recordSpAnswer('vpUrinaryStats', urinaryStats, q, correct);
+  ['urinary-tf-true','urinary-tf-false'].forEach(id => {
+    const btn = document.getElementById(id);
+    btn.disabled = true;
+    const btnVal = id === 'urinary-tf-true';
+    if (btnVal === isTrue && correct) btn.classList.add('correct');
+    else if (btnVal === isTrue && !correct) btn.classList.add('correct');
+    else if (btnVal !== isTrue && !correct) btn.classList.add('wrong');
+  });
+  showUrinaryFeedback(q, correct);
+}
+
+function showUrinaryFeedback(q, correct) {
+  const fb = document.getElementById('urinary-q-feedback');
+  fb.style.display = 'block';
+  fb.className = 'feedback ' + (correct ? 'correct' : 'wrong');
+  fb.innerHTML = `<strong>${correct ? '✓ Correct!' : '✗ Incorrect'}</strong><br>${q.exp}`;
+  document.getElementById('urinary-quiz-actions').innerHTML = `<button class="btn btn-primary" onclick="nextUrinaryQuestion()">Next →</button>`;
+}
+
+function urinarySkipQuestion() { urinaryQuiz.idx++; renderUrinaryQuestion(); }
+function nextUrinaryQuestion() { urinaryQuiz.idx++; renderUrinaryQuestion(); }
+
+function finishUrinaryQuiz() {
+  const pct = urinaryQuiz.total > 0 ? Math.round(urinaryQuiz.correct / urinaryQuiz.total * 100) : 0;
+  document.getElementById('result-score-circle').textContent = pct + '%';
+  document.getElementById('result-title').textContent = pct >= 80 ? '🎉 Excellent!' : pct >= 60 ? '👍 Good Job!' : '📚 Keep Studying!';
+  document.getElementById('result-subtitle').textContent = `${urinaryQuiz.correct} / ${urinaryQuiz.total} correct`;
+  resultModalNav = { home: () => spShowPage('urinary','home'), stats: () => spShowPage('urinary','stats') };
+  document.getElementById('result-modal').classList.add('open');
+  if (urinaryQuiz.total > 0) {
+    urinarySessions.unshift({ date: new Date().toLocaleDateString(), title: urinaryQuiz.title, correct: urinaryQuiz.correct, total: urinaryQuiz.total });
+    localStorage.setItem('vpUrinarySessions', JSON.stringify(urinarySessions));
+  }
+}
+
+function renderUrinaryStats() { renderSpStats('urinary', urinaryStats, urinarySessions, URINARY_SUBTOPICS); }
+
+function resetUrinaryStats() {
+  if (!confirm('Reset progress for Urinary System? This cannot be undone.')) return;
+  urinaryStats = {};
+  urinarySessions = [];
+  localStorage.removeItem('vpUrinaryStats');
+  localStorage.removeItem('vpUrinarySessions');
+  renderUrinaryStats();
 }
 
 // ── Neuropathology subtopic notes ─────────────────────────────────────
@@ -10454,6 +10705,421 @@ const BONES_SUBTOPICS = [
   <li><span class="sp-key">Synovial myxoma</span> — benign myxomatous tumour of synovial membrane</li>
 </ul>
 <div class="sp-note">Synovial sarcoma is the most common primary joint tumour in dogs. It tends to affect large joints (stifle, shoulder) and has a high rate of local recurrence after excision.</div>`
+  },
+];
+
+const URINARY_QUESTIONS = {
+  // questions to be added per subtopic
+};
+
+const URINARY_SUBTOPICS = [
+  {
+    icon: '🫘', name: 'Renal Anatomy, Function & Failure Syndromes', pages: 'Pages 1–2',
+    content: `
+<h2>Introduction — Anatomy & Function</h2>
+<p>The kidney has two main parts: the <span class="sp-key">cortex</span> (outer) and <span class="sp-key">medulla</span> (inner). The functional unit is the <span class="sp-key">nephron</span>, consisting of the glomerulus, Bowman's capsule, proximal convoluted tubule, loop of Henle, distal convoluted tubule, and collecting duct.</p>
+<p><strong>Key functions of the kidney:</strong></p>
+<ul>
+  <li>Urine formation and excretion of metabolic waste products</li>
+  <li>Water and electrolyte balance</li>
+  <li>Renin production (blood pressure regulation)</li>
+  <li>Erythropoietin production (red blood cell stimulation)</li>
+  <li>Vitamin D activation</li>
+</ul>
+<h2>Consequences of Renal Failure — Uraemia</h2>
+<p><span class="sp-key">Uraemia</span> is the clinical syndrome resulting from kidney failure — the accumulation of nitrogenous waste products normally excreted in urine. Clinical signs include anorexia, vomiting, diarrhoea, oral ulcers, uraemic encephalopathy, and uraemic pneumonitis.</p>
+<h2>Classification of Renal Failure</h2>
+<table style="width:100%;border-collapse:collapse;font-size:0.88rem">
+  <tr style="background:var(--surface2)"><th style="padding:8px;text-align:left;border:1px solid var(--border)">Type</th><th style="padding:8px;text-align:left;border:1px solid var(--border)">Cause</th></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Prerenal</span></td><td style="padding:7px;border:1px solid var(--border)">Compromised renal perfusion (dehydration, haemorrhage, cardiac failure) — kidney itself is intact</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Renal (intrinsic)</span></td><td style="padding:7px;border:1px solid var(--border)">Compromised renal function — glomerular, tubular, interstitial, or vascular disease</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Postrenal</span></td><td style="padding:7px;border:1px solid var(--border)">Obstructive factors — urolithiasis, neoplasia, urethral obstruction</td></tr>
+</table>
+<h2>Acute Renal Failure — Clinical Signs</h2>
+<p>Signs reflect loss of tubular and glomerular function:</p>
+<ul>
+  <li><span class="sp-key">Anuria</span> — no urine production</li>
+  <li><span class="sp-key">Oliguria</span> — reduced urine output</li>
+  <li><span class="sp-key">Polyuria</span> — increased urine output (loss of concentrating ability)</li>
+  <li><span class="sp-key">Dysuria</span> — painful or difficult urination</li>
+</ul>
+<h2>Abnormal Urine Components</h2>
+<table style="width:100%;border-collapse:collapse;font-size:0.88rem">
+  <tr style="background:var(--surface2)"><th style="padding:7px;border:1px solid var(--border)">Finding</th><th style="padding:7px;border:1px solid var(--border)">Significance</th></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Proteinuria</span></td><td style="padding:7px;border:1px solid var(--border)">Glomerular damage allowing protein leakage</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Myoglobinuria</span></td><td style="padding:7px;border:1px solid var(--border)">Muscle breakdown (rhabdomyolysis)</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Glucosuria</span></td><td style="padding:7px;border:1px solid var(--border)">Tubular damage or diabetes mellitus</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Crystalluria</span></td><td style="padding:7px;border:1px solid var(--border)">Mineral crystals; risk factor for urolithiasis</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Pyuria</span></td><td style="padding:7px;border:1px solid var(--border)">Pus in urine — indicates infection or inflammation</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Haematuria</span></td><td style="padding:7px;border:1px solid var(--border)">Blood in urine — haemorrhage anywhere in urinary tract</td></tr>
+</table>
+<div class="sp-note">Pigmenturia (haemoglobinuria, myoglobinuria) causes a red-brown discolouration of urine. Myoglobinuria indicates muscle destruction and is an important cause of ischaemic tubular injury.</div>`
+  },
+  {
+    icon: '📉', name: 'Chronic Renal Failure & Nephrotic Syndrome', pages: 'Pages 2–4',
+    content: `
+<h2>Chronic Renal Failure</h2>
+<p>Chronic renal failure (CRF) leads to a progressive loss of nephrons. When &gt;75% of functional renal capacity is lost, uraemia occurs. The kidney undergoes compensatory <span class="sp-key">nephron hypertrophy</span> — surviving nephrons enlarge to compensate for lost units, but this ultimately hastens their destruction.</p>
+<h2>Non-Renal Lesions of Chronic Renal Failure</h2>
+<p>Uraemia affects multiple organ systems:</p>
+<ul>
+  <li><span class="sp-key">Endocarditis / endoarteritis</span> — uraemic toxins damage vascular endothelium</li>
+  <li><span class="sp-key">Parathyroid enlargement</span> — secondary to renal secondary hyperparathyroidism</li>
+  <li><span class="sp-key">Renal osteodystrophy / fibrous osteodystrophy</span> — demineralisation of bone due to PTH excess and vitamin D deficiency; bones replaced by fibrous tissue, particularly the skull ("rubber jaw")</li>
+  <li>Uraemic gastroenteritis — mucosal haemorrhage and ulceration</li>
+  <li>Uraemic pneumonitis — pulmonary oedema from fluid retention</li>
+</ul>
+<h2>Renal Secondary Hyperparathyroidism</h2>
+<div class="sp-chain">Decreased GFR → phosphate retention → hyperphosphataemia → decreased Ca²⁺ → PTH secretion ↑ → bone resorption → fibrous osteodystrophy</div>
+<p>Concurrent inability to activate vitamin D in the damaged kidney worsens hypocalcaemia.</p>
+<h2>End-Stage Kidney</h2>
+<p>The <span class="sp-key">end-stage kidney</span> is the final common pathway of many chronic renal diseases. It is characterised by:</p>
+<ul>
+  <li>Small, shrunken kidneys (fibrosis and nephron loss)</li>
+  <li>Irregular, granular capsular surface</li>
+  <li>Pale cortex (reduced vascularity)</li>
+  <li>Indistinct corticomedullary junction</li>
+</ul>
+<div class="sp-warn">At the end-stage, the underlying aetiology is often impossible to determine histologically — all chronic renal diseases converge on the same picture of fibrosis and atrophy.</div>
+<h2>Nephrotic Syndrome</h2>
+<p>Nephrotic syndrome results from <span class="sp-key">massive glomerular protein loss</span>. It has four defining components:</p>
+<table style="width:100%;border-collapse:collapse;font-size:0.88rem">
+  <tr style="background:var(--surface2)"><th style="padding:7px;border:1px solid var(--border)">Component</th><th style="padding:7px;border:1px solid var(--border)">Mechanism</th></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Proteinuria</span></td><td style="padding:7px;border:1px solid var(--border)">Glomerular filtration barrier damage → protein leaks into urine</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Hypoproteinaemia</span></td><td style="padding:7px;border:1px solid var(--border)">Loss of albumin → reduced oncotic pressure → oedema and ascites</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Hypercholesterolaemia</span></td><td style="padding:7px;border:1px solid var(--border)">Liver increases lipoprotein production to compensate</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Thrombosis</span></td><td style="padding:7px;border:1px solid var(--border)">Loss of antithrombin III → hypercoagulable state</td></tr>
+</table>
+<div class="sp-note">Remember the four features of nephrotic syndrome: <strong>Proteinuria + Hypoproteinaemia + Hypercholesterolaemia + Thrombosis</strong>. Protein-losing nephropathy (PLN) is the term used when proteinuria alone is present without the full syndrome.</div>`
+  },
+  {
+    icon: '🧬', name: 'Developmental Abnormalities & Renal Cysts', pages: 'Pages 4–6',
+    content: `
+<h2>Developmental Abnormalities</h2>
+<table style="width:100%;border-collapse:collapse;font-size:0.88rem">
+  <tr style="background:var(--surface2)"><th style="padding:7px;border:1px solid var(--border)">Condition</th><th style="padding:7px;border:1px solid var(--border)">Description</th></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Renal agenesis</span></td><td style="padding:7px;border:1px solid var(--border)">Failure of kidney formation; unilateral (compensated by contralateral hypertrophy) or bilateral (lethal)</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Renal hypoplasia</span></td><td style="padding:7px;border:1px solid var(--border)">Underdeveloped kidney with reduced number of nephrons but otherwise normal structure</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Renal dysplasia</span></td><td style="padding:7px;border:1px solid var(--border)">Abnormal differentiation of renal parenchyma; contains primitive structures (mesenchyme, metaplastic tissue, embryonic tubules)</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Ectopic kidney</span></td><td style="padding:7px;border:1px solid var(--border)">Kidney located outside the normal retroperitoneal position; prone to hydronephrosis</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Fused (horseshoe) kidney</span></td><td style="padding:7px;border:1px solid var(--border)">The two kidneys fused at the poles; usually functional but may cause urinary obstruction</td></tr>
+</table>
+<h2>Renal Cysts</h2>
+<p><span class="sp-key">Congenital renal cysts</span> can be associated with renal dysplasia or occur as primary entities. They may arise anywhere along the nephron, contain clear watery fluid, and can be single or multiple. Four mechanisms of development:</p>
+<ol>
+  <li>Obstruction of the nephron → elevated luminal pressure and secondary dilation</li>
+  <li>Defective tubular basement membranes allow vascular dilation of tubules</li>
+  <li>Deranged function of renal tubular silia: epithelial hyperplasia and production of new basement membrane → increases tubular secretion</li>
+  <li>Dedifferentiation of tubular epithelium → loss of polarity of cells, abnormal cell arrangement → decreased absorption of fluid → dilation</li>
+</ol>
+<p>Micro: cysts are lined by flattened epithelium and filled with proteinaceous fluid.</p>
+<h2>Polycystic Kidney Disease (PKD)</h2>
+<p><span class="sp-key">Congenital polycystic kidneys</span> involve numerous nephrons and occur in many species:</p>
+<ul>
+  <li><strong>Pigs and lambs:</strong> inherited (sporadic in all species)</li>
+  <li><strong>Cairn Terrier dogs:</strong> inherited along with cyclic biliary disease</li>
+  <li><strong>Persian cats:</strong> PKD+ — polycystic kidney disease due to mutations in <span class="sp-key">PKD1</span> and <span class="sp-key">PKD2</span> genes → altered function of polycystin 1 and 2 → modified cilia function, cell proliferation and migration → tubular epithelial proliferation and fluid secretion</li>
+</ul>
+<div class="sp-note">Persian cats are predisposed to PKD due to mutations in PKD1 and PKD2 genes. It is the most common hereditary disease in cats. Breeding programmes test for the mutation.</div>
+<h2>Progressive Juvenile Nephropathy</h2>
+<p>A familial disease described in several different breeds of dogs including bull terrier, bullmastiff, chow-chow, cocker spaniel, Dobermann pinscher, and standard poodle. Develops within the first 2 years of life.</p>
+<p>Pathogenesis: <span class="sp-key">Type IV collagen defect</span> in the glomerular basement membrane (membranoproliferative glomerulonephritis). Manifestation: tubular disease of unknown cause with tubular atrophy and interstitial fibrosis, and renal dysplasia (renal lesions variable — usually shrunken, pale, firm).</p>`
+  },
+  {
+    icon: '🔬', name: 'Glomerular Diseases', pages: 'Pages 7–9',
+    content: `
+<h2>Classification of Glomerular Disease</h2>
+<ul>
+  <li><span class="sp-key">Glomerulitis</span> — inflammatory lesions restricted to glomeruli; membranous, proliferative, or membranoproliferative</li>
+  <li><span class="sp-key">Glomerulopathy</span> — other diseases without inflammatory component</li>
+  <li><span class="sp-key">Glomerulonephritis (GN)</span> — inflammatory disease of the glomerulus</li>
+  <li><span class="sp-key">Glomerulosclerosis</span> — fibrotic end-stage of glomerular damage</li>
+  <li><span class="sp-key">Amyloidosis</span> — deposition of amyloid protein in glomeruli</li>
+</ul>
+<p><strong>Glomerular anatomy:</strong> The glomerulus is part of the renal corpuscle within Bowman's capsule. The glomerular filtration membrane consists of: endothelial cells, basement membrane, and podocytes.</p>
+<h2>Causes of Glomerular Lesions</h2>
+<ul><li>Immune complex disease</li><li>Acute viral glomerulitis</li><li>Embolic bacterial glomerulitis</li></ul>
+<p><strong>Consequences:</strong> protein-losing nephropathy, nephrotic syndrome, renal failure, procoagulant states.</p>
+<h2>Viral Glomerulitis</h2>
+<p>Occurs in acute systemic viral disease: infectious canine hepatitis, hog cholera, equine arteritis virus. Mild lesions, usually transient. Due to viral replication in endothelial cells.</p>
+<ul>
+  <li><strong>Gross:</strong> swollen kidneys, smooth capsular surface, pinpoint red dots on cut surface</li>
+  <li><strong>Histo:</strong> intranuclear inclusions in endothelial cells, endothelial hypertrophy, necrosis, haemorrhage</li>
+</ul>
+<h2>Chemical Glomerulitis</h2>
+<p>Caused by: Adriamycin, histamine receptor antagonists, cyclosporine A, hyperimmune serum. Direct injury to glomerular epithelial and endothelial cells → altered renal blood flow → induction of immunologic reaction → immune complex deposition, formation of ANA-s and anti-GBM antibodies.</p>
+<h2>Embolic Glomerulonephritis — FREQUENT EXAM TOPIC</h2>
+<p>Result of <span class="sp-key">bacteraemia</span> — bacteria lodge in glomerular capillaries and cause multiple foci of inflammation (microabscesses). Also called acute suppurative glomerulitis.</p>
+<p><strong>Causative bacteria:</strong> Actinobacillus equi, Actinobacillus pleuropneumoniae, Erysipelothrix rhusiopathiae (pigs), Corynebacterium pseudotuberculosis (pregnancy, sheep and goats).</p>
+<ul>
+  <li><strong>Gross:</strong> multifocal, random, raised 1 mm foci (white spots) in kidney cortex</li>
+  <li><strong>Histo:</strong> glomerular capillaries contain numerous bacterial colonies mixed with necrotic debris and neutrophils</li>
+  <li>If animal survives → scarring</li>
+</ul>
+<div class="sp-warn">Embolic nephritis produces numerous small multifocal white areas in the kidney cortex — a classic gross appearance caused by microabscesses from haematogenous bacterial spread.</div>
+<h2>Immune-Mediated Glomerulonephritis</h2>
+<p>Primary cause: immunologic lesions. Damage can be:</p>
+<ul>
+  <li><strong>Direct:</strong> antibodies responding to an antigen within the glomerulus (within the glomerular basement membrane)</li>
+  <li><strong>Indirect:</strong> formation of antigen/antibody complexes trapped in the capillary wall; attracted by complement and neutrophils</li>
+</ul>
+<p><strong>Gross — Acute:</strong> kidney slightly swollen, smooth capsular surface, slightly pale, pinpoint pale grey dots. <strong>Chronic:</strong> cortex becomes shrunken, granularity of capsular surface, pinpoint pale grey dots.</p>
+<p><strong>Morphologic types (by Micro):</strong></p>
+<table style="width:100%;border-collapse:collapse;font-size:0.88rem">
+  <tr style="background:var(--surface2)"><th style="padding:7px;border:1px solid var(--border)">Type</th><th style="padding:7px;border:1px solid var(--border)">Features</th></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Proliferative</span></td><td style="padding:7px;border:1px solid var(--border)">Proliferation of resident glomerular cells (endothelial, epithelial, mesangial) — not circulating leukocytes; increased cellularity</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Membranous</span></td><td style="padding:7px;border:1px solid var(--border)">Thickening of capillary walls without increase in glomerular cellularity; amorphous eosinophilic proteinous material</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Membranoproliferative</span></td><td style="padding:7px;border:1px solid var(--border)">Mesangial cells increased + capillary wall thickened by mesangial cell processes (also called mesangiocapillary)</td></tr>
+</table>
+<p><strong>Distribution:</strong> diffuse, focal, global, segmental (hilar/glomerular).</p>
+<h2>Amyloidosis</h2>
+<p>Amyloid = insoluble fibrillar protein with β-sheet conformation. Types:</p>
+<ul>
+  <li><span class="sp-key">Primary (AL)</span> — produced by neoplastic plasma cells</li>
+  <li><span class="sp-key">Secondary (AA)</span> = reactive — chronic inflammatory disease; <span class="sp-key">hereditary predisposition</span> in Abyssinian cats and Shar Pei dogs (familial)</li>
+</ul>
+<p>Can be deposited in glomeruli or in the interstitium. Glomerular deposition most common in dogs.</p>
+<ul>
+  <li><strong>Gross:</strong> kidneys diffusely tan, waxy, slightly enlarged; pale colour</li>
+  <li><strong>Staining:</strong> Congo red → apple-green birefringence; Lugol's iodine followed by sulphuric acid → dark blue in amyloid in glomeruli</li>
+  <li><strong>Micro:</strong> pale hyaline substance, homogenous and eosinophilic; loss of glomerular normal structure, loss of cellularity</li>
+</ul>
+<h2>Glomerulosclerosis</h2>
+<p>End result of glomerular damage — loss of capillary structure due to <span class="sp-key">collagen deposition</span>. Collagen may come from mesangial cells or fibroblasts. Excessive deposition interferes with function → severe fibrosis → small shrunken glomeruli.</p>
+<div class="sp-note">Consequence of glomerular disease: CAN lead to TUBULAR DISEASE and RENAL FAILURE — because blood supply to the tubules must pass through the glomerulus. Therefore, in addition to proteinuria, animals with glomerular disease may present with azotaemia or renal failure.</div>`
+  },
+  {
+    icon: '⚗️', name: 'Tubular Diseases: Toxic & Ischaemic Injury', pages: 'Pages 10–11',
+    content: `
+<h2>Acute Tubular Necrosis (ATN)</h2>
+<p>One of the most common causes of acute renal failure. Injury results in the death of tubular epithelial cells. It is the result of <span class="sp-key">toxic</span> or <span class="sp-key">ischaemic</span> damage.</p>
+<p>Abrupt impairment of 75% or more of functional renal capacity causes acute renal failure, which can be prerenal, intrarenal, or postrenal.</p>
+<h2>Toxic Tubular Injury</h2>
+<p>Toxins accumulate in the lumen of tubuli and generally cause epithelial necrosis. Microvilli are sensitive and may disappear completely, resulting in less absorption and resultant polyuria. Three segments of the <span class="sp-key">proximal tubule</span> are most often injured:</p>
+<ul>
+  <li><strong>S1 and S2</strong> (convoluted segments) — most susceptible to toxic injury</li>
+  <li><strong>S3</strong> — most susceptible to ischaemic injury</li>
+</ul>
+<p>Proximal tubular epithelium contains microvilli and numerous mitochondria. Toxins damage cell membranes or mitochondria in metabolically active cells. Result: polyuria, oliguria, anuria, and ultimately renal failure if damage is severe.</p>
+<h2>Major Toxic Agents</h2>
+<table style="width:100%;border-collapse:collapse;font-size:0.88rem">
+  <tr style="background:var(--surface2)"><th style="padding:7px;border:1px solid var(--border)">Agent</th><th style="padding:7px;border:1px solid var(--border)">Notes</th></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Heavy metals</span> (Pb, Hg, As, Cd, Bi)</td><td style="padding:7px;border:1px solid var(--border)">Lead is unique — specific <strong>inclusion bodies</strong> present in nuclei of tubular epithelial cells when ingested</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Antibacterial / antifungal</span></td><td style="padding:7px;border:1px solid var(--border)">Excessive/improper use of Cisplatin, aminoglycosides (gentamycin, streptomycin), monensin, NSAIDs</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Mycotoxins</span></td><td style="padding:7px;border:1px solid var(--border)">Ochratoxin A and others cause direct tubular injury</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Oxalates</span> (Ethylene glycol)</td><td style="padding:7px;border:1px solid var(--border)">Antifreeze — one of the most important causes of tubular necrosis in small animals; metabolised in liver → glycolic acid (acidosis) and oxalic acid; Oxalic acid + Ca²⁺ → <span class="sp-key">calcium oxalate crystals</span> (crystalluria) → kidney failure</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Plants</span></td><td style="padding:7px;border:1px solid var(--border)">Herbivores: oak leaves/acorns, pigweed, oxalate-containing plants. Cats: <strong>Easter lily</strong> (common houseplant). Plants causing haemolytic crisis (red maple, onions) — damage is ischaemic rather than direct toxic</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Vitamin D</span></td><td style="padding:7px;border:1px solid var(--border)">Excess causes mineralisation of tubular cells (calcinosis)</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Antineoplastic compounds</span></td><td style="padding:7px;border:1px solid var(--border)">Cisplatin particularly nephrotoxic</td></tr>
+</table>
+<div class="sp-note">Ethylene glycol (antifreeze) poisoning is extremely important in small animals. The calcium oxalate crystals can be seen in the tubular lumen on histology and in urine sediment (crystalluria).</div>
+<h2>Ischaemic Tubular Injury</h2>
+<p>Usually affects <span class="sp-key">S3</span> of the proximal tubule as <span class="sp-key">tubulorrhexis</span> (necrosis with rupture of the basement membrane). Common in many conditions causing haemolysis (haemoglobinuria) or muscle degeneration (myoglobinuria). Ischaemia is responsible for the tubular necrosis — pigments may contribute but are not the primary cause.</p>
+<p><strong>Causes of ischaemic injury:</strong></p>
+<ul>
+  <li>Intravascular volume depletion</li>
+  <li>Decreased cardiac output</li>
+  <li>Increased blood viscosity</li>
+  <li>Altered renal and systemic vascular resistances</li>
+  <li>Interference with renal autoregulation during hypotension</li>
+  <li>Warm or cold ischaemia</li>
+</ul>
+<p><strong>Gross:</strong> white to tan cortex (should be red to brown). <strong>Micro:</strong> pyknotic nuclei (cell necrosis), swollen or granular cytoplasm, hyaline cells, cell death and sloughing → cellular casts.</p>
+<div class="sp-note">If the tubular basement membrane is INTACT after injury → regeneration is possible. If the BM is RUPTURED (tubulorrhexis) → functional healing does not occur → fibrosis. The presence of progenitor cells is also required for regeneration.</div>`
+  },
+  {
+    icon: '🩺', name: 'Papillary Necrosis & Tubulointerstitial Nephritis', pages: 'Page 12',
+    content: `
+<h2>Papillary Necrosis</h2>
+<p><span class="sp-key">Papillary necrosis</span> is a form of tubular necrosis and interstitial necrosis affecting the inner medulla (renal papilla), which responds to ischaemia. Ischaemia may be caused by:</p>
+<ul>
+  <li>Vasoconstriction (changes in prostaglandins)</li>
+  <li>Compression of vasa recta/pyramidal deposits</li>
+</ul>
+<p><strong>NSAID mechanism:</strong> NSAIDs inhibit prostaglandin synthesis → vasoconstriction → loss of perfusion to the distal tissues of the kidney → papilla becomes ischaemic → necrosis (with prolonged ischaemia).</p>
+<p><strong>Secondary papillary necrosis</strong> from:</p>
+<ul>
+  <li>Reduced blood flow in vasa recta / efferent arteriole branches</li>
+  <li>Compression of renal papilla due to increased intrapelvic pressure (calculi, lower urinary tract obstruction)</li>
+  <li>Interstitial fibrosis, amyloidosis, or pyelitis (inflammation of the renal pelvis)</li>
+</ul>
+<h2>What Determines Animal Survival After Tubular Injury?</h2>
+<p>The animal is in renal failure; signs of azotaemia are apparent. Key question: is there sufficient renal function to maintain life so the kidney can regenerate?</p>
+<ul>
+  <li>If too many nephrons are damaged → animal dies or requires dialysis</li>
+  <li><strong>BM intact:</strong> functional healing possible if progenitor cells are present</li>
+  <li><strong>BM ruptured:</strong> functional healing does not occur → fibrosis</li>
+</ul>
+<h2>Tubulointerstitial Nephritis (TIN)</h2>
+<p>A group of inflammatory diseases involving the interstitium and tubules. Can be diffuse or focal, acute or chronic, suppurative, non-suppurative, or granulomatous; primary or secondary.</p>
+<ul>
+  <li><strong>Acute TIN:</strong> interstitial infiltrates of inflammatory cells including neutrophils and plasma cells, accompanied by evidence of tubular damage</li>
+  <li><strong>Chronic TIN:</strong> progresses to interstitial fibrosis and loss of tubules; end-stage makes it difficult to determine original cause</li>
+</ul>
+<h2>Causes by Species</h2>
+<table style="width:100%;border-collapse:collapse;font-size:0.88rem">
+  <tr style="background:var(--surface2)"><th style="padding:7px;border:1px solid var(--border)">Species</th><th style="padding:7px;border:1px solid var(--border)">Causes</th></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)">Horse</td><td style="padding:7px;border:1px solid var(--border)">Equine viral arteritis</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)">Cattle</td><td style="padding:7px;border:1px solid var(--border)"><em>E. coli</em> ("white spotted kidney"), <em>Leptospira interrogans</em>, Malignant catarrhal fever</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)">Sheep</td><td style="padding:7px;border:1px solid var(--border)">Sheeppox</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)">Pigs</td><td style="padding:7px;border:1px solid var(--border)"><em>Leptospira interrogans</em>, Porcine reproductive and respiratory syndrome (PRRS)</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)">Dogs</td><td style="padding:7px;border:1px solid var(--border)"><em>Leptospira interrogans</em>, Infectious canine hepatitis (ICH), <em>Theileria parva</em></td></tr>
+</table>`
+  },
+  {
+    icon: '🦠', name: 'Infectious Nephritis & Pyelonephritis', pages: 'Pages 13–14',
+    content: `
+<h2>Leptospirosis</h2>
+<p>Pathogenesis of renal damage:</p>
+<div class="sp-chain">Leptospiraemia → renal interstitial capillaries → migration through endothelium → persist in interstitium → invade tubules through lateral interstitial junctions → associate with epithelial microvilli → persist in phagosomes of proximal and distal tubular cells → induce degeneration and necrosis of epithelium → interstitial inflammatory reaction</div>
+
+<h2>Canine Adenovirus 1 (Infectious Canine Hepatitis — ICH)</h2>
+<ul>
+  <li>Replication in regional lymph nodes → viraemia phase: endothelium/mesothelium, hepatocytes, viral glomerulitis → onset of systemic immune response</li>
+  <li>Disappearance of virus from glomeruli → reappear in <span class="sp-key">tubular epithelial cells</span> (inclusions)</li>
+  <li>Persistence of virus in tubular epithelial cells → cell necrosis → secondary bacterial endogenous interstitial nephritis</li>
+</ul>
+<h2>Multifocal Lymphoplasmacytic Interstitial Nephritis</h2>
+<p>Embolic nephritis producing <span class="sp-key">white spotted kidneys</span>. White spots on the cortex — cause is not completely known; sometimes accompanied with <em>E. coli</em>, sometimes not. Usually an incidental finding at the slaughterhouse.</p>
+<h2>Granulomatous Nephritis</h2>
+<p>Interstitial disease accompanied by chronic systemic disease characterised by multiple granulomas.</p>
+<table style="width:100%;border-collapse:collapse;font-size:0.88rem">
+  <tr style="background:var(--surface2)"><th style="padding:7px;border:1px solid var(--border)">Agent</th><th style="padding:7px;border:1px solid var(--border)">Details</th></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">FIP (Feline Infectious Peritonitis)</span></td><td style="padding:7px;border:1px solid var(--border)">Multifocal granulomas/pyogranulomas; cell-mediated immune response to FIP virus → granulomatous necrotising vasculitis → renal interstitial granulomas</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Mycobacteria / Fungi</span></td><td style="padding:7px;border:1px solid var(--border)">Aspergillus sp., Histoplasma capsulatum, Cryptococcus sp. — in immunocompromised cats</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Encephalitozoon cuniculi</span></td><td style="padding:7px;border:1px solid var(--border)">Rabbits — cortex is no longer smooth, pitted appearance due to interstitial nephritis</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Toxocara canis</span> (migratory larvae)</td><td style="padding:7px;border:1px solid var(--border)">Dogs — small grey-to-white granulomas; larval migration from mouth through alimentary system, lungs, intestines → reach kidney → die → granulomatous response</td></tr>
+</table>
+<h2>Pyelonephritis</h2>
+<p><span class="sp-key">Pyelonephritis</span> is inflammation of the renal parenchyma and renal pelvis, resulting from an <span class="sp-key">ascending urinary tract infection</span>.</p>
+<p><strong>Causative bacteria:</strong></p>
+<ul>
+  <li><em>E. coli</em>, Proteus, Klebsiella, Staphylococcus, Streptococcus, Pseudomonas (dogs, cats)</li>
+  <li><em>Corynebacterium renale</em> (cows)</li>
+  <li><em>Trueperella pyogenes</em> (cows)</li>
+  <li><em>Actinobaculum suis</em> (pigs)</li>
+</ul>
+<p><strong>Histo:</strong> large number of neutrophils in the interstitium and within tubules; tubules contain neutrophils and sloughed tubular epithelial cells → appear in urine as <span class="sp-key">granular casts</span>.</p>
+<div class="sp-note">Pyelonephritis is caused by ascending UTI. Predisposing factors include female anatomy (shorter urethra), bladder dysfunction, catheterisation, and urinary tract obstruction. <em>E. coli</em> is the most common causative organism.</div>`
+  },
+  {
+    icon: '💧', name: 'Hydronephrosis, Circulatory Disturbances & Infarction', pages: 'Pages 15–16',
+    content: `
+<h2>Hydronephrosis</h2>
+<p><span class="sp-key">Hydronephrosis</span> = dilation of the renal pelvis accompanied by renal atrophy. Caused by partial or complete obstruction of urine outflow → progressive increase in pelvic pressure → compression of renal parenchyma.</p>
+<p><strong>Can be unilateral or bilateral.</strong> Causes include:</p>
+<ul>
+  <li>Congenital malformations of the ureter, vesicoureteral junction, or urethra</li>
+  <li>Accidental ligation of the ureter</li>
+  <li>Uroliths (calculi)</li>
+  <li>Chronic inflammation</li>
+  <li>Neoplasia</li>
+  <li>Neurogenic functional disorders</li>
+</ul>
+<h2>Pyonephrosis</h2>
+<p><span class="sp-key">Pyonephrosis</span> = accumulation of pus with subsequent dilation of the renal pelvis. Results from infection complicating hydronephrosis or obstruction.</p>
+<h2>Circulatory Disturbances in the Kidney</h2>
+<table style="width:100%;border-collapse:collapse;font-size:0.88rem">
+  <tr style="background:var(--surface2)"><th style="padding:7px;border:1px solid var(--border)">Disturbance</th><th style="padding:7px;border:1px solid var(--border)">Details</th></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Hyperaemia</span></td><td style="padding:7px;border:1px solid var(--border)">Active — increase in arterial blood flow; secondary to acute renal inflammation</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Congestion</span></td><td style="padding:7px;border:1px solid var(--border)">Secondary — hypovolaemic shock and cardiac insufficiency; hepatic (passive congestion)</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Haemorrhage</span></td><td style="padding:7px;border:1px solid var(--border)">Large intrarenal: trauma, biopsy, bleeding disorders. Subcapsular/cortical: vasculitis, DIC, septicaemic diseases, thromboembolism (hog cholera, African swine fever, erysipelas, salmonellosis, herpesvirus infection)</td></tr>
+</table>
+<h2>Infarction</h2>
+<p>The kidney is supplied by <span class="sp-key">end-arteries</span> with little anastomous or collateral blood supply. This makes it highly susceptible to vascular insults including thromboembolism, bacterial emboli, and circulating immune complexes — because it receives a large portion of cardiac output and continually filters the blood.</p>
+<p><strong>Causes of renal infarcts:</strong></p>
+<ul>
+  <li>Endarteritis in parasitic diseases</li>
+  <li>Valvular endocarditis (septic emboli)</li>
+  <li>Endotoxaemia</li>
+  <li>Bacterial emboli</li>
+</ul>
+<p><strong>Gross:</strong> pale, wedge-shaped areas in the cortex (base at cortex, apex pointing to medulla). Old infarcts → depressed scars.</p>
+<div class="sp-note">Renal infarcts are wedge-shaped because each end-artery supplies a defined wedge of parenchyma. Without collateral circulation, occlusion causes complete necrosis of that zone.</div>`
+  },
+  {
+    icon: '🧫', name: 'Renal Neoplasia', pages: 'Pages 17–18',
+    content: `
+<h2>Classification of Renal Tumours</h2>
+<ul>
+  <li><strong>Epithelial tumours:</strong> adenoma, carcinoma, oncocytoma</li>
+  <li><strong>Embryonal tumours:</strong> nephroblastoma (Wilms tumour), thoracicoabdominal-spinal cord tumour of young dogs</li>
+  <li><strong>Mesenchymal tumours:</strong> tumours of vascular tissue, tumours of fibrous tissue</li>
+  <li><strong>Metastatic tumours:</strong> lymphoma, haemangiosarcoma, carcinoma</li>
+  <li><strong>Tumour-like lesions:</strong> malformations, granulomas, cysts</li>
+</ul>
+<p>Renal pelvis and ureter tumours: epithelial tumours and mesenchymal tumours.</p>
+<h2>Renal Carcinoma</h2>
+<p>Most common in older dogs; unilateral, occupies and obliterates one pole and much of the remaining kidney. Growing by expansion, compressing adjacent renal parenchyma. Often large (up to 20 cm in diameter), spherical to oval and firm.</p>
+<ul>
+  <li><strong>Gross:</strong> may be pale yellow on section, with areas of haemorrhage and cystic degeneration</li>
+  <li><strong>Histo:</strong> cuboidal to columnar epithelial cells in solid sheets, tubules, or papillary projections</li>
+</ul>
+<p><strong>German Shepherd dog:</strong> multifocal, bilateral <span class="sp-key">renal cystadenocarcinomas</span> seen in conjunction with nodular dermatofibrosis. Hereditary lesions — involve mutation and loss of a tumour suppressor gene → increased incidence of renal neoplasia.</p>
+<h2>Embryonal Nephroma (Nephroblastoma / Wilms Tumour)</h2>
+<p>Arises from the <span class="sp-key">metanephric blastema</span>. Occurs in young animals but may not be diagnosed until the mass reaches a very large size. Most commonly in <span class="sp-key">pigs and chickens</span>.</p>
+<p><strong>Two hypotheses on development:</strong></p>
+<ol>
+  <li>Malignant transformation during normal nephrogenesis</li>
+  <li>Malignant transformation in nests of embryonic tissue that persist in the postnatal kidney</li>
+</ol>
+<p><strong>Tumour includes:</strong> primitive mesenchymal myxomatous tissue, primitive tubules, and primitive structures similar to glomeruli.</p>
+<p><strong>Microscopic features:</strong> typically have less myxomatous mesenchymal tissue (homogenous pink areas) and more primitive tubules and glomeruli.</p>
+<h2>Metastatic Renal Neoplasia</h2>
+<p>Variety of carcinomas and sarcomas metastasise to the kidney. Metastatic tumours are typically seen as <span class="sp-key">multiple nodules</span> involving both kidneys.</p>
+<h2>Lymphoma</h2>
+<p>Renal involvement is common in species in which lymphoma is prevalent — especially <span class="sp-key">cats and cows</span>.</p>
+<div class="sp-note">Nephroblastoma is the classic tumour of young animals (pigs, chickens). Renal carcinoma and cystadenocarcinoma are adult/dog tumours. Lymphoma preferentially involves both kidneys in cats and cattle.</div>`
+  },
+  {
+    icon: '🚽', name: 'Lower Urinary Tract: Urolithiasis, Cystitis & Tumours', pages: 'Pages 19–22',
+    content: `
+<h2>Developmental Anomalies of the Lower Urinary Tract</h2>
+<table style="width:100%;border-collapse:collapse;font-size:0.88rem">
+  <tr style="background:var(--surface2)"><th style="padding:7px;border:1px solid var(--border)">Anomaly</th><th style="padding:7px;border:1px solid var(--border)">Description</th></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Ureteral aplasia</span></td><td style="padding:7px;border:1px solid var(--border)">Lack of formation of ureter</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Ureteral hypoplasia</span></td><td style="padding:7px;border:1px solid var(--border)">Notably small-diameter ureter</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Ectopic ureters</span></td><td style="padding:7px;border:1px solid var(--border)">Ureters normally enter the trigone of the bladder; when they enter elsewhere → ectopic; causes urinary incontinence</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Patent urachus</span></td><td style="padding:7px;border:1px solid var(--border)">Urachus fails to close → direct channel between bladder apex and umbilicus → prone to infection and abscessation; rupture → uroperitoneum</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Bladder diverticula</span></td><td style="padding:7px;border:1px solid var(--border)">Outpocketings of the bladder wall; may be acquired or congenital</td></tr>
+</table>
+<h2>Urolithiasis</h2>
+<p>Presence of stones (calculi, uroliths) in the urinary collecting system. May be found in: renal pelvis (nephroliths), ureter (ureteroliths), urinary bladder (urocystoliths), or urethra (urethrolith).</p>
+<p><strong>Predisposing factors to stone formation:</strong></p>
+<ul>
+  <li>Urine concentrations of calculus precursor material sufficient to precipitate</li>
+  <li>Unusual metabolism of certain substances (e.g., uric acid in Dalmatians)</li>
+  <li>Cystitis (infection alters urine pH)</li>
+  <li>Urine pH</li>
+  <li>Reduced water intake</li>
+  <li>Vitamin A deficiency → squamous metaplasia of urothelium → cells exfoliate → serve as nidus for stone formation</li>
+  <li>Nutritional and dietary factors</li>
+  <li>Hereditary defects resulting in abnormal excretion of a substance</li>
+  <li>Papillary necrosis associated with NSAIDs</li>
+  <li>Liver failure</li>
+</ul>
+<p><strong>Consequences of urolithiasis:</strong> predispose to infection, obstruction of urine outflow, haemorrhage and necrosis from calculi on mucosa, cloudy urine with haemorrhage (blood clots).</p>
+<h2>FLUTD (Feline Lower Urinary Tract Disease)</h2>
+<p>Bladder is distended and haemorrhagic due to urethral obstruction. Common in <span class="sp-key">male cats</span>. Part of Feline Urologic Syndrome (FUS, lower urinary tract disease). Blockage associated with FUS may be due to calculi, mucus plugs, or crystalloid "sand"; may be secondary to cystitis.</p>
+<h2>Species-Specific Predispositions to Urolithiasis</h2>
+<p><strong>Miniature Schnauzers — Struvite calculi:</strong> High incidence of struvite (infection) calculi because of bacterial infections. Certain bacteria (Staphylococcus, Proteus) produce urease → induces supersaturation of urine with struvite by increasing urine pH and ammonium ions. Alkaline urine decreases struvite solubility → calculi form.</p>
+<p><strong>Dalmatians — Urate calculi:</strong> Deficiency of uptake of uric acid by the liver (incomplete conversion to allantoin). Defective transport system in renal tubuli prevents reabsorption of uric acid → hyperconcentation of uric acid in urine → urate calculi.</p>
+<h2>Cystitis — Inflammation of the Urinary Bladder</h2>
+<table style="width:100%;border-collapse:collapse;font-size:0.88rem">
+  <tr style="background:var(--surface2)"><th style="padding:7px;border:1px solid var(--border)">Type</th><th style="padding:7px;border:1px solid var(--border)">Features</th></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Acute cystitis</span></td><td style="padding:7px;border:1px solid var(--border)">Predisposing factors: stagnation of urine, incomplete voiding, trauma, prolonged antibiotic therapy; more common in females (short urethra). Causes: <em>E. coli</em>, Corynebacterium renale, Actinobaculum suis, Klebsiella. Bacteria gain access to the lamina propria → vascular damage and inflammation. Gross: haemorrhagic, fibrinous, ulcerative; Micro: epithelial denudation, bacterial colonies, lamina propria oedematous with diffuse neutrophilic infiltrate</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Chronic cystitis</span></td><td style="padding:7px;border:1px solid var(--border)">Bacteria persist → inflammatory reaction becomes chronic → wall thickens (fibrosis). There is often also lymphoid proliferation seen as <span class="sp-key">polypoid cystitis</span> and <span class="sp-key">follicular cystitis</span>. Note: nodularity of mucosal surface is due to multiple lymphoid nodules</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Mycotic cystitis</span></td><td style="padding:7px;border:1px solid var(--border)">Candida albicans, Aspergillus sp. Often in immunocompromised animals or with prolonged antibiotic therapy. Mucosa is ulcerated with underlying lamina propria proliferation of lymphocytes, plasma cells, macrophages → thickening of bladder wall</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Toxic/Enzootic haematuria</span></td><td style="padding:7px;border:1px solid var(--border)">Bracken fern (Pteridium aquilinum) — prolonged ingestion. Contains several toxic substances (thiaminase, aquiloside — a bleeding factor). Bladder lesion starts as haemorrhagic cystitis → with time: epithelial tumours (papilloma, adenoma, carcinoma), mesenchymal (fibroma, haemangioma, haemangiosarcoma), or mixed tumours</td></tr>
+</table>
+<h2>Tumours of the Lower Urinary Tract</h2>
+<p>Most commonly occur in dogs, cats, and rarely other species. Many chemicals (aniline dyes, aromatic hydrocarbons, tryptophan metabolites) and bracken fern may induce urinary bladder tumours.</p>
+<table style="width:100%;border-collapse:collapse;font-size:0.88rem">
+  <tr style="background:var(--surface2)"><th style="padding:7px;border:1px solid var(--border)">Tumour</th><th style="padding:7px;border:1px solid var(--border)">Features</th></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Urothelial (transitional cell) carcinoma</span></td><td style="padding:7px;border:1px solid var(--border)">Focal-raised nodules or diffuse thickening of bladder wall; most commonly occur in the trigone area; metastasis common. Histo: thick mucosa, anaplastic features, characteristic eosinophilic vacuoles (arrows) of neoplastic cells; bladder wall = smooth muscle + leiomyomas; leiomyosarcomas also develop</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Botrioid rhabdomyosarcoma</span></td><td style="padding:7px;border:1px solid var(--border)">Neoplasm of striated muscle thought to arise from embryonic rests of skeletal muscle incorporated into the bladder wall during development. Primarily cells undergo transformation at early age and become neoplastic. Affects young animals.</td></tr>
+</table>
+<div class="sp-note">Transitional cell (urothelial) carcinoma of the bladder is the most common urinary tract tumour in dogs. It frequently arises in the trigone, making complete surgical excision difficult. Botrioid rhabdomyosarcoma is a tumour of young animals arising from embryonic muscle rests.</div>`
   },
 ];
 
