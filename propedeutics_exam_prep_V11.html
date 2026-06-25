@@ -589,6 +589,13 @@
       <p style="font-size:0.83rem;color:var(--text-muted);margin:4px 0 0">Haematopoiesis regulation, bone marrow reactions to injury, cytopenias, cytoses, congenital disorders, IMHA, infectious diseases, and haematopoietic neoplasia.</p>
       <div class="sp-meta"><span class="sp-pill">10 Subtopics</span></div>
     </div>
+    <div class="sp-topic-chip sp-available" onclick="openSpTopic('cardio')">
+      <div class="sp-badge">Available</div>
+      <div class="sp-icon">❤️</div>
+      <div class="sp-name">Cardiovascular System</div>
+      <p style="font-size:0.83rem;color:var(--text-muted);margin:4px 0 0">Heart failure, congenital anomalies, pericardial and valvular diseases, myocardial pathology, cardiomyopathies, cardiac neoplasia, vascular diseases, and lymphatic disorders.</p>
+      <div class="sp-meta"><span class="sp-pill">10 Subtopics</span></div>
+    </div>
   </div>
 </div>
 
@@ -1339,6 +1346,78 @@
 </div>
 <!-- END BONE MARROW & BLOOD CELLS PAGES -->
 
+<!-- =====================================================================
+     CARDIOVASCULAR SYSTEM — HOME
+===================================================================== -->
+<div id="page-cardio-home" class="page">
+  <div class="hero" style="background:linear-gradient(135deg,#ffd6d6 0%,#ffb3b3 50%,#ffe0cc 100%);color:var(--text)">
+    <h1 style="color:var(--primary-dark)">❤️ Cardiovascular System</h1>
+    <p style="color:var(--text-muted)">Study heart failure, congenital anomalies, pericardial and valvular diseases, myocardial pathology, cardiomyopathies, cardiac neoplasia, vascular diseases, and lymphatic disorders.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num" id="cardio-stat-qcount">0</div><div class="lbl">Questions</div></div>
+      <div class="hero-stat"><div class="num">10</div><div class="lbl">Subtopics</div></div>
+      <div class="hero-stat"><div class="num" id="cardio-stat-sessions">0</div><div class="lbl">Sessions</div></div>
+    </div>
+  </div>
+  <div class="section-title">🚀 Start Studying</div>
+  <div class="mode-grid">
+    <div class="mode-card" onclick="spShowPage('cardio','topics')">
+      <div class="icon">📖</div><h3>Subtopic Study</h3>
+      <p>Read lecture notes for each subtopic. 10 subtopics drawn directly from the course document.</p>
+    </div>
+    <div class="mode-card" onclick="startAllCardioQuiz()">
+      <div class="icon">🎯</div><h3>Exam Prep Mode</h3>
+      <p>Randomised questions drawn from all subtopics with questions added so far — full mixed practice exam.</p>
+    </div>
+  </div>
+</div>
+
+<!-- =====================================================================
+     CARDIOVASCULAR SYSTEM — TOPICS (Subtopic notes)
+===================================================================== -->
+<div id="page-cardio-topics" class="page">
+  <div id="cardio-subtopic-list">
+    <div class="flex-row" style="margin-bottom:16px">
+      <div class="section-title" style="margin:0">📖 Subtopics</div>
+    </div>
+    <div class="sp-subtopic-grid" id="cardio-subtopic-grid"></div>
+  </div>
+  <div id="cardio-notes-panel" style="display:none">
+    <div class="flex-row" style="margin-bottom:14px">
+      <button class="btn btn-ghost btn-sm" onclick="closeCardioNotes()">← All Subtopics</button>
+      <div class="spacer"></div>
+      <span id="cardio-notes-title" style="font-weight:700;color:var(--primary-dark);font-size:0.95rem"></span>
+    </div>
+    <div id="cardio-study-btn-area" style="margin-bottom:12px"></div>
+    <div id="cardio-notes-body" class="sp-content"></div>
+  </div>
+</div>
+
+<!-- =====================================================================
+     CARDIOVASCULAR SYSTEM — QUIZ
+===================================================================== -->
+<div id="page-cardio-quiz" class="page">
+  <div id="cardio-quiz-area"></div>
+</div>
+
+<!-- =====================================================================
+     CARDIOVASCULAR SYSTEM — PROGRESS
+===================================================================== -->
+<div id="page-cardio-stats" class="page">
+  <div class="flex-row" style="margin-bottom:18px">
+    <div class="section-title" style="margin:0">📊 My Progress</div>
+    <div class="spacer"></div>
+    <button class="btn btn-ghost btn-sm" onclick="resetCardioStats()" style="color:var(--wrong-dark)">🗑 Reset Progress</button>
+  </div>
+  <div class="stats-grid" id="cardio-overall-stats"></div>
+  <div class="section-title">📈 By Subtopic (worst first)</div>
+  <div class="card" id="cardio-subtopic-stats-list"></div>
+  <div class="divider"></div>
+  <div class="section-title">🕐 Session History</div>
+  <div id="cardio-session-history-list"></div>
+</div>
+<!-- END CARDIOVASCULAR SYSTEM PAGES -->
+
 <div class="modal-overlay" id="result-modal">
   <div class="modal">
     <div class="result-big">
@@ -2008,6 +2087,14 @@ const NAV_CONFIGS = {
       {id:'bonemarrow-home',   label:'🏠 Home',       fn:"spShowPage('bonemarrow','home')"},
       {id:'bonemarrow-topics', label:'📖 Topics',     fn:"spShowPage('bonemarrow','topics')"},
       {id:'bonemarrow-stats',  label:'📊 Progress',   fn:"spShowPage('bonemarrow','stats')"},
+    ]
+  },
+  cardio: {
+    label: '❤️ Cardiovascular System',
+    btns: [
+      {id:'cardio-home',   label:'🏠 Home',       fn:"spShowPage('cardio','home')"},
+      {id:'cardio-topics', label:'📖 Topics',     fn:"spShowPage('cardio','topics')"},
+      {id:'cardio-stats',  label:'📊 Progress',   fn:"spShowPage('cardio','stats')"},
     ]
   },
 };
@@ -3511,6 +3598,13 @@ function spShowPage(topic, page) {
     if (el) el.textContent = qTotal;
   }
   if (topic === 'bonemarrow' && page === 'stats') renderBonemarrowStats();
+  if (topic === 'cardio' && page === 'topics') renderCardioSubtopics();
+  if (topic === 'cardio' && page === 'home') {
+    const qTotal = Object.values(CARDIO_QUESTIONS).reduce((s, arr) => s + arr.length, 0);
+    const el = document.getElementById('cardio-stat-qcount');
+    if (el) el.textContent = qTotal;
+  }
+  if (topic === 'cardio' && page === 'stats') renderCardioStats();
 }
 
 function openSpTopic(topicId) {
@@ -4603,6 +4697,158 @@ function resetBonemarrowStats() {
   localStorage.removeItem('vpBonemarrowStats');
   localStorage.removeItem('vpBonemarrowSessions');
   renderBonemarrowStats();
+}
+
+// ── CARDIOVASCULAR SYSTEM SUBTOPIC NOTES ─────────────────────────────
+
+function renderCardioSubtopics() {
+  const grid = document.getElementById('cardio-subtopic-grid');
+  if (!grid) return;
+  grid.innerHTML = CARDIO_SUBTOPICS.map((st, i) =>
+    `<div class="sp-subtopic-chip" onclick="openCardioSubtopic(${i})">
+      <div class="ss-icon">${st.icon}</div>
+      <div class="ss-name">${st.name}</div>
+      <div class="ss-pages">${st.pages}</div>
+    </div>`
+  ).join('');
+}
+
+function openCardioSubtopic(idx) {
+  const st = CARDIO_SUBTOPICS[idx];
+  document.getElementById('cardio-subtopic-list').style.display = 'none';
+  document.getElementById('cardio-notes-panel').style.display = '';
+  document.getElementById('cardio-notes-title').textContent = st.icon + ' ' + st.name;
+  const qs = CARDIO_QUESTIONS[idx];
+  const qCount = qs ? qs.length : 0;
+  document.getElementById('cardio-study-btn-area').innerHTML = qCount
+    ? `<button class="btn btn-primary btn-sm" onclick="beginCardioQuiz(randomiseAnswers(shuffle(tagSubtopic(CARDIO_QUESTIONS[${idx}], ${idx}))), '${st.icon} ${st.name.replace(/'/g,"\\'")}')">🎯 Study ${qCount} Questions</button>`
+    : `<span style="color:var(--text-muted);font-size:0.88rem">Questions coming soon for this subtopic.</span>`;
+  document.getElementById('cardio-notes-body').innerHTML = st.content;
+}
+
+function closeCardioNotes() {
+  document.getElementById('cardio-notes-panel').style.display = 'none';
+  document.getElementById('cardio-subtopic-list').style.display = '';
+}
+
+let cardioQuiz = null;
+let cardioStats = JSON.parse(localStorage.getItem('vpCardioStats') || '{}');
+let cardioSessions = JSON.parse(localStorage.getItem('vpCardioSessions') || '[]');
+
+function startAllCardioQuiz() {
+  let all = [];
+  Object.entries(CARDIO_QUESTIONS).forEach(([k, arr]) => { all = all.concat(tagSubtopic(arr, Number(k))); });
+  if (!all.length) return;
+  beginCardioQuiz(randomiseAnswers(shuffle(all)), '❤️ All Subtopics');
+}
+
+function beginCardioQuiz(questions, title) {
+  cardioQuiz = { questions, idx: 0, title, answered: false, correct: 0, total: 0 };
+  spShowPage('cardio', 'quiz');
+  renderCardioQuestion();
+}
+
+function renderCardioQuestion() {
+  const q = cardioQuiz.questions[cardioQuiz.idx];
+  if (!q) { finishCardioQuiz(); return; }
+  cardioQuiz.answered = false;
+  const diffColor = {easy:'var(--correct-dark)',medium:'#b8860b',hard:'var(--wrong-dark)'}[q.diff];
+  const diffBg = {easy:'var(--correct-bg)',medium:'#fff3cd',hard:'var(--wrong-bg)'}[q.diff];
+  let html = `
+    <div class="question-header">
+      <div class="flex-row" style="flex-wrap:wrap;gap:6px">
+        <span class="badge" style="background:var(--primary-light);color:var(--primary-dark)">${cardioQuiz.title}</span>
+        <span class="badge" style="background:${diffBg};color:${diffColor}">${q.diff}</span>
+        <span class="badge" style="background:#e9ecef;color:#495057">${q.type==='tf'?'True/False':'MCQ'}</span>
+      </div>
+      <div class="progress-text">${cardioQuiz.idx+1} / ${cardioQuiz.questions.length}</div>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" style="width:${(cardioQuiz.idx/cardioQuiz.questions.length)*100}%"></div></div>
+    <div class="question-text">${q.q}</div>`;
+  if (q.type === 'tf') {
+    html += '<div class="tf-btns"><button class="tf-btn" onclick="answerCardioTF(true)">&#10003; True</button><button class="tf-btn" onclick="answerCardioTF(false)">&#10007; False</button></div>';
+  } else {
+    html += '<div class="options">';
+    for (let i = 0; i < q.opts.length; i++) {
+      html += `<button class="option-btn" onclick="answerCardioMCQ(${i})"><span class="opt-letter">${String.fromCharCode(65+i)}</span>${q.opts[i]}</button>`;
+    }
+    html += '</div>';
+  }
+  html += `<div id="cardio-q-feedback" style="display:none"></div>
+    <div class="quiz-actions" id="cardio-quiz-actions">
+      <button class="btn btn-ghost btn-sm" onclick="cardioSkipQuestion()">Skip</button>
+    </div>`;
+  document.getElementById('cardio-quiz-area').innerHTML = html;
+}
+
+function answerCardioMCQ(idx) {
+  if (cardioQuiz.answered) return;
+  cardioQuiz.answered = true;
+  const q = cardioQuiz.questions[cardioQuiz.idx];
+  const correct = idx === q.ans;
+  cardioQuiz.total++;
+  if (correct) cardioQuiz.correct++;
+  recordSpAnswer(cardioStats, q.subtopic, correct, 'vpCardioStats');
+  document.querySelectorAll('#cardio-quiz-area .option-btn').forEach((btn, i) => {
+    btn.disabled = true;
+    if (i === q.ans) btn.classList.add('correct');
+    else if (i === idx && !correct) btn.classList.add('wrong');
+  });
+  showCardioFeedback(q, correct);
+}
+
+function answerCardioTF(given) {
+  if (cardioQuiz.answered) return;
+  cardioQuiz.answered = true;
+  const q = cardioQuiz.questions[cardioQuiz.idx];
+  const correct = given === q.ans;
+  cardioQuiz.total++;
+  if (correct) cardioQuiz.correct++;
+  recordSpAnswer(cardioStats, q.subtopic, correct, 'vpCardioStats');
+  document.querySelectorAll('#cardio-quiz-area .tf-btn').forEach(btn => {
+    btn.disabled = true;
+    const isTrue = btn.textContent.trim().startsWith('✓');
+    if (isTrue && q.ans === true) btn.classList.add('correct');
+    else if (!isTrue && q.ans === false) btn.classList.add('correct');
+    else if (isTrue && given === true && !correct) btn.classList.add('wrong');
+    else if (!isTrue && given === false && !correct) btn.classList.add('wrong');
+  });
+  showCardioFeedback(q, correct);
+}
+
+function showCardioFeedback(q, correct) {
+  const fb = document.getElementById('cardio-q-feedback');
+  fb.style.display = 'block';
+  fb.className = 'feedback ' + (correct ? 'correct' : 'wrong');
+  fb.innerHTML = `<strong>${correct ? '✓ Correct!' : '✗ Incorrect'}</strong><br>${q.exp}`;
+  document.getElementById('cardio-quiz-actions').innerHTML = `<button class="btn btn-primary" onclick="nextCardioQuestion()">Next →</button>`;
+}
+
+function cardioSkipQuestion() { cardioQuiz.idx++; renderCardioQuestion(); }
+function nextCardioQuestion() { cardioQuiz.idx++; renderCardioQuestion(); }
+
+function finishCardioQuiz() {
+  const pct = cardioQuiz.total > 0 ? Math.round(cardioQuiz.correct / cardioQuiz.total * 100) : 0;
+  document.getElementById('result-score-circle').textContent = pct + '%';
+  document.getElementById('result-title').textContent = pct >= 80 ? '🎉 Excellent!' : pct >= 60 ? '👍 Good Job!' : '📚 Keep Studying!';
+  document.getElementById('result-subtitle').textContent = `${cardioQuiz.correct} / ${cardioQuiz.total} correct`;
+  resultModalNav = { home: () => spShowPage('cardio','home'), stats: () => spShowPage('cardio','stats') };
+  document.getElementById('result-modal').classList.add('open');
+  if (cardioQuiz.total > 0) {
+    cardioSessions.unshift({ date: new Date().toLocaleDateString(), title: cardioQuiz.title, correct: cardioQuiz.correct, total: cardioQuiz.total });
+    localStorage.setItem('vpCardioSessions', JSON.stringify(cardioSessions));
+  }
+}
+
+function renderCardioStats() { renderSpStats('cardio', cardioStats, cardioSessions, CARDIO_SUBTOPICS); }
+
+function resetCardioStats() {
+  if (!confirm('Reset progress for Cardiovascular System? This cannot be undone.')) return;
+  cardioStats = {};
+  cardioSessions = [];
+  localStorage.removeItem('vpCardioStats');
+  localStorage.removeItem('vpCardioSessions');
+  renderCardioStats();
 }
 
 // ── Neuropathology subtopic notes ─────────────────────────────────────
@@ -9409,6 +9655,294 @@ const BONEMARROW_SUBTOPICS = [
   <li>Haematology: severe non-regenerative anaemia, thrombocytopenia, leukocytosis with monocytosis</li>
   <li>Prognosis: very poor; median survival &lt;1–2 months without treatment</li>
 </ul>`
+  },
+];
+
+const CARDIO_QUESTIONS = {
+  // questions to be added per subtopic
+};
+
+const CARDIO_SUBTOPICS = [
+  {
+    icon: '💔', name: 'Heart Failure', pages: 'Page 1',
+    content: `
+<h2>Definition</h2>
+<p><span class="sp-key">Heart failure</span> — inability of the heart to maintain adequate circulation. Occurs when blood returning to the heart cannot be pumped out at a rate sufficient to meet the metabolic demands of the body.</p>
+<h2>Acute Heart Failure</h2>
+<p><span class="sp-key">Acute heart failure</span> — sudden significant loss of cardiac function. Without blood pumping through the body, brain cells die within minutes and nothing can work.</p>
+<ul>
+  <li>Causes: <span class="sp-key">monomer toxicity</span>, myocardial infarct, lesions that affect conduction pathways → arrhythmias, severe acute myocarditis, cardiac tamponade, severe electrolyte disturbances (e.g. overdose of K)</li>
+</ul>
+<h2>Chronic Heart Failure</h2>
+<p><span class="sp-key">Chronic heart failure</span> — with premonitory signs. This contrasts with acute heart failure, in which there is usually not enough time for clinical signs to develop and be appreciated.</p>
+<ul>
+  <li>Causes: <span class="sp-key">cor pulmonale</span>, ventricular septal defect, fibrosing pericarditis</li>
+</ul>
+<h2>Peripheral Adjustments</h2>
+<p>Include altering BP, BV or percentage of red cells — all in an attempt to get more oxygen where it is needed. Increase in total RBC numbers mediated through action of <span class="sp-key">erythropoietin</span> (from interstitial cells in the kidney in response to hypoxia).</p>
+<h2>Cardiac Adjustments</h2>
+<ul>
+  <li><span class="sp-key">Increased HR</span> — speed blood amount around the body and get everybody oxygenated. But too much speed and the muscle can't keep up with the workload</li>
+  <li><span class="sp-key">Chamber dilation</span> — lets more filling occur during diastole so there is increased stroke volume. This stretching can go too far, and the heart doesn't work anymore</li>
+  <li><span class="sp-key">Myocardial hypertrophy</span> — common adaptation to a chronically increased load on the heart</li>
+</ul>`
+  },
+  {
+    icon: '🧬', name: 'Congenital Heart Anomalies', pages: 'Pages 1–2',
+    content: `
+<h2>Atrial Septal Defect (ASD)</h2>
+<p>Communication between LA and RA; failure of closure of foramen ovale, or defect at other site because of failure development of the interatrial septum.</p>
+<h2>Interventricular Septal Defect (VSD)</h2>
+<p>Failure of complete development of the interventricular septum; allow the shunting of blood between ventricles.</p>
+<h2>Tetralogy of Fallot</h2>
+<p>Complicated cardiac anomaly with 4 lesions:</p>
+<ul>
+  <li>Primary defects: <span class="sp-key">ventricular septal defect</span>, pulmonic stenosis, dextroposition of the aorta</li>
+  <li>Secondary defect: <span class="sp-key">hypertrophy of RV myocardium</span></li>
+  <li>Increased pressure in the right side → shunts unoxygenated blood to the left side → systemic hypoxia and polycythemia</li>
+</ul>
+<h2>Failure of Normal Valvular Development</h2>
+<h3>Pulmonic Stenosis</h3>
+<p>Frequent in dogs (beagle). Subvalvular stenosis with formation of circumferential band of fibrous or muscular tissue beneath the valve. Valvular stenosis is malformation of the valve with a small central orifice in thickened valvular tissue. Pressure overload on RV → concentric hypertrophy.</p>
+<h3>Aortic Subaortic Stenosis</h3>
+<p>Fibrous ring that arises from the endocardium below the aortic valve → may extend to involve craniventral leaflet of the mitral valve (obstruction of left ventricular outflow tract). Found in pigs and dogs.</p>
+<ul>
+  <li>Consequences: LV concentric hypertrophy, myocardial necrosis, fibrosis in the inner LV wall</li>
+</ul>
+<h3>Valvular Hematomas (Hemocysts)</h3>
+<p>Common on AV valves in newborn ruminants. No functional abnormalities; spontaneously resolve.</p>
+<h2>Other Developmental Anomalies</h2>
+<p>Valvular lymphocytes, ectopia cordis, endocardial fibroelastosis, peritoneopericardial diaphragmatic hernia.</p>`
+  },
+  {
+    icon: '🫀', name: 'Diseases of the Pericardium', pages: 'Pages 3–5',
+    content: `
+<h2>Effusions</h2>
+<h3>Hydropericardium</h3>
+<p>Accumulation of clear, light yellow, watery, serous fluid. Causes: diseases that have generalised oedema (congestive HF, renal failure, hypoproteinaemia). Change in colloidal osmotic pressure of different etiology, vascular injury (mulberry heart disease, epicarditis, African horse sickness).</p>
+<h3>Hemopericardium</h3>
+<p>Accumulation of whole blood in the pericardial sac. Causes: trauma, rupture of hemangiosarcoma, rupture of intrapericardial aorta (horse). Unexpected death from cardiac tamponade.</p>
+<h3>Idiopathic Pericardial Hemorrhagic Effusions</h3>
+<p>Coagulated or uncoagulated blood in pericardial sac without specific cause. Common in large dog breed (Great Dane, German Shepherd, Golden Retriever).</p>
+<h2>Inflammation — Pericarditis</h2>
+<h3>Fibrinous Pericarditis</h3>
+<p>Frequently with bacterial septicaemia. Grossly: both surfaces are covered by yellow fibrin deposits. Histo: eosinophilic layer of fibrin with admixed neutrophils.</p>
+<h3>Suppurative Pericarditis</h3>
+<p>Mainly in cattle, complication of <span class="sp-key">traumatic reticuloperitonitis</span>. Pericardial surfaces are thickened by fibrous tissue that enclose accumulation of purulent exudate. Death due to congestive heart failure and sepsis.</p>
+<h3>Constrictive Pericarditis</h3>
+<p>Chronic inflammatory lesion accompanied by extensive fibrous proliferation and formation of adhesions. Severe lesion: constrictive lesion constricts the heart with fibrous tissue and can interfere with cardiac filling and thus cardiac output.</p>
+<h2>Metabolic Alterations</h2>
+<h3>Serous Atrophy of Fat</h3>
+<p>Represents a grave concern about the nutritional status of the animal. Occurs during anorexia, starvation, cachexia. Coronary fat has been changed to a translucent material.</p>
+<h3>Epicardial Calcification</h3>
+<p>Hereditary in certain mouse strains. White plaques.</p>
+<h3>Urate Deposits (Gout)</h3>
+<p>Birds and reptiles.</p>
+<h2>Endocardial Lesions</h2>
+<h3>Endocardial Hemorrhage and Mineralization</h3>
+<p>Coagulated, rough dark brown material often seen in the hearts of very small animals that have been euthanised with intravenous injection of barbiturates (when euthanasia solution is injected into the heart, the blood clots immediately in this granular, clumpy fashion). Numerous endocardial hemorrhages. These are not considered significant unless the extent extends into the myocardium (usually agonal — occurring at the time of death but not related to the cause of death). White roughened material on the endocardial surface of the atrium is all mineralised.</p>
+<div class="sp-note">Metabolic imbalances in uremia, along with endocarditis, can appear on certain surfaces including endocardium.</div>`
+  },
+  {
+    icon: '🩺', name: 'Valvular Diseases: Endocardiosis & Endocarditis', pages: 'Page 5',
+    content: `
+<h2>Endocardiosis (Myxomatous Valve Degeneration)</h2>
+<p><span class="sp-key">Endocardiosis</span> — degenerative process involving the valves.</p>
+<ul>
+  <li><span class="sp-key">Gross:</span> bulbous enlargements on the valve edges. Histo: myxomatous degeneration of the valve leaflets</li>
+  <li>Most common in dogs — change associated with aging. Small, toy and medium-sized breeds, Cavalier King Charles, Cocker and Yorkshire Terrier</li>
+  <li>Without any evidence of valve insufficiency, endocardiosis might be only an incidental finding</li>
+</ul>
+<h2>Endocarditis</h2>
+<p><span class="sp-key">Endocarditis</span> — inflammation of the endocardium; almost always happens on the valves (valvular endocarditis), rather than on the mural surfaces (mural endocarditis).</p>
+<h3>Causes</h3>
+<ul>
+  <li>An anaerobe/bacterium — pyrogens, streptococcus, Erysipelothrix, Haemophilus, staphylococcus, Klebsiella, E. coli</li>
+</ul>
+<h3>Pathogenesis</h3>
+<p>Only takes a little bit of extra turbulence to damage the valve edges. If there are bacteria nearby when the valves get damaged, they just move right in and set up housekeeping. Further thrombosis occurs and before you know it, the bacteria are protected within a big old thrombus; multiply quite comfortably.</p>
+<ul>
+  <li><span class="sp-key">Consequence:</span> valvular insufficiency that can cause HF; stenosis due to scarring; embolism as the thrombotic material gets dislodged</li>
+</ul>
+<h3>Gross</h3>
+<p>Proliferation of tissue around the endocardium — extensive → <span class="sp-key">vegetative endocarditis</span>. Histo: accumulated layers of fibrin and numerous bacterial colonies underlain by a zone of infiltrated valves and granulation tissue.</p>
+<div class="sp-warn">Vegetative endocarditis is a serious, life-threatening condition — emboli can dislodge and cause systemic septic infarcts in the kidneys, brain, and other organs.</div>`
+  },
+  {
+    icon: '🔬', name: 'Myocardial Responses to Injury', pages: 'Pages 6–7',
+    content: `
+<h2>Responses to Injury Overview</h2>
+<p>Disturbances of growth: cardiac dilation and hypertrophy. When a chamber gets too big, or the walls of one chamber get thickened — important to try and find the reason. <span class="sp-key">Compensatory hypertrophy is different from the cardiomyopathies</span> — there is not much that can be done: no mechanical reason, no surgery and no drugs.</p>
+<h2>Eccentric Hypertrophy</h2>
+<p>Chamber size can be big, and cardiac myocytes within the wall are working overtime to meet the challenge of excess blood to pump. Associated with <span class="sp-key">volume overload</span>: occurs with a valvular insufficiency or a septal defect, or a basic problem with myofibre contractility.</p>
+<h2>Concentric Hypertrophy</h2>
+<p>Wall of cardiac chambers are <span class="sp-key">really thick</span>, and the chamber seems smaller. Result from <span class="sp-key">pressure overload</span>.</p>
+<p>Stages of myocardial hypertrophy: Initiation → stable hyperfunction → deterioration of function associated with degeneration of hypertrophied myocytes.</p>
+<h2>Fatty Infiltration</h2>
+<p>Increased number of lipocytes interposed between myocardial fibres. Associated with obesity and age.</p>
+<h2>Fatty Degeneration</h2>
+<p>Accumulation of lipid droplets in the sarcoplasm of myocytes. Occurs with systemic disorders (anaemia, toxaemia, copper deficiency).</p>
+<h2>Hydropic Degeneration</h2>
+<p>Vacuolisation of sarcoplasm initiated by distention of elements of sarcoplasmic reticulum. Chronic anthracycline administration.</p>
+<h2>Lipofuscinosis</h2>
+<p>Brown atrophy. Clusters of yellow-brown granules at the nuclear poles of myocytes. In aged animals, animals with severe cachexia.</p>`
+  },
+  {
+    icon: '⚡', name: 'Myocardial Necrosis, Cardiomyopathies & Myocarditis', pages: 'Pages 7–8',
+    content: `
+<h2>Myocardial Necrosis and Mineralization</h2>
+<p>Can result from a number of causes:</p>
+<ul>
+  <li><span class="sp-key">Nutritional deficiencies</span> — deficit Vit E, selenium, Cu, thiamine, Mg</li>
+  <li><span class="sp-key">Plant and chemical toxins</span> — cobalt, catecholamines, ionophores, Vit D, physical injuries and shock (heart brain syndrome, stress, hemorrhagic shock)</li>
+</ul>
+<p>Micro: recent necrosis — fibres swollen and hypereosinophilic, striations indistinct, mineralisation. 24 to 48h after injury: infiltration of neutrophils and macrophages. Proliferation of fibroblasts, collagen fibres → white, firm, contracted scars.</p>
+<p>Outcome: <span class="sp-key">extensive necrosis</span> (unexpected death), necrosis-related arrhythmias, cardiac decompensation → chronic congestive failure.</p>
+<h2>Primary Cardiomyopathies</h2>
+<p>Generalised disease of myocardium — primary (idiopathic) or secondary (specific heart muscle diseases).</p>
+<h3>Hypertrophic Cardiomyopathy</h3>
+<ul>
+  <li>Cats (1–3 yrs); infrequent in dogs. Familial heritability in Maine Coon, ragdoll, american shorthair</li>
+  <li>Cause: sarcomeric defects in cardiomyocytes of which two mutations in cardiac myosin-binding protein C have been identified → altered sarcomeric function results in myocyte hypertrophy → LV progressively thickens and lumen narrows → diastolic failure</li>
+  <li>Histo: myofiber disarray — instead of lying up in regular and orderly fashion, basketweave pattern</li>
+  <li>10–20% of cats: increased coagulability and develop posterior paresis from concurrent thromboembolism of the caudal abdominal aorta</li>
+</ul>
+<h3>Dilated (Congestive) Cardiomyopathy</h3>
+<ul>
+  <li>Common in dogs (Dobermann, Dalmatian, Saint Bernard), also in cats and cattle</li>
+  <li>Gross: heart rounder because of biventricular dilation</li>
+  <li>Histo: attenuated wavy fibre, fatty infiltration-degenerative type</li>
+</ul>
+<h3>Restrictive Cardiomyopathy</h3>
+<p>Increased stiffness due to increased myocardial/endocardial fibrosis of the myocardium that leads to diastolic heart failure.</p>
+<h2>Myocarditis</h2>
+<p>Result of infections spread haematogenously to the myocardium.</p>
+<ul>
+  <li><span class="sp-key">Viral:</span> parvovirus, encephalomyocarditis, foot and mouth disease</li>
+  <li><span class="sp-key">Bacterial:</span> blackleg (C. chauvoei), Tyzzer's disease (C. Piliforme), necrobacillosis, caseous lymphadenitis (Corynebacterium pseudotuberculosis)</li>
+  <li><span class="sp-key">Protozoan:</span> toxoplasmosis, sarcocystosis, neosporosis</li>
+  <li><span class="sp-key">Parasites:</span> cysticercosis, trichinosis</li>
+</ul>
+<div class="sp-chain">Sequelae of myocarditis: complete resolution → scattered petechial haemorrhages with cardiac failure → progressive myocardial damage with cardiac failure</div>
+<ul>
+  <li><span class="sp-key">Suppurative myocarditis</span> — localisation of pyogenic bacteria in myocardium (mostly from vegetative valvular endocarditis)</li>
+  <li><span class="sp-key">Necrotising myocarditis</span> — toxoplasmosis</li>
+  <li><span class="sp-key">Hemorrhagic myocarditis</span> — hemorrhagic and necrotising; often in blackleg</li>
+  <li><span class="sp-key">Lymphocytic myocarditis</span> — viral infections; parvoviral myocarditis in puppies, encephalomyocarditis virus infection in pigs</li>
+  <li><span class="sp-key">Eosinophilic myocarditis</span> — parasite invasion, idiopathic</li>
+</ul>`
+  },
+  {
+    icon: '🔴', name: 'Cardiac Neoplasia', pages: 'Page 9',
+    content: `
+<h2>Primary Neoplasms</h2>
+<h3>Rhabdomyoma</h3>
+<p>Benign neoplasm of cardiac muscle. Rare; found incidentally in calves and pigs.</p>
+<h3>Rhabdomyosarcoma</h3>
+<p>Malignant neoplasm of cardiac muscle. Rare.</p>
+<h3>Schwannoma</h3>
+<p>Neoplasm of nerve sheath origin arising within the heart.</p>
+<h3>Hemangiosarcoma</h3>
+<p>Often arises from the <span class="sp-key">right atrium</span>, specifically the right auricle. Can metastasise to spleen and liver. Conversely, hemangiosarcoma arising in spleen or liver can metastasise to the right heart. <span class="sp-key">Common in German Shepherds</span>.</p>
+<ul>
+  <li>Clinical signs: acute collapse, haemoperitoneum, pericardial effusion (blood), cardiac tamponade</li>
+  <li>Gross: dark red to black irregular mass in right auricle; friable and hemorrhagic</li>
+</ul>
+<h2>Heart-Based Tumours</h2>
+<h3>Chemodectoma (Aortic Body Tumour)</h3>
+<p>Arises from <span class="sp-key">chemoreceptor cells</span> of the aortic body at the base of the heart (between aorta and pulmonary artery). Common in brachycephalic breeds (Boxer, Boston Terrier, Bulldog).</p>
+<ul>
+  <li>Gross: firm, white-grey nodule at the heart base, often encasing great vessels</li>
+  <li>Behaviour: usually benign/locally invasive; may cause pericardial effusion and tamponade</li>
+</ul>
+<h2>Secondary (Metastatic) Neoplasms</h2>
+<h3>Lymphosarcoma</h3>
+<p>Most common secondary cardiac neoplasm. Can infiltrate myocardium, pericardium, or epicardium — causing arrhythmias, effusion, and cardiac tamponade. Associated with FeLV in cats.</p>
+<div class="sp-note">Hemangiosarcoma of the right atrium is one of the most important cardiac tumours in dogs — it causes haemopericardium and sudden death from cardiac tamponade.</div>`
+  },
+  {
+    icon: '🩸', name: 'Vascular Congenital Anomalies & Arterial Diseases', pages: 'Pages 10–11',
+    content: `
+<h2>Congenital Vascular Anomalies</h2>
+<h3>Patent Ductus Arteriosus (PDA)</h3>
+<p>The ductus arteriosus fails to close after birth (smooth muscle fails to contract). Blood goes from aorta into the lungs → too much blood in the lungs → lung hypertension → pressure overload on the right heart → concentric hypertrophy. If right heart gets strong → blood starts shunting right to left → unoxygenated blood goes to the body.</p>
+<h3>Persistent Right Aortic Arch</h3>
+<p>In the embryo: paired aortic arches. The right one is supposed to degenerate and the left one remains and works. Circulatory system works just fine but the oesophagus gets compromised (vascular ring anomaly → megaoesophagus).</p>
+<h3>Anasarca</h3>
+<p>Not very common, often not compatible with life, so one of the most frequently seen ways in aborted foetuses. Defective development of lymphatic vessels.</p>
+<h2>Diseases of Arteries</h2>
+<h3>Aneurysm</h3>
+<p>Localised dilation of a thinned and weakened portion of a vessel (usually arteries). Causes: idiopathic, <span class="sp-key">copper deficiency in pigs</span>, Spirocerca lupi infection (dogs), Strongylus vulgaris (horses). Consequence: <span class="sp-key">RUPTURE</span>.</p>
+<h3>Aortic Rupture and Rupture of Large Arteries</h3>
+<p>Sequel of trauma or spontaneously. Rupture of the ascending aorta or pulmonary artery in horses. Notable exertion and severe trauma to the thorax.</p>
+<h3>Disturbances of Growth</h3>
+<p>Hypertrophy: arterial hypertrophy is a response to sustained increases in pressure or volume loads. Hypertrophy of tunica muscularis. Muscular pulmonary arteries of cats frequently affected and common association with Toxocara sp., Dirofilaria immitis, or spontaneously.</p>
+<h2>Vascular Degenerative Diseases</h2>
+<h3>Arteriosclerosis</h3>
+<p>Intimal fibrosis of large elastic arteries. Age-related, loss of elasticity. Cause: haemodynamic influences (turbulent blood flow). Gross: slightly raised, firm, white plaques. Micro: accumulation of mucopolysaccharides and later proliferation of smooth muscle cells and fibrosis. Accumulation of deposits (<span class="sp-key">atheromas</span>) of lipid, fibrous tissue, and calcium in vessel walls; luminal narrowing. Infrequent in animals (pig, rabbit, chicken, dogs with hypothyroidism and diabetes). Arteries are thickened, firm and yellow-white; accumulation of lipids through the wall. Cows with high altitude disease.</p>
+<h3>Hyaline Degeneration, Fibrinoid Necrosis, Amyloidosis</h3>
+<p>Histo features: formation of homogeneous eosinophilic zone in the vessel wall. Fibrinoid necrosis: associated with endothelial damage — entry and accumulation of serum protein and fibrin polymerisation.</p>
+<h3>Thrombosis and Embolism</h3>
+<p>Thrombus formation involves vessel wall damage, changes in blood flow, and hypercoagulability (Virchow's triad). Emboli can be thrombotic, bacterial (septic), parasitic, or neoplastic.</p>`
+  },
+  {
+    icon: '🦠', name: 'Arterial Inflammation, Neoplasia & Lymphatic System', pages: 'Page 12',
+    content: `
+<h2>Inflammation — Arteritis, Vasculitis, Angiitis</h2>
+<h3>Causes</h3>
+<ul>
+  <li><span class="sp-key">Viral:</span> equine viral arteritis, African horse sickness, equine infectious anaemia, bovine virus diarrhoea, bluetongue, hog cholera, African swine fever, feline infectious peritonitis, Lyme disease</li>
+  <li><span class="sp-key">Bacterial:</span> leptospirosis, salmonellosis, erysipelas, Haemophilus spp., Lyme disease</li>
+  <li><span class="sp-key">Mycotic:</span> phycomycosis, aspergillosis</li>
+  <li><span class="sp-key">Parasitic:</span> equine strongylosis, French heartworm</li>
+  <li><span class="sp-key">Immune-mediated:</span> canine systemic lupus erythematosus, polyarteritis nodosa, lymphocytic choriomeningitis, drug-induced hypersensitivity</li>
+</ul>
+<h3>Malignant Catarrhal Fever</h3>
+<p>Vascular walls are attacked and the animal dies of a vasculitis affecting many organs. Normally acellular vessel wall is thickened by inflammatory cells.</p>
+<h3>Polyarteritis "Beagle-Pain Syndrome"</h3>
+<p>Idiopathic necrotising polyarteritis involving multiple arteries. Immune-mediated vascular injury. Affects coronary and meningeal arteries. Affected vessels are thick, and tortuous with haemorrhages. Histo: intimal necrosis with leukocyte infiltration.</p>
+<h2>Neoplastic Diseases of Vessels</h2>
+<ul>
+  <li><span class="sp-key">Haemangioma</span> — benign vascular tumour; common in skin of dogs</li>
+  <li><span class="sp-key">Haemangiosarcoma</span> — malignant; spleen, liver, right atrium in dogs</li>
+  <li><span class="sp-key">Lymphangioma</span> — benign lymphatic vessel tumour</li>
+  <li><span class="sp-key">Lymphangiosarcoma</span> — malignant; rare</li>
+</ul>
+<h2>Diseases of the Lymphatic System (usually not asked)</h2>
+<ul>
+  <li><span class="sp-key">Lymphangiectasia</span> — dilation of lymphatic vessels; congenital anomaly, obstruction (tumours and invading masses)</li>
+  <li><span class="sp-key">Lymphangitis</span> — consequence of lymphatic obstruction (Johne's disease, maleu), fungal (histoplasmosis, sporotrichosis) and parasitic diseases</li>
+</ul>
+<div class="sp-note">The lymphatic system diseases section is noted as "usually not asked" in the source material.</div>`
+  },
+  {
+    icon: '🐷', name: 'Other Diseases: Mulberry Heart, Swine Fevers', pages: 'Page 13',
+    content: `
+<h2>Mulberry Heart Disease</h2>
+<p>Dietary macroangiopathy. Deficiency of <span class="sp-key">Vitamin E / Selenium</span>.</p>
+<div class="sp-chain">Vit E/Se deficiency → fibrinoid necrosis and thrombosis of small vessels → microhaemorrhages → discolouration of the epicardial surface → hydropericardium</div>
+<ul>
+  <li>Hepatosis dietetica: massive haemorrhagic hepatic necrosis</li>
+  <li>Affects mainly pigs, particularly fast-growing young pigs</li>
+  <li>Heart grossly resembles a mulberry — dark mottled appearance from extensive epicardial haemorrhages</li>
+</ul>
+<h2>Hog Cholera / Classic Swine Fever (CSV)</h2>
+<p>Caused by <span class="sp-key">Pestivirus (RNA)</span>.</p>
+<div class="sp-chain">Viral replication (tonsils) → viraemia → damage of endothelial, epithelial and cells of the immune system (lymphoreticular cells and macrophages)</div>
+<ul>
+  <li>Cell damage due to lysis that is attributable to the effects of cytokines released from infected macrophages</li>
+  <li><span class="sp-key">Gross:</span> widespread petechial haemorrhages, infarction of spleen, button ulcers on colonic mucosa</li>
+  <li><span class="sp-key">Histo:</span> hydropic degeneration of endothelial cells, fibrinoid necrosis of BV</li>
+</ul>
+<h2>African Swine Fever (ASF)</h2>
+<p>Caused by <span class="sp-key">Asfivirus (DNA)</span>. Pathogenesis and lesions similar to classic swine fever but more severe.</p>
+<ul>
+  <li>Highly contagious, notifiable disease with devastating economic impact</li>
+  <li>No vaccine or treatment available; control relies on stamping-out policies</li>
+  <li>Haemorrhagic syndrome: massive haemorrhages in lymph nodes, lungs, kidneys, and spleen</li>
+  <li>Lymph node haemorrhage so severe nodes resemble a blood clot</li>
+</ul>
+<div class="sp-warn">African Swine Fever is a notifiable (listed) disease — any suspected case must be reported to veterinary authorities immediately. It does not affect humans.</div>`
   },
 ];
 
