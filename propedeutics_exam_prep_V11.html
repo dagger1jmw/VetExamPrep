@@ -575,6 +575,13 @@
       <p style="font-size:0.83rem;color:var(--text-muted);margin:4px 0 0">Defence mechanisms, disorders of sexual development, scrotum, testis, epididymis, spermatic cord, accessory glands, penis and prepuce, and related neoplasia.</p>
       <div class="sp-meta"><span class="sp-pill">14 Subtopics</span></div>
     </div>
+    <div class="sp-topic-chip sp-available" onclick="openSpTopic('femalerepro')">
+      <div class="sp-badge">Available</div>
+      <div class="sp-icon">♀️</div>
+      <div class="sp-name">Female Reproductive System</div>
+      <p style="font-size:0.83rem;color:var(--text-muted);margin:4px 0 0">Portals of entry and defences, congenital disorders, vagina, cervix, uterus, pregnancy pathology, oviduct, ovaries, and mammary gland.</p>
+      <div class="sp-meta"><span class="sp-pill">14 Subtopics</span></div>
+    </div>
   </div>
 </div>
 
@@ -1180,6 +1187,78 @@
   <div id="malerepro-session-history-list"></div>
 </div>
 <!-- END MALE REPRODUCTIVE SYSTEM PAGES -->
+
+<!-- =====================================================================
+     FEMALE REPRODUCTIVE SYSTEM — HOME
+===================================================================== -->
+<div id="page-femalerepro-home" class="page">
+  <div class="hero" style="background:linear-gradient(135deg,#f9c7e4 0%,#f4d4f1 50%,#f5e8d5 100%);color:var(--text)">
+    <h1 style="color:var(--primary-dark)">♀️ Female Reproductive System</h1>
+    <p style="color:var(--text-muted)">Study portals of entry and defences, congenital disorders, vagina, cervix, uterus, pregnancy pathology, oviduct, ovaries, and mammary gland.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num" id="femalerepro-stat-qcount">0</div><div class="lbl">Questions</div></div>
+      <div class="hero-stat"><div class="num">14</div><div class="lbl">Subtopics</div></div>
+      <div class="hero-stat"><div class="num" id="femalerepro-stat-sessions">0</div><div class="lbl">Sessions</div></div>
+    </div>
+  </div>
+  <div class="section-title">🚀 Start Studying</div>
+  <div class="mode-grid">
+    <div class="mode-card" onclick="spShowPage('femalerepro','topics')">
+      <div class="icon">📖</div><h3>Subtopic Study</h3>
+      <p>Read lecture notes for each subtopic. 14 subtopics drawn directly from the course document.</p>
+    </div>
+    <div class="mode-card" onclick="startAllFemalereproQuiz()">
+      <div class="icon">🎯</div><h3>Exam Prep Mode</h3>
+      <p>Randomised questions drawn from all subtopics with questions added so far — full mixed practice exam.</p>
+    </div>
+  </div>
+</div>
+
+<!-- =====================================================================
+     FEMALE REPRODUCTIVE SYSTEM — TOPICS (Subtopic notes)
+===================================================================== -->
+<div id="page-femalerepro-topics" class="page">
+  <div id="femalerepro-subtopic-list">
+    <div class="flex-row" style="margin-bottom:16px">
+      <div class="section-title" style="margin:0">📖 Subtopics</div>
+    </div>
+    <div class="sp-subtopic-grid" id="femalerepro-subtopic-grid"></div>
+  </div>
+  <div id="femalerepro-notes-panel" style="display:none">
+    <div class="flex-row" style="margin-bottom:14px">
+      <button class="btn btn-ghost btn-sm" onclick="closeFemalereproNotes()">← All Subtopics</button>
+      <div class="spacer"></div>
+      <span id="femalerepro-notes-title" style="font-weight:700;color:var(--primary-dark);font-size:0.95rem"></span>
+    </div>
+    <div id="femalerepro-study-btn-area" style="margin-bottom:12px"></div>
+    <div id="femalerepro-notes-body" class="sp-content"></div>
+  </div>
+</div>
+
+<!-- =====================================================================
+     FEMALE REPRODUCTIVE SYSTEM — QUIZ
+===================================================================== -->
+<div id="page-femalerepro-quiz" class="page">
+  <div id="femalerepro-quiz-area"></div>
+</div>
+
+<!-- =====================================================================
+     FEMALE REPRODUCTIVE SYSTEM — PROGRESS
+===================================================================== -->
+<div id="page-femalerepro-stats" class="page">
+  <div class="flex-row" style="margin-bottom:18px">
+    <div class="section-title" style="margin:0">📊 My Progress</div>
+    <div class="spacer"></div>
+    <button class="btn btn-ghost btn-sm" onclick="resetFemalereproStats()" style="color:var(--wrong-dark)">🗑 Reset Progress</button>
+  </div>
+  <div class="stats-grid" id="femalerepro-overall-stats"></div>
+  <div class="section-title">📈 By Subtopic (worst first)</div>
+  <div class="card" id="femalerepro-subtopic-stats-list"></div>
+  <div class="divider"></div>
+  <div class="section-title">🕐 Session History</div>
+  <div id="femalerepro-session-history-list"></div>
+</div>
+<!-- END FEMALE REPRODUCTIVE SYSTEM PAGES -->
 
 <div class="modal-overlay" id="result-modal">
   <div class="modal">
@@ -1834,6 +1913,14 @@ const NAV_CONFIGS = {
       {id:'malerepro-home',     label:'🏠 Home',       fn:"spShowPage('malerepro','home')"},
       {id:'malerepro-topics',   label:'📖 Topics',     fn:"spShowPage('malerepro','topics')"},
       {id:'malerepro-stats',    label:'📊 Progress',   fn:"spShowPage('malerepro','stats')"},
+    ]
+  },
+  femalerepro: {
+    label: '♀️ Female Reproductive System',
+    btns: [
+      {id:'femalerepro-home',   label:'🏠 Home',       fn:"spShowPage('femalerepro','home')"},
+      {id:'femalerepro-topics', label:'📖 Topics',     fn:"spShowPage('femalerepro','topics')"},
+      {id:'femalerepro-stats',  label:'📊 Progress',   fn:"spShowPage('femalerepro','stats')"},
     ]
   },
 };
@@ -3323,6 +3410,13 @@ function spShowPage(topic, page) {
     if (el) el.textContent = qTotal;
   }
   if (topic === 'malerepro' && page === 'stats') renderMalereproStats();
+  if (topic === 'femalerepro' && page === 'topics') renderFemalereproSubtopics();
+  if (topic === 'femalerepro' && page === 'home') {
+    const qTotal = Object.values(FEMALEREPRO_QUESTIONS).reduce((s, arr) => s + arr.length, 0);
+    const el = document.getElementById('femalerepro-stat-qcount');
+    if (el) el.textContent = qTotal;
+  }
+  if (topic === 'femalerepro' && page === 'stats') renderFemalereproStats();
 }
 
 function openSpTopic(topicId) {
@@ -4107,6 +4201,162 @@ function resetMalereproStats() {
   localStorage.removeItem('vpMalereproStats');
   localStorage.removeItem('vpMalereproSessions');
   renderMalereproStats();
+}
+
+// ── FEMALE REPRODUCTIVE SYSTEM SUBTOPIC NOTES ─────────────────────────
+
+function renderFemalereproSubtopics() {
+  const grid = document.getElementById('femalerepro-subtopic-grid');
+  if (!grid) return;
+  grid.innerHTML = FEMALEREPRO_SUBTOPICS.map((st, i) =>
+    `<div class="sp-subtopic-chip" onclick="openFemalereproSubtopic(${i})">
+      <div class="ss-icon">${st.icon}</div>
+      <div class="ss-name">${st.name}</div>
+      <div class="ss-pages">${st.pages}</div>
+    </div>`
+  ).join('');
+}
+
+function openFemalereproSubtopic(idx) {
+  const st = FEMALEREPRO_SUBTOPICS[idx];
+  if (!st) return;
+  document.getElementById('femalerepro-subtopic-list').style.display = 'none';
+  document.getElementById('femalerepro-notes-title').textContent = st.icon + ' ' + st.name;
+  document.getElementById('femalerepro-notes-body').innerHTML = st.content;
+  const qs = FEMALEREPRO_QUESTIONS[idx];
+  const qCount = qs ? qs.length : 0;
+  document.getElementById('femalerepro-study-btn-area').innerHTML = qCount > 0
+    ? `<button class="btn btn-primary btn-sm" onclick="beginFemalereproQuiz(randomiseAnswers(shuffle(tagSubtopic(FEMALEREPRO_QUESTIONS[${idx}], ${idx}))), '${st.icon} ${st.name.replace(/'/g,"\\'")}')">🎯 Study ${qCount} Questions</button>`
+    : '';
+  document.getElementById('femalerepro-notes-panel').style.display = 'block';
+  window.scrollTo(0, 0);
+}
+
+function closeFemalereproNotes() {
+  document.getElementById('femalerepro-notes-panel').style.display = 'none';
+  document.getElementById('femalerepro-subtopic-list').style.display = '';
+}
+
+// ── FEMALE REPRODUCTIVE SYSTEM QUIZ ENGINE ────────────────────────────
+
+let femalereproQuiz = null;
+let femalereproStats = JSON.parse(localStorage.getItem('vpFemalereproStats') || '{}');
+let femalereproSessions = JSON.parse(localStorage.getItem('vpFemalereproSessions') || '[]');
+
+function startAllFemalereproQuiz() {
+  let all = [];
+  Object.entries(FEMALEREPRO_QUESTIONS).forEach(([k, arr]) => { all = all.concat(tagSubtopic(arr, Number(k))); });
+  if (!all.length) return;
+  beginFemalereproQuiz(randomiseAnswers(shuffle(all)), '♀️ All Subtopics');
+}
+
+function beginFemalereproQuiz(questions, title) {
+  femalereproQuiz = { questions, idx: 0, title, answered: false, correct: 0, total: 0 };
+  spShowPage('femalerepro', 'quiz');
+  renderFemalereproQuestion();
+}
+
+function renderFemalereproQuestion() {
+  const q = femalereproQuiz.questions[femalereproQuiz.idx];
+  if (!q) { finishFemalereproQuiz(); return; }
+  femalereproQuiz.answered = false;
+  const diffColor = {easy:'var(--correct-dark)',medium:'#b8860b',hard:'var(--wrong-dark)'}[q.diff];
+  const diffBg = {easy:'var(--correct-bg)',medium:'#fff3cd',hard:'var(--wrong-bg)'}[q.diff];
+  let html = `
+    <div class="question-header">
+      <div class="flex-row" style="flex-wrap:wrap;gap:6px">
+        <span class="badge" style="background:var(--primary-light);color:var(--primary-dark)">${femalereproQuiz.title}</span>
+        <span class="badge" style="background:${diffBg};color:${diffColor}">${q.diff}</span>
+        <span class="badge" style="background:#e9ecef;color:#495057">${q.type==='tf'?'True/False':'MCQ'}</span>
+      </div>
+      <div class="progress-text">${femalereproQuiz.idx+1} / ${femalereproQuiz.questions.length}</div>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" style="width:${(femalereproQuiz.idx/femalereproQuiz.questions.length)*100}%"></div></div>
+    <div class="question-text">${q.q}</div>`;
+  if (q.type === 'tf') {
+    html += '<div class="tf-btns"><button class="tf-btn" onclick="answerFemalereproTF(true)">&#10003; True</button><button class="tf-btn" onclick="answerFemalereproTF(false)">&#10007; False</button></div>';
+  } else {
+    html += '<div class="options">';
+    for (let i = 0; i < q.opts.length; i++) {
+      html += `<button class="option-btn" onclick="answerFemalereproMCQ(${i})"><span class="opt-letter">${String.fromCharCode(65+i)}</span>${q.opts[i]}</button>`;
+    }
+    html += '</div>';
+  }
+  html += `<div id="femalerepro-q-feedback" style="display:none"></div>
+    <div class="quiz-actions" id="femalerepro-quiz-actions">
+      <button class="btn btn-ghost btn-sm" onclick="femalereproSkipQuestion()">Skip</button>
+    </div>`;
+  document.getElementById('femalerepro-quiz-area').innerHTML = html;
+}
+
+function answerFemalereproMCQ(idx) {
+  if (femalereproQuiz.answered) return;
+  femalereproQuiz.answered = true;
+  const q = femalereproQuiz.questions[femalereproQuiz.idx];
+  const correct = idx === q.ans;
+  femalereproQuiz.total++;
+  if (correct) femalereproQuiz.correct++;
+  recordSpAnswer(femalereproStats, q.subtopic, correct, 'vpFemalereproStats');
+  document.querySelectorAll('#femalerepro-quiz-area .option-btn').forEach((btn, i) => {
+    btn.disabled = true;
+    if (i === q.ans) btn.classList.add('correct');
+    else if (i === idx && !correct) btn.classList.add('wrong');
+  });
+  showFemalereproFeedback(q, correct);
+}
+
+function answerFemalereproTF(given) {
+  if (femalereproQuiz.answered) return;
+  femalereproQuiz.answered = true;
+  const q = femalereproQuiz.questions[femalereproQuiz.idx];
+  const correct = given === q.ans;
+  femalereproQuiz.total++;
+  if (correct) femalereproQuiz.correct++;
+  recordSpAnswer(femalereproStats, q.subtopic, correct, 'vpFemalereproStats');
+  document.querySelectorAll('#femalerepro-quiz-area .tf-btn').forEach(btn => {
+    btn.disabled = true;
+    const isTrue = btn.textContent.trim().startsWith('✓');
+    if (isTrue && q.ans === true) btn.classList.add('correct');
+    else if (!isTrue && q.ans === false) btn.classList.add('correct');
+    else if (isTrue && given === true && !correct) btn.classList.add('wrong');
+    else if (!isTrue && given === false && !correct) btn.classList.add('wrong');
+  });
+  showFemalereproFeedback(q, correct);
+}
+
+function showFemalereproFeedback(q, correct) {
+  const fb = document.getElementById('femalerepro-q-feedback');
+  fb.style.display = 'block';
+  fb.className = 'feedback ' + (correct ? 'correct' : 'wrong');
+  fb.innerHTML = `<strong>${correct ? '✓ Correct!' : '✗ Incorrect'}</strong><br>${q.exp}`;
+  document.getElementById('femalerepro-quiz-actions').innerHTML = `<button class="btn btn-primary" onclick="nextFemalereproQuestion()">Next →</button>`;
+}
+
+function femalereproSkipQuestion() { femalereproQuiz.idx++; renderFemalereproQuestion(); }
+function nextFemalereproQuestion() { femalereproQuiz.idx++; renderFemalereproQuestion(); }
+
+function finishFemalereproQuiz() {
+  const pct = femalereproQuiz.total > 0 ? Math.round(femalereproQuiz.correct / femalereproQuiz.total * 100) : 0;
+  document.getElementById('result-score-circle').textContent = pct + '%';
+  document.getElementById('result-title').textContent = pct >= 80 ? '🎉 Excellent!' : pct >= 60 ? '👍 Good Job!' : '📚 Keep Studying!';
+  document.getElementById('result-subtitle').textContent = `${femalereproQuiz.correct} / ${femalereproQuiz.total} correct`;
+  resultModalNav = { home: () => spShowPage('femalerepro','home'), stats: () => spShowPage('femalerepro','stats') };
+  document.getElementById('result-modal').classList.add('open');
+  if (femalereproQuiz.total > 0) {
+    femalereproSessions.unshift({ date: new Date().toLocaleDateString(), title: femalereproQuiz.title, correct: femalereproQuiz.correct, total: femalereproQuiz.total });
+    localStorage.setItem('vpFemalereproSessions', JSON.stringify(femalereproSessions));
+  }
+}
+
+function renderFemalereproStats() { renderSpStats('femalerepro', femalereproStats, femalereproSessions, FEMALEREPRO_SUBTOPICS); }
+
+function resetFemalereproStats() {
+  if (!confirm('Reset progress for Female Reproductive System? This cannot be undone.')) return;
+  femalereproStats = {};
+  femalereproSessions = [];
+  localStorage.removeItem('vpFemalereproStats');
+  localStorage.removeItem('vpFemalereproSessions');
+  renderFemalereproStats();
 }
 
 // ── Neuropathology subtopic notes ─────────────────────────────────────
@@ -7524,7 +7774,24 @@ const SKIN_SUBTOPICS = [
   },
 ];
 
-const MALEREPRO_QUESTIONS = {};
+const MALEREPRO_QUESTIONS = {
+  0: [ // Dysfunction, Defence Mechanisms & Immunity
+    {type:'mcq',diff:'easy',q:'What is regarded as one of the most important and dramatic responses of the male reproductive system to injury?',opts:['Spermatic granuloma formation, one of the most important and dramatic responses of the MRS to injury','Acute suppurative orchitis, one of the most important and dramatic responses of the MRS to injury','Testicular hypoplasia, one of the most important and dramatic responses of the MRS to injury','Preputial cellulitis, one of the most important and dramatic responses of the MRS to injury'],ans:0,exp:'Spermatic granulomas are one of the most important and dramatic responses of the male reproductive system to injury, following disruption of a seminiferous tubule or duct.'},
+    {type:'mcq',diff:'medium',q:'Spermatozoa provoke a severe inflammatory response once a tubule or duct is disrupted because they are regarded by the body as:',opts:['Foreign (antigenic) material, once spermatozoa are released outside their normal duct system','Inert, non-immunogenic debris, once spermatozoa are released outside their normal duct system','Normal autologous fluid, once spermatozoa are released outside their normal duct system','Sterile, non-reactive transudate, once spermatozoa are released outside their normal duct system'],ans:0,exp:'Spermatozoa are foreign to the body once outside their normal confines, provoking severe granulomatous, foreign body-type inflammation.'},
+    {type:'mcq',diff:'medium',q:'Following disruption of a seminiferous tubule, severe fibrosis leads to which self-perpetuating cycle?',opts:['Obstruction of tubules and ducts with increased inflammation, a process described as self-perpetuating','Resolution of inflammation without any further tissue change, a process described as self-perpetuating','Regeneration of normal tubular epithelium, a process described as self-perpetuating','Dissolution of the fibrous capsule, a process described as self-perpetuating'],ans:0,exp:'Severe fibrosis obstructs further tubules and ducts, increasing inflammation in a self-perpetuating cycle.'},
+    {type:'mcq',diff:'easy',q:'Which four pathways are listed as portals of entry/pathways of spread for the male reproductive system?',opts:['Direct penetration, ascending infection, haematogenous spread, and peritoneal spread','Direct penetration, lymphatic embolisation, haematogenous spread, and peritoneal spread','Direct penetration, ascending infection, haematogenous spread, and transplacental spread','Direct penetration, ascending infection, contact spread, and peritoneal spread'],ans:0,exp:'The four portals of entry/pathways of spread listed for the MRS are direct penetration, ascending infection, haematogenous spread, and peritoneal spread.'},
+    {type:'mcq',diff:'medium',q:'In pubertal animals, increased susceptibility to bacterial infection of the scrotum and its contents is mainly attributed to:',opts:['Hormonal changes occurring at puberty, increasing susceptibility to bacterial infection','Increased dietary zinc intake during growth, increasing susceptibility to bacterial infection','Shortening of the epididymal duct at puberty, increasing susceptibility to bacterial infection','Loss of preputial flora after weaning, increasing susceptibility to bacterial infection'],ans:0,exp:'With hormonal changes at puberty, animals become more prone to ascending bacterial infection of the scrotum and contents.'},
+    {type:'mcq',diff:'medium',q:'Which pathogen genus is specifically named as a cause of haematogenous spread to the scrotum and contents?',opts:['Brucella spp., named as a cause of haematogenous spread to the scrotum and contents','Pasteurella spp., named as a cause of haematogenous spread to the scrotum and contents','Moraxella spp., named as a cause of haematogenous spread to the scrotum and contents','Bordetella spp., named as a cause of haematogenous spread to the scrotum and contents'],ans:0,exp:'Brucella spp. are specifically named as a haematogenous pathogen capable of reaching the scrotum and contents.'},
+    {type:'mcq',diff:'medium',q:'Ascending infection from the prepuce, retrograde to the flow of spermatozoa, most directly threatens which structures?',opts:['The accessory genital glands, threatened by retrograde ascending infection from the prepuce','The cerebrospinal fluid, threatened by retrograde ascending infection from the prepuce','The bone marrow, threatened by retrograde ascending infection from the prepuce','The thyroid gland, threatened by retrograde ascending infection from the prepuce'],ans:0,exp:'Ascending infection from the prepuce, retrograde to spermatozoal flow, threatens the accessory genital glands.'},
+    {type:'mcq',diff:'hard',q:'Why does the male reproductive system have little tolerance for local inflammation compared with many other organ systems?',opts:['Because spermatozoa are highly antigenic and the duct system is long and narrow','Because the testis lacks any detectable vascular supply for an inflammatory response','Because the prepuce contains no resident microbial flora under normal conditions','Because androgens completely suppress neutrophil production in the bone marrow'],ans:0,exp:'High antigenicity of spermatozoa combined with a long, narrow duct system means there is little tolerance for inflammation before necrosis and fibrosis occur.'},
+    {type:'mcq',diff:'easy',q:'Which statement best describes the relative importance of innate versus adaptive immunity in protecting the male reproductive system?',opts:['Innate immunity is more important than adaptive immunity in protecting the MRS','Adaptive immunity is more important than innate immunity in protecting the MRS','Innate and adaptive immunity contribute equally and interchangeably to protecting the MRS','Neither innate nor adaptive immunity meaningfully protects the MRS from infection'],ans:0,exp:'Innate immunity is considered more important than adaptive (acquired) immunity in protecting the male reproductive system.'},
+    {type:'mcq',diff:'medium',q:'Which factors contribute to innate immune protection of the male reproductive system according to the course notes?',opts:['Pattern recognition molecules, soluble secretory factors, and continuous flushing of the tract','Circulating antibody titres alone, without any other contributing protective factor','Memory T lymphocyte populations alone, without any other contributing protective factor','Maternal passive immunity alone, without any other contributing protective factor'],ans:0,exp:'Pattern recognition molecules, soluble factors in secretions, and continuous flushing all contribute to preventing infection, along with rapid neutrophil and macrophage recruitment.'},
+    {type:'mcq',diff:'hard',q:'Adaptive immune responses within the testis itself are best described as:',opts:['Actively inhibited by local immunosuppressive factors within the testicular interstitium','The dominant and most effective protective mechanism within the testis','Entirely absent from every region of the male reproductive tract','Strongly upregulated by androgens to protect developing spermatogonia'],ans:0,exp:'Adaptive immune responses in the testis are inhibited by local immunosuppressive factors, consistent with the testis being an immune-privileged site.'},
+    {type:'tf',diff:'medium',q:'Periorchitis can result from rupture of a spermatocele, releasing free spermatozoa into the scrotal (vaginal) cavity.',ans:true,exp:'Free spermatozoa, macrophages, multinucleate giant cells, lymphocytes and plasma cells wall off as a spermatocele; rupture releases spermatozoa into the vaginal cavity, causing periorchitis.'},
+    {type:'tf',diff:'medium',q:'Neutrophils are normally abundant in seminal plasma, providing constant baseline immune surveillance of the ejaculate.',ans:false,exp:'Neutrophils are not normally present in seminal plasma, although they can infiltrate rapidly when needed.'},
+    {type:'tf',diff:'hard',q:'The blood-testis barrier is a purely physical barrier formed only by intercellular junctions between Sertoli cells, with no contribution from the basement membrane or peritubular cells.',ans:false,exp:'The blood-testis barrier is formed by intercellular junctions between Sertoli cells together with the basement membrane and peritubular cells, not by Sertoli junctions alone.'},
+  ],
+};
 
 const MALEREPRO_SUBTOPICS = [
   {
@@ -7848,6 +8115,412 @@ const MALEREPRO_SUBTOPICS = [
   <tr><td>Metastatic tumours</td><td>Mast cell tumour, melanoma, lymphoma</td></tr>
 </table>
 <div class="sp-note">A proliferative, granulomatous penile/preputial lesion in a dog from an endemic area should prompt consideration of <i>Leishmania infantum</i> infection as a differential for transmissible venereal tumour — the gross appearance can be very similar.</div>`
+  },
+];
+
+const FEMALEREPRO_QUESTIONS = {
+  // questions to be added per subtopic
+};
+
+const FEMALEREPRO_SUBTOPICS = [
+  {
+    icon: '🔑', name: 'Portals of Entry & Defences', pages: 'Page 1',
+    content: `
+<h2>Portals of Entry into the Female Reproductive System</h2>
+<ul>
+  <li><span class="sp-key">Through the cervix</span> — during insemination, excessive vaginal contamination, postpartum period, and with retained fetal membranes</li>
+  <li><span class="sp-key">Haematogenous</span> — systemic blood-borne spread</li>
+  <li><span class="sp-key">From ovary via uterine tube</span> — descending spread</li>
+  <li><span class="sp-key">Direct penetration</span> with foreign body</li>
+  <li><span class="sp-key">Trans-neural</span> — with recrudescence of herpesvirus infection</li>
+</ul>
+<h2>Portals of Entry into a Mammary Gland</h2>
+<ul>
+  <li><span class="sp-key">Ascending ductular route</span> — bacteria, fungi, parasites, teat lesions, therapeutic agents</li>
+  <li><span class="sp-key">Systemic infection and localisation</span></li>
+  <li><span class="sp-key">Direct penetration</span> through injury</li>
+</ul>
+<h2>Defences of the FRS</h2>
+<table>
+  <tr><th>Type</th><th>Components</th></tr>
+  <tr><td><span class="sp-key">Innate defences</span></td><td>Vaginal epithelium, cervical barrier, conformation, myometrial tone and contraction, neutrophils, macrophages, complement, cytokines</td></tr>
+  <tr><td><span class="sp-key">Adaptive defences</span></td><td>Humoral immunity including common mucosal immune system; cellular immunity</td></tr>
+</table>
+<h2>Innate Defences of the Mammae</h2>
+<table>
+  <tr><th>Category</th><th>Factors</th></tr>
+  <tr><td><span class="sp-key">Physical</span></td><td>Sphincter, flushing action of the milk</td></tr>
+  <tr><td><span class="sp-key">Soluble</span></td><td>Lactoferrin, lysozyme, complement, cytokines</td></tr>
+  <tr><td><span class="sp-key">Cellular</span></td><td>Macrophages, neutrophils, lymphocytes</td></tr>
+</table>`
+  },
+  {
+    icon: '🧬', name: 'Congenital Disorders & DSD', pages: 'Pages 1–2',
+    content: `
+<h2>Congenital Disorders of the Reproductive Tract</h2>
+<ul>
+  <li>Alterations of genital appearance/phenotype (intersex, sex reversal, ambiguous/altered external genitalia)</li>
+  <li>Failed or altered development of gonads and/or internal tubular genitalia</li>
+  <li>Cystic remnants</li>
+</ul>
+<h2>Disorders of Sexual Development (DSD)</h2>
+<h3>Pseudohermaphroditismus femininus s. ovarialis</h3>
+<p><strong>Description:</strong> False female bisexuality — chromosomes and gonads of female sex with external genitals more suited to male sex. Rare in domestic animals.</p>
+<p><strong>Pathogenesis:</strong> Unclear — deficiency of enzymes, hormones and receptors leads to improperly differentiated gonads.</p>
+<p><strong>Causes:</strong></p>
+<ul>
+  <li>Deficiency of the substance that inhibits Müllerian duct development</li>
+  <li>Androgen receptor disorder (mutation for receptor on X chromosome)</li>
+  <li>Deficiency of <span class="sp-key">5-alpha-reductase type 2</span>: conversion of testosterone to dihydrotestosterone; masculinisation of urogenital sinus and tubercula</li>
+</ul>
+<h3>Chimerism and Mosaic</h3>
+<p><strong>Definition:</strong> 2 or more somatic cell types, each with different chromosome constitution, from different individuals.</p>
+<p><strong>Cause:</strong> Male and female twins with shared placenta — hormones from the male can induce inadequate development of the female twin. Gene products from male fetal cells induce fetal Sertoli cells and seminiferous cord-like structures in the ovaries of the female twin. Blood vessels of the two placentas fuse and exchange blood — each fetus becomes a haematopoietic chimera (anastomosis of placental vessels occurs most often).</p>
+<h3>Freemartin</h3>
+<div class="sp-note"><strong>Most frequent chimera in domestic animals.</strong> Female co-twin of a male bovine — the most clinically important example.</div>
+<table>
+  <tr><th>Gonads</th><th>Müllerian Duct Derivatives</th><th>External Features</th></tr>
+  <tr><td>Ovaries small; reduced number or no germ cells; some = ovotestes</td><td>Vary from almost normal to cord-like structures; lumens do not communicate with the vagina</td><td>Vesicular glands present; female phenotype but vagina, vestibule and vulva are hypoplastic; enlarged clitoris; male twin minimally affected</td></tr>
+</table>`
+  },
+  {
+    icon: '🔴', name: 'Vagina & Vulva', pages: 'Pages 2–4',
+    content: `
+<h2>Vagina &amp; Vulva</h2>
+<h3>Congenital Development</h3>
+<ul>
+  <li><span class="sp-key">Vaginal hypoplasia</span> — twins of opposite sex, hermaphroditism</li>
+  <li><span class="sp-key">Congenital atresia</span> — dog, swine</li>
+  <li><span class="sp-key">Anus vulvo-vaginalis / cloaca</span></li>
+  <li><span class="sp-key">Cysts</span> — cows; inflammation, hyperestrogenism; in vaginal wall with remnants of mesonephric ducts and vestibular glands</li>
+</ul>
+<h3>Changes in Position</h3>
+<p><span class="sp-key">Inversion and vaginal prolapse:</span></p>
+<ul>
+  <li><strong>Pigs (sexually immature):</strong> mould mycotoxins lead to strong oedema, congestion and vaginal prolapse</li>
+  <li><strong>Cows:</strong> often during pregnancy and later</li>
+  <li><strong>Sheep:</strong> vaginal prolapse — phytoestrogens</li>
+  <li>Or vagina/vulva wall disorders (difficult birth, trauma)</li>
+</ul>
+<h3>Inflammation (Vulvovaginitis)</h3>
+<p>Types: catarrhalis, suppurative, pustular, ulcerative, diphtherold-necrotic.</p>
+<table>
+  <tr><th>Disease</th><th>Details</th></tr>
+  <tr><td><span class="sp-key">Infectious Pustular Vulvovaginitis (IPV)</span></td><td>Bovine Herpesvirus 1 (BHV-1); similar changes in goats and mares; focal ulceration of vestibular mucosa, necrotic epithelium and ulceration</td></tr>
+  <tr><td><span class="sp-key">Pustular vulvovaginitis</span></td><td>Cows — Ureaplasma diversum</td></tr>
+  <tr><td><span class="sp-key">Necrobacillary vulvovaginitis</span></td><td>Associated with necrobacillar metritis — Fusobacterium necrophorum; necrosis of vulva and vagina; wall of uterus fragile</td></tr>
+  <tr><td><span class="sp-key">Blackleg &amp; malignant oedema</span></td><td>Ruminants — Clostridium chauvoei / C. septicum; haemorrhagic-necrotic inflammation</td></tr>
+  <tr><td><span class="sp-key">Trypanosoma equiperdum</span></td><td>Equids — oedema, erosion and ulceration</td></tr>
+  <tr><td><span class="sp-key">Tuberculosis</span></td><td>Most commonly nodular form; infection most commonly by coitus; frequent ulcers at node sites</td></tr>
+</table>
+<h3>Tumours</h3>
+<ul>
+  <li><span class="sp-key">Polyps</span> — benign; no specific negative effects; can cause problems during coitus</li>
+  <li><span class="sp-key">Fibroma / Leiomyoma</span> — benign proliferation of fibroblasts or smooth muscle</li>
+  <li><span class="sp-key">Transmissible Venereal Tumour (CTVT)</span> — dog; transmitted coitally from one animal to another</li>
+  <li><span class="sp-key">Papilloma and fibropapilloma</span></li>
+  <li><span class="sp-key">Squamous cell carcinoma</span> — cow, sheep, mare</li>
+  <li><span class="sp-key">Leukosis (lymphadenosis)</span> — cattle</li>
+</ul>`
+  },
+  {
+    icon: '🟡', name: 'Cervix', pages: 'Pages 3–4',
+    content: `
+<h2>Cervix</h2>
+<h3>Anomalies (DSD, Cow)</h3>
+<ul>
+  <li>Hypoplasia, aplasia of one or more of the rugae</li>
+  <li>Tortuosity, dilation or diverticulum of the cervical canal</li>
+  <li>Two entire cervices, or a single bifurcated cervix</li>
+</ul>
+<h3>Inflammation (Cervicitis)</h3>
+<p>Rarely occurs individually (trauma, in vitro fertilisation). Most often concurrent with endometritis or vaginitis.</p>
+<div class="sp-note"><strong>Sheep:</strong> Estrogenic substances from plants (e.g. clover) cause permanent alteration of the cervix leading to decreased spermatozoa migration and reduced fertility.</div>
+<h3>Tumours</h3>
+<p>Rare in domestic animals.</p>`
+  },
+  {
+    icon: '🔵', name: 'Uterus — Congenital & Position Disorders', pages: 'Pages 4–5',
+    content: `
+<h2>Uterus: Congenital Anomalies</h2>
+<ul>
+  <li><span class="sp-key">Aplasia</span> — cattle</li>
+  <li><span class="sp-key">Uterus duplex</span> — absence of Müllerian duct</li>
+  <li><span class="sp-key">Hypoplasia uteri bisexualis</span> — bisexual twins, hormonally conditioned</li>
+</ul>
+<h2>Disrupted Position of the Uterus</h2>
+<h3>Torsion (Cow)</h3>
+<p>Occurs in pregnancy. Associated with: hydrometra (accumulation of fluid from uterine glands), mucometra, pyometra, congestion/passive hyperaemia.</p>
+<h3>Prolapse — Ruminants and Pigs</h3>
+<p>Cow, ewe, sow — after parturition: distension of ligaments, prolonged dystocia, hypocalcaemia, ingestion of estrogenic plants leads to prolapse of the uterus and retention of the placenta.</p>
+<p><strong>Consequences:</strong> oedema, haemorrhages, necrosis, sepsis.</p>
+<h3>Abdominal Hernia</h3>
+<ul>
+  <li><span class="sp-key">True hernia</span>: hernial opening (rupture of wall, inguinal ring), sac (parietal peritoneum) and content (can be anything)</li>
+  <li><span class="sp-key">False hernia</span>: no hernial sac; free content in cutaneous tissue</li>
+</ul>
+<h3>Rupture</h3>
+<p>Sequel of torsion, inflammation, dystocia, and during treatment of uterine diseases by infusion of drugs and fluids. Often fatal — haemorrhage or bacterial infection.</p>`
+  },
+  {
+    icon: '📈', name: 'Uterus — Endometrial Irregularities', pages: 'Pages 5–6',
+    content: `
+<h2>Irregularities in Endometrial Growth, Accumulation of Secretion or Exudate</h2>
+<table>
+  <tr><th>Condition</th><th>Details</th></tr>
+  <tr><td><span class="sp-key">Atrophy</span></td><td>Aging, hypopituitarism, castration, starvation, inadequate nutrition</td></tr>
+  <tr><td><span class="sp-key">Hyperplasia</span></td><td>Localized and generalized; caused by hyperestrogenism, mycotoxins; cystic and noncystic forms; canine pseudoplacental endometrial hyperplasia (relatively frequent cystic endometrial hyperplasia)</td></tr>
+  <tr><td><span class="sp-key">Cystic endometrial hyperplasia (CEH)</span></td><td>Effect of progesterone after estrus (bitch); often the process progresses toward pyometra</td></tr>
+  <tr><td><span class="sp-key">Adenomyosis</span></td><td>Presence of endometrial nests in myometrium — rare; bitch; associated with cystic endometrial hyperplasia</td></tr>
+  <tr><td><span class="sp-key">Endometriosis</span></td><td>Endometrium found on serosal surfaces around the ovary, thoracic cavity; not reported in domestic species (primates only)</td></tr>
+  <tr><td><span class="sp-key">Subinvolution of placental sites</span></td><td>Dogs — sites of placental endometrial attachment persist for longer than normal 12–15 weeks; bleeding in weeks/months instead of 1–6 weeks</td></tr>
+  <tr><td><span class="sp-key">Mucometra</span></td><td>Accumulation of mucus; congenital or acquired obstruction or increased mucus production due to hyperestrogenism</td></tr>
+  <tr><td><span class="sp-key">Hydrometra (cows)</span></td><td>Content is less viscous than in mucometra. Extensive mucometra and hydrometra lead to endometrial atrophy due to pressure</td></tr>
+  <tr><td><span class="sp-key">Serous inclusion cysts</span></td><td>Old pluriparous bitches; rare in ruminants; thin wall, clear watery content; folds of peritoneal serosa with epithelial parts that secrete fluid</td></tr>
+</table>
+<h3>Portals of Entry of Uterine Infections</h3>
+<ul>
+  <li><span class="sp-key">Ascending infections</span> — estrus, fertilisation, birth, during insemination</li>
+  <li><span class="sp-key">Haematogenic infections</span> — bacteria, viruses, protozoa, ureaplasma, mycoplasma</li>
+  <li><span class="sp-key">Descending infection</span></li>
+</ul>
+<h3>Circulatory Disturbances of the Uterus</h3>
+<ul>
+  <li>Hyperaemia, oedema, bleeding (common in ovarian cysts) — occur normally during estrus and endometrial hyperplasia</li>
+  <li>Petechiae — infectious, toxic factors</li>
+  <li><span class="sp-key">Haemometra</span> — trauma, tumours, inflammation</li>
+  <li>Thrombosis — septic metritis</li>
+</ul>`
+  },
+  {
+    icon: '🦠', name: 'Metritis', pages: 'Page 7',
+    content: `
+<h2>Metritis — Inflammation of the Uterus</h2>
+<p>Very common. Uterine resistance depends on the stage of the estrus cycle — most sensitive during the <span class="sp-key">luteal phase</span> (progesterone induces secretion of immunosuppressants causing lymphocyte inhibition). Major cause of infertility and sometimes death.</p>
+<p><strong>Causes:</strong> bacterial infection (E. coli, Klebsiella...), mechanical, thermal and chemical factors.</p>
+<div class="sp-chain">Mucosa → Endometritis | Muscle layer → Myometritis | Serosa → Perimetritis | Uterine ligaments → Parametritis</div>
+<h2>Acute Metritis</h2>
+<table>
+  <tr><th>Type</th><th>Details</th></tr>
+  <tr><td><span class="sp-key">Catarrhalic endometritis</span></td><td>Hyperaemia, mucous exudate, neutrophils, plasma cells; Trichomonas and C. fetus involved</td></tr>
+  <tr><td><span class="sp-key">Septic metritis</span></td><td>Puerperal infections; all layers involved; necrotic exudate, fibrinous-necrotic changes; occurs in infection with Clostridium chauvoei and septicum</td></tr>
+  <tr><td><span class="sp-key">Necrobacillary metritis</span></td><td>Cow puerperium — infection with Fusobacterium necrophorum; suppurative necrotising, partly ulcerative metritis</td></tr>
+  <tr><td><span class="sp-key">Contagious equine metritis</span></td><td>Venereal disease caused by Taylorella equigenitalis; mucopurulent discharge; duration 2–3 weeks; infected animal is a reservoir for several months</td></tr>
+</table>
+<h2>Chronic Metritis</h2>
+<p>Suppurative, non-suppurative, or granulomatous.</p>
+<table>
+  <tr><th>Type</th><th>Details</th></tr>
+  <tr><td><span class="sp-key">Pyometra</span></td><td>Chronic suppurative endometritis — accumulation of pus in the uterine lumen. Agents: streptococci, staphylococci, E. coli, Trueperella pyogenes. Infection during or immediately after delivery. Chocolate-like discharge, endometrial thickening, multifocally necrotic deposits</td></tr>
+  <tr><td><span class="sp-key">Chronic non-suppurative</span></td><td>CT proliferation and plasma cell infiltration; progress to atrophic endometritis. Sometimes dystrophic calcification and keratinisation</td></tr>
+  <tr><td><span class="sp-key">Granulomatous</span></td><td>TBC (cows — miliary or nodular form), actinomycosis and botryomycosis (rare), brucellosis (pigs, rabbits)</td></tr>
+</table>`
+  },
+  {
+    icon: '🔬', name: 'Uterine Neoplasms', pages: 'Page 8',
+    content: `
+<h2>Uterine Neoplasms</h2>
+<table>
+  <tr><th>Tumour</th><th>Details</th></tr>
+  <tr><td><span class="sp-key">Leiomyoma (uterine smooth muscle tumour)</span></td><td>Bitch — oestrogens play an important role; benign</td></tr>
+  <tr><td><span class="sp-key">Fibroma</span></td><td>Benign</td></tr>
+  <tr><td><span class="sp-key">Adenoma / Adenocarcinoma</span></td><td>Cows</td></tr>
+  <tr><td><span class="sp-key">Lymphoma-Leucosis</span></td><td>Retrovirus; diffuse or multiple nodules; most commonly in cattle</td></tr>
+</table>`
+  },
+  {
+    icon: '🤰', name: 'Pathology of Pregnancy', pages: 'Pages 8–9',
+    content: `
+<h2>Pathology of Pregnancy</h2>
+<h3>Extrauterine Pregnancy</h3>
+<p>Implantation outside the uterus — uncommon in domestic animals.</p>
+<h3>Placental Changes (Incidental Structures)</h3>
+<table>
+  <tr><th>Structure</th><th>Details</th></tr>
+  <tr><td><span class="sp-key">Hippomanes</span></td><td>Formation in allantoic liquid; concrements of allantoic precipitates; rubber-like; mare</td></tr>
+  <tr><td><span class="sp-key">Amniotic deposits</span></td><td>Areas of squamous epithelium on the amnion's inner surface; unknown significance</td></tr>
+  <tr><td><span class="sp-key">Discontinuous ossification</span></td><td>CT metaplasia, probably from embryonic membranes — mares</td></tr>
+  <tr><td><span class="sp-key">Hydrops of fetal membranes</span></td><td>Fluid accumulation in and between membranes; hydrops of amnion and allantois — cattle</td></tr>
+  <tr><td><span class="sp-key">Mole (mass)</span></td><td>Chorionic origin (oedematous tissue) and chorionic villi + hyperplastic epithelium</td></tr>
+</table>
+<h2>Fetal Death and Abortion</h2>
+<table>
+  <tr><th>Outcome</th><th>Definition</th></tr>
+  <tr><td><span class="sp-key">Early embryonic death</span></td><td>Chromosomal abnormalities, venereal infections. Embryonic stage: less than 35–45 days postconception in large animals; less than 20 days in dogs and cats</td></tr>
+  <tr><td><span class="sp-key">Fetal loss (abortion)</span></td><td>Stage of fetal development when the fetus is not independently viable; defined sex of fetus</td></tr>
+  <tr><td><span class="sp-key">Stillbirth</span></td><td>Fetus is potentially viable; resorption, maceration, mummification; viruses — porcine parvovirus and porcine enteroviruses</td></tr>
+</table>
+<h3>Noninfectious Causes of Fetal Death</h3>
+<ul>
+  <li>Chromosomal abnormalities; twins — placenta insufficiency</li>
+  <li>Lack of microkotyledonary placentation; endometrial fibrosis</li>
+  <li>Premature separation of placenta; pregnancy in uterine corpus</li>
+  <li>Abnormalities of umbilical cord (excessive length, torsion)</li>
+  <li>In cattle: additional placentation</li>
+</ul>
+<h3>Infectious Causes of Abortion</h3>
+<p>Bovine brucellosis, brucellosis of sheep/goat/pig, campylobacter, leptospirosis, salmonella, Trueperella pyogenes, shigellosis, listeriosis, herpesviruses, equine viral arteritis, mycotic abortions, Chlamydophila psittaci, Toxoplasma gondii, Neospora caninum, Trichomonas fetus.</p>`
+  },
+  {
+    icon: '🧫', name: 'Infectious Abortions & Placental Disease', pages: 'Pages 10–11',
+    content: `
+<h2>The Most Important Infectious Diseases of Fetus and Placenta</h2>
+<table>
+  <tr><th>Disease</th><th>Placental / Fetal Lesions</th></tr>
+  <tr><td><span class="sp-key">Brucellosis</span></td><td>Gravid uterus sensitive; intercotyledonary oedema of chorioallantois; fetus oedematous, bronchopneumonia, pleuritis. Micro: inflammation, oedema, mononuclear and few neutrophils</td></tr>
+  <tr><td><span class="sp-key">Campylobacteriosis</span></td><td>Ruminants; coital transmission; survives long in prepuce of bull. Pregnancy leads to uterine infection then embryonic death. Clinical sign: irregularity of estrus. Placentitis similar to brucellosis. C. fetus / C. jejuni: yellow necrotic foci in fetal liver; dense bacterial emboli in chorionic villi</td></tr>
+  <tr><td><span class="sp-key">Coxiella burnetti (Q fever)</span></td><td>Abortion and birth of dead or weak lambs. Fetal lymphoid peribronchial, renal and hepatic aggregates. Intercotyledonary chorion — thickened leathery, yellow, covered with exudate</td></tr>
+  <tr><td><span class="sp-key">Chlamydophila abortus (Enzootic abortion of ewes)</span></td><td>One of the most common causes of abortion in sheep. Placental changes like brucellosis. In fetus: subacute inflammatory foci in liver, lungs and muscles</td></tr>
+  <tr><td><span class="sp-key">Listeriosis</span></td><td>Cow, sheep, goat. Placenta: diffuse necrotic inflammation of cotyledons and intercotyledonary areas. Fetus: necrotising hepatitis; trophoblasts contain G+ Listeria</td></tr>
+  <tr><td><span class="sp-key">Leptospirosis</span></td><td>Cattle, pigs. Oedema in placenta, fetal ascites, fibrinous peritonitis, microscopic interstitial nephritis and necrotic hepatitis</td></tr>
+  <tr><td><span class="sp-key">Fungal (Aspergillus, Zygomycetes)</span></td><td>Sporadic abortions in cows and canines. Cattle: enlarged cotyledons, brownish, spotted, microscopic fungal hyphae. Mares: brown placenta, blurry microscopic hyphae. Fungi isolated from fetal stomach (ingested amniotic fluid)</td></tr>
+  <tr><td><span class="sp-key">BHV-1 (Bovine Herpesvirus 1)</span></td><td>Infectious necrotic endometritis — from mild follicular lymphocytic endometritis to necrotising</td></tr>
+  <tr><td><span class="sp-key">Equine Herpesvirus 1 (EHV-1)</span></td><td>Abortion, morbidity and infertility. Focal necrosis with intranuclear inclusions in liver, spleen, kidney, heart and placenta</td></tr>
+  <tr><td><span class="sp-key">Canine Herpesvirus 1 (CHV1)</span></td><td>Regularly fatal for newborns. Pleural and peritoneal haemorrhagic effusions; petechiae and ecchymosis under serosa — especially pronounced kidney bleeding; focal necrosis in organs. Intranuclear basophilic to light eosinophilic inclusions in liver, lungs and kidneys</td></tr>
+  <tr><td><span class="sp-key">Pestiviruses</span></td><td>BVD virus, border disease (sheep), classical swine fever — mild lesions on placenta and fetus</td></tr>
+  <tr><td><span class="sp-key">Parvoviruses</span></td><td>Pigs — fetal necroses in liver, lungs, kidneys, cerebellum</td></tr>
+  <tr><td><span class="sp-key">Arteriviruses (PRRS)</span></td><td>Segmental or diffuse bleeding in umbilical cord; necrotising arteritis; endometritis and myometritis; chorionic arteritis; fetal ascites, hydrothorax, perirenal oedema, oedema of mesentery and splenic ligaments</td></tr>
+  <tr><td><span class="sp-key">Bluetongue (Orbivirus)</span></td><td>Sheep — fetal hydranencephaly</td></tr>
+  <tr><td><span class="sp-key">Toxoplasma gondii</span></td><td>Sheep — necrosis of cotyledons with rare groups of toxoplasmas within trophoblast; intercotyledonary oedema; leukoencephalomalacia in fetus</td></tr>
+  <tr><td><span class="sp-key">Neospora caninum</span></td><td>Main cause of abortion in cows. Focal necrosis in brain and proliferation of microglia; multifocal epicarditis; mononuclear hepatitis and fibrin thrombi in sinusoids; placenta — foci of mononuclear infiltrate</td></tr>
+  <tr><td><span class="sp-key">Trichomonas foetus</span></td><td>Cows — most often causes early embryonic death; mild placentitis without lesions in fetus (diagnosis: protozoa in fetal abomasum)</td></tr>
+</table>`
+  },
+  {
+    icon: '🔒', name: 'Retained Placenta', pages: 'Page 12',
+    content: `
+<h2>Retained Placenta (Retention Secundinarum)</h2>
+<p>Condition in which all or part of the placenta or membranes remain in the uterus during the third stage of labour.</p>
+<h3>Normal Placental Expulsion Times</h3>
+<table>
+  <tr><th>Species</th><th>Normal Expulsion Time</th></tr>
+  <tr><td>Mare</td><td>3 hours</td></tr>
+  <tr><td>Pigs and carnivores</td><td>During delivery or immediately after</td></tr>
+  <tr><td>Sheep and goats</td><td>3 hours after delivery</td></tr>
+  <tr><td>Cow</td><td>Within 12 hours after birth</td></tr>
+</table>
+<h3>Causes of Retention</h3>
+<ul>
+  <li>Tight binding of placentomes</li>
+  <li>Weak uterine contraction</li>
+  <li>Premature cervix closure</li>
+</ul>
+<h3>Causes of Occurrence</h3>
+<p>Infectious, nutritional, hormonal, inherited, caesarean section.</p>
+<div class="sp-warn">Retained fetal membranes are a significant predisposing factor for ascending uterine infection (metritis) and are especially clinically important in cattle.</div>`
+  },
+  {
+    icon: '🌀', name: 'Oviduct & Fallopian Tube', pages: 'Page 12',
+    content: `
+<h2>Oviduct / Uterine Tube / Fallopian Tube</h2>
+<h3>Developmental Abnormalities</h3>
+<p><span class="sp-key">Aplasia</span> of the oviduct tubes — sheep.</p>
+<h3>Circulatory Disorders</h3>
+<ul>
+  <li>Bleeding — phosphorus poisoning</li>
+  <li><span class="sp-key">Haemosalpinx</span> — blood in the fallopian tube</li>
+  <li>Organised haematoma around the fallopian tubes (manual discharge of the corpus luteum)</li>
+</ul>
+<h3>Hydrosalpinx</h3>
+<p>Fluid accumulation in the oviduct. Causes: congenital, segmental aplasia of oviduct, trauma, inflammation.</p>
+<h3>Salpingitis (Inflammation of the Fallopian Tubes)</h3>
+<p>Most often ascending from the uterus. Agents: Mycoplasma and Ureaplasma.</p>
+<table>
+  <tr><th>Type</th><th>Consequences</th></tr>
+  <tr><td><span class="sp-key">Catarrhalic</span></td><td>Leads to hydrosalpinx</td></tr>
+  <tr><td><span class="sp-key">Purulent</span></td><td>Leads to pyosalpinx</td></tr>
+  <tr><td><span class="sp-key">Granulomatous</span></td><td>TBC (cattle), Brucella suis (pig)</td></tr>
+</table>`
+  },
+  {
+    icon: '🥚', name: 'Ovaries', pages: 'Pages 12–14',
+    content: `
+<h2>Ovaries</h2>
+<h3>Developmental Anomalies</h3>
+<ul>
+  <li><span class="sp-key">Aplasia</span> — very rare; unknown cause; ruminants, pigs, dogs</li>
+  <li><span class="sp-key">Hypoplasia</span> — cows, most commonly bilateral; causes: genetic and chromosomal abnormalities, malnutrition</li>
+  <li><span class="sp-key">Ectopic adrenal cortex tissue</span> — mares; in the ovary capsule</li>
+  <li><span class="sp-key">Vascular hamartomas</span> — cows, pigs, mares; red masses on ovary surface = CT and vascular channels coated with endothelial cells; often incidental finding</li>
+</ul>
+<h2>Dystrophic Ovarian Changes</h2>
+<table>
+  <tr><th>Condition</th><th>Details</th></tr>
+  <tr><td><span class="sp-key">Atrophy</span></td><td>Senile, endocrine disorders, infectious diseases, poisoning, radiation, hypovitaminosis: no epithelium, no mature follicles, sclerosis</td></tr>
+  <tr><td><span class="sp-key">Atresia of the follicle</span></td><td>Underdevelopment of primary and secondary follicles with simultaneous multiplication of CT; mature non-ovulated follicles become atretic and luteinised leading to lutein cysts</td></tr>
+  <tr><td><span class="sp-key">Corpus luteum persistens</span></td><td>Consequence of a hormonal disorder; often occurs in connection with embryonic death; causes sterility</td></tr>
+</table>
+<h2>Circulatory Disorders and Ovarian Inflammation</h2>
+<table>
+  <tr><th>Category</th><th>Details</th></tr>
+  <tr><td><span class="sp-key">Circulatory</span></td><td>Bleeding — ovulation, infections, intoxication; manual extinction of corpus luteum in cows; follicular haemorrhage (haematoma)</td></tr>
+  <tr><td><span class="sp-key">Inflammation</span></td><td>Not common; suppurative to abscessing (spread from other organs). BHV1: necrotic oophoritis in post-estrus in cows. BVD: chronic oophoritis — ovarian oocyte infection with BVD virus leads to transmission from cow to calf</td></tr>
+</table>
+<h2>Ovarian Cysts</h2>
+<table>
+  <tr><th>Cyst</th><th>Details</th></tr>
+  <tr><td><span class="sp-key">Follicular cyst</span></td><td>Non-ruptured Graafian follicle. Cow, pig — single large or multiple small cysts. Cyst fluid rich in oestrogens; prolongs postpartum interval to 1st estrus. Due to abnormality in hypothalamus-pituitary-ovary axis. E. coli increases prostaglandin, cortisol, LH suppression; stress increases ACTH/cortisol, inhibits GnRH and decreases LH expression leading to cysts. Cysts persist 10 or more days without corpus luteum formation</td></tr>
+  <tr><td><span class="sp-key">Lutein cysts</span></td><td>Less frequent; from mature follicle with consequent luteinisation of theca cells; cavity limited by CT layer and zone of luteal cells. Causes: hormonal and nutritional disorders, toxins</td></tr>
+  <tr><td><span class="sp-key">Cystic corpus luteum</span></td><td>From corpus luteum after ovulation and extension of the follicular area; does not affect oestrus cycle length and shows no signs of impaired ovarian function. Larger cysts persist 30–40 days after conception</td></tr>
+</table>
+<h2>Neoplasms of the Ovary</h2>
+<table>
+  <tr><th>Tumour</th><th>Details</th></tr>
+  <tr><td><span class="sp-key">Granulosa cell tumours</span></td><td>Sex cord stromal tumours. Cows, mares, bitches — most common in large animals, mostly benign; cats and bitches: often malignant. Secrete oestrogen and androgen. Unilateral, smooth surface, round, 20–30 cm diameter; solid, cystic or polycystic; filled with reddish liquid. Micro: cells similar to granulosa cells, round or cylindrical, in rows or plates; stroma scant to abundant; if stroma predominant leads to thecoma</td></tr>
+  <tr><td><span class="sp-key">Germ cell tumours</span></td><td>Dysgerminoma — bitches, sows, cows, mares; cells reminiscent of primitive germ cells; solid lobular with bleeding and necrosis; numerous mitoses; rare metastasis. Teratoma — from totipotent primordial cells; generally well differentiated and benign; malignant forms rare</td></tr>
+  <tr><td><span class="sp-key">Epithelial tumours</span></td><td>Papillary cystadenoma, adenoma, cystadenocarcinoma (frequent in bitches); often bilateral, rough surface, approximately 10 cm diameter; malignant forms spread by peritoneum. Papillary ovarian carcinoma</td></tr>
+  <tr><td><span class="sp-key">Interstitial cell tumours</span></td><td>Luteoma</td></tr>
+  <tr><td><span class="sp-key">Others</span></td><td>Haemangioma, vascular hamartoma, metastatic tumours</td></tr>
+</table>`
+  },
+  {
+    icon: '🍼', name: 'Mammary Gland & Mastitis', pages: 'Pages 15–18',
+    content: `
+<h2>Mammary Gland</h2>
+<h3>Developmental Anomalies</h3>
+<ul>
+  <li><span class="sp-key">Aplasia, hypoplasia</span> — cattle</li>
+  <li><span class="sp-key">Polythelia</span> — increased number of papillae</li>
+  <li><span class="sp-key">Micromastia</span> — undeveloped mammary complexes</li>
+  <li><span class="sp-key">Polymastia</span> — increased number of mammary complexes</li>
+</ul>
+<h3>Circulatory Disturbances</h3>
+<table>
+  <tr><th>Condition</th><th>Details</th></tr>
+  <tr><td><span class="sp-key">Active hyperaemia</span></td><td>Physiological before and after birth and in unmilked cows</td></tr>
+  <tr><td><span class="sp-key">Mammary oedema</span></td><td>Physiologically before/after delivery due to hyperestrogenism and increased capillary permeability; pathological (usually inflammation)</td></tr>
+  <tr><td><span class="sp-key">Haemorrhages</span></td><td>Diapedesis (milking) or rhexis (trauma)</td></tr>
+  <tr><td><span class="sp-key">Embolism and thrombosis</span></td><td>Mastitis</td></tr>
+</table>
+<h2>Mastitis — Inflammation of the Mammary Gland</h2>
+<p>Inflammation of parenchyma (mastitis) and excretory channels (galactophoritis). Causes: bacteria and mycoplasmas. Infection routes: galactogenic, haematogenic, lymphatic.</p>
+<p><strong>Predisposing conditions:</strong> high-producing cows, excessive vacuum in milking machines, teat lesions, faecal contamination, poor mammary hygiene, certain flies.</p>
+<h3>Severe Mastitis</h3>
+<table>
+  <tr><th>Type</th><th>Details</th></tr>
+  <tr><td><span class="sp-key">Necrotising (gangrenous)</span></td><td>G- bacteria cause massive cytokine release leading to necrosis and severe vascular leakage. Systemic acute phase reaction: fever, anorexia, leukopenia, hyperfibrinogenaemia, hypocalcaemia. Oedema of mamma and surrounding areas. Local: necrosis and sequestration of glandular tissue; regions become dry, friable surrounded by a red border; milk watery, contains fibrin, obstructs lactiferous and papillary ducts. Potentially life-threatening: endotoxaemia and secondary pyogens lead to suppurative mastitis. G+ (staphylococci, streptococci) can also cause — neutrophils enter tissue within minutes to hours</td></tr>
+  <tr><td><span class="sp-key">Severe without necrosis</span></td><td>G+ and G-; less tissue damage. Exotoxins (G+) and endotoxins (G-); often local effects. Oedema, fibrin exudation, neutrophilic infiltration; death of ductular and glandular tissue without necrotic sequestra formation</td></tr>
+</table>
+<h3>Suppurative Mastitis</h3>
+<p>Pus-forming G+ organisms: Trueperella pyogenes, Mycoplasma bovis, Streptococcus dysgalactiae. Lesions centred on lactiferous ducts and sinuses (filled with suppurative exudate). Dry cows are usually closely monitored; chronic mastitis leads to abundant intramammary exudates and fibrosis.</p>
+<h3>Granulomatous Mastitis</h3>
+<p>Nocardia asteroids, Cryptococcus neoformans, atypical Mycobacterium sp., Candida spp. Nocardial mastitis — best known; occurs in outbreaks. Pyrexia for several weeks, lethargy, weight loss; glands hot, swollen, multiple abscesses or granulomas; small white particles in exudate. Lesions centred on lactiferous ducts and sinuses. Micro: granulomas and pyogranulomas surrounded by fibrous tissue. Cryptococcal mastitis: yellow gelatinous material.</p>
+<h3>Mastitis Caused by Specific Bacteria</h3>
+<table>
+  <tr><th>Organism</th><th>Key Features</th></tr>
+  <tr><td><span class="sp-key">Streptococcus agalactiae</span></td><td>Most important bovine mammary pathogen. Persists in lactiferous sinus — periodic waves of multiplication, virulence increase and tissue invasion. Hyperaemia; debris/pus in milk; parenchymal oedema; alveoli with retained secretion (duct obstruction). Microscopically: interstitial oedema; neutrophilic infiltration; alveolar epithelium hyperplasia, vacuolation, desquamation; fibrosis obliterates alveoli leading to premature involution and periductal fibrosis</td></tr>
+  <tr><td><span class="sp-key">Staphylococcus aureus</span></td><td>Greater propensity to invade interstitial tissue between alveoli leading to more severe disease. Gangrenous form: heat, redness, swelling, pain progresses to coldness, blue-black colour, fluid exudation (tissue death). First 48 hours: severe interstitial oedema; swelling, vacuolation, erosion of epithelium; rapid neutrophil response. Suppurative form: abscess formation follows the initial disease</td></tr>
+  <tr><td><span class="sp-key">Coliform mastitis</span></td><td>G- from environment (ascending): E. coli, Enterobacter aerogenes, Klebsiella pneumoniae. Endotoxin and subsequent cytokine release. Severe form: hyperaemia, haemorrhage, oedema centred on lactiferous ducts; fluid — cloudy, blood-stained, clumps of fibrin. Microscopically: oedema of interlobular septa; fibrin thrombi in lymph vessels; duct and alveolar epithelium — necrotic (low numbers of inflammatory cells). Nonlactating mammary glands — less sensitive</td></tr>
+  <tr><td><span class="sp-key">Mycoplasma bovis mastitis</span></td><td>Individual sporadic cases or outbreaks; one, some or all mammae. Haematogenous spread and papilla contamination. Affected quarters: enlarged, firm, light brown, nodular parenchyma (nodules = abscesses). Early: neutrophils in lobular interstitium and alveoli. Later: lymphocytes and macrophages. Vacuolation, degeneration and hyperplasia/squamous metaplasia of alveolar epithelia; eroded ductal epithelium replaced by granulation tissue; late stages — interstitial fibrosis and lobular atrophy</td></tr>
+</table>
+<h2>Mammary Gland Tumours</h2>
+<p><span class="sp-key">Dogs:</span> Most common in unspayed females; predominantly benign. <span class="sp-key">Cats:</span> Predominantly malignant.</p>
+<ul>
+  <li>Epithelial tumours — adenoma or adenocarcinoma</li>
+  <li>Mesenchymal tumours — fibroma, chondroma, osteoma, sarcoma</li>
+  <li>Metastatic tumours</li>
+  <li>Lymphoadenosis — cattle</li>
+</ul>`
   },
 ];
 
