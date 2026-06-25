@@ -582,6 +582,13 @@
       <p style="font-size:0.83rem;color:var(--text-muted);margin:4px 0 0">Portals of entry and defences, congenital disorders, vagina, cervix, uterus, pregnancy pathology, oviduct, ovaries, and mammary gland.</p>
       <div class="sp-meta"><span class="sp-pill">14 Subtopics</span></div>
     </div>
+    <div class="sp-topic-chip sp-available" onclick="openSpTopic('bonemarrow')">
+      <div class="sp-badge">Available</div>
+      <div class="sp-icon">🦴</div>
+      <div class="sp-name">Bone Marrow &amp; Blood Cells</div>
+      <p style="font-size:0.83rem;color:var(--text-muted);margin:4px 0 0">Haematopoiesis regulation, bone marrow reactions to injury, cytopenias, cytoses, congenital disorders, IMHA, infectious diseases, and haematopoietic neoplasia.</p>
+      <div class="sp-meta"><span class="sp-pill">10 Subtopics</span></div>
+    </div>
   </div>
 </div>
 
@@ -1260,6 +1267,78 @@
 </div>
 <!-- END FEMALE REPRODUCTIVE SYSTEM PAGES -->
 
+<!-- =====================================================================
+     BONE MARROW & BLOOD CELLS — HOME
+===================================================================== -->
+<div id="page-bonemarrow-home" class="page">
+  <div class="hero" style="background:linear-gradient(135deg,#ffe0e0 0%,#ffd4b8 50%,#fff3cd 100%);color:var(--text)">
+    <h1 style="color:var(--primary-dark)">🦴 Bone Marrow &amp; Blood Cells</h1>
+    <p style="color:var(--text-muted)">Study haematopoiesis regulation, bone marrow reactions to injury, cytopenias, cytoses, congenital disorders, IMHA, infectious diseases, and haematopoietic neoplasia.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num" id="bonemarrow-stat-qcount">0</div><div class="lbl">Questions</div></div>
+      <div class="hero-stat"><div class="num">10</div><div class="lbl">Subtopics</div></div>
+      <div class="hero-stat"><div class="num" id="bonemarrow-stat-sessions">0</div><div class="lbl">Sessions</div></div>
+    </div>
+  </div>
+  <div class="section-title">🚀 Start Studying</div>
+  <div class="mode-grid">
+    <div class="mode-card" onclick="spShowPage('bonemarrow','topics')">
+      <div class="icon">📖</div><h3>Subtopic Study</h3>
+      <p>Read lecture notes for each subtopic. 10 subtopics drawn directly from the course document.</p>
+    </div>
+    <div class="mode-card" onclick="startAllBonemarrowQuiz()">
+      <div class="icon">🎯</div><h3>Exam Prep Mode</h3>
+      <p>Randomised questions drawn from all subtopics with questions added so far — full mixed practice exam.</p>
+    </div>
+  </div>
+</div>
+
+<!-- =====================================================================
+     BONE MARROW & BLOOD CELLS — TOPICS (Subtopic notes)
+===================================================================== -->
+<div id="page-bonemarrow-topics" class="page">
+  <div id="bonemarrow-subtopic-list">
+    <div class="flex-row" style="margin-bottom:16px">
+      <div class="section-title" style="margin:0">📖 Subtopics</div>
+    </div>
+    <div class="sp-subtopic-grid" id="bonemarrow-subtopic-grid"></div>
+  </div>
+  <div id="bonemarrow-notes-panel" style="display:none">
+    <div class="flex-row" style="margin-bottom:14px">
+      <button class="btn btn-ghost btn-sm" onclick="closeBonemarrowNotes()">← All Subtopics</button>
+      <div class="spacer"></div>
+      <span id="bonemarrow-notes-title" style="font-weight:700;color:var(--primary-dark);font-size:0.95rem"></span>
+    </div>
+    <div id="bonemarrow-study-btn-area" style="margin-bottom:12px"></div>
+    <div id="bonemarrow-notes-body" class="sp-content"></div>
+  </div>
+</div>
+
+<!-- =====================================================================
+     BONE MARROW & BLOOD CELLS — QUIZ
+===================================================================== -->
+<div id="page-bonemarrow-quiz" class="page">
+  <div id="bonemarrow-quiz-area"></div>
+</div>
+
+<!-- =====================================================================
+     BONE MARROW & BLOOD CELLS — PROGRESS
+===================================================================== -->
+<div id="page-bonemarrow-stats" class="page">
+  <div class="flex-row" style="margin-bottom:18px">
+    <div class="section-title" style="margin:0">📊 My Progress</div>
+    <div class="spacer"></div>
+    <button class="btn btn-ghost btn-sm" onclick="resetBonemarrowStats()" style="color:var(--wrong-dark)">🗑 Reset Progress</button>
+  </div>
+  <div class="stats-grid" id="bonemarrow-overall-stats"></div>
+  <div class="section-title">📈 By Subtopic (worst first)</div>
+  <div class="card" id="bonemarrow-subtopic-stats-list"></div>
+  <div class="divider"></div>
+  <div class="section-title">🕐 Session History</div>
+  <div id="bonemarrow-session-history-list"></div>
+</div>
+<!-- END BONE MARROW & BLOOD CELLS PAGES -->
+
 <div class="modal-overlay" id="result-modal">
   <div class="modal">
     <div class="result-big">
@@ -1921,6 +2000,14 @@ const NAV_CONFIGS = {
       {id:'femalerepro-home',   label:'🏠 Home',       fn:"spShowPage('femalerepro','home')"},
       {id:'femalerepro-topics', label:'📖 Topics',     fn:"spShowPage('femalerepro','topics')"},
       {id:'femalerepro-stats',  label:'📊 Progress',   fn:"spShowPage('femalerepro','stats')"},
+    ]
+  },
+  bonemarrow: {
+    label: '🦴 Bone Marrow & Blood Cells',
+    btns: [
+      {id:'bonemarrow-home',   label:'🏠 Home',       fn:"spShowPage('bonemarrow','home')"},
+      {id:'bonemarrow-topics', label:'📖 Topics',     fn:"spShowPage('bonemarrow','topics')"},
+      {id:'bonemarrow-stats',  label:'📊 Progress',   fn:"spShowPage('bonemarrow','stats')"},
     ]
   },
 };
@@ -3417,6 +3504,13 @@ function spShowPage(topic, page) {
     if (el) el.textContent = qTotal;
   }
   if (topic === 'femalerepro' && page === 'stats') renderFemalereproStats();
+  if (topic === 'bonemarrow' && page === 'topics') renderBonemarrowSubtopics();
+  if (topic === 'bonemarrow' && page === 'home') {
+    const qTotal = Object.values(BONEMARROW_QUESTIONS).reduce((s, arr) => s + arr.length, 0);
+    const el = document.getElementById('bonemarrow-stat-qcount');
+    if (el) el.textContent = qTotal;
+  }
+  if (topic === 'bonemarrow' && page === 'stats') renderBonemarrowStats();
 }
 
 function openSpTopic(topicId) {
@@ -4357,6 +4451,158 @@ function resetFemalereproStats() {
   localStorage.removeItem('vpFemalereproStats');
   localStorage.removeItem('vpFemalereproSessions');
   renderFemalereproStats();
+}
+
+// ── BONE MARROW & BLOOD CELLS SUBTOPIC NOTES ─────────────────────────
+
+function renderBonemarrowSubtopics() {
+  const grid = document.getElementById('bonemarrow-subtopic-grid');
+  if (!grid) return;
+  grid.innerHTML = BONEMARROW_SUBTOPICS.map((st, i) =>
+    `<div class="sp-subtopic-chip" onclick="openBonemarrowSubtopic(${i})">
+      <div class="ss-icon">${st.icon}</div>
+      <div class="ss-name">${st.name}</div>
+      <div class="ss-pages">${st.pages}</div>
+    </div>`
+  ).join('');
+}
+
+function openBonemarrowSubtopic(idx) {
+  const st = BONEMARROW_SUBTOPICS[idx];
+  document.getElementById('bonemarrow-subtopic-list').style.display = 'none';
+  document.getElementById('bonemarrow-notes-panel').style.display = '';
+  document.getElementById('bonemarrow-notes-title').textContent = st.icon + ' ' + st.name;
+  const qs = BONEMARROW_QUESTIONS[idx];
+  const qCount = qs ? qs.length : 0;
+  document.getElementById('bonemarrow-study-btn-area').innerHTML = qCount
+    ? `<button class="btn btn-primary btn-sm" onclick="beginBonemarrowQuiz(randomiseAnswers(shuffle(tagSubtopic(BONEMARROW_QUESTIONS[${idx}], ${idx}))), '${st.icon} ${st.name.replace(/'/g,"\\'")}')">🎯 Study ${qCount} Questions</button>`
+    : `<span style="color:var(--text-muted);font-size:0.88rem">Questions coming soon for this subtopic.</span>`;
+  document.getElementById('bonemarrow-notes-body').innerHTML = st.content;
+}
+
+function closeBonemarrowNotes() {
+  document.getElementById('bonemarrow-notes-panel').style.display = 'none';
+  document.getElementById('bonemarrow-subtopic-list').style.display = '';
+}
+
+let bonemarrowQuiz = null;
+let bonemarrowStats = JSON.parse(localStorage.getItem('vpBonemarrowStats') || '{}');
+let bonemarrowSessions = JSON.parse(localStorage.getItem('vpBonemarrowSessions') || '[]');
+
+function startAllBonemarrowQuiz() {
+  let all = [];
+  Object.entries(BONEMARROW_QUESTIONS).forEach(([k, arr]) => { all = all.concat(tagSubtopic(arr, Number(k))); });
+  if (!all.length) return;
+  beginBonemarrowQuiz(randomiseAnswers(shuffle(all)), '🦴 All Subtopics');
+}
+
+function beginBonemarrowQuiz(questions, title) {
+  bonemarrowQuiz = { questions, idx: 0, title, answered: false, correct: 0, total: 0 };
+  spShowPage('bonemarrow', 'quiz');
+  renderBonemarrowQuestion();
+}
+
+function renderBonemarrowQuestion() {
+  const q = bonemarrowQuiz.questions[bonemarrowQuiz.idx];
+  if (!q) { finishBonemarrowQuiz(); return; }
+  bonemarrowQuiz.answered = false;
+  const diffColor = {easy:'var(--correct-dark)',medium:'#b8860b',hard:'var(--wrong-dark)'}[q.diff];
+  const diffBg = {easy:'var(--correct-bg)',medium:'#fff3cd',hard:'var(--wrong-bg)'}[q.diff];
+  let html = `
+    <div class="question-header">
+      <div class="flex-row" style="flex-wrap:wrap;gap:6px">
+        <span class="badge" style="background:var(--primary-light);color:var(--primary-dark)">${bonemarrowQuiz.title}</span>
+        <span class="badge" style="background:${diffBg};color:${diffColor}">${q.diff}</span>
+        <span class="badge" style="background:#e9ecef;color:#495057">${q.type==='tf'?'True/False':'MCQ'}</span>
+      </div>
+      <div class="progress-text">${bonemarrowQuiz.idx+1} / ${bonemarrowQuiz.questions.length}</div>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" style="width:${(bonemarrowQuiz.idx/bonemarrowQuiz.questions.length)*100}%"></div></div>
+    <div class="question-text">${q.q}</div>`;
+  if (q.type === 'tf') {
+    html += '<div class="tf-btns"><button class="tf-btn" onclick="answerBonemarrowTF(true)">&#10003; True</button><button class="tf-btn" onclick="answerBonemarrowTF(false)">&#10007; False</button></div>';
+  } else {
+    html += '<div class="options">';
+    for (let i = 0; i < q.opts.length; i++) {
+      html += `<button class="option-btn" onclick="answerBonemarrowMCQ(${i})"><span class="opt-letter">${String.fromCharCode(65+i)}</span>${q.opts[i]}</button>`;
+    }
+    html += '</div>';
+  }
+  html += `<div id="bonemarrow-q-feedback" style="display:none"></div>
+    <div class="quiz-actions" id="bonemarrow-quiz-actions">
+      <button class="btn btn-ghost btn-sm" onclick="bonemarrowSkipQuestion()">Skip</button>
+    </div>`;
+  document.getElementById('bonemarrow-quiz-area').innerHTML = html;
+}
+
+function answerBonemarrowMCQ(idx) {
+  if (bonemarrowQuiz.answered) return;
+  bonemarrowQuiz.answered = true;
+  const q = bonemarrowQuiz.questions[bonemarrowQuiz.idx];
+  const correct = idx === q.ans;
+  bonemarrowQuiz.total++;
+  if (correct) bonemarrowQuiz.correct++;
+  recordSpAnswer(bonemarrowStats, q.subtopic, correct, 'vpBonemarrowStats');
+  document.querySelectorAll('#bonemarrow-quiz-area .option-btn').forEach((btn, i) => {
+    btn.disabled = true;
+    if (i === q.ans) btn.classList.add('correct');
+    else if (i === idx && !correct) btn.classList.add('wrong');
+  });
+  showBonemarrowFeedback(q, correct);
+}
+
+function answerBonemarrowTF(given) {
+  if (bonemarrowQuiz.answered) return;
+  bonemarrowQuiz.answered = true;
+  const q = bonemarrowQuiz.questions[bonemarrowQuiz.idx];
+  const correct = given === q.ans;
+  bonemarrowQuiz.total++;
+  if (correct) bonemarrowQuiz.correct++;
+  recordSpAnswer(bonemarrowStats, q.subtopic, correct, 'vpBonemarrowStats');
+  document.querySelectorAll('#bonemarrow-quiz-area .tf-btn').forEach(btn => {
+    btn.disabled = true;
+    const isTrue = btn.textContent.trim().startsWith('✓');
+    if (isTrue && q.ans === true) btn.classList.add('correct');
+    else if (!isTrue && q.ans === false) btn.classList.add('correct');
+    else if (isTrue && given === true && !correct) btn.classList.add('wrong');
+    else if (!isTrue && given === false && !correct) btn.classList.add('wrong');
+  });
+  showBonemarrowFeedback(q, correct);
+}
+
+function showBonemarrowFeedback(q, correct) {
+  const fb = document.getElementById('bonemarrow-q-feedback');
+  fb.style.display = 'block';
+  fb.className = 'feedback ' + (correct ? 'correct' : 'wrong');
+  fb.innerHTML = `<strong>${correct ? '✓ Correct!' : '✗ Incorrect'}</strong><br>${q.exp}`;
+  document.getElementById('bonemarrow-quiz-actions').innerHTML = `<button class="btn btn-primary" onclick="nextBonemarrowQuestion()">Next →</button>`;
+}
+
+function bonemarrowSkipQuestion() { bonemarrowQuiz.idx++; renderBonemarrowQuestion(); }
+function nextBonemarrowQuestion() { bonemarrowQuiz.idx++; renderBonemarrowQuestion(); }
+
+function finishBonemarrowQuiz() {
+  const pct = bonemarrowQuiz.total > 0 ? Math.round(bonemarrowQuiz.correct / bonemarrowQuiz.total * 100) : 0;
+  document.getElementById('result-score-circle').textContent = pct + '%';
+  document.getElementById('result-title').textContent = pct >= 80 ? '🎉 Excellent!' : pct >= 60 ? '👍 Good Job!' : '📚 Keep Studying!';
+  document.getElementById('result-subtitle').textContent = `${bonemarrowQuiz.correct} / ${bonemarrowQuiz.total} correct`;
+  resultModalNav = { home: () => spShowPage('bonemarrow','home'), stats: () => spShowPage('bonemarrow','stats') };
+  document.getElementById('result-modal').classList.add('open');
+  if (bonemarrowQuiz.total > 0) {
+    bonemarrowSessions.unshift({ date: new Date().toLocaleDateString(), title: bonemarrowQuiz.title, correct: bonemarrowQuiz.correct, total: bonemarrowQuiz.total });
+    localStorage.setItem('vpBonemarrowSessions', JSON.stringify(bonemarrowSessions));
+  }
+}
+
+function renderBonemarrowStats() { renderSpStats('bonemarrow', bonemarrowStats, bonemarrowSessions, BONEMARROW_SUBTOPICS); }
+
+function resetBonemarrowStats() {
+  if (!confirm('Reset progress for Bone Marrow & Blood Cells? This cannot be undone.')) return;
+  bonemarrowStats = {};
+  bonemarrowSessions = [];
+  localStorage.removeItem('vpBonemarrowStats');
+  localStorage.removeItem('vpBonemarrowSessions');
+  renderBonemarrowStats();
 }
 
 // ── Neuropathology subtopic notes ─────────────────────────────────────
@@ -8722,6 +8968,446 @@ const FEMALEREPRO_SUBTOPICS = [
   <li>Mesenchymal tumours — fibroma, chondroma, osteoma, sarcoma</li>
   <li>Metastatic tumours</li>
   <li>Lymphoadenosis — cattle</li>
+</ul>`
+  },
+];
+
+const BONEMARROW_QUESTIONS = {
+  // questions to be added per subtopic
+};
+
+const BONEMARROW_SUBTOPICS = [
+  {
+    icon: '🔬', name: 'Regulation of Haematopoiesis', pages: 'Pages 1–2',
+    content: `
+<h2>Haematopoietic Stem Cells</h2>
+<p>All blood cell lines originate from a common <span class="sp-key">pluripotent haematopoietic stem cell (HSC)</span> in the bone marrow. HSCs give rise to two progenitor lines: the <span class="sp-key">common myeloid progenitor (CMP)</span> and the <span class="sp-key">common lymphoid progenitor (CLP)</span>.</p>
+<h2>Erythropoiesis</h2>
+<p>Red blood cell production is regulated by <span class="sp-key">erythropoietin (EPO)</span>, produced by peritubular cells of the kidney in response to hypoxia. The sequence is:</p>
+<div class="sp-chain">HSC → BFU-E → CFU-E → proerythroblast → basophilic erythroblast → polychromatic erythroblast → orthochromatic erythroblast → reticulocyte → erythrocyte</div>
+<ul>
+  <li><span class="sp-key">BFU-E</span> (burst-forming unit–erythroid) — early progenitor, less EPO-sensitive</li>
+  <li><span class="sp-key">CFU-E</span> (colony-forming unit–erythroid) — highly EPO-sensitive, committed stage</li>
+  <li>Nucleus is extruded at the orthochromatic stage; the resulting <span class="sp-key">reticulocyte</span> still contains ribosomal RNA (polychromatophilic on Romanowsky stains)</li>
+  <li>Reticulocytes enter blood and mature to erythrocytes in ~1–2 days</li>
+</ul>
+<h2>Granulo-monocytopoiesis</h2>
+<p>Neutrophils, eosinophils, basophils, and monocytes share the <span class="sp-key">CFU-GM</span> progenitor. Key regulators:</p>
+<ul>
+  <li><span class="sp-key">G-CSF</span> (granulocyte colony-stimulating factor) — drives neutrophil production</li>
+  <li><span class="sp-key">M-CSF</span> (macrophage CSF) — drives monocyte/macrophage differentiation</li>
+  <li><span class="sp-key">GM-CSF</span> — stimulates both granulocyte and monocyte lines</li>
+  <li><span class="sp-key">IL-5</span> — specifically promotes eosinophil production and survival</li>
+</ul>
+<div class="sp-chain">CMP → CFU-GM → myeloblast → promyelocyte → myelocyte → metamyelocyte → band cell → segmented neutrophil</div>
+<h2>Thrombocytopoiesis</h2>
+<p>Platelet production is regulated primarily by <span class="sp-key">thrombopoietin (TPO)</span>, produced by the liver. The sequence:</p>
+<div class="sp-chain">CMP → CFU-Meg → megakaryoblast → promegakaryocyte → megakaryocyte → platelets (by cytoplasmic fragmentation)</div>
+<ul>
+  <li>Each megakaryocyte produces approximately <span class="sp-key">1,000–3,000 platelets</span></li>
+  <li>Megakaryocytes undergo <span class="sp-key">endomitosis</span> — DNA replication without cell division (polyploidy up to 64N)</li>
+</ul>
+<h2>T Lymphopoiesis</h2>
+<ul>
+  <li>CLP → T-cell progenitor migrates from bone marrow to <span class="sp-key">thymus</span></li>
+  <li>In the thymus: positive selection (recognise self-MHC) and negative selection (eliminate self-reactive clones)</li>
+  <li>Mature naïve T cells (CD4⁺ helper or CD8⁺ cytotoxic) leave thymus and populate peripheral lymphoid tissues</li>
+</ul>
+<h2>B Lymphopoiesis</h2>
+<ul>
+  <li>CLP → B-cell progenitor matures entirely within the <span class="sp-key">bone marrow</span> (mammals) or <span class="sp-key">bursa of Fabricius</span> (birds)</li>
+  <li>Progression: pro-B → pre-B → immature B → transitional B → mature naïve B cell</li>
+  <li>On antigen encounter: B cells differentiate into <span class="sp-key">plasma cells</span> (antibody secretion) or <span class="sp-key">memory B cells</span></li>
+  <li>Key transcription factors: PAX5 (B-cell commitment), BLIMP-1 (plasma cell differentiation)</li>
+</ul>`
+  },
+  {
+    icon: '⚠️', name: 'Bone Marrow Reactions to Injury', pages: 'Page 2',
+    content: `
+<h2>Bone Marrow Responses to Injury</h2>
+<p>The bone marrow responds to demand or damage through a spectrum of reactions, from compensatory increases to complete failure.</p>
+<h2>Hyperplasia</h2>
+<p><span class="sp-key">Erythroid hyperplasia</span> — increased red cell production in response to anaemia or hypoxia (e.g., haemorrhage, haemolysis, high altitude). The myeloid:erythroid (M:E) ratio falls below normal.</p>
+<p><span class="sp-key">Myeloid hyperplasia</span> — increased granulocyte production in response to infection or inflammation. M:E ratio rises above normal.</p>
+<p><span class="sp-key">Megakaryocytic hyperplasia</span> — increased platelet production in response to thrombocytopenia.</p>
+<div class="sp-note">In regenerative anaemia, the bone marrow shifts from yellow (adipose) to red (haematopoietic) marrow — expansion from axial skeleton into long bones.</div>
+<h2>Dysplasia</h2>
+<p><span class="sp-key">Myelodysplasia</span> — abnormal maturation of one or more haematopoietic cell lines with ineffective haematopoiesis. Features include hypersegmented neutrophils, macro-ovalocytes, and dysplastic megakaryocytes.</p>
+<h2>Hypoplasia and Aplasia</h2>
+<ul>
+  <li><span class="sp-key">Hypoplasia</span> — reduced cellularity of one or more cell lines; some haematopoietic cells remain</li>
+  <li><span class="sp-key">Aplasia</span> — near-complete absence of haematopoietic cells; marrow replaced by fat and stroma</li>
+  <li><span class="sp-key">Aplastic anaemia</span> — pancytopenia resulting from aplasia of all haematopoietic cell lines</li>
+</ul>
+<h2>Myelodysplastic Syndrome (MDS)</h2>
+<p>A clonal disorder of HSCs characterised by <span class="sp-key">ineffective haematopoiesis</span>, dysplastic morphology, peripheral cytopenia despite hypercellular marrow, and risk of progression to acute leukaemia. Recognised in cats (often FeLV-associated) and dogs.</p>
+<h2>Myelophthisis</h2>
+<p><span class="sp-key">Myelophthisis</span> — replacement of bone marrow haematopoietic tissue by abnormal cells or infiltrates:</p>
+<ul>
+  <li>Neoplastic infiltration (leukaemia, metastatic carcinoma, lymphoma)</li>
+  <li>Fibrosis (myelofibrosis)</li>
+  <li>Granulomatous inflammation (systemic mycoses)</li>
+</ul>
+<p>Results in <span class="sp-key">leukoerythroblastosis</span> — immature red and white cell precursors in peripheral blood due to displacement from marrow.</p>
+<h2>Pancytopenia</h2>
+<p><span class="sp-key">Pancytopenia</span> — concurrent reduction in all three cell lines (erythrocytes, leukocytes, platelets). Causes include aplastic anaemia, myelophthisis, MDS, severe sepsis, and drug/toxin effects.</p>
+<div class="sp-warn">Pancytopenia is a haematological emergency — patients are susceptible to infection (neutropenia), haemorrhage (thrombocytopenia), and hypoxia (anaemia) simultaneously.</div>`
+  },
+  {
+    icon: '🩸', name: 'Cytopenia: Anaemia', pages: 'Pages 2–3',
+    content: `
+<h2>Definition of Anaemia</h2>
+<p><span class="sp-key">Anaemia</span> — reduction in circulating erythrocyte mass (PCV, Hb, or RBC count below reference range), resulting in decreased oxygen-carrying capacity.</p>
+<h2>Classification by Bone Marrow Response</h2>
+<h3>Regenerative Anaemia</h3>
+<p>Bone marrow responds with increased erythropoiesis. Evidence of regeneration:</p>
+<ul>
+  <li><span class="sp-key">Reticulocytosis</span> — increased reticulocytes in peripheral blood (polychromasia on Romanowsky stain)</li>
+  <li>Anisocytosis, macrocytosis (large new cells), nucleated RBCs (nRBCs) in severe cases</li>
+  <li>Causes: blood loss (haemorrhage) and haemolysis</li>
+</ul>
+<div class="sp-note">Cats show aggregate reticulocytes (clumped RNA) and punctate reticulocytes (dispersed granules). Only aggregate reticulocytes are counted as active regeneration markers.</div>
+<h3>Non-Regenerative Anaemia</h3>
+<p>Bone marrow fails to respond adequately — no reticulocytosis:</p>
+<ul>
+  <li><span class="sp-key">Anaemia of chronic disease/inflammation</span> — iron sequestration by hepcidin, shortened RBC lifespan</li>
+  <li><span class="sp-key">Iron deficiency anaemia</span> — microcytic hypochromic; causes: chronic blood loss, poor intake (young animals on milk diet)</li>
+  <li><span class="sp-key">Aplastic anaemia</span> — HSC destruction → pancytopenia</li>
+  <li>Renal failure (↓EPO production), endocrine disease (hypothyroidism, hypoadrenocorticism)</li>
+  <li>Bone marrow infiltration (myelophthisis), MDS</li>
+</ul>
+<h2>Haemolytic Anaemia — Types of Haemolysis</h2>
+<h3>Intravascular Haemolysis</h3>
+<p>RBC destruction within blood vessels — releases free haemoglobin into plasma:</p>
+<ul>
+  <li>Haemoglobinaemia → haemoglobinuria (urine turns red/brown)</li>
+  <li><span class="sp-key">Pre-hepatic (haemolytic) icterus</span> — excess bilirubin from haem catabolism exceeds hepatic conjugation capacity</li>
+  <li>Causes: complement-mediated (IgM IMHA), osmotic lysis, toxins (onion, copper, zinc), babesiosis, leptospirosis</li>
+</ul>
+<h3>Extravascular Haemolysis</h3>
+<p>RBC destruction by macrophages in spleen, liver, and lymph nodes:</p>
+<ul>
+  <li>No haemoglobinaemia; <span class="sp-key">splenomegaly and hepatomegaly</span> develop</li>
+  <li>Icterus from bilirubin overflow (pre-hepatic)</li>
+  <li>Causes: IgG-coated RBCs (IMHA), Mycoplasma haemofelis, Anaplasma, damaged or aged RBCs</li>
+</ul>
+<h2>Icterus Classification</h2>
+<ul>
+  <li><span class="sp-key">Pre-hepatic</span> — excessive haem catabolism (haemolysis); predominantly unconjugated bilirubin</li>
+  <li><span class="sp-key">Hepatic</span> — hepatocellular damage impairs bilirubin uptake/conjugation/excretion; mixed bilirubin</li>
+  <li><span class="sp-key">Post-hepatic</span> — bile duct obstruction; conjugated bilirubin refluxes; bilirubin in urine (bilirubinuria) without haemoglobinuria</li>
+</ul>`
+  },
+  {
+    icon: '💉', name: 'Aplastic Anaemia, Neutropenias & Thrombocytopenias', pages: 'Pages 3–4',
+    content: `
+<h2>Aplastic Anaemia</h2>
+<p><span class="sp-key">Aplastic anaemia</span> results from destruction or failure of haematopoietic stem cells, producing pancytopenia with a hypocellular (fatty) bone marrow.</p>
+<h3>Causes</h3>
+<ul>
+  <li><span class="sp-key">Drugs and toxins</span> — chloramphenicol (cats, idiosyncratic), oestrogen (exogenous or Sertoli cell tumour-derived in dogs), fenbendazole, cytotoxic chemotherapy agents, bracken fern (cattle — contain ptaquiloside)</li>
+  <li><span class="sp-key">Infectious</span> — FeLV (cats, directly infects HSCs), canine parvovirus (targets rapidly dividing marrow cells), Ehrlichia canis (dogs)</li>
+  <li><span class="sp-key">Immune-mediated</span> — T-cell-mediated destruction of HSCs (immune aplastic anaemia)</li>
+  <li>Idiopathic</li>
+</ul>
+<div class="sp-warn">Oestrogen toxicosis in dogs (endogenous from Sertoli cell tumour or exogenous administration) is a classic cause of aplastic anaemia — initial thrombocytosis followed by severe pancytopenia.</div>
+<h2>Neutropenias</h2>
+<p><span class="sp-key">Neutropenia</span> — neutrophil count below species-specific lower reference limit. Mechanisms:</p>
+<ul>
+  <li><span class="sp-key">Decreased production</span> — bone marrow failure (aplasia, MDS, drug/toxin, FeLV, parvovirus)</li>
+  <li><span class="sp-key">Increased consumption/destruction</span> — severe infection overwhelms marrow reserve; immune-mediated neutrophil destruction</li>
+  <li><span class="sp-key">Margination</span> — shift of neutrophils from circulating to marginal pool (endotoxaemia, anaphylaxis); transient</li>
+  <li><span class="sp-key">Cyclic neutropenia</span> — grey Collie dog; 12-day cycles of severe neutropenia due to stem cell cycling defect</li>
+</ul>
+<div class="sp-note">Severe neutropenia (&lt;0.5 × 10⁹/L) carries high risk of life-threatening bacterial infection — a veterinary emergency.</div>
+<h2>Thrombocytopenias</h2>
+<p><span class="sp-key">Thrombocytopenia</span> — platelet count below normal; spontaneous haemorrhage risk rises significantly when &lt;30–50 × 10⁹/L.</p>
+<h3>Mechanisms</h3>
+<ul>
+  <li><span class="sp-key">Decreased production</span> — megakaryocyte aplasia/hypoplasia (drug/toxin, FeLV, aplastic anaemia)</li>
+  <li><span class="sp-key">Increased consumption</span> — disseminated intravascular coagulation (DIC); platelet activation and consumption in fibrin thrombi</li>
+  <li><span class="sp-key">Increased destruction</span> — immune-mediated thrombocytopenia (IMT); anti-platelet IgG antibodies lead to splenic removal</li>
+  <li><span class="sp-key">Sequestration</span> — hypersplenism traps platelets in an enlarged spleen</li>
+  <li><span class="sp-key">Dilution</span> — massive transfusion with stored blood lacking viable platelets</li>
+</ul>
+<div class="sp-note">Clinical signs of thrombocytopenia: petechiae and ecchymoses on mucous membranes and skin, epistaxis, melaena, prolonged bleeding from minor wounds.</div>`
+  },
+  {
+    icon: '📈', name: 'Cytoses', pages: 'Page 4',
+    content: `
+<h2>Erythrocytosis (Polycythaemia)</h2>
+<p><span class="sp-key">Erythrocytosis</span> — increase in circulating RBC mass; distinguished as:</p>
+<ul>
+  <li><span class="sp-key">Absolute erythrocytosis</span> — true increase in RBC mass:
+    <ul>
+      <li><em>Primary</em> — polycythaemia vera; clonal myeloproliferative disorder; EPO-independent erythroid proliferation</li>
+      <li><em>Secondary appropriate</em> — high-altitude hypoxia, right-to-left cardiac shunts, chronic pulmonary disease; ↑EPO driven by true hypoxia</li>
+      <li><em>Secondary inappropriate</em> — EPO-secreting tumours (renal carcinoma, hepatocellular carcinoma); normoxic EPO excess</li>
+    </ul>
+  </li>
+  <li><span class="sp-key">Relative erythrocytosis</span> — plasma volume reduction (dehydration, splenic contraction); RBC count rises without true increase in mass</li>
+</ul>
+<div class="sp-note">Splenic contraction in excited horses releases stored erythrocytes — PCV may reach 55–65% transiently in excited animals.</div>
+<h2>Neutrophilia</h2>
+<p>Increased circulating neutrophil count. Causes:</p>
+<ul>
+  <li><span class="sp-key">Physiological leukocytosis</span> — adrenaline causes demargination; transient, no left shift, no toxic changes</li>
+  <li><span class="sp-key">Stress leukogram</span> — cortisol-driven; neutrophilia + lymphopenia + eosinopenia + monocytosis</li>
+  <li><span class="sp-key">Inflammatory neutrophilia</span> — bacterial infection, tissue necrosis; may show left shift (band neutrophils) and toxic changes (Döhle bodies, toxic granulation, cytoplasmic vacuolation)</li>
+  <li><span class="sp-key">Leukaemoid reaction</span> — severe reactive neutrophilia mimicking leukaemia (WBC &gt;50 × 10⁹/L) without clonal origin</li>
+</ul>
+<h2>Eosinophilia and Basophilia</h2>
+<ul>
+  <li><span class="sp-key">Eosinophilia</span> — parasitism, hypersensitivity/allergy (atopy, food allergy), eosinophilic granuloma complex (cats), idiopathic hypereosinophilic syndrome</li>
+  <li><span class="sp-key">Basophilia</span> — often accompanies eosinophilia; heartworm disease, hyperlipidaemia</li>
+</ul>
+<h2>Thrombocytosis</h2>
+<p>Increased circulating platelets:</p>
+<ul>
+  <li><span class="sp-key">Reactive (secondary)</span> — iron deficiency, inflammatory disease, splenectomy, vincristine treatment, rebound after thrombocytopenia</li>
+  <li><span class="sp-key">Primary (essential thrombocythaemia)</span> — clonal megakaryocytic disorder; very high sustained platelet counts; risk of thrombosis or paradoxical haemorrhage</li>
+</ul>
+<h2>Lymphocytosis</h2>
+<ul>
+  <li><span class="sp-key">Physiological</span> — young animals; post-vaccination; epinephrine-mediated demargination (cats)</li>
+  <li><span class="sp-key">Chronic infection/antigen stimulation</span> — persistent immune response</li>
+  <li><span class="sp-key">Neoplastic</span> — chronic lymphocytic leukaemia (CLL); small mature lymphocytes; indolent course</li>
+  <li>Bovine leukosis (enzootic bovine leucosis — BLV infection) — sustained B-cell lymphocytosis progressing to lymphoma in a proportion of persistently infected cattle</li>
+</ul>`
+  },
+  {
+    icon: '🧬', name: 'Congenital Disorders', pages: 'Pages 4–5',
+    content: `
+<h2>Erythropoietic Porphyria</h2>
+<p><span class="sp-key">Erythropoietic porphyria</span> — autosomal recessive defect in uroporphyrinogen III cosynthase, causing accumulation of uroporphyrin I in RBCs, urine, and bones.</p>
+<ul>
+  <li>Species: cattle (bovine congenital erythropoietic porphyria — BCEP), cats, pigs</li>
+  <li>Clinical signs: <span class="sp-key">pink-brown discolouration of teeth and bones</span> (fluorescent under Wood's lamp), photosensitisation (porphyrins are photoreactive), haemolytic anaemia</li>
+  <li>Urine is reddish-brown; faeces may be discoloured</li>
+  <li>Inherited in Holsteins and Shorthorns; affected calves show photosensitivity soon after birth</li>
+</ul>
+<h2>Leukocyte Adhesion Deficiency (LAD)</h2>
+<p><span class="sp-key">LAD</span> — autosomal recessive deficiency of <span class="sp-key">CD18</span> (β2 integrin), preventing neutrophils from leaving blood vessels to reach infection sites.</p>
+<ul>
+  <li>Species: Irish Setter dogs (CLAD), Holstein cattle (BLAD)</li>
+  <li>Clinical signs: recurrent severe bacterial infections despite marked peripheral neutrophilia, poor wound healing, delayed umbilical stump involution</li>
+  <li>Paradox: neutrophilia in blood (cells cannot emigrate) but neutropenia at infection sites</li>
+  <li>BLAD carriers identified by DNA testing — important for breed screening</li>
+</ul>
+<h2>Chédiak-Higashi Syndrome</h2>
+<p><span class="sp-key">Chédiak-Higashi syndrome</span> — autosomal recessive defect in <span class="sp-key">LYST gene</span> (lysosomal trafficking regulator), producing giant cytoplasmic granules in neutrophils and other granule-containing cells.</p>
+<ul>
+  <li>Species: cats (silver-blue Persians), mink, cattle, killer whales, humans</li>
+  <li>Clinical signs: partial <span class="sp-key">oculocutaneous albinism</span> (giant melanosomes), recurrent infections (impaired neutrophil killing), bleeding tendency (giant platelet dense granules — impaired platelet aggregation)</li>
+  <li>Characteristic histology: large, irregular eosinophilic granules in neutrophils and platelets</li>
+</ul>
+<h2>Glanzmann Thrombasthenia</h2>
+<p><span class="sp-key">Glanzmann thrombasthenia</span> — autosomal recessive deficiency of <span class="sp-key">glycoprotein IIb/IIIa (αIIbβ3 integrin)</span>, the platelet fibrinogen receptor required for platelet aggregation.</p>
+<ul>
+  <li>Species: Otterhound and Great Pyrenees dogs</li>
+  <li>Clinical signs: normal platelet count but markedly prolonged bleeding time; petechiae, epistaxis, gingival bleeding</li>
+  <li>Clot retraction is absent or severely impaired</li>
+  <li>Platelet aggregation studies with ADP and collagen show absent/markedly reduced aggregation</li>
+</ul>
+<h2>Von Willebrand Disease (vWD)</h2>
+<p><span class="sp-key">Von Willebrand disease</span> — deficiency or dysfunction of <span class="sp-key">von Willebrand factor (vWF)</span>, a large multimeric glycoprotein that mediates platelet adhesion to subendothelial collagen and carries factor VIII.</p>
+<ul>
+  <li>Most common inherited coagulopathy in domestic animals — especially <span class="sp-key">Dobermann Pinschers</span> (Type 1)</li>
+  <li><span class="sp-key">Type 1</span> — partial quantitative deficiency; mild-moderate signs; most common</li>
+  <li><span class="sp-key">Type 2</span> — qualitative defect (abnormal multimer structure); German Wirehaired Pointer; moderate-severe</li>
+  <li><span class="sp-key">Type 3</span> — complete absence of vWF; Scottish Terrier, Chesapeake Bay Retriever; severe haemorrhage</li>
+  <li>Lab findings: prolonged BMBT (buccal mucosal bleeding time), low vWF antigen, normal PT, variable aPTT</li>
+</ul>`
+  },
+  {
+    icon: '🛡️', name: 'Immunomediated Diseases (IMHA)', pages: 'Page 5',
+    content: `
+<h2>Immune-Mediated Haemolytic Anaemia (IMHA)</h2>
+<p><span class="sp-key">IMHA</span> is characterised by immune-mediated destruction of erythrocytes, usually regenerative with spherocytosis and a positive Coombs test (direct antiglobulin test).</p>
+<h2>Primary (Idiopathic) IMHA</h2>
+<p>Autoantibodies develop against self RBC surface antigens without an identifiable underlying cause.</p>
+<h3>IgG-Mediated (Extravascular Haemolysis)</h3>
+<ul>
+  <li>IgG antibodies coat RBCs → recognised by Fc receptors on splenic macrophages → <span class="sp-key">extravascular haemolysis</span></li>
+  <li>Partial phagocytosis of coated membrane → <span class="sp-key">spherocytes</span> (small, dense, no central pallor)</li>
+  <li>Splenomegaly, hepatomegaly, icterus; no haemoglobinaemia</li>
+  <li>Most common mechanism in dogs</li>
+</ul>
+<h3>IgM-Mediated (Intravascular Haemolysis)</h3>
+<ul>
+  <li>IgM antibodies + complement activation → membrane attack complex (MAC) → <span class="sp-key">intravascular haemolysis</span></li>
+  <li>Haemoglobinaemia, haemoglobinuria, haemoglobinaemic plasma (red-tinged)</li>
+  <li>More acute and severe; higher mortality risk</li>
+  <li>Cold agglutinin disease — IgM antibodies active at low temperatures → agglutination of RBCs in extremities (ear tips, digits, tail)</li>
+</ul>
+<div class="sp-note">Autoagglutination (clumping of RBCs in saline) is pathognomonic for IMHA when distinguished from rouleaux. Rouleaux disperses in saline; true agglutination does not.</div>
+<h2>Secondary IMHA</h2>
+<p>Immune destruction of RBCs triggered by an identifiable underlying cause:</p>
+<ul>
+  <li><span class="sp-key">Infectious</span> — Mycoplasma haemofelis (cats), Babesia (dogs, cattle), Anaplasma, Ehrlichia, FeLV/FIV, canine distemper</li>
+  <li><span class="sp-key">Drug-induced</span> — drug hapten adsorbs to RBC membrane → immune complex deposition; examples: penicillins, cephalosporins, sulfonamides, propylthiouracil (cats)</li>
+  <li><span class="sp-key">Vaccine-associated</span> — rarely, post-vaccination immune activation triggers cross-reacting anti-RBC antibodies</li>
+  <li><span class="sp-key">Neoplasia-associated</span> — lymphoma, histiocytic sarcoma; neoplastic cells may express or induce anti-RBC immunity</li>
+</ul>
+<h2>Diagnosis</h2>
+<ul>
+  <li><span class="sp-key">Direct Coombs test (DAT)</span> — detects antibody or complement on RBC surface; positive in most IMHA cases</li>
+  <li>Spherocytosis on blood film (dogs)</li>
+  <li>Regenerative anaemia (reticulocytosis) — though early or severe cases may be non-regenerative</li>
+  <li>Elevated bilirubin, haemoglobinaemia (intravascular), splenomegaly (extravascular)</li>
+</ul>`
+  },
+  {
+    icon: '🦠', name: 'Infectious Diseases: Protozoa', pages: 'Pages 6–7',
+    content: `
+<h2>Babesiosis</h2>
+<p><span class="sp-key">Babesiosis</span> — tick-borne haemoprotozoan disease caused by intraerythrocytic <em>Babesia</em> spp.</p>
+<h3>Key Species</h3>
+<ul>
+  <li><span class="sp-key"><em>Babesia canis</em></span> — large Babesia of dogs; transmitted by <em>Dermacentor reticulatus</em>; common in Europe</li>
+  <li><span class="sp-key"><em>Babesia gibsoni</em></span> — small Babesia of dogs; transmitted by <em>Haemaphysalis</em> ticks; Asia and Americas</li>
+  <li><span class="sp-key"><em>Babesia bigemina</em> / <em>B. bovis</em></span> — cattle; transmitted by <em>Rhipicephalus (Boophilus)</em> ticks; redwater fever</li>
+  <li><span class="sp-key"><em>Babesia felis</em></span> — cats in South Africa</li>
+  <li><span class="sp-key"><em>Theileria equi</em></span> (formerly <em>B. equi</em>) — horses; causes equine piroplasmosis</li>
+</ul>
+<h3>Pathogenesis</h3>
+<div class="sp-chain">Tick feeds → sporozoites injected → enter RBCs → trophozoites → merozoites → RBC rupture → re-invasion → haemolysis</div>
+<ul>
+  <li><span class="sp-key">Direct lysis</span> of parasitised RBCs at schizogony</li>
+  <li><span class="sp-key">Oxidative damage</span> — reactive oxygen species from parasite metabolism damage RBC membranes</li>
+  <li><span class="sp-key">Immune-mediated haemolysis</span> — antibody-coated parasitised RBCs → extravascular destruction</li>
+  <li>Cytokine storm (TNF-α, IL-1) → systemic inflammatory response</li>
+</ul>
+<h3>Lesions</h3>
+<ul>
+  <li>Regenerative haemolytic anaemia, haemoglobinaemia, haemoglobinuria (<em>redwater</em> in cattle)</li>
+  <li>Splenomegaly (extramedullary haematopoiesis + phagocytic hyperplasia), hepatomegaly</li>
+  <li>Icterus; bile-stained tissues</li>
+  <li>Cerebral babesiosis (<em>B. bovis</em>) — sequestration of parasitised RBCs in cerebral capillaries → neurological signs</li>
+  <li>Haemorrhages on serosal surfaces; pulmonary oedema in severe cases</li>
+</ul>
+<h2>Theileriosis</h2>
+<p><span class="sp-key">Theileriosis</span> — caused by <em>Theileria parva</em> (East Coast Fever in cattle) and <em>T. annulata</em> (tropical theileriosis). Transmitted by ixodid ticks.</p>
+<ul>
+  <li><em>Theileria parva</em> — infects lymphocytes first (schizogony in lymphocytes → lymphoproliferation → lymphoma-like), then merozoites invade RBCs; highly fatal</li>
+  <li><em>T. annulata</em> — infects monocytes/macrophages; less severe</li>
+  <li>Lesions: <span class="sp-key">lymphadenopathy</span> (massive lymphocyte proliferation), anaemia, icterus, pulmonary oedema, haemorrhages</li>
+  <li>Lymph node biopsy: large lymphoblasts with schizont-containing macrophages (Koch's blue bodies)</li>
+</ul>`
+  },
+  {
+    icon: '🧫', name: 'Infectious Diseases: Bacteria, Mycoplasmas & Viruses', pages: 'Pages 7–8',
+    content: `
+<h2>Leptospirosis</h2>
+<p><span class="sp-key">Leptospirosis</span> — caused by pathogenic <em>Leptospira interrogans</em> serovars. Haematological effects occur as part of systemic disease.</p>
+<ul>
+  <li>Endothelial damage → haemolytic anaemia (some serovars directly haemolytic: <em>L. icterohaemorrhagiae</em>)</li>
+  <li>Thrombocytopenia from DIC, platelet consumption at damaged endothelium</li>
+  <li>Icterus — combination of haemolysis and hepatocellular damage</li>
+  <li>Haemoglobinuria, intravascular haemolysis</li>
+</ul>
+<h2>Hemotropic Mycoplasmas (Haemoplasmosis)</h2>
+<p>Previously called Haemobartonella/Eperythrozoon. Obligate epicellular bacteria on RBC surface.</p>
+<ul>
+  <li><span class="sp-key"><em>Mycoplasma haemofelis</em></span> — cats; major pathogen; causes cyclic haemolytic anaemia; can be severe</li>
+  <li><span class="sp-key"><em>Candidatus M. haemominutum</em></span> — cats; minor pathogen; usually subclinical</li>
+  <li><span class="sp-key"><em>Mycoplasma haemocanis</em></span> — dogs; subclinical in immunocompetent; disease usually only in splenectomised or immunosuppressed dogs</li>
+  <li><span class="sp-key"><em>Eperythrozoon suis</em></span> — pigs; causes icterus and anaemia, especially in piglets</li>
+  <li>Transmission: fleas (cats), ticks (dogs), blood-sucking arthropods, in utero/perinatal</li>
+  <li>Pathogenesis: organisms on RBC surface → oxidative damage + immune-mediated destruction → extravascular haemolysis → regenerative anaemia, splenomegaly, icterus</li>
+  <li>Diagnosis: PCR (gold standard), blood film (organisms appear as cocci, rods, or rings on RBC surface — but often not visible)</li>
+</ul>
+<h2>Equine Infectious Anaemia (EIA)</h2>
+<p><span class="sp-key">EIA</span> — caused by <em>Equine infectious anaemia virus</em> (EIAV), a lentivirus. Transmitted by large biting flies (<em>Tabanus</em>, <em>Stomoxys</em>) and by iatrogenic blood transfer.</p>
+<h3>Pathogenesis</h3>
+<div class="sp-chain">Virus infects macrophages → replication in lymph nodes, spleen, liver → viraemia → haemolysis + thrombocytopenia → cycles of fever, anaemia, thrombocytopenia</div>
+<ul>
+  <li>Virus replication in monocytes/macrophages → immune complex deposition on RBCs → extravascular haemolysis</li>
+  <li>Thrombocytopenia — immune-complex destruction of platelets + megakaryocyte infection</li>
+  <li>Course: acute → subacute → chronic (inapparent carriers); virus is never cleared</li>
+</ul>
+<h3>Lesions</h3>
+<ul>
+  <li>Splenomegaly, hepatomegaly, haemosiderosis of liver and spleen</li>
+  <li>Icterus, anaemia, petechiae/ecchymoses on mucous membranes</li>
+  <li>Chronic: cachexia, dependent oedema, lymphadenopathy</li>
+</ul>
+<div class="sp-note">Coggins test (agar gel immunodiffusion) is the standard regulatory test for EIA antibodies — positive horses are subject to quarantine or euthanasia in many countries.</div>
+<h2>Hematotropic Rickettiae</h2>
+<h3>Anaplasmosis</h3>
+<p><span class="sp-key"><em>Anaplasma phagocytophilum</em></span> — tick-borne (Ixodes spp.); infects neutrophils and eosinophils. Granulocytic anaplasmosis in dogs, horses, cattle, ruminants, and humans.</p>
+<ul>
+  <li>Morulae (clusters of organisms) visible in neutrophil cytoplasm on blood film</li>
+  <li>Clinical: fever, thrombocytopenia, leukopenia, anaemia; neutropenia despite morulae</li>
+</ul>
+<p><span class="sp-key"><em>Anaplasma marginale</em></span> — cattle; transmitted by <em>Rhipicephalus</em> and mechanical vectors; infects erythrocytes. Causes anaemia, icterus, weight loss; no haemoglobinuria (extravascular haemolysis).</p>
+<h3>Ehrlichiosis</h3>
+<p><span class="sp-key"><em>Ehrlichia canis</em></span> — dogs; <em>Rhipicephalus sanguineus</em> tick vector; infects monocytes/lymphocytes. Tropical canine pancytopenia.</p>
+<ul>
+  <li>Morulae in monocyte cytoplasm; thrombocytopenia is the hallmark</li>
+  <li>Three phases: acute (fever, thrombocytopenia), subclinical (persistent mild thrombocytopenia), chronic (severe pancytopenia with aplastic marrow)</li>
+  <li>Chronic phase is life-threatening and may require prolonged doxycycline treatment</li>
+</ul>`
+  },
+  {
+    icon: '🔴', name: 'Hematopoietic Neoplasia', pages: 'Pages 8–9',
+    content: `
+<h2>Classification of Haematopoietic Neoplasia</h2>
+<p>Haematopoietic neoplasms are broadly divided into:</p>
+<ul>
+  <li><span class="sp-key">Leukaemias</span> — originate in bone marrow, typically circulate in blood</li>
+  <li><span class="sp-key">Lymphomas</span> — originate in lymphoid organs (nodes, spleen, tonsils); may have leukaemic phase</li>
+  <li><span class="sp-key">Plasma cell neoplasias</span> — clonal expansion of plasma cells</li>
+  <li><span class="sp-key">Histiocytic neoplasias</span> — proliferation of macrophages/dendritic cells</li>
+</ul>
+<h2>Leukaemia</h2>
+<h3>Chronic Leukaemia</h3>
+<p>Clonal proliferation of <span class="sp-key">well-differentiated (mature)</span> neoplastic cells; slowly progressive; patients often asymptomatic for long periods.</p>
+<ul>
+  <li><span class="sp-key">Chronic lymphocytic leukaemia (CLL)</span> — small mature lymphocytes; dogs and cats; marked lymphocytosis; indolent course; long survival</li>
+  <li><span class="sp-key">Chronic myeloid leukaemia (CML)</span> — mature neutrophilic granulocytes; rare; leukocytosis &gt;100 × 10⁹/L</li>
+  <li><span class="sp-key">Polycythaemia vera</span> — clonal erythrocytosis; normal or low EPO</li>
+  <li><span class="sp-key">Essential thrombocythaemia</span> — clonal thrombocytosis</li>
+</ul>
+<h3>Acute Leukaemia</h3>
+<p>Clonal proliferation of <span class="sp-key">immature blast cells</span> that fail to mature; aggressive; rapid progression; bone marrow failure dominates.</p>
+<ul>
+  <li><span class="sp-key">Acute lymphoblastic leukaemia (ALL)</span> — lymphoblasts in marrow and blood; cats (FeLV-associated), dogs; poor prognosis</li>
+  <li><span class="sp-key">Acute myeloid leukaemia (AML)</span> — myeloblasts; multiple FAB subtypes (M0–M7); cats (FeLV-associated) and dogs</li>
+  <li>Criteria: &gt;20–30% blasts in bone marrow; pancytopenia from marrow replacement</li>
+  <li>Features: acute onset, fever, bleeding, recurrent infections, organomegaly</li>
+</ul>
+<div class="sp-warn">Distinguishing ALL from AML requires flow cytometry (CD3, CD79a for lymphoid; MPO, CD13 for myeloid) or cytochemistry — critical because treatment protocols differ.</div>
+<h2>Plasma Cell Neoplasia</h2>
+<h3>Multiple Myeloma</h3>
+<p><span class="sp-key">Multiple myeloma</span> — malignant clonal proliferation of plasma cells in bone marrow, producing monoclonal immunoglobulin (M-protein/paraprotein).</p>
+<ul>
+  <li>Classic CRAB criteria: <span class="sp-key">C</span>alcium elevation, <span class="sp-key">R</span>enal failure, <span class="sp-key">A</span>naemia, <span class="sp-key">B</span>one lytic lesions (punch-out lesions on radiograph)</li>
+  <li>Bence-Jones proteinuria (free immunoglobulin light chains in urine)</li>
+  <li>Hyperviscosity syndrome from excess paraprotein → retinal haemorrhages, neurological signs, cardiac overload</li>
+  <li>Dogs: IgA or IgG; cats: rare; treatment — melphalan + prednisolone</li>
+</ul>
+<h3>Plasmacytoma</h3>
+<p><span class="sp-key">Plasmacytoma</span> — solitary benign or malignant plasma cell tumour without systemic bone marrow involvement.</p>
+<ul>
+  <li>Extramedullary plasmacytoma — skin and mucosal sites (digits, oral cavity, GI); most are benign in dogs</li>
+  <li>Osseous (solitary myeloma) — single bone lesion; may progress to multiple myeloma</li>
+</ul>
+<h2>Histiocytic Neoplasia</h2>
+<h3>Histiocytic Sarcoma</h3>
+<p><span class="sp-key">Histiocytic sarcoma</span> — malignant neoplasm of dendritic cell or macrophage origin; highly aggressive.</p>
+<ul>
+  <li>Common in Bernese Mountain Dog, Rottweiler, Golden Retriever, Flat-Coated Retriever</li>
+  <li>Localised form — spleen, lung, brain, periarticular soft tissue; rapid metastasis</li>
+  <li>Disseminated form (<span class="sp-key">malignant histiocytosis</span>) — simultaneous involvement of multiple organs (spleen, liver, lung, lymph nodes, bone marrow)</li>
+  <li>Haemophagocytic histiocytic sarcoma — neoplastic macrophages phagocytose erythrocytes and platelets → severe regenerative (initially) then non-regenerative anaemia, thrombocytopenia</li>
+</ul>
+<h3>Malignant Histiocytosis</h3>
+<p><span class="sp-key">Malignant histiocytosis</span> — now considered the disseminated form of histiocytic sarcoma; characterised by multisystem involvement with large pleomorphic macrophage-like cells with prominent nucleoli and frequent mitoses.</p>
+<ul>
+  <li>Lesions: massive splenomegaly, hepatomegaly, pulmonary infiltrates, lymphadenopathy</li>
+  <li>Haematology: severe non-regenerative anaemia, thrombocytopenia, leukocytosis with monocytosis</li>
+  <li>Prognosis: very poor; median survival &lt;1–2 months without treatment</li>
 </ul>`
   },
 ];
