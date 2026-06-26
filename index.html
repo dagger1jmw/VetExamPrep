@@ -533,12 +533,12 @@
       <p style="font-size:0.83rem;color:var(--text-muted);margin:4px 0 0">General principles, pituitary, adrenal, thyroid, parathyroid, pancreatic islets, chemoreceptor organs, pineal gland, and endocrine adipose tissue.</p>
       <div class="sp-meta"><span class="sp-pill">15 Subtopics</span><span class="sp-pill">16 Pages</span></div>
     </div>
-    <div class="sp-topic-chip sp-coming">
-      <div class="sp-badge">Coming Soon</div>
-      <div class="sp-icon">❤️</div>
-      <div class="sp-name">Cardiovascular System - Lymph Vessels</div>
-      <p style="font-size:0.83rem;color:var(--text-muted);margin:4px 0 0">Heart, vessels, congenital defects, cardiomyopathies, pericardial disease.</p>
-      <div class="sp-meta"><span class="sp-pill">Coming Soon</span></div>
+    <div class="sp-topic-chip sp-available" onclick="openSpTopic('lymph')">
+      <div class="sp-badge">Available</div>
+      <div class="sp-icon">🫧</div>
+      <div class="sp-name">Lymphatic System</div>
+      <p style="font-size:0.83rem;color:var(--text-muted);margin:4px 0 0">Congenital lymphatic anomalies, lymphangiectasia, lymphangitis, and lymphatic neoplasms.</p>
+      <div class="sp-meta"><span class="sp-pill">4 Subtopics</span></div>
     </div>
     <div class="sp-topic-chip sp-coming">
       <div class="sp-badge">Coming Soon</div>
@@ -1433,6 +1433,78 @@
 <!-- END CARDIOVASCULAR SYSTEM PAGES -->
 
 <!-- =====================================================================
+     LYMPHATIC SYSTEM — HOME
+===================================================================== -->
+<div id="page-lymph-home" class="page">
+  <div class="hero" style="background:linear-gradient(135deg,#e0d5f5 0%,#f0e8ff 50%,#d8e0f5 100%);color:var(--text)">
+    <h1 style="color:var(--primary-dark)">🫧 Lymphatic System</h1>
+    <p style="color:var(--text-muted)">Congenital lymphatic anomalies, lymphangiectasia, lymphangitis, and lymphatic neoplasms from the Cardiovascular System – Lymph Vessels document.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num" id="lymph-stat-qcount">0</div><div class="lbl">Questions</div></div>
+      <div class="hero-stat"><div class="num">4</div><div class="lbl">Subtopics</div></div>
+      <div class="hero-stat"><div class="num" id="lymph-stat-sessions">0</div><div class="lbl">Sessions</div></div>
+    </div>
+  </div>
+  <div class="section-title">🚀 Start Studying</div>
+  <div class="mode-grid">
+    <div class="mode-card" onclick="spShowPage('lymph','topics')">
+      <div class="icon">📖</div><h3>Subtopic Study</h3>
+      <p>Read lecture notes for each subtopic. 4 subtopics drawn directly from the course document.</p>
+    </div>
+    <div class="mode-card" onclick="startAllLymphQuiz()">
+      <div class="icon">🎯</div><h3>Exam Prep Mode</h3>
+      <p>Randomised questions drawn from all subtopics with questions added so far — full mixed practice exam.</p>
+    </div>
+  </div>
+</div>
+
+<!-- =====================================================================
+     LYMPHATIC SYSTEM — TOPICS (Subtopic notes)
+===================================================================== -->
+<div id="page-lymph-topics" class="page">
+  <div id="lymph-subtopic-list">
+    <div class="flex-row" style="margin-bottom:16px">
+      <div class="section-title" style="margin:0">📖 Subtopics</div>
+    </div>
+    <div class="sp-subtopic-grid" id="lymph-subtopic-grid"></div>
+  </div>
+  <div id="lymph-notes-panel" style="display:none">
+    <div class="flex-row" style="margin-bottom:14px">
+      <button class="btn btn-ghost btn-sm" onclick="closeLymphNotes()">← All Subtopics</button>
+      <div class="spacer"></div>
+      <span id="lymph-notes-title" style="font-weight:700;color:var(--primary-dark);font-size:0.95rem"></span>
+    </div>
+    <div id="lymph-study-btn-area" style="margin-bottom:12px"></div>
+    <div id="lymph-notes-body" class="sp-content"></div>
+  </div>
+</div>
+
+<!-- =====================================================================
+     LYMPHATIC SYSTEM — QUIZ
+===================================================================== -->
+<div id="page-lymph-quiz" class="page">
+  <div id="lymph-quiz-area"></div>
+</div>
+
+<!-- =====================================================================
+     LYMPHATIC SYSTEM — PROGRESS
+===================================================================== -->
+<div id="page-lymph-stats" class="page">
+  <div class="flex-row" style="margin-bottom:18px">
+    <div class="section-title" style="margin:0">📊 My Progress</div>
+    <div class="spacer"></div>
+    <button class="btn btn-ghost btn-sm" onclick="resetLymphStats()" style="color:var(--wrong-dark)">🗑 Reset Progress</button>
+  </div>
+  <div class="stats-grid" id="lymph-overall-stats"></div>
+  <div class="section-title">📈 By Subtopic (worst first)</div>
+  <div class="card" id="lymph-subtopic-stats-list"></div>
+  <div class="divider"></div>
+  <div class="section-title">🕐 Session History</div>
+  <div id="lymph-session-history-list"></div>
+</div>
+<!-- END LYMPHATIC SYSTEM PAGES -->
+
+<!-- =====================================================================
      BONES & JOINTS — HOME
 ===================================================================== -->
 <div id="page-bones-home" class="page">
@@ -2253,6 +2325,14 @@ const NAV_CONFIGS = {
       {id:'cardio-home',   label:'🏠 Home',       fn:"spShowPage('cardio','home')"},
       {id:'cardio-topics', label:'📖 Topics',     fn:"spShowPage('cardio','topics')"},
       {id:'cardio-stats',  label:'📊 Progress',   fn:"spShowPage('cardio','stats')"},
+    ]
+  },
+  lymph: {
+    label: '🫧 Lymphatic System',
+    btns: [
+      {id:'lymph-home',   label:'🏠 Home',       fn:"spShowPage('lymph','home')"},
+      {id:'lymph-topics', label:'📖 Topics',     fn:"spShowPage('lymph','topics')"},
+      {id:'lymph-stats',  label:'📊 Progress',   fn:"spShowPage('lymph','stats')"},
     ]
   },
   bones: {
@@ -3779,6 +3859,13 @@ function spShowPage(topic, page) {
     if (el) el.textContent = qTotal;
   }
   if (topic === 'cardio' && page === 'stats') renderCardioStats();
+  if (topic === 'lymph' && page === 'topics') renderLymphSubtopics();
+  if (topic === 'lymph' && page === 'home') {
+    const qTotal = Object.values(LYMPH_QUESTIONS).reduce((s, arr) => s + arr.length, 0);
+    const el = document.getElementById('lymph-stat-qcount');
+    if (el) el.textContent = qTotal;
+  }
+  if (topic === 'lymph' && page === 'stats') renderLymphStats();
   if (topic === 'bones' && page === 'topics') renderBonesSubtopics();
   if (topic === 'bones' && page === 'home') {
     const qTotal = Object.values(BONES_QUESTIONS).reduce((s, arr) => s + arr.length, 0);
@@ -5039,6 +5126,161 @@ function resetCardioStats() {
   localStorage.removeItem('vpCardioStats');
   localStorage.removeItem('vpCardioSessions');
   renderCardioStats();
+}
+
+// ── LYMPHATIC SYSTEM SUBTOPIC NOTES ──────────────────────────────────────
+
+function renderLymphSubtopics() {
+  const grid = document.getElementById('lymph-subtopic-grid');
+  if (!grid) return;
+  grid.innerHTML = LYMPH_SUBTOPICS.map((st, i) =>
+    `<div class="sp-subtopic-chip" onclick="openLymphSubtopic(${i})">
+      <div class="ss-icon">${st.icon}</div>
+      <div class="ss-name">${st.name}</div>
+      <div class="ss-pages">${st.pages}</div>
+    </div>`
+  ).join('');
+}
+
+function openLymphSubtopic(idx) {
+  const st = LYMPH_SUBTOPICS[idx];
+  if (!st) return;
+  document.getElementById('lymph-subtopic-list').style.display = 'none';
+  document.getElementById('lymph-notes-title').textContent = st.icon + ' ' + st.name;
+  document.getElementById('lymph-notes-body').innerHTML = st.content;
+  const qs = LYMPH_QUESTIONS[idx];
+  const qCount = qs ? qs.length : 0;
+  document.getElementById('lymph-study-btn-area').innerHTML = qCount > 0
+    ? `<button class="btn btn-primary btn-sm" onclick="beginLymphQuiz(randomiseAnswers(shuffle(tagSubtopic(LYMPH_QUESTIONS[${idx}], ${idx}))), '${st.icon} ${st.name.replace(/'/g,"\\'")}')">🎯 Study ${qCount} Questions</button>`
+    : '';
+  document.getElementById('lymph-notes-panel').style.display = 'block';
+  window.scrollTo(0, 0);
+}
+
+function closeLymphNotes() {
+  document.getElementById('lymph-notes-panel').style.display = 'none';
+  document.getElementById('lymph-subtopic-list').style.display = '';
+}
+
+// ── LYMPH QUIZ ENGINE ────────────────────────────────────────────────────
+
+let lymphQuiz = null;
+let lymphStats = JSON.parse(localStorage.getItem('vpLymphStats') || '{}');
+let lymphSessions = JSON.parse(localStorage.getItem('vpLymphSessions') || '[]');
+
+function startAllLymphQuiz() {
+  let all = [];
+  Object.entries(LYMPH_QUESTIONS).forEach(([k, arr]) => { all = all.concat(tagSubtopic(arr, Number(k))); });
+  if (!all.length) return;
+  beginLymphQuiz(randomiseAnswers(shuffle(all)), '🫧 All Subtopics');
+}
+
+function beginLymphQuiz(questions, title) {
+  lymphQuiz = { questions, idx: 0, title, answered: false, correct: 0, total: 0 };
+  spShowPage('lymph', 'quiz');
+  renderLymphQuestion();
+}
+
+function renderLymphQuestion() {
+  const q = lymphQuiz.questions[lymphQuiz.idx];
+  if (!q) { finishLymphQuiz(); return; }
+  lymphQuiz.answered = false;
+  const diffColor = {easy:'var(--correct-dark)',medium:'#b8860b',hard:'var(--wrong-dark)'}[q.diff];
+  const diffBg = {easy:'var(--correct-bg)',medium:'#fff3cd',hard:'var(--wrong-bg)'}[q.diff];
+  let html = `
+    <div class="question-header">
+      <div class="flex-row" style="flex-wrap:wrap;gap:6px">
+        <span class="badge" style="background:var(--primary-light);color:var(--primary-dark)">${lymphQuiz.title}</span>
+        <span class="badge" style="background:${diffBg};color:${diffColor}">${q.diff}</span>
+        <span class="badge" style="background:#e9ecef;color:#495057">${q.type==='tf'?'True/False':'MCQ'}</span>
+      </div>
+      <div class="progress-text">${lymphQuiz.idx+1} / ${lymphQuiz.questions.length}</div>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" style="width:${(lymphQuiz.idx/lymphQuiz.questions.length)*100}%"></div></div>
+    <div class="question-text">${q.q}</div>`;
+  if (q.type === 'tf') {
+    html += '<div class="tf-btns"><button class="tf-btn" onclick="answerLymphTF(true)">&#10003; True</button><button class="tf-btn" onclick="answerLymphTF(false)">&#10007; False</button></div>';
+  } else {
+    html += '<div class="options">';
+    for (let i = 0; i < q.opts.length; i++) {
+      html += `<button class="option-btn" onclick="answerLymphMCQ(${i})"><span class="opt-letter">${String.fromCharCode(65+i)}</span>${q.opts[i]}</button>`;
+    }
+    html += '</div>';
+  }
+  html += `<div id="lymph-q-feedback" style="display:none"></div>
+    <div class="quiz-actions" id="lymph-quiz-actions">
+      <button class="btn btn-ghost btn-sm" onclick="lymphSkipQuestion()">Skip</button>
+    </div>`;
+  document.getElementById('lymph-quiz-area').innerHTML = html;
+}
+
+function answerLymphMCQ(idx) {
+  if (lymphQuiz.answered) return;
+  lymphQuiz.answered = true;
+  const q = lymphQuiz.questions[lymphQuiz.idx];
+  const correct = idx === q.ans;
+  lymphQuiz.total++;
+  if (correct) lymphQuiz.correct++;
+  recordSpAnswer(lymphStats, q.subtopic, correct, 'vpLymphStats');
+  document.querySelectorAll('#lymph-quiz-area .option-btn').forEach((btn, i) => {
+    btn.disabled = true;
+    if (i === q.ans) btn.classList.add('correct');
+    else if (i === idx && !correct) btn.classList.add('wrong');
+  });
+  showLymphFeedback(q, correct);
+}
+
+function answerLymphTF(given) {
+  if (lymphQuiz.answered) return;
+  lymphQuiz.answered = true;
+  const q = lymphQuiz.questions[lymphQuiz.idx];
+  const correct = given === q.ans;
+  lymphQuiz.total++;
+  if (correct) lymphQuiz.correct++;
+  recordSpAnswer(lymphStats, q.subtopic, correct, 'vpLymphStats');
+  document.querySelectorAll('#lymph-quiz-area .tf-btn').forEach(btn => {
+    btn.disabled = true;
+    const isTrue = btn.textContent.trim().startsWith('✓');
+    if (isTrue && q.ans === true) btn.classList.add('correct');
+    else if (!isTrue && q.ans === false) btn.classList.add('correct');
+    else if (isTrue && given === true && !correct) btn.classList.add('wrong');
+    else if (!isTrue && given === false && !correct) btn.classList.add('wrong');
+  });
+  showLymphFeedback(q, correct);
+}
+
+function showLymphFeedback(q, correct) {
+  const fb = document.getElementById('lymph-q-feedback');
+  fb.style.display = 'block';
+  fb.className = 'feedback ' + (correct ? 'correct' : 'wrong');
+  fb.innerHTML = `<strong>${correct ? '✓ Correct!' : '✗ Incorrect'}</strong><br>${q.exp}`;
+  document.getElementById('lymph-quiz-actions').innerHTML = `<button class="btn btn-primary" onclick="nextLymphQuestion()">Next →</button>`;
+}
+
+function lymphSkipQuestion() { lymphQuiz.idx++; renderLymphQuestion(); }
+function nextLymphQuestion() { lymphQuiz.idx++; renderLymphQuestion(); }
+
+function finishLymphQuiz() {
+  const pct = lymphQuiz.total > 0 ? Math.round(lymphQuiz.correct / lymphQuiz.total * 100) : 0;
+  document.getElementById('result-score-circle').textContent = pct + '%';
+  document.getElementById('result-title').textContent = pct >= 80 ? '🎉 Excellent!' : pct >= 60 ? '👍 Good Job!' : '📚 Keep Studying!';
+  document.getElementById('result-subtitle').textContent = `${lymphQuiz.correct} / ${lymphQuiz.total} correct`;
+  document.getElementById('result-modal').classList.add('open');
+  if (lymphQuiz.total > 0) {
+    lymphSessions.unshift({ date: new Date().toLocaleDateString(), title: lymphQuiz.title, correct: lymphQuiz.correct, total: lymphQuiz.total });
+    localStorage.setItem('vpLymphSessions', JSON.stringify(lymphSessions));
+  }
+}
+
+function renderLymphStats() { renderSpStats('lymph', lymphStats, lymphSessions, LYMPH_SUBTOPICS); }
+
+function resetLymphStats() {
+  if (!confirm('Reset progress for Lymphatic System? This cannot be undone.')) return;
+  lymphStats = {};
+  lymphSessions = [];
+  localStorage.removeItem('vpLymphStats');
+  localStorage.removeItem('vpLymphSessions');
+  renderLymphStats();
 }
 
 // ── BONES & JOINTS SUBTOPIC NOTES ─────────────────────────────────────
@@ -10278,7 +10520,7 @@ const CARDIO_SUBTOPICS = [
 <h2>Fatty Infiltration</h2>
 <p>Increased number of lipocytes interposed between myocardial fibres. Associated with obesity and age.</p>
 <h2>Fatty Degeneration</h2>
-<p>Accumulation of lipid droplets in the sarcoplasm of myocytes. Occurs with systemic disorders (anaemia, toxaemia, copper deficiency).</p>
+<p>Accumulation of lipid droplets in the sarcoplasm of myocytes. Occurs with systemic disorders (anaemia, toxaemia, copper deficiency). Chronic anthracycline administration.</p>
 <h2>Hydropic Degeneration</h2>
 <p>Vacuolisation of sarcoplasm initiated by distention of elements of sarcoplasmic reticulum. Chronic anthracycline administration.</p>
 <h2>Lipofuscinosis</h2>
@@ -10320,7 +10562,7 @@ const CARDIO_SUBTOPICS = [
   <li><span class="sp-key">Protozoan:</span> toxoplasmosis, sarcocystosis, neosporosis</li>
   <li><span class="sp-key">Parasites:</span> cysticercosis, trichinosis</li>
 </ul>
-<div class="sp-chain">Sequelae of myocarditis: complete resolution → scattered petechial haemorrhages with cardiac failure → progressive myocardial damage with cardiac failure</div>
+<div class="sp-chain">Sequelae of myocarditis: complete resolution → scattered residual myocardial scars → progressive myocardial damage with cardiac failure</div>
 <ul>
   <li><span class="sp-key">Suppurative myocarditis</span> — localisation of pyogenic bacteria in myocardium (mostly from vegetative valvular endocarditis)</li>
   <li><span class="sp-key">Necrotising myocarditis</span> — toxoplasmosis</li>
@@ -10416,7 +10658,7 @@ const CARDIO_SUBTOPICS = [
     icon: '🐷', name: 'Other Diseases: Mulberry Heart, Swine Fevers', pages: 'Page 13',
     content: `
 <h2>Mulberry Heart Disease</h2>
-<p>Dietary macroangiopathy. Deficiency of <span class="sp-key">Vitamin E / Selenium</span>.</p>
+<p>Dietary microangiopathy. Deficiency of <span class="sp-key">Vitamin E / Selenium</span>.</p>
 <div class="sp-chain">Vit E/Se deficiency → fibrinoid necrosis and thrombosis of small vessels → microhaemorrhages → discolouration of the epicardial surface → hydropericardium</div>
 <ul>
   <li>Hepatosis dietetica: massive haemorrhagic hepatic necrosis</li>
@@ -10440,6 +10682,57 @@ const CARDIO_SUBTOPICS = [
   <li>Lymph node haemorrhage so severe nodes resemble a blood clot</li>
 </ul>
 <div class="sp-warn">African Swine Fever is a notifiable (listed) disease — any suspected case must be reported to veterinary authorities immediately. It does not affect humans.</div>`
+  },
+];
+
+const LYMPH_QUESTIONS = {};
+
+const LYMPH_SUBTOPICS = [
+  {
+    icon: '👶', name: 'Congenital Lymphatic Anomalies', pages: 'Page 10',
+    content: `
+<h2>Anasarca</h2>
+<p><span class="sp-key">Anasarca</span> — generalised subcutaneous oedema caused by defective development of lymphatic vessels.</p>
+<ul>
+  <li>Not very common; often not compatible with life</li>
+  <li>One of the most frequently encountered as a finding in <span class="sp-key">aborted fetuses</span></li>
+  <li>Caused by failure of normal lymphatic vessel development → impaired lymph drainage → widespread tissue oedema</li>
+</ul>
+<div class="sp-note">Anasarca is listed under vascular congenital anomalies in the source document and is specifically attributed to defective lymphatic vessel development rather than a primary cardiac or vascular cause.</div>`
+  },
+  {
+    icon: '💧', name: 'Lymphangiectasia', pages: 'Page 12',
+    content: `
+<h2>Definition</h2>
+<p><span class="sp-key">Lymphangiectasia</span> — abnormal dilation of lymphatic vessels.</p>
+<h2>Types</h2>
+<ul>
+  <li><span class="sp-key">Congenital anomaly</span> — failure of normal lymphatic development present from birth</li>
+  <li><span class="sp-key">Acquired/Obstructive</span> — caused by tumours and invading masses blocking lymphatic drainage → back-pressure dilation of vessels proximal to the obstruction</li>
+</ul>
+<div class="sp-warn">Diseases of the lymphatic system are noted as "usually not asked" in the source material — focus on the key definitions and causes.</div>`
+  },
+  {
+    icon: '🦠', name: 'Lymphangitis', pages: 'Page 12',
+    content: `
+<h2>Definition</h2>
+<p><span class="sp-key">Lymphangitis</span> — inflammation of lymphatic vessels; usually a consequence of infection or lymphatic obstruction spreading from a nearby site.</p>
+<h2>Causes</h2>
+<ul>
+  <li><span class="sp-key">Bacterial:</span> Johne's disease (<em>Mycobacterium avium</em> subsp. <em>paratuberculosis</em>), Malleus/Glanders (<em>Burkholderia mallei</em>)</li>
+  <li><span class="sp-key">Fungal:</span> histoplasmosis (<em>Histoplasma capsulatum</em>), sporotrichosis (<em>Sporothrix schenckii</em>)</li>
+  <li><span class="sp-key">Parasitic diseases</span></li>
+</ul>
+<div class="sp-warn">Diseases of the lymphatic system are noted as "usually not asked" in the source material.</div>`
+  },
+  {
+    icon: '🎗️', name: 'Lymphatic Neoplasms', pages: 'Page 12',
+    content: `
+<h2>Lymphangioma</h2>
+<p><span class="sp-key">Lymphangioma</span> — benign vascular tumour arising from lymphatic vessels.</p>
+<h2>Lymphangiosarcoma</h2>
+<p><span class="sp-key">Lymphangiosarcoma</span> — malignant tumour of lymphatic endothelium. Rare in veterinary species.</p>
+<div class="sp-note">These neoplasms are listed alongside haemangioma and haemangiosarcoma in the vascular neoplasia section of the source document. The lymphatic system section overall is noted as "usually not asked."</div>`
   },
 ];
 
