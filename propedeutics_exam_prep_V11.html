@@ -617,6 +617,13 @@
       <p style="font-size:0.83rem;color:var(--text-muted);margin:4px 0 0">Ocular structure, globe malformations, glaucoma, corneal, conjunctival, uveal and retinal diseases, and ocular neoplasia.</p>
       <div class="sp-meta"><span class="sp-pill">7 Subtopics</span></div>
     </div>
+    <div class="sp-topic-chip sp-available" onclick="openSpTopic('muscle')">
+      <div class="sp-badge">Available</div>
+      <div class="sp-icon">💪</div>
+      <div class="sp-name">Skeletal Muscles</div>
+      <p style="font-size:0.83rem;color:var(--text-muted);margin:4px 0 0">Myofiber alterations, degenerative myopathies, bacterial and clostridial myositis, parasitic and immune-mediated myositis, congenital myopathies, and endocrine disturbances.</p>
+      <div class="sp-meta"><span class="sp-pill">6 Subtopics</span></div>
+    </div>
   </div>
 </div>
 
@@ -1727,6 +1734,78 @@
 </div>
 <!-- END PATHOLOGY OF THE EYE PAGES -->
 
+<!-- =====================================================================
+     SKELETAL MUSCLES — HOME
+===================================================================== -->
+<div id="page-muscle-home" class="page">
+  <div class="hero" style="background:linear-gradient(135deg,#f5e8d5 0%,#ffe8d0 50%,#f0e0d5 100%);color:var(--text)">
+    <h1 style="color:var(--primary-dark)">💪 Skeletal Muscles</h1>
+    <p style="color:var(--text-muted)">Study myofiber alterations, degenerative myopathies, bacterial and clostridial myositis, parasitic and immune-mediated myositis, congenital myopathies, and endocrine disturbances.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num" id="muscle-stat-qcount">0</div><div class="lbl">Questions</div></div>
+      <div class="hero-stat"><div class="num">6</div><div class="lbl">Subtopics</div></div>
+      <div class="hero-stat"><div class="num" id="muscle-stat-sessions">0</div><div class="lbl">Sessions</div></div>
+    </div>
+  </div>
+  <div class="section-title">🚀 Start Studying</div>
+  <div class="mode-grid">
+    <div class="mode-card" onclick="spShowPage('muscle','topics')">
+      <div class="icon">📖</div><h3>Subtopic Study</h3>
+      <p>Read lecture notes for each subtopic. 6 subtopics drawn directly from the course document.</p>
+    </div>
+    <div class="mode-card" onclick="startAllMuscleQuiz()">
+      <div class="icon">🎯</div><h3>Exam Prep Mode</h3>
+      <p>Randomised questions drawn from all subtopics with questions added so far — full mixed practice exam.</p>
+    </div>
+  </div>
+</div>
+
+<!-- =====================================================================
+     SKELETAL MUSCLES — TOPICS (Subtopic notes)
+===================================================================== -->
+<div id="page-muscle-topics" class="page">
+  <div id="muscle-subtopic-list">
+    <div class="flex-row" style="margin-bottom:16px">
+      <div class="section-title" style="margin:0">📖 Subtopics</div>
+    </div>
+    <div class="sp-subtopic-grid" id="muscle-subtopic-grid"></div>
+  </div>
+  <div id="muscle-notes-panel" style="display:none">
+    <div class="flex-row" style="margin-bottom:14px">
+      <button class="btn btn-ghost btn-sm" onclick="closeMuscleNotes()">← All Subtopics</button>
+      <div class="spacer"></div>
+      <span id="muscle-notes-title" style="font-weight:700;color:var(--primary-dark);font-size:0.95rem"></span>
+    </div>
+    <div id="muscle-study-btn-area" style="margin-bottom:12px"></div>
+    <div id="muscle-notes-body" class="sp-content"></div>
+  </div>
+</div>
+
+<!-- =====================================================================
+     SKELETAL MUSCLES — QUIZ
+===================================================================== -->
+<div id="page-muscle-quiz" class="page">
+  <div id="muscle-quiz-area"></div>
+</div>
+
+<!-- =====================================================================
+     SKELETAL MUSCLES — PROGRESS
+===================================================================== -->
+<div id="page-muscle-stats" class="page">
+  <div class="flex-row" style="margin-bottom:18px">
+    <div class="section-title" style="margin:0">📊 My Progress</div>
+    <div class="spacer"></div>
+    <button class="btn btn-ghost btn-sm" onclick="resetMuscleStats()" style="color:var(--wrong-dark)">🗑 Reset Progress</button>
+  </div>
+  <div class="stats-grid" id="muscle-overall-stats"></div>
+  <div class="section-title">📈 By Subtopic (worst first)</div>
+  <div class="card" id="muscle-subtopic-stats-list"></div>
+  <div class="divider"></div>
+  <div class="section-title">🕐 Session History</div>
+  <div id="muscle-session-history-list"></div>
+</div>
+<!-- END SKELETAL MUSCLES PAGES -->
+
 <div class="modal-overlay" id="result-modal">
   <div class="modal">
     <div class="result-big">
@@ -2436,6 +2515,14 @@ const NAV_CONFIGS = {
       {id:'eye-home',   label:'🏠 Home',       fn:"spShowPage('eye','home')"},
       {id:'eye-topics', label:'📖 Topics',     fn:"spShowPage('eye','topics')"},
       {id:'eye-stats',  label:'📊 Progress',   fn:"spShowPage('eye','stats')"},
+    ]
+  },
+  muscle: {
+    label: '💪 Skeletal Muscles',
+    btns: [
+      {id:'muscle-home',   label:'🏠 Home',       fn:"spShowPage('muscle','home')"},
+      {id:'muscle-topics', label:'📖 Topics',     fn:"spShowPage('muscle','topics')"},
+      {id:'muscle-stats',  label:'📊 Progress',   fn:"spShowPage('muscle','stats')"},
     ]
   },
 };
@@ -3978,6 +4065,15 @@ function spShowPage(topic, page) {
     if (sEl) sEl.textContent = eyeSessions.length;
   }
   if (topic === 'eye' && page === 'stats') renderEyeStats();
+  if (topic === 'muscle' && page === 'topics') renderMuscleSubtopics();
+  if (topic === 'muscle' && page === 'home') {
+    const qTotal = Object.values(MUSCLE_QUESTIONS).reduce((s, arr) => s + arr.length, 0);
+    const el = document.getElementById('muscle-stat-qcount');
+    if (el) el.textContent = qTotal;
+    const sEl = document.getElementById('muscle-stat-sessions');
+    if (sEl) sEl.textContent = muscleSessions.length;
+  }
+  if (topic === 'muscle' && page === 'stats') renderMuscleStats();
 }
 
 function openSpTopic(topicId) {
@@ -5835,6 +5931,157 @@ function resetEyeStats() {
   localStorage.removeItem('vpEyeStats');
   localStorage.removeItem('vpEyeSessions');
   renderEyeStats();
+}
+
+// ── Skeletal Muscles subtopic notes ─────────────────────────────────────
+
+function renderMuscleSubtopics() {
+  const grid = document.getElementById('muscle-subtopic-grid');
+  if (!grid) return;
+  grid.innerHTML = MUSCLE_SUBTOPICS.map((st, i) =>
+    `<div class="sp-subtopic-chip" onclick="openMuscleSubtopic(${i})">
+      <div class="ss-icon">${st.icon}</div>
+      <div class="ss-name">${st.name}</div>
+      <div class="ss-pages">${st.pages}</div>
+    </div>`
+  ).join('');
+}
+
+function openMuscleSubtopic(idx) {
+  const st = MUSCLE_SUBTOPICS[idx];
+  if (!st) return;
+  document.getElementById('muscle-subtopic-list').style.display = 'none';
+  document.getElementById('muscle-notes-title').textContent = st.icon + ' ' + st.name;
+  document.getElementById('muscle-notes-body').innerHTML = st.content;
+  const qs = MUSCLE_QUESTIONS[idx];
+  const qCount = qs ? qs.length : 0;
+  document.getElementById('muscle-study-btn-area').innerHTML = qCount > 0
+    ? `<button class="btn btn-primary btn-sm" onclick="beginMuscleQuiz(${idx})">🎯 Study ${qCount} Questions</button>`
+    : `<span style="font-size:0.82rem;color:var(--text-muted)">Questions coming soon</span>`;
+  document.getElementById('muscle-notes-panel').style.display = 'block';
+}
+
+function closeMuscleNotes() {
+  document.getElementById('muscle-notes-panel').style.display = 'none';
+  document.getElementById('muscle-subtopic-list').style.display = 'block';
+}
+
+let muscleQuiz = {};
+let muscleStats = JSON.parse(localStorage.getItem('vpMuscleStats') || '{}');
+let muscleSessions = JSON.parse(localStorage.getItem('vpMuscleSessions') || '[]');
+
+function startAllMuscleQuiz() {
+  let all = [];
+  Object.entries(MUSCLE_QUESTIONS).forEach(([k, arr]) => {
+    arr.forEach(q => all.push({...q, _subtopicIdx: Number(k)}));
+  });
+  if (all.length === 0) { alert('No questions available yet — check back soon!'); return; }
+  shuffle(all);
+  muscleQuiz = { questions: all, idx: 0, correct: 0, total: 0, title: 'All Subtopics' };
+  spShowPage('muscle', 'quiz');
+  renderMuscleQuestion();
+}
+
+function beginMuscleQuiz(idx) {
+  const qs = MUSCLE_QUESTIONS[idx];
+  if (!qs || qs.length === 0) { alert('No questions for this subtopic yet.'); return; }
+  const questions = shuffle([...qs]).map(q => ({...q, _subtopicIdx: idx}));
+  muscleQuiz = { questions, idx: 0, correct: 0, total: 0, title: MUSCLE_SUBTOPICS[idx].name };
+  spShowPage('muscle', 'quiz');
+  renderMuscleQuestion();
+}
+
+function renderMuscleQuestion() {
+  const area = document.getElementById('muscle-quiz-area');
+  if (muscleQuiz.idx >= muscleQuiz.questions.length) { finishMuscleQuiz(); return; }
+  const q = muscleQuiz.questions[muscleQuiz.idx];
+  const num = muscleQuiz.idx + 1;
+  const tot = muscleQuiz.questions.length;
+  if (q.type === 'mcq') {
+    const displayed = randomiseAnswers(q.opts, q.ans);
+    area.innerHTML = `
+      <div class="quiz-header"><span class="q-counter">${num}/${tot}</span><span class="q-topic">${MUSCLE_SUBTOPICS[q._subtopicIdx]?.name || ''}</span></div>
+      <div class="question-text">${q.q}</div>
+      <div class="options-list" id="muscle-opts">
+        ${displayed.opts.map((o, i) => `<button class="option-btn" onclick="answerMuscleMCQ(${i},${displayed.correctIdx},${q._subtopicIdx})">${o}</button>`).join('')}
+      </div>
+      <div id="muscle-feedback" class="feedback" style="display:none"></div>
+      <div id="muscle-quiz-actions" style="margin-top:14px;text-align:right">
+        <button class="btn btn-ghost btn-sm" onclick="muscleSkipQuestion()">Skip →</button>
+      </div>`;
+  } else {
+    area.innerHTML = `
+      <div class="quiz-header"><span class="q-counter">${num}/${tot}</span><span class="q-topic">${MUSCLE_SUBTOPICS[q._subtopicIdx]?.name || ''}</span></div>
+      <div class="question-text">${q.q}</div>
+      <div class="tf-btns">
+        <button class="tf-btn true-btn" onclick="answerMuscleTF(true,${q.ans},${q._subtopicIdx})">✓ True</button>
+        <button class="tf-btn false-btn" onclick="answerMuscleTF(false,${q.ans},${q._subtopicIdx})">✗ False</button>
+      </div>
+      <div id="muscle-feedback" class="feedback" style="display:none"></div>
+      <div id="muscle-quiz-actions" style="margin-top:14px;text-align:right">
+        <button class="btn btn-ghost btn-sm" onclick="muscleSkipQuestion()">Skip →</button>
+      </div>`;
+  }
+}
+
+function answerMuscleMCQ(chosen, correct, subtopicIdx) {
+  const isCorrect = chosen === correct;
+  muscleQuiz.total++;
+  if (isCorrect) muscleQuiz.correct++;
+  recordSpAnswer(muscleStats, 'vpMuscleStats', subtopicIdx, isCorrect);
+  document.querySelectorAll('#muscle-opts .option-btn').forEach((b, i) => {
+    b.disabled = true;
+    if (i === correct) b.classList.add('correct');
+    else if (i === chosen && !isCorrect) b.classList.add('wrong');
+  });
+  const q = muscleQuiz.questions[muscleQuiz.idx];
+  showMuscleFeedback(isCorrect, q.exp);
+}
+
+function answerMuscleTF(chosen, correct, subtopicIdx) {
+  const isCorrect = chosen === correct;
+  muscleQuiz.total++;
+  if (isCorrect) muscleQuiz.correct++;
+  recordSpAnswer(muscleStats, 'vpMuscleStats', subtopicIdx, isCorrect);
+  document.querySelectorAll('.tf-btn').forEach(b => b.disabled = true);
+  const q = muscleQuiz.questions[muscleQuiz.idx];
+  showMuscleFeedback(isCorrect, q.exp);
+}
+
+function showMuscleFeedback(isCorrect, exp) {
+  const fb = document.getElementById('muscle-feedback');
+  fb.className = 'feedback ' + (isCorrect ? 'correct' : 'wrong');
+  fb.innerHTML = (isCorrect ? '<strong>✓ Correct!</strong>' : '<strong>✗ Incorrect</strong>') +
+    (exp ? `<div class="exp-text">${exp}</div>` : '');
+  fb.style.display = 'block';
+  document.getElementById('muscle-quiz-actions').innerHTML = `<button class="btn btn-primary" onclick="nextMuscleQuestion()">Next →</button>`;
+}
+
+function muscleSkipQuestion() { muscleQuiz.idx++; renderMuscleQuestion(); }
+function nextMuscleQuestion() { muscleQuiz.idx++; renderMuscleQuestion(); }
+
+function finishMuscleQuiz() {
+  const pct = muscleQuiz.total > 0 ? Math.round(muscleQuiz.correct / muscleQuiz.total * 100) : 0;
+  document.getElementById('result-score-circle').textContent = pct + '%';
+  document.getElementById('result-title').textContent = pct >= 80 ? '🎉 Excellent!' : pct >= 60 ? '👍 Good Job!' : '📚 Keep Studying!';
+  document.getElementById('result-subtitle').textContent = `${muscleQuiz.correct} / ${muscleQuiz.total} correct`;
+  resultModalNav = { home: () => spShowPage('muscle','home'), stats: () => spShowPage('muscle','stats') };
+  document.getElementById('result-modal').classList.add('open');
+  if (muscleQuiz.total > 0) {
+    muscleSessions.unshift({ date: new Date().toLocaleDateString(), title: muscleQuiz.title, correct: muscleQuiz.correct, total: muscleQuiz.total });
+    localStorage.setItem('vpMuscleSessions', JSON.stringify(muscleSessions));
+  }
+}
+
+function renderMuscleStats() { renderSpStats('muscle', muscleStats, muscleSessions, MUSCLE_SUBTOPICS); }
+
+function resetMuscleStats() {
+  if (!confirm('Reset progress for Skeletal Muscles? This cannot be undone.')) return;
+  muscleStats = {};
+  muscleSessions = [];
+  localStorage.removeItem('vpMuscleStats');
+  localStorage.removeItem('vpMuscleSessions');
+  renderMuscleStats();
 }
 
 // ── Neuropathology subtopic notes ─────────────────────────────────────
@@ -12265,6 +12512,270 @@ const EYE_SUBTOPICS = [
 <h3>Third Eyelid Gland Prolapse ("Cherry Eye")</h3>
 <p>Prolapse of the nictitating membrane gland — NOT a neoplasm but clinically important. Common in dogs (Cocker Spaniel, English Bulldog, Beagle, Neapolitan Mastiff). Appears as red round mass at medial canthus. Treated surgically by repositioning (not excision, as the gland contributes ~30–40% of tear production).</p>
 <div class="sp-note">Summary of most common ocular tumours by species: <strong>Dogs</strong> — meibomian gland adenoma (eyelid); limbal melanoma (globe). <strong>Cats</strong> — diffuse iris melanoma; lymphoma (secondary). <strong>Cattle & horses</strong> — squamous cell carcinoma.</div>`
+  },
+];
+
+const MUSCLE_QUESTIONS = {};
+
+const MUSCLE_SUBTOPICS = [
+  {
+    icon: '💪',
+    name: 'Structure, Functions & Myofiber Alterations',
+    pages: 'Pages 1–2',
+    content: `
+<h2>Functions of Skeletal Muscle</h2>
+<ul>
+  <li>Maintaining posture</li>
+  <li>Enabling movement</li>
+  <li>Respiration (respiratory muscles)</li>
+  <li>Glucose metabolism and maintenance of body temperature</li>
+  <li>Body contours</li>
+</ul>
+<h2>Structural Organisation</h2>
+<ul>
+  <li><span class="sp-key">Endomysium</span>: surrounds each individual myofiber</li>
+  <li><span class="sp-key">Perimysium</span>: surrounds fascicles of myofibers</li>
+  <li><span class="sp-key">Epimysium</span>: surrounds entire muscles</li>
+</ul>
+<div class="sp-note">Skeletal muscle fiber typing requires <strong>special histochemical stains and frozen sections</strong> — routine formalin-fixed sections are insufficient. The functional/anatomic relationship between a neuron, its axon, and the myofibers it innervates is called the <strong>Motor Unit</strong>.</div>
+<h2>Responses to Injury: Alteration in Myofiber Size</h2>
+<h3>Atrophy</h3>
+<p>Reduction in myofiber diameter due to loss of organelles including myofilaments.</p>
+<table style="width:100%;border-collapse:collapse;font-size:0.88rem">
+  <tr style="background:var(--surface2)"><th style="padding:7px;border:1px solid var(--border)">Type</th><th style="padding:7px;border:1px solid var(--border)">Features</th></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Physiologic atrophy</span> (endocrine/disuse)</td><td style="padding:7px;border:1px solid var(--border)">Disuse, cachexia, and hyperadrenocorticism → diffuse, non-specific angular atrophy selectively affecting <strong>Type II fibres</strong>. Immobilisation and upper motor neuron disease → disuse atrophy. Cachexia/hyperadrenocorticism → protein catabolism for energy.</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Denervation atrophy</span></td><td style="padding:7px;border:1px solid var(--border)">Reflects lesions of lower motor neurons. Following denervation, very small, dark, angular fibres compressed by adjacent normal myofibres. Classic example: <strong>laryngeal hemiplegia (roarers)</strong> in horses — injury to the left recurrent laryngeal nerve → atrophy of cricoarytenoideus dorsalis muscle.</td></tr>
+</table>
+<h3>Hypertrophy</h3>
+<p>Increase in volume of fibres due to abnormal activity or excessive use.</p>
+<ul>
+  <li><span class="sp-key">Physiologic</span>: exercise-induced</li>
+  <li><span class="sp-key">Compensatory</span>: non-specific response to disease reducing the number of functional fibres (hypertrophy of remaining fibres)</li>
+  <li>Hypertrophied fibres have less oxygen diffusion to internal portions → leads to myofiber damage</li>
+</ul>
+<h2>Necrosis and Regeneration</h2>
+<h3>Necrosis</h3>
+<p><strong>Causes:</strong> ischaemia, trauma, nutritional deficiencies (white muscle disease), metabolic abnormalities, toxins, infections.</p>
+<p><span class="sp-key">Gross:</span> Acutely degenerate or necrotic muscle has distinct or poorly demarcated areas of pale yellowish to grey-white discoloration. Necrotic muscle is readily mineralised → gross lesions become white, shiny, swollen, possibly gritty.</p>
+<p><span class="sp-key">Histo:</span> Myofibre swelling, hyalinisation, fragmentation of cytoplasm and loss of striations. Cytoplasmic debris is removed by infiltrating macrophages.</p>
+<h3>Regeneration</h3>
+<p>If the <span class="sp-key">basement membrane remains intact</span> → provides a framework for muscle repair. Satellite cells proliferate and differentiate within the intact basement membrane.</p>
+<ul>
+  <li>Insults that <strong>disrupt the basement membrane</strong> (e.g. suppurative myositis) do not favour effective regeneration → result in <strong>scarring (fibrosis)</strong></li>
+  <li>Mature myocytes cannot replicate; as long as the basement membrane is intact it prevents fibroblast entry → no fibrosis</li>
+  <li>Insults that disrupt the basement membrane → fibroblasts enter → fibrous replacement</li>
+</ul>
+<div class="sp-note">The integrity of the basement membrane is the key determinant of whether muscle heals by regeneration or by fibrosis. This is why suppurative myositis (which destroys the matrix) heals with scarring, while nutritional myopathy (which preserves the membrane) regenerates well.</div>`
+  },
+  {
+    icon: '🔥',
+    name: 'Degenerative Myopathies',
+    pages: 'Pages 3–4',
+    content: `
+<h2>Definition</h2>
+<p>Degenerative myopathies result in <span class="sp-key">segmental or global myofibre necrosis</span> in which inflammatory cells are <strong>not</strong> the primary cause of myofibre damage. Types: ischaemic, nutritional, toxic, exertional.</p>
+<h2>Ischaemic Myopathy / Downer Syndrome</h2>
+<table style="width:100%;border-collapse:collapse;font-size:0.88rem">
+  <tr style="background:var(--surface2)"><th style="padding:7px;border:1px solid var(--border)">Feature</th><th style="padding:7px;border:1px solid var(--border)">Detail</th></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Causes</span></td><td style="padding:7px;border:1px solid var(--border)">External pressure from objects or body weight; <strong>compartment syndrome</strong> (outward swelling limited by fascial CT → vessels occluded → ischaemic necrosis); vasculitis; myofibre-satellite calcification; sensitivity to ischaemia</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Compartment syndrome</span></td><td style="padding:7px;border:1px solid var(--border)">Increased intramuscular pressure → compression of vessels → decreased blood flow → ischaemic necrosis</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Gross</span></td><td style="padding:7px;border:1px solid var(--border)">Areas of muscle pallor; haemorrhage may occur (especially compartment syndrome). Cow: ischaemic necrosis of pectoral muscle from prolonged recumbency</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Histo</span></td><td style="padding:7px;border:1px solid var(--border)">Myofibre coagulative necrosis, sometimes with haemorrhage</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Post-anaesthesia myopathy</span></td><td style="padding:7px;border:1px solid var(--border)">Horse: prolonged lateral recumbency → ischaemia of gluteal muscle, lateral triceps; also abdominal musculature and prolonged lifting of the strap during surgery</td></tr>
+</table>
+<h2>Nutritive and Toxic Myopathies — White Muscle Disease</h2>
+<p><strong>Species:</strong> horses, cows, sheep, goats, pigs (young animals most commonly affected).</p>
+<p><strong>Cause:</strong> Deficiency of <span class="sp-key">Vitamin E</span> and/or <span class="sp-key">selenium</span>.</p>
+<ul>
+  <li>Selenium is a vital component of <strong>glutathione peroxidase</strong> (protects cells from oxidative injury)</li>
+  <li>High O₂ requirement combined with contractile activity → high susceptibility to oxidative injury</li>
+  <li>Vitamin E: antioxidant in cell membranes</li>
+</ul>
+<p><span class="sp-key">Gross:</span> Pale, sometimes white, streaks in skeletal and/or cardiac muscle; gritty when cut due to mineralisation.</p>
+<p><span class="sp-key">Histo (early):</span> Rounded, large, hyalinised myofibres with or without fragmentation. Mineralisation very common.</p>
+<div class="sp-note">White Muscle Disease (nutritional myodegeneration) is the most important nutritional myopathy in young ruminants. The white colour and chalky texture of the muscle is due to calcification of necrotic fibres.</div>
+<h2>Ionophore Toxicity (Monensin)</h2>
+<p>Ionophores (e.g. <span class="sp-key">monensin</span>) are often added to ruminant feeds to enhance growth. They form lipid-soluble reversible complexes with cations → allow movement of cations across cell membrane → disruption of ionic equilibrium (Ca²⁺ overload → detrimental).</p>
+<ul>
+  <li><span class="sp-key">Horses</span>: exquisitely sensitive. Acute toxicity → shock and cardiovascular collapse. If survive 3–4 days → monophasic multifocal necrosis of cardiac and skeletal muscles</li>
+  <li>Pale white areas of necrotic myofibres on gross examination</li>
+  <li>↑ serum CK and AST</li>
+</ul>
+<h2>Exertional Myopathies</h2>
+<p>Can lead to coagulative necrosis. Initiating factor = intensive or exhaustive activity of the major muscle masses.</p>
+<ul>
+  <li>Changes involve strongly glycolytic <span class="sp-key">Type II fibres</span></li>
+  <li>Glycolysis rapidly produces local severe heat and lactic acidosis → modifies and coagulates contractile proteins</li>
+  <li>Interstitial oedema → ischaemia and further damage</li>
+  <li><span class="sp-key">"Capture myopathy"</span>: acute myopathy following chase, struggle, or transport of wild animals and birds → often fatal</li>
+</ul>
+<p><strong>Tying-up / Exertional Rhabdomyolysis ("Monday morning disease"):</strong> racehorses and ridden horses following exertion.</p>
+<ul>
+  <li>Gross: myoglobinuria, swelling of affected muscle group, ↑ serum CK and AST</li>
+  <li>Histo: same as nutritional myopathy — usually involves a minority of myofibres. Most horses survive; lesions not commonly observed at necropsy</li>
+  <li>Brief rest usually results in recovery with few consequences</li>
+</ul>
+<div class="sp-chain">Intense exercise → glycolysis in Type II fibres → heat + lactic acidosis → protein coagulation → interstitial oedema → ischaemia → myofibre necrosis → myoglobinuria</div>`
+  },
+  {
+    icon: '🦠',
+    name: 'Bacterial Myositis & Clostridial Diseases',
+    pages: 'Page 5',
+    content: `
+<h2>Overview of Inflammatory Myopathies</h2>
+<p>Inflammatory cells are <span class="sp-key">directly responsible</span> for initiating and maintaining myofibre injury. Classified by causative agent: bacterial, viral, parasitic, immune-mediated.</p>
+<h2>Clostridial Myositis and Myonecrosis</h2>
+<h3>Malignant Oedema</h3>
+<table style="width:100%;border-collapse:collapse;font-size:0.88rem">
+  <tr style="background:var(--surface2)"><th style="padding:7px;border:1px solid var(--border)">Feature</th><th style="padding:7px;border:1px solid var(--border)">Detail</th></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Species</span></td><td style="padding:7px;border:1px solid var(--border)">Cattle, sheep, horse, swine</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Cause</span></td><td style="padding:7px;border:1px solid var(--border)">Complication of clostridial wound infection; <em>Cl. septicum</em>, <em>Cl. perfringens</em>, <em>Cl. sordellii</em>, <em>Cl. novyi</em>. Animals develop fever and die rapidly.</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Gross</span></td><td style="padding:7px;border:1px solid var(--border)">Hyperaemia, swelling due to severe serosanguineous exudate following subcutaneous and intermuscular tissue planes; crepitus (gas bubbles). MI is more often a <strong>cellulitis than a myositis</strong> — muscles are red but not haemorrhagic or disrupted by gas bubbles (contrast with blackleg).</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Histo</span></td><td style="padding:7px;border:1px solid var(--border)">Muscle fascicles and myofibres separated by protein-poor oedema fluid and clear round spaces (gas bubbles). Fibres fragmented, hyalinised, necrotic with loss of cross striations.</td></tr>
+</table>
+<h3>Blackleg</h3>
+<table style="width:100%;border-collapse:collapse;font-size:0.88rem">
+  <tr style="background:var(--surface2)"><th style="padding:7px;border:1px solid var(--border)">Feature</th><th style="padding:7px;border:1px solid var(--border)">Detail</th></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Agent</span></td><td style="padding:7px;border:1px solid var(--border)"><em>Clostridium chauvoei</em>. Acute, non-contagious, primarily in cattle.</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Pathogenesis</span></td><td style="padding:7px;border:1px solid var(--border)">Spores absorbed from intestinal tract → disseminated via blood to skeletal musculature → remain <strong>latent</strong> until local trauma or bruising creates anaerobic microenvironment → spores germinate and proliferate → gas gangrene</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Gross</span></td><td style="padding:7px;border:1px solid var(--border)">Yellow gelatinous exudate, blood and gas bubbles in subcutaneous and intramuscular CT. Affected muscles swollen, dark red to black, porous, spongy, dry. <strong>Characteristic rancid-butter odour</strong>.</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Histo</span></td><td style="padding:7px;border:1px solid var(--border)">Intramuscular blood and gas bubbles separate swollen eosinophilic myofibres. Fibres fragmented with shredded/granular sarcoplasm and pyknotic nuclei. Laked erythrocytes and scattered neutrophils in endomysium/perimysium. Variably sized cavities. Few to many Gram-positive bacilli throughout affected areas.</td></tr>
+</table>
+<div class="sp-warn">Key distinction: Malignant oedema = primarily cellulitis (mainly subcutaneous), muscles less affected. Blackleg = true myonecrosis with characteristic rancid-butter smell and dark dry muscle — muscles are the primary target.</div>
+<h2>Suppurative Myositis</h2>
+<p>Localised suppuration and myofibre necrosis. Infection spreads down fascial planes.</p>
+<p><strong>Causes:</strong> <em>Strangles</em> (<em>Streptococcus equi</em>), <em>Actinobacillus</em>, <em>Corynebacterium pseudotuberculosis</em>, <em>Pasteurella multocida</em>, <em>Streptococcus zooepidemicus</em>.</p>
+<h2>Granulomatous/Pyogranulomatous/Nodular Inflammation</h2>
+<p><strong>Causes:</strong> <em>Mycobacterium bovis</em>, <em>Actinobacillus lignieresii</em> (wooden tongue), <em>Actinomyces bovis</em>, <em>Staphylococcus aureus</em>.</p>`
+  },
+  {
+    icon: '🐛',
+    name: 'Parasitic & Immune-Mediated Myositis',
+    pages: 'Pages 6–7',
+    content: `
+<h2>Parasitic Myositis</h2>
+<h3>Sarcocystosis</h3>
+<table style="width:100%;border-collapse:collapse;font-size:0.88rem">
+  <tr style="background:var(--surface2)"><th style="padding:7px;border:1px solid var(--border)">Feature</th><th style="padding:7px;border:1px solid var(--border)">Detail</th></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Agent</span></td><td style="padding:7px;border:1px solid var(--border)"><em>Sarcocystis</em> spp. — protozoal parasites infecting muscle of animals that serve as intermediate hosts</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Gross</span></td><td style="padding:7px;border:1px solid var(--border)">Cysts most commonly seen as <strong>incidental changes</strong> in bovine cardiac and skeletal muscle. <span class="sp-key">Bovine eosinophilic myositis</span>: relatively uncommon manifestation; may involve hypercontractility of the muscle</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Significance</span></td><td style="padding:7px;border:1px solid var(--border)">Usually incidental; can cause green discolouration of beef at slaughter (eosinophilic myositis)</td></tr>
+</table>
+<h3>Trichinellosis</h3>
+<ul>
+  <li>Agent: <em>Trichinella spiralis</em></li>
+  <li>Larva grows within a muscle fibre creating a <span class="sp-key">"nurse cell"</span></li>
+  <li>Histo: nuclei enlarged, myofibrils reduced, basal lamina thickened, ER proliferates, ↑ mitochondria</li>
+  <li>Old cysts become <span class="sp-key">mineralised</span></li>
+</ul>
+<h3>Neosporosis</h3>
+<ul>
+  <li>Agent: <em>Neospora caninum</em> — affects muscle, nerve, and cardiac tissues</li>
+  <li>Protozoal merozoites leave the myofibre → cause muscle necrosis and severe inflammatory responses</li>
+  <li>Signs: progressive neuromuscular weakness</li>
+</ul>
+<h2>Immune-Mediated Myositis</h2>
+<p>T lymphocytes are the cause of myofibre injury; most common in <span class="sp-key">dogs</span>. In horses, immune-mediated vasculitis associated with <em>Streptococcus equi</em> type <em>equi</em> → purpura haemorrhagica.</p>
+<h3>Polymyositis</h3>
+<ul>
+  <li>No specific cause; <em>Ehrlichia canis</em> infection implicated in some cases</li>
+  <li>Clinical signs: pain on manipulation, elevated serum muscle enzymes</li>
+  <li>Inflammatory lesions most frequently involve: oesophagus, muscles of mastication, muscles of the forelimbs</li>
+  <li>Histo: focal, multifocal or diffuse necrosis, phagocytosis, and lymphoplasmacytic infiltrates</li>
+</ul>
+<h3>Masticatory Myositis of Dogs</h3>
+<p>Progressive destruction of the masticatory muscles with eventual <span class="sp-key">fixation of the jaws (trismus)</span>.</p>
+<ul>
+  <li><strong>Pathogenesis:</strong> Humoral Ab response (type II hypersensitivity) against a <span class="sp-key">unique myosin isoform (type 2M myosin)</span> found exclusively in masticatory muscles</li>
+  <li>Bilaterally symmetric lesions</li>
+  <li><span class="sp-key">Acute:</span> swelling, areas of haemorrhage and pallor; infiltrate of eosinophils, lymphocytes, neutrophils, and plasma cells; mixture of degenerate and atrophied myofibres</li>
+  <li><span class="sp-key">Chronic:</span> atrophy and fibrosis; plasma cells predominate; eosinophils less common; muscle regeneration increasingly ineffective</li>
+</ul>
+<div class="sp-note">Masticatory myositis is diagnosed by detecting anti-type 2M myosin antibodies (2M Ab test) in serum. It is distinct from polymyositis because it selectively targets only the masticatory muscles.</div>
+<h3>Extraocular Muscle Myositis</h3>
+<ul>
+  <li>Immune-mediated attack directed specifically at extraocular muscles</li>
+  <li>Acute onset of bilateral exophthalmos</li>
+  <li>Breed predisposition: <span class="sp-key">Golden Retrievers</span></li>
+</ul>`
+  },
+  {
+    icon: '🧬',
+    name: 'Congenital & Inherited Myopathies',
+    pages: 'Page 7',
+    content: `
+<h2>Horse: Equine Polysaccharide Storage Myopathy (EPSM)</h2>
+<ul>
+  <li>No abnormality in glycolytic or glycogenolytic pathways identified</li>
+  <li>Affected horses have more rapid intramuscular uptake of blood glucose</li>
+  <li><span class="sp-key">Histo:</span> abnormal accumulation of intracytoplasmic glycogen → eventually ubiquitinated → <strong>amylase-resistant inclusions</strong></li>
+  <li><strong>Signs:</strong> recurrent exertional rhabdomyolysis, unexplained pelvic limb lameness, stiff gait</li>
+</ul>
+<h2>Pig: Malignant Hyperthermia (Porcine Stress Syndrome / Pale Soft Exudative Pork — PSE)</h2>
+<ul>
+  <li>Genetic defect in skeletal muscle <span class="sp-key">ryanodine receptor (Ca²⁺ channel)</span> → uncontrolled intracytoplasmic Ca²⁺ release → excessive muscle contraction with heat production</li>
+  <li>Triggered by <span class="sp-key">halothane anaesthesia</span> or stress</li>
+  <li><span class="sp-key">Gross:</span> pale, soft, swollen muscles that appear "cooked"</li>
+  <li>Causes sudden death and PSE pork (pale, soft, exudative — poor quality meat)</li>
+</ul>
+<div class="sp-warn">Malignant hyperthermia in pigs is triggered by halothane and stress. The mutation is in the ryanodine receptor gene (RYR1), causing uncontrolled calcium release from the SR → heat generation → muscle death.</div>
+<h2>Dog: X-linked Muscular Dystrophy (Duchenne's Equivalent)</h2>
+<p><strong>Breeds:</strong> Golden Retriever, Labrador Retriever, Irish Terrier, Miniature Schnauzer, Rottweiler, Dalmatian, Samoyed, Alaskan Malamute, and cats.</p>
+<ul>
+  <li><span class="sp-key">Defect:</span> mutation in the <em>dystrophin</em> gene → instability of the myocytic membrane (skeletal and cardiac) → degeneration and necrosis</li>
+  <li><span class="sp-key">Gross:</span> stiff, short-stride gait; joint contractures; splaying of distal limbs; pale yellow to white streaks in muscles</li>
+  <li><span class="sp-key">Histo:</span> myofibre necrosis, regeneration, mineralisation, fibrosis</li>
+</ul>
+<div class="sp-note">The Golden Retriever Muscular Dystrophy (GRMD) model is widely used in research as the canine equivalent of human Duchenne muscular dystrophy — both lack functional dystrophin protein.</div>
+<h2>Swimmer Pups</h2>
+<ul>
+  <li>Affected pups cannot adduct the limbs → develop a characteristic "swimming" gait (lateral sprawling)</li>
+  <li>Commonly associated with <strong>overfeeding</strong> but can also develop secondary to other muscular dystrophies</li>
+</ul>`
+  },
+  {
+    icon: '⚡',
+    name: 'Endocrine, Electrolyte Disturbances & Neoplasia',
+    pages: 'Page 8',
+    content: `
+<h2>Endocrine Disturbances</h2>
+<table style="width:100%;border-collapse:collapse;font-size:0.88rem">
+  <tr style="background:var(--surface2)"><th style="padding:7px;border:1px solid var(--border)">Condition</th><th style="padding:7px;border:1px solid var(--border)">Effect on Muscle</th></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Hypothyroidism</span></td><td style="padding:7px;border:1px solid var(--border)">↓ thyroid hormones → atrophy and weakness of skeletal muscle → denervation atrophy and neuromuscular weakness</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Hypercortisolism</span></td><td style="padding:7px;border:1px solid var(--border)">↑ cortisol (production or therapy) → ↑ protein catabolism → atrophy of skeletal muscles; pendulous abdomen (hallmark sign in dogs)</td></tr>
+</table>
+<h2>Electrolyte Disturbances</h2>
+<p>The following electrolyte imbalances can cause severe muscular weakness with necrosis:</p>
+<ul>
+  <li><span class="sp-key">Hypocalcaemia</span>: affects muscle contractility (milk fever in dairy cows)</li>
+  <li><span class="sp-key">Hypomagnesaemia</span>: grass tetany</li>
+  <li><span class="sp-key">Hypokalemia</span>: severe weakness; cows: hypokalemic myopathy</li>
+  <li><span class="sp-key">Hypernatraemia</span></li>
+  <li><span class="sp-key">Hypophosphataemia</span></li>
+</ul>
+<div class="sp-note">Hypokalemic myopathy in cows: severe weakness, recumbency, and muscle necrosis. Commonly follows anorexia, prolonged IV fluid therapy with potassium-free solutions, or abomasal displacement.</div>
+<h2>Neuropathic and Neuromuscular Junction Disorders</h2>
+<ul>
+  <li><span class="sp-key">Myasthenia gravis</span>: autoantibodies against acetylcholine receptors at NMJ → failure of neuromuscular transmission → weakness; associated with thymoma in dogs</li>
+  <li><span class="sp-key">Botulism</span>: <em>Clostridium botulinum</em> toxin → blocks acetylcholine release at NMJ → flaccid paralysis; all species; forage poisoning in horses/cattle</li>
+  <li><span class="sp-key">Tick paralysis</span>: tick salivary toxin blocks NMJ; ascending flaccid paralysis; rapidly reversible upon tick removal</li>
+</ul>
+<h2>Neoplasia</h2>
+<h3>Primary Muscle Tumours</h3>
+<table style="width:100%;border-collapse:collapse;font-size:0.88rem">
+  <tr style="background:var(--surface2)"><th style="padding:7px;border:1px solid var(--border)">Tumour</th><th style="padding:7px;border:1px solid var(--border)">Features</th></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Rhabdomyoma</span></td><td style="padding:7px;border:1px solid var(--border)">Benign tumour of striated muscle; rare; cardiac rhabdomyomas in pigs</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Rhabdomyosarcoma</span></td><td style="padding:7px;border:1px solid var(--border)">Malignant tumour of striated muscle; rare in domestic animals; aggressive; botrioid form occurs in bladder of young dogs</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Haemangiosarcoma</span></td><td style="padding:7px;border:1px solid var(--border)">Can arise in muscle; dogs predisposed; highly malignant</td></tr>
+</table>
+<h3>Metastatic/Infiltrative Tumours</h3>
+<ul>
+  <li><span class="sp-key">Infiltrative lipoma</span>: benign but locally destructive; invades between muscle fibres; dogs (older, obese females)</li>
+  <li><span class="sp-key">Liposarcoma</span>: malignant fat tumour; rare</li>
+  <li><span class="sp-key">Lymphoma</span>: can infiltrate muscle as part of multicentric disease</li>
+  <li><span class="sp-key">Vaccine-induced sarcoma</span>: cats; fibrosarcoma/sarcoma at injection sites (shoulder, interscapular region); associated with adjuvanted vaccines; locally invasive with metastatic potential</li>
+</ul>
+<div class="sp-note">Feline injection-site sarcoma (FISS) is an important clinical entity. It typically occurs months to years after vaccination. Surgical excision requires wide margins; local recurrence is common. Associated with aluminium-adjuvanted vaccines.</div>`
   },
 ];
 
