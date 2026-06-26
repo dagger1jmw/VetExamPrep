@@ -537,8 +537,8 @@
       <div class="sp-badge">Available</div>
       <div class="sp-icon">🫧</div>
       <div class="sp-name">Lymphatic System</div>
-      <p style="font-size:0.83rem;color:var(--text-muted);margin:4px 0 0">Congenital lymphatic anomalies, lymphangiectasia, lymphangitis, and lymphatic neoplasms.</p>
-      <div class="sp-meta"><span class="sp-pill">4 Subtopics</span></div>
+      <p style="font-size:0.83rem;color:var(--text-muted);margin:4px 0 0">Thymus, spleen, lymph node diseases, MALT, infectious diseases (Leishmaniasis, Histoplasmosis), and lymphoma across species.</p>
+      <div class="sp-meta"><span class="sp-pill">7 Subtopics</span></div>
     </div>
     <div class="sp-topic-chip sp-coming">
       <div class="sp-badge">Coming Soon</div>
@@ -1445,10 +1445,10 @@
 <div id="page-lymph-home" class="page">
   <div class="hero" style="background:linear-gradient(135deg,#e0d5f5 0%,#f0e8ff 50%,#d8e0f5 100%);color:var(--text)">
     <h1 style="color:var(--primary-dark)">🫧 Lymphatic System</h1>
-    <p style="color:var(--text-muted)">Congenital lymphatic anomalies, lymphangiectasia, lymphangitis, and lymphatic neoplasms from the Cardiovascular System – Lymph Vessels document.</p>
+    <p style="color:var(--text-muted)">Thymus, spleen, and lymph node pathology including splenomegaly, lymphadenopathy, infectious diseases, MALT, and lymphoma across bovine, canine, feline, equine, and porcine species.</p>
     <div class="hero-stats">
       <div class="hero-stat"><div class="num" id="lymph-stat-qcount">0</div><div class="lbl">Questions</div></div>
-      <div class="hero-stat"><div class="num">4</div><div class="lbl">Subtopics</div></div>
+      <div class="hero-stat"><div class="num">7</div><div class="lbl">Subtopics</div></div>
       <div class="hero-stat"><div class="num" id="lymph-stat-sessions">0</div><div class="lbl">Sessions</div></div>
     </div>
   </div>
@@ -10936,50 +10936,344 @@ const LYMPH_QUESTIONS = {};
 
 const LYMPH_SUBTOPICS = [
   {
-    icon: '👶', name: 'Congenital Lymphatic Anomalies', pages: 'Page 10',
+    icon: '🏛️',
+    name: 'Organisation & Thymus',
+    pages: 'Pages 1–2',
     content: `
-<h2>Anasarca</h2>
-<p><span class="sp-key">Anasarca</span> — generalised subcutaneous oedema caused by defective development of lymphatic vessels.</p>
+<h2>Organisation of the Lymphatic System</h2>
+<table style="width:100%;border-collapse:collapse;font-size:0.88rem">
+  <tr style="background:var(--surface2)"><th style="padding:7px;border:1px solid var(--border)">Category</th><th style="padding:7px;border:1px solid var(--border)">Organs</th></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Primary lymphoid organs</span></td><td style="padding:7px;border:1px solid var(--border)">Bone marrow + Thymus (+ Bursa of Fabricius in birds)</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Secondary lymphoid organs</span></td><td style="padding:7px;border:1px solid var(--border)">Spleen + Lymph nodes</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">MALT</span></td><td style="padding:7px;border:1px solid var(--border)">Mucosa-Associated Lymphoid Tissue — initiates immune responses to antigens at all mucosal surfaces (gut, respiratory tract, etc.)</td></tr>
+</table>
+<h2>Thymus — Structure</h2>
+<p>Until sexual maturity the thymus is easily noticeable in the <span class="sp-key">mediastinum</span>. Grey, lobulated, wrapped in thin capsules. Has a <span class="sp-key">subcapsular zone</span>, <span class="sp-key">cortex</span>, and <span class="sp-key">medulla</span>.</p>
+<p>Two cell populations make up the functional thymus:</p>
 <ul>
-  <li>Not very common; often not compatible with life</li>
-  <li>One of the most frequently encountered as a finding in <span class="sp-key">aborted fetuses</span></li>
-  <li>Caused by failure of normal lymphatic vessel development → impaired lymph drainage → widespread tissue oedema</li>
+  <li><span class="sp-key">Stroma</span>: epithelial components (nurse cells, dendritic cells)</li>
+  <li><span class="sp-key">Thymocytes</span>: T lymphocytes in the maturation phase</li>
 </ul>
-<div class="sp-note">Anasarca is listed under vascular congenital anomalies in the source document and is specifically attributed to defective lymphatic vessel development rather than a primary cardiac or vascular cause.</div>`
+<p>After involution, visible thymic structures are mixed adipose tissue and connective tissue.</p>
+<h2>T-Lymphocyte Maturation</h2>
+<div class="sp-chain">Progenitor T cells (from bone marrow) enter thymus → pass cortex → positive selection (keep only cells recognising self-MHC) + negative selection (delete self-reactive cells) → mature naïve T cells → exit to blood → secondary lymphoid organs</div>
+<ul>
+  <li><span class="sp-key">Positive selection</span>: only those who recognise their own MHC receptors survive</li>
+  <li><span class="sp-key">Negative selection</span>: all those responding to self-antigens are removed (prevents autoimmunity)</li>
+  <li>Only ~5% of selected T lymphocytes exit the thymus as naïve T cells and enter peripheral blood</li>
+</ul>
+<h2>Thymic Reaction to Injury</h2>
+<table style="width:100%;border-collapse:collapse;font-size:0.88rem">
+  <tr style="background:var(--surface2)"><th style="padding:7px;border:1px solid var(--border)">Lesion</th><th style="padding:7px;border:1px solid var(--border)">Causes</th></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">T-lymphocyte depletion</span></td><td style="padding:7px;border:1px solid var(--border)">Viral infections (Morbillivirus, Parvovirus, Distemper), bacteria, toxins, immunosuppressive agents, radiation, malnutrition, cachexia, aging, neoplasia</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)">Haemorrhage/haematoma</td><td style="padding:7px;border:1px solid var(--border)">Trauma, haemostatic disorders</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)">Inflammation</td><td style="padding:7px;border:1px solid var(--border)">Very rare in thymus</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)">Lymphoid hyperplasia</td><td style="padding:7px;border:1px solid var(--border)">Very rare</td></tr>
+</table>
+<h2>Thymic Neoplasia</h2>
+<p>The thymus contains both lymphoid and epithelial components — neoplasms may arise from either:</p>
+<ul>
+  <li><span class="sp-key">Thymic lymphoma</span>: arises from T lymphocytes (and occasionally B lymphocytes) of the thymus; most commonly seen in <span class="sp-key">young cats</span>; causes mediastinal mass</li>
+  <li><span class="sp-key">Thymoma</span>: epithelial cell tumour infiltrated with a large number of non-neoplastic lymphocytes; most common in <span class="sp-key">goats</span>. In dogs, thymoma causes paraneoplastic syndromes: <span class="sp-key">myasthenia gravis</span> (autoantibodies against acetylcholine receptors), exfoliative dermatitis, erythema multiforme, polymyositis</li>
+</ul>
+<div class="sp-note">Thymic lymphoma ≠ Thymoma. Thymic lymphoma is a true neoplasm of lymphocytes. Thymoma is an epithelial tumour with reactive lymphocytes — the lymphocytes are non-neoplastic passengers.</div>`
   },
   {
-    icon: '💧', name: 'Lymphangiectasia', pages: 'Page 12',
+    icon: '🫀',
+    name: 'Spleen: Structure, Functions & Splenomegaly',
+    pages: 'Pages 2–3',
     content: `
-<h2>Definition</h2>
-<p><span class="sp-key">Lymphangiectasia</span> — abnormal dilation of lymphatic vessels.</p>
-<h2>Types</h2>
+<h2>Splenic Structure</h2>
+<table style="width:100%;border-collapse:collapse;font-size:0.88rem">
+  <tr style="background:var(--surface2)"><th style="padding:7px;border:1px solid var(--border)">Compartment</th><th style="padding:7px;border:1px solid var(--border)">Components</th></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">White pulp</span></td><td style="padding:7px;border:1px solid var(--border)">Lymphoid follicles (B lymphocytes) + Periarteriolar lymphoid sheath PALS (T lymphocytes) + Marginal zone (B lymphocytes/monocytes)</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Red pulp</span></td><td style="padding:7px;border:1px solid var(--border)">Splenic cords + Sinusoids + Periarteriolar macrophage sheaths (PAMS). Contains MPS cells: macrophages, reticular cells, fibroblast-like reticular monocytes</td></tr>
+</table>
+<h2>Splenic Functions (MPS)</h2>
 <ul>
-  <li><span class="sp-key">Congenital anomaly</span> — failure of normal lymphatic development present from birth</li>
-  <li><span class="sp-key">Acquired/Obstructive</span> — caused by tumours and invading masses blocking lymphatic drainage → back-pressure dilation of vessels proximal to the obstruction</li>
+  <li>Filtration and presentation of phagocytosed antigens</li>
+  <li>Storage of circulating lymphocytes from blood</li>
+  <li>Final maturation and activation of lymphocytes</li>
+  <li>Pool of antigens and lymphocytes</li>
+  <li>Activation of macrophages</li>
+  <li>Erythrophagocytosis (destruction of aged/abnormal RBCs)</li>
 </ul>
-<div class="sp-warn">Diseases of the lymphatic system are noted as "usually not asked" in the source material — focus on the key definitions and causes.</div>`
+<p><strong>Portal of entry:</strong> haematogenous (blood-borne dissemination)</p>
+<h2>Splenomegaly</h2>
+<p><strong>Definition:</strong> enlarged spleen. <strong>Causes:</strong> congestion, ↑ in MPS cell number, lymphoid hyperplasia, inflammation, septicaemia, neoplasia.</p>
+<h3>Uniform Splenomegaly — "Bloody spleen"</h3>
+<table style="width:100%;border-collapse:collapse;font-size:0.88rem">
+  <tr style="background:var(--surface2)"><th style="padding:7px;border:1px solid var(--border)">Type</th><th style="padding:7px;border:1px solid var(--border)">Mechanism</th></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Congestive</span></td><td style="padding:7px;border:1px solid var(--border)">Passive venous engorgement → blood-filled sinusoids; right heart failure, splenic vein obstruction, anaesthesia (dogs)</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Accelerated RBC destruction</span></td><td style="padding:7px;border:1px solid var(--border)">Haemolytic anaemia → macrophage proliferation; anthrax (cattle — acute leukaemia-like)</td></tr>
+</table>
+<h3>Uniform Splenomegaly — "Bloody consistency"</h3>
+<ul>
+  <li><span class="sp-key">Storage/deposit diseases</span>: amyloidosis → waxy/firm consistency</li>
+  <li><span class="sp-key">Cell accumulation</span>: lymphocyte/macrophage proliferation, extramedullary haematopoiesis, neoplastic infiltration</li>
+</ul>
+<h3>Nodular Splenomegaly</h3>
+<ul>
+  <li>Uneven contraction (circulatory shock, parasympathetic response)</li>
+  <li>Haematopoietic foci (remnants of blood cell production)</li>
+  <li>Tumours: haemangioma, haemangiosarcoma</li>
+  <li>Infarcts (Classical Swine Fever, thrombosis)</li>
+</ul>
+<h3>Free-consistency Nodular Lesions</h3>
+<ul>
+  <li>Nodular hyperplasia (free nodules) — common in old dogs</li>
+  <li>Chronic granulomas: <em>Brucella abortus</em>, <em>Mycobacterium</em> spp., <em>Toxoplasma gondii</em> (abscesses/plaques in horses)</li>
+  <li>Primary neoplasia: lymphoma, histiocytic sarcoma, leiomyoma, leiomyosarcoma; also metastases</li>
+</ul>
+<h2>Splenic Haemangiosarcoma</h2>
+<p>Most common splenic malignancy in <span class="sp-key">dogs</span>; malignant neoplasm of vascular endothelium (benign form = haemangioma).</p>
+<ul>
+  <li><span class="sp-key">Macro</span>: 1 or more round masses; reddish to violet colour; fragile coherence</li>
+  <li><span class="sp-key">Micro</span>: poorly defined vascular spaces constructed from anaplastic endothelial cells containing erythrocytes with fibrin</li>
+  <li><span class="sp-key">Metastases</span>: liver, lungs, peritoneum</li>
+  <li>Death usually occurs due to tumour rupture → haemoabdomen</li>
+</ul>
+<div class="sp-warn">Splenic haemangiosarcoma in dogs is notorious for sudden catastrophic haemoabdomen. German Shepherd Dogs and Golden Retrievers are predisposed.</div>
+<h2>Splenic Reaction to Injury — Summary</h2>
+<ol>
+  <li>Acute inflammation: hyperaemia, micro-abscesses, acute abscesses</li>
+  <li>Hyperplasia of MPS: granulomatous inflammation</li>
+  <li>Lymphoid hyperplasia: plasma cell and antibody production; cellular immunity</li>
+  <li>Lymphoid atrophy</li>
+</ol>`
   },
   {
-    icon: '🦠', name: 'Lymphangitis', pages: 'Page 12',
+    icon: '🔩',
+    name: 'Spleen: Hypoplasia, SCID & Miscellaneous Disorders',
+    pages: 'Pages 3–4',
     content: `
-<h2>Definition</h2>
-<p><span class="sp-key">Lymphangitis</span> — inflammation of lymphatic vessels; usually a consequence of infection or lymphatic obstruction spreading from a nearby site.</p>
-<h2>Causes</h2>
+<h2>Splenic Hypoplasia & Atrophy</h2>
+<p>Causes of reduced splenic mass:</p>
 <ul>
-  <li><span class="sp-key">Bacterial:</span> Johne's disease (<em>Mycobacterium avium</em> subsp. <em>paratuberculosis</em>), Malleus/Glanders (<em>Burkholderia mallei</em>)</li>
-  <li><span class="sp-key">Fungal:</span> histoplasmosis (<em>Histoplasma capsulatum</em>), sporotrichosis (<em>Sporothrix schenckii</em>)</li>
-  <li><span class="sp-key">Parasitic diseases</span></li>
+  <li>Immunodeficiency diseases → splenic hypoplasia in small animals</li>
+  <li>Aging changes</li>
+  <li>Haematotoxic poisoning / circulatory shock</li>
+  <li>OD (drug) responses / circulatory shock</li>
+  <li>Radiation injury</li>
+  <li>Trauma → may create small accessory spleens</li>
 </ul>
-<div class="sp-warn">Diseases of the lymphatic system are noted as "usually not asked" in the source material.</div>`
+<h2>Severe Combined Immunodeficiency (SCID)</h2>
+<p>Severe combined immunodeficiency — absence of both B and T lymphocytes.</p>
+<ul>
+  <li>Agenesis of B and T lymphocytes; poorly developed haemopoiesis in bone marrow; thymus B-type (epithelial only)</li>
+  <li><span class="sp-key">X-linked SCID in dogs</span>: Basset Hounds, Jack Russell, Welsh Corgis</li>
+  <li><span class="sp-key">SCID in foals</span> (Arab foals): Severe Combined Immunodeficiency — severe combined immunodeficiency of foals; colts and fillies affected equally; lymphopenia — agenesis → general loss of all lymphoid organs (thymus, tonsils, LN, Peyer's patches)</li>
+</ul>
+<div class="sp-warn">SCID foals are born without functional B or T lymphocytes. They survive briefly on maternal antibodies then succumb to opportunistic infections (e.g., Pneumocystis, Adenovirus).</div>
+<h2>Miscellaneous Splenic Disorders</h2>
+<table style="width:100%;border-collapse:collapse;font-size:0.88rem">
+  <tr style="background:var(--surface2)"><th style="padding:7px;border:1px solid var(--border)">Disorder</th><th style="padding:7px;border:1px solid var(--border)">Features</th></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Haemosiderin accumulation</span></td><td style="padding:7px;border:1px solid var(--border)">Due to accelerated RBC breakdown → iron storage → siderosclerotic (Gamna-Gandy) plaques</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Siderosclerotic (Gamna-Gandy) plaques</span></td><td style="padding:7px;border:1px solid var(--border)">Iron-calcium mineralisation; found in chronically congested spleens; common in dogs; gross: gritty brown-yellow foci</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Splenic rupture & accessory spleens</span></td><td style="padding:7px;border:1px solid var(--border)">Trauma; fragments can implant on peritoneum/omentum (splenosis) with preserved haemopoietic function</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Chronic spleen infection</span></td><td style="padding:7px;border:1px solid var(--border)">Post-infectious fibrous-tissue scarring at the capsule level</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Parasitic cysts</span></td><td style="padding:7px;border:1px solid var(--border)"><em>Echinococcus granulosus</em>; <em>Cysticercus tenuicollis</em></td></tr>
+</table>`
   },
   {
-    icon: '🎗️', name: 'Lymphatic Neoplasms', pages: 'Page 12',
+    icon: '🔵',
+    name: 'Lymph Nodes: Structure & Lymphadenopathy',
+    pages: 'Pages 4–5',
     content: `
-<h2>Lymphangioma</h2>
-<p><span class="sp-key">Lymphangioma</span> — benign vascular tumour arising from lymphatic vessels.</p>
-<h2>Lymphangiosarcoma</h2>
-<p><span class="sp-key">Lymphangiosarcoma</span> — malignant tumour of lymphatic endothelium. Rare in veterinary species.</p>
-<div class="sp-note">These neoplasms are listed alongside haemangioma and haemangiosarcoma in the vascular neoplasia section of the source document. The lymphatic system section overall is noted as "usually not asked."</div>`
+<h2>Lymph Node Structure</h2>
+<p>LN have stroma, capsule and trabeculae. The <span class="sp-key">cortex</span> contains lymphoid follicles with B lymphocytes. The <span class="sp-key">paracortex</span> contains T lymphocytes. The <span class="sp-key">medulla</span> contains medullary cords (macrophages/plasma cells) and medullary sinuses.</p>
+<p>Medullary cords contain macrophages (histiocytes), lymphocytes, and plasma cells — they act to activate and kill infected cells and phagocytose antigens. The MPS (Mononuclear Phagocyte System) consists of macrophages and monocytes.</p>
+<p><strong>Immune surveillance:</strong> LN are the "eyes" of the immune system — they sample antigens and activate B/T lymphocytes and Antigen Presenting Cells (APCs) → B lymphocytes differentiate into plasma cells (antibody production).</p>
+<h2>LN Reaction to Injury</h2>
+<ol>
+  <li>Hyperplasia of B-MPS (sinus histiocytosis)</li>
+  <li>Hyperplasia of T lymphocytes (follicular lymphocytes) or T lymphocytes (paracortical activation)</li>
+  <li>Lymphoid atrophy</li>
+  <li>Inflammation — acute (microabscesses) or chronic (abscess, granuloma, fibrosis)</li>
+</ol>
+<h2>III A) Lymph Atrophy (Reduced LN)</h2>
+<p><strong>Aetiology:</strong></p>
+<ul>
+  <li>Genetic/developmental disorders, immunodeficiency syndromes (SCID), congenital hereditary lymphopenia</li>
+  <li>Lack of antigen stimulation</li>
+  <li>Cachexia and malnutrition; aging</li>
+  <li>Immunosuppressive agents</li>
+  <li>Radiation injury</li>
+</ul>
+<h2>III B) Lymphadenomegaly (Enlargement of LN)</h2>
+<p>Classification by aetiology:</p>
+<h3>1) Lymphoid (Follicular) Hyperplasia</h3>
+<p>Any LN draining an area with active infection or antigen presentation → follicular enlargement. Usually self-limiting. Seen in Porcine Circovirus (PCV) infection, Malignant Catarrhal Fever.</p>
+<h3>2) MPS Hyperplasia (Sinus Histiocytosis)</h3>
+<p>Increased macrophage infiltration of the sinuses — partially due to higher inflow of lymph carrying antigen-laden macrophages. These are the first cells to react in non-specific situations. Chronic inflammation → macrophage dominance.</p>
+<h3>3) Acute Lymphadenitis</h3>
+<p><strong>Definition:</strong> Drainage of infected material from an inflamed area toward the draining LN → LN infection and enlargement. Caused by bacteria, inflammatory products, or sterile irritants.</p>
+<table style="width:100%;border-collapse:collapse;font-size:0.88rem">
+  <tr style="background:var(--surface2)"><th style="padding:7px;border:1px solid var(--border)">Primary lesion</th><th style="padding:7px;border:1px solid var(--border)">Draining LN affected</th></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)">Acute rhinitis</td><td style="padding:7px;border:1px solid var(--border)">Medial retropharyngeal LN</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)">Pneumonia/bronchopneumonia</td><td style="padding:7px;border:1px solid var(--border)">Tracheobronchial LN</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)">Mastitis</td><td style="padding:7px;border:1px solid var(--border)">Supramammary LN</td></tr>
+</table>
+<p><span class="sp-key">Macro:</span> enlarged (due to fluid accumulation — blood, lymph, pus, exudate); protrudes on cut surface; very wet; increased number of cells.</p>
+<p><span class="sp-key">Micro:</span> acute = neutrophilic infiltration; as it progresses to chronic = macrophage dominance.</p>
+<p><strong>Species examples of suppurative acute lymphadenitis:</strong></p>
+<ul>
+  <li><span class="sp-key">Horse</span>: <em>Streptococcus equi</em> ssp. <em>equi</em> → <strong>Strangles</strong> (submandibular/retropharyngeal LN abscess)</li>
+  <li><span class="sp-key">Pig</span>: <em>Streptococcus porcinus</em></li>
+</ul>
+<h2>III C) Pigmentation of Lymph Nodes</h2>
+<p>Substances from drained areas accumulate in LN macrophages:</p>
+<ul>
+  <li><span class="sp-key">Haemosiderin</span>: from RBC breakdown and haemorrhage in draining area (inflammation)</li>
+  <li>Pigment from tattoos</li>
+  <li><span class="sp-key">Fasciolosis</span> (<em>Fasciola</em> spp.) — black pigment</li>
+  <li>Melanoma pigment (pigmented or non-pigmented)</li>
+  <li>Aspiration of black lipofuscin</li>
+  <li><span class="sp-key">"Blue lymph nodes" in sheep</span>: <em>Corynebacterium pseudotuberculosis</em> → Caseous Lymphadenitis; produces a toxin causing vascular damage</li>
+</ul>
+<div class="sp-note"><strong>Caseous lymphadenitis</strong> in sheep and goats: caused by <em>Corynebacterium pseudotuberculosis</em>. LN enlarge and contain caseous (cheese-like) green-grey pus. Spreads to internal organs in systemic form. Common worldwide; causes blue-green discolouration of affected LN.</div>`
+  },
+  {
+    icon: '🦠',
+    name: 'Infectious Diseases: Leishmaniasis & Histoplasmosis',
+    pages: 'Pages 5–6',
+    content: `
+<h2>Leishmaniasis</h2>
+<p><span class="sp-key">Aetiology:</span> <em>Leishmania infantum</em> — a protozoal monocyte-macrophage system (MPS) disease. Found in Americas and Europe. Endemic in Croatia and Mediterranean region.</p>
+<p><span class="sp-key">Vectors:</span> Sandflies (<em>Phlebotomus</em> spp.) — definitive host: dogs.</p>
+<h3>Pathogenesis</h3>
+<div class="sp-chain">Sandfly bite → amastigotes inoculated into skin → infect macrophages → spread haematogenously → visceral organs (spleen, liver, bone marrow, LN)</div>
+<h3>Lesions</h3>
+<table style="width:100%;border-collapse:collapse;font-size:0.88rem">
+  <tr style="background:var(--surface2)"><th style="padding:7px;border:1px solid var(--border)">Organ/System</th><th style="padding:7px;border:1px solid var(--border)">Lesion</th></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Skin</span></td><td style="padding:7px;border:1px solid var(--border)">Neutrophils, lymphocytes, plasma cells, macrophages with <em>Leishmania</em> amastigotes; chronic exfoliative dermatitis, alopecia, paronychia</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Lymph nodes</span></td><td style="padding:7px;border:1px solid var(--border)">Generalised lymphadenomegaly → monocytes and macrophages filled with round amastigotes; initial lymphoid hyperplasia → later lymphoid atrophy</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Spleen/Liver</span></td><td style="padding:7px;border:1px solid var(--border)">Splenomegaly & hepatomegaly: plasma cell and macrophage hyperplasia; macrophages filled with amastigotes</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Kidney</span></td><td style="padding:7px;border:1px solid var(--border)">Amyloidosis of kidney, liver, spleen, BV walls; vasculitis; non-suppurative nephritis</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Bone marrow</span></td><td style="padding:7px;border:1px solid var(--border)">Plasma cell hyperplasia; macrophages containing amastigotes</td></tr>
+</table>
+<div class="sp-note">Leishmaniasis in dogs produces a wide spectrum of disease: weight loss, epistaxis, skin lesions, lymphadenopathy, renal failure (from amyloidosis or immune complex nephritis), and corneal opacification.</div>
+<h2>Histoplasmosis</h2>
+<p><span class="sp-key">Aetiology:</span> <em>Histoplasma capsulatum</em> — dimorphic fungus (mold in soil, yeast in animals). Endemic in certain areas (Mississippi River basin, USA; also Croatia/Eastern Europe).</p>
+<h3>Pathogenesis</h3>
+<div class="sp-chain">Conidia inhaled → reach RS (macrophages/reticular cells) → cause hyperplasia of tracheobronchial LN → if disseminated: lymphadenitis, lymphangitis, splenomegaly, hepatomegaly, panniculitis</div>
+<h3>Lesions</h3>
+<ul>
+  <li><span class="sp-key">Multi-centric form</span>: generalised lymphadenomegaly, hepatomegaly; rarely affects bone marrow and blood</li>
+  <li><span class="sp-key">Cutaneous form</span>: multiple skin nodules to limited plaques</li>
+  <li><span class="sp-key">Gross lesions</span>: weight loss, respiratory distress</li>
+  <li><span class="sp-key">Hepatosplenomegaly</span>: thickening of colon wall (macrophage infiltration); 2-µm amphophilic structures surrounded by a clear halo within macrophages — the yeasts</li>
+</ul>
+<p><span class="sp-key">Histopathology:</span> Granulomatous inflammation — individual granulomas or nodular granulomatous foci. <em>H. capsulatum</em> yeast forms (2 µm, PAS-positive) visible within macrophages.</p>
+<div class="sp-warn">Histoplasmosis causes diffuse granulomatous lymphadenopathy. The characteristic finding is 2-µm amphophilic yeast forms surrounded by a clear halo inside macrophages throughout the LN, spleen, and liver.</div>`
+  },
+  {
+    icon: '🫧',
+    name: 'MALT & Lymph Vessels',
+    pages: 'Page 6',
+    content: `
+<h2>MALT — Mucosa-Associated Lymphoid Tissue</h2>
+<p>MALT is often the <span class="sp-key">first line of defence</span> against ingested or inhaled antigens. At mucosal sites, antigens are phagocytosed → immune cells and lymphocytes are activated → then migrate through lymph vessels to regional LN.</p>
+<h3>Types of MALT</h3>
+<ul>
+  <li><span class="sp-key">Diffuse lymphoid tissue</span>: scattered lymphocytes and plasma cells throughout lamina propria</li>
+  <li><span class="sp-key">Solitary lymphoid tissue</span>: single isolated lymphoid follicles</li>
+  <li><span class="sp-key">Aggregated lymphoid tissue</span>: Peyer's patches (ileum), tonsils, appendix (primates)</li>
+</ul>
+<h3>Portals of Entry into MALT</h3>
+<ul>
+  <li><span class="sp-key">Haematogenous</span>: via macrophages and dendritic cells</li>
+  <li><span class="sp-key">Direct entry</span> through intestinal wall: M cells (specialised follicle-associated epithelium overlying Peyer's patches) and dendritic cells transcytose antigens into the subepithelial dome</li>
+</ul>
+<h2>MALT Reaction to Injury</h2>
+<ol>
+  <li><span class="sp-key">Lymphoid formation</span>: due to antigenic stimulation — follicle development and plasma cell expansion</li>
+  <li><span class="sp-key">Lymphoid atrophy</span>: due to viruses, malnutrition/nutritional deficiencies, aging, chemotherapy, toxic agents, radiation injury</li>
+</ol>
+<div class="sp-note">Peyer's patches are key sampling sites in the gut — they allow the immune system to monitor luminal antigens without allowing pathogens to breach the epithelium. Loss of Peyer's patches (e.g., from viral infection or irradiation) severely compromises mucosal immunity.</div>
+<h2>Lymph Vessels</h2>
+<p>Lymph vessels collect interstitial fluid and transport it to regional LN and ultimately back to the blood via the thoracic duct. Diseases of lymph vessels include:</p>
+<ul>
+  <li><span class="sp-key">Lymphangiectasia</span>: dilation of lymphatics; congenital or acquired (tumour obstruction); intestinal lymphangiectasia → protein-losing enteropathy</li>
+  <li><span class="sp-key">Lymphangitis</span>: inflammation of lymphatic vessels; bacterial (<em>Mycobacterium avium</em> paratuberculosis — Johne's disease; <em>Burkholderia mallei</em> — Glanders/Malleus), fungal (<em>Histoplasma</em>, <em>Sporothrix</em>), parasitic</li>
+  <li><span class="sp-key">Anasarca</span>: generalised subcutaneous oedema from defective lymphatic vessel development; common in aborted foetuses; not compatible with life</li>
+  <li><span class="sp-key">Lymphangioma</span>: benign lymphatic vessel tumour; rare</li>
+  <li><span class="sp-key">Lymphangiosarcoma</span>: malignant lymphatic endothelial tumour; very rare in domestic animals</li>
+</ul>`
+  },
+  {
+    icon: '🎗️',
+    name: 'Lymphoma: Classification & Species-Specific Forms',
+    pages: 'Pages 6–9',
+    content: `
+<h2>What is Lymphoma?</h2>
+<p>Lymphomas are <span class="sp-key">primary neoplasms originating from lymphoid tissue OUTSIDE of the bone marrow</span> (contrast with leukaemia, which originates in bone marrow). They represent the most common haematopoietic tumour in most domestic species.</p>
+<h2>Classification of Lymphoma</h2>
+<table style="width:100%;border-collapse:collapse;font-size:0.88rem">
+  <tr style="background:var(--surface2)"><th style="padding:7px;border:1px solid var(--border)">Criterion</th><th style="padding:7px;border:1px solid var(--border)">Categories</th></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Anatomical location</span></td><td style="padding:7px;border:1px solid var(--border)">Multicentric, alimentary, mediastinal (thymic), cutaneous</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Immunophenotype</span></td><td style="padding:7px;border:1px solid var(--border)">B-cell, T-cell, non-B non-T (null cell)</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Histological pattern</span></td><td style="padding:7px;border:1px solid var(--border)">Diffuse or follicular</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Biological behaviour</span></td><td style="padding:7px;border:1px solid var(--border)">Indolent (low grade) or aggressive (high grade)</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Cell morphology</span></td><td style="padding:7px;border:1px solid var(--border)">Size, nuclear morphology, mitotic index</td></tr>
+</table>
+<h2>Clinical Signs</h2>
+<p>Lymphoma usually causes organomegaly of specific organs → lymphadenomegaly, intestinal wall thickening, mediastinal wall thickening, splenomegaly, non-regenerative anaemia, pathological calcifications (renal tubules in hypercalcaemia).</p>
+<h2>Gross & Microscopic Pathology</h2>
+<p><strong>On necropsy:</strong></p>
+<ul>
+  <li>Lymphadenomegaly with abnormal structure of LN cortex + medulla</li>
+  <li>Bulging from cut surface</li>
+  <li>Abnormal LN colours: grey, yellow, brown, red</li>
+  <li>Intestinal wall thickening: diffuse, nodular, or circular</li>
+  <li><span class="sp-key">Thymic lymphoma</span>: grey mass in mediastinum (→ different from thymoma, which is firmer)</li>
+  <li><span class="sp-key">Renal lymphoma</span>: bilateral renomegaly with multifocal white lesions throughout kidney; in FIP the multifocal lesions are along blood vessels</li>
+</ul>
+<p><strong>Micro:</strong></p>
+<ul>
+  <li><span class="sp-key">Indolent</span>: well differentiated + low mitotic index</li>
+  <li><span class="sp-key">Aggressive</span>: poorly differentiated + high mitotic index</li>
+</ul>
+<h2>Species-Specific Lymphomas</h2>
+<h3>Bovine Lymphoma</h3>
+<p>Can be <span class="sp-key">Enzootic Bovine Lymphoma (EBL)</span> or <span class="sp-key">Sporadic Bovine Lymphoma (SBL)</span>. Thymic > multicentric > cutaneous forms in frequency.</p>
+<table style="width:100%;border-collapse:collapse;font-size:0.88rem">
+  <tr style="background:var(--surface2)"><th style="padding:7px;border:1px solid var(--border)">Type</th><th style="padding:7px;border:1px solid var(--border)">Features</th></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">EBL (Enzootic Bovine Lymphoma)</span></td><td style="padding:7px;border:1px solid var(--border)">Aetiology: <strong>Bovine Leukemia Virus (BLV)</strong> — oncogenic retrovirus; persistently infects B lymphocytes. 7–8% of infected cattle develop lymphoma. Predominantly affects abdominal LN, abomasum, heart, reticulum. Multicentric most common form of EBL. Cattle ≥ 4–5 years.</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">SBL — Thymic form</span></td><td style="padding:7px;border:1px solid var(--border)">Calves/young cattle; affects thymus (chest); mainly B-cell; → different from thymoma in adults</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">SBL — Multicentric form</span></td><td style="padding:7px;border:1px solid var(--border)">Young cattle; enlargement of multiple LN; mainly immunoblastic large cell lymphoma (B-cell)</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">SBL — Cutaneous form</span></td><td style="padding:7px;border:1px solid var(--border)">Young cattle (6–36 months); skin and LN; T-cell lymphoma</td></tr>
+</table>
+<h3>Canine Lymphoma</h3>
+<ul>
+  <li>Idiopathic — no viral cause</li>
+  <li>7–9% of all tumours in middle-aged/older dogs</li>
+  <li><span class="sp-key">Multicentric form</span> most common → affects liver + spleen</li>
+  <li>Thymic, alimentary, cutaneous forms less common</li>
+  <li>Most are <span class="sp-key">B-cell (80%)</span>; then T-cell; rarely non-T/B (NK cell / null cell)</li>
+  <li><span class="sp-key">Paraneoplastic hypercalcaemia</span> in 15% of cases (PTH-rP secretion)</li>
+</ul>
+<h3>Feline Lymphoma</h3>
+<ul>
+  <li>Aetiology: <span class="sp-key">Feline Leukemia Virus (FeLV)</span> — gamma retrovirus</li>
+  <li><span class="sp-key">FeLV-positive</span>: young cats → multicentric + mediastinal forms of T-lymphoma</li>
+  <li><span class="sp-key">FeLV-negative</span>: old cats → alimentary form of B-lymphoma</li>
+  <li>Multi-centric form most common; thymic, alimentary, cutaneous forms</li>
+</ul>
+<h3>Equine Lymphoma</h3>
+<ul>
+  <li>Idiopathic — no viral cause; overall lymphomas are RARE in horses</li>
+  <li><span class="sp-key">Multicentric</span>: usually affects visceral LN, liver + spleen</li>
+  <li><span class="sp-key">Alimentary</span>: malabsorption → cachexia</li>
+  <li><span class="sp-key">Cutaneous</span>: does not affect internal organs or blood</li>
+</ul>
+<h3>Porcine Lymphoma</h3>
+<ul>
+  <li>Aetiology: <span class="sp-key">Porcine Lymphoma C-Type Particle (PLCP)</span> — suspected viral cause</li>
+  <li><span class="sp-key">MOST COMMON malignant tumour in pigs</span>; mostly female</li>
+  <li><span class="sp-key">Multicentric form</span> most common → affects visceral LN, spleen, kidneys, bone marrow, cranial mediastinum</li>
+</ul>
+<div class="sp-note"><strong>Quick species summary:</strong> Bovine = BLV (EBL) + sporadic; Canine = idiopathic B-cell (multicentric); Feline = FeLV-driven T (young) vs B-alimentary (old); Equine = rare/idiopathic; Porcine = PLCP, most common pig malignancy.</div>`
   },
 ];
 
