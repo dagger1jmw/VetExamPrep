@@ -610,6 +610,13 @@
       <p style="font-size:0.83rem;color:var(--text-muted);margin:4px 0 0">Renal failure syndromes, developmental anomalies, glomerular diseases, tubular necrosis, infectious nephritis, hydronephrosis, renal neoplasia, and lower urinary tract disorders.</p>
       <div class="sp-meta"><span class="sp-pill">10 Subtopics</span></div>
     </div>
+    <div class="sp-topic-chip sp-available" onclick="openSpTopic('eye')">
+      <div class="sp-badge">Available</div>
+      <div class="sp-icon">👁️</div>
+      <div class="sp-name">Pathology of the Eye</div>
+      <p style="font-size:0.83rem;color:var(--text-muted);margin:4px 0 0">Ocular structure, globe malformations, glaucoma, corneal, conjunctival, uveal and retinal diseases, and ocular neoplasia.</p>
+      <div class="sp-meta"><span class="sp-pill">7 Subtopics</span></div>
+    </div>
   </div>
 </div>
 
@@ -1648,6 +1655,78 @@
 </div>
 <!-- END URINARY SYSTEM PAGES -->
 
+<!-- =====================================================================
+     PATHOLOGY OF THE EYE — HOME
+===================================================================== -->
+<div id="page-eye-home" class="page">
+  <div class="hero" style="background:linear-gradient(135deg,#d5e8f5 0%,#e8f0ff 50%,#d5f0ea 100%);color:var(--text)">
+    <h1 style="color:var(--primary-dark)">👁️ Pathology of the Eye</h1>
+    <p style="color:var(--text-muted)">Study ocular structure and defences, globe malformations, glaucoma, corneal diseases, conjunctival and lens disorders, uveal pathology, retinal disease, and ocular neoplasia.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num" id="eye-stat-qcount">0</div><div class="lbl">Questions</div></div>
+      <div class="hero-stat"><div class="num">7</div><div class="lbl">Subtopics</div></div>
+      <div class="hero-stat"><div class="num" id="eye-stat-sessions">0</div><div class="lbl">Sessions</div></div>
+    </div>
+  </div>
+  <div class="section-title">🚀 Start Studying</div>
+  <div class="mode-grid">
+    <div class="mode-card" onclick="spShowPage('eye','topics')">
+      <div class="icon">📖</div><h3>Subtopic Study</h3>
+      <p>Read lecture notes for each subtopic. 7 subtopics drawn directly from the course document.</p>
+    </div>
+    <div class="mode-card" onclick="startAllEyeQuiz()">
+      <div class="icon">🎯</div><h3>Exam Prep Mode</h3>
+      <p>Randomised questions drawn from all subtopics with questions added so far — full mixed practice exam.</p>
+    </div>
+  </div>
+</div>
+
+<!-- =====================================================================
+     PATHOLOGY OF THE EYE — TOPICS (Subtopic notes)
+===================================================================== -->
+<div id="page-eye-topics" class="page">
+  <div id="eye-subtopic-list">
+    <div class="flex-row" style="margin-bottom:16px">
+      <div class="section-title" style="margin:0">📖 Subtopics</div>
+    </div>
+    <div class="sp-subtopic-grid" id="eye-subtopic-grid"></div>
+  </div>
+  <div id="eye-notes-panel" style="display:none">
+    <div class="flex-row" style="margin-bottom:14px">
+      <button class="btn btn-ghost btn-sm" onclick="closeEyeNotes()">← All Subtopics</button>
+      <div class="spacer"></div>
+      <span id="eye-notes-title" style="font-weight:700;color:var(--primary-dark);font-size:0.95rem"></span>
+    </div>
+    <div id="eye-study-btn-area" style="margin-bottom:12px"></div>
+    <div id="eye-notes-body" class="sp-content"></div>
+  </div>
+</div>
+
+<!-- =====================================================================
+     PATHOLOGY OF THE EYE — QUIZ
+===================================================================== -->
+<div id="page-eye-quiz" class="page">
+  <div id="eye-quiz-area"></div>
+</div>
+
+<!-- =====================================================================
+     PATHOLOGY OF THE EYE — PROGRESS
+===================================================================== -->
+<div id="page-eye-stats" class="page">
+  <div class="flex-row" style="margin-bottom:18px">
+    <div class="section-title" style="margin:0">📊 My Progress</div>
+    <div class="spacer"></div>
+    <button class="btn btn-ghost btn-sm" onclick="resetEyeStats()" style="color:var(--wrong-dark)">🗑 Reset Progress</button>
+  </div>
+  <div class="stats-grid" id="eye-overall-stats"></div>
+  <div class="section-title">📈 By Subtopic (worst first)</div>
+  <div class="card" id="eye-subtopic-stats-list"></div>
+  <div class="divider"></div>
+  <div class="section-title">🕐 Session History</div>
+  <div id="eye-session-history-list"></div>
+</div>
+<!-- END PATHOLOGY OF THE EYE PAGES -->
+
 <div class="modal-overlay" id="result-modal">
   <div class="modal">
     <div class="result-big">
@@ -2349,6 +2428,14 @@ const NAV_CONFIGS = {
       {id:'urinary-home',   label:'🏠 Home',       fn:"spShowPage('urinary','home')"},
       {id:'urinary-topics', label:'📖 Topics',     fn:"spShowPage('urinary','topics')"},
       {id:'urinary-stats',  label:'📊 Progress',   fn:"spShowPage('urinary','stats')"},
+    ]
+  },
+  eye: {
+    label: '👁️ Pathology of the Eye',
+    btns: [
+      {id:'eye-home',   label:'🏠 Home',       fn:"spShowPage('eye','home')"},
+      {id:'eye-topics', label:'📖 Topics',     fn:"spShowPage('eye','topics')"},
+      {id:'eye-stats',  label:'📊 Progress',   fn:"spShowPage('eye','stats')"},
     ]
   },
 };
@@ -3882,6 +3969,15 @@ function spShowPage(topic, page) {
     if (sEl) sEl.textContent = urinarySessions.length;
   }
   if (topic === 'urinary' && page === 'stats') renderUrinaryStats();
+  if (topic === 'eye' && page === 'topics') renderEyeSubtopics();
+  if (topic === 'eye' && page === 'home') {
+    const qTotal = Object.values(EYE_QUESTIONS).reduce((s, arr) => s + arr.length, 0);
+    const el = document.getElementById('eye-stat-qcount');
+    if (el) el.textContent = qTotal;
+    const sEl = document.getElementById('eye-stat-sessions');
+    if (sEl) sEl.textContent = eyeSessions.length;
+  }
+  if (topic === 'eye' && page === 'stats') renderEyeStats();
 }
 
 function openSpTopic(topicId) {
@@ -5588,6 +5684,157 @@ function resetUrinaryStats() {
   localStorage.removeItem('vpUrinaryStats');
   localStorage.removeItem('vpUrinarySessions');
   renderUrinaryStats();
+}
+
+// ── Pathology of the Eye subtopic notes ─────────────────────────────────────
+
+function renderEyeSubtopics() {
+  const grid = document.getElementById('eye-subtopic-grid');
+  if (!grid) return;
+  grid.innerHTML = EYE_SUBTOPICS.map((st, i) =>
+    `<div class="sp-subtopic-chip" onclick="openEyeSubtopic(${i})">
+      <div class="ss-icon">${st.icon}</div>
+      <div class="ss-name">${st.name}</div>
+      <div class="ss-pages">${st.pages}</div>
+    </div>`
+  ).join('');
+}
+
+function openEyeSubtopic(idx) {
+  const st = EYE_SUBTOPICS[idx];
+  if (!st) return;
+  document.getElementById('eye-subtopic-list').style.display = 'none';
+  document.getElementById('eye-notes-title').textContent = st.icon + ' ' + st.name;
+  document.getElementById('eye-notes-body').innerHTML = st.content;
+  const qs = EYE_QUESTIONS[idx];
+  const qCount = qs ? qs.length : 0;
+  document.getElementById('eye-study-btn-area').innerHTML = qCount > 0
+    ? `<button class="btn btn-primary btn-sm" onclick="beginEyeQuiz(${idx})">🎯 Study ${qCount} Questions</button>`
+    : `<span style="font-size:0.82rem;color:var(--text-muted)">Questions coming soon</span>`;
+  document.getElementById('eye-notes-panel').style.display = 'block';
+}
+
+function closeEyeNotes() {
+  document.getElementById('eye-notes-panel').style.display = 'none';
+  document.getElementById('eye-subtopic-list').style.display = 'block';
+}
+
+let eyeQuiz = {};
+let eyeStats = JSON.parse(localStorage.getItem('vpEyeStats') || '{}');
+let eyeSessions = JSON.parse(localStorage.getItem('vpEyeSessions') || '[]');
+
+function startAllEyeQuiz() {
+  let all = [];
+  Object.entries(EYE_QUESTIONS).forEach(([k, arr]) => {
+    arr.forEach(q => all.push({...q, _subtopicIdx: Number(k)}));
+  });
+  if (all.length === 0) { alert('No questions available yet — check back soon!'); return; }
+  shuffle(all);
+  eyeQuiz = { questions: all, idx: 0, correct: 0, total: 0, title: 'All Subtopics' };
+  spShowPage('eye', 'quiz');
+  renderEyeQuestion();
+}
+
+function beginEyeQuiz(idx) {
+  const qs = EYE_QUESTIONS[idx];
+  if (!qs || qs.length === 0) { alert('No questions for this subtopic yet.'); return; }
+  const questions = shuffle([...qs]).map(q => ({...q, _subtopicIdx: idx}));
+  eyeQuiz = { questions, idx: 0, correct: 0, total: 0, title: EYE_SUBTOPICS[idx].name };
+  spShowPage('eye', 'quiz');
+  renderEyeQuestion();
+}
+
+function renderEyeQuestion() {
+  const area = document.getElementById('eye-quiz-area');
+  if (eyeQuiz.idx >= eyeQuiz.questions.length) { finishEyeQuiz(); return; }
+  const q = eyeQuiz.questions[eyeQuiz.idx];
+  const num = eyeQuiz.idx + 1;
+  const tot = eyeQuiz.questions.length;
+  if (q.type === 'mcq') {
+    const displayed = randomiseAnswers(q.opts, q.ans);
+    area.innerHTML = `
+      <div class="quiz-header"><span class="q-counter">${num}/${tot}</span><span class="q-topic">${EYE_SUBTOPICS[q._subtopicIdx]?.name || ''}</span></div>
+      <div class="question-text">${q.q}</div>
+      <div class="options-list" id="eye-opts">
+        ${displayed.opts.map((o, i) => `<button class="option-btn" onclick="answerEyeMCQ(${i},${displayed.correctIdx},${q._subtopicIdx},'${encodeURIComponent(q.q)}')">${o}</button>`).join('')}
+      </div>
+      <div id="eye-feedback" class="feedback" style="display:none"></div>
+      <div id="eye-quiz-actions" style="margin-top:14px;text-align:right">
+        <button class="btn btn-ghost btn-sm" onclick="eyeSkipQuestion()">Skip →</button>
+      </div>`;
+  } else {
+    area.innerHTML = `
+      <div class="quiz-header"><span class="q-counter">${num}/${tot}</span><span class="q-topic">${EYE_SUBTOPICS[q._subtopicIdx]?.name || ''}</span></div>
+      <div class="question-text">${q.q}</div>
+      <div class="tf-btns">
+        <button class="tf-btn true-btn" onclick="answerEyeTF(true,${q.ans},${q._subtopicIdx},'${encodeURIComponent(q.q)}')">✓ True</button>
+        <button class="tf-btn false-btn" onclick="answerEyeTF(false,${q.ans},${q._subtopicIdx},'${encodeURIComponent(q.q)}')">✗ False</button>
+      </div>
+      <div id="eye-feedback" class="feedback" style="display:none"></div>
+      <div id="eye-quiz-actions" style="margin-top:14px;text-align:right">
+        <button class="btn btn-ghost btn-sm" onclick="eyeSkipQuestion()">Skip →</button>
+      </div>`;
+  }
+}
+
+function answerEyeMCQ(chosen, correct, subtopicIdx, encQ) {
+  const isCorrect = chosen === correct;
+  eyeQuiz.total++;
+  if (isCorrect) eyeQuiz.correct++;
+  recordSpAnswer(eyeStats, 'vpEyeStats', subtopicIdx, isCorrect);
+  document.querySelectorAll('#eye-opts .option-btn').forEach((b, i) => {
+    b.disabled = true;
+    if (i === correct) b.classList.add('correct');
+    else if (i === chosen && !isCorrect) b.classList.add('wrong');
+  });
+  const q = eyeQuiz.questions[eyeQuiz.idx];
+  showEyeFeedback(isCorrect, q.exp);
+}
+
+function answerEyeTF(chosen, correct, subtopicIdx, encQ) {
+  const isCorrect = chosen === correct;
+  eyeQuiz.total++;
+  if (isCorrect) eyeQuiz.correct++;
+  recordSpAnswer(eyeStats, 'vpEyeStats', subtopicIdx, isCorrect);
+  document.querySelectorAll('.tf-btn').forEach(b => b.disabled = true);
+  const q = eyeQuiz.questions[eyeQuiz.idx];
+  showEyeFeedback(isCorrect, q.exp);
+}
+
+function showEyeFeedback(isCorrect, exp) {
+  const fb = document.getElementById('eye-feedback');
+  fb.className = 'feedback ' + (isCorrect ? 'correct' : 'wrong');
+  fb.innerHTML = (isCorrect ? '<strong>✓ Correct!</strong>' : '<strong>✗ Incorrect</strong>') +
+    (exp ? `<div class="exp-text">${exp}</div>` : '');
+  fb.style.display = 'block';
+  document.getElementById('eye-quiz-actions').innerHTML = `<button class="btn btn-primary" onclick="nextEyeQuestion()">Next →</button>`;
+}
+
+function eyeSkipQuestion() { eyeQuiz.idx++; renderEyeQuestion(); }
+function nextEyeQuestion() { eyeQuiz.idx++; renderEyeQuestion(); }
+
+function finishEyeQuiz() {
+  const pct = eyeQuiz.total > 0 ? Math.round(eyeQuiz.correct / eyeQuiz.total * 100) : 0;
+  document.getElementById('result-score-circle').textContent = pct + '%';
+  document.getElementById('result-title').textContent = pct >= 80 ? '🎉 Excellent!' : pct >= 60 ? '👍 Good Job!' : '📚 Keep Studying!';
+  document.getElementById('result-subtitle').textContent = `${eyeQuiz.correct} / ${eyeQuiz.total} correct`;
+  resultModalNav = { home: () => spShowPage('eye','home'), stats: () => spShowPage('eye','stats') };
+  document.getElementById('result-modal').classList.add('open');
+  if (eyeQuiz.total > 0) {
+    eyeSessions.unshift({ date: new Date().toLocaleDateString(), title: eyeQuiz.title, correct: eyeQuiz.correct, total: eyeQuiz.total });
+    localStorage.setItem('vpEyeSessions', JSON.stringify(eyeSessions));
+  }
+}
+
+function renderEyeStats() { renderSpStats('eye', eyeStats, eyeSessions, EYE_SUBTOPICS); }
+
+function resetEyeStats() {
+  if (!confirm('Reset progress for Pathology of the Eye? This cannot be undone.')) return;
+  eyeStats = {};
+  eyeSessions = [];
+  localStorage.removeItem('vpEyeStats');
+  localStorage.removeItem('vpEyeSessions');
+  renderEyeStats();
 }
 
 // ── Neuropathology subtopic notes ─────────────────────────────────────
@@ -11413,6 +11660,317 @@ const URINARY_SUBTOPICS = [
   <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Botrioid rhabdomyosarcoma</span></td><td style="padding:7px;border:1px solid var(--border)">Neoplasm of striated muscle thought to arise from embryonic rests of skeletal muscle incorporated into the bladder wall during development. Primarily cells undergo transformation at early age and become neoplastic. Affects young animals.</td></tr>
 </table>
 <div class="sp-note">Transitional cell (urothelial) carcinoma of the bladder is the most common urinary tract tumour in dogs. It frequently arises in the trigone, making complete surgical excision difficult. Botrioid rhabdomyosarcoma is a tumour of young animals arising from embryonic muscle rests.</div>`
+  },
+];
+
+const EYE_QUESTIONS = {};
+
+const EYE_SUBTOPICS = [
+  {
+    icon: '🛡️',
+    name: 'Structure, Function & Defences',
+    pages: 'Page 1',
+    content: `
+<h2>Ocular Anatomy Overview</h2>
+<p>The eye consists of three concentric layers (tunics) surrounding transparent media and a neurosensory retina.</p>
+<table style="width:100%;border-collapse:collapse;font-size:0.88rem">
+  <tr style="background:var(--surface2)"><th style="padding:7px;border:1px solid var(--border)">Layer</th><th style="padding:7px;border:1px solid var(--border)">Components</th><th style="padding:7px;border:1px solid var(--border)">Function</th></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Fibrous tunic</span></td><td style="padding:7px;border:1px solid var(--border)">Cornea (anterior) + Sclera (posterior)</td><td style="padding:7px;border:1px solid var(--border)">Protection, refraction (cornea), globe shape (sclera)</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Vascular tunic (uvea)</span></td><td style="padding:7px;border:1px solid var(--border)">Iris + Ciliary body + Choroid</td><td style="padding:7px;border:1px solid var(--border)">Nutrition, aqueous production, pupil control, accommodation</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Nervous tunic</span></td><td style="padding:7px;border:1px solid var(--border)">Retina (neural + pigmented layers)</td><td style="padding:7px;border:1px solid var(--border)">Phototransduction, visual signal processing</td></tr>
+</table>
+<h2>Transparent Media</h2>
+<ul>
+  <li><span class="sp-key">Cornea</span>: avascular; stratified squamous epithelium → stroma (collagen fibrils) → Descemet's membrane → endothelium. Transparency maintained by endothelial dehydration pump.</li>
+  <li><span class="sp-key">Aqueous humor</span>: produced by ciliary processes; fills anterior and posterior chambers; drains via trabecular meshwork at iridocorneal angle.</li>
+  <li><span class="sp-key">Lens</span>: crystalline, avascular, enclosed in an elastic capsule; supported by zonular fibres from ciliary body.</li>
+  <li><span class="sp-key">Vitreous body</span>: gel of hyaluronic acid and collagen; fills posterior segment; provides optical clarity and mechanical support.</li>
+</ul>
+<h2>Aqueous Humor Dynamics</h2>
+<div class="sp-chain">Ciliary processes secrete aqueous → posterior chamber → through pupil → anterior chamber → trabecular meshwork (iridocorneal angle) → drainage</div>
+<p>Obstruction of outflow at any point → elevated intraocular pressure (IOP) → glaucoma.</p>
+<h2>Ocular Defence Mechanisms</h2>
+<table style="width:100%;border-collapse:collapse;font-size:0.88rem">
+  <tr style="background:var(--surface2)"><th style="padding:7px;border:1px solid var(--border)">Defence</th><th style="padding:7px;border:1px solid var(--border)">Mechanism</th></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Eyelids & lashes</span></td><td style="padding:7px;border:1px solid var(--border)">Physical barrier; blink reflex; spreads tear film</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Tear film</span></td><td style="padding:7px;border:1px solid var(--border)">Washes debris; contains lysozyme, IgA, lactoferrin (antimicrobial)</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Conjunctival MALT</span></td><td style="padding:7px;border:1px solid var(--border)">Lymphocyte/plasma cell surveillance; follicular response to antigens</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Corneal epithelium</span></td><td style="padding:7px;border:1px solid var(--border)">Tight junctions; rapid cell turnover; barrier to microorganisms</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Blood-ocular barrier</span></td><td style="padding:7px;border:1px solid var(--border)">Tight junctions in ciliary epithelium (blood-aqueous) and RPE (blood-retinal); limits immune surveillance → immune privilege</td></tr>
+</table>
+<div class="sp-note">The cornea and vitreous lack lymphatics and have minimal vascularity — this "immune privilege" reduces graft rejection but also limits inflammatory responses.</div>
+<h2>Retinal Structure</h2>
+<p>The retina has 10 layers; key components from outside (choroid side) to inside (vitreous side):</p>
+<ul>
+  <li><span class="sp-key">Retinal pigment epithelium (RPE)</span>: single layer; supports photoreceptors; phagocytoses shed outer segments; forms blood-retinal barrier</li>
+  <li><span class="sp-key">Photoreceptors</span>: rods (low-light, peripheral) and cones (colour, area centralis/fovea in primates)</li>
+  <li><span class="sp-key">Bipolar cells</span> → <span class="sp-key">Ganglion cells</span> → axons form optic nerve</li>
+</ul>
+<p>Domestic animals have a <span class="sp-key">tapetum lucidum</span> (reflective layer in choroid) that enhances low-light vision — responsible for "eyeshine" in photographs.</p>`
+  },
+  {
+    icon: '🌐',
+    name: 'Globe Malformations & Glaucoma',
+    pages: 'Pages 1–3',
+    content: `
+<h2>Congenital Globe Malformations</h2>
+<table style="width:100%;border-collapse:collapse;font-size:0.88rem">
+  <tr style="background:var(--surface2)"><th style="padding:7px;border:1px solid var(--border)">Condition</th><th style="padding:7px;border:1px solid var(--border)">Description & Causes</th></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Anophthalmia</span></td><td style="padding:7px;border:1px solid var(--border)">Complete absence of the globe; rare; typically associated with other CNS malformations</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Microphthalmos</span></td><td style="padding:7px;border:1px solid var(--border)">Abnormally small globe; may be associated with multiple colobomas. Causes: <em>in utero</em> viral infection (bluetongue, Akabane in sheep/cattle), vitamin A deficiency in cattle, hereditary</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Cyclopia</span></td><td style="padding:7px;border:1px solid var(--border)">Single midline fused eye; associated with holoprosencephaly; caused by <em>Veratrum californicum</em> toxicity in ewes (ingestion days 12–14 of gestation)</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Coloboma</span></td><td style="padding:7px;border:1px solid var(--border)">Failure of closure of embryonic (choroid) fissure → gap in iris, choroid, retina, or optic disc. Common in horses (Appaloosa) and collies (Collie Eye Anomaly)</td></tr>
+</table>
+<h2>Collie Eye Anomaly (CEA)</h2>
+<p>Autosomal recessive; affects Rough Collie, Smooth Collie, Border Collie, Shetland Sheepdog. Caused by deletion on chromosome 37 (NHEJ1 gene region). Spectrum of lesions:</p>
+<ul>
+  <li><span class="sp-key">Choroidal hypoplasia</span>: mildest, most common; temporal to optic disc; always present</li>
+  <li><span class="sp-key">Coloboma</span>: defect at optic disc or peripapillary region</li>
+  <li><span class="sp-key">Retinal detachment</span>: associated with severe coloboma</li>
+  <li><span class="sp-key">Intraocular haemorrhage</span>: most severe form</li>
+</ul>
+<div class="sp-note">CEA is the most common hereditary ocular disease in collies. Choroidal hypoplasia alone does not impair vision; coloboma and detachment cause visual deficits.</div>
+<h2>Persistent Pupillary Membranes (PPMs)</h2>
+<p>Remnants of foetal vascular mesoderm (pupillary membrane) that failed to atrophy. Connect iris to iris, iris to lens, or iris to cornea. Can cause focal corneal opacities or anterior polar cataracts. Common in Basenjis and other breeds.</p>
+<h2>Glaucoma</h2>
+<p>Elevated intraocular pressure (IOP > 25–30 mmHg) → optic nerve damage and retinal degeneration → blindness.</p>
+<h3>Primary Glaucoma</h3>
+<p>Genetic predisposition; results from goniodysgenesis (abnormal iridocorneal angle) or pectinate ligament dysplasia (fibrous bands occlude drainage). Predisposed breeds: American Cocker Spaniel, Basset Hound, Beagle, Chow Chow, Shar Pei, Norwegian Elkhound, Samoyed.</p>
+<h3>Secondary Glaucoma</h3>
+<p>More common than primary. Follows:</p>
+<ul>
+  <li><span class="sp-key">Uveitis</span>: inflammatory exudate, protein, and cellular debris occlude trabecular meshwork; peripheral anterior synechiae form</li>
+  <li><span class="sp-key">Lens luxation</span>: anterior luxation blocks pupil or angle; common in terrier breeds</li>
+  <li><span class="sp-key">Intraocular neoplasia</span>: tumour directly obstructs drainage</li>
+  <li><span class="sp-key">Hyphema</span>: blood cells block trabecular meshwork</li>
+</ul>
+<h3>Morphological Changes in Glaucoma</h3>
+<table style="width:100%;border-collapse:collapse;font-size:0.88rem">
+  <tr style="background:var(--surface2)"><th style="padding:7px;border:1px solid var(--border)">Change</th><th style="padding:7px;border:1px solid var(--border)">Pathogenesis</th></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Buphthalmos</span></td><td style="padding:7px;border:1px solid var(--border)">Globe enlargement due to elevated IOP; sclera distensible in young animals; hallmark of chronic glaucoma</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Haab's striae</span></td><td style="padding:7px;border:1px solid var(--border)">Linear breaks in Descemet's membrane from corneal stretching; appear as grey-white lines on cornea</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Corneal oedema</span></td><td style="padding:7px;border:1px solid var(--border)">IOP damages corneal endothelium → failure of dehydration pump → bullous keratopathy</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Optic disc cupping</span></td><td style="padding:7px;border:1px solid var(--border)">Excavation of optic disc from pressure-induced loss of retinal ganglion cell axons</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Retinal degeneration</span></td><td style="padding:7px;border:1px solid var(--border)">Ischaemic degeneration of retinal ganglion cells and photoreceptors; irreversible blindness</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Lens subluxation</span></td><td style="padding:7px;border:1px solid var(--border)">Stretching of globe loosens zonular fibres → lens displacement</td></tr>
+</table>
+<div class="sp-warn">Glaucoma causes irreversible blindness through retinal ganglion cell death. Early diagnosis is critical — IOP measurement is essential in predisposed breeds.</div>`
+  },
+  {
+    icon: '🔵',
+    name: 'Corneal Diseases',
+    pages: 'Pages 3–5',
+    content: `
+<h2>Corneal Anatomy Reminder</h2>
+<p>Cornea: stratified squamous <span class="sp-key">epithelium</span> (5–7 cells, regenerates rapidly) → <span class="sp-key">stroma</span> (90% thickness; collagen fibrils; keratocytes) → <span class="sp-key">Descemet's membrane</span> (basement membrane of endothelium) → <span class="sp-key">endothelium</span> (single layer; maintains dehydration; cannot regenerate in adults).</p>
+<h2>Corneal Ulcers (Ulcerative Keratitis)</h2>
+<p>Erosion of corneal epithelium ± stroma. Classified by depth:</p>
+<table style="width:100%;border-collapse:collapse;font-size:0.88rem">
+  <tr style="background:var(--surface2)"><th style="padding:7px;border:1px solid var(--border)">Type</th><th style="padding:7px;border:1px solid var(--border)">Features</th></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Superficial</span></td><td style="padding:7px;border:1px solid var(--border)">Epithelium only; heals by cell migration; minimal scarring</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Stromal</span></td><td style="padding:7px;border:1px solid var(--border)">Involves stroma; may progress to "melting" (keratomalacia) due to matrix metalloproteinases from bacteria and PMNs degrading collagen</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Descemetocele</span></td><td style="padding:7px;border:1px solid var(--border)">Ulcer reaches Descemet's membrane; only Descemet's bulges forward; perforation imminent</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Perforated</span></td><td style="padding:7px;border:1px solid var(--border)">Aqueous humor leaks; iris may prolapse into wound; risk of panophthalmitis and loss of eye</td></tr>
+</table>
+<p><strong>Causes of ulceration:</strong> trauma, eyelid abnormalities (entropion, distichiasis, trichiasis, ectopic cilia), keratoconjunctivitis sicca (KCS/dry eye), foreign bodies, infectious agents, chemical burns.</p>
+<div class="sp-warn">A melting corneal ulcer is a surgical emergency. Bacterial collagenases (especially <em>Pseudomonas</em>) and host MMPs can liquefy the stroma within hours.</div>
+<h2>Non-Ulcerative Keratitis</h2>
+<table style="width:100%;border-collapse:collapse;font-size:0.88rem">
+  <tr style="background:var(--surface2)"><th style="padding:7px;border:1px solid var(--border)">Type</th><th style="padding:7px;border:1px solid var(--border)">Features</th></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Interstitial keratitis</span></td><td style="padding:7px;border:1px solid var(--border)">Diffuse stromal cellular infiltration without epithelial ulceration; associated with systemic infections (canine adenovirus-1, FIP, equine influenza). Vessels invade from limbus.</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Eosinophilic keratitis</span></td><td style="padding:7px;border:1px solid var(--border)">Cats; white-pink plaques on cornea; associated with FHV-1; eosinophilic infiltrate on cytology; responds to corticosteroids</td></tr>
+</table>
+<h2>Corneal Vascularisation & Pannus</h2>
+<p>Normally avascular cornea develops blood vessels in response to chronic inflammation, hypoxia, or antigenic stimulation.</p>
+<ul>
+  <li><span class="sp-key">Superficial pannus</span>: vessels under epithelium; accompanies surface ulcers and chronic irritation</li>
+  <li><span class="sp-key">Deep pannus</span>: vessels in stroma; follows deep stromal disease</li>
+  <li><span class="sp-key">Chronic superficial keratitis (CSK / Überreiter's disease / Pannus)</span>: immune-mediated; predominantly German Shepherd Dogs; bilateral; pink-white infiltrate starts at lateral limbus → progresses across cornea + pigmentation; worsened by UV light exposure; incurable but controllable with immunosuppressives</li>
+</ul>
+<h2>Corneal Pigmentation</h2>
+<p><span class="sp-key">Pigmentary keratitis</span>: melanin deposition by basal epithelial cells in response to chronic irritation; common in brachycephalic breeds (Pug, Shih Tzu, Pekingese) due to lagophthalmos and prominent globes; can progress to visual impairment.</p>
+<h2>Corneal Oedema</h2>
+<p>Results from endothelial failure → loss of dehydration pump → fluid accumulates in stroma → blue-grey opaque cornea → bullous keratopathy (vesicles under epithelium → painful epithelial erosions). Causes: glaucoma (pressure damages endothelium), uveitis, endothelial dystrophy, trauma.</p>
+<h2>Feline Corneal Sequestrum</h2>
+<p>Focal accumulation of necrotic corneal stroma; appears as dark brown-black plaque, usually axial; associated with <span class="sp-key">FHV-1</span> infection; predisposed breeds: Persian, Himalayan, Burmese. Requires superficial keratectomy.</p>
+<h2>Corneal Dystrophy vs Degeneration</h2>
+<table style="width:100%;border-collapse:collapse;font-size:0.88rem">
+  <tr style="background:var(--surface2)"><th style="padding:7px;border:1px solid var(--border)">Feature</th><th style="padding:7px;border:1px solid var(--border)">Dystrophy</th><th style="padding:7px;border:1px solid var(--border)">Degeneration</th></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)">Laterality</td><td style="padding:7px;border:1px solid var(--border)">Bilateral, symmetrical</td><td style="padding:7px;border:1px solid var(--border)">Unilateral or asymmetric</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)">Origin</td><td style="padding:7px;border:1px solid var(--border)">Inherited, primary</td><td style="padding:7px;border:1px solid var(--border)">Acquired, secondary to local/systemic disease</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)">Inflammation</td><td style="padding:7px;border:1px solid var(--border)">Non-inflammatory</td><td style="padding:7px;border:1px solid var(--border)">May have inflammation</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)">Deposits</td><td style="padding:7px;border:1px solid var(--border)">Lipid or calcium in stroma</td><td style="padding:7px;border:1px solid var(--border)">Calcium, lipid, or mineral from systemic causes (hyperlipidaemia, hypercalcaemia)</td></tr>
+</table>`
+  },
+  {
+    icon: '💧',
+    name: 'Conjunctival & Lens Diseases',
+    pages: 'Pages 5–6',
+    content: `
+<h2>Conjunctiva</h2>
+<p>Mucosal lining of eyelids (palpebral conjunctiva) and anterior sclera (bulbar conjunctiva). Stratified squamous/columnar epithelium with goblet cells; subepithelial MALT (mucosal-associated lymphoid tissue).</p>
+<h2>Conjunctivitis</h2>
+<table style="width:100%;border-collapse:collapse;font-size:0.88rem">
+  <tr style="background:var(--surface2)"><th style="padding:7px;border:1px solid var(--border)">Type</th><th style="padding:7px;border:1px solid var(--border)">Causes & Features</th></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Infectious</span></td><td style="padding:7px;border:1px solid var(--border)"><em>Chlamydia felis</em> (cats — follicular, unilateral at first); FHV-1 (cats — ulcerative); <em>Moraxella bovis</em> (cattle — IBK); <em>Mycoplasma</em> spp.</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Allergic/immune</span></td><td style="padding:7px;border:1px solid var(--border)">Mast cell degranulation; serous discharge; chemosis (oedema)</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Follicular</span></td><td style="padding:7px;border:1px solid var(--border)">Lymphoid follicle formation from chronic antigenic stimulation; visible on palpebral conjunctiva as cobblestone appearance</td></tr>
+</table>
+<h2>Infectious Bovine Keratoconjunctivitis (IBK / Pinkeye)</h2>
+<p>Most common ocular disease of cattle worldwide. Caused by <span class="sp-key"><em>Moraxella bovis</em></span>. Risk factors: UV light, flies (mechanical vectors), crowding, dusty conditions, concurrent respiratory infections.</p>
+<div class="sp-chain">Moraxella bovis colonises conjunctiva → pili allow adherence → haemolysin damages corneal epithelium → ulcer formation → central corneal opacity → spontaneous recovery in most cases within 4–6 weeks</div>
+<h2>Symblepharon</h2>
+<p>Adhesion of conjunctiva to cornea or opposing conjunctival surfaces following severe ulcerative conjunctivitis. Common sequela of FHV-1 infection in kittens — raw conjunctival surfaces adhere during healing. Can cause restricted globe movement and persistent ocular discharge.</p>
+<h2>Dermoid (Choristoma)</h2>
+<p>Ectopic island of normal skin tissue (dermis, hair follicles, sebaceous glands) on conjunctiva or cornea. Congenital. Hair causes chronic irritation → keratitis, epiphora. Treatment: surgical excision (keratectomy/conjunctivectomy).</p>
+<h2>Lens Diseases</h2>
+<h3>Cataract</h3>
+<p>Any opacity of the lens or its capsule. Classified by aetiology:</p>
+<table style="width:100%;border-collapse:collapse;font-size:0.88rem">
+  <tr style="background:var(--surface2)"><th style="padding:7px;border:1px solid var(--border)">Type</th><th style="padding:7px;border:1px solid var(--border)">Features</th></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Congenital / hereditary</span></td><td style="padding:7px;border:1px solid var(--border)">Present at birth or early life; inherited in many breeds; also caused by BVD-MD in calves (<em>in utero</em> infection), maternal malnutrition, drug exposure</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Diabetic</span></td><td style="padding:7px;border:1px solid var(--border)">Glucose → sorbitol via aldose reductase → osmotic swelling of lens fibres → cortical cataract; dogs very susceptible (>50% of diabetics develop cataracts); cats rarely affected (different aldose reductase)</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Senile (nuclear)</span></td><td style="padding:7px;border:1px solid var(--border)">Age-related; common in old dogs; nucleus becomes dense and opaque</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Secondary (inflammatory)</span></td><td style="padding:7px;border:1px solid var(--border)">Follows uveitis; calcium deposits on anterior lens capsule; posterior subcapsular opacity from fibrin deposition</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Traumatic</span></td><td style="padding:7px;border:1px solid var(--border)">Capsule rupture → lens proteins leak → phacoclastic (lens-induced) uveitis</td></tr>
+</table>
+<div class="sp-note"><strong>Nuclear sclerosis</strong> vs cataract: Nuclear sclerosis is normal ageing — increased density of lens nucleus creates a grey-blue haze but light still passes through; vision is not significantly impaired. It must be distinguished from cataract on fundoscopic examination.</div>
+<h3>Lens Luxation</h3>
+<p>Complete displacement from zonular attachments.</p>
+<ul>
+  <li><span class="sp-key">Primary luxation</span>: inherited; especially terrier breeds (Jack Russell, Fox Terrier, Tibetan Terrier, Border Collie); autosomal recessive ADAMTS17 mutation; bilateral; usually 4–8 years of age; anterior luxation blocks aqueous drainage → secondary glaucoma</li>
+  <li><span class="sp-key">Secondary luxation</span>: follows chronic uveitis (zonular destruction by inflammation), glaucoma (globe enlargement stretches zonules), trauma</li>
+</ul>
+<h3>Phacoclastic Uveitis</h3>
+<p>Lens proteins leaking through ruptured or hypermature cataract lens capsule → granulomatous uveitis. Dogs > cats. Macrophages and giant cells engulf lens material. Can cause severe intraocular inflammation and glaucoma.</p>`
+  },
+  {
+    icon: '🔥',
+    name: 'Uveal Tract & Uveitis',
+    pages: 'Pages 7–8',
+    content: `
+<h2>Uveal Tract Components</h2>
+<p><span class="sp-key">Iris</span> (controls pupil size) + <span class="sp-key">Ciliary body</span> (produces aqueous humor; accommodation) + <span class="sp-key">Choroid</span> (highly vascular; nourishes RPE and outer retina).</p>
+<h2>Uveitis Classification</h2>
+<ul>
+  <li><span class="sp-key">Anterior uveitis (iridocyclitis)</span>: iris and ciliary body</li>
+  <li><span class="sp-key">Posterior uveitis (choroiditis)</span>: choroid ± retina (chorioretinitis)</li>
+  <li><span class="sp-key">Panuveitis</span>: all uveal segments</li>
+</ul>
+<h2>Causes of Uveitis</h2>
+<table style="width:100%;border-collapse:collapse;font-size:0.88rem">
+  <tr style="background:var(--surface2)"><th style="padding:7px;border:1px solid var(--border)">Category</th><th style="padding:7px;border:1px solid var(--border)">Examples</th></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Infectious — viral</span></td><td style="padding:7px;border:1px solid var(--border)">FIP (cats — pyogranulomatous); FIV; FeLV; CDV (dogs); canine adenovirus-1 ("blue eye" = post-infectious or vaccine-related immune complex deposition)</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Infectious — bacterial</span></td><td style="padding:7px;border:1px solid var(--border)"><em>Brucella canis</em> (dogs); <em>Leptospira</em> (horses — Equine Recurrent Uveitis); septicaemia</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Infectious — parasitic/fungal</span></td><td style="padding:7px;border:1px solid var(--border)"><em>Toxoplasma gondii</em>; <em>Leishmania</em>; <em>Ehrlichia</em>; <em>Cryptococcus</em>; <em>Blastomyces</em>; <em>Histoplasma</em></td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Immune-mediated</span></td><td style="padding:7px;border:1px solid var(--border)">Equine Recurrent Uveitis (ERU); lens-induced (phacoclastic) uveitis; uveodermatological syndrome (Vogt-Koyanagi-Harada-like in dogs)</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Neoplastic</span></td><td style="padding:7px;border:1px solid var(--border)">Intraocular lymphoma; uveal melanoma; metastatic carcinoma</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Trauma / lens-induced</span></td><td style="padding:7px;border:1px solid var(--border)">Perforating wounds; phacoclastic uveitis from hypermature or ruptured cataract</td></tr>
+</table>
+<h2>Equine Recurrent Uveitis (ERU / Moon Blindness)</h2>
+<p>Most common cause of blindness in horses worldwide. Recurrent episodes of uveitis interspersed with quiet periods. Pathogenesis is <span class="sp-key">T-cell mediated autoimmunity</span> targeting retinal and uveal antigens (molecular mimicry). <span class="sp-key"><em>Leptospira</em> serovar Pomona</span> most frequently implicated trigger.</p>
+<div class="sp-chain">Leptospira infection → antibodies cross-react with retinal/uveal proteins → T-cell infiltration → recurrent uveitis → secondary cataracts, synechiae, phthisis bulbi → blindness</div>
+<h2>Morphological Changes in Uveitis</h2>
+<table style="width:100%;border-collapse:collapse;font-size:0.88rem">
+  <tr style="background:var(--surface2)"><th style="padding:7px;border:1px solid var(--border)">Finding</th><th style="padding:7px;border:1px solid var(--border)">Pathogenesis</th></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Aqueous flare</span></td><td style="padding:7px;border:1px solid var(--border)">Protein leaks from inflamed iris vessels; visible as "smoke" in anterior chamber on slit lamp</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Hypopyon</span></td><td style="padding:7px;border:1px solid var(--border)">WBCs settle in inferior anterior chamber; white layer</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Hyphema</span></td><td style="padding:7px;border:1px solid var(--border)">Blood in anterior chamber; from iris vessel rupture (trauma, neoplasia, coagulopathy)</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Keratic precipitates</span></td><td style="padding:7px;border:1px solid var(--border)">WBC/macrophage aggregates deposited on corneal endothelium; "mutton-fat" KPs in granulomatous uveitis</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Posterior synechiae</span></td><td style="padding:7px;border:1px solid var(--border)">Fibrin adhesions between iris and anterior lens capsule; can cause seclusio pupillae (360° adhesion → aqueous trapped → iris bombé → secondary glaucoma)</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Phthisis bulbi</span></td><td style="padding:7px;border:1px solid var(--border)">End-stage atrophic shrunken globe; from chronic severe uveitis; ciliary body fails to produce aqueous → IOP drops → globe shrinks and dystrophic calcification occurs</td></tr>
+</table>
+<div class="sp-note"><strong>Blue eye (infectious canine hepatitis):</strong> Canine adenovirus-1 (CAV-1) causes immune complex deposition in the corneal endothelium → anterior uveitis → unilateral or bilateral corneal oedema (blue-grey appearance). More common as a post-infectious complication than with modified-live vaccine (CAV-2 vaccines are used to avoid this).</div>
+<h2>Iris Conditions</h2>
+<ul>
+  <li><span class="sp-key">Iris atrophy</span>: normal ageing; holes in iris stroma; depigmentation; common in old Chihuahuas and Miniature Poodles</li>
+  <li><span class="sp-key">Iris cysts</span>: fluid-filled structures from posterior pigmented epithelium; free-floating or attached; usually benign; common in Golden Retrievers</li>
+  <li><span class="sp-key">Rubeosis iridis</span>: neovascularisation of iris; associated with chronic uveitis, retinal ischaemia, intraocular neoplasia</li>
+</ul>`
+  },
+  {
+    icon: '📡',
+    name: 'Retinal Lesions & Retinopathies',
+    pages: 'Pages 8–9',
+    content: `
+<h2>Retinal Architecture</h2>
+<p>Outer (choroid side): <span class="sp-key">RPE</span> → <span class="sp-key">Photoreceptors</span> (rods/cones) → Outer nuclear layer → Inner nuclear layer (bipolar, amacrine, horizontal cells) → <span class="sp-key">Ganglion cell layer</span> → Nerve fibre layer → Inner limiting membrane (vitreous side).</p>
+<p>The potential space between RPE and photoreceptors is the site of retinal detachment.</p>
+<h2>Retinal Detachment</h2>
+<p>Separation of the neural retina from the retinal pigment epithelium (RPE). Not a "detachment from the choroid" — there is no firm adhesion there; the "attachment" is via the RPE-photoreceptor interdigitation and subretinal fluid absorption by RPE.</p>
+<table style="width:100%;border-collapse:collapse;font-size:0.88rem">
+  <tr style="background:var(--surface2)"><th style="padding:7px;border:1px solid var(--border)">Type</th><th style="padding:7px;border:1px solid var(--border)">Mechanism & Causes</th></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Rhegmatogenous</span></td><td style="padding:7px;border:1px solid var(--border)">Tear or hole in retina allows liquefied vitreous to enter subretinal space; typically traumatic or follows vitreous degeneration</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Exudative (non-rhegmatogenous)</span></td><td style="padding:7px;border:1px solid var(--border)">Fluid accumulates under retina from choroidal disease; most common in animals. Causes: <span class="sp-key">systemic hypertension</span> (cats with CKD or hyperthyroidism), vasculitis, choroiditis, intraocular neoplasia</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Tractional</span></td><td style="padding:7px;border:1px solid var(--border)">Fibrovascular membranes (proliferative vitreoretinopathy) pull retina forward; chronic detachment, post-inflammatory</td></tr>
+</table>
+<div class="sp-warn">Systemic hypertension in cats causes exudative retinal detachment → acute-onset blindness. All cats presenting with acute blindness should have blood pressure measured. Common in cats with CKD or hyperthyroidism.</div>
+<h2>Progressive Retinal Atrophy (PRA)</h2>
+<p>Group of hereditary degenerative diseases causing bilateral photoreceptor degeneration leading to progressive blindness. Multiple genetic mutations in different breeds.</p>
+<div class="sp-chain">Rod photoreceptors degenerate first → night blindness (nyctalopia) → cone degeneration → day blindness → complete blindness</div>
+<p><strong>Fundoscopic signs:</strong> tapetal hyperreflectivity (degenerated photoreceptors no longer absorb light), optic disc pallor (nerve fibre loss), attenuated (thin) retinal vessels.</p>
+<p><strong>Predisposed breeds:</strong> Irish Setter, Labrador Retriever, Miniature Schnauzer, Cocker Spaniel, Miniature and Toy Poodle, Border Collie, Norwegian Elkhound.</p>
+<h2>Sudden Acquired Retinal Degeneration Syndrome (SARDS)</h2>
+<p>Acute onset total blindness over days to weeks; photoreceptors destroyed rapidly; predominantly older, overweight female dogs; immune-mediated aetiology suspected (anti-retinal antibodies). ERG (electroretinogram) is flat from the onset. Pupils are dilated and non-responsive. No treatment; permanent blindness.</p>
+<h2>Feline Taurine Deficiency Retinopathy</h2>
+<p>Cats fed taurine-deficient diets (e.g., dog food; early commercial cat foods). Taurine essential for photoreceptor membrane maintenance. Bilateral; begins at area centralis as focal hyperreflective spot ("hot spot") → expands to total retinal atrophy. Now rare since taurine supplementation became mandatory in commercial cat food.</p>
+<h2>Chorioretinitis (Inflammatory)</h2>
+<p>Simultaneous inflammation of choroid and retina; usually part of systemic infectious disease:</p>
+<ul>
+  <li><span class="sp-key">FIP (cats)</span>: perivascular pyogranulomatous infiltrates; multifocal grey-white foci; often bilateral</li>
+  <li><span class="sp-key">CDV (dogs)</span>: multifocal retinitis; may see optic neuritis</li>
+  <li><span class="sp-key">Toxoplasma</span>: multifocal necrotising chorioretinitis in cats and dogs</li>
+  <li><span class="sp-key">Systemic mycoses</span> (<em>Cryptococcus</em>, <em>Blastomyces</em>, <em>Histoplasma</em>): granulomatous chorioretinitis; often associated with retinal detachment</li>
+</ul>
+<h2>Retinal Haemorrhage</h2>
+<p>Causes: systemic hypertension, thrombocytopenia, coagulopathy, vasculitis, trauma, intraocular neoplasia.</p>
+<ul>
+  <li><span class="sp-key">Pre-retinal</span>: between retina and vitreous; boat-shaped</li>
+  <li><span class="sp-key">Intraretinal — flame-shaped</span>: superficial nerve fibre layer; follow nerve fibre pattern</li>
+  <li><span class="sp-key">Intraretinal — dot/blot</span>: deep in inner nuclear or outer plexiform layer</li>
+  <li><span class="sp-key">Sub-retinal</span>: between neural retina and RPE; associated with exudative detachment</li>
+</ul>
+<h2>Optic Neuritis</h2>
+<p>Inflammation of the optic nerve. Causes: CDV, GME (granulomatous meningoencephalomyelitis), neoplasia, FIP, Toxoplasma. Signs: acute blindness, dilated non-responsive pupils. Fundoscopy may show swollen optic disc (papilloedema) or may appear normal if inflammation is retrobulbar.</p>`
+  },
+  {
+    icon: '🎗️',
+    name: 'Ocular Neoplasia',
+    pages: 'Pages 9–10',
+    content: `
+<h2>Intraocular Primary Tumours</h2>
+<h3>Uveal Melanoma</h3>
+<table style="width:100%;border-collapse:collapse;font-size:0.88rem">
+  <tr style="background:var(--surface2)"><th style="padding:7px;border:1px solid var(--border)">Species</th><th style="padding:7px;border:1px solid var(--border)">Features</th></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Cats</span></td><td style="padding:7px;border:1px solid var(--border)">Diffuse iris melanoma: most common primary intraocular tumour in cats. Begins as multifocal brown-black iris pigmentation → progressive darkening → invasive melanoma → metastasis (liver, lung, regional LNs). Must be distinguished from benign iris melanosis by rate of change and iris thickening.</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Dogs</span></td><td style="padding:7px;border:1px solid var(--border)">Limbal (epibulbar) melanoma: arises from limbus; appears as dark pigmented mass on sclera/limbus; usually <span class="sp-key">benign</span> and slow-growing; low metastatic potential. Uveal melanoma (iris/ciliary body) in dogs: low-grade malignancy; can invade and metastasise but less aggressive than in cats.</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Horses</span></td><td style="padding:7px;border:1px solid var(--border)">Grey horses prone to dermal melanomatosis; limbal/perilimbal extension possible</td></tr>
+</table>
+<div class="sp-warn">Feline diffuse iris melanoma: any new brown pigmentation on the iris of a cat must be monitored carefully. Progressive darkening, raised lesions, or iris thickening suggest malignant transformation. Enucleation is often recommended before systemic spread.</div>
+<h3>Medulloepithelioma (Diktyoma)</h3>
+<p>Rare tumour of non-pigmented ciliary epithelium. Arises from medullary epithelium; can contain cartilage, skeletal muscle (teratoid medulloepithelioma). Locally invasive; occurs mainly in young horses and dogs. Benign or malignant forms.</p>
+<h3>Iridociliary Adenoma / Adenocarcinoma</h3>
+<p>Arise from non-pigmented ciliary body epithelium. More common in dogs and cats. Adenomas are benign, locally expansile. Adenocarcinomas are locally invasive and may metastasize. Often cause secondary glaucoma or anterior uveitis.</p>
+<h2>Secondary (Metastatic) Intraocular Tumours</h2>
+<p><span class="sp-key">Lymphoma</span> is the most common secondary intraocular tumour in cats and dogs. Bilateral; presents as uveitis (aqueous flare, hypopyon, keratic precipitates); usually part of multicentric or alimentary lymphoma. Histiocytic sarcoma, hemangiosarcoma, and carcinoma metastases also occur.</p>
+<h2>Extraocular & Adnexal Tumours</h2>
+<h3>Squamous Cell Carcinoma (SCC)</h3>
+<p>Most common ocular tumour in <span class="sp-key">cattle</span> and <span class="sp-key">horses</span>.</p>
+<table style="width:100%;border-collapse:collapse;font-size:0.88rem">
+  <tr style="background:var(--surface2)"><th style="padding:7px;border:1px solid var(--border)">Species</th><th style="padding:7px;border:1px solid var(--border)">Features</th></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Cattle (Hereford)</span></td><td style="padding:7px;border:1px solid var(--border)">White-faced, poorly pigmented eyelids; UV light major risk factor; begins as plaques/papillomas at limbus or lid margin → invasive carcinoma → metastasis to parotid LNs → lungs. Economic significance: condemned at slaughter.</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Horses</span></td><td style="padding:7px;border:1px solid var(--border)">Affects unpigmented areas: third eyelid (most common location), limbus, eyelid margins; locally invasive; metastasis less common than in cattle</td></tr>
+  <tr><td style="padding:7px;border:1px solid var(--border)"><span class="sp-key">Cats</span></td><td style="padding:7px;border:1px solid var(--border)">White cats with UV exposure; eyelid SCC; may also affect nasal planum simultaneously</td></tr>
+</table>
+<h3>Eyelid Tumours in Dogs</h3>
+<ul>
+  <li><span class="sp-key">Meibomian gland adenoma</span> (sebaceous adenoma): most common eyelid tumour in dogs; benign; elderly dogs; appears as nodular, often pigmented mass on lid margin; may cause corneal irritation</li>
+  <li><span class="sp-key">Melanoma</span>: eyelid melanoma in dogs is usually benign; black pigmented mass</li>
+  <li><span class="sp-key">Mast cell tumour, histiocytoma, papilloma</span>: also occur on eyelids in dogs</li>
+</ul>
+<h3>Third Eyelid Gland Prolapse ("Cherry Eye")</h3>
+<p>Prolapse of the nictitating membrane gland — NOT a neoplasm but clinically important. Common in dogs (Cocker Spaniel, English Bulldog, Beagle, Neapolitan Mastiff). Appears as red round mass at medial canthus. Treated surgically by repositioning (not excision, as the gland contributes ~30–40% of tear production).</p>
+<div class="sp-note">Summary of most common ocular tumours by species: <strong>Dogs</strong> — meibomian gland adenoma (eyelid); limbal melanoma (globe). <strong>Cats</strong> — diffuse iris melanoma; lymphoma (secondary). <strong>Cattle & horses</strong> — squamous cell carcinoma.</div>`
   },
 ];
 
